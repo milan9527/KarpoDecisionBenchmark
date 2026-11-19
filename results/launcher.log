@@ -1,0 +1,9 @@
+START CONFIG 31b-bf16
+READY 31b-bf16 startup_seconds 30.19
+FINISHED 31b-bf16 0
+START CONFIG 31b-bf16-triton-graphs
+READY 31b-bf16-triton-graphs startup_seconds 403.78
+FINISHED 31b-bf16-triton-graphs 0
+START CONFIG 31b-fp8-triton-graphs
+READY 31b-fp8-triton-graphs startup_seconds 274.22
+FINISHED 31b-fp8-triton-graphs 0

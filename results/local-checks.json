@@ -1,0 +1,36 @@
+{
+  "checked_utc": "2026-11-19T12:47:35.120878+00:00",
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "scripts"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "bash",
+        "-n",
+        "scripts/bootstrap.sh"
+      ],
+      "returncode": 0
+    }
+  ],
+  "editable_install_metadata_dry_run": "passed after explicit setuptools packages=[] configuration"
+}

@@ -1,0 +1,50 @@
+{
+  "checked_utc": "2026-11-19T12:58:58.898514+00:00",
+  "html_sha256": "1260d7c263eb33d9cd3a6cf028db9ba878fc93f4a0aa41bc42b9305a08675215",
+  "checks": [
+    "latency:quality-200-detailed:p50_ms",
+    "latency:quality-200-detailed:p95_ms",
+    "latency:size-200-compact:p50_ms",
+    "latency:size-200-compact:p95_ms",
+    "latency:quality-existing-payment:p50_ms",
+    "latency:quality-existing-payment:p95_ms",
+    "size:31b-bf16:compact",
+    "size:31b-bf16:detailed",
+    "concurrency:31b-bf16",
+    "size:31b-bf16-triton-graphs:compact",
+    "size:31b-bf16-triton-graphs:detailed",
+    "concurrency:31b-bf16-triton-graphs",
+    "size:31b-fp8-triton-graphs:compact",
+    "size:31b-fp8-triton-graphs:detailed",
+    "concurrency:31b-fp8-triton-graphs",
+    "download:matches_embedded_data",
+    "offline:zero_network_requests",
+    "responsive:no_document_overflow",
+    "print:pdf_generated"
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "scroll": 1440,
+      "client": 1440
+    },
+    {
+      "width": 1024,
+      "scroll": 1024,
+      "client": 1024
+    },
+    {
+      "width": 768,
+      "scroll": 768,
+      "client": 768
+    },
+    {
+      "width": 390,
+      "scroll": 390,
+      "client": 390
+    }
+  ],
+  "page_errors": [],
+  "external_requests": [],
+  "print_pdf_bytes": 1091691
+}

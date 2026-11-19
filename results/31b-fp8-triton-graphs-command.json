@@ -1,0 +1,23 @@
+[
+  "/opt/karpo/venv/bin/python",
+  "-m",
+  "torch.distributed.run",
+  "--standalone",
+  "--nproc_per_node",
+  "1",
+  "-m",
+  "karpo_decision.serve.server",
+  "--checkpoint",
+  "/opt/karpo/models/karpo-31b",
+  "--name",
+  "31b-fp8-triton-graphs",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "18440",
+  "--max-length",
+  "32768",
+  "--fp8",
+  "--triton-attention",
+  "--graphs"
+]

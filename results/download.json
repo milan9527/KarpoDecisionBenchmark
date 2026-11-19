@@ -1,0 +1,6 @@
+{
+  "method": "HTTP, HF_HUB_DISABLE_XET=1",
+  "storage": "local NVMe",
+  "seconds": 124.28973118800008,
+  "finished_utc": "2026-11-19T12:05:41.775920+00:00"
+}

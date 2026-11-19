@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "name": "31b-bf16",
+      "verified_complete": true,
+      "recorded_rows": 367,
+      "invocations": 367,
+      "stages": 16,
+      "requests_sha256": "b3d63c170eed5af949e261df676117345b22936b39e2d6f0972abc18b4a838ef"
+    },
+    {
+      "name": "31b-bf16-triton-graphs",
+      "verified_complete": true,
+      "recorded_rows": 367,
+      "invocations": 367,
+      "stages": 16,
+      "requests_sha256": "0a7a445ca05fdbe9b1a3299dcebb0b093188abc88bb357a805f2433d5b76e6e7"
+    },
+    {
+      "name": "31b-fp8-triton-graphs",
+      "verified_complete": true,
+      "recorded_rows": 377,
+      "invocations": 377,
+      "stages": 17,
+      "requests_sha256": "16b7e1f879a4e2c5656e24a5f15969a2597d937a6c65fddbfb07eee3953063b5"
+    }
+  ],
+  "all_complete": true
+}

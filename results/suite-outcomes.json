@@ -1,0 +1,20 @@
+{
+  "ended_utc": "2026-11-19T12:41:15.622479+00:00",
+  "configs": [
+    {
+      "name": "31b-bf16",
+      "status": "complete",
+      "returncode": 0
+    },
+    {
+      "name": "31b-bf16-triton-graphs",
+      "status": "complete",
+      "returncode": 0
+    },
+    {
+      "name": "31b-fp8-triton-graphs",
+      "status": "complete",
+      "returncode": 0
+    }
+  ]
+}

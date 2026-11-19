@@ -1,0 +1,11 @@
+{
+  "python": "3.12.3",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.21.0",
+  "cuda": "13.0",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 595.112.07",
+  "code_revision": "6600011eb5cf46232d056ec0717dc726146d29de",
+  "model_revision": "b8e6fd7463cea8662c556d6257955d7ef9c10d19",
+  "model": "MachinePulseAI/karpo-decision-31B",
+  "dependency_policy": "Core runtime pinned to upstream requirements-serve.txt"
+}

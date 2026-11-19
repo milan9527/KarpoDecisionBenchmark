@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "sop_010",
+    "domain": "card",
+    "action": "collect_reference",
+    "compact": "Only 银行卡线上消费 (card purchase): 索取交易或工单编号 / Collect a missing transaction or ticket reference.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one."
+  },
+  {
+    "id": "sop_049",
+    "domain": "card",
+    "action": "verify_identity",
+    "compact": "Only 银行卡线上消费 (card purchase): 完成身份验证 / Complete identity verification.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete."
+  },
+  {
+    "id": "sop_121",
+    "domain": "card",
+    "action": "clarify_request",
+    "compact": "Only 银行卡线上消费 (card purchase): 澄清客户意图 / Clarify an ambiguous request.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting."
+  },
+  {
+    "id": "sop_071",
+    "domain": "card",
+    "action": "compliance_review",
+    "compact": "Only 银行卡线上消费 (card purchase): 转风控复核 / Escalate to compliance review.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed."
+  },
+  {
+    "id": "sop_176",
+    "domain": "card",
+    "action": "secure_account",
+    "compact": "Only 银行卡线上消费 (card purchase): 冻结可疑账户访问 / Secure suspected compromised account access.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first."
+  },
+  {
+    "id": "sop_082",
+    "domain": "card",
+    "action": "duplicate_check",
+    "compact": "Only 银行卡线上消费 (card purchase): 阻止重复资金操作 / Prevent a duplicate funds operation.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key."
+  },
+  {
+    "id": "sop_002",
+    "domain": "card",
+    "action": "await_confirmations",
+    "compact": "Only 银行卡线上消费 (card purchase): 等待链上确认 / Wait for required chain confirmations.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired."
+  },
+  {
+    "id": "sop_086",
+    "domain": "card",
+    "action": "request_shortfall",
+    "compact": "Only 银行卡线上消费 (card purchase): 处理金额不足 / Request resolution of an amount shortfall.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount."
+  },
+  {
+    "id": "sop_009",
+    "domain": "card",
+    "action": "investigate_delay",
+    "compact": "Only 银行卡线上消费 (card purchase): 调查超过时限的等待 / Investigate processing beyond its SLA.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold."
+  },
+  {
+    "id": "sop_034",
+    "domain": "card",
+    "action": "reconcile_ledger",
+    "compact": "Only 银行卡线上消费 (card purchase): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount."
+  },
+  {
+    "id": "sop_083",
+    "domain": "card",
+    "action": "verify_destination",
+    "compact": "Only 银行卡线上消费 (card purchase): 核验资金接收地址 / Verify an unverified funds destination.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified."
+  },
+  {
+    "id": "sop_160",
+    "domain": "card",
+    "action": "request_approval",
+    "compact": "Only 银行卡线上消费 (card purchase): 提交资金操作审批 / Request the outstanding funds approval.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing."
+  },
+  {
+    "id": "sop_027",
+    "domain": "card",
+    "action": "execute_authorized",
+    "compact": "Only 银行卡线上消费 (card purchase): 执行已获批的资金操作 / Execute the authorized funds operation.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution."
+  },
+  {
+    "id": "sop_189",
+    "domain": "card",
+    "action": "close_resolved",
+    "compact": "Only 银行卡线上消费 (card purchase): 关闭已经解决的工单 / Close the fully resolved support ticket.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed."
+  },
+  {
+    "id": "sop_075",
+    "domain": "card",
+    "action": "explain_fees",
+    "compact": "Only 银行卡线上消费 (card purchase): 解释费用 / Explain the published fee.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation."
+  },
+  {
+    "id": "sop_094",
+    "domain": "card",
+    "action": "explain_limit",
+    "compact": "Only 银行卡线上消费 (card purchase): 解释额度限制 / Explain the applicable transaction limit.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it."
+  },
+  {
+    "id": "sop_097",
+    "domain": "card",
+    "action": "reject_unsupported",
+    "compact": "Only 银行卡线上消费 (card purchase): 说明不支持的地区或产品 / Decline an unsupported region or product.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy."
+  },
+  {
+    "id": "sop_148",
+    "domain": "card",
+    "action": "review_refund",
+    "compact": "Only 银行卡线上消费 (card purchase): 受理期限内的退款审核 / Review a refund requested within the allowed window.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution."
+  },
+  {
+    "id": "sop_074",
+    "domain": "card",
+    "action": "reject_late_refund",
+    "compact": "Only 银行卡线上消费 (card purchase): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present."
+  },
+  {
+    "id": "sop_133",
+    "domain": "card",
+    "action": "restore_access",
+    "compact": "Only 银行卡线上消费 (card purchase): 复核通过后恢复账户访问 / Restore access after a completed security review.",
+    "detailed": "Only 银行卡线上消费 (card purchase): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains."
+  },
+  {
+    "id": "sop_044",
+    "domain": "atm",
+    "action": "collect_reference",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 索取交易或工单编号 / Collect a missing transaction or ticket reference.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one."
+  },
+  {
+    "id": "sop_111",
+    "domain": "atm",
+    "action": "verify_identity",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 完成身份验证 / Complete identity verification.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete."
+  },
+  {
+    "id": "sop_138",
+    "domain": "atm",
+    "action": "clarify_request",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 澄清客户意图 / Clarify an ambiguous request.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting."
+  },
+  {
+    "id": "sop_026",
+    "domain": "atm",
+    "action": "compliance_review",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 转风控复核 / Escalate to compliance review.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed."
+  },
+  {
+    "id": "sop_087",
+    "domain": "atm",
+    "action": "secure_account",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 冻结可疑账户访问 / Secure suspected compromised account access.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first."
+  },
+  {
+    "id": "sop_152",
+    "domain": "atm",
+    "action": "duplicate_check",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 阻止重复资金操作 / Prevent a duplicate funds operation.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key."
+  },
+  {
+    "id": "sop_126",
+    "domain": "atm",
+    "action": "await_confirmations",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 等待链上确认 / Wait for required chain confirmations.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired."
+  },
+  {
+    "id": "sop_131",
+    "domain": "atm",
+    "action": "request_shortfall",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 处理金额不足 / Request resolution of an amount shortfall.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount."
+  },
+  {
+    "id": "sop_116",
+    "domain": "atm",
+    "action": "investigate_delay",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 调查超过时限的等待 / Investigate processing beyond its SLA.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold."
+  },
+  {
+    "id": "sop_032",
+    "domain": "atm",
+    "action": "reconcile_ledger",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount."
+  },
+  {
+    "id": "sop_184",
+    "domain": "atm",
+    "action": "verify_destination",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 核验资金接收地址 / Verify an unverified funds destination.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified."
+  },
+  {
+    "id": "sop_058",
+    "domain": "atm",
+    "action": "request_approval",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 提交资金操作审批 / Request the outstanding funds approval.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing."
+  },
+  {
+    "id": "sop_078",
+    "domain": "atm",
+    "action": "execute_authorized",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 执行已获批的资金操作 / Execute the authorized funds operation.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution."
+  },
+  {
+    "id": "sop_047",
+    "domain": "atm",
+    "action": "close_resolved",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 关闭已经解决的工单 / Close the fully resolved support ticket.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed."
+  },
+  {
+    "id": "sop_139",
+    "domain": "atm",
+    "action": "explain_fees",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 解释费用 / Explain the published fee.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation."
+  },
+  {
+    "id": "sop_053",
+    "domain": "atm",
+    "action": "explain_limit",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 解释额度限制 / Explain the applicable transaction limit.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it."
+  },
+  {
+    "id": "sop_137",
+    "domain": "atm",
+    "action": "reject_unsupported",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 说明不支持的地区或产品 / Decline an unsupported region or product.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy."
+  },
+  {
+    "id": "sop_028",
+    "domain": "atm",
+    "action": "review_refund",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 受理期限内的退款审核 / Review a refund requested within the allowed window.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution."
+  },
+  {
+    "id": "sop_158",
+    "domain": "atm",
+    "action": "reject_late_refund",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present."
+  },
+  {
+    "id": "sop_186",
+    "domain": "atm",
+    "action": "restore_access",
+    "compact": "Only 银行卡 ATM 取现 (ATM withdrawal): 复核通过后恢复账户访问 / Restore access after a completed security review.",
+    "detailed": "Only 银行卡 ATM 取现 (ATM withdrawal): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains."
+  },
+  {
+    "id": "sop_153",
+    "domain": "deposit",
+    "action": "collect_reference",
+    "compact": "Only 加密资产充值 (crypto deposit): 索取交易或工单编号 / Collect a missing transaction or ticket reference.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one."
+  },
+  {
+    "id": "sop_038",
+    "domain": "deposit",
+    "action": "verify_identity",
+    "compact": "Only 加密资产充值 (crypto deposit): 完成身份验证 / Complete identity verification.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete."
+  },
+  {
+    "id": "sop_168",
+    "domain": "deposit",
+    "action": "clarify_request",
+    "compact": "Only 加密资产充值 (crypto deposit): 澄清客户意图 / Clarify an ambiguous request.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting."
+  },
+  {
+    "id": "sop_025",
+    "domain": "deposit",
+    "action": "compliance_review",
+    "compact": "Only 加密资产充值 (crypto deposit): 转风控复核 / Escalate to compliance review.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed."
+  },
+  {
+    "id": "sop_145",
+    "domain": "deposit",
+    "action": "secure_account",
+    "compact": "Only 加密资产充值 (crypto deposit): 冻结可疑账户访问 / Secure suspected compromised account access.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first."
+  },
+  {
+    "id": "sop_107",
+    "domain": "deposit",
+    "action": "duplicate_check",
+    "compact": "Only 加密资产充值 (crypto deposit): 阻止重复资金操作 / Prevent a duplicate funds operation.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key."
+  },
+  {
+    "id": "sop_120",
+    "domain": "deposit",
+    "action": "await_confirmations",
+    "compact": "Only 加密资产充值 (crypto deposit): 等待链上确认 / Wait for required chain confirmations.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired."
+  },
+  {
+    "id": "sop_159",
+    "domain": "deposit",
+    "action": "request_shortfall",
+    "compact": "Only 加密资产充值 (crypto deposit): 处理金额不足 / Request resolution of an amount shortfall.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount."
+  },
+  {
+    "id": "sop_031",
+    "domain": "deposit",
+    "action": "investigate_delay",
+    "compact": "Only 加密资产充值 (crypto deposit): 调查超过时限的等待 / Investigate processing beyond its SLA.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold."
+  },
+  {
+    "id": "sop_198",
+    "domain": "deposit",
+    "action": "reconcile_ledger",
+    "compact": "Only 加密资产充值 (crypto deposit): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount."
+  },
+  {
+    "id": "sop_115",
+    "domain": "deposit",
+    "action": "verify_destination",
+    "compact": "Only 加密资产充值 (crypto deposit): 核验资金接收地址 / Verify an unverified funds destination.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified."
+  },
+  {
+    "id": "sop_175",
+    "domain": "deposit",
+    "action": "request_approval",
+    "compact": "Only 加密资产充值 (crypto deposit): 提交资金操作审批 / Request the outstanding funds approval.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing."
+  },
+  {
+    "id": "sop_004",
+    "domain": "deposit",
+    "action": "execute_authorized",
+    "compact": "Only 加密资产充值 (crypto deposit): 执行已获批的资金操作 / Execute the authorized funds operation.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution."
+  },
+  {
+    "id": "sop_183",
+    "domain": "deposit",
+    "action": "close_resolved",
+    "compact": "Only 加密资产充值 (crypto deposit): 关闭已经解决的工单 / Close the fully resolved support ticket.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed."
+  },
+  {
+    "id": "sop_165",
+    "domain": "deposit",
+    "action": "explain_fees",
+    "compact": "Only 加密资产充值 (crypto deposit): 解释费用 / Explain the published fee.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation."
+  },
+  {
+    "id": "sop_161",
+    "domain": "deposit",
+    "action": "explain_limit",
+    "compact": "Only 加密资产充值 (crypto deposit): 解释额度限制 / Explain the applicable transaction limit.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it."
+  },
+  {
+    "id": "sop_172",
+    "domain": "deposit",
+    "action": "reject_unsupported",
+    "compact": "Only 加密资产充值 (crypto deposit): 说明不支持的地区或产品 / Decline an unsupported region or product.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy."
+  },
+  {
+    "id": "sop_142",
+    "domain": "deposit",
+    "action": "review_refund",
+    "compact": "Only 加密资产充值 (crypto deposit): 受理期限内的退款审核 / Review a refund requested within the allowed window.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution."
+  },
+  {
+    "id": "sop_030",
+    "domain": "deposit",
+    "action": "reject_late_refund",
+    "compact": "Only 加密资产充值 (crypto deposit): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present."
+  },
+  {
+    "id": "sop_130",
+    "domain": "deposit",
+    "action": "restore_access",
+    "compact": "Only 加密资产充值 (crypto deposit): 复核通过后恢复账户访问 / Restore access after a completed security review.",
+    "detailed": "Only 加密资产充值 (crypto deposit): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains."
+  },
+  {
+    "id": "sop_051",
+    "domain": "withdrawal",
+    "action": "collect_reference",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 索取交易或工单编号 / Collect a missing transaction or ticket reference.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one."
+  },
+  {
+    "id": "sop_102",
+    "domain": "withdrawal",
+    "action": "verify_identity",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 完成身份验证 / Complete identity verification.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete."
+  },
+  {
+    "id": "sop_060",
+    "domain": "withdrawal",
+    "action": "clarify_request",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 澄清客户意图 / Clarify an ambiguous request.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting."
+  },
+  {
+    "id": "sop_017",
+    "domain": "withdrawal",
+    "action": "compliance_review",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 转风控复核 / Escalate to compliance review.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed."
+  },
+  {
+    "id": "sop_003",
+    "domain": "withdrawal",
+    "action": "secure_account",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 冻结可疑账户访问 / Secure suspected compromised account access.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first."
+  },
+  {
+    "id": "sop_048",
+    "domain": "withdrawal",
+    "action": "duplicate_check",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 阻止重复资金操作 / Prevent a duplicate funds operation.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key."
+  },
+  {
+    "id": "sop_146",
+    "domain": "withdrawal",
+    "action": "await_confirmations",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 等待链上确认 / Wait for required chain confirmations.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired."
+  },
+  {
+    "id": "sop_135",
+    "domain": "withdrawal",
+    "action": "request_shortfall",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 处理金额不足 / Request resolution of an amount shortfall.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount."
+  },
+  {
+    "id": "sop_162",
+    "domain": "withdrawal",
+    "action": "investigate_delay",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 调查超过时限的等待 / Investigate processing beyond its SLA.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold."
+  },
+  {
+    "id": "sop_023",
+    "domain": "withdrawal",
+    "action": "reconcile_ledger",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount."
+  },
+  {
+    "id": "sop_157",
+    "domain": "withdrawal",
+    "action": "verify_destination",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 核验资金接收地址 / Verify an unverified funds destination.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified."
+  },
+  {
+    "id": "sop_106",
+    "domain": "withdrawal",
+    "action": "request_approval",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 提交资金操作审批 / Request the outstanding funds approval.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing."
+  },
+  {
+    "id": "sop_081",
+    "domain": "withdrawal",
+    "action": "execute_authorized",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 执行已获批的资金操作 / Execute the authorized funds operation.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution."
+  },
+  {
+    "id": "sop_036",
+    "domain": "withdrawal",
+    "action": "close_resolved",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 关闭已经解决的工单 / Close the fully resolved support ticket.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed."
+  },
+  {
+    "id": "sop_118",
+    "domain": "withdrawal",
+    "action": "explain_fees",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 解释费用 / Explain the published fee.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation."
+  },
+  {
+    "id": "sop_125",
+    "domain": "withdrawal",
+    "action": "explain_limit",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 解释额度限制 / Explain the applicable transaction limit.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it."
+  },
+  {
+    "id": "sop_193",
+    "domain": "withdrawal",
+    "action": "reject_unsupported",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 说明不支持的地区或产品 / Decline an unsupported region or product.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy."
+  },
+  {
+    "id": "sop_108",
+    "domain": "withdrawal",
+    "action": "review_refund",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 受理期限内的退款审核 / Review a refund requested within the allowed window.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution."
+  },
+  {
+    "id": "sop_089",
+    "domain": "withdrawal",
+    "action": "reject_late_refund",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present."
+  },
+  {
+    "id": "sop_114",
+    "domain": "withdrawal",
+    "action": "restore_access",
+    "compact": "Only 加密资产提现 (crypto withdrawal): 复核通过后恢复账户访问 / Restore access after a completed security review.",
+    "detailed": "Only 加密资产提现 (crypto withdrawal): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains."
+  },
+  {
+    "id": "sop_095",
+    "domain": "merchant",
+    "action": "collect_reference",
+    "compact": "Only 商户结算 (merchant settlement): 索取交易或工单编号 / Collect a missing transaction or ticket reference.",
+    "detailed": "Only 商户结算 (merchant settlement): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one."
+  },
+  {
+    "id": "sop_188",
+    "domain": "merchant",
+    "action": "verify_identity",
+    "compact": "Only 商户结算 (merchant settlement): 完成身份验证 / Complete identity verification.",
+    "detailed": "Only 商户结算 (merchant settlement): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete."
+  },
+  {
+    "id": "sop_164",
+    "domain": "merchant",
+    "action": "clarify_request",
+    "compact": "Only 商户结算 (merchant settlement): 澄清客户意图 / Clarify an ambiguous request.",
+    "detailed": "Only 商户结算 (merchant settlement): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting."
+  },
+  {
+    "id": "sop_050",
+    "domain": "merchant",
+    "action": "compliance_review",
+    "compact": "Only 商户结算 (merchant settlement): 转风控复核 / Escalate to compliance review.",
+    "detailed": "Only 商户结算 (merchant settlement): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed."
+  },
+  {
+    "id": "sop_128",
+    "domain": "merchant",
+    "action": "secure_account",
+    "compact": "Only 商户结算 (merchant settlement): 冻结可疑账户访问 / Secure suspected compromised account access.",
+    "detailed": "Only 商户结算 (merchant settlement): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first."
+  },
+  {
+    "id": "sop_029",
+    "domain": "merchant",
+    "action": "duplicate_check",
+    "compact": "Only 商户结算 (merchant settlement): 阻止重复资金操作 / Prevent a duplicate funds operation.",
+    "detailed": "Only 商户结算 (merchant settlement): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key."
+  },
+  {
+    "id": "sop_192",
+    "domain": "merchant",
+    "action": "await_confirmations",
+    "compact": "Only 商户结算 (merchant settlement): 等待链上确认 / Wait for required chain confirmations.",
+    "detailed": "Only 商户结算 (merchant settlement): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired."
+  },
+  {
+    "id": "sop_151",
+    "domain": "merchant",
+    "action": "request_shortfall",
+    "compact": "Only 商户结算 (merchant settlement): 处理金额不足 / Request resolution of an amount shortfall.",
+    "detailed": "Only 商户结算 (merchant settlement): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount."
+  },
+  {
+    "id": "sop_101",
+    "domain": "merchant",
+    "action": "investigate_delay",
+    "compact": "Only 商户结算 (merchant settlement): 调查超过时限的等待 / Investigate processing beyond its SLA.",
+    "detailed": "Only 商户结算 (merchant settlement): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold."
+  },
+  {
+    "id": "sop_040",
+    "domain": "merchant",
+    "action": "reconcile_ledger",
+    "compact": "Only 商户结算 (merchant settlement): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch.",
+    "detailed": "Only 商户结算 (merchant settlement): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount."
+  },
+  {
+    "id": "sop_041",
+    "domain": "merchant",
+    "action": "verify_destination",
+    "compact": "Only 商户结算 (merchant settlement): 核验资金接收地址 / Verify an unverified funds destination.",
+    "detailed": "Only 商户结算 (merchant settlement): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified."
+  },
+  {
+    "id": "sop_154",
+    "domain": "merchant",
+    "action": "request_approval",
+    "compact": "Only 商户结算 (merchant settlement): 提交资金操作审批 / Request the outstanding funds approval.",
+    "detailed": "Only 商户结算 (merchant settlement): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing."
+  },
+  {
+    "id": "sop_073",
+    "domain": "merchant",
+    "action": "execute_authorized",
+    "compact": "Only 商户结算 (merchant settlement): 执行已获批的资金操作 / Execute the authorized funds operation.",
+    "detailed": "Only 商户结算 (merchant settlement): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution."
+  },
+  {
+    "id": "sop_039",
+    "domain": "merchant",
+    "action": "close_resolved",
+    "compact": "Only 商户结算 (merchant settlement): 关闭已经解决的工单 / Close the fully resolved support ticket.",
+    "detailed": "Only 商户结算 (merchant settlement): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed."
+  },
+  {
+    "id": "sop_098",
+    "domain": "merchant",
+    "action": "explain_fees",
+    "compact": "Only 商户结算 (merchant settlement): 解释费用 / Explain the published fee.",
+    "detailed": "Only 商户结算 (merchant settlement): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation."
+  },
+  {
+    "id": "sop_096",
+    "domain": "merchant",
+    "action": "explain_limit",
+    "compact": "Only 商户结算 (merchant settlement): 解释额度限制 / Explain the applicable transaction limit.",
+    "detailed": "Only 商户结算 (merchant settlement): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it."
+  },
+  {
+    "id": "sop_091",
+    "domain": "merchant",
+    "action": "reject_unsupported",
+    "compact": "Only 商户结算 (merchant settlement): 说明不支持的地区或产品 / Decline an unsupported region or product.",
+    "detailed": "Only 商户结算 (merchant settlement): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy."
+  },
+  {
+    "id": "sop_191",
+    "domain": "merchant",
+    "action": "review_refund",
+    "compact": "Only 商户结算 (merchant settlement): 受理期限内的退款审核 / Review a refund requested within the allowed window.",
+    "detailed": "Only 商户结算 (merchant settlement): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution."
+  },
+  {
+    "id": "sop_117",
+    "domain": "merchant",
+    "action": "reject_late_refund",
+    "compact": "Only 商户结算 (merchant settlement): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window.",
+    "detailed": "Only 商户结算 (merchant settlement): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present."
+  },
+  {
+    "id": "sop_150",
+    "domain": "merchant",
+    "action": "restore_access",
+    "compact": "Only 商户结算 (merchant settlement): 复核通过后恢复账户访问 / Restore access after a completed security review.",
+    "detailed": "Only 商户结算 (merchant settlement): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains."
+  },
+  {
+    "id": "sop_033",
+    "domain": "transfer",
+    "action": "collect_reference",
+    "compact": "Only 用户间转账 (peer transfer): 索取交易或工单编号 / Collect a missing transaction or ticket reference.",
+    "detailed": "Only 用户间转账 (peer transfer): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one."
+  },
+  {
+    "id": "sop_178",
+    "domain": "transfer",
+    "action": "verify_identity",
+    "compact": "Only 用户间转账 (peer transfer): 完成身份验证 / Complete identity verification.",
+    "detailed": "Only 用户间转账 (peer transfer): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete."
+  },
+  {
+    "id": "sop_197",
+    "domain": "transfer",
+    "action": "clarify_request",
+    "compact": "Only 用户间转账 (peer transfer): 澄清客户意图 / Clarify an ambiguous request.",
+    "detailed": "Only 用户间转账 (peer transfer): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting."
+  },
+  {
+    "id": "sop_064",
+    "domain": "transfer",
+    "action": "compliance_review",
+    "compact": "Only 用户间转账 (peer transfer): 转风控复核 / Escalate to compliance review.",
+    "detailed": "Only 用户间转账 (peer transfer): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed."
+  },
+  {
+    "id": "sop_085",
+    "domain": "transfer",
+    "action": "secure_account",
+    "compact": "Only 用户间转账 (peer transfer): 冻结可疑账户访问 / Secure suspected compromised account access.",
+    "detailed": "Only 用户间转账 (peer transfer): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first."
+  },
+  {
+    "id": "sop_195",
+    "domain": "transfer",
+    "action": "duplicate_check",
+    "compact": "Only 用户间转账 (peer transfer): 阻止重复资金操作 / Prevent a duplicate funds operation.",
+    "detailed": "Only 用户间转账 (peer transfer): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key."
+  },
+  {
+    "id": "sop_174",
+    "domain": "transfer",
+    "action": "await_confirmations",
+    "compact": "Only 用户间转账 (peer transfer): 等待链上确认 / Wait for required chain confirmations.",
+    "detailed": "Only 用户间转账 (peer transfer): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired."
+  },
+  {
+    "id": "sop_066",
+    "domain": "transfer",
+    "action": "request_shortfall",
+    "compact": "Only 用户间转账 (peer transfer): 处理金额不足 / Request resolution of an amount shortfall.",
+    "detailed": "Only 用户间转账 (peer transfer): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount."
+  },
+  {
+    "id": "sop_179",
+    "domain": "transfer",
+    "action": "investigate_delay",
+    "compact": "Only 用户间转账 (peer transfer): 调查超过时限的等待 / Investigate processing beyond its SLA.",
+    "detailed": "Only 用户间转账 (peer transfer): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold."
+  },
+  {
+    "id": "sop_079",
+    "domain": "transfer",
+    "action": "reconcile_ledger",
+    "compact": "Only 用户间转账 (peer transfer): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch.",
+    "detailed": "Only 用户间转账 (peer transfer): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount."
+  },
+  {
+    "id": "sop_037",
+    "domain": "transfer",
+    "action": "verify_destination",
+    "compact": "Only 用户间转账 (peer transfer): 核验资金接收地址 / Verify an unverified funds destination.",
+    "detailed": "Only 用户间转账 (peer transfer): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified."
+  },
+  {
+    "id": "sop_019",
+    "domain": "transfer",
+    "action": "request_approval",
+    "compact": "Only 用户间转账 (peer transfer): 提交资金操作审批 / Request the outstanding funds approval.",
+    "detailed": "Only 用户间转账 (peer transfer): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing."
+  },
+  {
+    "id": "sop_127",
+    "domain": "transfer",
+    "action": "execute_authorized",
+    "compact": "Only 用户间转账 (peer transfer): 执行已获批的资金操作 / Execute the authorized funds operation.",
+    "detailed": "Only 用户间转账 (peer transfer): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution."
+  },
+  {
+    "id": "sop_110",
+    "domain": "transfer",
+    "action": "close_resolved",
+    "compact": "Only 用户间转账 (peer transfer): 关闭已经解决的工单 / Close the fully resolved support ticket.",
+    "detailed": "Only 用户间转账 (peer transfer): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed."
+  },
+  {
+    "id": "sop_068",
+    "domain": "transfer",
+    "action": "explain_fees",
+    "compact": "Only 用户间转账 (peer transfer): 解释费用 / Explain the published fee.",
+    "detailed": "Only 用户间转账 (peer transfer): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation."
+  },
+  {
+    "id": "sop_088",
+    "domain": "transfer",
+    "action": "explain_limit",
+    "compact": "Only 用户间转账 (peer transfer): 解释额度限制 / Explain the applicable transaction limit.",
+    "detailed": "Only 用户间转账 (peer transfer): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it."
+  },
+  {
+    "id": "sop_016",
+    "domain": "transfer",
+    "action": "reject_unsupported",
+    "compact": "Only 用户间转账 (peer transfer): 说明不支持的地区或产品 / Decline an unsupported region or product.",
+    "detailed": "Only 用户间转账 (peer transfer): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy."
+  },
+  {
+    "id": "sop_166",
+    "domain": "transfer",
+    "action": "review_refund",
+    "compact": "Only 用户间转账 (peer transfer): 受理期限内的退款审核 / Review a refund requested within the allowed window.",
+    "detailed": "Only 用户间转账 (peer transfer): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution."
+  },
+  {
+    "id": "sop_093",
+    "domain": "transfer",
+    "action": "reject_late_refund",
+    "compact": "Only 用户间转账 (peer transfer): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window.",
+    "detailed": "Only 用户间转账 (peer transfer): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present."
+  },
+  {
+    "id": "sop_008",
+    "domain": "transfer",
+    "action": "restore_access",
+    "compact": "Only 用户间转账 (peer transfer): 复核通过后恢复账户访问 / Restore access after a completed security review.",
+    "detailed": "Only 用户间转账 (peer transfer): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains."
+  },
+  {
+    "id": "sop_043",
+    "domain": "exchange",
+    "action": "collect_reference",
+    "compact": "Only 币种兑换 (currency exchange): 索取交易或工单编号 / Collect a missing transaction or ticket reference.",
+    "detailed": "Only 币种兑换 (currency exchange): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one."
+  },
+  {
+    "id": "sop_169",
+    "domain": "exchange",
+    "action": "verify_identity",
+    "compact": "Only 币种兑换 (currency exchange): 完成身份验证 / Complete identity verification.",
+    "detailed": "Only 币种兑换 (currency exchange): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete."
+  },
+  {
+    "id": "sop_061",
+    "domain": "exchange",
+    "action": "clarify_request",
+    "compact": "Only 币种兑换 (currency exchange): 澄清客户意图 / Clarify an ambiguous request.",
+    "detailed": "Only 币种兑换 (currency exchange): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting."
+  },
+  {
+    "id": "sop_100",
+    "domain": "exchange",
+    "action": "compliance_review",
+    "compact": "Only 币种兑换 (currency exchange): 转风控复核 / Escalate to compliance review.",
+    "detailed": "Only 币种兑换 (currency exchange): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed."
+  },
+  {
+    "id": "sop_020",
+    "domain": "exchange",
+    "action": "secure_account",
+    "compact": "Only 币种兑换 (currency exchange): 冻结可疑账户访问 / Secure suspected compromised account access.",
+    "detailed": "Only 币种兑换 (currency exchange): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first."
+  },
+  {
+    "id": "sop_063",
+    "domain": "exchange",
+    "action": "duplicate_check",
+    "compact": "Only 币种兑换 (currency exchange): 阻止重复资金操作 / Prevent a duplicate funds operation.",
+    "detailed": "Only 币种兑换 (currency exchange): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key."
+  },
+  {
+    "id": "sop_171",
+    "domain": "exchange",
+    "action": "await_confirmations",
+    "compact": "Only 币种兑换 (currency exchange): 等待链上确认 / Wait for required chain confirmations.",
+    "detailed": "Only 币种兑换 (currency exchange): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired."
+  },
+  {
+    "id": "sop_149",
+    "domain": "exchange",
+    "action": "request_shortfall",
+    "compact": "Only 币种兑换 (currency exchange): 处理金额不足 / Request resolution of an amount shortfall.",
+    "detailed": "Only 币种兑换 (currency exchange): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount."
+  },
+  {
+    "id": "sop_104",
+    "domain": "exchange",
+    "action": "investigate_delay",
+    "compact": "Only 币种兑换 (currency exchange): 调查超过时限的等待 / Investigate processing beyond its SLA.",
+    "detailed": "Only 币种兑换 (currency exchange): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold."
+  },
+  {
+    "id": "sop_140",
+    "domain": "exchange",
+    "action": "reconcile_ledger",
+    "compact": "Only 币种兑换 (currency exchange): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch.",
+    "detailed": "Only 币种兑换 (currency exchange): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount."
+  },
+  {
+    "id": "sop_199",
+    "domain": "exchange",
+    "action": "verify_destination",
+    "compact": "Only 币种兑换 (currency exchange): 核验资金接收地址 / Verify an unverified funds destination.",
+    "detailed": "Only 币种兑换 (currency exchange): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified."
+  },
+  {
+    "id": "sop_181",
+    "domain": "exchange",
+    "action": "request_approval",
+    "compact": "Only 币种兑换 (currency exchange): 提交资金操作审批 / Request the outstanding funds approval.",
+    "detailed": "Only 币种兑换 (currency exchange): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing."
+  },
+  {
+    "id": "sop_062",
+    "domain": "exchange",
+    "action": "execute_authorized",
+    "compact": "Only 币种兑换 (currency exchange): 执行已获批的资金操作 / Execute the authorized funds operation.",
+    "detailed": "Only 币种兑换 (currency exchange): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution."
+  },
+  {
+    "id": "sop_018",
+    "domain": "exchange",
+    "action": "close_resolved",
+    "compact": "Only 币种兑换 (currency exchange): 关闭已经解决的工单 / Close the fully resolved support ticket.",
+    "detailed": "Only 币种兑换 (currency exchange): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed."
+  },
+  {
+    "id": "sop_069",
+    "domain": "exchange",
+    "action": "explain_fees",
+    "compact": "Only 币种兑换 (currency exchange): 解释费用 / Explain the published fee.",
+    "detailed": "Only 币种兑换 (currency exchange): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation."
+  },
+  {
+    "id": "sop_190",
+    "domain": "exchange",
+    "action": "explain_limit",
+    "compact": "Only 币种兑换 (currency exchange): 解释额度限制 / Explain the applicable transaction limit.",
+    "detailed": "Only 币种兑换 (currency exchange): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it."
+  },
+  {
+    "id": "sop_013",
+    "domain": "exchange",
+    "action": "reject_unsupported",
+    "compact": "Only 币种兑换 (currency exchange): 说明不支持的地区或产品 / Decline an unsupported region or product.",
+    "detailed": "Only 币种兑换 (currency exchange): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy."
+  },
+  {
+    "id": "sop_103",
+    "domain": "exchange",
+    "action": "review_refund",
+    "compact": "Only 币种兑换 (currency exchange): 受理期限内的退款审核 / Review a refund requested within the allowed window.",
+    "detailed": "Only 币种兑换 (currency exchange): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution."
+  },
+  {
+    "id": "sop_105",
+    "domain": "exchange",
+    "action": "reject_late_refund",
+    "compact": "Only 币种兑换 (currency exchange): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window.",
+    "detailed": "Only 币种兑换 (currency exchange): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present."
+  },
+  {
+    "id": "sop_045",
+    "domain": "exchange",
+    "action": "restore_access",
+    "compact": "Only 币种兑换 (currency exchange): 复核通过后恢复账户访问 / Restore access after a completed security review.",
+    "detailed": "Only 币种兑换 (currency exchange): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains."
+  },
+  {
+    "id": "sop_119",
+    "domain": "refund",
+    "action": "collect_reference",
+    "compact": "Only 商户退款 (merchant refund): 索取交易或工单编号 / Collect a missing transaction or ticket reference.",
+    "detailed": "Only 商户退款 (merchant refund): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one."
+  },
+  {
+    "id": "sop_024",
+    "domain": "refund",
+    "action": "verify_identity",
+    "compact": "Only 商户退款 (merchant refund): 完成身份验证 / Complete identity verification.",
+    "detailed": "Only 商户退款 (merchant refund): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete."
+  },
+  {
+    "id": "sop_021",
+    "domain": "refund",
+    "action": "clarify_request",
+    "compact": "Only 商户退款 (merchant refund): 澄清客户意图 / Clarify an ambiguous request.",
+    "detailed": "Only 商户退款 (merchant refund): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting."
+  },
+  {
+    "id": "sop_006",
+    "domain": "refund",
+    "action": "compliance_review",
+    "compact": "Only 商户退款 (merchant refund): 转风控复核 / Escalate to compliance review.",
+    "detailed": "Only 商户退款 (merchant refund): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed."
+  },
+  {
+    "id": "sop_090",
+    "domain": "refund",
+    "action": "secure_account",
+    "compact": "Only 商户退款 (merchant refund): 冻结可疑账户访问 / Secure suspected compromised account access.",
+    "detailed": "Only 商户退款 (merchant refund): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first."
+  },
+  {
+    "id": "sop_056",
+    "domain": "refund",
+    "action": "duplicate_check",
+    "compact": "Only 商户退款 (merchant refund): 阻止重复资金操作 / Prevent a duplicate funds operation.",
+    "detailed": "Only 商户退款 (merchant refund): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key."
+  },
+  {
+    "id": "sop_011",
+    "domain": "refund",
+    "action": "await_confirmations",
+    "compact": "Only 商户退款 (merchant refund): 等待链上确认 / Wait for required chain confirmations.",
+    "detailed": "Only 商户退款 (merchant refund): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired."
+  },
+  {
+    "id": "sop_077",
+    "domain": "refund",
+    "action": "request_shortfall",
+    "compact": "Only 商户退款 (merchant refund): 处理金额不足 / Request resolution of an amount shortfall.",
+    "detailed": "Only 商户退款 (merchant refund): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount."
+  },
+  {
+    "id": "sop_134",
+    "domain": "refund",
+    "action": "investigate_delay",
+    "compact": "Only 商户退款 (merchant refund): 调查超过时限的等待 / Investigate processing beyond its SLA.",
+    "detailed": "Only 商户退款 (merchant refund): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold."
+  },
+  {
+    "id": "sop_167",
+    "domain": "refund",
+    "action": "reconcile_ledger",
+    "compact": "Only 商户退款 (merchant refund): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch.",
+    "detailed": "Only 商户退款 (merchant refund): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount."
+  },
+  {
+    "id": "sop_112",
+    "domain": "refund",
+    "action": "verify_destination",
+    "compact": "Only 商户退款 (merchant refund): 核验资金接收地址 / Verify an unverified funds destination.",
+    "detailed": "Only 商户退款 (merchant refund): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified."
+  },
+  {
+    "id": "sop_109",
+    "domain": "refund",
+    "action": "request_approval",
+    "compact": "Only 商户退款 (merchant refund): 提交资金操作审批 / Request the outstanding funds approval.",
+    "detailed": "Only 商户退款 (merchant refund): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing."
+  },
+  {
+    "id": "sop_022",
+    "domain": "refund",
+    "action": "execute_authorized",
+    "compact": "Only 商户退款 (merchant refund): 执行已获批的资金操作 / Execute the authorized funds operation.",
+    "detailed": "Only 商户退款 (merchant refund): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution."
+  },
+  {
+    "id": "sop_067",
+    "domain": "refund",
+    "action": "close_resolved",
+    "compact": "Only 商户退款 (merchant refund): 关闭已经解决的工单 / Close the fully resolved support ticket.",
+    "detailed": "Only 商户退款 (merchant refund): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed."
+  },
+  {
+    "id": "sop_147",
+    "domain": "refund",
+    "action": "explain_fees",
+    "compact": "Only 商户退款 (merchant refund): 解释费用 / Explain the published fee.",
+    "detailed": "Only 商户退款 (merchant refund): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation."
+  },
+  {
+    "id": "sop_052",
+    "domain": "refund",
+    "action": "explain_limit",
+    "compact": "Only 商户退款 (merchant refund): 解释额度限制 / Explain the applicable transaction limit.",
+    "detailed": "Only 商户退款 (merchant refund): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it."
+  },
+  {
+    "id": "sop_054",
+    "domain": "refund",
+    "action": "reject_unsupported",
+    "compact": "Only 商户退款 (merchant refund): 说明不支持的地区或产品 / Decline an unsupported region or product.",
+    "detailed": "Only 商户退款 (merchant refund): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy."
+  },
+  {
+    "id": "sop_163",
+    "domain": "refund",
+    "action": "review_refund",
+    "compact": "Only 商户退款 (merchant refund): 受理期限内的退款审核 / Review a refund requested within the allowed window.",
+    "detailed": "Only 商户退款 (merchant refund): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution."
+  },
+  {
+    "id": "sop_136",
+    "domain": "refund",
+    "action": "reject_late_refund",
+    "compact": "Only 商户退款 (merchant refund): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window.",
+    "detailed": "Only 商户退款 (merchant refund): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present."
+  },
+  {
+    "id": "sop_035",
+    "domain": "refund",
+    "action": "restore_access",
+    "compact": "Only 商户退款 (merchant refund): 复核通过后恢复账户访问 / Restore access after a completed security review.",
+    "detailed": "Only 商户退款 (merchant refund): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains."
+  },
+  {
+    "id": "sop_196",
+    "domain": "dispute",
+    "action": "collect_reference",
+    "compact": "Only 交易争议 (transaction dispute): 索取交易或工单编号 / Collect a missing transaction or ticket reference.",
+    "detailed": "Only 交易争议 (transaction dispute): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one."
+  },
+  {
+    "id": "sop_000",
+    "domain": "dispute",
+    "action": "verify_identity",
+    "compact": "Only 交易争议 (transaction dispute): 完成身份验证 / Complete identity verification.",
+    "detailed": "Only 交易争议 (transaction dispute): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete."
+  },
+  {
+    "id": "sop_099",
+    "domain": "dispute",
+    "action": "clarify_request",
+    "compact": "Only 交易争议 (transaction dispute): 澄清客户意图 / Clarify an ambiguous request.",
+    "detailed": "Only 交易争议 (transaction dispute): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting."
+  },
+  {
+    "id": "sop_080",
+    "domain": "dispute",
+    "action": "compliance_review",
+    "compact": "Only 交易争议 (transaction dispute): 转风控复核 / Escalate to compliance review.",
+    "detailed": "Only 交易争议 (transaction dispute): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed."
+  },
+  {
+    "id": "sop_042",
+    "domain": "dispute",
+    "action": "secure_account",
+    "compact": "Only 交易争议 (transaction dispute): 冻结可疑账户访问 / Secure suspected compromised account access.",
+    "detailed": "Only 交易争议 (transaction dispute): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first."
+  },
+  {
+    "id": "sop_015",
+    "domain": "dispute",
+    "action": "duplicate_check",
+    "compact": "Only 交易争议 (transaction dispute): 阻止重复资金操作 / Prevent a duplicate funds operation.",
+    "detailed": "Only 交易争议 (transaction dispute): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key."
+  },
+  {
+    "id": "sop_122",
+    "domain": "dispute",
+    "action": "await_confirmations",
+    "compact": "Only 交易争议 (transaction dispute): 等待链上确认 / Wait for required chain confirmations.",
+    "detailed": "Only 交易争议 (transaction dispute): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired."
+  },
+  {
+    "id": "sop_057",
+    "domain": "dispute",
+    "action": "request_shortfall",
+    "compact": "Only 交易争议 (transaction dispute): 处理金额不足 / Request resolution of an amount shortfall.",
+    "detailed": "Only 交易争议 (transaction dispute): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount."
+  },
+  {
+    "id": "sop_059",
+    "domain": "dispute",
+    "action": "investigate_delay",
+    "compact": "Only 交易争议 (transaction dispute): 调查超过时限的等待 / Investigate processing beyond its SLA.",
+    "detailed": "Only 交易争议 (transaction dispute): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold."
+  },
+  {
+    "id": "sop_001",
+    "domain": "dispute",
+    "action": "reconcile_ledger",
+    "compact": "Only 交易争议 (transaction dispute): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch.",
+    "detailed": "Only 交易争议 (transaction dispute): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount."
+  },
+  {
+    "id": "sop_187",
+    "domain": "dispute",
+    "action": "verify_destination",
+    "compact": "Only 交易争议 (transaction dispute): 核验资金接收地址 / Verify an unverified funds destination.",
+    "detailed": "Only 交易争议 (transaction dispute): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified."
+  },
+  {
+    "id": "sop_194",
+    "domain": "dispute",
+    "action": "request_approval",
+    "compact": "Only 交易争议 (transaction dispute): 提交资金操作审批 / Request the outstanding funds approval.",
+    "detailed": "Only 交易争议 (transaction dispute): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing."
+  },
+  {
+    "id": "sop_141",
+    "domain": "dispute",
+    "action": "execute_authorized",
+    "compact": "Only 交易争议 (transaction dispute): 执行已获批的资金操作 / Execute the authorized funds operation.",
+    "detailed": "Only 交易争议 (transaction dispute): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution."
+  },
+  {
+    "id": "sop_143",
+    "domain": "dispute",
+    "action": "close_resolved",
+    "compact": "Only 交易争议 (transaction dispute): 关闭已经解决的工单 / Close the fully resolved support ticket.",
+    "detailed": "Only 交易争议 (transaction dispute): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed."
+  },
+  {
+    "id": "sop_076",
+    "domain": "dispute",
+    "action": "explain_fees",
+    "compact": "Only 交易争议 (transaction dispute): 解释费用 / Explain the published fee.",
+    "detailed": "Only 交易争议 (transaction dispute): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation."
+  },
+  {
+    "id": "sop_084",
+    "domain": "dispute",
+    "action": "explain_limit",
+    "compact": "Only 交易争议 (transaction dispute): 解释额度限制 / Explain the applicable transaction limit.",
+    "detailed": "Only 交易争议 (transaction dispute): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it."
+  },
+  {
+    "id": "sop_129",
+    "domain": "dispute",
+    "action": "reject_unsupported",
+    "compact": "Only 交易争议 (transaction dispute): 说明不支持的地区或产品 / Decline an unsupported region or product.",
+    "detailed": "Only 交易争议 (transaction dispute): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy."
+  },
+  {
+    "id": "sop_124",
+    "domain": "dispute",
+    "action": "review_refund",
+    "compact": "Only 交易争议 (transaction dispute): 受理期限内的退款审核 / Review a refund requested within the allowed window.",
+    "detailed": "Only 交易争议 (transaction dispute): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution."
+  },
+  {
+    "id": "sop_185",
+    "domain": "dispute",
+    "action": "reject_late_refund",
+    "compact": "Only 交易争议 (transaction dispute): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window.",
+    "detailed": "Only 交易争议 (transaction dispute): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present."
+  },
+  {
+    "id": "sop_007",
+    "domain": "dispute",
+    "action": "restore_access",
+    "compact": "Only 交易争议 (transaction dispute): 复核通过后恢复账户访问 / Restore access after a completed security review.",
+    "detailed": "Only 交易争议 (transaction dispute): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains."
+  },
+  {
+    "id": "sop_072",
+    "domain": "account",
+    "action": "collect_reference",
+    "compact": "Only 账户及登录 (account access): 索取交易或工单编号 / Collect a missing transaction or ticket reference.",
+    "detailed": "Only 账户及登录 (account access): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one."
+  },
+  {
+    "id": "sop_046",
+    "domain": "account",
+    "action": "verify_identity",
+    "compact": "Only 账户及登录 (account access): 完成身份验证 / Complete identity verification.",
+    "detailed": "Only 账户及登录 (account access): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete."
+  },
+  {
+    "id": "sop_170",
+    "domain": "account",
+    "action": "clarify_request",
+    "compact": "Only 账户及登录 (account access): 澄清客户意图 / Clarify an ambiguous request.",
+    "detailed": "Only 账户及登录 (account access): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting."
+  },
+  {
+    "id": "sop_173",
+    "domain": "account",
+    "action": "compliance_review",
+    "compact": "Only 账户及登录 (account access): 转风控复核 / Escalate to compliance review.",
+    "detailed": "Only 账户及登录 (account access): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed."
+  },
+  {
+    "id": "sop_012",
+    "domain": "account",
+    "action": "secure_account",
+    "compact": "Only 账户及登录 (account access): 冻结可疑账户访问 / Secure suspected compromised account access.",
+    "detailed": "Only 账户及登录 (account access): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first."
+  },
+  {
+    "id": "sop_155",
+    "domain": "account",
+    "action": "duplicate_check",
+    "compact": "Only 账户及登录 (account access): 阻止重复资金操作 / Prevent a duplicate funds operation.",
+    "detailed": "Only 账户及登录 (account access): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key."
+  },
+  {
+    "id": "sop_070",
+    "domain": "account",
+    "action": "await_confirmations",
+    "compact": "Only 账户及登录 (account access): 等待链上确认 / Wait for required chain confirmations.",
+    "detailed": "Only 账户及登录 (account access): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired."
+  },
+  {
+    "id": "sop_014",
+    "domain": "account",
+    "action": "request_shortfall",
+    "compact": "Only 账户及登录 (account access): 处理金额不足 / Request resolution of an amount shortfall.",
+    "detailed": "Only 账户及登录 (account access): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount."
+  },
+  {
+    "id": "sop_092",
+    "domain": "account",
+    "action": "investigate_delay",
+    "compact": "Only 账户及登录 (account access): 调查超过时限的等待 / Investigate processing beyond its SLA.",
+    "detailed": "Only 账户及登录 (account access): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold."
+  },
+  {
+    "id": "sop_113",
+    "domain": "account",
+    "action": "reconcile_ledger",
+    "compact": "Only 账户及登录 (account access): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch.",
+    "detailed": "Only 账户及登录 (account access): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount."
+  },
+  {
+    "id": "sop_177",
+    "domain": "account",
+    "action": "verify_destination",
+    "compact": "Only 账户及登录 (account access): 核验资金接收地址 / Verify an unverified funds destination.",
+    "detailed": "Only 账户及登录 (account access): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified."
+  },
+  {
+    "id": "sop_144",
+    "domain": "account",
+    "action": "request_approval",
+    "compact": "Only 账户及登录 (account access): 提交资金操作审批 / Request the outstanding funds approval.",
+    "detailed": "Only 账户及登录 (account access): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing."
+  },
+  {
+    "id": "sop_065",
+    "domain": "account",
+    "action": "execute_authorized",
+    "compact": "Only 账户及登录 (account access): 执行已获批的资金操作 / Execute the authorized funds operation.",
+    "detailed": "Only 账户及登录 (account access): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution."
+  },
+  {
+    "id": "sop_005",
+    "domain": "account",
+    "action": "close_resolved",
+    "compact": "Only 账户及登录 (account access): 关闭已经解决的工单 / Close the fully resolved support ticket.",
+    "detailed": "Only 账户及登录 (account access): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed."
+  },
+  {
+    "id": "sop_055",
+    "domain": "account",
+    "action": "explain_fees",
+    "compact": "Only 账户及登录 (account access): 解释费用 / Explain the published fee.",
+    "detailed": "Only 账户及登录 (account access): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation."
+  },
+  {
+    "id": "sop_156",
+    "domain": "account",
+    "action": "explain_limit",
+    "compact": "Only 账户及登录 (account access): 解释额度限制 / Explain the applicable transaction limit.",
+    "detailed": "Only 账户及登录 (account access): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it."
+  },
+  {
+    "id": "sop_182",
+    "domain": "account",
+    "action": "reject_unsupported",
+    "compact": "Only 账户及登录 (account access): 说明不支持的地区或产品 / Decline an unsupported region or product.",
+    "detailed": "Only 账户及登录 (account access): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy."
+  },
+  {
+    "id": "sop_132",
+    "domain": "account",
+    "action": "review_refund",
+    "compact": "Only 账户及登录 (account access): 受理期限内的退款审核 / Review a refund requested within the allowed window.",
+    "detailed": "Only 账户及登录 (account access): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution."
+  },
+  {
+    "id": "sop_180",
+    "domain": "account",
+    "action": "reject_late_refund",
+    "compact": "Only 账户及登录 (account access): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window.",
+    "detailed": "Only 账户及登录 (account access): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present."
+  },
+  {
+    "id": "sop_123",
+    "domain": "account",
+    "action": "restore_access",
+    "compact": "Only 账户及登录 (account access): 复核通过后恢复账户访问 / Restore access after a completed security review.",
+    "detailed": "Only 账户及登录 (account access): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains."
+  }
+]

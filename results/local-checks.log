@@ -1,0 +1,17 @@
+COMMAND ['/usr/bin/python', '-m', 'unittest', 'discover', '-s', 'tests', '-v']
+test_stop_never_terminates_for_either_market (test_cloud_lifecycle.LifecycleTests.test_stop_never_terminates_for_either_market) ... ok
+test_unsupported_stop_propagates_without_termination_or_success_record (test_cloud_lifecycle.LifecycleTests.test_unsupported_stop_propagates_without_termination_or_success_record) ... ok
+test_user_pause_blocks_destructive_cleanup_before_any_aws_call (test_cloud_lifecycle.LifecycleTests.test_user_pause_blocks_destructive_cleanup_before_any_aws_call) ... ok
+test_complete_candidates_and_gold (test_evidence.EvidenceTests.test_complete_candidates_and_gold) ... ok
+test_existing_payment_payload_unchanged (test_evidence.EvidenceTests.test_existing_payment_payload_unchanged) ... ok
+test_metrics_keep_failures_in_denominator (test_evidence.EvidenceTests.test_metrics_keep_failures_in_denominator) ... ok
+test_order_pairs_preserve_content (test_evidence.EvidenceTests.test_order_pairs_preserve_content) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.365s
+
+OK
+
+COMMAND ['/usr/bin/python', '-m', 'compileall', '-q', 'scripts']
+
+COMMAND ['bash', '-n', 'scripts/bootstrap.sh']

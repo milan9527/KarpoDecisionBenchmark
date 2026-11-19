@@ -1,0 +1,143 @@
+Thu Nov 19 11:57:27 UTC 2026
+Running timer as unit: karpo-safety-stop.timer
+Will run service as unit: karpo-safety-stop.service
+Using Python 3.12.3 environment at: /opt/karpo/venv
+Resolved 73 packages in 394ms
+   Updating https://github.com/machinepulse-ai/karpo-decision (6600011eb5cf46232d056ec0717dc726146d29de)
+Downloading nvidia-cudnn-cu13 (495.1MiB)
+Downloading triton (272.4MiB)
+Downloading nvidia-cusolver (217.4MiB)
+Downloading nvidia-nccl-cu13 (206.0MiB)
+Downloading nvidia-cusparselt-cu13 (162.3MiB)
+Downloading nvidia-cufft (208.1MiB)
+Downloading nvidia-cusparse (144.0MiB)
+Downloading nvidia-nvshmem-cu13 (129.1MiB)
+Downloading nvidia-cuda-nvrtc (44.8MiB)
+Downloading nvidia-nvjitlink (44.5MiB)
+Downloading botocore (15.8MiB)
+Downloading numpy (15.0MiB)
+Downloading transformers (12.7MiB)
+Downloading nvidia-cuda-cupti (11.4MiB)
+Downloading cuda-bindings (8.0MiB)
+Downloading torchvision (7.2MiB)
+Downloading pillow (6.8MiB)
+Downloading sympy (6.0MiB)
+Downloading hf-xet (4.1MiB)
+Downloading nvidia-cuda-cccl (3.9MiB)
+Downloading nvidia-cuda-runtime (2.2MiB)
+Downloading tokenizers (3.2MiB)
+Downloading pydantic-core (2.2MiB)
+Downloading nvidia-cufile (1.3MiB)
+Downloading pygments (1.2MiB)
+Downloading networkx (2.0MiB)
+Downloading torch (514.2MiB)
+Downloading nvidia-cublas (386.1MiB)
+ Downloaded pygments
+ Downloaded nvidia-cufile
+ Downloaded networkx
+ Downloaded pydantic-core
+ Downloaded nvidia-cuda-runtime
+ Downloaded tokenizers
+ Downloaded nvidia-cuda-cccl
+ Downloaded hf-xet
+ Downloaded sympy
+ Downloaded pillow
+ Downloaded torchvision
+ Downloaded cuda-bindings
+    Updated https://github.com/machinepulse-ai/karpo-decision (6600011eb5cf46232d056ec0717dc726146d29de)
+   Building karpo-decision @ git+https://github.com/machinepulse-ai/karpo-decision@6600011eb5cf46232d056ec0717dc726146d29de
+ Downloaded nvidia-cuda-cupti
+ Downloaded transformers
+ Downloaded numpy
+ Downloaded botocore
+      Built karpo-decision @ git+https://github.com/machinepulse-ai/karpo-decision@6600011eb5cf46232d056ec0717dc726146d29de
+ Downloaded nvidia-nvjitlink
+ Downloaded nvidia-cuda-nvrtc
+ Downloaded nvidia-nvshmem-cu13
+ Downloaded nvidia-cusparse
+ Downloaded nvidia-cusparselt-cu13
+ Downloaded nvidia-nccl-cu13
+ Downloaded nvidia-cufft
+ Downloaded nvidia-cusolver
+ Downloaded triton
+ Downloaded nvidia-cublas
+ Downloaded nvidia-cudnn-cu13
+ Downloaded torch
+Prepared 73 packages in 12.52s
+Installed 73 packages in 156ms
+ + annotated-doc==0.0.7
+ + annotated-types==0.8.0
+ + anyio==4.16.0
+ + backports-zstd==1.8.0
+ + boto3==1.44.6
+ + botocore==1.44.6
+ + certifi==2026.10.23
+ + click==8.5.1
+ + cuda-bindings==13.5.0
+ + cuda-pathfinder==1.9.1
+ + cuda-toolkit==13.2.2
+ + filelock==4.2.12
+ + fsspec==2026.9.0
+ + h11==0.16.0
+ + hf-xet==1.8.0
+ + httpcore==1.0.9
+ + httpcore2==2.16.2
+ + httpx==0.28.1
+ + httpx2==2.16.2
+ + huggingface-hub==2.4.0
+ + idna==3.20
+ + jinja2==3.1.6
+ + jmespath==1.1.0
+ + karpo-decision==0.1.0 (from git+https://github.com/machinepulse-ai/karpo-decision@6600011eb5cf46232d056ec0717dc726146d29de)
+ + markdown-it-py==4.3.0
+ + markupsafe==3.0.4
+ + mdurl==0.1.2
+ + mpmath==1.3.0
+ + networkx==3.7
+ + numpy==2.5.5
+ + nvidia-cublas==13.4.1.3
+ + nvidia-cuda-cccl==13.3.5.0.6
+ + nvidia-cuda-cupti==13.2.86
+ + nvidia-cuda-nvrtc==13.2.86
+ + nvidia-cuda-runtime==13.2.86
+ + nvidia-cudnn-cu13==9.26.0.51
+ + nvidia-cufft==12.2.0.57
+ + nvidia-cufile==1.17.1.22
+ + nvidia-cusolver==12.2.0.11
+ + nvidia-cusparse==12.7.10.12
+ + nvidia-cusparselt-cu13==0.8.1
+ + nvidia-nccl-cu13==2.30.7
+ + nvidia-nvjitlink==13.5.37
+ + nvidia-nvshmem-cu13==3.7.2
+ + nvidia-nvtx==13.2.86
+ + packaging==26.3
+ + pillow==13.0.0
+ + psutil==7.2.2
+ + pybase64==1.5.2
+ + pydantic==2.14.3
+ + pydantic-core==2.50.4
+ + pygments==2.21.0
+ + python-dateutil==2.9.0.post0
+ + pyyaml==6.0.3
+ + regex==2026.11.19
+ + rich==15.0.0
+ + s3transfer==0.19.3
+ + safetensors==0.8.0
+ + setuptools==84.2.1
+ + shellingham==1.5.4
+ + six==1.17.0
+ + sympy==1.14.0
+ + tokenizers==0.23.3
+ + torch==2.15.0
+ + torchvision==0.29.2
+ + tqdm==4.70.1
+ + transformers==5.23.0
+ + triton==3.9.0
+ + truststore==0.10.5
+ + typer==0.29.2
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.5
+ + urllib3==2.8.0
+{"python": "3.12.3", "torch": "2.15.0+cu132", "transformers": "5.23.0", "cuda": "13.2", "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 595.112.07", "code_revision": "6600011eb5cf46232d056ec0717dc726146d29de", "model_revision": "b8e6fd7463cea8662c556d6257955d7ef9c10d19", "model": "MachinePulseAI/karpo-decision-31B"}
+Fetching 24 files:   0%|          | 0/24 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 24 files:  25%|██▌       | 6/24 [00:00<00:00, 43.75it/s]Fetching 24 files:  33%|███▎      | 8/24 [00:20<00:00, 43.75it/s]Terminated

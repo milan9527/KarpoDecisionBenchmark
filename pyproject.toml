@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "karpo-decision-benchmark"
+version = "0.1.0"
+description = "Reproducible Karpo decision-model evaluation with 200-candidate routing inputs"
+requires-python = ">=3.12"
+dependencies = ["boto3>=1.40", "httpx>=0.28"]
+
+[tool.setuptools]
+packages = []
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"

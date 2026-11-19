@@ -1,0 +1,8 @@
+{
+  "notes": [
+    "Initial loose dependency resolution was replaced with upstream pinned torch2.14.1+cu130 / transformers5.21.0 / triton3.8.0 before any model inference.",
+    "Initial Hugging Face Xet downloader stopped after no I/O progress. Partial files were isolated; standard HTTP restarted into a separate NVMe directory.",
+    "Initial suite unit was restarted after pinning; no benchmark observations were discarded."
+  ],
+  "input_bundle_sha256": "9e95d9aa5b0201b4f260e8e3a18d620360540039d122473d21471c7141e9c6d7"
+}

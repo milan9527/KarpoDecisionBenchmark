@@ -1,0 +1,128 @@
+{
+  "created_utc": "2026-11-19T11:50:03.469975+00:00",
+  "instances": {
+    "i-03c04b1af9f9f8744": {
+      "instance_type": "g6e.4xlarge",
+      "region": "us-east-1",
+      "launch_time": "2026-11-19T11:54:58+00:00",
+      "hourly_compute_usd": 3.00424,
+      "market": null,
+      "state": "terminated",
+      "observed_utc": "2026-11-19T12:45:05.396340+00:00",
+      "state_transition_reason": "User initiated (2026-11-19 11:56:30 GMT)",
+      "availability_zone": "us-east-1d",
+      "state_before_termination": "stopped",
+      "transition_reason_before_termination": "User initiated (2026-11-19 11:56:30 GMT)",
+      "termination_requested_utc": "2026-11-19T12:04:42.036607+00:00",
+      "estimated_compute_usd": 0.076775,
+      "estimated_seconds": 92.0,
+      "price_segments": [
+        {
+          "start": "2026-11-19T11:54:58+00:00",
+          "end": "2026-11-19T11:56:30+00:00",
+          "seconds": 92.0,
+          "usd_per_hour": 3.00424
+        }
+      ]
+    },
+    "i-01dcc585586f67412": {
+      "instance_type": "g7e.8xlarge",
+      "region": "us-east-2",
+      "launch_time": "2026-11-19T11:56:30+00:00",
+      "hourly_compute_usd": 2.4857,
+      "market": "spot",
+      "state": "shutting-down",
+      "observed_utc": "2026-11-19T12:47:25.125422+00:00",
+      "state_transition_reason": "User initiated (2026-11-19 12:41:59 GMT)",
+      "availability_zone": "us-east-2c",
+      "volume_ids": [
+        "vol-0f216baca898aebbe"
+      ],
+      "state_before_termination": "running",
+      "transition_reason_before_termination": "",
+      "termination_requested_utc": "2026-11-19T12:41:58.862312+00:00",
+      "spot_history": [
+        {
+          "timestamp": "2026-11-19T06:00:00+00:00",
+          "usd_per_hour": 2.4857
+        }
+      ],
+      "estimated_compute_usd": 1.884204,
+      "estimated_seconds": 2728.862312,
+      "price_segments": [
+        {
+          "start": "2026-11-19T11:56:30+00:00",
+          "end": "2026-11-19T12:41:58.862312+00:00",
+          "seconds": 2728.862312,
+          "usd_per_hour": 2.4857
+        }
+      ]
+    }
+  },
+  "cleanup": {},
+  "cost_scope": "Compute estimate from recorded prices and observed lifecycle, not an AWS invoice.",
+  "preservation_attempt": {
+    "requested_utc": "2026-11-19T12:42:31.967834+00:00",
+    "snapshot_id": "snap-0a6e91176fce5e8fb",
+    "volume_id": "vol-0f216baca898aebbe",
+    "state": "pending",
+    "progress": "0%",
+    "observed_utc": "2026-11-19T12:47:25.125422+00:00",
+    "region": "us-east-2"
+  },
+  "cleanup_paused_by_user": true,
+  "lifecycle_policy": "stop_only",
+  "preservation_note": "Termination was requested before the user instructed stop only. Further cleanup is disabled. Snapshot preserves root EBS only; public model weights were on ephemeral NVMe.",
+  "root_volume_preservation_attempt": {
+    "requested_utc": "2026-11-19T12:44:24.675581+00:00",
+    "request_accepted": true
+  },
+  "retained_root_volume": {
+    "volume_id": "vol-0f216baca898aebbe",
+    "region": "us-east-2",
+    "availability_zone": "us-east-2c",
+    "state": "in-use",
+    "size_gib": 300,
+    "observed_utc": "2026-11-19T12:47:25.125422+00:00",
+    "block_device_mappings": [
+      {
+        "DeviceName": "/dev/sda1",
+        "Ebs": {
+          "AttachTime": "2026-11-19 11:56:31+00:00",
+          "DeleteOnTermination": false,
+          "Status": "attached",
+          "VolumeId": "vol-0f216baca898aebbe",
+          "EbsCardIndex": 0
+        }
+      }
+    ],
+    "attachments": [
+      {
+        "DeleteOnTermination": false,
+        "EbsCardIndex": 0,
+        "VolumeId": "vol-0f216baca898aebbe",
+        "InstanceId": "i-01dcc585586f67412",
+        "Device": "/dev/sda1",
+        "State": "attached",
+        "AttachTime": "2026-11-19 11:56:31+00:00"
+      }
+    ]
+  },
+  "estimated_total_compute_usd": 1.960979,
+  "estimate_notes": [
+    "Launch-to-stop/termination-request interval includes provisioning time; not an AWS invoice.",
+    "Spot historical quotes integrated over the interval; actual billing adjustments are not included.",
+    "Excludes EBS, snapshots, public IPv4, S3 requests/storage, and any network charges."
+  ],
+  "spot_request": {
+    "SpotInstanceRequestId": "sir-hm4i3b2h",
+    "Type": "one-time",
+    "InstanceInterruptionBehavior": "terminate",
+    "State": "active",
+    "Status": {
+      "Code": "fulfilled",
+      "Message": "Your Spot request is fulfilled.",
+      "UpdateTime": "2026-11-19 12:45:36+00:00"
+    }
+  }
+}

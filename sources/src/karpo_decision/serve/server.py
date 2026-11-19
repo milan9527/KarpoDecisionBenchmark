@@ -1,0 +1,428 @@
+"""System One over HTTP for a decision checkpoint, under torchrun, on one GPU or one copy per GPU.
+
+    torchrun --nproc_per_node 1 -m karpo_decision.serve.server --checkpoint path/to/checkpoint --port 18440
+
+Rank 0 serves ``POST /v1/systemone`` (``{"state", "questions"}`` in, ``{"id", "model", "answers", "usage"}`` out) and
+``GET /healthz``, on loopback by default (no TLS or keys of its own). Images come as TypeSafe's System One sends them
+(``assets`` referenced from the state, instructions or criteria, as base64 or as the parts of a multipart/form-data
+body after its ``request`` JSON part), as ``image_url`` parts with data URLs anywhere in those, or as the legacy
+screenshot at ``state.viewport_screenshot`` and ``images`` (data URLs). A body may be compressed with one
+Content-Encoding (gzip, x-gzip or zstd) and is at most ``MAX_BODY_BYTES`` compressed and decompressed (413; another
+encoding 415). Rank 0 encodes each request, so one outside the contract or with a question too long for the model gets
+422, and a body, image or asset it cannot read gets 400, without reaching the other ranks; an image is read there from
+its header only, and one whose pixels then do not decode gets 400 from the rank that runs it. Every rank loads the
+checkpoint on its own GPU and runs one request at a time: with ``--nproc_per_node N``, rank 0 runs each request on the
+rank with the fewest in flight, itself included, handing the encoded sequences to that rank over a CPU (gloo) group of
+the two and getting the answers back the same way; it listens once every rank has loaded. A request's first pack gets
+its image pixels, on the rank that runs it, while that rank's GPU runs the request before it (``Decider.prepare``,
+``PREPARED_AHEAD``). The ``Server-Timing`` header gives the request's encode, share (the hand-over) and model (passes,
+readout, answers) times in milliseconds. Each request is logged as one JSON line without content.
+
+A checkpoint serves through the ``Decider``, warmed up with a text request for a block layout and a screenshot for a
+Qwen3.5 checkpoint. Every checkpoint reads images: the Gemma ones through ``families/gemma/vision.py`` (the 31B's
+vision tower, the 12B's image embedder), Qwen3.5 through its vision tower. The opt-in paths combine and are
+refused by ``serve.paths`` at startup for a backbone that does not run them: ``--fp8`` runs the decoder projections in
+FP8 (Gemma: ``serve.fp8``; Qwen3.5: ``serve.qwen_fp8``); ``--graphs`` replays CUDA graphs captured at load (Gemma:
+single-question text-only requests up to the graphs' limit, ``serve.graphs``, not with the ``blackwell`` extra's
+kernels; Qwen3.5: any request read as one sequence up to min(``--max-length``, 65,536) tokens, ``serve.qwen_graphs``,
+captured after compiling the layers; other passes run without the graphs); ``--triton-attention`` runs Gemma's global
+layers' attention in one Triton kernel (sm_120 GPUs).
+
+``--max-length`` is the longest sequence in tokens (default ``DEFAULT_MAX_LENGTH``; with ``--triton-attention`` the
+limit depends on the checkpoint: 131,072 for the 31B).
+"""
+
+from __future__ import annotations
+
+import argparse
+import base64
+import datetime
+import io
+import json
+import os
+import signal
+import threading
+import time
+import uuid
+from collections.abc import Sequence
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from typing import Any
+from urllib.parse import urlsplit
+
+import torch
+import torch.distributed as dist
+
+from ..assets import AssetError
+from ..config import DecisionConfig
+from ..decider import DEFAULT_MAX_LENGTH, Decider
+from ..encoding import Encoded, ImageError, LengthError
+from ..families.gemma.triton_attention import enable as enable_attention
+from ..families.qwen import MODEL_TYPE as QWEN
+from ..protocol import ASSETS, IMAGE_DATA_URL, IMAGE_URL, VIEWPORT_SCREENSHOT, Request, RequestError, images_of
+from ..templates import BLOCKS, template
+from . import graphs, qwen_fp8, qwen_graphs, wire
+from .fp8 import quantize
+from .paths import backbone_type, path_name, require
+
+#: ``graphs`` is also an option of ``load_decider``, which would hide the module there.
+gemma_graphs = graphs
+
+#: The largest body, compressed and decompressed (TypeSafe's limit).
+MAX_BODY_BYTES = 32 * 1024 * 1024
+#: The screenshot warm-up: a blank page as a JPEG data URL in the state, with one question.
+SCREENSHOT_WARMUP_SIZE = (768, 480)
+SCREENSHOT_WARMUP_GREY = (200, 200, 200)
+SCREENSHOT_WARMUP_JPEG_QUALITY = 75
+SCREENSHOT_WARMUP_PAGE = {"url": "about:blank"}
+SCREENSHOT_WARMUP_QUESTIONS = {"blank": {"type": "noul", "instructions": "Is the page blank?"}}
+#: Requests whose first pack has its pixels before the GPU is free (``Decider.prepare``): the one running and the next.
+PREPARED_AHEAD = 2
+#: The ranks pass requests and answers to each other on the CPU.
+CHANNEL_BACKEND = "gloo"
+#: A rank waits on its channel between requests for as long as the server is idle: the default 30-minute timeout
+#: would end it after the first quiet half hour.
+CHANNEL_TIMEOUT = datetime.timedelta(days=3650)
+#: What a rank sends rank 0 once it has loaded and warmed up.
+READY = "ready"
+#: What rank 0 sends a rank when the server stops.
+STOP = None
+
+
+def log(**fields: Any) -> None:
+    print(json.dumps(fields), flush=True)
+
+
+def screenshot_request() -> Request:
+    """A tiny request with a page-sized screenshot: the first image a process reads sets up the vision tower's kernels
+    (seconds), so the server reads one before it listens."""
+    from PIL import Image
+
+    jpeg = io.BytesIO()
+    Image.new("RGB", SCREENSHOT_WARMUP_SIZE, SCREENSHOT_WARMUP_GREY).save(jpeg, "JPEG",
+                                                                         quality=SCREENSHOT_WARMUP_JPEG_QUALITY)
+    screenshot = {"type": IMAGE_URL,
+                  IMAGE_URL: {"url": IMAGE_DATA_URL + "jpeg;base64," + base64.b64encode(jpeg.getvalue()).decode()}}
+    return {"state": {"page": SCREENSHOT_WARMUP_PAGE, VIEWPORT_SCREENSHOT: screenshot},
+            "questions": SCREENSHOT_WARMUP_QUESTIONS}
+
+
+def warmup_request(checkpoint: str) -> Request:
+    """The request that warms a checkpoint up: text for a block layout, a screenshot for a joint layout
+    (Qwen)."""
+    if template(DecisionConfig.load(checkpoint).template).kind == BLOCKS:
+        return gemma_graphs.WARMUP_REQUEST
+    return screenshot_request()
+
+
+def load_decider(checkpoint: str, device: torch.device, max_length: int = DEFAULT_MAX_LENGTH,
+                 fp8: bool = False, triton_attention: bool = False, graphs: bool = False) -> tuple[Decider, Request]:
+    """The ``Decider``, reading sequences of up to ``max_length`` tokens, and the request that warms it up, on one
+    GPU. ``fp8``: the decoder projections in FP8. ``triton_attention``: the global layers' attention in one Triton
+    kernel (``families.gemma.triton_attention``). ``graphs``: CUDA graphs captured last, on the FP8 projections with
+    ``fp8``, where they apply (Gemma: single-question text-only requests up to the graphs' limit, not with the
+    ``blackwell`` extra's kernels; Qwen3.5: any request read as one sequence, several questions or a screenshot
+    included, up to min(``max_length``, 65,536) tokens, captured after compiling the layers, minutes); other passes
+    run without the graphs. A path the backbone does not run is refused before loading (``serve.paths``)."""
+    require(checkpoint, fp8=fp8, triton_attention=triton_attention, graphs=graphs)
+    qwen = backbone_type(checkpoint) == QWEN
+    decider = Decider.from_pretrained(checkpoint, device=device, max_length=max_length)
+    if fp8:
+        (qwen_fp8.quantize if qwen else quantize)(decider.model)
+    if triton_attention:
+        enable_attention(decider.model, max_length)
+    if graphs:
+        (qwen_graphs.fast if qwen else gemma_graphs.fast)(decider)
+    return decider, warmup_request(checkpoint)
+
+
+def scrub(node: Any) -> Any:
+    """The body with every lone UTF-16 surrogate replaced: page text cut inside an emoji arrives as half a surrogate
+    pair, which ``json.loads`` keeps and the tokenizer refuses."""
+    if isinstance(node, str):
+        try:
+            node.encode("utf-8")
+            return node
+        except UnicodeEncodeError:
+            return node.encode("utf-8", "replace").decode("utf-8")
+    if isinstance(node, dict):
+        return {scrub(key): scrub(item) for key, item in node.items()}
+    if isinstance(node, list):
+        return [scrub(item) for item in node]
+    return node
+
+
+def check_images(request: Request) -> None:
+    """Legacy images come inline, a data URL each: a path would read the server's own files."""
+    for image in images_of(request)[1]:
+        if not (isinstance(image, str) and image.startswith(IMAGE_DATA_URL)):
+            raise AssetError("an image must be a data:image/... URL")
+
+
+class Runner:
+    """Runs one request at a time on this rank's GPU."""
+
+    def __init__(self, decider: Decider, device: torch.device) -> None:
+        self.decider, self.device = decider, device
+        self.lock = threading.Lock()
+        self.ahead = threading.Semaphore(PREPARED_AHEAD)
+
+    def run(self, questions: dict[str, Any], plan: list[Encoded]) -> dict[str, Any]:
+        """The plan's first pack gets its pixels before the GPU lock, so they are made while the GPU runs the request
+        before it."""
+        with self.ahead:
+            prepared = self.decider.prepare(plan)
+            with self.lock:
+                torch.cuda.set_device(self.device)
+                return self.decider.decide({"state": None, "questions": questions}, plans=[prepared])
+
+
+class Channel:
+    """Rank 0's line to one other rank, a two-member group of the process group: one request at a time."""
+
+    def __init__(self, group: dist.ProcessGroup, rank: int) -> None:
+        self.group, self.rank = group, rank
+        self.lock = threading.Lock()
+
+    def send(self, message: Any) -> None:
+        dist.broadcast_object_list([message], src=0, group=self.group)
+
+    def receive(self) -> Any:
+        box: list[Any] = [None]
+        dist.broadcast_object_list(box, src=self.rank, group=self.group)
+        return box[0]
+
+    def call(self, message: Any) -> tuple[Any, float]:
+        """The rank's reply, and the milliseconds spent handing the message over."""
+        with self.lock:
+            start = time.perf_counter()
+            self.send(message)
+            shared = (time.perf_counter() - start) * 1000
+            return self.receive(), shared
+
+
+class Ranks:
+    """Rank 0 runs each request on the rank with the fewest in flight, itself included (slot 0), ties in turn."""
+
+    def __init__(self, runner: Runner, channels: list[Channel]) -> None:
+        self.runner, self.channels = runner, channels
+        self.decider = runner.decider
+        self.busy = [0] * (len(channels) + 1)
+        self.turn = 0
+        self.lock = threading.Lock()
+
+    def pick(self) -> int:
+        with self.lock:
+            count = len(self.busy)
+            slot = min(range(count), key=lambda r: (self.busy[r], (r - self.turn) % count))
+            self.busy[slot] += 1
+            self.turn = (slot + 1) % count
+            return slot
+
+    def done(self, slot: int) -> None:
+        with self.lock:
+            self.busy[slot] -= 1
+
+    def run(self, questions: dict[str, Any], plan: list[Encoded]) -> tuple[dict[str, Any], float]:
+        """The response and the milliseconds spent handing the plan to the rank that ran it."""
+        slot = self.pick()
+        try:
+            if slot == 0:
+                return self.runner.run(questions, plan), 0.0
+            (response, error), shared = self.channels[slot - 1].call((questions, plan))
+            if error:
+                name, message = error
+                if name == ImageError.__name__:  # an image of the request does not decode: its fault, a 400
+                    raise ImageError(message)
+                raise RuntimeError(f"rank {slot}: {name}")
+            return response, shared
+        finally:
+            self.done(slot)
+
+    def ready(self) -> None:
+        """Returns once every other rank has loaded and warmed up."""
+        for channel in self.channels:
+            channel.receive()
+
+    def stop(self) -> None:
+        for channel in self.channels:
+            with channel.lock:
+                channel.send(STOP)
+
+
+def follow(runner: Any, group: dist.ProcessGroup, rank: int) -> None:
+    """A rank other than 0: tells rank 0 it is ready, then runs what rank 0 hands it until the server stops."""
+    dist.broadcast_object_list([READY], src=rank, group=group)
+    while True:
+        box: list[Any] = [None]
+        dist.broadcast_object_list(box, src=0, group=group)
+        if box[0] is STOP:
+            return
+        questions, plan = box[0]
+        try:
+            reply = (runner.run(questions, plan), None)
+        except Exception as error:  # noqa: BLE001 - rank 0 answers for it; this rank keeps following
+            log(event="follower_error", error=type(error).__name__)
+            reply = (None, (type(error).__name__, str(error)))
+        dist.broadcast_object_list([reply], src=rank, group=group)
+
+
+class Server(ThreadingHTTPServer):
+    daemon_threads = True
+    request_queue_size = 256
+
+    def __init__(self, address: tuple[str, int], ranks: Ranks, name: str, info: dict[str, Any]) -> None:
+        self.ranks, self.name, self.info = ranks, name, info
+        super().__init__(address, Handler)
+
+
+class Handler(BaseHTTPRequestHandler):
+    protocol_version = "HTTP/1.1"
+    disable_nagle_algorithm = True
+    timeout = 60
+    server: Server
+
+    def log_message(self, format: str, *args: Any) -> None:
+        pass
+
+    def _send(self, status: int, body: dict[str, Any], timing: str | None = None) -> None:
+        data = json.dumps(body, allow_nan=False).encode()
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(data)))
+        if timing:
+            self.send_header("Server-Timing", timing)
+        self.end_headers()
+        self.wfile.write(data)
+
+    def _error(self, status: int, message: str, close: bool = False) -> None:
+        if close:
+            self.close_connection = True
+        self._send(status, {"error": {"message": message}})
+        log(event="request", status=status, error=message[:200])
+
+    def do_GET(self) -> None:
+        if urlsplit(self.path).path == "/healthz":
+            self._send(200, {"ok": True, "model": self.server.name, **self.server.info})
+        else:
+            self._error(404, "not found")
+
+    def do_POST(self) -> None:
+        start = time.perf_counter()
+        if urlsplit(self.path).path != "/v1/systemone":
+            return self._error(404, "not found", close=True)
+        length = self.headers.get("Content-Length", "")
+        if not length.isdigit():
+            return self._error(411, "Content-Length is required", close=True)
+        if int(length) > MAX_BODY_BYTES:
+            return self._error(413, f"body is larger than {MAX_BODY_BYTES} bytes", close=True)
+        decider = self.server.ranks.decider
+        try:
+            raw = wire.inflate(self.rfile.read(int(length)), self.headers.get(wire.CONTENT_ENCODING), MAX_BODY_BYTES)
+            content_type = self.headers.get(wire.CONTENT_TYPE, "")
+            parts: dict[str, bytes] = {}
+            if content_type.split(";")[0].strip().lower() == wire.MULTIPART:
+                raw, parts = wire.parse_multipart(raw, content_type)
+            body = scrub(json.loads(raw))
+            if not isinstance(body, dict):
+                raise RequestError("the body must be a JSON object")
+            body = wire.claim(body, parts)
+            request: Request = {"state": body.get("state", ""), "questions": body.get("questions")}
+            if body.get("images"):
+                request["images"] = body["images"]
+            if body.get(ASSETS) is not None:
+                request[ASSETS] = body[ASSETS]
+            encoding = time.perf_counter()
+            check_images(request)
+            plan = decider.plan(request)
+        except wire.TooLarge as error:
+            return self._error(413, str(error))
+        except wire.UnsupportedEncoding as error:
+            return self._error(415, str(error))
+        except (RequestError, LengthError) as error:  # outside the contract, or a question that does not fit
+            return self._error(422, str(error))
+        except (ValueError, OSError) as error:  # the body, an image or an asset it cannot read
+            return self._error(400, str(error))
+        except Exception as error:  # noqa: BLE001 - answer instead of dropping the connection
+            log(event="request", status=500, error=type(error).__name__, stage="encode")
+            return self._send(500, {"error": {"message": "the request could not be encoded"}})
+        running = time.perf_counter()
+        try:
+            response, shared = self.server.ranks.run(request["questions"], plan)
+        except ImageError as error:  # an image whose pixels do not decode, found when its pack was prepared
+            return self._error(400, str(error))
+        except Exception as error:  # noqa: BLE001 - one failed request must not stop the server
+            log(event="request", status=500, error=type(error).__name__)
+            return self._send(500, {"error": {"message": "inference failed"}})
+        done = time.perf_counter()
+        encode_ms, model_ms = (running - encoding) * 1000, (done - running) * 1000 - shared
+        timing = f"encode;dur={encode_ms:.1f}, share;dur={shared:.1f}, model;dur={model_ms:.1f}"
+        tokens = response["usage"]["input_tokens"]
+        self._send(200, {"id": f"decision-{uuid.uuid4().hex}", "model": self.server.name,
+                         "answers": response["answers"], "usage": {"input_tokens": tokens, "output_tokens": 0}}, timing)
+        log(event="request", status=200, questions=len(response["answers"]), tokens=tokens, sequences=len(plan),
+            encode_ms=round(encode_ms, 1), share_ms=round(shared, 1), model_ms=round(model_ms, 1),
+            total_ms=round((done - start) * 1000, 1))
+
+
+def positive(text: str) -> int:
+    if not text.isdecimal() or int(text) < 1:
+        raise argparse.ArgumentTypeError(f"{text} is not a positive integer")
+    return int(text)
+
+
+def arguments(argv: Sequence[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    parser.add_argument("--checkpoint", required=True)
+    parser.add_argument("--host", default="127.0.0.1")
+    parser.add_argument("--port", type=int, default=18440)
+    parser.add_argument("--name", default="karpo-decision")
+    parser.add_argument("--fp8", action="store_true", help="the decoder projections in FP8")
+    parser.add_argument("--graphs", action="store_true", help="CUDA graphs captured at startup")
+    parser.add_argument("--triton-attention", action="store_true",
+                        help="the global layers' attention in one Triton kernel (sm_120)")
+    parser.add_argument("--max-length", type=positive, default=DEFAULT_MAX_LENGTH,
+                        help="the longest sequence in tokens")
+    return parser.parse_args(argv)
+
+
+def main() -> None:
+    args = arguments()
+    local = int(os.environ["LOCAL_RANK"])
+    device = torch.device("cuda", local)
+    torch.cuda.set_device(device)
+    dist.init_process_group(CHANNEL_BACKEND, timeout=CHANNEL_TIMEOUT)
+    rank, world = dist.get_rank(), dist.get_world_size()
+    # One channel per other rank; every rank creates all of them, in the same order.
+    groups = [dist.new_group([0, other], backend=CHANNEL_BACKEND, timeout=CHANNEL_TIMEOUT)
+              for other in range(1, world)]
+    started = time.time()
+    decider, warmup = load_decider(args.checkpoint, device, args.max_length, fp8=args.fp8,
+                                   triton_attention=args.triton_attention, graphs=args.graphs)
+    loaded = time.time()
+    decider.decide(warmup)
+    runner = Runner(decider, device)
+    if rank != 0:
+        follow(runner, groups[rank - 1], rank)
+        os._exit(0)
+    ranks = Ranks(runner, [Channel(group, other) for other, group in enumerate(groups, start=1)])
+    ranks.ready()
+    info = {"ranks": world, "gpu": torch.cuda.get_device_name(device), "attention": decider.config.attention,
+            "path": path_name(args.fp8, isinstance(decider.model, (gemma_graphs.Graphs, qwen_graphs.CudaGraphs))),
+            "kernels": ["triton-attention"] if args.triton_attention else [], "max_length": decider.max_length}
+    log(event="loaded", seconds=round(loaded - started), warmup_seconds=round(time.time() - loaded, 1), **info)
+    server = Server((args.host, args.port), ranks, args.name, info)
+    stop = threading.Event()
+    for sig in (signal.SIGTERM, signal.SIGINT):
+        signal.signal(sig, lambda *_: stop.set())
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    log(event="listening", host=args.host, port=args.port, model=args.name)
+    stop.wait()
+    server.shutdown()
+    server.server_close()
+    ranks.stop()
+    # The process just ends, without tearing the process group down.
+    os._exit(0)
+
+
+if __name__ == "__main__":
+    main()

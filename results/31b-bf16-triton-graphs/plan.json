@@ -1,0 +1,32 @@
+{
+  "name": "31b-bf16-triton-graphs",
+  "base_url": "http://127.0.0.1:18440",
+  "cache": "disabled",
+  "manifest": {
+    "seed": 20261119,
+    "synthetic_cases": 40,
+    "synthetic_templates": 20,
+    "candidate_catalog_size": 200,
+    "expanded_requests": 640,
+    "existing_payment_observations": 80,
+    "scope": "Synthetic business-domain/action routing, not actual Redotpay policy, customer data or a SOTA benchmark.",
+    "quality_plan": "All 40 synthetic snapshots x original/reversed order, 200 detailed candidates; all existing payment requests.",
+    "performance_plan": "Fixed selected inputs across 20/50/100/200 compact/detailed candidates, then concurrency and open-loop load.",
+    "caching": "No result cache or retrieval shortlist in the 200-candidate benchmark.",
+    "independence": "40 synthetic snapshots derive from 20 templates; reordered requests are paired observations, not new independent cases.",
+    "payment_source": "/home/ec2-user/ai/StrandsDecider/validation/open_decision_models",
+    "payment_source_sha256": "e4326b28e44aed8dc61bd11fdd2684d2ec5f73775ed05d067a3ba810f71dd048",
+    "files": {
+      "fixtures/cases.json": "2082d1d211b032184ab8b2db81a5b617e83d37bd19cb0444013da7970f7b117f",
+      "fixtures/catalog.json": "a26d554b1402b749ae3a2f742342d718a74b188f816964969badad55bd6176c7",
+      "fixtures/payment.json": "7291644bf0983dd2e2f8a78227b208ec92a41a9f300d06fa5039fe32f8d801aa",
+      "fixtures/requests.json": "58865658afa4891dccdbc9ae3933868d29f6f80ddd9f6e76d778dfdb9e89cbce"
+    }
+  },
+  "precision_flags": "--triton-attention --graphs",
+  "latency_client": "same GPU host, loopback HTTP",
+  "clock": "time.perf_counter",
+  "timeout_s": 30,
+  "automatic_retries": 0,
+  "requested_phase": "all"
+}

@@ -1,0 +1,15 @@
+.state/
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+*.tar.gz
+sources/karpo/
+models/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
