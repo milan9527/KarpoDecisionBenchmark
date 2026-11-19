@@ -1,0 +1,52 @@
+{
+  "instance_id": "i-048c3784bb87b6d86",
+  "instance_type": "g7e.8xlarge",
+  "region": "us-east-2",
+  "availability_zone": "us-east-2c",
+  "state": "stopped",
+  "observed_utc": "2026-11-19T16:15:40.588161+00:00",
+  "launch_time": "2026-11-19T15:43:56+00:00",
+  "market": "spot",
+  "spot_type": "persistent",
+  "spot_request_state": "disabled",
+  "spot_request_status": "instance-stopped-by-user",
+  "interruption_behavior": "stop",
+  "shutdown_behavior": "stop",
+  "root_volumes": [
+    {
+      "DeviceName": "/dev/sda1",
+      "Ebs": {
+        "AttachTime": "2026-11-19 15:43:57+00:00",
+        "DeleteOnTermination": false,
+        "Status": "attached",
+        "VolumeId": "vol-02af28534c5b54eee",
+        "EbsCardIndex": 0
+      }
+    }
+  ],
+  "weight_storage": "root EBS",
+  "root_gib": 300,
+  "root_throughput_mibps": 500,
+  "source_snapshot": "snap-0a6e91176fce5e8fb",
+  "restored_image": "ami-0bc08965f421c8494",
+  "force_stop_requested_utc": "2026-11-19T16:14:53.394029+00:00",
+  "force_stop_reason": "Normal StopInstances stayed stopping for over five minutes; console confirmed filesystem unmount and system Power down before forced StopInstances.",
+  "stop_requested_utc": "2026-11-19T16:09:22.869377+00:00",
+  "estimated_compute_usd": 1.051801,
+  "estimated_seconds": 1526.869377,
+  "price_segments": [
+    {
+      "start": "2026-11-19T15:43:56+00:00",
+      "end": "2026-11-19T16:09:22.869377+00:00",
+      "usd_per_hour": 2.4799,
+      "seconds": 1526.869377
+    }
+  ],
+  "cost_scope": "Launch-to-stop-request estimate, not an invoice; excludes EBS/snapshots/IPv4/S3/network.",
+  "original_preservation": {
+    "volume_id": "vol-0f216baca898aebbe",
+    "volume_state": "available",
+    "snapshot_id": "snap-0a6e91176fce5e8fb",
+    "snapshot_state": "completed"
+  }
+}

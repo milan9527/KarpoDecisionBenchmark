@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-11-19T15:46:02.259826+00:00",
+  "variants": [
+    "original",
+    "concise-en",
+    "concise-zh",
+    "factored"
+  ],
+  "candidate_count_every_request": 200,
+  "routing_or_filtering": false,
+  "result_cache": false,
+  "quality": {
+    "existing_snapshots": 40,
+    "additional_boundary_snapshots": 12,
+    "orders_per_snapshot": 2,
+    "observations_per_variant": 104
+  },
+  "performance": {
+    "concurrency": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "requests_per_cell": 24,
+    "warmup_per_variant": 8,
+    "final_baseline_drift_observations": 16
+  },
+  "flags": [
+    "--fp8",
+    "--triton-attention",
+    "--graphs"
+  ],
+  "comparison": "Same server, same states, same 200 IDs and candidate order for every variant.",
+  "factored": "Static policy deduplication in the model input, no programmatic business decisions.",
+  "limitations": "Synthetic paired observations; not production accuracy or a SOTA benchmark.",
+  "source_sha256": {
+    "fixtures/catalog.json": "a26d554b1402b749ae3a2f742342d718a74b188f816964969badad55bd6176c7",
+    "fixtures/requests.json": "58865658afa4891dccdbc9ae3933868d29f6f80ddd9f6e76d778dfdb9e89cbce",
+    "scripts/prepare.py": "e54b6180306e8ff0153a9b59e28964923d7d267b5096cf68efc065a31bc3cedf"
+  },
+  "files": {
+    "fixtures/action-specs.json": "6921e22ab1ca5ccf706ee767cb9ec8262c1d17e5f62f6fdc890c1ba5962b69f2",
+    "fixtures/boundary-cases.json": "23eb19a927807ddc3509662ad3c54fb644e7fcbc85caec8ba04cfd5a05e096eb",
+    "fixtures/description-variants.json": "4a4388ff46f6de7a93e5b654e3006e127d081e6afeface66112c94489d50e4f8",
+    "fixtures/requests.json": "63ca0175f33fe6c2a9df26ade1371ca2721a0c0346d521c396f6213aacd2824b"
+  }
+}

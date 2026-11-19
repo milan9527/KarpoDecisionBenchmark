@@ -1,0 +1,26 @@
+{
+  "ended_utc": "2026-11-19T16:08:49.338299+00:00",
+  "elapsed_seconds": 735.557589682,
+  "variants": [
+    {
+      "variant": "original",
+      "status": "complete",
+      "observations": 224
+    },
+    {
+      "variant": "concise-en",
+      "status": "complete",
+      "observations": 208
+    },
+    {
+      "variant": "concise-zh",
+      "status": "complete",
+      "observations": 208
+    },
+    {
+      "variant": "factored",
+      "status": "complete",
+      "observations": 208
+    }
+  ]
+}

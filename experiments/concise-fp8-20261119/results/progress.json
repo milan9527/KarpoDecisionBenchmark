@@ -1,0 +1,22 @@
+[
+  {
+    "variant": "original",
+    "status": "measured",
+    "observations": 208
+  },
+  {
+    "variant": "concise-en",
+    "status": "measured",
+    "observations": 208
+  },
+  {
+    "variant": "concise-zh",
+    "status": "measured",
+    "observations": 208
+  },
+  {
+    "variant": "factored",
+    "status": "measured",
+    "observations": 208
+  }
+]

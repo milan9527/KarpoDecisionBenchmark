@@ -1,0 +1,18 @@
+{
+  "sha256": "acb7e5d87867baebd79ca01d21a69d9262c093f002732c3db34e2309bc4dd9a5",
+  "files": {
+    "scripts/benchmark.py": "3eb29a865be73ea3a70e9fd16f1d2e72403ecf6edb900ada7d263be8ad4b7dc2",
+    "scripts/prepare.py": "e54b6180306e8ff0153a9b59e28964923d7d267b5096cf68efc065a31bc3cedf",
+    "scripts/concise_prepare.py": "e57aeebfbe11484a0a57a91fd1a808cc5ab70e87be851a721f1464d58458502a",
+    "scripts/concise_benchmark.py": "93929a560734a64544b674b6c3cd9ea568bb84acc1727e594d9dc93ca43cb5b7",
+    "scripts/concise_suite.py": "4627b3f85999ff48abaa2c8de8a35923e9c8166d4b27f55111d7bad4e324849c",
+    "fixtures/catalog.json": "a26d554b1402b749ae3a2f742342d718a74b188f816964969badad55bd6176c7",
+    "fixtures/requests.json": "58865658afa4891dccdbc9ae3933868d29f6f80ddd9f6e76d778dfdb9e89cbce",
+    "experiments/concise-fp8-20261119/PLAN.zh.md": "da20c661c3757b8158b3650603fcd3c9c52313d6b34fc5922d4afcb816ef18e3",
+    "experiments/concise-fp8-20261119/fixtures/action-specs.json": "6921e22ab1ca5ccf706ee767cb9ec8262c1d17e5f62f6fdc890c1ba5962b69f2",
+    "experiments/concise-fp8-20261119/fixtures/boundary-cases.json": "23eb19a927807ddc3509662ad3c54fb644e7fcbc85caec8ba04cfd5a05e096eb",
+    "experiments/concise-fp8-20261119/fixtures/description-variants.json": "4a4388ff46f6de7a93e5b654e3006e127d081e6afeface66112c94489d50e4f8",
+    "experiments/concise-fp8-20261119/fixtures/manifest.json": "79e6c0ca7401186536b19080d2410e8d820b195ab960476b9f9060a4d2329968",
+    "experiments/concise-fp8-20261119/fixtures/requests.json": "63ca0175f33fe6c2a9df26ade1371ca2721a0c0346d521c396f6213aacd2824b"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "checked_utc": "2026-11-19T16:15:44.939867+00:00",
+  "all_complete": true,
+  "total_calls": 848,
+  "checks": [
+    {
+      "variant": "original",
+      "observations": 224,
+      "raw_sha256": "3a346a182594944ddbeb38662be192b71506361a33b890d2fb93b39003a28d78"
+    },
+    {
+      "variant": "concise-en",
+      "observations": 208,
+      "raw_sha256": "b77a94142a0de062479e74ddee3fb8fffd2b66a0a2264c6d30843a567487e890"
+    },
+    {
+      "variant": "concise-zh",
+      "observations": 208,
+      "raw_sha256": "b939778a9340296528d2ee5e6100fcd0dd919ac5390b14151081a3f86bb41656"
+    },
+    {
+      "variant": "factored",
+      "observations": 208,
+      "raw_sha256": "eb22da3e4124ca407b5c3526a1097a750402ccfe97bb526bc9231ff2500b9dc0"
+    }
+  ],
+  "invariants": "200 candidates, frozen request hashes, exact quality coverage, raw answers and stage metrics verified."
+}

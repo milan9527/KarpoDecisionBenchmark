@@ -1,0 +1,162 @@
+[
+  {
+    "code": "A0",
+    "action": "collect_reference",
+    "original_name": "Collect a missing transaction or ticket reference",
+    "original_condition": "A status inquiry has no usable reference; do not invent one.",
+    "concise_en": "Collect reference: status inquiry lacks a usable transaction/ticket reference; never invent one.",
+    "concise_zh": "索取编号：查询进度却无可用交易号或工单号，不得编造。"
+  },
+  {
+    "code": "A1",
+    "action": "verify_identity",
+    "original_name": "Complete identity verification",
+    "original_condition": "The requested account operation requires identity verification, which is incomplete.",
+    "concise_en": "Verify identity: requested account operation requires identity verification that is incomplete.",
+    "concise_zh": "身份验证：所请求账户操作要求身份验证，但尚未完成。"
+  },
+  {
+    "code": "A2",
+    "action": "clarify_request",
+    "original_name": "Clarify an ambiguous request",
+    "original_condition": "The customer has not specified the desired operation; ask before acting.",
+    "concise_en": "Clarify intent: desired operation unspecified; ask before acting.",
+    "concise_zh": "澄清意图：客户未说明要执行的操作，先询问。"
+  },
+  {
+    "code": "A3",
+    "action": "compliance_review",
+    "original_name": "Escalate to compliance review",
+    "original_condition": "An active compliance hold overrides approvals and the customer's request to proceed.",
+    "concise_en": "Compliance review: active compliance hold overrides approval and customer requests to proceed.",
+    "concise_zh": "风控复核：存在有效风控冻结，优先于审批和客户继续执行的指令。"
+  },
+  {
+    "code": "A4",
+    "action": "secure_account",
+    "original_name": "Secure suspected compromised account access",
+    "original_condition": "The customer reports stolen credentials and unrecognized activity; secure access first.",
+    "concise_en": "Secure access first: customer reports stolen credentials and unrecognized activity.",
+    "concise_zh": "先保护访问：客户报告凭证被盗且出现非本人操作。"
+  },
+  {
+    "code": "A5",
+    "action": "duplicate_check",
+    "original_name": "Prevent a duplicate funds operation",
+    "original_condition": "The exact requested operation is already recorded as executed under the same idempotency key.",
+    "concise_en": "Prevent duplicate funds operation: the same operation is already executed under its idempotency key.",
+    "concise_zh": "阻止重复资金操作：同一幂等键对应的同一操作已执行。"
+  },
+  {
+    "code": "A6",
+    "action": "await_confirmations",
+    "original_name": "Wait for required chain confirmations",
+    "original_condition": "Observed chain confirmations are below the required count; the waiting SLA has not expired.",
+    "concise_en": "Wait for chain confirmations: below required count and waiting SLA not expired.",
+    "concise_zh": "等待链上确认：确认数不足，且等待时限尚未过期。"
+  },
+  {
+    "code": "A7",
+    "action": "request_shortfall",
+    "original_name": "Request resolution of an amount shortfall",
+    "original_condition": "Confirmations are sufficient but the received amount is below the required amount.",
+    "concise_en": "Resolve amount shortfall: confirmations sufficient but received amount below required amount.",
+    "concise_zh": "处理金额不足：确认数足够，但实收金额低于所需金额。"
+  },
+  {
+    "code": "A8",
+    "action": "investigate_delay",
+    "original_name": "Investigate processing beyond its SLA",
+    "original_condition": "The operation is still pending after its processing SLA, with no duplicate or compliance hold.",
+    "concise_en": "Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold.",
+    "concise_zh": "调查超时：仍在等待且超过处理时限，无重复执行或风控冻结。"
+  },
+  {
+    "code": "A9",
+    "action": "reconcile_ledger",
+    "original_name": "Reconcile provider and internal ledger mismatch",
+    "original_condition": "Provider completion is confirmed but the internal ledger records a different amount.",
+    "concise_en": "Reconcile ledger: provider completion confirmed but internal ledger amount differs.",
+    "concise_zh": "核对账本：外部已确认完成，但内部账本金额不同。"
+  },
+  {
+    "code": "A10",
+    "action": "verify_destination",
+    "original_name": "Verify an unverified funds destination",
+    "original_condition": "A funds operation specifies a destination that has not yet been verified.",
+    "concise_en": "Verify destination: funds operation specifies a destination not yet verified.",
+    "concise_zh": "核验收款方：资金操作指定的收款地址尚未验证。"
+  },
+  {
+    "code": "A11",
+    "action": "request_approval",
+    "original_name": "Request the outstanding funds approval",
+    "original_condition": "Financial and destination checks passed, but a required approval record is missing.",
+    "concise_en": "Request approval: financial and destination checks passed, but required approval record missing.",
+    "concise_zh": "申请审批：资金及收款方检查通过，但缺少必需的审批记录。"
+  },
+  {
+    "code": "A12",
+    "action": "execute_authorized",
+    "original_name": "Execute the authorized funds operation",
+    "original_condition": "All financial, identity and destination checks passed; approval is valid, no hold and no prior execution.",
+    "concise_en": "Execute funds operation: financial, identity and destination checks passed; valid approval, no hold or prior execution.",
+    "concise_zh": "执行资金操作：资金、身份、收款方检查通过，审批有效，无冻结且此前未执行。"
+  },
+  {
+    "code": "A13",
+    "action": "close_resolved",
+    "original_name": "Close the fully resolved support ticket",
+    "original_condition": "Execution, reconciled ledger completion and customer acknowledgement are all confirmed.",
+    "concise_en": "Close ticket: execution, reconciled ledger completion and customer acknowledgement all confirmed.",
+    "concise_zh": "关闭工单：执行完成、账本对账完成及客户确认均已核实。"
+  },
+  {
+    "code": "A14",
+    "action": "explain_fees",
+    "original_name": "Explain the published fee",
+    "original_condition": "The customer asks only for a fee explanation and is not requesting a funds operation.",
+    "concise_en": "Explain fee: customer asks only about the published fee, with no funds operation requested.",
+    "concise_zh": "解释费用：客户仅询问公布的费用，未请求资金操作。"
+  },
+  {
+    "code": "A15",
+    "action": "explain_limit",
+    "original_name": "Explain the applicable transaction limit",
+    "original_condition": "The requested amount exceeds the published limit; do not execute it.",
+    "concise_en": "Explain limit: requested amount exceeds published limit; do not execute.",
+    "concise_zh": "解释额度：请求金额超过公布限额，不得执行。"
+  },
+  {
+    "code": "A16",
+    "action": "reject_unsupported",
+    "original_name": "Decline an unsupported region or product",
+    "original_condition": "The requested region or product is explicitly unsupported by the current policy.",
+    "concise_en": "Decline unsupported request: current policy explicitly excludes requested region or product.",
+    "concise_zh": "拒绝不支持项：当前政策明确不支持所请求地区或产品。"
+  },
+  {
+    "code": "A17",
+    "action": "review_refund",
+    "original_name": "Review a refund requested within the allowed window",
+    "original_condition": "A new refund is requested within its allowed window, and there has been no refund execution.",
+    "concise_en": "Review refund: new request within allowed window, with no refund execution.",
+    "concise_zh": "审核退款：新申请在允许期限内，且未执行退款。"
+  },
+  {
+    "code": "A18",
+    "action": "reject_late_refund",
+    "original_name": "Decline a refund outside the allowed window",
+    "original_condition": "A refund request exceeds its allowed window and no policy exception is present.",
+    "concise_en": "Decline late refund: request beyond allowed window, without a policy exception.",
+    "concise_zh": "拒绝超期退款：申请超过允许期限，且无政策例外。"
+  },
+  {
+    "code": "A19",
+    "action": "restore_access",
+    "original_name": "Restore access after a completed security review",
+    "original_condition": "Access is blocked, but identity and security review have both cleared and no active hold remains.",
+    "concise_en": "Restore access: blocked access, identity and security reviews cleared, no active hold.",
+    "concise_zh": "恢复访问：访问受限，但身份与安全复核均通过，且无有效冻结。"
+  }
+]

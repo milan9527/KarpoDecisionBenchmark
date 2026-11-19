@@ -1,0 +1,1202 @@
+{
+  "sop_010": {
+    "original": "Only 银行卡线上消费 (card purchase): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one.",
+    "concise-en": "card purchase | Collect reference: status inquiry lacks a usable transaction/ticket reference; never invent one.",
+    "concise-zh": "银行卡线上消费｜索取编号：查询进度却无可用交易号或工单号，不得编造。",
+    "factored": "D0 A0"
+  },
+  "sop_049": {
+    "original": "Only 银行卡线上消费 (card purchase): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete.",
+    "concise-en": "card purchase | Verify identity: requested account operation requires identity verification that is incomplete.",
+    "concise-zh": "银行卡线上消费｜身份验证：所请求账户操作要求身份验证，但尚未完成。",
+    "factored": "D0 A1"
+  },
+  "sop_121": {
+    "original": "Only 银行卡线上消费 (card purchase): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting.",
+    "concise-en": "card purchase | Clarify intent: desired operation unspecified; ask before acting.",
+    "concise-zh": "银行卡线上消费｜澄清意图：客户未说明要执行的操作，先询问。",
+    "factored": "D0 A2"
+  },
+  "sop_071": {
+    "original": "Only 银行卡线上消费 (card purchase): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed.",
+    "concise-en": "card purchase | Compliance review: active compliance hold overrides approval and customer requests to proceed.",
+    "concise-zh": "银行卡线上消费｜风控复核：存在有效风控冻结，优先于审批和客户继续执行的指令。",
+    "factored": "D0 A3"
+  },
+  "sop_176": {
+    "original": "Only 银行卡线上消费 (card purchase): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first.",
+    "concise-en": "card purchase | Secure access first: customer reports stolen credentials and unrecognized activity.",
+    "concise-zh": "银行卡线上消费｜先保护访问：客户报告凭证被盗且出现非本人操作。",
+    "factored": "D0 A4"
+  },
+  "sop_082": {
+    "original": "Only 银行卡线上消费 (card purchase): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key.",
+    "concise-en": "card purchase | Prevent duplicate funds operation: the same operation is already executed under its idempotency key.",
+    "concise-zh": "银行卡线上消费｜阻止重复资金操作：同一幂等键对应的同一操作已执行。",
+    "factored": "D0 A5"
+  },
+  "sop_002": {
+    "original": "Only 银行卡线上消费 (card purchase): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired.",
+    "concise-en": "card purchase | Wait for chain confirmations: below required count and waiting SLA not expired.",
+    "concise-zh": "银行卡线上消费｜等待链上确认：确认数不足，且等待时限尚未过期。",
+    "factored": "D0 A6"
+  },
+  "sop_086": {
+    "original": "Only 银行卡线上消费 (card purchase): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount.",
+    "concise-en": "card purchase | Resolve amount shortfall: confirmations sufficient but received amount below required amount.",
+    "concise-zh": "银行卡线上消费｜处理金额不足：确认数足够，但实收金额低于所需金额。",
+    "factored": "D0 A7"
+  },
+  "sop_009": {
+    "original": "Only 银行卡线上消费 (card purchase): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold.",
+    "concise-en": "card purchase | Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold.",
+    "concise-zh": "银行卡线上消费｜调查超时：仍在等待且超过处理时限，无重复执行或风控冻结。",
+    "factored": "D0 A8"
+  },
+  "sop_034": {
+    "original": "Only 银行卡线上消费 (card purchase): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount.",
+    "concise-en": "card purchase | Reconcile ledger: provider completion confirmed but internal ledger amount differs.",
+    "concise-zh": "银行卡线上消费｜核对账本：外部已确认完成，但内部账本金额不同。",
+    "factored": "D0 A9"
+  },
+  "sop_083": {
+    "original": "Only 银行卡线上消费 (card purchase): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified.",
+    "concise-en": "card purchase | Verify destination: funds operation specifies a destination not yet verified.",
+    "concise-zh": "银行卡线上消费｜核验收款方：资金操作指定的收款地址尚未验证。",
+    "factored": "D0 A10"
+  },
+  "sop_160": {
+    "original": "Only 银行卡线上消费 (card purchase): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing.",
+    "concise-en": "card purchase | Request approval: financial and destination checks passed, but required approval record missing.",
+    "concise-zh": "银行卡线上消费｜申请审批：资金及收款方检查通过，但缺少必需的审批记录。",
+    "factored": "D0 A11"
+  },
+  "sop_027": {
+    "original": "Only 银行卡线上消费 (card purchase): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution.",
+    "concise-en": "card purchase | Execute funds operation: financial, identity and destination checks passed; valid approval, no hold or prior execution.",
+    "concise-zh": "银行卡线上消费｜执行资金操作：资金、身份、收款方检查通过，审批有效，无冻结且此前未执行。",
+    "factored": "D0 A12"
+  },
+  "sop_189": {
+    "original": "Only 银行卡线上消费 (card purchase): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed.",
+    "concise-en": "card purchase | Close ticket: execution, reconciled ledger completion and customer acknowledgement all confirmed.",
+    "concise-zh": "银行卡线上消费｜关闭工单：执行完成、账本对账完成及客户确认均已核实。",
+    "factored": "D0 A13"
+  },
+  "sop_075": {
+    "original": "Only 银行卡线上消费 (card purchase): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation.",
+    "concise-en": "card purchase | Explain fee: customer asks only about the published fee, with no funds operation requested.",
+    "concise-zh": "银行卡线上消费｜解释费用：客户仅询问公布的费用，未请求资金操作。",
+    "factored": "D0 A14"
+  },
+  "sop_094": {
+    "original": "Only 银行卡线上消费 (card purchase): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it.",
+    "concise-en": "card purchase | Explain limit: requested amount exceeds published limit; do not execute.",
+    "concise-zh": "银行卡线上消费｜解释额度：请求金额超过公布限额，不得执行。",
+    "factored": "D0 A15"
+  },
+  "sop_097": {
+    "original": "Only 银行卡线上消费 (card purchase): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy.",
+    "concise-en": "card purchase | Decline unsupported request: current policy explicitly excludes requested region or product.",
+    "concise-zh": "银行卡线上消费｜拒绝不支持项：当前政策明确不支持所请求地区或产品。",
+    "factored": "D0 A16"
+  },
+  "sop_148": {
+    "original": "Only 银行卡线上消费 (card purchase): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution.",
+    "concise-en": "card purchase | Review refund: new request within allowed window, with no refund execution.",
+    "concise-zh": "银行卡线上消费｜审核退款：新申请在允许期限内，且未执行退款。",
+    "factored": "D0 A17"
+  },
+  "sop_074": {
+    "original": "Only 银行卡线上消费 (card purchase): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present.",
+    "concise-en": "card purchase | Decline late refund: request beyond allowed window, without a policy exception.",
+    "concise-zh": "银行卡线上消费｜拒绝超期退款：申请超过允许期限，且无政策例外。",
+    "factored": "D0 A18"
+  },
+  "sop_133": {
+    "original": "Only 银行卡线上消费 (card purchase): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains.",
+    "concise-en": "card purchase | Restore access: blocked access, identity and security reviews cleared, no active hold.",
+    "concise-zh": "银行卡线上消费｜恢复访问：访问受限，但身份与安全复核均通过，且无有效冻结。",
+    "factored": "D0 A19"
+  },
+  "sop_044": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one.",
+    "concise-en": "ATM withdrawal | Collect reference: status inquiry lacks a usable transaction/ticket reference; never invent one.",
+    "concise-zh": "银行卡 ATM 取现｜索取编号：查询进度却无可用交易号或工单号，不得编造。",
+    "factored": "D1 A0"
+  },
+  "sop_111": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete.",
+    "concise-en": "ATM withdrawal | Verify identity: requested account operation requires identity verification that is incomplete.",
+    "concise-zh": "银行卡 ATM 取现｜身份验证：所请求账户操作要求身份验证，但尚未完成。",
+    "factored": "D1 A1"
+  },
+  "sop_138": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting.",
+    "concise-en": "ATM withdrawal | Clarify intent: desired operation unspecified; ask before acting.",
+    "concise-zh": "银行卡 ATM 取现｜澄清意图：客户未说明要执行的操作，先询问。",
+    "factored": "D1 A2"
+  },
+  "sop_026": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed.",
+    "concise-en": "ATM withdrawal | Compliance review: active compliance hold overrides approval and customer requests to proceed.",
+    "concise-zh": "银行卡 ATM 取现｜风控复核：存在有效风控冻结，优先于审批和客户继续执行的指令。",
+    "factored": "D1 A3"
+  },
+  "sop_087": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first.",
+    "concise-en": "ATM withdrawal | Secure access first: customer reports stolen credentials and unrecognized activity.",
+    "concise-zh": "银行卡 ATM 取现｜先保护访问：客户报告凭证被盗且出现非本人操作。",
+    "factored": "D1 A4"
+  },
+  "sop_152": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key.",
+    "concise-en": "ATM withdrawal | Prevent duplicate funds operation: the same operation is already executed under its idempotency key.",
+    "concise-zh": "银行卡 ATM 取现｜阻止重复资金操作：同一幂等键对应的同一操作已执行。",
+    "factored": "D1 A5"
+  },
+  "sop_126": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired.",
+    "concise-en": "ATM withdrawal | Wait for chain confirmations: below required count and waiting SLA not expired.",
+    "concise-zh": "银行卡 ATM 取现｜等待链上确认：确认数不足，且等待时限尚未过期。",
+    "factored": "D1 A6"
+  },
+  "sop_131": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount.",
+    "concise-en": "ATM withdrawal | Resolve amount shortfall: confirmations sufficient but received amount below required amount.",
+    "concise-zh": "银行卡 ATM 取现｜处理金额不足：确认数足够，但实收金额低于所需金额。",
+    "factored": "D1 A7"
+  },
+  "sop_116": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold.",
+    "concise-en": "ATM withdrawal | Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold.",
+    "concise-zh": "银行卡 ATM 取现｜调查超时：仍在等待且超过处理时限，无重复执行或风控冻结。",
+    "factored": "D1 A8"
+  },
+  "sop_032": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount.",
+    "concise-en": "ATM withdrawal | Reconcile ledger: provider completion confirmed but internal ledger amount differs.",
+    "concise-zh": "银行卡 ATM 取现｜核对账本：外部已确认完成，但内部账本金额不同。",
+    "factored": "D1 A9"
+  },
+  "sop_184": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified.",
+    "concise-en": "ATM withdrawal | Verify destination: funds operation specifies a destination not yet verified.",
+    "concise-zh": "银行卡 ATM 取现｜核验收款方：资金操作指定的收款地址尚未验证。",
+    "factored": "D1 A10"
+  },
+  "sop_058": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing.",
+    "concise-en": "ATM withdrawal | Request approval: financial and destination checks passed, but required approval record missing.",
+    "concise-zh": "银行卡 ATM 取现｜申请审批：资金及收款方检查通过，但缺少必需的审批记录。",
+    "factored": "D1 A11"
+  },
+  "sop_078": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution.",
+    "concise-en": "ATM withdrawal | Execute funds operation: financial, identity and destination checks passed; valid approval, no hold or prior execution.",
+    "concise-zh": "银行卡 ATM 取现｜执行资金操作：资金、身份、收款方检查通过，审批有效，无冻结且此前未执行。",
+    "factored": "D1 A12"
+  },
+  "sop_047": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed.",
+    "concise-en": "ATM withdrawal | Close ticket: execution, reconciled ledger completion and customer acknowledgement all confirmed.",
+    "concise-zh": "银行卡 ATM 取现｜关闭工单：执行完成、账本对账完成及客户确认均已核实。",
+    "factored": "D1 A13"
+  },
+  "sop_139": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation.",
+    "concise-en": "ATM withdrawal | Explain fee: customer asks only about the published fee, with no funds operation requested.",
+    "concise-zh": "银行卡 ATM 取现｜解释费用：客户仅询问公布的费用，未请求资金操作。",
+    "factored": "D1 A14"
+  },
+  "sop_053": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it.",
+    "concise-en": "ATM withdrawal | Explain limit: requested amount exceeds published limit; do not execute.",
+    "concise-zh": "银行卡 ATM 取现｜解释额度：请求金额超过公布限额，不得执行。",
+    "factored": "D1 A15"
+  },
+  "sop_137": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy.",
+    "concise-en": "ATM withdrawal | Decline unsupported request: current policy explicitly excludes requested region or product.",
+    "concise-zh": "银行卡 ATM 取现｜拒绝不支持项：当前政策明确不支持所请求地区或产品。",
+    "factored": "D1 A16"
+  },
+  "sop_028": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution.",
+    "concise-en": "ATM withdrawal | Review refund: new request within allowed window, with no refund execution.",
+    "concise-zh": "银行卡 ATM 取现｜审核退款：新申请在允许期限内，且未执行退款。",
+    "factored": "D1 A17"
+  },
+  "sop_158": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present.",
+    "concise-en": "ATM withdrawal | Decline late refund: request beyond allowed window, without a policy exception.",
+    "concise-zh": "银行卡 ATM 取现｜拒绝超期退款：申请超过允许期限，且无政策例外。",
+    "factored": "D1 A18"
+  },
+  "sop_186": {
+    "original": "Only 银行卡 ATM 取现 (ATM withdrawal): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains.",
+    "concise-en": "ATM withdrawal | Restore access: blocked access, identity and security reviews cleared, no active hold.",
+    "concise-zh": "银行卡 ATM 取现｜恢复访问：访问受限，但身份与安全复核均通过，且无有效冻结。",
+    "factored": "D1 A19"
+  },
+  "sop_153": {
+    "original": "Only 加密资产充值 (crypto deposit): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one.",
+    "concise-en": "crypto deposit | Collect reference: status inquiry lacks a usable transaction/ticket reference; never invent one.",
+    "concise-zh": "加密资产充值｜索取编号：查询进度却无可用交易号或工单号，不得编造。",
+    "factored": "D2 A0"
+  },
+  "sop_038": {
+    "original": "Only 加密资产充值 (crypto deposit): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete.",
+    "concise-en": "crypto deposit | Verify identity: requested account operation requires identity verification that is incomplete.",
+    "concise-zh": "加密资产充值｜身份验证：所请求账户操作要求身份验证，但尚未完成。",
+    "factored": "D2 A1"
+  },
+  "sop_168": {
+    "original": "Only 加密资产充值 (crypto deposit): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting.",
+    "concise-en": "crypto deposit | Clarify intent: desired operation unspecified; ask before acting.",
+    "concise-zh": "加密资产充值｜澄清意图：客户未说明要执行的操作，先询问。",
+    "factored": "D2 A2"
+  },
+  "sop_025": {
+    "original": "Only 加密资产充值 (crypto deposit): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed.",
+    "concise-en": "crypto deposit | Compliance review: active compliance hold overrides approval and customer requests to proceed.",
+    "concise-zh": "加密资产充值｜风控复核：存在有效风控冻结，优先于审批和客户继续执行的指令。",
+    "factored": "D2 A3"
+  },
+  "sop_145": {
+    "original": "Only 加密资产充值 (crypto deposit): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first.",
+    "concise-en": "crypto deposit | Secure access first: customer reports stolen credentials and unrecognized activity.",
+    "concise-zh": "加密资产充值｜先保护访问：客户报告凭证被盗且出现非本人操作。",
+    "factored": "D2 A4"
+  },
+  "sop_107": {
+    "original": "Only 加密资产充值 (crypto deposit): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key.",
+    "concise-en": "crypto deposit | Prevent duplicate funds operation: the same operation is already executed under its idempotency key.",
+    "concise-zh": "加密资产充值｜阻止重复资金操作：同一幂等键对应的同一操作已执行。",
+    "factored": "D2 A5"
+  },
+  "sop_120": {
+    "original": "Only 加密资产充值 (crypto deposit): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired.",
+    "concise-en": "crypto deposit | Wait for chain confirmations: below required count and waiting SLA not expired.",
+    "concise-zh": "加密资产充值｜等待链上确认：确认数不足，且等待时限尚未过期。",
+    "factored": "D2 A6"
+  },
+  "sop_159": {
+    "original": "Only 加密资产充值 (crypto deposit): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount.",
+    "concise-en": "crypto deposit | Resolve amount shortfall: confirmations sufficient but received amount below required amount.",
+    "concise-zh": "加密资产充值｜处理金额不足：确认数足够，但实收金额低于所需金额。",
+    "factored": "D2 A7"
+  },
+  "sop_031": {
+    "original": "Only 加密资产充值 (crypto deposit): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold.",
+    "concise-en": "crypto deposit | Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold.",
+    "concise-zh": "加密资产充值｜调查超时：仍在等待且超过处理时限，无重复执行或风控冻结。",
+    "factored": "D2 A8"
+  },
+  "sop_198": {
+    "original": "Only 加密资产充值 (crypto deposit): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount.",
+    "concise-en": "crypto deposit | Reconcile ledger: provider completion confirmed but internal ledger amount differs.",
+    "concise-zh": "加密资产充值｜核对账本：外部已确认完成，但内部账本金额不同。",
+    "factored": "D2 A9"
+  },
+  "sop_115": {
+    "original": "Only 加密资产充值 (crypto deposit): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified.",
+    "concise-en": "crypto deposit | Verify destination: funds operation specifies a destination not yet verified.",
+    "concise-zh": "加密资产充值｜核验收款方：资金操作指定的收款地址尚未验证。",
+    "factored": "D2 A10"
+  },
+  "sop_175": {
+    "original": "Only 加密资产充值 (crypto deposit): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing.",
+    "concise-en": "crypto deposit | Request approval: financial and destination checks passed, but required approval record missing.",
+    "concise-zh": "加密资产充值｜申请审批：资金及收款方检查通过，但缺少必需的审批记录。",
+    "factored": "D2 A11"
+  },
+  "sop_004": {
+    "original": "Only 加密资产充值 (crypto deposit): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution.",
+    "concise-en": "crypto deposit | Execute funds operation: financial, identity and destination checks passed; valid approval, no hold or prior execution.",
+    "concise-zh": "加密资产充值｜执行资金操作：资金、身份、收款方检查通过，审批有效，无冻结且此前未执行。",
+    "factored": "D2 A12"
+  },
+  "sop_183": {
+    "original": "Only 加密资产充值 (crypto deposit): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed.",
+    "concise-en": "crypto deposit | Close ticket: execution, reconciled ledger completion and customer acknowledgement all confirmed.",
+    "concise-zh": "加密资产充值｜关闭工单：执行完成、账本对账完成及客户确认均已核实。",
+    "factored": "D2 A13"
+  },
+  "sop_165": {
+    "original": "Only 加密资产充值 (crypto deposit): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation.",
+    "concise-en": "crypto deposit | Explain fee: customer asks only about the published fee, with no funds operation requested.",
+    "concise-zh": "加密资产充值｜解释费用：客户仅询问公布的费用，未请求资金操作。",
+    "factored": "D2 A14"
+  },
+  "sop_161": {
+    "original": "Only 加密资产充值 (crypto deposit): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it.",
+    "concise-en": "crypto deposit | Explain limit: requested amount exceeds published limit; do not execute.",
+    "concise-zh": "加密资产充值｜解释额度：请求金额超过公布限额，不得执行。",
+    "factored": "D2 A15"
+  },
+  "sop_172": {
+    "original": "Only 加密资产充值 (crypto deposit): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy.",
+    "concise-en": "crypto deposit | Decline unsupported request: current policy explicitly excludes requested region or product.",
+    "concise-zh": "加密资产充值｜拒绝不支持项：当前政策明确不支持所请求地区或产品。",
+    "factored": "D2 A16"
+  },
+  "sop_142": {
+    "original": "Only 加密资产充值 (crypto deposit): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution.",
+    "concise-en": "crypto deposit | Review refund: new request within allowed window, with no refund execution.",
+    "concise-zh": "加密资产充值｜审核退款：新申请在允许期限内，且未执行退款。",
+    "factored": "D2 A17"
+  },
+  "sop_030": {
+    "original": "Only 加密资产充值 (crypto deposit): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present.",
+    "concise-en": "crypto deposit | Decline late refund: request beyond allowed window, without a policy exception.",
+    "concise-zh": "加密资产充值｜拒绝超期退款：申请超过允许期限，且无政策例外。",
+    "factored": "D2 A18"
+  },
+  "sop_130": {
+    "original": "Only 加密资产充值 (crypto deposit): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains.",
+    "concise-en": "crypto deposit | Restore access: blocked access, identity and security reviews cleared, no active hold.",
+    "concise-zh": "加密资产充值｜恢复访问：访问受限，但身份与安全复核均通过，且无有效冻结。",
+    "factored": "D2 A19"
+  },
+  "sop_051": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one.",
+    "concise-en": "crypto withdrawal | Collect reference: status inquiry lacks a usable transaction/ticket reference; never invent one.",
+    "concise-zh": "加密资产提现｜索取编号：查询进度却无可用交易号或工单号，不得编造。",
+    "factored": "D3 A0"
+  },
+  "sop_102": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete.",
+    "concise-en": "crypto withdrawal | Verify identity: requested account operation requires identity verification that is incomplete.",
+    "concise-zh": "加密资产提现｜身份验证：所请求账户操作要求身份验证，但尚未完成。",
+    "factored": "D3 A1"
+  },
+  "sop_060": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting.",
+    "concise-en": "crypto withdrawal | Clarify intent: desired operation unspecified; ask before acting.",
+    "concise-zh": "加密资产提现｜澄清意图：客户未说明要执行的操作，先询问。",
+    "factored": "D3 A2"
+  },
+  "sop_017": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed.",
+    "concise-en": "crypto withdrawal | Compliance review: active compliance hold overrides approval and customer requests to proceed.",
+    "concise-zh": "加密资产提现｜风控复核：存在有效风控冻结，优先于审批和客户继续执行的指令。",
+    "factored": "D3 A3"
+  },
+  "sop_003": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first.",
+    "concise-en": "crypto withdrawal | Secure access first: customer reports stolen credentials and unrecognized activity.",
+    "concise-zh": "加密资产提现｜先保护访问：客户报告凭证被盗且出现非本人操作。",
+    "factored": "D3 A4"
+  },
+  "sop_048": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key.",
+    "concise-en": "crypto withdrawal | Prevent duplicate funds operation: the same operation is already executed under its idempotency key.",
+    "concise-zh": "加密资产提现｜阻止重复资金操作：同一幂等键对应的同一操作已执行。",
+    "factored": "D3 A5"
+  },
+  "sop_146": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired.",
+    "concise-en": "crypto withdrawal | Wait for chain confirmations: below required count and waiting SLA not expired.",
+    "concise-zh": "加密资产提现｜等待链上确认：确认数不足，且等待时限尚未过期。",
+    "factored": "D3 A6"
+  },
+  "sop_135": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount.",
+    "concise-en": "crypto withdrawal | Resolve amount shortfall: confirmations sufficient but received amount below required amount.",
+    "concise-zh": "加密资产提现｜处理金额不足：确认数足够，但实收金额低于所需金额。",
+    "factored": "D3 A7"
+  },
+  "sop_162": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold.",
+    "concise-en": "crypto withdrawal | Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold.",
+    "concise-zh": "加密资产提现｜调查超时：仍在等待且超过处理时限，无重复执行或风控冻结。",
+    "factored": "D3 A8"
+  },
+  "sop_023": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount.",
+    "concise-en": "crypto withdrawal | Reconcile ledger: provider completion confirmed but internal ledger amount differs.",
+    "concise-zh": "加密资产提现｜核对账本：外部已确认完成，但内部账本金额不同。",
+    "factored": "D3 A9"
+  },
+  "sop_157": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified.",
+    "concise-en": "crypto withdrawal | Verify destination: funds operation specifies a destination not yet verified.",
+    "concise-zh": "加密资产提现｜核验收款方：资金操作指定的收款地址尚未验证。",
+    "factored": "D3 A10"
+  },
+  "sop_106": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing.",
+    "concise-en": "crypto withdrawal | Request approval: financial and destination checks passed, but required approval record missing.",
+    "concise-zh": "加密资产提现｜申请审批：资金及收款方检查通过，但缺少必需的审批记录。",
+    "factored": "D3 A11"
+  },
+  "sop_081": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution.",
+    "concise-en": "crypto withdrawal | Execute funds operation: financial, identity and destination checks passed; valid approval, no hold or prior execution.",
+    "concise-zh": "加密资产提现｜执行资金操作：资金、身份、收款方检查通过，审批有效，无冻结且此前未执行。",
+    "factored": "D3 A12"
+  },
+  "sop_036": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed.",
+    "concise-en": "crypto withdrawal | Close ticket: execution, reconciled ledger completion and customer acknowledgement all confirmed.",
+    "concise-zh": "加密资产提现｜关闭工单：执行完成、账本对账完成及客户确认均已核实。",
+    "factored": "D3 A13"
+  },
+  "sop_118": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation.",
+    "concise-en": "crypto withdrawal | Explain fee: customer asks only about the published fee, with no funds operation requested.",
+    "concise-zh": "加密资产提现｜解释费用：客户仅询问公布的费用，未请求资金操作。",
+    "factored": "D3 A14"
+  },
+  "sop_125": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it.",
+    "concise-en": "crypto withdrawal | Explain limit: requested amount exceeds published limit; do not execute.",
+    "concise-zh": "加密资产提现｜解释额度：请求金额超过公布限额，不得执行。",
+    "factored": "D3 A15"
+  },
+  "sop_193": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy.",
+    "concise-en": "crypto withdrawal | Decline unsupported request: current policy explicitly excludes requested region or product.",
+    "concise-zh": "加密资产提现｜拒绝不支持项：当前政策明确不支持所请求地区或产品。",
+    "factored": "D3 A16"
+  },
+  "sop_108": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution.",
+    "concise-en": "crypto withdrawal | Review refund: new request within allowed window, with no refund execution.",
+    "concise-zh": "加密资产提现｜审核退款：新申请在允许期限内，且未执行退款。",
+    "factored": "D3 A17"
+  },
+  "sop_089": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present.",
+    "concise-en": "crypto withdrawal | Decline late refund: request beyond allowed window, without a policy exception.",
+    "concise-zh": "加密资产提现｜拒绝超期退款：申请超过允许期限，且无政策例外。",
+    "factored": "D3 A18"
+  },
+  "sop_114": {
+    "original": "Only 加密资产提现 (crypto withdrawal): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains.",
+    "concise-en": "crypto withdrawal | Restore access: blocked access, identity and security reviews cleared, no active hold.",
+    "concise-zh": "加密资产提现｜恢复访问：访问受限，但身份与安全复核均通过，且无有效冻结。",
+    "factored": "D3 A19"
+  },
+  "sop_095": {
+    "original": "Only 商户结算 (merchant settlement): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one.",
+    "concise-en": "merchant settlement | Collect reference: status inquiry lacks a usable transaction/ticket reference; never invent one.",
+    "concise-zh": "商户结算｜索取编号：查询进度却无可用交易号或工单号，不得编造。",
+    "factored": "D4 A0"
+  },
+  "sop_188": {
+    "original": "Only 商户结算 (merchant settlement): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete.",
+    "concise-en": "merchant settlement | Verify identity: requested account operation requires identity verification that is incomplete.",
+    "concise-zh": "商户结算｜身份验证：所请求账户操作要求身份验证，但尚未完成。",
+    "factored": "D4 A1"
+  },
+  "sop_164": {
+    "original": "Only 商户结算 (merchant settlement): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting.",
+    "concise-en": "merchant settlement | Clarify intent: desired operation unspecified; ask before acting.",
+    "concise-zh": "商户结算｜澄清意图：客户未说明要执行的操作，先询问。",
+    "factored": "D4 A2"
+  },
+  "sop_050": {
+    "original": "Only 商户结算 (merchant settlement): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed.",
+    "concise-en": "merchant settlement | Compliance review: active compliance hold overrides approval and customer requests to proceed.",
+    "concise-zh": "商户结算｜风控复核：存在有效风控冻结，优先于审批和客户继续执行的指令。",
+    "factored": "D4 A3"
+  },
+  "sop_128": {
+    "original": "Only 商户结算 (merchant settlement): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first.",
+    "concise-en": "merchant settlement | Secure access first: customer reports stolen credentials and unrecognized activity.",
+    "concise-zh": "商户结算｜先保护访问：客户报告凭证被盗且出现非本人操作。",
+    "factored": "D4 A4"
+  },
+  "sop_029": {
+    "original": "Only 商户结算 (merchant settlement): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key.",
+    "concise-en": "merchant settlement | Prevent duplicate funds operation: the same operation is already executed under its idempotency key.",
+    "concise-zh": "商户结算｜阻止重复资金操作：同一幂等键对应的同一操作已执行。",
+    "factored": "D4 A5"
+  },
+  "sop_192": {
+    "original": "Only 商户结算 (merchant settlement): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired.",
+    "concise-en": "merchant settlement | Wait for chain confirmations: below required count and waiting SLA not expired.",
+    "concise-zh": "商户结算｜等待链上确认：确认数不足，且等待时限尚未过期。",
+    "factored": "D4 A6"
+  },
+  "sop_151": {
+    "original": "Only 商户结算 (merchant settlement): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount.",
+    "concise-en": "merchant settlement | Resolve amount shortfall: confirmations sufficient but received amount below required amount.",
+    "concise-zh": "商户结算｜处理金额不足：确认数足够，但实收金额低于所需金额。",
+    "factored": "D4 A7"
+  },
+  "sop_101": {
+    "original": "Only 商户结算 (merchant settlement): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold.",
+    "concise-en": "merchant settlement | Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold.",
+    "concise-zh": "商户结算｜调查超时：仍在等待且超过处理时限，无重复执行或风控冻结。",
+    "factored": "D4 A8"
+  },
+  "sop_040": {
+    "original": "Only 商户结算 (merchant settlement): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount.",
+    "concise-en": "merchant settlement | Reconcile ledger: provider completion confirmed but internal ledger amount differs.",
+    "concise-zh": "商户结算｜核对账本：外部已确认完成，但内部账本金额不同。",
+    "factored": "D4 A9"
+  },
+  "sop_041": {
+    "original": "Only 商户结算 (merchant settlement): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified.",
+    "concise-en": "merchant settlement | Verify destination: funds operation specifies a destination not yet verified.",
+    "concise-zh": "商户结算｜核验收款方：资金操作指定的收款地址尚未验证。",
+    "factored": "D4 A10"
+  },
+  "sop_154": {
+    "original": "Only 商户结算 (merchant settlement): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing.",
+    "concise-en": "merchant settlement | Request approval: financial and destination checks passed, but required approval record missing.",
+    "concise-zh": "商户结算｜申请审批：资金及收款方检查通过，但缺少必需的审批记录。",
+    "factored": "D4 A11"
+  },
+  "sop_073": {
+    "original": "Only 商户结算 (merchant settlement): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution.",
+    "concise-en": "merchant settlement | Execute funds operation: financial, identity and destination checks passed; valid approval, no hold or prior execution.",
+    "concise-zh": "商户结算｜执行资金操作：资金、身份、收款方检查通过，审批有效，无冻结且此前未执行。",
+    "factored": "D4 A12"
+  },
+  "sop_039": {
+    "original": "Only 商户结算 (merchant settlement): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed.",
+    "concise-en": "merchant settlement | Close ticket: execution, reconciled ledger completion and customer acknowledgement all confirmed.",
+    "concise-zh": "商户结算｜关闭工单：执行完成、账本对账完成及客户确认均已核实。",
+    "factored": "D4 A13"
+  },
+  "sop_098": {
+    "original": "Only 商户结算 (merchant settlement): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation.",
+    "concise-en": "merchant settlement | Explain fee: customer asks only about the published fee, with no funds operation requested.",
+    "concise-zh": "商户结算｜解释费用：客户仅询问公布的费用，未请求资金操作。",
+    "factored": "D4 A14"
+  },
+  "sop_096": {
+    "original": "Only 商户结算 (merchant settlement): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it.",
+    "concise-en": "merchant settlement | Explain limit: requested amount exceeds published limit; do not execute.",
+    "concise-zh": "商户结算｜解释额度：请求金额超过公布限额，不得执行。",
+    "factored": "D4 A15"
+  },
+  "sop_091": {
+    "original": "Only 商户结算 (merchant settlement): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy.",
+    "concise-en": "merchant settlement | Decline unsupported request: current policy explicitly excludes requested region or product.",
+    "concise-zh": "商户结算｜拒绝不支持项：当前政策明确不支持所请求地区或产品。",
+    "factored": "D4 A16"
+  },
+  "sop_191": {
+    "original": "Only 商户结算 (merchant settlement): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution.",
+    "concise-en": "merchant settlement | Review refund: new request within allowed window, with no refund execution.",
+    "concise-zh": "商户结算｜审核退款：新申请在允许期限内，且未执行退款。",
+    "factored": "D4 A17"
+  },
+  "sop_117": {
+    "original": "Only 商户结算 (merchant settlement): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present.",
+    "concise-en": "merchant settlement | Decline late refund: request beyond allowed window, without a policy exception.",
+    "concise-zh": "商户结算｜拒绝超期退款：申请超过允许期限，且无政策例外。",
+    "factored": "D4 A18"
+  },
+  "sop_150": {
+    "original": "Only 商户结算 (merchant settlement): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains.",
+    "concise-en": "merchant settlement | Restore access: blocked access, identity and security reviews cleared, no active hold.",
+    "concise-zh": "商户结算｜恢复访问：访问受限，但身份与安全复核均通过，且无有效冻结。",
+    "factored": "D4 A19"
+  },
+  "sop_033": {
+    "original": "Only 用户间转账 (peer transfer): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one.",
+    "concise-en": "peer transfer | Collect reference: status inquiry lacks a usable transaction/ticket reference; never invent one.",
+    "concise-zh": "用户间转账｜索取编号：查询进度却无可用交易号或工单号，不得编造。",
+    "factored": "D5 A0"
+  },
+  "sop_178": {
+    "original": "Only 用户间转账 (peer transfer): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete.",
+    "concise-en": "peer transfer | Verify identity: requested account operation requires identity verification that is incomplete.",
+    "concise-zh": "用户间转账｜身份验证：所请求账户操作要求身份验证，但尚未完成。",
+    "factored": "D5 A1"
+  },
+  "sop_197": {
+    "original": "Only 用户间转账 (peer transfer): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting.",
+    "concise-en": "peer transfer | Clarify intent: desired operation unspecified; ask before acting.",
+    "concise-zh": "用户间转账｜澄清意图：客户未说明要执行的操作，先询问。",
+    "factored": "D5 A2"
+  },
+  "sop_064": {
+    "original": "Only 用户间转账 (peer transfer): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed.",
+    "concise-en": "peer transfer | Compliance review: active compliance hold overrides approval and customer requests to proceed.",
+    "concise-zh": "用户间转账｜风控复核：存在有效风控冻结，优先于审批和客户继续执行的指令。",
+    "factored": "D5 A3"
+  },
+  "sop_085": {
+    "original": "Only 用户间转账 (peer transfer): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first.",
+    "concise-en": "peer transfer | Secure access first: customer reports stolen credentials and unrecognized activity.",
+    "concise-zh": "用户间转账｜先保护访问：客户报告凭证被盗且出现非本人操作。",
+    "factored": "D5 A4"
+  },
+  "sop_195": {
+    "original": "Only 用户间转账 (peer transfer): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key.",
+    "concise-en": "peer transfer | Prevent duplicate funds operation: the same operation is already executed under its idempotency key.",
+    "concise-zh": "用户间转账｜阻止重复资金操作：同一幂等键对应的同一操作已执行。",
+    "factored": "D5 A5"
+  },
+  "sop_174": {
+    "original": "Only 用户间转账 (peer transfer): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired.",
+    "concise-en": "peer transfer | Wait for chain confirmations: below required count and waiting SLA not expired.",
+    "concise-zh": "用户间转账｜等待链上确认：确认数不足，且等待时限尚未过期。",
+    "factored": "D5 A6"
+  },
+  "sop_066": {
+    "original": "Only 用户间转账 (peer transfer): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount.",
+    "concise-en": "peer transfer | Resolve amount shortfall: confirmations sufficient but received amount below required amount.",
+    "concise-zh": "用户间转账｜处理金额不足：确认数足够，但实收金额低于所需金额。",
+    "factored": "D5 A7"
+  },
+  "sop_179": {
+    "original": "Only 用户间转账 (peer transfer): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold.",
+    "concise-en": "peer transfer | Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold.",
+    "concise-zh": "用户间转账｜调查超时：仍在等待且超过处理时限，无重复执行或风控冻结。",
+    "factored": "D5 A8"
+  },
+  "sop_079": {
+    "original": "Only 用户间转账 (peer transfer): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount.",
+    "concise-en": "peer transfer | Reconcile ledger: provider completion confirmed but internal ledger amount differs.",
+    "concise-zh": "用户间转账｜核对账本：外部已确认完成，但内部账本金额不同。",
+    "factored": "D5 A9"
+  },
+  "sop_037": {
+    "original": "Only 用户间转账 (peer transfer): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified.",
+    "concise-en": "peer transfer | Verify destination: funds operation specifies a destination not yet verified.",
+    "concise-zh": "用户间转账｜核验收款方：资金操作指定的收款地址尚未验证。",
+    "factored": "D5 A10"
+  },
+  "sop_019": {
+    "original": "Only 用户间转账 (peer transfer): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing.",
+    "concise-en": "peer transfer | Request approval: financial and destination checks passed, but required approval record missing.",
+    "concise-zh": "用户间转账｜申请审批：资金及收款方检查通过，但缺少必需的审批记录。",
+    "factored": "D5 A11"
+  },
+  "sop_127": {
+    "original": "Only 用户间转账 (peer transfer): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution.",
+    "concise-en": "peer transfer | Execute funds operation: financial, identity and destination checks passed; valid approval, no hold or prior execution.",
+    "concise-zh": "用户间转账｜执行资金操作：资金、身份、收款方检查通过，审批有效，无冻结且此前未执行。",
+    "factored": "D5 A12"
+  },
+  "sop_110": {
+    "original": "Only 用户间转账 (peer transfer): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed.",
+    "concise-en": "peer transfer | Close ticket: execution, reconciled ledger completion and customer acknowledgement all confirmed.",
+    "concise-zh": "用户间转账｜关闭工单：执行完成、账本对账完成及客户确认均已核实。",
+    "factored": "D5 A13"
+  },
+  "sop_068": {
+    "original": "Only 用户间转账 (peer transfer): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation.",
+    "concise-en": "peer transfer | Explain fee: customer asks only about the published fee, with no funds operation requested.",
+    "concise-zh": "用户间转账｜解释费用：客户仅询问公布的费用，未请求资金操作。",
+    "factored": "D5 A14"
+  },
+  "sop_088": {
+    "original": "Only 用户间转账 (peer transfer): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it.",
+    "concise-en": "peer transfer | Explain limit: requested amount exceeds published limit; do not execute.",
+    "concise-zh": "用户间转账｜解释额度：请求金额超过公布限额，不得执行。",
+    "factored": "D5 A15"
+  },
+  "sop_016": {
+    "original": "Only 用户间转账 (peer transfer): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy.",
+    "concise-en": "peer transfer | Decline unsupported request: current policy explicitly excludes requested region or product.",
+    "concise-zh": "用户间转账｜拒绝不支持项：当前政策明确不支持所请求地区或产品。",
+    "factored": "D5 A16"
+  },
+  "sop_166": {
+    "original": "Only 用户间转账 (peer transfer): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution.",
+    "concise-en": "peer transfer | Review refund: new request within allowed window, with no refund execution.",
+    "concise-zh": "用户间转账｜审核退款：新申请在允许期限内，且未执行退款。",
+    "factored": "D5 A17"
+  },
+  "sop_093": {
+    "original": "Only 用户间转账 (peer transfer): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present.",
+    "concise-en": "peer transfer | Decline late refund: request beyond allowed window, without a policy exception.",
+    "concise-zh": "用户间转账｜拒绝超期退款：申请超过允许期限，且无政策例外。",
+    "factored": "D5 A18"
+  },
+  "sop_008": {
+    "original": "Only 用户间转账 (peer transfer): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains.",
+    "concise-en": "peer transfer | Restore access: blocked access, identity and security reviews cleared, no active hold.",
+    "concise-zh": "用户间转账｜恢复访问：访问受限，但身份与安全复核均通过，且无有效冻结。",
+    "factored": "D5 A19"
+  },
+  "sop_043": {
+    "original": "Only 币种兑换 (currency exchange): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one.",
+    "concise-en": "currency exchange | Collect reference: status inquiry lacks a usable transaction/ticket reference; never invent one.",
+    "concise-zh": "币种兑换｜索取编号：查询进度却无可用交易号或工单号，不得编造。",
+    "factored": "D6 A0"
+  },
+  "sop_169": {
+    "original": "Only 币种兑换 (currency exchange): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete.",
+    "concise-en": "currency exchange | Verify identity: requested account operation requires identity verification that is incomplete.",
+    "concise-zh": "币种兑换｜身份验证：所请求账户操作要求身份验证，但尚未完成。",
+    "factored": "D6 A1"
+  },
+  "sop_061": {
+    "original": "Only 币种兑换 (currency exchange): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting.",
+    "concise-en": "currency exchange | Clarify intent: desired operation unspecified; ask before acting.",
+    "concise-zh": "币种兑换｜澄清意图：客户未说明要执行的操作，先询问。",
+    "factored": "D6 A2"
+  },
+  "sop_100": {
+    "original": "Only 币种兑换 (currency exchange): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed.",
+    "concise-en": "currency exchange | Compliance review: active compliance hold overrides approval and customer requests to proceed.",
+    "concise-zh": "币种兑换｜风控复核：存在有效风控冻结，优先于审批和客户继续执行的指令。",
+    "factored": "D6 A3"
+  },
+  "sop_020": {
+    "original": "Only 币种兑换 (currency exchange): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first.",
+    "concise-en": "currency exchange | Secure access first: customer reports stolen credentials and unrecognized activity.",
+    "concise-zh": "币种兑换｜先保护访问：客户报告凭证被盗且出现非本人操作。",
+    "factored": "D6 A4"
+  },
+  "sop_063": {
+    "original": "Only 币种兑换 (currency exchange): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key.",
+    "concise-en": "currency exchange | Prevent duplicate funds operation: the same operation is already executed under its idempotency key.",
+    "concise-zh": "币种兑换｜阻止重复资金操作：同一幂等键对应的同一操作已执行。",
+    "factored": "D6 A5"
+  },
+  "sop_171": {
+    "original": "Only 币种兑换 (currency exchange): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired.",
+    "concise-en": "currency exchange | Wait for chain confirmations: below required count and waiting SLA not expired.",
+    "concise-zh": "币种兑换｜等待链上确认：确认数不足，且等待时限尚未过期。",
+    "factored": "D6 A6"
+  },
+  "sop_149": {
+    "original": "Only 币种兑换 (currency exchange): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount.",
+    "concise-en": "currency exchange | Resolve amount shortfall: confirmations sufficient but received amount below required amount.",
+    "concise-zh": "币种兑换｜处理金额不足：确认数足够，但实收金额低于所需金额。",
+    "factored": "D6 A7"
+  },
+  "sop_104": {
+    "original": "Only 币种兑换 (currency exchange): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold.",
+    "concise-en": "currency exchange | Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold.",
+    "concise-zh": "币种兑换｜调查超时：仍在等待且超过处理时限，无重复执行或风控冻结。",
+    "factored": "D6 A8"
+  },
+  "sop_140": {
+    "original": "Only 币种兑换 (currency exchange): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount.",
+    "concise-en": "currency exchange | Reconcile ledger: provider completion confirmed but internal ledger amount differs.",
+    "concise-zh": "币种兑换｜核对账本：外部已确认完成，但内部账本金额不同。",
+    "factored": "D6 A9"
+  },
+  "sop_199": {
+    "original": "Only 币种兑换 (currency exchange): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified.",
+    "concise-en": "currency exchange | Verify destination: funds operation specifies a destination not yet verified.",
+    "concise-zh": "币种兑换｜核验收款方：资金操作指定的收款地址尚未验证。",
+    "factored": "D6 A10"
+  },
+  "sop_181": {
+    "original": "Only 币种兑换 (currency exchange): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing.",
+    "concise-en": "currency exchange | Request approval: financial and destination checks passed, but required approval record missing.",
+    "concise-zh": "币种兑换｜申请审批：资金及收款方检查通过，但缺少必需的审批记录。",
+    "factored": "D6 A11"
+  },
+  "sop_062": {
+    "original": "Only 币种兑换 (currency exchange): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution.",
+    "concise-en": "currency exchange | Execute funds operation: financial, identity and destination checks passed; valid approval, no hold or prior execution.",
+    "concise-zh": "币种兑换｜执行资金操作：资金、身份、收款方检查通过，审批有效，无冻结且此前未执行。",
+    "factored": "D6 A12"
+  },
+  "sop_018": {
+    "original": "Only 币种兑换 (currency exchange): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed.",
+    "concise-en": "currency exchange | Close ticket: execution, reconciled ledger completion and customer acknowledgement all confirmed.",
+    "concise-zh": "币种兑换｜关闭工单：执行完成、账本对账完成及客户确认均已核实。",
+    "factored": "D6 A13"
+  },
+  "sop_069": {
+    "original": "Only 币种兑换 (currency exchange): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation.",
+    "concise-en": "currency exchange | Explain fee: customer asks only about the published fee, with no funds operation requested.",
+    "concise-zh": "币种兑换｜解释费用：客户仅询问公布的费用，未请求资金操作。",
+    "factored": "D6 A14"
+  },
+  "sop_190": {
+    "original": "Only 币种兑换 (currency exchange): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it.",
+    "concise-en": "currency exchange | Explain limit: requested amount exceeds published limit; do not execute.",
+    "concise-zh": "币种兑换｜解释额度：请求金额超过公布限额，不得执行。",
+    "factored": "D6 A15"
+  },
+  "sop_013": {
+    "original": "Only 币种兑换 (currency exchange): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy.",
+    "concise-en": "currency exchange | Decline unsupported request: current policy explicitly excludes requested region or product.",
+    "concise-zh": "币种兑换｜拒绝不支持项：当前政策明确不支持所请求地区或产品。",
+    "factored": "D6 A16"
+  },
+  "sop_103": {
+    "original": "Only 币种兑换 (currency exchange): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution.",
+    "concise-en": "currency exchange | Review refund: new request within allowed window, with no refund execution.",
+    "concise-zh": "币种兑换｜审核退款：新申请在允许期限内，且未执行退款。",
+    "factored": "D6 A17"
+  },
+  "sop_105": {
+    "original": "Only 币种兑换 (currency exchange): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present.",
+    "concise-en": "currency exchange | Decline late refund: request beyond allowed window, without a policy exception.",
+    "concise-zh": "币种兑换｜拒绝超期退款：申请超过允许期限，且无政策例外。",
+    "factored": "D6 A18"
+  },
+  "sop_045": {
+    "original": "Only 币种兑换 (currency exchange): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains.",
+    "concise-en": "currency exchange | Restore access: blocked access, identity and security reviews cleared, no active hold.",
+    "concise-zh": "币种兑换｜恢复访问：访问受限，但身份与安全复核均通过，且无有效冻结。",
+    "factored": "D6 A19"
+  },
+  "sop_119": {
+    "original": "Only 商户退款 (merchant refund): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one.",
+    "concise-en": "merchant refund | Collect reference: status inquiry lacks a usable transaction/ticket reference; never invent one.",
+    "concise-zh": "商户退款｜索取编号：查询进度却无可用交易号或工单号，不得编造。",
+    "factored": "D7 A0"
+  },
+  "sop_024": {
+    "original": "Only 商户退款 (merchant refund): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete.",
+    "concise-en": "merchant refund | Verify identity: requested account operation requires identity verification that is incomplete.",
+    "concise-zh": "商户退款｜身份验证：所请求账户操作要求身份验证，但尚未完成。",
+    "factored": "D7 A1"
+  },
+  "sop_021": {
+    "original": "Only 商户退款 (merchant refund): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting.",
+    "concise-en": "merchant refund | Clarify intent: desired operation unspecified; ask before acting.",
+    "concise-zh": "商户退款｜澄清意图：客户未说明要执行的操作，先询问。",
+    "factored": "D7 A2"
+  },
+  "sop_006": {
+    "original": "Only 商户退款 (merchant refund): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed.",
+    "concise-en": "merchant refund | Compliance review: active compliance hold overrides approval and customer requests to proceed.",
+    "concise-zh": "商户退款｜风控复核：存在有效风控冻结，优先于审批和客户继续执行的指令。",
+    "factored": "D7 A3"
+  },
+  "sop_090": {
+    "original": "Only 商户退款 (merchant refund): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first.",
+    "concise-en": "merchant refund | Secure access first: customer reports stolen credentials and unrecognized activity.",
+    "concise-zh": "商户退款｜先保护访问：客户报告凭证被盗且出现非本人操作。",
+    "factored": "D7 A4"
+  },
+  "sop_056": {
+    "original": "Only 商户退款 (merchant refund): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key.",
+    "concise-en": "merchant refund | Prevent duplicate funds operation: the same operation is already executed under its idempotency key.",
+    "concise-zh": "商户退款｜阻止重复资金操作：同一幂等键对应的同一操作已执行。",
+    "factored": "D7 A5"
+  },
+  "sop_011": {
+    "original": "Only 商户退款 (merchant refund): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired.",
+    "concise-en": "merchant refund | Wait for chain confirmations: below required count and waiting SLA not expired.",
+    "concise-zh": "商户退款｜等待链上确认：确认数不足，且等待时限尚未过期。",
+    "factored": "D7 A6"
+  },
+  "sop_077": {
+    "original": "Only 商户退款 (merchant refund): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount.",
+    "concise-en": "merchant refund | Resolve amount shortfall: confirmations sufficient but received amount below required amount.",
+    "concise-zh": "商户退款｜处理金额不足：确认数足够，但实收金额低于所需金额。",
+    "factored": "D7 A7"
+  },
+  "sop_134": {
+    "original": "Only 商户退款 (merchant refund): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold.",
+    "concise-en": "merchant refund | Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold.",
+    "concise-zh": "商户退款｜调查超时：仍在等待且超过处理时限，无重复执行或风控冻结。",
+    "factored": "D7 A8"
+  },
+  "sop_167": {
+    "original": "Only 商户退款 (merchant refund): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount.",
+    "concise-en": "merchant refund | Reconcile ledger: provider completion confirmed but internal ledger amount differs.",
+    "concise-zh": "商户退款｜核对账本：外部已确认完成，但内部账本金额不同。",
+    "factored": "D7 A9"
+  },
+  "sop_112": {
+    "original": "Only 商户退款 (merchant refund): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified.",
+    "concise-en": "merchant refund | Verify destination: funds operation specifies a destination not yet verified.",
+    "concise-zh": "商户退款｜核验收款方：资金操作指定的收款地址尚未验证。",
+    "factored": "D7 A10"
+  },
+  "sop_109": {
+    "original": "Only 商户退款 (merchant refund): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing.",
+    "concise-en": "merchant refund | Request approval: financial and destination checks passed, but required approval record missing.",
+    "concise-zh": "商户退款｜申请审批：资金及收款方检查通过，但缺少必需的审批记录。",
+    "factored": "D7 A11"
+  },
+  "sop_022": {
+    "original": "Only 商户退款 (merchant refund): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution.",
+    "concise-en": "merchant refund | Execute funds operation: financial, identity and destination checks passed; valid approval, no hold or prior execution.",
+    "concise-zh": "商户退款｜执行资金操作：资金、身份、收款方检查通过，审批有效，无冻结且此前未执行。",
+    "factored": "D7 A12"
+  },
+  "sop_067": {
+    "original": "Only 商户退款 (merchant refund): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed.",
+    "concise-en": "merchant refund | Close ticket: execution, reconciled ledger completion and customer acknowledgement all confirmed.",
+    "concise-zh": "商户退款｜关闭工单：执行完成、账本对账完成及客户确认均已核实。",
+    "factored": "D7 A13"
+  },
+  "sop_147": {
+    "original": "Only 商户退款 (merchant refund): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation.",
+    "concise-en": "merchant refund | Explain fee: customer asks only about the published fee, with no funds operation requested.",
+    "concise-zh": "商户退款｜解释费用：客户仅询问公布的费用，未请求资金操作。",
+    "factored": "D7 A14"
+  },
+  "sop_052": {
+    "original": "Only 商户退款 (merchant refund): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it.",
+    "concise-en": "merchant refund | Explain limit: requested amount exceeds published limit; do not execute.",
+    "concise-zh": "商户退款｜解释额度：请求金额超过公布限额，不得执行。",
+    "factored": "D7 A15"
+  },
+  "sop_054": {
+    "original": "Only 商户退款 (merchant refund): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy.",
+    "concise-en": "merchant refund | Decline unsupported request: current policy explicitly excludes requested region or product.",
+    "concise-zh": "商户退款｜拒绝不支持项：当前政策明确不支持所请求地区或产品。",
+    "factored": "D7 A16"
+  },
+  "sop_163": {
+    "original": "Only 商户退款 (merchant refund): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution.",
+    "concise-en": "merchant refund | Review refund: new request within allowed window, with no refund execution.",
+    "concise-zh": "商户退款｜审核退款：新申请在允许期限内，且未执行退款。",
+    "factored": "D7 A17"
+  },
+  "sop_136": {
+    "original": "Only 商户退款 (merchant refund): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present.",
+    "concise-en": "merchant refund | Decline late refund: request beyond allowed window, without a policy exception.",
+    "concise-zh": "商户退款｜拒绝超期退款：申请超过允许期限，且无政策例外。",
+    "factored": "D7 A18"
+  },
+  "sop_035": {
+    "original": "Only 商户退款 (merchant refund): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains.",
+    "concise-en": "merchant refund | Restore access: blocked access, identity and security reviews cleared, no active hold.",
+    "concise-zh": "商户退款｜恢复访问：访问受限，但身份与安全复核均通过，且无有效冻结。",
+    "factored": "D7 A19"
+  },
+  "sop_196": {
+    "original": "Only 交易争议 (transaction dispute): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one.",
+    "concise-en": "transaction dispute | Collect reference: status inquiry lacks a usable transaction/ticket reference; never invent one.",
+    "concise-zh": "交易争议｜索取编号：查询进度却无可用交易号或工单号，不得编造。",
+    "factored": "D8 A0"
+  },
+  "sop_000": {
+    "original": "Only 交易争议 (transaction dispute): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete.",
+    "concise-en": "transaction dispute | Verify identity: requested account operation requires identity verification that is incomplete.",
+    "concise-zh": "交易争议｜身份验证：所请求账户操作要求身份验证，但尚未完成。",
+    "factored": "D8 A1"
+  },
+  "sop_099": {
+    "original": "Only 交易争议 (transaction dispute): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting.",
+    "concise-en": "transaction dispute | Clarify intent: desired operation unspecified; ask before acting.",
+    "concise-zh": "交易争议｜澄清意图：客户未说明要执行的操作，先询问。",
+    "factored": "D8 A2"
+  },
+  "sop_080": {
+    "original": "Only 交易争议 (transaction dispute): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed.",
+    "concise-en": "transaction dispute | Compliance review: active compliance hold overrides approval and customer requests to proceed.",
+    "concise-zh": "交易争议｜风控复核：存在有效风控冻结，优先于审批和客户继续执行的指令。",
+    "factored": "D8 A3"
+  },
+  "sop_042": {
+    "original": "Only 交易争议 (transaction dispute): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first.",
+    "concise-en": "transaction dispute | Secure access first: customer reports stolen credentials and unrecognized activity.",
+    "concise-zh": "交易争议｜先保护访问：客户报告凭证被盗且出现非本人操作。",
+    "factored": "D8 A4"
+  },
+  "sop_015": {
+    "original": "Only 交易争议 (transaction dispute): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key.",
+    "concise-en": "transaction dispute | Prevent duplicate funds operation: the same operation is already executed under its idempotency key.",
+    "concise-zh": "交易争议｜阻止重复资金操作：同一幂等键对应的同一操作已执行。",
+    "factored": "D8 A5"
+  },
+  "sop_122": {
+    "original": "Only 交易争议 (transaction dispute): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired.",
+    "concise-en": "transaction dispute | Wait for chain confirmations: below required count and waiting SLA not expired.",
+    "concise-zh": "交易争议｜等待链上确认：确认数不足，且等待时限尚未过期。",
+    "factored": "D8 A6"
+  },
+  "sop_057": {
+    "original": "Only 交易争议 (transaction dispute): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount.",
+    "concise-en": "transaction dispute | Resolve amount shortfall: confirmations sufficient but received amount below required amount.",
+    "concise-zh": "交易争议｜处理金额不足：确认数足够，但实收金额低于所需金额。",
+    "factored": "D8 A7"
+  },
+  "sop_059": {
+    "original": "Only 交易争议 (transaction dispute): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold.",
+    "concise-en": "transaction dispute | Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold.",
+    "concise-zh": "交易争议｜调查超时：仍在等待且超过处理时限，无重复执行或风控冻结。",
+    "factored": "D8 A8"
+  },
+  "sop_001": {
+    "original": "Only 交易争议 (transaction dispute): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount.",
+    "concise-en": "transaction dispute | Reconcile ledger: provider completion confirmed but internal ledger amount differs.",
+    "concise-zh": "交易争议｜核对账本：外部已确认完成，但内部账本金额不同。",
+    "factored": "D8 A9"
+  },
+  "sop_187": {
+    "original": "Only 交易争议 (transaction dispute): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified.",
+    "concise-en": "transaction dispute | Verify destination: funds operation specifies a destination not yet verified.",
+    "concise-zh": "交易争议｜核验收款方：资金操作指定的收款地址尚未验证。",
+    "factored": "D8 A10"
+  },
+  "sop_194": {
+    "original": "Only 交易争议 (transaction dispute): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing.",
+    "concise-en": "transaction dispute | Request approval: financial and destination checks passed, but required approval record missing.",
+    "concise-zh": "交易争议｜申请审批：资金及收款方检查通过，但缺少必需的审批记录。",
+    "factored": "D8 A11"
+  },
+  "sop_141": {
+    "original": "Only 交易争议 (transaction dispute): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution.",
+    "concise-en": "transaction dispute | Execute funds operation: financial, identity and destination checks passed; valid approval, no hold or prior execution.",
+    "concise-zh": "交易争议｜执行资金操作：资金、身份、收款方检查通过，审批有效，无冻结且此前未执行。",
+    "factored": "D8 A12"
+  },
+  "sop_143": {
+    "original": "Only 交易争议 (transaction dispute): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed.",
+    "concise-en": "transaction dispute | Close ticket: execution, reconciled ledger completion and customer acknowledgement all confirmed.",
+    "concise-zh": "交易争议｜关闭工单：执行完成、账本对账完成及客户确认均已核实。",
+    "factored": "D8 A13"
+  },
+  "sop_076": {
+    "original": "Only 交易争议 (transaction dispute): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation.",
+    "concise-en": "transaction dispute | Explain fee: customer asks only about the published fee, with no funds operation requested.",
+    "concise-zh": "交易争议｜解释费用：客户仅询问公布的费用，未请求资金操作。",
+    "factored": "D8 A14"
+  },
+  "sop_084": {
+    "original": "Only 交易争议 (transaction dispute): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it.",
+    "concise-en": "transaction dispute | Explain limit: requested amount exceeds published limit; do not execute.",
+    "concise-zh": "交易争议｜解释额度：请求金额超过公布限额，不得执行。",
+    "factored": "D8 A15"
+  },
+  "sop_129": {
+    "original": "Only 交易争议 (transaction dispute): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy.",
+    "concise-en": "transaction dispute | Decline unsupported request: current policy explicitly excludes requested region or product.",
+    "concise-zh": "交易争议｜拒绝不支持项：当前政策明确不支持所请求地区或产品。",
+    "factored": "D8 A16"
+  },
+  "sop_124": {
+    "original": "Only 交易争议 (transaction dispute): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution.",
+    "concise-en": "transaction dispute | Review refund: new request within allowed window, with no refund execution.",
+    "concise-zh": "交易争议｜审核退款：新申请在允许期限内，且未执行退款。",
+    "factored": "D8 A17"
+  },
+  "sop_185": {
+    "original": "Only 交易争议 (transaction dispute): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present.",
+    "concise-en": "transaction dispute | Decline late refund: request beyond allowed window, without a policy exception.",
+    "concise-zh": "交易争议｜拒绝超期退款：申请超过允许期限，且无政策例外。",
+    "factored": "D8 A18"
+  },
+  "sop_007": {
+    "original": "Only 交易争议 (transaction dispute): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains.",
+    "concise-en": "transaction dispute | Restore access: blocked access, identity and security reviews cleared, no active hold.",
+    "concise-zh": "交易争议｜恢复访问：访问受限，但身份与安全复核均通过，且无有效冻结。",
+    "factored": "D8 A19"
+  },
+  "sop_072": {
+    "original": "Only 账户及登录 (account access): 索取交易或工单编号 / Collect a missing transaction or ticket reference. Use when: A status inquiry has no usable reference; do not invent one.",
+    "concise-en": "account access | Collect reference: status inquiry lacks a usable transaction/ticket reference; never invent one.",
+    "concise-zh": "账户及登录｜索取编号：查询进度却无可用交易号或工单号，不得编造。",
+    "factored": "D9 A0"
+  },
+  "sop_046": {
+    "original": "Only 账户及登录 (account access): 完成身份验证 / Complete identity verification. Use when: The requested account operation requires identity verification, which is incomplete.",
+    "concise-en": "account access | Verify identity: requested account operation requires identity verification that is incomplete.",
+    "concise-zh": "账户及登录｜身份验证：所请求账户操作要求身份验证，但尚未完成。",
+    "factored": "D9 A1"
+  },
+  "sop_170": {
+    "original": "Only 账户及登录 (account access): 澄清客户意图 / Clarify an ambiguous request. Use when: The customer has not specified the desired operation; ask before acting.",
+    "concise-en": "account access | Clarify intent: desired operation unspecified; ask before acting.",
+    "concise-zh": "账户及登录｜澄清意图：客户未说明要执行的操作，先询问。",
+    "factored": "D9 A2"
+  },
+  "sop_173": {
+    "original": "Only 账户及登录 (account access): 转风控复核 / Escalate to compliance review. Use when: An active compliance hold overrides approvals and the customer's request to proceed.",
+    "concise-en": "account access | Compliance review: active compliance hold overrides approval and customer requests to proceed.",
+    "concise-zh": "账户及登录｜风控复核：存在有效风控冻结，优先于审批和客户继续执行的指令。",
+    "factored": "D9 A3"
+  },
+  "sop_012": {
+    "original": "Only 账户及登录 (account access): 冻结可疑账户访问 / Secure suspected compromised account access. Use when: The customer reports stolen credentials and unrecognized activity; secure access first.",
+    "concise-en": "account access | Secure access first: customer reports stolen credentials and unrecognized activity.",
+    "concise-zh": "账户及登录｜先保护访问：客户报告凭证被盗且出现非本人操作。",
+    "factored": "D9 A4"
+  },
+  "sop_155": {
+    "original": "Only 账户及登录 (account access): 阻止重复资金操作 / Prevent a duplicate funds operation. Use when: The exact requested operation is already recorded as executed under the same idempotency key.",
+    "concise-en": "account access | Prevent duplicate funds operation: the same operation is already executed under its idempotency key.",
+    "concise-zh": "账户及登录｜阻止重复资金操作：同一幂等键对应的同一操作已执行。",
+    "factored": "D9 A5"
+  },
+  "sop_070": {
+    "original": "Only 账户及登录 (account access): 等待链上确认 / Wait for required chain confirmations. Use when: Observed chain confirmations are below the required count; the waiting SLA has not expired.",
+    "concise-en": "account access | Wait for chain confirmations: below required count and waiting SLA not expired.",
+    "concise-zh": "账户及登录｜等待链上确认：确认数不足，且等待时限尚未过期。",
+    "factored": "D9 A6"
+  },
+  "sop_014": {
+    "original": "Only 账户及登录 (account access): 处理金额不足 / Request resolution of an amount shortfall. Use when: Confirmations are sufficient but the received amount is below the required amount.",
+    "concise-en": "account access | Resolve amount shortfall: confirmations sufficient but received amount below required amount.",
+    "concise-zh": "账户及登录｜处理金额不足：确认数足够，但实收金额低于所需金额。",
+    "factored": "D9 A7"
+  },
+  "sop_092": {
+    "original": "Only 账户及登录 (account access): 调查超过时限的等待 / Investigate processing beyond its SLA. Use when: The operation is still pending after its processing SLA, with no duplicate or compliance hold.",
+    "concise-en": "account access | Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold.",
+    "concise-zh": "账户及登录｜调查超时：仍在等待且超过处理时限，无重复执行或风控冻结。",
+    "factored": "D9 A8"
+  },
+  "sop_113": {
+    "original": "Only 账户及登录 (account access): 核对外部记录与账本差异 / Reconcile provider and internal ledger mismatch. Use when: Provider completion is confirmed but the internal ledger records a different amount.",
+    "concise-en": "account access | Reconcile ledger: provider completion confirmed but internal ledger amount differs.",
+    "concise-zh": "账户及登录｜核对账本：外部已确认完成，但内部账本金额不同。",
+    "factored": "D9 A9"
+  },
+  "sop_177": {
+    "original": "Only 账户及登录 (account access): 核验资金接收地址 / Verify an unverified funds destination. Use when: A funds operation specifies a destination that has not yet been verified.",
+    "concise-en": "account access | Verify destination: funds operation specifies a destination not yet verified.",
+    "concise-zh": "账户及登录｜核验收款方：资金操作指定的收款地址尚未验证。",
+    "factored": "D9 A10"
+  },
+  "sop_144": {
+    "original": "Only 账户及登录 (account access): 提交资金操作审批 / Request the outstanding funds approval. Use when: Financial and destination checks passed, but a required approval record is missing.",
+    "concise-en": "account access | Request approval: financial and destination checks passed, but required approval record missing.",
+    "concise-zh": "账户及登录｜申请审批：资金及收款方检查通过，但缺少必需的审批记录。",
+    "factored": "D9 A11"
+  },
+  "sop_065": {
+    "original": "Only 账户及登录 (account access): 执行已获批的资金操作 / Execute the authorized funds operation. Use when: All financial, identity and destination checks passed; approval is valid, no hold and no prior execution.",
+    "concise-en": "account access | Execute funds operation: financial, identity and destination checks passed; valid approval, no hold or prior execution.",
+    "concise-zh": "账户及登录｜执行资金操作：资金、身份、收款方检查通过，审批有效，无冻结且此前未执行。",
+    "factored": "D9 A12"
+  },
+  "sop_005": {
+    "original": "Only 账户及登录 (account access): 关闭已经解决的工单 / Close the fully resolved support ticket. Use when: Execution, reconciled ledger completion and customer acknowledgement are all confirmed.",
+    "concise-en": "account access | Close ticket: execution, reconciled ledger completion and customer acknowledgement all confirmed.",
+    "concise-zh": "账户及登录｜关闭工单：执行完成、账本对账完成及客户确认均已核实。",
+    "factored": "D9 A13"
+  },
+  "sop_055": {
+    "original": "Only 账户及登录 (account access): 解释费用 / Explain the published fee. Use when: The customer asks only for a fee explanation and is not requesting a funds operation.",
+    "concise-en": "account access | Explain fee: customer asks only about the published fee, with no funds operation requested.",
+    "concise-zh": "账户及登录｜解释费用：客户仅询问公布的费用，未请求资金操作。",
+    "factored": "D9 A14"
+  },
+  "sop_156": {
+    "original": "Only 账户及登录 (account access): 解释额度限制 / Explain the applicable transaction limit. Use when: The requested amount exceeds the published limit; do not execute it.",
+    "concise-en": "account access | Explain limit: requested amount exceeds published limit; do not execute.",
+    "concise-zh": "账户及登录｜解释额度：请求金额超过公布限额，不得执行。",
+    "factored": "D9 A15"
+  },
+  "sop_182": {
+    "original": "Only 账户及登录 (account access): 说明不支持的地区或产品 / Decline an unsupported region or product. Use when: The requested region or product is explicitly unsupported by the current policy.",
+    "concise-en": "account access | Decline unsupported request: current policy explicitly excludes requested region or product.",
+    "concise-zh": "账户及登录｜拒绝不支持项：当前政策明确不支持所请求地区或产品。",
+    "factored": "D9 A16"
+  },
+  "sop_132": {
+    "original": "Only 账户及登录 (account access): 受理期限内的退款审核 / Review a refund requested within the allowed window. Use when: A new refund is requested within its allowed window, and there has been no refund execution.",
+    "concise-en": "account access | Review refund: new request within allowed window, with no refund execution.",
+    "concise-zh": "账户及登录｜审核退款：新申请在允许期限内，且未执行退款。",
+    "factored": "D9 A17"
+  },
+  "sop_180": {
+    "original": "Only 账户及登录 (account access): 拒绝超过期限的退款申请 / Decline a refund outside the allowed window. Use when: A refund request exceeds its allowed window and no policy exception is present.",
+    "concise-en": "account access | Decline late refund: request beyond allowed window, without a policy exception.",
+    "concise-zh": "账户及登录｜拒绝超期退款：申请超过允许期限，且无政策例外。",
+    "factored": "D9 A18"
+  },
+  "sop_123": {
+    "original": "Only 账户及登录 (account access): 复核通过后恢复账户访问 / Restore access after a completed security review. Use when: Access is blocked, but identity and security review have both cleared and no active hold remains.",
+    "concise-en": "account access | Restore access: blocked access, identity and security reviews cleared, no active hold.",
+    "concise-zh": "账户及登录｜恢复访问：访问受限，但身份与安全复核均通过，且无有效冻结。",
+    "factored": "D9 A19"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "observed_utc": "2026-11-19T16:09:10.194517+00:00",
+  "suite_status": "complete",
+  "resolved_model_directory": "/opt/karpo/models/karpo-31b",
+  "weights_bytes": 62551812872,
+  "model_on_root_filesystem": true,
+  "model_filesystem": "/dev/nvme0n1p1 ext4   /",
+  "gpu_compute_processes": []
+}

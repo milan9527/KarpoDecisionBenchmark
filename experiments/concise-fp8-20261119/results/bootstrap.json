@@ -1,0 +1,15 @@
+{
+  "status": "ready",
+  "download_seconds": 128.731228192,
+  "checkpoint": "/opt/karpo/models/karpo-31b",
+  "environment": {
+    "torch": "2.14.1+cu130",
+    "transformers": "5.21.0",
+    "cuda": "13.0",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 595.112.07",
+    "weight_storage": "root EBS",
+    "code_revision": "6600011eb5cf46232d056ec0717dc726146d29de",
+    "model_revision": "b8e6fd7463cea8662c556d6257955d7ef9c10d19"
+  },
+  "observed_utc": "2026-11-19T15:49:48.209856+00:00"
+}
