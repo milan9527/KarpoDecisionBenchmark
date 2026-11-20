@@ -41,7 +41,7 @@
   "results/environment.json": "06636a280129577fc5995f66076359a297c4c341024a4d93409e0cc876c77579",
   "results/gemma-verification.json": "4ec1ae926f30376cf5a587df8c1656854b141988eccf78935d481b2b5b697e41",
   "results/gpu.csv": "c8da9b45614df603371a7f0f60c56d7d212c514225f27f78b76a11491d1ef9d7",
-  "results/html-checks.json": "dcbaa0a46885a5db7a1c28a9f1ab0c72152e78cd33bc439dd928cff0c6b2a7e9",
+  "results/html-checks.json": "2fb3816226db128da76236796f3b5e74e70f85090939b661f895a83c00ed2687",
   "results/html-desktop.png": "d4a0c0784df2d14e5d7b9ba0f670ae70dfced7b39763bdff3d94dc917c690acb",
   "results/html-mobile.png": "72a59d31dc8e606b2ed365d1625f14a0fb943479dcf2889df94b1f688f14c622",
   "results/infrastructure.json": "a5aedea9bcf66819f115eca2818b3f3f7838c4c11f69165dd7e9f635a8e07f29",
@@ -51,5 +51,5 @@
   "results/preflight.json": "62cb4e93c751e5de6e976c3007ae0fc7a17bc7ca6ae73705fb7f27a124a928c4",
   "results/quality-errors.json": "5ac7693060aeb5cd9998f0b355f76a9983f6dc1b47af0345cdca5ff20ecbec60",
   "results/suite-status.json": "39d35af29b714ddbdb1cb70235be080a201e13b8853e2fc78f265bfbfd22f7bb",
-  "results/verification.json": "1b5049f55d724401a82bc183e38417d0d984c5171ed06c4beae6c0a474f052bf"
+  "results/verification.json": "d7d21f5785ca9ad07f03e4344e155e927fd432b78c7979b87fb59e30412373eb"
 }

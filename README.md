@@ -43,16 +43,16 @@
 
 实际实例为 `g7e.12xlarge` Spot：48 vCPU、512 GiB内存、两张 RTX PRO 6000 Blackwell 96GB。系列模型每次使用一张 GPU，副本对照分别使用一张和两张。原 `g7e.8xlarge` 实例保留。
 
-部署使用 Karpo 官方 HTTP 服务（`karpo_decision.serve.server`），由 `torch.distributed.run` 启动。PyTorch `2.14.1+cu130`、Transformers `5.21.0`；代码 revision 为 `6600011eb5cf46232d056ec0717dc726146d29de`。Gemma 模型使用 Triton Attention + Graphs，Qwen 模型使用 Graphs；FP8/BF16 分开对照。具体参数和 health 响应保存在每个配置的结果目录。
+部署使用 Karpo 官方 HTTP 服务（`karpo_decision.serve.server`），由 `torch.distributed.run` 启动。PyTorch `2.14.1+cu130`、Transformers `5.21.0`；代码 revision 为 `6600011eb5cf46232d056ec0717dc726146d29de`。Karpo 31B/12B 使用 Triton Attention + Graphs，Karpo 9B/4B 使用 Graphs；FP8/BF16 分开对照。具体参数和 health 响应保存在每个配置的结果目录。
 
-首轮镜像缺少 Qwen 依赖，9B/4B 四个配置在启动阶段失败，模型调用为0。补装 `flash-linear-attention==0.5.2`、`fla-core==0.5.2`、`einops==0.8.2` 后，在同一实例重启后单独重试；模型与核心运行库版本保持不变。首轮成功的31B/12B数据及失败记录全部保留。
+首轮镜像缺少 Karpo 9B/4B 所需依赖，这四个配置在启动阶段失败，模型调用为0。补装 `flash-linear-attention==0.5.2`、`fla-core==0.5.2`、`einops==0.8.2` 后，在同一实例重启后单独重试；模型与核心运行库版本保持不变。首轮成功的31B/12B数据及失败记录全部保留。
 
 另外尝试了 B200 和 H100。最新 H100 尝试覆盖 us-east-1 / us-west-2 共10个可用区，Spot及按需20次均缺少容量，没有新增 H100 实例或测量结果。见 [H100记录](experiments/h100-4b-20261120/STATUS.zh.md)。
 
 **实验与复核**
 
 - [系列实验](experiments/family-20261120/PLAN.zh.md)：首轮三个成功配置共528次调用；合并核验见 [verification.json](experiments/family-20261120/results/verification.json)。
-- [Qwen依赖修复后重试](experiments/qwen-retry-20261120/PLAN.zh.md)：四个配置共640次，输入逐字相同。
+- [Karpo 9B/4B依赖修复后重试](experiments/qwen-retry-20261120/PLAN.zh.md)：四个配置共640次，输入逐字相同。
 - [单副本与双副本](experiments/replicas-retry-20261120/PLAN.zh.md)：544次；原始选择规则和首次退出记录也保留。
 - [上一轮描述实验](experiments/concise-fp8-20261119/report.html)：四种描述共848次，属于历史结果。历史表的延迟使用80次原有观察，新系列表使用原有及边界共104次，口径分别标明。
 
@@ -69,4 +69,4 @@ python scripts/build_html.py
 
 测试结束后已确认新旧 GPU 实例均为 **stopped**，没有 terminate。实例及 EBS 上的模型保留；Spot中断行为、实例关机行为均为stop，系统盘随实例删除为false。最近核对时间：2026-11-20T04:14:14.567758+00:00。
 
-[资源状态](experiments/family-20261120/results/infrastructure.json) · [Qwen结束检查](experiments/qwen-retry-20261120/results/postflight.json) · [副本结束检查](experiments/replicas-retry-20261120/results/postflight.json)
+[资源状态](experiments/family-20261120/results/infrastructure.json) · [Karpo 9B/4B结束检查](experiments/qwen-retry-20261120/results/postflight.json) · [副本结束检查](experiments/replicas-retry-20261120/results/postflight.json)

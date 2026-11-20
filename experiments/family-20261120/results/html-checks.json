@@ -1,6 +1,6 @@
 {
-  "checked_utc": "2026-11-20T05:19:24.265942+00:00",
-  "html_sha256": "6079e60ab8b4f483eb8405cc78b733b651d74fc06f61f1c47b4ae57e10316c67",
+  "checked_utc": "2026-11-20T05:33:25.210108+00:00",
+  "html_sha256": "0e1a87a7fe95fba4db1e56d0b124f5328c316ed6d2e16445075f1017e8a929b9",
   "experiment": "experiments/family-20261120",
   "checks": [
     "content:seven_model_configs_and_two_replica_configs",
@@ -40,5 +40,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 619137
+  "print_pdf_bytes": 618841
 }

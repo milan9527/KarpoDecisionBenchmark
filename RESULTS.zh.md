@@ -10,7 +10,7 @@
 
 实际实例 g7e.12xlarge，48vCPU、512GiB内存、两张RTX PRO 6000 Blackwell 96GB；系列模型表每次使用一张GPU，副本表另外比较一张与两张GPU。本轮在该实例上重新测试31B基线。B200及H100的容量尝试未成功，没有这些GPU的新性能数据。本次新增H100尝试覆盖us-east-1和us-west-2的10个可用区，Spot与按需共20次，均未取得容量。
 
-部署使用Karpo官方HTTP服务，PyTorch 2.14.1+cu130、Transformers 5.21.0、CUDA 13.0。实际启动参数和health响应保存在各配置结果目录。首轮9B/4B因缺少fla依赖而启动失败，决策请求为0；补装flash-linear-attention和fla-core 0.5.2后，在同一EC2实例重启后完成四个配置的独立重试。31B/12B使用重启前已完成的数据，Qwen使用重启后的数据；模型和核心运行库版本不变。
+部署使用Karpo官方HTTP服务，PyTorch 2.14.1+cu130、Transformers 5.21.0、CUDA 13.0。实际启动参数和health响应保存在各配置结果目录。首轮9B/4B因缺少fla依赖而启动失败，决策请求为0；补装flash-linear-attention和fla-core 0.5.2后，在同一EC2实例重启后完成四个配置的独立重试。Karpo 31B/12B使用重启前已完成的数据，Karpo 9B/4B使用重启后的数据；模型和核心运行库版本不变。
 
 ## 质量与延迟
 

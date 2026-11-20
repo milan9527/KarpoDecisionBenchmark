@@ -1,6 +1,6 @@
 {
-  "checked_utc": "2026-11-20T05:19:24.160314+00:00",
-  "html_sha256": "e52fc1ea4f3bada8bc9e6f7d4cc7bf02636c35bfcad9b4e54389b48f829b5529",
+  "checked_utc": "2026-11-20T05:33:25.147295+00:00",
+  "html_sha256": "3a99ac7ebd3b594b842bb77aaf02370976cb214118c54041565e1edce239da9d",
   "experiment": "experiments/family-20261120",
   "checks": [
     "content:seven_model_configs_and_two_replica_configs",
@@ -40,5 +40,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 619137
+  "print_pdf_bytes": 618841
 }

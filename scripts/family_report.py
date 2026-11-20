@@ -286,7 +286,7 @@ def main():
         "实际启动参数和health响应保存在各配置结果目录。"
         "首轮9B/4B因缺少fla依赖而启动失败，决策请求为0；"
         "补装flash-linear-attention和fla-core 0.5.2后，在同一EC2实例重启后完成四个配置的独立重试。"
-        "31B/12B使用重启前已完成的数据，Qwen使用重启后的数据；模型和核心运行库版本不变。"
+        "Karpo 31B/12B使用重启前已完成的数据，Karpo 9B/4B使用重启后的数据；模型和核心运行库版本不变。"
     )
     lines = ["# Karpo 系列模型：完整200候选实测", "", conclusion, "", replica_text, "", method, "",
              timing, "", hardware, "", runtime, ""]
@@ -363,7 +363,7 @@ def main():
 </div></section><footer class="footer"><span>离线报告 · 所有指标由逐条响应重算</span><div class="footer-links">
 <a href="@@RESULTS@@">Markdown</a><a href="@@PLAN@@">实验计划</a><a href="@@README@@">复现说明</a>
 <a href="@@REPLICAS@@">副本实验计划</a>
-<a href="@@RETRY@@">Qwen重试记录</a>
+<a href="@@RETRY@@">Karpo 9B/4B重试记录</a>
 <a href="@@HARDWARE@@">H100容量记录</a>
 </div></footer></main><script type="application/json" id="data">{payload}</script>"""
     page += r"""<script>
