@@ -2,6 +2,8 @@
 
 独立的 Karpo 决策模型测试项目。当前业务要求：每次完整传入 200 个工具 / SOP 候选，由模型一次选择；程序不做业务域判断、召回或候选过滤，不执行真实金融操作。
 
+**2026-11-20 新实验进度：GPU 实测尚未开始。** 12B / 9B / 4B 的 FP8 与 BF16 对照、同机 31B 基线已经冻结，本地预检通过。G7e、B200 和替代 H100 的启动尝试未取得 AWS 容量，新增模型调用为 0；原 GPU 仍为 stopped。方案、容量记录及资源核对见 [新实验 HTML](experiments/family-20261120/report.html) 和 [状态说明](experiments/family-20261120/STATUS.zh.md)。下方为上一次已完成的实测。
+
 测试对象为 `MachinePulseAI/karpo-decision-31B`。当前报告使用同一个 FP8 + Triton / Graphs 服务的四组描述实验，共记录并核验 848 次调用。
 
 **查看结果**
@@ -36,6 +38,7 @@
 
 ```bash
 python -m pip install -e .
+python scripts/family_status_report.py
 python scripts/build_html.py
 ```
 
@@ -51,7 +54,7 @@ python scripts/build_html.py
 
 上游 CUDA Graphs 仅覆盖单问题、纯文本、最长 8192 tokens 的请求。原始长描述超过此长度，自动回退至非 Graphs 路径；本轮衡量精简描述在同一启动配置下的整体效果，不能分别归因于 token 数减少或 Graphs。
 
-FP8 路径先加载原始权重再量化部分 decoder projections，运行时显存占用不等于启动所需显存。RTX PRO 6000 的计算能力为 sm_120，本轮使用上游 Triton 路径；该版本 FROST / FA4 仅允许 sm_100。
+FP8 路径先加载原始权重再量化部分 decoder projections，运行时显存占用不等于启动所需显存。RTX PRO 6000 的计算能力为 sm_120，本轮使用上游 Triton 路径；该版本 FROST / FA4 的代码条件为 GPU 计算能力主版本 10（10.x），例如 B200。
 
 **实例保留**
 

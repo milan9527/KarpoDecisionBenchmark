@@ -1,0 +1,39 @@
+{
+  "checked_utc": "2026-11-20T03:01:04.741808+00:00",
+  "html_sha256": "dd57815298515be6f09c10e5f159fa40bd426e17d7db8933696270feff820679",
+  "checks": [
+    "zero_model_calls_and_unmeasured_status_match_evidence",
+    "seven_planned_configs",
+    "all_links_resolve",
+    "download_matches_embedded_data",
+    "responsive_no_overflow",
+    "offline_no_requests",
+    "no_javascript_errors",
+    "print_pdf_generated"
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "scroll": 1440,
+      "client": 1440
+    },
+    {
+      "width": 1024,
+      "scroll": 1024,
+      "client": 1024
+    },
+    {
+      "width": 768,
+      "scroll": 768,
+      "client": 768
+    },
+    {
+      "width": 390,
+      "scroll": 390,
+      "client": 390
+    }
+  ],
+  "page_errors": [],
+  "external_requests": [],
+  "print_pdf_bytes": 374772
+}

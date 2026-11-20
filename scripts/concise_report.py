@@ -11,6 +11,7 @@ import re
 from benchmark import summarize, validate
 from report_common import documentation_metadata, table
 from prepare import digest
+from family_status_report import notice as family_notice
 
 ROOT = Path(__file__).resolve().parents[1]
 EXP = ROOT / "experiments/concise-fp8-20261119"
@@ -218,6 +219,13 @@ def main():
     main_markdown = markdown.replace("](results/", f"]({relative_experiment}/results/")
     main_markdown = main_markdown.replace("](fixtures/", f"]({relative_experiment}/fixtures/")
     main_markdown = main_markdown.replace("](PLAN.zh.md)", f"]({relative_experiment}/PLAN.zh.md)")
+    if family_notice(ROOT / "report.html"):
+        main_markdown = (
+            "> 2026-11-20 新实验尚未执行：12B / 9B / 4B 的测试已准备，"
+            "AWS 容量不足，新增模型调用为 0。"
+            "[查看实际进度](experiments/family-20261120/STATUS.zh.md)。"
+            "下方为 11 月 19 日已完成的 31B 描述实验。\n\n" + main_markdown
+        )
     (ROOT / "RESULTS.zh.md").write_text(main_markdown)
     css = (ROOT / "scripts/report.css").read_text()
     esc = html.escape
@@ -294,6 +302,8 @@ window.addEventListener('afterprint',()=>closed.forEach(x=>x.open=false));render
     }
     for destination in [ROOT / "report.html", EXP / "report.html"]:
         page = re.sub(r"@@([A-Z]+)@@", lambda m: esc(os.path.relpath(targets[m[1]], destination.parent)), html_page)
+        if destination.parent == ROOT:
+            page = page.replace('<section id="overview">', '<section id="overview">' + family_notice(destination), 1)
         destination.write_text(page)
     evidence = {str(p.relative_to(EXP)): hashlib.sha256(p.read_bytes()).hexdigest()
                 for p in sorted((EXP / "results").rglob("*"))

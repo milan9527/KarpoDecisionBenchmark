@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-11-20T02:58:11.084985+00:00",
+  "status": "passed",
+  "gpu_used": false,
+  "model_calls": 0,
+  "manifest_sha256": "533f1157e2f12af2c218b81f690c9d8f1b92b8813e62f8a7c32aefbc0da21eb6",
+  "checks": [
+    "all frozen execution and input file hashes match",
+    "104 requests exactly equal the previous English concise requests",
+    "52 distinct synthetic cases, each in two candidate orders",
+    "every request contains all 200 candidates and the expected ID is present",
+    "four pinned model revisions and seven valid backend/precision configurations",
+    "1168 planned calls including warmup and repeated concurrency requests"
+  ],
+  "not_checked": [
+    "GPU runtime compatibility",
+    "tokenized lengths for each model",
+    "quality and latency"
+  ]
+}
