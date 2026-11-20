@@ -20,7 +20,7 @@
 | 4B FP8 | 123.3 ms | 124.1 ms | 98/104 |
 | 4B BF16 | 169.6 ms | 169.8 ms | 98/104 |
 
-每行是 52 个合成案例的两种候选顺序，共 104 次质量观察，不能代表 Redotpay 生产准确率或 SOTA。具体错误和顺序变化见 HTML 及 [逐条错误](experiments/family-20261120/results/quality-errors.json)。
+每行是 52 个合成案例的两种候选顺序，共 104 次质量观察，不能代表 生产准确率或 SOTA。具体错误和顺序变化见 HTML 及 [逐条错误](experiments/family-20261120/results/quality-errors.json)。
 
 **副本与高并发**
 

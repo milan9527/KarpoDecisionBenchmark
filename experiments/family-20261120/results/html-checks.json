@@ -1,6 +1,6 @@
 {
-  "checked_utc": "2026-11-20T06:28:26.984596+00:00",
-  "html_sha256": "6ae7c8624232f3345c72aae32d23b63ede35a1305260fbbcd53d71e6066f4fc6",
+  "checked_utc": "2026-11-20T06:56:28.440382+00:00",
+  "html_sha256": "1b8ed0cd0158bae23f8655009d30499dbcce65178077dc22945829e3fde25f8f",
   "experiment": "experiments/family-20261120",
   "checks": [
     "content:seven_model_configs",
@@ -44,5 +44,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 799703
+  "print_pdf_bytes": 799659
 }

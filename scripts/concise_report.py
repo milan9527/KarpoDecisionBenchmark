@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import re
+import subprocess
 
 from benchmark import summarize, validate
 from report_common import documentation_metadata, table
@@ -36,8 +37,15 @@ def main():
     manifest = load(EXP / "fixtures/manifest.json")
     # Narrative documents can change after the run; verify their original bytes.
     frozen_documents = load(EXP / "results/frozen-documents.json")
+    source_revisions = load(EXP / "results/documentation-source-revisions.json")
     for name, expected in load(EXP / "inputs-sha256.json")["files"].items():
         original = frozen_documents[name].encode() if name in frozen_documents else (ROOT / name).read_bytes()
+        if name in source_revisions:
+            revision = source_revisions[name]
+            assert hashlib.sha256(original).hexdigest() == revision["current_sha256"], name
+            # Preserve the execution-time hash after a descriptive wording edit.
+            original = subprocess.check_output(
+                ["git", "cat-file", "blob", revision["original_git_blob"]], cwd=ROOT)
         assert hashlib.sha256(original).hexdigest() == expected, name
     for name, expected in manifest["files"].items():
         assert hashlib.sha256((EXP / name).read_bytes()).hexdigest() == expected, name
@@ -188,7 +196,7 @@ def main():
     method = (
         "模型一次直接选择，程序不做业务域路由或筛选；四组保留相同状态、200个候选ID和候选顺序。"
         "所有参考答案在调用前冻结，答案不进入模型输入。原有40例与新增12例都是合成场景，各测两种顺序；"
-        "配对观察和重复压测不是新增独立案例，不能证明Redotpay生产准确率或SOTA。"
+        "配对观察和重复压测不是新增独立案例，不能证明生产准确率或SOTA。"
         "公共规则版本利用当前目录10个域×20类规则的重复结构；不能推断200条完全不同的SOP也能同比压缩。"
     )
     timing = (

@@ -1,6 +1,6 @@
 {
-  "checked_utc": "2026-11-20T05:06:52.901799+00:00",
-  "html_sha256": "d56e9952e1264f8ec26d0e99d4d522cba3dec3b1733e154b00624a7a0842a138",
+  "checked_utc": "2026-11-20T06:56:27.745213+00:00",
+  "html_sha256": "25713f94cd9fca439a9ddaf290180e3b15e130208c723ae5bdba11072e27915b",
   "experiment": "experiments/concise-fp8-20261119",
   "checks": [
     "content:latest_four_variants_only",
@@ -39,5 +39,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 565894
+  "print_pdf_bytes": 565856
 }

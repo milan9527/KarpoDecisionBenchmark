@@ -4,5 +4,5 @@
   "model": "MachinePulseAI/karpo-decision-31B",
   "model_sha": "b8e6fd7463cea8662c556d6257955d7ef9c10d19",
   "code_commit_utc": "2026-11-16T09:34:36Z",
-  "test_inputs": "Frozen before model calls; no Redotpay customer data"
+  "test_inputs": "Frozen before model calls; no customer data"
 }

@@ -7,13 +7,14 @@
   "results/concise-zh/complete.json": "70ba2185c0da99158aa1507e3162770fb76b0e6343e28b26f667ff8f6061eb95",
   "results/concise-zh/requests.jsonl": "b939778a9340296528d2ee5e6100fcd0dd919ac5390b14151081a3f86bb41656",
   "results/concise-zh/summary.json": "6803640a18a1efbc9b4e658253563df1148585a2b3a4a7619e0ad8387e439ad7",
+  "results/documentation-source-revisions.json": "9419de211fd09469831081ea761505925ad843f3c66b227c14ba756f5945faee",
   "results/factored/complete.json": "a3c1db790a2e697f997e8316b380472edb86bd05d2922442af991713e93cb0e5",
   "results/factored/requests.jsonl": "eb22da3e4124ca407b5c3526a1097a750402ccfe97bb526bc9231ff2500b9dc0",
   "results/factored/summary.json": "7edf2525b8e1e02032fcaa6d4b09614885cc64dd91faed81d16ac5bf39261086",
   "results/frozen-documents.json": "fac5cf212f674088e21540692aefe2c3ddd9a642ce9dfe5e85c516d23ce9c56c",
   "results/gpu.csv": "9db3829652a2e16054157eb1d18b07eaae635b20d1d7876b1cd7cfe39ba396e6",
   "results/health.json": "40b8e6e7daed9808fbb5d7d1914c1bf28c713798d67e14887d08546aa68f0183",
-  "results/html-checks.json": "bde925d45d2ee722679206288274fefd9697754425e0c794f140d22e2b85770c",
+  "results/html-checks.json": "9ab390303c2efa925bfb7442eb8a30c66d4a8be00a8d11536e74e5827644f1f1",
   "results/html-desktop.png": "a45067671196f9d7a5659d2262567d2f28d30c0fdf33027396dd44a7794d1cec",
   "results/html-mobile.png": "35868eedb771b8dcb3a6b5c4fb87048546191d8cbd67e9d63e94eff677fe1aa3",
   "results/infrastructure.json": "deb6b51f31fc28cd86290f016995240027c6e15c744a6549a198cafd39c48736",
@@ -29,5 +30,5 @@
   "results/server-command.json": "ec4129d31dc51dc8617f3ac85febe59f8f8da4b98146896eb80d6151471a7252",
   "results/server.log": "3e56315cc8a0f818973a1fe853d65a89a936e779a95055fead5df4e9a777fe61",
   "results/suite-status.json": "f51efa7d4eb45d5003fddb269ff0150f55afe9e03f8be9f938e452535673d9ea",
-  "results/verification.json": "c484843be15083addc146c3d19af973d86350d24be457f008f9f5437acb92f04"
+  "results/verification.json": "eba912e32c47cea4a25ba482fa993715048b724bb0de1bf3e6941ae093efa0de"
 }

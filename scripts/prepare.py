@@ -174,7 +174,7 @@ def build():
         "seed": 20261119, "synthetic_cases": len(cases), "synthetic_templates": 20,
         "candidate_catalog_size": len(catalog), "expanded_requests": len(requests),
         "existing_payment_observations": len(payment),
-        "scope": "Synthetic business-domain/action routing, not actual Redotpay policy, customer data or a SOTA benchmark.",
+        "scope": "Synthetic business-domain/action routing, not actual policy, customer data or a SOTA benchmark.",
         "quality_plan": "All 40 synthetic snapshots x original/reversed order, 200 detailed candidates; all existing payment requests.",
         "performance_plan": "Fixed selected inputs across 20/50/100/200 compact/detailed candidates, then concurrency and open-loop load.",
         "caching": "No result cache or retrieval shortlist in the 200-candidate benchmark.",

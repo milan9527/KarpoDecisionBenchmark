@@ -1,0 +1,7 @@
+{
+  "scripts/prepare.py": {
+    "original_git_blob": "89eb2bfad5117f18437a4cb8d109e8e5229f0992",
+    "current_sha256": "63904b840bdd957b9a503bdd40848925d47eda8533ba2383fa712d7fbb687e6c",
+    "change": "Generalized the descriptive scope string only. Frozen model inputs and measurements are unchanged."
+  }
+}
