@@ -1,11 +1,12 @@
 {
-  "checked_utc": "2026-11-20T02:05:00.435387+00:00",
-  "html_sha256": "6953541fd53ec25b1343b06f59e06fb3ee0b78d1884aa391f48cbd10eeb27e41",
+  "checked_utc": "2026-11-20T05:06:52.901799+00:00",
+  "html_sha256": "d56e9952e1264f8ec26d0e99d4d522cba3dec3b1733e154b00624a7a0842a138",
   "experiment": "experiments/concise-fp8-20261119",
   "checks": [
     "content:latest_four_variants_only",
     "cards:match_raw_summaries",
     "links:resolve",
+    "content:removed_combined_latency_accuracy_metric",
     "chart:p50_ms",
     "chart:p95_ms",
     "download:matches_verified_summaries",
@@ -38,5 +39,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 572548
+  "print_pdf_bytes": 565894
 }

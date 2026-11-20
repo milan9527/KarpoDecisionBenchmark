@@ -21,6 +21,7 @@ def documentation_metadata(value):
         "estimated_total_compute_usd", "estimated_compute_usd", "hourly_compute_usd",
         "usd_per_hour", "price_segments", "spot_history", "cost_scope",
         "estimate_notes", "estimated_seconds", "spot_price_cap", "result_cache",
+        "correct_within_100ms",
     }
     if isinstance(value, dict):
         return {key: documentation_metadata(item) for key, item in value.items() if key not in omitted}

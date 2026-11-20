@@ -1,11 +1,13 @@
 {
-  "checked_utc": "2026-11-20T04:14:22.550066+00:00",
-  "html_sha256": "4108d140d02430d535cd054e95e7824220006ed85f6e3e0e7091989dfbd3da06",
+  "checked_utc": "2026-11-20T05:06:53.035322+00:00",
+  "html_sha256": "995d66c2d48f6999d9e9c7a357c7f8c976240238ecc3e016c6e14c1b92fce40b",
   "experiment": "experiments/family-20261120",
   "checks": [
     "content:seven_model_configs_and_two_replica_configs",
     "cards:match_raw_summaries",
     "links:resolve",
+    "content:removed_combined_latency_accuracy_metric",
+    "content:qwen_quality_analysis",
     "chart:p50_ms",
     "chart:p95_ms",
     "download:matches_verified_summaries",
@@ -38,5 +40,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 620188
+  "print_pdf_bytes": 678923
 }

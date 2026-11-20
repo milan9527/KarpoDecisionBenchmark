@@ -13,9 +13,9 @@
   "results/frozen-documents.json": "fac5cf212f674088e21540692aefe2c3ddd9a642ce9dfe5e85c516d23ce9c56c",
   "results/gpu.csv": "9db3829652a2e16054157eb1d18b07eaae635b20d1d7876b1cd7cfe39ba396e6",
   "results/health.json": "40b8e6e7daed9808fbb5d7d1914c1bf28c713798d67e14887d08546aa68f0183",
-  "results/html-checks.json": "1e72140384f6a9d612618e475675d9da44265a711f412c479401585c2d2c7e2a",
-  "results/html-desktop.png": "4a1abb53320bb48c7eb469494a1bab1c48a1ce7cd4424c2076a5fddf4d2e8fc2",
-  "results/html-mobile.png": "ba0ee030f7ceaecb2529516bace66258415af35dc3431020d5f2ab05c2f81a77",
+  "results/html-checks.json": "bde925d45d2ee722679206288274fefd9697754425e0c794f140d22e2b85770c",
+  "results/html-desktop.png": "a45067671196f9d7a5659d2262567d2f28d30c0fdf33027396dd44a7794d1cec",
+  "results/html-mobile.png": "35868eedb771b8dcb3a6b5c4fb87048546191d8cbd67e9d63e94eff677fe1aa3",
   "results/infrastructure.json": "deb6b51f31fc28cd86290f016995240027c6e15c744a6549a198cafd39c48736",
   "results/launcher.log": "f09a2542e52f391993b84c1fb00d57ab6b6a1630ae3b124f6742450ccbd5fc35",
   "results/original/complete.json": "8abea62ea60007d3ae61e11a7cf75cf209d4cd1e991a3d563580138ef1daf49d",
@@ -29,5 +29,5 @@
   "results/server-command.json": "ec4129d31dc51dc8617f3ac85febe59f8f8da4b98146896eb80d6151471a7252",
   "results/server.log": "3e56315cc8a0f818973a1fe853d65a89a936e779a95055fead5df4e9a777fe61",
   "results/suite-status.json": "f51efa7d4eb45d5003fddb269ff0150f55afe9e03f8be9f938e452535673d9ea",
-  "results/verification.json": "c972927906cf2541be5d583fd9ee85f7424444264387b9b139b316602ce7fc41"
+  "results/verification.json": "c484843be15083addc146c3d19af973d86350d24be457f008f9f5437acb92f04"
 }

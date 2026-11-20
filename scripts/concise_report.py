@@ -93,7 +93,6 @@ def main():
             quality_rows.append([
                 LABELS[variant], label, f'{s["correct"]}/{s["attempts"]}',
                 f'{s["valid"]}/{s["attempts"]}', f(s["p50_ms"]), f(s["p95_ms"]),
-                f'{s["correct_within_100ms"]}/{s["attempts"]}',
                 f'{s["input_tokens_min"]:,}–{s["input_tokens_max"]:,}',
             ])
         for n in [1, 2, 4, 8]:
@@ -126,8 +125,8 @@ def main():
     )
     if not passed:
         conclusion += " 最快组存在选择错误，不能只依据速度把它作为推荐方案。"
-    conclusion += (" 全部原有观察均在100ms内正确完成。" if fastest["correct_within_100ms"] == 80
-                   else f" 原有场景100ms内正确完成 {fastest['correct_within_100ms']}/80，尚未满足每次100ms目标。")
+    if fastest["p50_ms"] > 100:
+        conclusion += " 最快组P50仍高于100ms目标。"
     stability_rows = []
     baseline = {(r["case_id"], r["order"]): r for r in raw["original"] if r["stage"].startswith("quality-")}
     for variant, rows in raw.items():
@@ -166,7 +165,7 @@ def main():
     cloud = documentation_metadata(load(cloud_path)) if cloud_path.exists() else {}
     runtime = load(EXP / "results/bootstrap.json")["environment"]
     tables = [
-        ("质量与延迟", ["描述", "数据", "参考一致", "有效/尝试", "P50 ms", "P95 ms", "100ms内正确", "输入tokens"], quality_rows),
+        ("质量与延迟", ["描述", "数据", "参考一致", "有效/尝试", "P50 ms", "P95 ms", "输入tokens"], quality_rows),
         ("候选顺序与选择一致性", ["描述", "换序后选择变化", "与同轮原始描述选择相同"], stability_rows),
         ("并发", ["描述", "并发", "有效/尝试", "有效请求/秒", "P50 ms", "P95 ms"], concurrency_rows),
     ]
@@ -236,10 +235,10 @@ def main():
         f'<span class="section-num">0{i+1}</span><h2>{esc(title)}</h2></div></div>'
         f'<div class="panel">{table(headers, rows, title)}</div></section>'
         for i, (title, headers, rows) in enumerate(tables))
-    payload = json.dumps({
+    payload = json.dumps(documentation_metadata({
         "variants": [{"id": v, "label": LABELS[v], "summary": reports[v]} for v in manifest["variants"]],
         "infrastructure": cloud, "manifest": documentation_metadata(manifest), "verification": verified,
-    }, ensure_ascii=False).replace("<", "\\u003c")
+    }), ensure_ascii=False).replace("<", "\\u003c")
     cards = "".join(
         f'<div class="kpi{" accent" if v == preferred else ""}">'
         f'<div class="kpi-top">{esc(LABELS[v])} · P50</div>'
