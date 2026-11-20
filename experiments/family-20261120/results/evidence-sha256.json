@@ -35,6 +35,7 @@
   "results/acquisition.json": "5ee03d7b47bb69ff2d2ba470e5af2a165d825261e4547b96a80ec9201e4f063a",
   "results/candidates.json": "84be5b9c3885544f26a87e0f03b1bd4fc13e58e82d4e3e43bf8067a938b34249",
   "results/capacity-status.json": "fca3e196aa41602f960e0770f7e071a9f1c7cbb31e0d0c4de78bce2e529e4ccc",
+  "results/decision-example.json": "9a1290658670400867bdce789977774d1d5f3b6c669a4451897b7b5361b1294d",
   "results/download-12B.json": "84b60d5f2c80ccbe4d257025c1e75d42ea633b935d137061b128679227326c43",
   "results/download-31B.json": "cf779dad2864b6fae648ce3818abde39e84ca3977ce1b91f552f97083afd37ff",
   "results/download-4B.json": "ed238b58950183e74ba697b94a30016c1ee6b815ad4c4b8e796dfb30590b7dd5",
@@ -42,9 +43,9 @@
   "results/environment.json": "06636a280129577fc5995f66076359a297c4c341024a4d93409e0cc876c77579",
   "results/gemma-verification.json": "4ec1ae926f30376cf5a587df8c1656854b141988eccf78935d481b2b5b697e41",
   "results/gpu.csv": "c8da9b45614df603371a7f0f60c56d7d212c514225f27f78b76a11491d1ef9d7",
-  "results/html-checks.json": "3fba6846da5124956cee7e26fc7b101619356f49ebcf84c80e00b702d2bef56d",
-  "results/html-desktop.png": "3ca2d65a9c31715d6185b48e65fab9c65a644d7ad7217cef30f595cc3a88a797",
-  "results/html-mobile.png": "aff745dbef699d2d3af7980a9c9ed2f3e4af1e6b9fb4c7bc7975fea28f9214f7",
+  "results/html-checks.json": "f90ac4d6d4213a8ad8b5739ca81a8fdc8013cfa571da5af25ffe771fdc03b8c0",
+  "results/html-desktop.png": "e47fc98ee87f2b76c5ed40c0dc4eec0625dd3dc391bf67666d833105ff983307",
+  "results/html-mobile.png": "50e7a46194b1ba916b0a8b47ad2dceaaa50c92af4d0a257fec25eafd4890fca0",
   "results/infrastructure.json": "a5aedea9bcf66819f115eca2818b3f3f7838c4c11f69165dd7e9f635a8e07f29",
   "results/launcher.log": "de91516c72d2e15f7bbf81353883bfdf03a06092023be577d151a4e502095d22",
   "results/library-prefetch.json": "8adeb5783421f1a4ff84fc7060398a3bfe45d15bf877d43b2c0180b26944230e",
@@ -52,5 +53,5 @@
   "results/preflight.json": "62cb4e93c751e5de6e976c3007ae0fc7a17bc7ca6ae73705fb7f27a124a928c4",
   "results/quality-errors.json": "5ac7693060aeb5cd9998f0b355f76a9983f6dc1b47af0345cdca5ff20ecbec60",
   "results/suite-status.json": "39d35af29b714ddbdb1cb70235be080a201e13b8853e2fc78f265bfbfd22f7bb",
-  "results/verification.json": "2d818f25cf5f93c7a6002c45b1a0f5b2cdec1de96f8cc31deded921db6cc998e"
+  "results/verification.json": "3fb9dee00bb1aff3165a828e89c8c91e9ec9a156ac3a856883ca5ea344fad1dd"
 }

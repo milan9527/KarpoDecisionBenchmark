@@ -10,6 +10,7 @@ from pathlib import Path
 import re
 
 from benchmark import summarize, validate
+from decision_example import load_decision_example, decision_example_html, decision_example_markdown
 from prepare import digest
 from report_common import documentation_metadata, table
 from replica_report import verify as verify_replicas
@@ -231,6 +232,9 @@ def main():
     replicas = verify_replicas(reports)
     candidates, candidate_examples = load_candidate_examples()
     (EXP / "results/candidates.json").write_text(json.dumps(candidates, ensure_ascii=False, indent=2) + "\n")
+    decision_example = load_decision_example()
+    (EXP / "results/decision-example.json").write_text(
+        json.dumps(decision_example, ensure_ascii=False, indent=2) + "\n")
     cloud = documentation_metadata(load(EXP / "results/infrastructure.json"))
     assert cloud["state"] == "stopped", "Publish the final resource state after stopping the GPU"
     assert all(i["state"] == "stopped" for i in cloud["related_instances"])
@@ -309,11 +313,11 @@ def main():
         "新表的P50/P95合并原有和边界共104次观察；历史描述表仅使用80次原有观察。"
         "每个配置8次预热单列，四个FP8配置各做并发1/2/4/8、每格24次的短时扫描。"
         "不同模型使用各自tokenizer；最大长度8192，不截断输入。"
-        "显存每2秒抽样，可能遗漏瞬时峰值，不等于最小可部署容量；FP8启动仍需加载原始权重。"
     )
+    memory_note = "显存每2秒抽样，可能遗漏瞬时峰值，不等于最小可部署容量；FP8启动仍需加载原始权重。"
     hardware = (
         f"实际实例 {cloud['instance_type']}，48vCPU、512GiB内存、两张RTX PRO 6000 Blackwell 96GB；"
-        "系列模型表每次使用一张GPU，副本表另外比较一张与两张GPU。"
+        "系列模型表每次使用一张GPU。"
         "本轮在该实例上重新测试31B基线。"
         "B200及H100的容量尝试未成功，没有这些GPU的新性能数据。"
         "本次新增H100尝试覆盖us-east-1和us-west-2的10个可用区，Spot与按需共20次，均未取得容量。"
@@ -327,7 +331,9 @@ def main():
         "Karpo 31B/12B使用重启前已完成的数据，Karpo 9B/4B使用重启后的数据；模型和核心运行库版本不变。"
     )
     lines = ["# Karpo 系列模型：完整200候选实测", "", conclusion, "", replica_text, "", method, "",
-             timing, "", hardware, "", runtime, "",
+             timing + memory_note, "", hardware, "", runtime, "",
+             "## 完整决策示例", "",
+             decision_example_markdown(decision_example, "results/decision-example.json"), "",
              "## 候选示例", "", candidate_examples_markdown(candidate_examples, "results/candidates.json"), ""]
     for title, headers, rows in tables:
         lines += ["## " + title, "", "| " + " | ".join(headers) + " |",
@@ -368,19 +374,22 @@ def main():
     sections = "".join(
         f'<section id="part-{i}"><div class="section-head"><h2>{esc(title)}</h2></div>'
         f'<div class="panel">{table(headers, rows, title)}</div></section>'
-        for i, (title, headers, rows) in enumerate(tables))
+        for i, (title, headers, rows) in enumerate(tables) if i in {0, 1, 3, 4})
     cards = "".join(
         f'<div class="kpi{" accent" if r["id"] == preferred["id"] else ""}">'
         f'<div class="kpi-top">{r["label"]} · P50</div>'
         f'<div class="kpi-value">{fmt(r["quality"]["p50_ms"])}<small>ms</small></div>'
         f'<div class="kpi-note">参考一致 {r["quality"]["correct"]}/104</div></div>'
         for r in reports if r["precision"] == "fp8")
+    hidden_fields = {"startup_seconds", "sampled_startup_peak_gib", "sampled_inference_peak_gib",
+                     "same_choices_vs_bf16", "new_errors_vs_bf16"}
+    html_reports = [{key: value for key, value in r.items() if key not in hidden_fields} for r in reports]
     payload = json.dumps(documentation_metadata({
-        "configs": reports, "manifest": documentation_metadata(manifest),
+        "configs": html_reports, "manifest": documentation_metadata(manifest),
         "retry_manifest": documentation_metadata(load(QWEN / "manifest.json")), "verification": verification,
         "infrastructure": cloud, "preferred": preferred["id"], "quality_error_count": len(errors),
-        "replicas": replicas,
         "candidate_examples": candidate_examples,
+        "decision_example": decision_example,
     }), ensure_ascii=False).replace("<", "\\u003c")
     css = (ROOT / "scripts/report.css").read_text()
     page = f"""<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
@@ -390,28 +399,39 @@ def main():
 #candidate-examples th,#candidate-examples td{{white-space:normal;overflow-wrap:anywhere;vertical-align:top}}
 #candidate-examples th:first-child{{width:100px}}
 #candidate-examples th:nth-child(2){{width:55%}}
+.example-code{{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.65;background:#f4f7f8;padding:16px;border-radius:8px}}
+#decision-example h3{{margin:24px 0 12px}}
+#decision-example blockquote{{margin:16px 0;padding:12px 16px;border-left:3px solid #168178;background:#f4f7f8}}
+#decision-example details{{margin:16px 0}}
+#decision-example summary{{cursor:pointer;font-weight:600}}
+.example-options table{{table-layout:fixed}}
+.example-options th,.example-options td{{white-space:normal;overflow-wrap:anywhere;vertical-align:top}}
+.example-options th:first-child{{width:100px}}
+.candidate-catalog{{max-height:460px;overflow:auto;margin-top:16px}}
+@media print{{.candidate-catalog{{max-height:none;overflow:visible}}}}
 @media(max-width:560px){{#candidate-examples th:first-child{{width:76px}}#candidate-examples th:nth-child(2){{width:48%}}}}
 </style></head><body><aside class="sidebar">
 <a class="brand" href="#overview"><span class="brand-mark">K</span> Karpo Decision</a>
 <div class="side-label">FULL 200 / MODEL FAMILY</div><nav class="nav"><a href="#overview">结论与延迟</a>
+<a href="#decision-example">完整决策示例</a>
 <a href="#candidate-examples">候选示例</a>
-<a href="#part-0">选择质量</a><a href="#part-1">顺序与基线</a><a href="#part-2">FP8 对照</a>
-<a href="#part-3">单卡并发</a><a href="#part-5">双副本对照</a><a href="#part-4">历史描述实验</a>
-<a href="#part-6">显存与启动</a><a href="#methods">口径与资源</a></nav></aside>
+<a href="#part-0">选择质量</a><a href="#part-1">顺序与基线</a>
+<a href="#part-3">单卡并发</a><a href="#part-4">历史描述实验</a>
+<a href="#methods">口径与资源</a></nav></aside>
 <main><div class="topbar"><div class="crumb">2026-11-20 / 同规格单GPU模型对比</div>
 <div class="top-actions"><button class="button" id="download">下载汇总数据</button>
 <button class="button primary" onclick="window.print()">打印 / PDF</button></div></div>
 <section id="overview"><div class="eyebrow">200 CANDIDATES · FOUR MODELS · FP8 / BF16</div>
 <h1 style="font-size:clamp(26px,3vw,36px);line-height:1.4;margin:16px 0">完整200候选，<br>单卡P50最低 {fmt(fastest['quality']['p50_ms'])} ms</h1>
 <p class="text-block">{esc(conclusion)}</p><div class="pills"><span class="pill green">7/7配置完成</span>
-<span class="pill">1168次系列调用 + 544次副本对照</span><span class="pill">同机重测31B基线</span>
+<span class="pill">1168次系列调用</span><span class="pill">同机重测31B基线</span>
 <span class="pill">52个合成案例 · 两种候选顺序</span>
 <span class="pill">系列表为单卡结果</span></div><div class="kpis">{cards}</div>
 <div class="panel panel-padding"><div class="panel-header"><div><h3>104次质量观察的完整响应延迟</h3>
 <p class="panel-sub">零起点线性刻度 · 100ms目标线 · FP8与BF16均展示</p></div>
 <div class="segmented controls"><button data-metric="p50_ms" aria-pressed="true">P50</button>
 <button data-metric="p95_ms" aria-pressed="false">P95</button></div></div><div id="bars" class="bar-chart"></div></div>
-</section><div class="panel panel-padding text-block" style="margin-bottom:28px">{esc(replica_text)}</div>
+</section>{decision_example_html(decision_example)}
 {candidate_section}{sections}<section id="methods"><div class="section-head"><h2>测试口径与资源</h2></div>
 <div class="panel panel-padding text-block"><p>{esc(method)}</p><p>{esc(timing)}</p><p>{esc(hardware)}</p>
 <p>{esc(runtime)}</p>
@@ -420,7 +440,6 @@ def main():
 <details><summary>资源记录</summary><pre class="code-line" style="white-space:pre-wrap">{esc(json.dumps(cloud,ensure_ascii=False,indent=2))}</pre></details>
 </div></section><footer class="footer"><span>离线报告 · 所有指标由逐条响应重算</span><div class="footer-links">
 <a href="@@RESULTS@@">Markdown</a><a href="@@PLAN@@">实验计划</a><a href="@@README@@">复现说明</a>
-<a href="@@REPLICAS@@">副本实验计划</a>
 <a href="@@RETRY@@">Karpo 9B/4B重试记录</a>
 <a href="@@HARDWARE@@">H100容量记录</a>
 </div></footer></main><script type="application/json" id="data">{payload}</script>"""
@@ -446,9 +465,9 @@ window.addEventListener('afterprint',()=>closed.forEach(x=>x.open=false));render
 </script></body></html>"""
     targets = {"ERRORS": EXP / "results/quality-errors.json", "RESULTS": EXP / "RESULTS.zh.md",
                "PLAN": EXP / "PLAN.zh.md", "README": ROOT / "README.md",
-               "REPLICAS": ROOT / "experiments/replicas-retry-20261120/PLAN.zh.md",
                "RETRY": QWEN / "PLAN.zh.md",
                "CANDIDATES": EXP / "results/candidates.json",
+               "DECISION": EXP / "results/decision-example.json",
                "HARDWARE": ROOT / "experiments/h100-4b-20261120/STATUS.zh.md"}
     for destination in [ROOT / "report.html", EXP / "report.html"]:
         destination.write_text(re.sub(r"@@([A-Z]+)@@",

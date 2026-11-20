@@ -1,14 +1,17 @@
 {
-  "checked_utc": "2026-11-20T05:36:42.275962+00:00",
-  "html_sha256": "4e47adefafe21946b5628651e8f9320e8492def327ca8362ceb55162d725345b",
+  "checked_utc": "2026-11-20T06:28:27.046261+00:00",
+  "html_sha256": "2a480e384b4927dadbf684b4f3b8dfdbda65385e58cda54d68595c55013640a0",
   "experiment": "experiments/family-20261120",
   "checks": [
-    "content:seven_model_configs_and_two_replica_configs",
+    "content:seven_model_configs",
     "cards:match_raw_summaries",
     "links:resolve",
+    "content:removed_precision_replica_memory_sections",
     "content:removed_combined_latency_accuracy_metric",
     "content:no_qwen_quality_analysis",
     "examples:match_frozen_200_candidate_input",
+    "walkthrough:exact_frozen_request_recorded_response_and_all_200_options",
+    "walkthrough:expandable_options",
     "chart:p50_ms",
     "chart:p95_ms",
     "download:matches_verified_summaries",
@@ -41,5 +44,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 683595
+  "print_pdf_bytes": 799703
 }
