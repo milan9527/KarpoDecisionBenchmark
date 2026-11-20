@@ -4,11 +4,12 @@ import datetime as dt
 import hashlib
 import html
 import json
+import os
 from pathlib import Path
 import re
 
 from benchmark import summarize, validate
-from build_html import documentation_metadata, table
+from report_common import documentation_metadata, table
 from prepare import digest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -210,8 +211,15 @@ def main():
                   f"观察时间 {cloud['observed_utc']}。模型权重保存在 EBS。"]
     lines += ["", "四组冻结描述：[description-variants.json](fixtures/description-variants.json)。"
               "计划：[PLAN.zh.md](PLAN.zh.md)。逐条响应与汇总：[results](results/)。", ""]
-    (EXP / "RESULTS.zh.md").write_text("\n".join(lines))
-    css = re.search(r"<style>(.*?)</style>", (ROOT / "scripts/report_template.html").read_text(), re.S)[1]
+    markdown = "\n".join(lines)
+    (EXP / "RESULTS.zh.md").write_text(markdown)
+    # The main entry points show the same verified run, with links rebased.
+    relative_experiment = EXP.relative_to(ROOT).as_posix()
+    main_markdown = markdown.replace("](results/", f"]({relative_experiment}/results/")
+    main_markdown = main_markdown.replace("](fixtures/", f"]({relative_experiment}/fixtures/")
+    main_markdown = main_markdown.replace("](PLAN.zh.md)", f"]({relative_experiment}/PLAN.zh.md)")
+    (ROOT / "RESULTS.zh.md").write_text(main_markdown)
+    css = (ROOT / "scripts/report.css").read_text()
     esc = html.escape
     table_html = "".join(
         f'<section id="part-{i}"><div class="section-head"><div class="section-title">'
@@ -222,13 +230,21 @@ def main():
         "variants": [{"id": v, "label": LABELS[v], "summary": reports[v]} for v in manifest["variants"]],
         "infrastructure": cloud, "manifest": documentation_metadata(manifest), "verification": verified,
     }, ensure_ascii=False).replace("<", "\\u003c")
+    cards = "".join(
+        f'<div class="kpi{" accent" if v == preferred else ""}">'
+        f'<div class="kpi-top">{esc(LABELS[v])} · P50</div>'
+        f'<div class="kpi-value">{f(reports[v]["quality-existing"]["p50_ms"])}<small>ms</small></div>'
+        f'<div class="kpi-note">原有场景 {reports[v]["quality-existing"]["correct"]}/80'
+        f' · 边界 {reports[v]["quality-boundary"]["correct"]}/24</div></div>'
+        for v in manifest["variants"]
+    )
     infrastructure = esc(json.dumps(cloud, ensure_ascii=False, indent=2)) if cloud else "资源状态稍后补充。"
     html_page = f"""<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>200候选 · 描述精简 + FP8</title>
 <style>{css}</style></head><body>
 <aside class="sidebar"><a class="brand" href="#overview"><span class="brand-mark">K</span> Karpo Decision</a>
 <div class="side-label">Full 200 candidates / FP8</div><nav class="nav"><a href="#overview">结论与延迟</a>
-<a href="#part-0">选择质量</a><a href="#part-1">顺序稳定性</a><a href="#part-2">并发</a>
+<a href="#part-0">选择质量</a><a href="#part-1">顺序稳定性</a><a href="#part-2">并发</a><a href="#part-3">错误明细</a>
 <a href="#methods">测试口径与资源</a></nav><div class="side-bottom">全部200项交给模型<br>无程序路由 · 无候选过滤</div></aside>
 <main><div class="topbar"><div class="crumb">Karpo 31B / 描述精简实验</div><div class="top-actions">
 <button class="button" id="download">下载汇总数据</button><button class="button primary" onclick="window.print()">打印 / PDF</button></div></div>
@@ -237,6 +253,7 @@ def main():
 <p class="text-block" style="font-size:14px;max-width:920px">{esc(conclusion)}</p>
 <div class="pills"><span class="pill green">4/4组完成</span><span class="pill">848次调用，含预热与重复</span>
 <span class="pill">RTX PRO 6000 · 96GB</span><span class="pill">同一FP8服务</span></div>
+<div class="kpis">{cards}</div>
 <div class="panel panel-padding"><div class="panel-header"><div><h3>原有40例 × 两种顺序</h3>
 <p class="panel-sub">零起点线性刻度 · 全部200候选 · 完整请求延迟</p></div>
 <div class="segmented controls"><button data-metric="p50_ms" aria-pressed="true">P50</button>
@@ -245,11 +262,11 @@ def main():
 <div class="chart-note">{esc(drift)}</div></div></section>
 {table_html}<section id="methods"><div class="section-head"><h2>测试口径与资源保留</h2></div>
 <div class="panel panel-padding text-block"><p>{esc(method)}</p><p>{esc(timing)}</p>
-<p>质量错误或无效观察共 {len(mismatches)} 条；每条错误及原始响应保留在 results/quality-errors.json。</p>
+<p>质量错误或无效观察共 {len(mismatches)} 条；查看<a href="@@ERRORS@@">每条错误及原始响应</a>。</p>
 <p>模型权重保存在EBS。本轮结束只stop，不terminate；下方是带时间的资源记录。</p>
 <details><summary>查看资源状态</summary><pre class="code-line" style="white-space:pre-wrap">{infrastructure}</pre></details></div></section>
 <footer class="footer"><span>2026-11-19 · 单文件离线报告</span><div class="footer-links">
-<a href="RESULTS.zh.md">Markdown</a><a href="PLAN.zh.md">冻结计划</a><a href="../../report.html">上一轮报告</a></div></footer></main>
+<a href="@@RESULTS@@">Markdown</a><a href="@@PLAN@@">冻结计划</a><a href="@@README@@">复现说明</a></div></footer></main>
 <script type="application/json" id="data">{payload}</script>"""
     html_page += r"""<script>
 const data=JSON.parse(document.getElementById('data').textContent);
@@ -271,13 +288,19 @@ document.getElementById('download').addEventListener('click',()=>{
 let closed=[];window.addEventListener('beforeprint',()=>{closed=[...document.querySelectorAll('details:not([open])')];closed.forEach(x=>x.open=true)});
 window.addEventListener('afterprint',()=>closed.forEach(x=>x.open=false));render('p50_ms');
 </script></body></html>"""
-    (EXP / "report.html").write_text(html_page)
+    targets = {
+        "RESULTS": EXP / "RESULTS.zh.md", "PLAN": EXP / "PLAN.zh.md",
+        "README": ROOT / "README.md", "ERRORS": EXP / "results/quality-errors.json",
+    }
+    for destination in [ROOT / "report.html", EXP / "report.html"]:
+        page = re.sub(r"@@([A-Z]+)@@", lambda m: esc(os.path.relpath(targets[m[1]], destination.parent)), html_page)
+        destination.write_text(page)
     evidence = {str(p.relative_to(EXP)): hashlib.sha256(p.read_bytes()).hexdigest()
                 for p in sorted((EXP / "results").rglob("*"))
                 if p.is_file() and p.name != "evidence-sha256.json"}
     (EXP / "results/evidence-sha256.json").write_text(json.dumps(evidence, indent=2) + "\n")
     print(conclusion)
-    print(f"Verified {total} calls; wrote Markdown and HTML; quality errors={len(mismatches)}.")
+    print(f"Verified {total} calls; updated main and experiment Markdown/HTML; quality errors={len(mismatches)}.")
 
 
 if __name__ == "__main__":

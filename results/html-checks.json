@@ -1,27 +1,18 @@
 {
-  "checked_utc": "2026-11-20T01:57:49.296085+00:00",
-  "html_sha256": "faf2f7a61bc6db400cd6430436b0e1de11b32c5460e40b97579da4d4047c32d7",
+  "checked_utc": "2026-11-20T02:05:00.391071+00:00",
+  "html_sha256": "9b8f673f3f0d653a6933db339d40e2d282e77e9300db31889e752cadda06843d",
+  "experiment": "experiments/concise-fp8-20261119",
   "checks": [
-    "latency:quality-200-detailed:p50_ms",
-    "latency:quality-200-detailed:p95_ms",
-    "latency:size-200-compact:p50_ms",
-    "latency:size-200-compact:p95_ms",
-    "latency:quality-existing-payment:p50_ms",
-    "latency:quality-existing-payment:p95_ms",
-    "size:31b-bf16:compact",
-    "size:31b-bf16:detailed",
-    "concurrency:31b-bf16",
-    "size:31b-bf16-triton-graphs:compact",
-    "size:31b-bf16-triton-graphs:detailed",
-    "concurrency:31b-bf16-triton-graphs",
-    "size:31b-fp8-triton-graphs:compact",
-    "size:31b-fp8-triton-graphs:detailed",
-    "concurrency:31b-fp8-triton-graphs",
-    "download:matches_embedded_data",
-    "offline:zero_network_requests",
+    "content:latest_four_variants_only",
+    "cards:match_raw_summaries",
+    "links:resolve",
+    "chart:p50_ms",
+    "chart:p95_ms",
+    "download:matches_verified_summaries",
+    "offline:zero_external_requests",
     "responsive:no_document_overflow",
     "print:pdf_generated",
-    "documentation:requested_topics_removed"
+    "cloud:matches_resource_record"
   ],
   "viewports": [
     {
@@ -47,5 +38,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 1010382
+  "print_pdf_bytes": 572548
 }
