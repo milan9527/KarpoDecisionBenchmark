@@ -18,6 +18,11 @@ ROOT = Path(__file__).resolve().parents[1]
 EXP = ROOT / "experiments/family-20261120"
 QWEN = ROOT / "experiments/qwen-retry-20261120"
 PREVIOUS = ROOT / "experiments/concise-fp8-20261119"
+CANDIDATE_EXAMPLE_NOTE = (
+    "以下8项摘自本次合成测试的同一份200候选列表。每项包含候选ID、业务域、动作和适用条件。"
+    "英文列为实际输入原文；中文仅作阅读说明。实测每次完整传入200项，由模型选择一个ID。"
+)
+CANDIDATE_EXAMPLE_HEADERS = ["候选 ID", "实际候选描述（英文精简原文）", "中文说明"]
 
 
 def load(path):
@@ -30,6 +35,37 @@ def fmt(value, digits=1):
 
 def choice(row):
     return row.get("response", {}).get("answers", {}).get("action", {}).get("choice")
+
+
+def load_candidate_examples():
+    requests = load(EXP / "requests.json")
+    candidates = requests[0]["request"]["questions"]["action"]["criteria"]
+    assert len(candidates) == 200
+    assert all(r["request"]["questions"]["action"]["criteria"] == candidates for r in requests)
+    meanings = [
+        ("sop_178", "用户间转账：账户操作要求身份验证，且验证尚未完成时，先核验身份。"),
+        ("sop_173", "账户及登录：存在合规冻结时，合规审核优先于审批和客户继续执行的要求。"),
+        ("sop_048", "加密资产提现：同一幂等键对应的操作已经执行，应防止重复操作。"),
+        ("sop_063", "币种兑换：同一幂等键对应的操作已经执行，应防止重复操作。"),
+        ("sop_163", "商户退款：申请在允许期限内，且尚未执行退款时，进入退款审核。"),
+        ("sop_167", "商户退款：外部已确认完成，但内部账本金额不一致时，核对账本。"),
+        ("sop_198", "加密资产充值：外部已确认完成，但内部账本金额不一致时，核对账本。"),
+        ("sop_031", "加密资产充值：超过处理时限仍待处理，且无重复执行、无合规冻结时，调查延迟。"),
+    ]
+    examples = [{"id": key, "description": candidates[key], "meaning_zh": meaning}
+                for key, meaning in meanings]
+    return candidates, examples
+
+
+def candidate_examples_markdown(examples, catalog_link):
+    rows = [CANDIDATE_EXAMPLE_HEADERS, ["---"] * 3]
+    rows += [[e["id"], e["description"], e["meaning_zh"]] for e in examples]
+    table_lines = ["| " + " | ".join(value.replace("|", r"\|") for value in row) + " |" for row in rows]
+    return "\n\n".join([
+        CANDIDATE_EXAMPLE_NOTE,
+        "\n".join(table_lines),
+        f"[查看完整200候选 JSON]({catalog_link})",
+    ])
 
 
 def verify():
@@ -193,6 +229,8 @@ def verify():
 def main():
     manifest, reports, errors, verification = verify()
     replicas = verify_replicas(reports)
+    candidates, candidate_examples = load_candidate_examples()
+    (EXP / "results/candidates.json").write_text(json.dumps(candidates, ensure_ascii=False, indent=2) + "\n")
     cloud = documentation_metadata(load(EXP / "results/infrastructure.json"))
     assert cloud["state"] == "stopped", "Publish the final resource state after stopping the GPU"
     assert all(i["state"] == "stopped" for i in cloud["related_instances"])
@@ -289,7 +327,8 @@ def main():
         "Karpo 31B/12B使用重启前已完成的数据，Karpo 9B/4B使用重启后的数据；模型和核心运行库版本不变。"
     )
     lines = ["# Karpo 系列模型：完整200候选实测", "", conclusion, "", replica_text, "", method, "",
-             timing, "", hardware, "", runtime, ""]
+             timing, "", hardware, "", runtime, "",
+             "## 候选示例", "", candidate_examples_markdown(candidate_examples, "results/candidates.json"), ""]
     for title, headers, rows in tables:
         lines += ["## " + title, "", "| " + " | ".join(headers) + " |",
                   "|" + "|".join("---" for _ in headers) + "|"]
@@ -315,6 +354,17 @@ def main():
         "[完整结果](RESULTS.zh.md) · [HTML](report.html) · [资源记录](results/infrastructure.json)\n\n"
         "results/capacity-status.json保留启动成功之前的历史容量核对，不代表当前实验状态。\n")
     esc = html.escape
+    example_table = table(
+        CANDIDATE_EXAMPLE_HEADERS,
+        [[e["id"], e["description"], e["meaning_zh"]] for e in candidate_examples],
+        "实际测试候选示例",
+    )
+    candidate_section = (
+        '<section id="candidate-examples"><div class="section-head"><h2>候选示例</h2></div>'
+        f'<div class="panel"><div class="panel-padding text-block">{esc(CANDIDATE_EXAMPLE_NOTE)}</div>'
+        + example_table
+        + '<div class="table-caption"><a href="@@CANDIDATES@@">查看完整200候选 JSON</a></div></div></section>'
+    )
     sections = "".join(
         f'<section id="part-{i}"><div class="section-head"><h2>{esc(title)}</h2></div>'
         f'<div class="panel">{table(headers, rows, title)}</div></section>'
@@ -330,13 +380,21 @@ def main():
         "retry_manifest": documentation_metadata(load(QWEN / "manifest.json")), "verification": verification,
         "infrastructure": cloud, "preferred": preferred["id"], "quality_error_count": len(errors),
         "replicas": replicas,
+        "candidate_examples": candidate_examples,
     }), ensure_ascii=False).replace("<", "\\u003c")
     css = (ROOT / "scripts/report.css").read_text()
     page = f"""<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>Karpo 31B / 12B / 9B / 4B 实测</title>
-<style>{css}</style></head><body><aside class="sidebar">
+<style>{css}
+#candidate-examples table{{table-layout:fixed}}
+#candidate-examples th,#candidate-examples td{{white-space:normal;overflow-wrap:anywhere;vertical-align:top}}
+#candidate-examples th:first-child{{width:100px}}
+#candidate-examples th:nth-child(2){{width:55%}}
+@media(max-width:560px){{#candidate-examples th:first-child{{width:76px}}#candidate-examples th:nth-child(2){{width:48%}}}}
+</style></head><body><aside class="sidebar">
 <a class="brand" href="#overview"><span class="brand-mark">K</span> Karpo Decision</a>
 <div class="side-label">FULL 200 / MODEL FAMILY</div><nav class="nav"><a href="#overview">结论与延迟</a>
+<a href="#candidate-examples">候选示例</a>
 <a href="#part-0">选择质量</a><a href="#part-1">顺序与基线</a><a href="#part-2">FP8 对照</a>
 <a href="#part-3">单卡并发</a><a href="#part-5">双副本对照</a><a href="#part-4">历史描述实验</a>
 <a href="#part-6">显存与启动</a><a href="#methods">口径与资源</a></nav></aside>
@@ -354,7 +412,7 @@ def main():
 <div class="segmented controls"><button data-metric="p50_ms" aria-pressed="true">P50</button>
 <button data-metric="p95_ms" aria-pressed="false">P95</button></div></div><div id="bars" class="bar-chart"></div></div>
 </section><div class="panel panel-padding text-block" style="margin-bottom:28px">{esc(replica_text)}</div>
-{sections}<section id="methods"><div class="section-head"><h2>测试口径与资源</h2></div>
+{candidate_section}{sections}<section id="methods"><div class="section-head"><h2>测试口径与资源</h2></div>
 <div class="panel panel-padding text-block"><p>{esc(method)}</p><p>{esc(timing)}</p><p>{esc(hardware)}</p>
 <p>{esc(runtime)}</p>
 <p>质量错误或无效观察共 {len(errors)} 条；<a href="@@ERRORS@@">查看逐条错误和原始响应</a>。</p>
@@ -390,6 +448,7 @@ window.addEventListener('afterprint',()=>closed.forEach(x=>x.open=false));render
                "PLAN": EXP / "PLAN.zh.md", "README": ROOT / "README.md",
                "REPLICAS": ROOT / "experiments/replicas-retry-20261120/PLAN.zh.md",
                "RETRY": QWEN / "PLAN.zh.md",
+               "CANDIDATES": EXP / "results/candidates.json",
                "HARDWARE": ROOT / "experiments/h100-4b-20261120/STATUS.zh.md"}
     for destination in [ROOT / "report.html", EXP / "report.html"]:
         destination.write_text(re.sub(r"@@([A-Z]+)@@",

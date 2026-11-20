@@ -12,6 +12,23 @@
 
 部署使用Karpo官方HTTP服务，PyTorch 2.14.1+cu130、Transformers 5.21.0、CUDA 13.0。实际启动参数和health响应保存在各配置结果目录。首轮9B/4B因缺少fla依赖而启动失败，决策请求为0；补装flash-linear-attention和fla-core 0.5.2后，在同一EC2实例重启后完成四个配置的独立重试。Karpo 31B/12B使用重启前已完成的数据，Karpo 9B/4B使用重启后的数据；模型和核心运行库版本不变。
 
+## 候选示例
+
+以下8项摘自本次合成测试的同一份200候选列表。每项包含候选ID、业务域、动作和适用条件。英文列为实际输入原文；中文仅作阅读说明。实测每次完整传入200项，由模型选择一个ID。
+
+| 候选 ID | 实际候选描述（英文精简原文） | 中文说明 |
+| --- | --- | --- |
+| sop_178 | peer transfer \| Verify identity: requested account operation requires identity verification that is incomplete. | 用户间转账：账户操作要求身份验证，且验证尚未完成时，先核验身份。 |
+| sop_173 | account access \| Compliance review: active compliance hold overrides approval and customer requests to proceed. | 账户及登录：存在合规冻结时，合规审核优先于审批和客户继续执行的要求。 |
+| sop_048 | crypto withdrawal \| Prevent duplicate funds operation: the same operation is already executed under its idempotency key. | 加密资产提现：同一幂等键对应的操作已经执行，应防止重复操作。 |
+| sop_063 | currency exchange \| Prevent duplicate funds operation: the same operation is already executed under its idempotency key. | 币种兑换：同一幂等键对应的操作已经执行，应防止重复操作。 |
+| sop_163 | merchant refund \| Review refund: new request within allowed window, with no refund execution. | 商户退款：申请在允许期限内，且尚未执行退款时，进入退款审核。 |
+| sop_167 | merchant refund \| Reconcile ledger: provider completion confirmed but internal ledger amount differs. | 商户退款：外部已确认完成，但内部账本金额不一致时，核对账本。 |
+| sop_198 | crypto deposit \| Reconcile ledger: provider completion confirmed but internal ledger amount differs. | 加密资产充值：外部已确认完成，但内部账本金额不一致时，核对账本。 |
+| sop_031 | crypto deposit \| Investigate delay: still pending beyond processing SLA, without duplicate execution or compliance hold. | 加密资产充值：超过处理时限仍待处理，且无重复执行、无合规冻结时，调查延迟。 |
+
+[查看完整200候选 JSON](results/candidates.json)
+
 ## 质量与延迟
 
 | 配置 | 原有正确 | 边界正确 | 有效 | P50 ms | P95 ms | 输入tokens |

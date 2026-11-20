@@ -1,6 +1,6 @@
 {
-  "checked_utc": "2026-11-20T05:33:25.147295+00:00",
-  "html_sha256": "3a99ac7ebd3b594b842bb77aaf02370976cb214118c54041565e1edce239da9d",
+  "checked_utc": "2026-11-20T05:36:42.275962+00:00",
+  "html_sha256": "4e47adefafe21946b5628651e8f9320e8492def327ca8362ceb55162d725345b",
   "experiment": "experiments/family-20261120",
   "checks": [
     "content:seven_model_configs_and_two_replica_configs",
@@ -8,6 +8,7 @@
     "links:resolve",
     "content:removed_combined_latency_accuracy_metric",
     "content:no_qwen_quality_analysis",
+    "examples:match_frozen_200_candidate_input",
     "chart:p50_ms",
     "chart:p95_ms",
     "download:matches_verified_summaries",
@@ -40,5 +41,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 618841
+  "print_pdf_bytes": 683595
 }
