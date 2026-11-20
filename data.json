@@ -1,0 +1,149 @@
+{
+  "resource_utc": "2026-11-20T16:17:06.581936+00:00",
+  "all_project_ec2_stopped": true,
+  "instances": [
+    {
+      "region": "us-east-1",
+      "id": "i-05d0c24c739f41ca5",
+      "type": "g7e.4xlarge",
+      "az": "us-east-1b",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-0c777e3714538d624",
+      "type": "p5en.48xlarge",
+      "az": "us-east-2a",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-091371593b3c4a5ff",
+      "type": "p5.4xlarge",
+      "az": "us-east-2b",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-048c3784bb87b6d86",
+      "type": "g7e.8xlarge",
+      "az": "us-east-2c",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-05b24e3b4a7ee864d",
+      "type": "g7e.12xlarge",
+      "az": "us-east-2c",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-0de4f061c2a04fe4b",
+      "type": "g7e.4xlarge",
+      "az": "us-east-2c",
+      "state": "stopped"
+    }
+  ],
+  "performance": [
+    {
+      "stage": "confirm",
+      "target_rps": 100.0,
+      "offered_seconds": 120.0,
+      "attempts": 12000,
+      "valid": 12000,
+      "correct": 11400,
+      "failures": 0,
+      "steady_valid_rps": 99.9888888888889,
+      "p50_ms": 65.85809999978665,
+      "p95_ms": 94.26910899946961,
+      "scenario": "风控 · 四RTX"
+    },
+    {
+      "stage": "repeat",
+      "target_rps": 100.0,
+      "offered_seconds": 120.0,
+      "attempts": 12000,
+      "valid": 12000,
+      "correct": 11400,
+      "failures": 0,
+      "steady_valid_rps": 99.9888888888889,
+      "p50_ms": 64.92191499910405,
+      "p95_ms": 93.21575199919607,
+      "scenario": "风控 · 四RTX"
+    },
+    {
+      "stage": "confirm",
+      "target_rps": 100,
+      "offered_seconds": 120,
+      "attempts": 12000,
+      "valid": 12000,
+      "correct": 11310,
+      "failures": 0,
+      "steady_valid_rps": 100.0,
+      "p50_ms": 76.57992399992963,
+      "p95_ms": 82.63375599995015,
+      "scenario": "SOP · 八H200"
+    },
+    {
+      "stage": "repeat",
+      "target_rps": 100,
+      "offered_seconds": 120,
+      "attempts": 12000,
+      "valid": 12000,
+      "correct": 11310,
+      "failures": 0,
+      "steady_valid_rps": 100.0,
+      "p50_ms": 76.23562600019795,
+      "p95_ms": 78.61836600022798,
+      "scenario": "SOP · 八H200"
+    }
+  ],
+  "quality": [
+    [
+      "风控",
+      "233/240",
+      "97.08%",
+      "独立quality集；压力循环tune集"
+    ],
+    [
+      "SOP",
+      "98/104",
+      "94.23%",
+      "质量和压力复用相同104条样例"
+    ]
+  ],
+  "gpu": [
+    [
+      "第一轮",
+      "73.68%",
+      "70.2–76.1%"
+    ],
+    [
+      "第二轮",
+      "68.28%",
+      "57.4–77.6%"
+    ]
+  ],
+  "prices": [
+    {
+      "scheme": "风控 · 四RTX",
+      "utc": "2026-11-20T16:07:21.744969+00:00",
+      "spot_usd_per_hour": 7.9148,
+      "on_demand_usd_per_hour": 16.2824,
+      "month_hours": 720
+    },
+    {
+      "scheme": "SOP · 八H200",
+      "utc": "2026-11-20T16:00:56.480274+00:00",
+      "spot_usd_per_hour": 32.2512,
+      "on_demand_usd_per_hour": 63.296,
+      "month_hours": 720
+    }
+  ],
+  "sources": {
+    "risk": "experiments/vllm-rps100-20261120/data.json",
+    "sop": "experiments/vllm-sop-h200-20261120/data.json",
+    "resources": "operations/stop-20261120/infrastructure-stopped.json"
+  }
+}

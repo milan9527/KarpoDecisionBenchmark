@@ -1,0 +1,1572 @@
+{
+  "utc": "2026-11-20T16:17:06.581936+00:00",
+  "authorization": "User requested all project EC2 stop after documentation update",
+  "scope": "All KarpoDecisionBenchmark EC2 found across 20 enabled AWS regions",
+  "regions": [
+    {
+      "region": "us-east-1",
+      "instances": [
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-11-20 14:45:58+00:00",
+                "DeleteOnTermination": false,
+                "Status": "attached",
+                "VolumeId": "vol-06ef434d35f57903c",
+                "EbsCardIndex": 0
+              }
+            }
+          ],
+          "ClientToken": "karpo-rtx4-east1-spot-v1-20261120-us-east-1b",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::632930644527:instance-profile/PVRE-SSMOnboardingInstanceProfile-48TFLeLrF2rS",
+            "Id": "AIPAZGXM3GIXSUZH3MIXQ"
+          },
+          "InstanceLifecycle": "spot",
+          "NetworkInterfaces": [
+            {
+              "Attachment": {
+                "AttachTime": "2026-11-20 14:45:57+00:00",
+                "AttachmentId": "eni-attach-0f58c3b0aacd234d6",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-04423a46913e44f37",
+                  "GroupName": "karpo-rtx4-control-only-20261120"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "12:ff:f1:b5:63:3f",
+              "NetworkInterfaceId": "eni-092a0d7ac46621188",
+              "OwnerId": "632930644527",
+              "PrivateDnsName": "ip-172-31-85-230.ec2.internal",
+              "PrivateIpAddress": "172.31.85.230",
+              "PrivateIpAddresses": [
+                {
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-85-230.ec2.internal",
+                  "PrivateIpAddress": "172.31.85.230"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-023880de85fb9261b",
+              "VpcId": "vpc-0c036c30b82b3703f",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-04423a46913e44f37",
+              "GroupName": "karpo-rtx4-control-only-20261120"
+            }
+          ],
+          "SourceDestCheck": true,
+          "SpotInstanceRequestId": "sir-ctciivig",
+          "StateReason": {
+            "Code": "Client.UserInitiatedShutdown",
+            "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+          },
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "karpo-rtx4-fleet1-20261120"
+            },
+            {
+              "Key": "Patch Group",
+              "Value": "DEV"
+            },
+            {
+              "Key": "KeepRunning",
+              "Value": "User requested EC2 remain running"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 8,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-11-20 14:45:57+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "SecondaryInterfaces": [],
+          "InstanceId": "i-05d0c24c739f41ca5",
+          "ImageId": "ami-0961bdc9d1646251d",
+          "State": {
+            "Code": 80,
+            "Name": "stopped"
+          },
+          "PrivateDnsName": "ip-172-31-85-230.ec2.internal",
+          "PublicDnsName": "",
+          "StateTransitionReason": "User initiated (2026-11-20 16:06:20 GMT)",
+          "KeyName": "karpo-rtx4-control-20261120",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "g7e.4xlarge",
+          "LaunchTime": "2026-11-20 14:45:57+00:00",
+          "Placement": {
+            "AvailabilityZoneId": "use1-az2",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-1b"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-023880de85fb9261b",
+          "VpcId": "vpc-0c036c30b82b3703f",
+          "PrivateIpAddress": "172.31.85.230"
+        }
+      ],
+      "spot_requests": [
+        {
+          "CreateTime": "2026-11-20 14:45:56+00:00",
+          "InstanceId": "i-05d0c24c739f41ca5",
+          "LaunchSpecification": {
+            "BlockDeviceMappings": [
+              {
+                "Ebs": {
+                  "DeleteOnTermination": false,
+                  "Iops": 3000,
+                  "VolumeSize": 300,
+                  "VolumeType": "gp3",
+                  "Throughput": 500,
+                  "Encrypted": true
+                },
+                "DeviceName": "/dev/sda1"
+              }
+            ],
+            "ImageId": "ami-0961bdc9d1646251d",
+            "InstanceType": "g7e.4xlarge",
+            "KeyName": "karpo-rtx4-control-20261120",
+            "NetworkInterfaces": [
+              {
+                "AssociatePublicIpAddress": true,
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "SubnetId": "subnet-023880de85fb9261b"
+              }
+            ],
+            "Placement": {
+              "AvailabilityZone": "us-east-1b",
+              "Tenancy": "default",
+              "AvailabilityZoneId": "use1-az2"
+            },
+            "SecurityGroups": [
+              {
+                "GroupId": "sg-04423a46913e44f37",
+                "GroupName": "karpo-rtx4-control-only-20261120"
+              }
+            ],
+            "Monitoring": {
+              "Enabled": false
+            }
+          },
+          "LaunchedAvailabilityZone": "us-east-1b",
+          "LaunchedAvailabilityZoneId": "use1-az2",
+          "ProductDescription": "Linux/UNIX",
+          "SpotInstanceRequestId": "sir-ctciivig",
+          "SpotPrice": "3.000000",
+          "State": "disabled",
+          "Status": {
+            "Code": "instance-stopped-by-user",
+            "Message": "Spot instance stopped due to user-initiated stop.",
+            "UpdateTime": "2026-11-20 16:14:39+00:00"
+          },
+          "Tags": [],
+          "Type": "persistent",
+          "InstanceInterruptionBehavior": "stop"
+        }
+      ],
+      "volumes": [
+        {
+          "AvailabilityZoneId": "use1-az2",
+          "Iops": 3000,
+          "Tags": [
+            {
+              "Key": "KeepRunning",
+              "Value": "User requested EC2 remain running"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            },
+            {
+              "Key": "Name",
+              "Value": "karpo-rtx4-fleet1-20261120"
+            }
+          ],
+          "VolumeType": "gp3",
+          "MultiAttachEnabled": false,
+          "Throughput": 500,
+          "Operator": {
+            "Managed": false
+          },
+          "VolumeId": "vol-06ef434d35f57903c",
+          "Size": 300,
+          "SnapshotId": "snap-0e0c1410e24ded3f1",
+          "AvailabilityZone": "us-east-1b",
+          "State": "in-use",
+          "CreateTime": "2026-11-20 14:45:58.305000+00:00",
+          "Attachments": [
+            {
+              "DeleteOnTermination": false,
+              "EbsCardIndex": 0,
+              "VolumeId": "vol-06ef434d35f57903c",
+              "InstanceId": "i-05d0c24c739f41ca5",
+              "Device": "/dev/sda1",
+              "State": "attached",
+              "AttachTime": "2026-11-20 14:45:58+00:00"
+            }
+          ],
+          "Encrypted": true,
+          "KmsKeyId": "arn:aws:kms:us-east-1:632930644527:key/98007108-53ad-4190-9b64-740236a7638f"
+        }
+      ]
+    },
+    {
+      "region": "us-east-2",
+      "instances": [
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-11-20 15:39:54+00:00",
+                "DeleteOnTermination": false,
+                "Status": "attached",
+                "VolumeId": "vol-026c177270d0f7fea",
+                "EbsCardIndex": 0
+              }
+            }
+          ],
+          "ClientToken": "karpo-sop-h200-20261120-p5en.48xlarge-us-east-2a",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "InstanceLifecycle": "spot",
+          "NetworkInterfaces": [
+            {
+              "Attachment": {
+                "AttachTime": "2026-11-20 15:39:53+00:00",
+                "AttachmentId": "eni-attach-01b86ee7a5b05c159",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-077c0629417a7de69",
+                  "GroupName": "karpo-rps100-h100-private-20261120"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "02:ff:e6:56:d0:f9",
+              "NetworkInterfaceId": "eni-0b4fe4b3e14e9e8b7",
+              "OwnerId": "632930644527",
+              "PrivateDnsName": "ip-172-31-14-72.us-east-2.compute.internal",
+              "PrivateIpAddress": "172.31.14.72",
+              "PrivateIpAddresses": [
+                {
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-14-72.us-east-2.compute.internal",
+                  "PrivateIpAddress": "172.31.14.72"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-0da11846dfbc952d4",
+              "VpcId": "vpc-0d829be5b32cedda7",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-077c0629417a7de69",
+              "GroupName": "karpo-rps100-h100-private-20261120"
+            }
+          ],
+          "SourceDestCheck": true,
+          "SpotInstanceRequestId": "sir-ptbg1egj",
+          "StateReason": {
+            "Code": "Client.UserInitiatedShutdown",
+            "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+          },
+          "Tags": [
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            },
+            {
+              "Key": "KeepRunning",
+              "Value": "User requested retained EC2"
+            },
+            {
+              "Key": "Scenario",
+              "Value": "SOP-H200"
+            },
+            {
+              "Key": "Name",
+              "Value": "karpo-sop-h200-20261120"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 96,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-11-20 15:39:53+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "SecondaryInterfaces": [],
+          "InstanceId": "i-0c777e3714538d624",
+          "ImageId": "ami-00ab7faabf42ddbe2",
+          "State": {
+            "Code": 80,
+            "Name": "stopped"
+          },
+          "PrivateDnsName": "ip-172-31-14-72.us-east-2.compute.internal",
+          "PublicDnsName": "",
+          "StateTransitionReason": "User initiated (2026-11-20 16:06:21 GMT)",
+          "KeyName": "karpo-rps100-private-20261120",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "p5en.48xlarge",
+          "LaunchTime": "2026-11-20 15:39:53+00:00",
+          "Placement": {
+            "AvailabilityZoneId": "use2-az1",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-2a"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-0da11846dfbc952d4",
+          "VpcId": "vpc-0d829be5b32cedda7",
+          "PrivateIpAddress": "172.31.14.72"
+        },
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-11-20 13:44:46+00:00",
+                "DeleteOnTermination": false,
+                "Status": "attached",
+                "VolumeId": "vol-004bb94e0313a2f79",
+                "EbsCardIndex": 0
+              }
+            }
+          ],
+          "ClientToken": "karpo-rps100-h100-spot-v1-20261120-us-east-2b",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "InstanceLifecycle": "spot",
+          "NetworkInterfaces": [
+            {
+              "Attachment": {
+                "AttachTime": "2026-11-20 13:44:45+00:00",
+                "AttachmentId": "eni-attach-0de47c997c8158a90",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-077c0629417a7de69",
+                  "GroupName": "karpo-rps100-h100-private-20261120"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "06:ff:ee:50:a1:ab",
+              "NetworkInterfaceId": "eni-0dfb1c208937fc859",
+              "OwnerId": "632930644527",
+              "PrivateDnsName": "ip-172-31-25-147.us-east-2.compute.internal",
+              "PrivateIpAddress": "172.31.25.147",
+              "PrivateIpAddresses": [
+                {
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-25-147.us-east-2.compute.internal",
+                  "PrivateIpAddress": "172.31.25.147"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-076c65a355de813cf",
+              "VpcId": "vpc-0d829be5b32cedda7",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-077c0629417a7de69",
+              "GroupName": "karpo-rps100-h100-private-20261120"
+            }
+          ],
+          "SourceDestCheck": true,
+          "SpotInstanceRequestId": "sir-cbtr155h",
+          "StateReason": {
+            "Code": "Client.UserInitiatedShutdown",
+            "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+          },
+          "Tags": [
+            {
+              "Key": "KeepRunning",
+              "Value": "User requested no EC2 shutdown before good results"
+            },
+            {
+              "Key": "Name",
+              "Value": "karpo-rps100-h100-20261120"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 8,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-11-20 13:44:45+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "SecondaryInterfaces": [],
+          "InstanceId": "i-091371593b3c4a5ff",
+          "ImageId": "ami-00ab7faabf42ddbe2",
+          "State": {
+            "Code": 80,
+            "Name": "stopped"
+          },
+          "PrivateDnsName": "ip-172-31-25-147.us-east-2.compute.internal",
+          "PublicDnsName": "",
+          "StateTransitionReason": "User initiated (2026-11-20 16:06:21 GMT)",
+          "KeyName": "karpo-rps100-private-20261120",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "p5.4xlarge",
+          "LaunchTime": "2026-11-20 13:44:45+00:00",
+          "Placement": {
+            "AvailabilityZoneId": "use2-az2",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-2b"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-076c65a355de813cf",
+          "VpcId": "vpc-0d829be5b32cedda7",
+          "PrivateIpAddress": "172.31.25.147"
+        },
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-11-19 15:43:57+00:00",
+                "DeleteOnTermination": false,
+                "Status": "attached",
+                "VolumeId": "vol-02af28534c5b54eee",
+                "EbsCardIndex": 0
+              }
+            }
+          ],
+          "ClientToken": "e230c9441a1ef20d1b027cfcb9925c918f4a2dee368cff13d4e1d4455b0f4ff9",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003",
+            "Id": "AIPAZGXM3GIXYN2FTJRMY"
+          },
+          "InstanceLifecycle": "spot",
+          "NetworkInterfaces": [
+            {
+              "Attachment": {
+                "AttachTime": "2026-11-19 15:43:56+00:00",
+                "AttachmentId": "eni-attach-08bcdfebffd5f9d1d",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-0b1141d41de58ca31",
+                  "GroupName": "karpo-benchmark-20261119-115003"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "0a:ff:e4:6c:ee:3b",
+              "NetworkInterfaceId": "eni-0b8d66ee0909d71f4",
+              "OwnerId": "632930644527",
+              "PrivateDnsName": "ip-172-31-44-129.us-east-2.compute.internal",
+              "PrivateIpAddress": "172.31.44.129",
+              "PrivateIpAddresses": [
+                {
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-44-129.us-east-2.compute.internal",
+                  "PrivateIpAddress": "172.31.44.129"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-08cac12e7a232540b",
+              "VpcId": "vpc-0d829be5b32cedda7",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-0b1141d41de58ca31",
+              "GroupName": "karpo-benchmark-20261119-115003"
+            }
+          ],
+          "SourceDestCheck": true,
+          "SpotInstanceRequestId": "sir-5g1i2rjj",
+          "StateReason": {
+            "Code": "Client.UserInitiatedShutdown",
+            "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+          },
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "karpo-concise-20261119-154354"
+            },
+            {
+              "Key": "Lifecycle",
+              "Value": "stop-only"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 16,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-11-19 15:43:56+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "SecondaryInterfaces": [],
+          "InstanceId": "i-048c3784bb87b6d86",
+          "ImageId": "ami-0bc08965f421c8494",
+          "State": {
+            "Code": 80,
+            "Name": "stopped"
+          },
+          "PrivateDnsName": "ip-172-31-44-129.us-east-2.compute.internal",
+          "PublicDnsName": "",
+          "StateTransitionReason": "User initiated (2026-11-19 16:09:22 GMT)",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "g7e.8xlarge",
+          "LaunchTime": "2026-11-19 15:43:56+00:00",
+          "Placement": {
+            "AvailabilityZoneId": "use2-az3",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-2c"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-08cac12e7a232540b",
+          "VpcId": "vpc-0d829be5b32cedda7",
+          "PrivateIpAddress": "172.31.44.129"
+        },
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-11-20 03:06:24+00:00",
+                "DeleteOnTermination": false,
+                "Status": "attached",
+                "VolumeId": "vol-062a0dd0007413835",
+                "EbsCardIndex": 0
+              }
+            }
+          ],
+          "ClientToken": "6c084f91d1c90d08d7cd920ccf27ec391a8936eb4eef087ee5e30311b42be8b8",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003",
+            "Id": "AIPAZGXM3GIXYN2FTJRMY"
+          },
+          "InstanceLifecycle": "spot",
+          "NetworkInterfaces": [
+            {
+              "Attachment": {
+                "AttachTime": "2026-11-20 03:06:23+00:00",
+                "AttachmentId": "eni-attach-012a0c197f1659c31",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-0b1141d41de58ca31",
+                  "GroupName": "karpo-benchmark-20261119-115003"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "0a:ff:e9:fa:9d:95",
+              "NetworkInterfaceId": "eni-00c1be1edcd3fd98f",
+              "OwnerId": "632930644527",
+              "PrivateDnsName": "ip-172-31-40-12.us-east-2.compute.internal",
+              "PrivateIpAddress": "172.31.40.12",
+              "PrivateIpAddresses": [
+                {
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-40-12.us-east-2.compute.internal",
+                  "PrivateIpAddress": "172.31.40.12"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-08cac12e7a232540b",
+              "VpcId": "vpc-0d829be5b32cedda7",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-0b1141d41de58ca31",
+              "GroupName": "karpo-benchmark-20261119-115003"
+            }
+          ],
+          "SourceDestCheck": true,
+          "SpotInstanceRequestId": "sir-dfz8i1sj",
+          "StateReason": {
+            "Code": "Client.UserInitiatedShutdown",
+            "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+          },
+          "Tags": [
+            {
+              "Key": "Lifecycle",
+              "Value": "stop-only"
+            },
+            {
+              "Key": "Name",
+              "Value": "karpo-more-20261120-030622"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 24,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-11-20 03:06:23+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "SecondaryInterfaces": [],
+          "InstanceId": "i-05b24e3b4a7ee864d",
+          "ImageId": "ami-0bc08965f421c8494",
+          "State": {
+            "Code": 80,
+            "Name": "stopped"
+          },
+          "PrivateDnsName": "ip-172-31-40-12.us-east-2.compute.internal",
+          "PublicDnsName": "",
+          "StateTransitionReason": "User initiated (2026-11-20 16:06:21 GMT)",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "g7e.12xlarge",
+          "LaunchTime": "2026-11-20 15:15:27+00:00",
+          "Placement": {
+            "AvailabilityZoneId": "use2-az3",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-2c"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-08cac12e7a232540b",
+          "VpcId": "vpc-0d829be5b32cedda7",
+          "PrivateIpAddress": "172.31.40.12"
+        },
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-11-20 09:42:42+00:00",
+                "DeleteOnTermination": false,
+                "Status": "attached",
+                "VolumeId": "vol-0e83aac1ae559b643",
+                "EbsCardIndex": 0
+              }
+            }
+          ],
+          "ClientToken": "karpo-smallbatch-g7e4-spot-us-east-2c",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003",
+            "Id": "AIPAZGXM3GIXYN2FTJRMY"
+          },
+          "InstanceLifecycle": "spot",
+          "NetworkInterfaces": [
+            {
+              "Attachment": {
+                "AttachTime": "2026-11-20 09:42:41+00:00",
+                "AttachmentId": "eni-attach-05befc5fc2ad8e43f",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-015c45dfc878c7919",
+                  "GroupName": "karpo-smallbatch-private-20261120"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "0a:ff:eb:93:a7:89",
+              "NetworkInterfaceId": "eni-0d98882de779b9f2b",
+              "OwnerId": "632930644527",
+              "PrivateDnsName": "ip-172-31-42-136.us-east-2.compute.internal",
+              "PrivateIpAddress": "172.31.42.136",
+              "PrivateIpAddresses": [
+                {
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-42-136.us-east-2.compute.internal",
+                  "PrivateIpAddress": "172.31.42.136"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-08cac12e7a232540b",
+              "VpcId": "vpc-0d829be5b32cedda7",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-015c45dfc878c7919",
+              "GroupName": "karpo-smallbatch-private-20261120"
+            }
+          ],
+          "SourceDestCheck": true,
+          "SpotInstanceRequestId": "sir-khwi3vgh",
+          "StateReason": {
+            "Code": "Client.UserInitiatedShutdown",
+            "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+          },
+          "Tags": [
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            },
+            {
+              "Key": "Name",
+              "Value": "karpo-smallbatch-secondary-20261120"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 8,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-11-20 09:42:41+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "SecondaryInterfaces": [],
+          "InstanceId": "i-0de4f061c2a04fe4b",
+          "ImageId": "ami-00ab7faabf42ddbe2",
+          "State": {
+            "Code": 80,
+            "Name": "stopped"
+          },
+          "PrivateDnsName": "ip-172-31-42-136.us-east-2.compute.internal",
+          "PublicDnsName": "",
+          "StateTransitionReason": "User initiated (2026-11-20 16:06:21 GMT)",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "g7e.4xlarge",
+          "LaunchTime": "2026-11-20 13:21:04+00:00",
+          "Placement": {
+            "AvailabilityZoneId": "use2-az3",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-2c"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-08cac12e7a232540b",
+          "VpcId": "vpc-0d829be5b32cedda7",
+          "PrivateIpAddress": "172.31.42.136"
+        }
+      ],
+      "spot_requests": [
+        {
+          "CreateTime": "2026-11-20 13:44:45+00:00",
+          "InstanceId": "i-091371593b3c4a5ff",
+          "LaunchSpecification": {
+            "BlockDeviceMappings": [
+              {
+                "Ebs": {
+                  "DeleteOnTermination": false,
+                  "Iops": 3000,
+                  "VolumeSize": 300,
+                  "VolumeType": "gp3",
+                  "Throughput": 500,
+                  "Encrypted": true
+                },
+                "DeviceName": "/dev/sda1"
+              }
+            ],
+            "ImageId": "ami-00ab7faabf42ddbe2",
+            "InstanceType": "p5.4xlarge",
+            "KeyName": "karpo-rps100-private-20261120",
+            "NetworkInterfaces": [
+              {
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "SubnetId": "subnet-076c65a355de813cf"
+              }
+            ],
+            "Placement": {
+              "AvailabilityZone": "us-east-2b",
+              "Tenancy": "default",
+              "AvailabilityZoneId": "use2-az2"
+            },
+            "SecurityGroups": [
+              {
+                "GroupId": "sg-077c0629417a7de69",
+                "GroupName": "karpo-rps100-h100-private-20261120"
+              }
+            ],
+            "Monitoring": {
+              "Enabled": false
+            }
+          },
+          "LaunchedAvailabilityZone": "us-east-2b",
+          "LaunchedAvailabilityZoneId": "use2-az2",
+          "ProductDescription": "Linux/UNIX",
+          "SpotInstanceRequestId": "sir-cbtr155h",
+          "SpotPrice": "6.880000",
+          "State": "disabled",
+          "Status": {
+            "Code": "instance-stopped-by-user",
+            "Message": "Spot instance stopped due to user-initiated stop.",
+            "UpdateTime": "2026-11-20 16:11:21+00:00"
+          },
+          "Tags": [],
+          "Type": "persistent",
+          "InstanceInterruptionBehavior": "stop"
+        },
+        {
+          "CreateTime": "2026-11-20 15:39:53+00:00",
+          "InstanceId": "i-0c777e3714538d624",
+          "LaunchSpecification": {
+            "BlockDeviceMappings": [
+              {
+                "Ebs": {
+                  "DeleteOnTermination": false,
+                  "Iops": 3000,
+                  "VolumeSize": 300,
+                  "VolumeType": "gp3",
+                  "Throughput": 500,
+                  "Encrypted": true
+                },
+                "DeviceName": "/dev/sda1"
+              }
+            ],
+            "ImageId": "ami-00ab7faabf42ddbe2",
+            "InstanceType": "p5en.48xlarge",
+            "KeyName": "karpo-rps100-private-20261120",
+            "NetworkInterfaces": [
+              {
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "SubnetId": "subnet-0da11846dfbc952d4"
+              }
+            ],
+            "Placement": {
+              "AvailabilityZone": "us-east-2a",
+              "Tenancy": "default",
+              "AvailabilityZoneId": "use2-az1"
+            },
+            "SecurityGroups": [
+              {
+                "GroupId": "sg-077c0629417a7de69",
+                "GroupName": "karpo-rps100-h100-private-20261120"
+              }
+            ],
+            "Monitoring": {
+              "Enabled": false
+            }
+          },
+          "LaunchedAvailabilityZone": "us-east-2a",
+          "LaunchedAvailabilityZoneId": "use2-az1",
+          "ProductDescription": "Linux/UNIX",
+          "SpotInstanceRequestId": "sir-ptbg1egj",
+          "SpotPrice": "40.000000",
+          "State": "active",
+          "Status": {
+            "Code": "marked-for-stop",
+            "Message": "Your Spot instance is marked for stop due to user-initiated stop.",
+            "UpdateTime": "2026-11-20 16:06:21+00:00"
+          },
+          "Tags": [],
+          "Type": "persistent",
+          "InstanceInterruptionBehavior": "stop"
+        },
+        {
+          "CreateTime": "2026-11-20 03:06:23+00:00",
+          "InstanceId": "i-05b24e3b4a7ee864d",
+          "LaunchSpecification": {
+            "IamInstanceProfile": {
+              "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003",
+              "Name": "karpo-benchmark-20261119-115003"
+            },
+            "ImageId": "ami-0bc08965f421c8494",
+            "InstanceType": "g7e.12xlarge",
+            "NetworkInterfaces": [
+              {
+                "AssociatePublicIpAddress": true,
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "SubnetId": "subnet-08cac12e7a232540b"
+              }
+            ],
+            "Placement": {
+              "AvailabilityZone": "us-east-2c",
+              "Tenancy": "default",
+              "AvailabilityZoneId": "use2-az3"
+            },
+            "SecurityGroups": [
+              {
+                "GroupId": "sg-0b1141d41de58ca31",
+                "GroupName": "karpo-benchmark-20261119-115003"
+              }
+            ],
+            "Monitoring": {
+              "Enabled": false
+            }
+          },
+          "LaunchedAvailabilityZone": "us-east-2c",
+          "LaunchedAvailabilityZoneId": "use2-az3",
+          "ProductDescription": "Linux/UNIX",
+          "SpotInstanceRequestId": "sir-dfz8i1sj",
+          "SpotPrice": "8.286080",
+          "State": "disabled",
+          "Status": {
+            "Code": "instance-stopped-by-user",
+            "Message": "Spot instance stopped due to user-initiated stop.",
+            "UpdateTime": "2026-11-20 16:12:39+00:00"
+          },
+          "Tags": [],
+          "Type": "persistent",
+          "InstanceInterruptionBehavior": "stop"
+        },
+        {
+          "CreateTime": "2026-11-20 09:42:41+00:00",
+          "InstanceId": "i-0de4f061c2a04fe4b",
+          "LaunchSpecification": {
+            "BlockDeviceMappings": [
+              {
+                "Ebs": {
+                  "DeleteOnTermination": false,
+                  "Iops": 6000,
+                  "VolumeSize": 300,
+                  "VolumeType": "gp3",
+                  "Throughput": 500,
+                  "Encrypted": true
+                },
+                "DeviceName": "/dev/sda1"
+              }
+            ],
+            "IamInstanceProfile": {
+              "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+            },
+            "ImageId": "ami-00ab7faabf42ddbe2",
+            "InstanceType": "g7e.4xlarge",
+            "NetworkInterfaces": [
+              {
+                "AssociatePublicIpAddress": true,
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "SubnetId": "subnet-08cac12e7a232540b"
+              }
+            ],
+            "Placement": {
+              "AvailabilityZone": "us-east-2c",
+              "Tenancy": "default",
+              "AvailabilityZoneId": "use2-az3"
+            },
+            "SecurityGroups": [
+              {
+                "GroupId": "sg-015c45dfc878c7919",
+                "GroupName": "karpo-smallbatch-private-20261120"
+              }
+            ],
+            "Monitoring": {
+              "Enabled": false
+            }
+          },
+          "LaunchedAvailabilityZone": "us-east-2c",
+          "LaunchedAvailabilityZoneId": "use2-az3",
+          "ProductDescription": "Linux/UNIX",
+          "SpotInstanceRequestId": "sir-khwi3vgh",
+          "SpotPrice": "3.998160",
+          "State": "disabled",
+          "Status": {
+            "Code": "instance-stopped-by-user",
+            "Message": "Spot instance stopped due to user-initiated stop.",
+            "UpdateTime": "2026-11-20 16:12:37+00:00"
+          },
+          "Tags": [],
+          "Type": "persistent",
+          "InstanceInterruptionBehavior": "stop"
+        },
+        {
+          "CreateTime": "2026-11-19 15:43:56+00:00",
+          "InstanceId": "i-048c3784bb87b6d86",
+          "LaunchSpecification": {
+            "IamInstanceProfile": {
+              "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003",
+              "Name": "karpo-benchmark-20261119-115003"
+            },
+            "ImageId": "ami-0bc08965f421c8494",
+            "InstanceType": "g7e.8xlarge",
+            "NetworkInterfaces": [
+              {
+                "AssociatePublicIpAddress": true,
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "SubnetId": "subnet-08cac12e7a232540b"
+              }
+            ],
+            "Placement": {
+              "AvailabilityZone": "us-east-2c",
+              "Tenancy": "default",
+              "AvailabilityZoneId": "use2-az3"
+            },
+            "SecurityGroups": [
+              {
+                "GroupId": "sg-0b1141d41de58ca31",
+                "GroupName": "karpo-benchmark-20261119-115003"
+              }
+            ],
+            "Monitoring": {
+              "Enabled": false
+            }
+          },
+          "LaunchedAvailabilityZone": "us-east-2c",
+          "LaunchedAvailabilityZoneId": "use2-az3",
+          "ProductDescription": "Linux/UNIX",
+          "SpotInstanceRequestId": "sir-5g1i2rjj",
+          "SpotPrice": "3.990000",
+          "State": "disabled",
+          "Status": {
+            "Code": "instance-stopped-by-user",
+            "Message": "Spot instance stopped due to user-initiated stop.",
+            "UpdateTime": "2026-11-19 16:15:36+00:00"
+          },
+          "Tags": [],
+          "Type": "persistent",
+          "InstanceInterruptionBehavior": "stop"
+        }
+      ],
+      "volumes": [
+        {
+          "AvailabilityZoneId": "use2-az3",
+          "Iops": 3000,
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "karpo-concise-20261119-154354"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            },
+            {
+              "Key": "Lifecycle",
+              "Value": "stop-only"
+            }
+          ],
+          "VolumeType": "gp3",
+          "MultiAttachEnabled": false,
+          "Throughput": 500,
+          "Operator": {
+            "Managed": false
+          },
+          "VolumeId": "vol-02af28534c5b54eee",
+          "Size": 300,
+          "SnapshotId": "snap-0a6e91176fce5e8fb",
+          "AvailabilityZone": "us-east-2c",
+          "State": "in-use",
+          "CreateTime": "2026-11-19 15:43:57.470000+00:00",
+          "Attachments": [
+            {
+              "DeleteOnTermination": false,
+              "EbsCardIndex": 0,
+              "VolumeId": "vol-02af28534c5b54eee",
+              "InstanceId": "i-048c3784bb87b6d86",
+              "Device": "/dev/sda1",
+              "State": "attached",
+              "AttachTime": "2026-11-19 15:43:57+00:00"
+            }
+          ],
+          "Encrypted": true,
+          "KmsKeyId": "arn:aws:kms:us-east-2:632930644527:key/3bc30ffd-c8a5-44f2-89fa-6b56b9c86955"
+        },
+        {
+          "AvailabilityZoneId": "use2-az2",
+          "Iops": 3000,
+          "Tags": [
+            {
+              "Key": "KeepRunning",
+              "Value": "User requested no EC2 shutdown before good results"
+            },
+            {
+              "Key": "Name",
+              "Value": "karpo-rps100-h100-20261120"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            }
+          ],
+          "VolumeType": "gp3",
+          "MultiAttachEnabled": false,
+          "Throughput": 500,
+          "Operator": {
+            "Managed": false
+          },
+          "VolumeId": "vol-004bb94e0313a2f79",
+          "Size": 300,
+          "SnapshotId": "snap-0b60ebe3f98361dbe",
+          "AvailabilityZone": "us-east-2b",
+          "State": "in-use",
+          "CreateTime": "2026-11-20 13:44:46.767000+00:00",
+          "Attachments": [
+            {
+              "DeleteOnTermination": false,
+              "EbsCardIndex": 0,
+              "VolumeId": "vol-004bb94e0313a2f79",
+              "InstanceId": "i-091371593b3c4a5ff",
+              "Device": "/dev/sda1",
+              "State": "attached",
+              "AttachTime": "2026-11-20 13:44:46+00:00"
+            }
+          ],
+          "Encrypted": true,
+          "KmsKeyId": "arn:aws:kms:us-east-2:632930644527:key/3bc30ffd-c8a5-44f2-89fa-6b56b9c86955"
+        },
+        {
+          "AvailabilityZoneId": "use2-az3",
+          "Iops": 3000,
+          "Tags": [
+            {
+              "Key": "Lifecycle",
+              "Value": "stop-only"
+            },
+            {
+              "Key": "Name",
+              "Value": "karpo-more-20261120-030622"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            }
+          ],
+          "VolumeType": "gp3",
+          "MultiAttachEnabled": false,
+          "Throughput": 500,
+          "Operator": {
+            "Managed": false
+          },
+          "VolumeId": "vol-062a0dd0007413835",
+          "Size": 300,
+          "SnapshotId": "snap-0a6e91176fce5e8fb",
+          "AvailabilityZone": "us-east-2c",
+          "State": "in-use",
+          "CreateTime": "2026-11-20 03:06:24.835000+00:00",
+          "Attachments": [
+            {
+              "DeleteOnTermination": false,
+              "EbsCardIndex": 0,
+              "VolumeId": "vol-062a0dd0007413835",
+              "InstanceId": "i-05b24e3b4a7ee864d",
+              "Device": "/dev/sda1",
+              "State": "attached",
+              "AttachTime": "2026-11-20 03:06:24+00:00"
+            }
+          ],
+          "Encrypted": true,
+          "KmsKeyId": "arn:aws:kms:us-east-2:632930644527:key/3bc30ffd-c8a5-44f2-89fa-6b56b9c86955"
+        },
+        {
+          "AvailabilityZoneId": "use2-az3",
+          "Iops": 6000,
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "karpo-smallbatch-secondary-20261120"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            }
+          ],
+          "VolumeType": "gp3",
+          "MultiAttachEnabled": false,
+          "Throughput": 500,
+          "Operator": {
+            "Managed": false
+          },
+          "VolumeId": "vol-0e83aac1ae559b643",
+          "Size": 300,
+          "SnapshotId": "snap-0b60ebe3f98361dbe",
+          "AvailabilityZone": "us-east-2c",
+          "State": "in-use",
+          "CreateTime": "2026-11-20 09:42:42.300000+00:00",
+          "Attachments": [
+            {
+              "DeleteOnTermination": false,
+              "EbsCardIndex": 0,
+              "VolumeId": "vol-0e83aac1ae559b643",
+              "InstanceId": "i-0de4f061c2a04fe4b",
+              "Device": "/dev/sda1",
+              "State": "attached",
+              "AttachTime": "2026-11-20 09:42:42+00:00"
+            }
+          ],
+          "Encrypted": true,
+          "KmsKeyId": "arn:aws:kms:us-east-2:632930644527:key/3bc30ffd-c8a5-44f2-89fa-6b56b9c86955"
+        },
+        {
+          "AvailabilityZoneId": "use2-az1",
+          "Iops": 3000,
+          "Tags": [
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            },
+            {
+              "Key": "KeepRunning",
+              "Value": "User requested retained EC2"
+            },
+            {
+              "Key": "Name",
+              "Value": "karpo-sop-h200-20261120"
+            },
+            {
+              "Key": "Scenario",
+              "Value": "SOP-H200"
+            }
+          ],
+          "VolumeType": "gp3",
+          "MultiAttachEnabled": false,
+          "Throughput": 500,
+          "Operator": {
+            "Managed": false
+          },
+          "VolumeId": "vol-026c177270d0f7fea",
+          "Size": 300,
+          "SnapshotId": "snap-0b60ebe3f98361dbe",
+          "AvailabilityZone": "us-east-2a",
+          "State": "in-use",
+          "CreateTime": "2026-11-20 15:39:54.722000+00:00",
+          "Attachments": [
+            {
+              "DeleteOnTermination": false,
+              "EbsCardIndex": 0,
+              "VolumeId": "vol-026c177270d0f7fea",
+              "InstanceId": "i-0c777e3714538d624",
+              "Device": "/dev/sda1",
+              "State": "attached",
+              "AttachTime": "2026-11-20 15:39:54+00:00"
+            }
+          ],
+          "Encrypted": true,
+          "KmsKeyId": "arn:aws:kms:us-east-2:632930644527:key/3bc30ffd-c8a5-44f2-89fa-6b56b9c86955"
+        }
+      ]
+    }
+  ],
+  "instance_count": 6,
+  "all_stopped": true
+}

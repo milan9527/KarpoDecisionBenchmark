@@ -1,0 +1,148 @@
+{
+  "utc": "2026-11-20T16:18:28.289701+00:00",
+  "base_commit": "ccf3c30b333da9738c801e946b740e5ec200c6bd",
+  "scope": "User-requested documentation refresh and stop of all project EC2",
+  "old_evidence_verified": {
+    "rtx_files": 822,
+    "h200_files": 263,
+    "updated_documents_restored_from": "operations/stop-20261120/previous"
+  },
+  "files": {
+    "README.md": {
+      "sha256": "df70644762bf0b875f262ff0bfe47f9adc582b250b5b1bf873f28a756fb08660",
+      "bytes": 21249
+    },
+    "RESULTS.zh.md": {
+      "sha256": "059b7a14b31aa2d2b2de28bc0faaaed08255d9b98d7718e346ac76b718af6d97",
+      "bytes": 4341
+    },
+    "data.json": {
+      "sha256": "9013ea1bbf4f71a9e0c3c2e71f38bdfe23a4dc4885623aefbadb334218ce9efd",
+      "bytes": 3418
+    },
+    "experiments/vllm-sop-h200-20261120/REPRODUCE.zh.md": {
+      "sha256": "743d3a10d9b575ad0ca7fd1c207e6985346791e4dd8b5c6464c04de72d33d4c3",
+      "bytes": 3351
+    },
+    "experiments/vllm-sop-h200-20261120/RESULTS.zh.md": {
+      "sha256": "b1b784d2e32a0e03a9bf11e0ea15217a15de388231cdc857a31aa87e75e70372",
+      "bytes": 7592
+    },
+    "experiments/vllm-sop-h200-20261120/data.json": {
+      "sha256": "166c8ae0a1448980b19a730364b98873baa5e48fd25a8836d98499617f08a216",
+      "bytes": 139546
+    },
+    "experiments/vllm-sop-h200-20261120/report.html": {
+      "sha256": "436bf8b80db038fedf4be7d492a1d48ff42697f027b5298d3fe74d66937143a0",
+      "bytes": 11491
+    },
+    "experiments/vllm-sop-h200-20261120/results/verification.json": {
+      "sha256": "c0b1857c159e792c446e06f57a7cbdead4b9c0a5e46ed9686143c628ec39a19e",
+      "bytes": 182
+    },
+    "operations/stop-20261120/README.zh.md": {
+      "sha256": "abfcd792d571d36c5a134ad05610975f15ccbee83bac20ce1a032ac99f634c28",
+      "bytes": 2203
+    },
+    "operations/stop-20261120/all-regions-final.json": {
+      "sha256": "511937466375d61f3f6c6687c0ed67919c6e21b17d8528def55ce88d4476e1fb",
+      "bytes": 3605
+    },
+    "operations/stop-20261120/h200-force-stop.json": {
+      "sha256": "2fdf4ffee8325fb34616f991acf6f2f3f36f55415e28feca8fd542edf411057a",
+      "bytes": 1040
+    },
+    "operations/stop-20261120/h200-stop-diagnostic.json": {
+      "sha256": "6e14b6231624269d62baae58afdd565b462da98da7970bd509c4aea8e05cad9b",
+      "bytes": 3870
+    },
+    "operations/stop-20261120/infrastructure-current.json": {
+      "sha256": "a2091bf6190586adf47d5e619542b4a44b4ba928c25cf598f8be1324aaf92815",
+      "bytes": 53767
+    },
+    "operations/stop-20261120/infrastructure-stopped.json": {
+      "sha256": "a2091bf6190586adf47d5e619542b4a44b4ba928c25cf598f8be1324aaf92815",
+      "bytes": 53767
+    },
+    "operations/stop-20261120/inventory-before.json": {
+      "sha256": "b869a50d7293d9fcdf9ed856a2635de4fd40f5b586a25fbf345f591a21df3ade",
+      "bytes": 37301
+    },
+    "operations/stop-20261120/previous/README.md": {
+      "sha256": "84067c1cda9cc626ca589ba81ab9dc316432313003549fc322302c94ec2414a9",
+      "bytes": 20599
+    },
+    "operations/stop-20261120/previous/RESULTS.zh.md": {
+      "sha256": "e44e03b74ae1568dbb2d483e6f65bc4546748d94e0e729a63a68609d6a548a74",
+      "bytes": 12296
+    },
+    "operations/stop-20261120/previous/experiments/vllm-sop-h200-20261120/REPRODUCE.zh.md": {
+      "sha256": "64bd43fd6f09d900a5e08344c01cf43f41ef4c37523c03436d3f41f740576a5e",
+      "bytes": 2947
+    },
+    "operations/stop-20261120/previous/experiments/vllm-sop-h200-20261120/RESULTS.zh.md": {
+      "sha256": "66a4a2747affb9cf4efd53cdcf02a504e76e1d38767d030927e90c21df5bca3b",
+      "bytes": 6929
+    },
+    "operations/stop-20261120/previous/experiments/vllm-sop-h200-20261120/data.json": {
+      "sha256": "52e27ee67764edb5aec781e52de735c25e350efca05ae8a993889a96c68d33c6",
+      "bytes": 139358
+    },
+    "operations/stop-20261120/previous/experiments/vllm-sop-h200-20261120/report.html": {
+      "sha256": "d4dec09a6ce02cb77571fbf6b61aa4062b157d8be4ee6239ddbfb8fee4a62290",
+      "bytes": 10622
+    },
+    "operations/stop-20261120/previous/experiments/vllm-sop-h200-20261120/results/verification.json": {
+      "sha256": "7b21e5b441f0fd2da1b529527649a8b399663aee44c9c3b7f9ed7abcceb182ed",
+      "bytes": 182
+    },
+    "operations/stop-20261120/previous/report.html": {
+      "sha256": "ef8c6c85f23f300808554132a64e754267b682a06172ae298089a7c0fc0349b8",
+      "bytes": 137231
+    },
+    "operations/stop-20261120/previous/scripts/latest_report.py": {
+      "sha256": "0cd578d682a983164f35d601534706b1a282fd1aec5fb2bcb16d360eae19238b",
+      "bytes": 754
+    },
+    "operations/stop-20261120/previous/scripts/sop_h200_report.py": {
+      "sha256": "f9038f364d54b8ce6e5a7fa6946c5e2163dba3ee2076520972be0981a7cf23d0",
+      "bytes": 20183
+    },
+    "operations/stop-20261120/previous/snapshot.json": {
+      "sha256": "12d1e128fc1f61528099677f898fe3f5e6b856bc28f51ad7fd17fdbfbba04df6",
+      "bytes": 1174
+    },
+    "operations/stop-20261120/risk-pricing.json": {
+      "sha256": "db0780478f04a6026be07ef854bb1c58caa630de3824efe6833336c68e277eb5",
+      "bytes": 10611
+    },
+    "operations/stop-20261120/stop-responses.json": {
+      "sha256": "697a04c646ea001d9b94122250aa3dca57618f1fcaad6c38985dee0f5694f2ce",
+      "bytes": 2702
+    },
+    "report.html": {
+      "sha256": "789acb7373021f058d3bc9d5b8050528594d0e025b0d27c5b2337d0ee67f8e26",
+      "bytes": 8389
+    },
+    "scripts/latest_report.py": {
+      "sha256": "f51505056926d03959df0586c36c028672a7ccc26da5484dcf7955688d57f14e",
+      "bytes": 1103
+    },
+    "scripts/project_report.py": {
+      "sha256": "2a420f59eb40ade3f326846ae8cb35b27583b15c467baacf00f3a78152f10cb4",
+      "bytes": 14105
+    },
+    "scripts/seal_stop_update.py": {
+      "sha256": "2042acfbb8e5c5a5abf003f92be81c5472179f5649c835231e9217b21dac95db",
+      "bytes": 4412
+    },
+    "scripts/sop_h200_report.py": {
+      "sha256": "09461b17a93965df4ee93019f0e8015cd3b7caa059038e0ed97d632211e07043",
+      "bytes": 21813
+    },
+    "scripts/stop_project_ec2.py": {
+      "sha256": "e85db10a516a868b5aea8337e32a06ce686f8cbc3dc614b860148df6a27a4190",
+      "bytes": 3913
+    }
+  }
+}

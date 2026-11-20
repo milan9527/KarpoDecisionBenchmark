@@ -1,6 +1,6 @@
 {
   "verification": {
-    "utc": "2026-11-20T16:01:33.132607+00:00",
+    "utc": "2026-11-20T16:17:18.490760+00:00",
     "verified_attempts": 45736,
     "valid": 39197,
     "failures": 6539,
@@ -120,6 +120,12 @@
       }
     ],
     "month_hours": 720
+  },
+  "lifecycle": {
+    "source": "operations/stop-20261120/infrastructure-stopped.json",
+    "utc": "2026-11-20T16:17:06.581936+00:00",
+    "all_stopped": true,
+    "instance_count": 6
   },
   "runs": [
     {

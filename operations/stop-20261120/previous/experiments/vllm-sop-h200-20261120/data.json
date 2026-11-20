@@ -1,0 +1,5285 @@
+{
+  "verification": {
+    "utc": "2026-11-20T16:01:33.132607+00:00",
+    "verified_attempts": 45736,
+    "valid": 39197,
+    "failures": 6539,
+    "correct": 36969,
+    "verified_stages": 27,
+    "confirmed": true
+  },
+  "instance": {
+    "InstanceId": "i-0c777e3714538d624",
+    "InstanceType": "p5en.48xlarge",
+    "PrivateIpAddress": "172.31.14.72",
+    "Placement": {
+      "AvailabilityZoneId": "use2-az1",
+      "GroupName": "",
+      "Tenancy": "default",
+      "AvailabilityZone": "us-east-2a"
+    },
+    "region": "us-east-2",
+    "gpu_model": "H200",
+    "gpu_count": 8,
+    "market": "spot",
+    "reference_usd_per_hour": 32.2512,
+    "max_spot_usd_per_hour": 40,
+    "on_demand_usd_per_hour": 63.296,
+    "automatic_ec2_shutdown": false,
+    "management": "private_ssh_via_control",
+    "security_group": "sg-077c0629417a7de69",
+    "utc": "2026-11-20T15:39:53.996053+00:00"
+  },
+  "pricing": {
+    "utc": "2026-11-20T16:00:56.480274+00:00",
+    "scope": "H200 instance only; exclude retained RTX/H100, EBS, networking and IPv4",
+    "spot_usd_per_hour": 32.2512,
+    "on_demand_usd_per_hour": 63.296,
+    "spot_source": [
+      {
+        "AvailabilityZone": "us-east-2a",
+        "AvailabilityZoneId": "use2-az1",
+        "InstanceType": "p5en.48xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "32.251200",
+        "Timestamp": "2026-11-20 14:00:00+00:00"
+      }
+    ],
+    "on_demand_source": [
+      {
+        "product": {
+          "productFamily": "Compute Instance",
+          "attributes": {
+            "enhancedNetworkingSupported": "Yes",
+            "intelTurboAvailable": "No",
+            "memory": "2048 GiB",
+            "dedicatedEbsThroughput": "100 Gbps",
+            "vcpu": "192",
+            "classicnetworkingsupport": "false",
+            "capacitystatus": "Used",
+            "locationType": "AWS Region",
+            "storage": "8 x 3840 NVMe SSD",
+            "instanceFamily": "GPU instance",
+            "operatingSystem": "Linux",
+            "intelAvx2Available": "No",
+            "instanceFamilyCategory": "Accelerated Computing",
+            "regionCode": "us-east-2",
+            "physicalProcessor": "Intel Xeon Scalable (Sapphire Rapids)",
+            "clockSpeed": "3.2 GHz",
+            "ecu": "NA",
+            "networkPerformance": "3200 Gigabit",
+            "servicename": "Amazon Elastic Compute Cloud",
+            "gpuMemory": "141 GB HBM3e",
+            "dedicatedEbsThroughputDescription": "100 Gbps",
+            "vpcnetworkingsupport": "true",
+            "instanceType": "p5en.48xlarge",
+            "tenancy": "Shared",
+            "usagetype": "USE2-BoxUsage:p5en.48xlarge",
+            "normalizationSizeFactor": "384",
+            "gpu": "8",
+            "intelAvxAvailable": "No",
+            "processorFeatures": "Intel AMX",
+            "servicecode": "AmazonEC2",
+            "licenseModel": "No License required",
+            "currentGeneration": "Yes",
+            "preInstalledSw": "NA",
+            "location": "US East (Ohio)",
+            "processorArchitecture": "64-bit",
+            "marketoption": "OnDemand",
+            "operation": "RunInstances",
+            "availabilityzone": "NA"
+          },
+          "sku": "MFPA8X46BT9YR8TQ"
+        },
+        "serviceCode": "AmazonEC2",
+        "terms": {
+          "OnDemand": {
+            "MFPA8X46BT9YR8TQ.JRTCKXETXF": {
+              "priceDimensions": {
+                "MFPA8X46BT9YR8TQ.JRTCKXETXF.6YS6EN2CT7": {
+                  "unit": "Hrs",
+                  "endRange": "Inf",
+                  "description": "$63.296 per On Demand Linux p5en.48xlarge Instance Hour",
+                  "appliesTo": [],
+                  "rateCode": "MFPA8X46BT9YR8TQ.JRTCKXETXF.6YS6EN2CT7",
+                  "beginRange": "0",
+                  "pricePerUnit": {
+                    "USD": "63.2960000000"
+                  }
+                }
+              },
+              "sku": "MFPA8X46BT9YR8TQ",
+              "effectiveDate": "2026-11-01T00:00:00Z",
+              "offerTermCode": "JRTCKXETXF",
+              "termAttributes": {}
+            }
+          }
+        },
+        "version": "20261120034850",
+        "publicationDate": "2026-11-20T03:48:50Z"
+      }
+    ],
+    "month_hours": 720
+  },
+  "runs": [
+    {
+      "name": "h200-fp8-v2",
+      "status": "complete",
+      "confirmed": true,
+      "selected": {
+        "batch": 4,
+        "replicas": 8,
+        "probe_p50_ms": 76.094047999959
+      },
+      "error": null
+    }
+  ],
+  "stages": [
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 1,
+      "stage": "quality",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r1/sop/quality",
+      "summary": {
+        "attempts": 104,
+        "valid": 104,
+        "correct": 98,
+        "failures": 0,
+        "accuracy": 0.9423076923076923
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:48:10.190281+00:00",
+        "end_utc": "2026-11-20T15:48:18.143558+00:00",
+        "offered_end_utc": null,
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 4,
+          "utilization_mean_pct": 73.25,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 615.5275
+        }
+      ],
+      "rtx_quality_comparison": {
+        "source": "experiments/vllm-rps100-20261120/results/runs/rtx4-fp8-v1/b4/r4/sop/quality/requests.jsonl",
+        "choice_matches": 104,
+        "attempts": 104
+      }
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 1,
+      "stage": "low-load",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r1/sop/low-load",
+      "summary": {
+        "target_rps": 8,
+        "offered_seconds": 20,
+        "scheduled_requests": 160,
+        "attempts": 160,
+        "valid": 160,
+        "failures": 0,
+        "http_statuses": {
+          "200": 160
+        },
+        "replica_counts": {
+          "0": 160
+        },
+        "correct": 153,
+        "elapsed_with_drain_s": 20.000450315999956,
+        "valid_rps_with_drain": 7.999819877655616,
+        "steady_valid_rps": 8.0,
+        "p50_ms": 74.50905499996452,
+        "p95_ms": 75.60949199995548,
+        "p99_ms": 76.16287299998703,
+        "http_p50_ms": 73.7721350000129,
+        "last_quarter_p50_ms": 74.70475799999576,
+        "max_send_lag_ms": 2.100541999993766,
+        "valid_within_500ms": 160,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 0
+          },
+          {
+            "second": 2,
+            "pending": 0
+          },
+          {
+            "second": 3,
+            "pending": 0
+          },
+          {
+            "second": 4,
+            "pending": 0
+          },
+          {
+            "second": 5,
+            "pending": 0
+          },
+          {
+            "second": 6,
+            "pending": 0
+          },
+          {
+            "second": 7,
+            "pending": 0
+          },
+          {
+            "second": 8,
+            "pending": 0
+          },
+          {
+            "second": 9,
+            "pending": 0
+          },
+          {
+            "second": 10,
+            "pending": 0
+          },
+          {
+            "second": 11,
+            "pending": 0
+          },
+          {
+            "second": 12,
+            "pending": 0
+          },
+          {
+            "second": 13,
+            "pending": 0
+          },
+          {
+            "second": 14,
+            "pending": 0
+          },
+          {
+            "second": 15,
+            "pending": 0
+          },
+          {
+            "second": 16,
+            "pending": 0
+          },
+          {
+            "second": 17,
+            "pending": 0
+          },
+          {
+            "second": 18,
+            "pending": 0
+          },
+          {
+            "second": 19,
+            "pending": 0
+          },
+          {
+            "second": 20,
+            "pending": 0
+          }
+        ],
+        "backlog_slope_per_second": 0.0,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:48:18.260554+00:00",
+        "end_utc": "2026-11-20T15:48:38.261926+00:00",
+        "offered_end_utc": "2026-11-20T15:48:38.260554+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 50.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 445.12571428571425
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 1,
+      "stage": "rps100",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r1/sop/rps100",
+      "summary": {
+        "target_rps": 100,
+        "offered_seconds": 20,
+        "scheduled_requests": 2000,
+        "attempts": 2000,
+        "valid": 382,
+        "failures": 1618,
+        "http_statuses": {
+          "200": 382,
+          "429": 1618
+        },
+        "replica_counts": {
+          "0": 382
+        },
+        "correct": 360,
+        "elapsed_with_drain_s": 23.969558086000006,
+        "valid_rps_with_drain": 15.936881215307688,
+        "steady_valid_rps": 15.933333333333334,
+        "p50_ms": 4010.246238000036,
+        "p95_ms": 4023.0238999999415,
+        "p99_ms": 4026.9555990000185,
+        "http_p50_ms": 4009.683475000031,
+        "last_quarter_p50_ms": 4010.674392999931,
+        "max_send_lag_ms": 2.07783199999767,
+        "valid_within_500ms": 9,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 64
+          },
+          {
+            "second": 2,
+            "pending": 64
+          },
+          {
+            "second": 3,
+            "pending": 64
+          },
+          {
+            "second": 4,
+            "pending": 64
+          },
+          {
+            "second": 5,
+            "pending": 64
+          },
+          {
+            "second": 6,
+            "pending": 64
+          },
+          {
+            "second": 7,
+            "pending": 64
+          },
+          {
+            "second": 8,
+            "pending": 64
+          },
+          {
+            "second": 9,
+            "pending": 64
+          },
+          {
+            "second": 10,
+            "pending": 64
+          },
+          {
+            "second": 11,
+            "pending": 64
+          },
+          {
+            "second": 12,
+            "pending": 64
+          },
+          {
+            "second": 13,
+            "pending": 64
+          },
+          {
+            "second": 14,
+            "pending": 64
+          },
+          {
+            "second": 15,
+            "pending": 63
+          },
+          {
+            "second": 16,
+            "pending": 63
+          },
+          {
+            "second": 17,
+            "pending": 64
+          },
+          {
+            "second": 18,
+            "pending": 64
+          },
+          {
+            "second": 19,
+            "pending": 64
+          },
+          {
+            "second": 20,
+            "pending": 64
+          }
+        ],
+        "backlog_slope_per_second": -0.01764705882352941,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": false,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:48:38.379329+00:00",
+        "end_utc": "2026-11-20T15:49:02.353421+00:00",
+        "offered_end_utc": "2026-11-20T15:48:58.379329+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 96.42857142857143,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 689.6128571428571
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 2,
+      "stage": "quality",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r2/sop/quality",
+      "summary": {
+        "attempts": 104,
+        "valid": 104,
+        "correct": 98,
+        "failures": 0,
+        "accuracy": 0.9423076923076923
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:49:02.392383+00:00",
+        "end_utc": "2026-11-20T15:49:06.453954+00:00",
+        "offered_end_utc": null,
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 2,
+          "utilization_mean_pct": 70.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 625.3050000000001
+        },
+        {
+          "gpu": 1,
+          "samples": 2,
+          "utilization_mean_pct": 78.5,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 541.55
+        }
+      ],
+      "rtx_quality_comparison": {
+        "source": "experiments/vllm-rps100-20261120/results/runs/rtx4-fp8-v1/b4/r4/sop/quality/requests.jsonl",
+        "choice_matches": 104,
+        "attempts": 104
+      }
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 2,
+      "stage": "low-load",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r2/sop/low-load",
+      "summary": {
+        "target_rps": 16,
+        "offered_seconds": 20,
+        "scheduled_requests": 320,
+        "attempts": 320,
+        "valid": 320,
+        "failures": 0,
+        "http_statuses": {
+          "200": 320
+        },
+        "replica_counts": {
+          "0": 160,
+          "1": 160
+        },
+        "correct": 302,
+        "elapsed_with_drain_s": 20.012902583999903,
+        "valid_rps_with_drain": 15.989684587573844,
+        "steady_valid_rps": 16.0,
+        "p50_ms": 75.26895199987393,
+        "p95_ms": 76.50546399986524,
+        "p99_ms": 77.24009399987608,
+        "http_p50_ms": 74.61841500003175,
+        "last_quarter_p50_ms": 75.1282489999312,
+        "max_send_lag_ms": 2.1054349999758415,
+        "valid_within_500ms": 320,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 1
+          },
+          {
+            "second": 2,
+            "pending": 1
+          },
+          {
+            "second": 3,
+            "pending": 1
+          },
+          {
+            "second": 4,
+            "pending": 1
+          },
+          {
+            "second": 5,
+            "pending": 1
+          },
+          {
+            "second": 6,
+            "pending": 1
+          },
+          {
+            "second": 7,
+            "pending": 1
+          },
+          {
+            "second": 8,
+            "pending": 1
+          },
+          {
+            "second": 9,
+            "pending": 1
+          },
+          {
+            "second": 10,
+            "pending": 1
+          },
+          {
+            "second": 11,
+            "pending": 1
+          },
+          {
+            "second": 12,
+            "pending": 1
+          },
+          {
+            "second": 13,
+            "pending": 1
+          },
+          {
+            "second": 14,
+            "pending": 1
+          },
+          {
+            "second": 15,
+            "pending": 1
+          },
+          {
+            "second": 16,
+            "pending": 1
+          },
+          {
+            "second": 17,
+            "pending": 1
+          },
+          {
+            "second": 18,
+            "pending": 1
+          },
+          {
+            "second": 19,
+            "pending": 1
+          },
+          {
+            "second": 20,
+            "pending": 1
+          }
+        ],
+        "backlog_slope_per_second": 0.0,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:49:06.573156+00:00",
+        "end_utc": "2026-11-20T15:49:26.587496+00:00",
+        "offered_end_utc": "2026-11-20T15:49:26.573156+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 40.714285714285715,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 456.62714285714287
+        },
+        {
+          "gpu": 1,
+          "samples": 7,
+          "utilization_mean_pct": 38.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 440.38714285714286
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 2,
+      "stage": "rps100",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r2/sop/rps100",
+      "summary": {
+        "target_rps": 100,
+        "offered_seconds": 20,
+        "scheduled_requests": 2000,
+        "attempts": 2000,
+        "valid": 766,
+        "failures": 1234,
+        "http_statuses": {
+          "200": 766,
+          "429": 1234
+        },
+        "replica_counts": {
+          "0": 382,
+          "1": 384
+        },
+        "correct": 724,
+        "elapsed_with_drain_s": 24.013745536999977,
+        "valid_rps_with_drain": 31.898397474886206,
+        "steady_valid_rps": 32.0,
+        "p50_ms": 3993.437067000059,
+        "p95_ms": 4029.556728999978,
+        "p99_ms": 4042.8476589999036,
+        "http_p50_ms": 3992.6406849999694,
+        "last_quarter_p50_ms": 4007.290072999922,
+        "max_send_lag_ms": 16.31523000003199,
+        "valid_within_500ms": 22,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 70
+          },
+          {
+            "second": 2,
+            "pending": 128
+          },
+          {
+            "second": 3,
+            "pending": 128
+          },
+          {
+            "second": 4,
+            "pending": 128
+          },
+          {
+            "second": 5,
+            "pending": 128
+          },
+          {
+            "second": 6,
+            "pending": 128
+          },
+          {
+            "second": 7,
+            "pending": 127
+          },
+          {
+            "second": 8,
+            "pending": 127
+          },
+          {
+            "second": 9,
+            "pending": 127
+          },
+          {
+            "second": 10,
+            "pending": 128
+          },
+          {
+            "second": 11,
+            "pending": 128
+          },
+          {
+            "second": 12,
+            "pending": 127
+          },
+          {
+            "second": 13,
+            "pending": 128
+          },
+          {
+            "second": 14,
+            "pending": 128
+          },
+          {
+            "second": 15,
+            "pending": 128
+          },
+          {
+            "second": 16,
+            "pending": 128
+          },
+          {
+            "second": 17,
+            "pending": 128
+          },
+          {
+            "second": 18,
+            "pending": 128
+          },
+          {
+            "second": 19,
+            "pending": 128
+          },
+          {
+            "second": 20,
+            "pending": 128
+          }
+        ],
+        "backlog_slope_per_second": 0.041176470588235294,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": false,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:49:26.708121+00:00",
+        "end_utc": "2026-11-20T15:49:50.727353+00:00",
+        "offered_end_utc": "2026-11-20T15:49:46.708121+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 96.57142857142857,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 693.1442857142857
+        },
+        {
+          "gpu": 1,
+          "samples": 7,
+          "utilization_mean_pct": 97.14285714285714,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 692.2971428571428
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 4,
+      "stage": "quality",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r4/sop/quality",
+      "summary": {
+        "attempts": 104,
+        "valid": 104,
+        "correct": 98,
+        "failures": 0,
+        "accuracy": 0.9423076923076923
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:49:50.771060+00:00",
+        "end_utc": "2026-11-20T15:49:53.081199+00:00",
+        "offered_end_utc": null,
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 1,
+          "utilization_mean_pct": 57.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 619.16
+        },
+        {
+          "gpu": 1,
+          "samples": 1,
+          "utilization_mean_pct": 49.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 589.1
+        },
+        {
+          "gpu": 2,
+          "samples": 1,
+          "utilization_mean_pct": 71.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 278.03
+        },
+        {
+          "gpu": 3,
+          "samples": 1,
+          "utilization_mean_pct": 64.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 271.36
+        }
+      ],
+      "rtx_quality_comparison": {
+        "source": "experiments/vllm-rps100-20261120/results/runs/rtx4-fp8-v1/b4/r4/sop/quality/requests.jsonl",
+        "choice_matches": 104,
+        "attempts": 104
+      }
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 4,
+      "stage": "low-load",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r4/sop/low-load",
+      "summary": {
+        "target_rps": 32,
+        "offered_seconds": 20,
+        "scheduled_requests": 640,
+        "attempts": 640,
+        "valid": 640,
+        "failures": 0,
+        "http_statuses": {
+          "200": 640
+        },
+        "replica_counts": {
+          "1": 160,
+          "2": 160,
+          "3": 160,
+          "0": 160
+        },
+        "correct": 604,
+        "elapsed_with_drain_s": 20.04496528300001,
+        "valid_rps_with_drain": 31.928216934492742,
+        "steady_valid_rps": 32.0,
+        "p50_ms": 75.45088300003044,
+        "p95_ms": 77.15233199996874,
+        "p99_ms": 80.80682600007094,
+        "http_p50_ms": 74.43181500002538,
+        "last_quarter_p50_ms": 74.9248140000418,
+        "max_send_lag_ms": 2.1017110000229877,
+        "valid_within_500ms": 640,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 2
+          },
+          {
+            "second": 2,
+            "pending": 2
+          },
+          {
+            "second": 3,
+            "pending": 2
+          },
+          {
+            "second": 4,
+            "pending": 2
+          },
+          {
+            "second": 5,
+            "pending": 2
+          },
+          {
+            "second": 6,
+            "pending": 2
+          },
+          {
+            "second": 7,
+            "pending": 2
+          },
+          {
+            "second": 8,
+            "pending": 2
+          },
+          {
+            "second": 9,
+            "pending": 2
+          },
+          {
+            "second": 10,
+            "pending": 2
+          },
+          {
+            "second": 11,
+            "pending": 2
+          },
+          {
+            "second": 12,
+            "pending": 2
+          },
+          {
+            "second": 13,
+            "pending": 2
+          },
+          {
+            "second": 14,
+            "pending": 2
+          },
+          {
+            "second": 15,
+            "pending": 2
+          },
+          {
+            "second": 16,
+            "pending": 2
+          },
+          {
+            "second": 17,
+            "pending": 2
+          },
+          {
+            "second": 18,
+            "pending": 2
+          },
+          {
+            "second": 19,
+            "pending": 2
+          },
+          {
+            "second": 20,
+            "pending": 2
+          }
+        ],
+        "backlog_slope_per_second": 0.0,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:49:53.199344+00:00",
+        "end_utc": "2026-11-20T15:50:13.246838+00:00",
+        "offered_end_utc": "2026-11-20T15:50:13.199344+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 33.57142857142857,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 457.39142857142855
+        },
+        {
+          "gpu": 1,
+          "samples": 7,
+          "utilization_mean_pct": 53.57142857142857,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 443.4714285714286
+        },
+        {
+          "gpu": 2,
+          "samples": 7,
+          "utilization_mean_pct": 29.571428571428573,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 440.57714285714286
+        },
+        {
+          "gpu": 3,
+          "samples": 7,
+          "utilization_mean_pct": 54.57142857142857,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 436.0757142857143
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 4,
+      "stage": "rps100",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r4/sop/rps100",
+      "summary": {
+        "target_rps": 100,
+        "offered_seconds": 20,
+        "scheduled_requests": 2000,
+        "attempts": 2000,
+        "valid": 1531,
+        "failures": 469,
+        "http_statuses": {
+          "200": 1531,
+          "429": 469
+        },
+        "replica_counts": {
+          "1": 383,
+          "2": 385,
+          "3": 384,
+          "0": 379
+        },
+        "correct": 1445,
+        "elapsed_with_drain_s": 24.066926210999895,
+        "valid_rps_with_drain": 63.614272407593525,
+        "steady_valid_rps": 63.93333333333333,
+        "p50_ms": 3969.14260799997,
+        "p95_ms": 4061.641596999948,
+        "p99_ms": 4074.5155359999217,
+        "http_p50_ms": 3967.865295000024,
+        "last_quarter_p50_ms": 4003.0029879999347,
+        "max_send_lag_ms": 15.872178999870812,
+        "valid_within_500ms": 78,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 39
+          },
+          {
+            "second": 2,
+            "pending": 75
+          },
+          {
+            "second": 3,
+            "pending": 110
+          },
+          {
+            "second": 4,
+            "pending": 147
+          },
+          {
+            "second": 5,
+            "pending": 183
+          },
+          {
+            "second": 6,
+            "pending": 218
+          },
+          {
+            "second": 7,
+            "pending": 254
+          },
+          {
+            "second": 8,
+            "pending": 255
+          },
+          {
+            "second": 9,
+            "pending": 255
+          },
+          {
+            "second": 10,
+            "pending": 254
+          },
+          {
+            "second": 11,
+            "pending": 254
+          },
+          {
+            "second": 12,
+            "pending": 254
+          },
+          {
+            "second": 13,
+            "pending": 254
+          },
+          {
+            "second": 14,
+            "pending": 255
+          },
+          {
+            "second": 15,
+            "pending": 256
+          },
+          {
+            "second": 16,
+            "pending": 256
+          },
+          {
+            "second": 17,
+            "pending": 255
+          },
+          {
+            "second": 18,
+            "pending": 256
+          },
+          {
+            "second": 19,
+            "pending": 255
+          },
+          {
+            "second": 20,
+            "pending": 255
+          }
+        ],
+        "backlog_slope_per_second": 2.3573529411764707,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": false,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:50:13.369833+00:00",
+        "end_utc": "2026-11-20T15:50:37.444082+00:00",
+        "offered_end_utc": "2026-11-20T15:50:33.369833+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 8,
+          "utilization_mean_pct": 97.125,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 691.9275
+        },
+        {
+          "gpu": 1,
+          "samples": 8,
+          "utilization_mean_pct": 96.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 690.03375
+        },
+        {
+          "gpu": 2,
+          "samples": 8,
+          "utilization_mean_pct": 96.75,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 692.79625
+        },
+        {
+          "gpu": 3,
+          "samples": 8,
+          "utilization_mean_pct": 95.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 690.2325
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 8,
+      "stage": "quality",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r8/sop/quality",
+      "summary": {
+        "attempts": 104,
+        "valid": 104,
+        "correct": 98,
+        "failures": 0,
+        "accuracy": 0.9423076923076923
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:50:37.496368+00:00",
+        "end_utc": "2026-11-20T15:50:39.674540+00:00",
+        "offered_end_utc": null,
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 1,
+          "utilization_mean_pct": 47.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 390.41
+        },
+        {
+          "gpu": 1,
+          "samples": 1,
+          "utilization_mean_pct": 41.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 355.35
+        },
+        {
+          "gpu": 2,
+          "samples": 1,
+          "utilization_mean_pct": 22.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 361.55
+        },
+        {
+          "gpu": 3,
+          "samples": 1,
+          "utilization_mean_pct": 18.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 371.1
+        },
+        {
+          "gpu": 4,
+          "samples": 1,
+          "utilization_mean_pct": 41.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 359.52
+        },
+        {
+          "gpu": 5,
+          "samples": 1,
+          "utilization_mean_pct": 11.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 352.11
+        },
+        {
+          "gpu": 6,
+          "samples": 1,
+          "utilization_mean_pct": 10.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 354.71
+        },
+        {
+          "gpu": 7,
+          "samples": 1,
+          "utilization_mean_pct": 15.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 347.55
+        }
+      ],
+      "rtx_quality_comparison": {
+        "source": "experiments/vllm-rps100-20261120/results/runs/rtx4-fp8-v1/b4/r4/sop/quality/requests.jsonl",
+        "choice_matches": 104,
+        "attempts": 104
+      }
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 8,
+      "stage": "low-load",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r8/sop/low-load",
+      "summary": {
+        "target_rps": 64,
+        "offered_seconds": 20,
+        "scheduled_requests": 1280,
+        "attempts": 1280,
+        "valid": 1280,
+        "failures": 0,
+        "http_statuses": {
+          "200": 1280
+        },
+        "replica_counts": {
+          "0": 160,
+          "1": 160,
+          "2": 160,
+          "3": 160,
+          "4": 160,
+          "5": 160,
+          "6": 160,
+          "7": 160
+        },
+        "correct": 1208,
+        "elapsed_with_drain_s": 20.059823612999935,
+        "valid_rps_with_drain": 63.8091353490509,
+        "steady_valid_rps": 64.0,
+        "p50_ms": 75.38481699987187,
+        "p95_ms": 82.05856599988692,
+        "p99_ms": 86.55529699990439,
+        "http_p50_ms": 74.74784200007889,
+        "last_quarter_p50_ms": 75.21423999992294,
+        "max_send_lag_ms": 3.434829999946487,
+        "valid_within_500ms": 1280,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 5
+          },
+          {
+            "second": 2,
+            "pending": 4
+          },
+          {
+            "second": 3,
+            "pending": 4
+          },
+          {
+            "second": 4,
+            "pending": 4
+          },
+          {
+            "second": 5,
+            "pending": 4
+          },
+          {
+            "second": 6,
+            "pending": 4
+          },
+          {
+            "second": 7,
+            "pending": 4
+          },
+          {
+            "second": 8,
+            "pending": 4
+          },
+          {
+            "second": 9,
+            "pending": 4
+          },
+          {
+            "second": 10,
+            "pending": 4
+          },
+          {
+            "second": 11,
+            "pending": 4
+          },
+          {
+            "second": 12,
+            "pending": 4
+          },
+          {
+            "second": 13,
+            "pending": 4
+          },
+          {
+            "second": 14,
+            "pending": 4
+          },
+          {
+            "second": 15,
+            "pending": 4
+          },
+          {
+            "second": 16,
+            "pending": 4
+          },
+          {
+            "second": 17,
+            "pending": 4
+          },
+          {
+            "second": 18,
+            "pending": 4
+          },
+          {
+            "second": 19,
+            "pending": 4
+          },
+          {
+            "second": 20,
+            "pending": 4
+          }
+        ],
+        "backlog_slope_per_second": 0.0,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:50:39.793560+00:00",
+        "end_utc": "2026-11-20T15:50:59.859601+00:00",
+        "offered_end_utc": "2026-11-20T15:50:59.793560+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 8,
+          "utilization_mean_pct": 36.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 462.14375
+        },
+        {
+          "gpu": 1,
+          "samples": 8,
+          "utilization_mean_pct": 52.875,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 448.7925
+        },
+        {
+          "gpu": 2,
+          "samples": 8,
+          "utilization_mean_pct": 56.125,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 445.51625
+        },
+        {
+          "gpu": 3,
+          "samples": 8,
+          "utilization_mean_pct": 29.5,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 448.65625
+        },
+        {
+          "gpu": 4,
+          "samples": 8,
+          "utilization_mean_pct": 53.625,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 443.685
+        },
+        {
+          "gpu": 5,
+          "samples": 8,
+          "utilization_mean_pct": 28.25,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 438.99875
+        },
+        {
+          "gpu": 6,
+          "samples": 8,
+          "utilization_mean_pct": 44.75,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 434.52
+        },
+        {
+          "gpu": 7,
+          "samples": 8,
+          "utilization_mean_pct": 58.75,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 430.58125
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 1,
+      "replicas": 8,
+      "stage": "rps100",
+      "source": "results/runs/h200-fp8-v2/sweep/b1/r8/sop/rps100",
+      "summary": {
+        "target_rps": 100,
+        "offered_seconds": 20,
+        "scheduled_requests": 2000,
+        "attempts": 2000,
+        "valid": 2000,
+        "failures": 0,
+        "http_statuses": {
+          "200": 2000
+        },
+        "replica_counts": {
+          "0": 250,
+          "1": 250,
+          "2": 250,
+          "3": 250,
+          "4": 250,
+          "5": 250,
+          "6": 250,
+          "7": 250
+        },
+        "correct": 1886,
+        "elapsed_with_drain_s": 20.066185073999918,
+        "valid_rps_with_drain": 99.67016613394205,
+        "steady_valid_rps": 100.0,
+        "p50_ms": 76.45577099992806,
+        "p95_ms": 82.9416689999789,
+        "p99_ms": 85.1349700000128,
+        "http_p50_ms": 75.90075600001,
+        "last_quarter_p50_ms": 76.3145280000117,
+        "max_send_lag_ms": 10.733505999951376,
+        "valid_within_500ms": 2000,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 7
+          },
+          {
+            "second": 2,
+            "pending": 8
+          },
+          {
+            "second": 3,
+            "pending": 7
+          },
+          {
+            "second": 4,
+            "pending": 8
+          },
+          {
+            "second": 5,
+            "pending": 7
+          },
+          {
+            "second": 6,
+            "pending": 8
+          },
+          {
+            "second": 7,
+            "pending": 7
+          },
+          {
+            "second": 8,
+            "pending": 7
+          },
+          {
+            "second": 9,
+            "pending": 7
+          },
+          {
+            "second": 10,
+            "pending": 7
+          },
+          {
+            "second": 11,
+            "pending": 7
+          },
+          {
+            "second": 12,
+            "pending": 7
+          },
+          {
+            "second": 13,
+            "pending": 7
+          },
+          {
+            "second": 14,
+            "pending": 7
+          },
+          {
+            "second": 15,
+            "pending": 7
+          },
+          {
+            "second": 16,
+            "pending": 7
+          },
+          {
+            "second": 17,
+            "pending": 7
+          },
+          {
+            "second": 18,
+            "pending": 7
+          },
+          {
+            "second": 19,
+            "pending": 7
+          },
+          {
+            "second": 20,
+            "pending": 7
+          }
+        ],
+        "backlog_slope_per_second": -0.01911764705882353,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:50:59.991306+00:00",
+        "end_utc": "2026-11-20T15:51:20.066041+00:00",
+        "offered_end_utc": "2026-11-20T15:51:19.991306+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 8,
+          "utilization_mean_pct": 63.375,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 623.67125
+        },
+        {
+          "gpu": 1,
+          "samples": 8,
+          "utilization_mean_pct": 63.5,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 613.82875
+        },
+        {
+          "gpu": 2,
+          "samples": 8,
+          "utilization_mean_pct": 76.5,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 601.42375
+        },
+        {
+          "gpu": 3,
+          "samples": 8,
+          "utilization_mean_pct": 61.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 609.88625
+        },
+        {
+          "gpu": 4,
+          "samples": 8,
+          "utilization_mean_pct": 73.625,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 590.4325
+        },
+        {
+          "gpu": 5,
+          "samples": 8,
+          "utilization_mean_pct": 57.875,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 606.42875
+        },
+        {
+          "gpu": 6,
+          "samples": 8,
+          "utilization_mean_pct": 66.0,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 612.49625
+        },
+        {
+          "gpu": 7,
+          "samples": 8,
+          "utilization_mean_pct": 74.875,
+          "memory_max_gib": 111.3994140625,
+          "power_mean_w": 620.7425
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 1,
+      "stage": "quality",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r1/sop/quality",
+      "summary": {
+        "attempts": 104,
+        "valid": 104,
+        "correct": 98,
+        "failures": 0,
+        "accuracy": 0.9423076923076923
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:52:46.729363+00:00",
+        "end_utc": "2026-11-20T15:52:54.722629+00:00",
+        "offered_end_utc": null,
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 4,
+          "utilization_mean_pct": 70.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 594.845
+        }
+      ],
+      "rtx_quality_comparison": {
+        "source": "experiments/vllm-rps100-20261120/results/runs/rtx4-fp8-v1/b4/r4/sop/quality/requests.jsonl",
+        "choice_matches": 104,
+        "attempts": 104
+      }
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 1,
+      "stage": "low-load",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r1/sop/low-load",
+      "summary": {
+        "target_rps": 8,
+        "offered_seconds": 20,
+        "scheduled_requests": 160,
+        "attempts": 160,
+        "valid": 160,
+        "failures": 0,
+        "http_statuses": {
+          "200": 160
+        },
+        "replica_counts": {
+          "0": 160
+        },
+        "correct": 153,
+        "elapsed_with_drain_s": 20.000949073000015,
+        "valid_rps_with_drain": 7.999620388813931,
+        "steady_valid_rps": 8.0,
+        "p50_ms": 74.47826299994631,
+        "p95_ms": 76.11958500001492,
+        "p99_ms": 77.65247600002567,
+        "http_p50_ms": 73.83510900001511,
+        "last_quarter_p50_ms": 74.47826299994631,
+        "max_send_lag_ms": 2.0984459999908722,
+        "valid_within_500ms": 160,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 0
+          },
+          {
+            "second": 2,
+            "pending": 0
+          },
+          {
+            "second": 3,
+            "pending": 0
+          },
+          {
+            "second": 4,
+            "pending": 0
+          },
+          {
+            "second": 5,
+            "pending": 0
+          },
+          {
+            "second": 6,
+            "pending": 0
+          },
+          {
+            "second": 7,
+            "pending": 0
+          },
+          {
+            "second": 8,
+            "pending": 0
+          },
+          {
+            "second": 9,
+            "pending": 0
+          },
+          {
+            "second": 10,
+            "pending": 0
+          },
+          {
+            "second": 11,
+            "pending": 0
+          },
+          {
+            "second": 12,
+            "pending": 0
+          },
+          {
+            "second": 13,
+            "pending": 0
+          },
+          {
+            "second": 14,
+            "pending": 0
+          },
+          {
+            "second": 15,
+            "pending": 0
+          },
+          {
+            "second": 16,
+            "pending": 0
+          },
+          {
+            "second": 17,
+            "pending": 0
+          },
+          {
+            "second": 18,
+            "pending": 0
+          },
+          {
+            "second": 19,
+            "pending": 0
+          },
+          {
+            "second": 20,
+            "pending": 0
+          }
+        ],
+        "backlog_slope_per_second": 0.0,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:52:54.842549+00:00",
+        "end_utc": "2026-11-20T15:53:14.844501+00:00",
+        "offered_end_utc": "2026-11-20T15:53:14.842549+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 52.285714285714285,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 453.99285714285713
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 1,
+      "stage": "rps100",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r1/sop/rps100",
+      "summary": {
+        "target_rps": 100,
+        "offered_seconds": 20,
+        "scheduled_requests": 2000,
+        "attempts": 2000,
+        "valid": 397,
+        "failures": 1603,
+        "http_statuses": {
+          "200": 397,
+          "429": 1603
+        },
+        "replica_counts": {
+          "0": 397
+        },
+        "correct": 377,
+        "elapsed_with_drain_s": 23.63608292699996,
+        "valid_rps_with_drain": 16.79635332242379,
+        "steady_valid_rps": 16.8,
+        "p50_ms": 3794.405582999957,
+        "p95_ms": 3822.4752079999007,
+        "p99_ms": 3830.058690999863,
+        "http_p50_ms": 3793.115653999962,
+        "last_quarter_p50_ms": 3803.2880439999417,
+        "max_send_lag_ms": 7.93543099996441,
+        "valid_within_500ms": 9,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 64
+          },
+          {
+            "second": 2,
+            "pending": 64
+          },
+          {
+            "second": 3,
+            "pending": 64
+          },
+          {
+            "second": 4,
+            "pending": 64
+          },
+          {
+            "second": 5,
+            "pending": 64
+          },
+          {
+            "second": 6,
+            "pending": 62
+          },
+          {
+            "second": 7,
+            "pending": 64
+          },
+          {
+            "second": 8,
+            "pending": 64
+          },
+          {
+            "second": 9,
+            "pending": 64
+          },
+          {
+            "second": 10,
+            "pending": 64
+          },
+          {
+            "second": 11,
+            "pending": 62
+          },
+          {
+            "second": 12,
+            "pending": 64
+          },
+          {
+            "second": 13,
+            "pending": 64
+          },
+          {
+            "second": 14,
+            "pending": 64
+          },
+          {
+            "second": 15,
+            "pending": 64
+          },
+          {
+            "second": 16,
+            "pending": 63
+          },
+          {
+            "second": 17,
+            "pending": 64
+          },
+          {
+            "second": 18,
+            "pending": 64
+          },
+          {
+            "second": 19,
+            "pending": 64
+          },
+          {
+            "second": 20,
+            "pending": 64
+          }
+        ],
+        "backlog_slope_per_second": 0.03676470588235294,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": false,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:53:14.964446+00:00",
+        "end_utc": "2026-11-20T15:53:38.604702+00:00",
+        "offered_end_utc": "2026-11-20T15:53:34.964446+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 98.71428571428571,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 695.5
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 2,
+      "stage": "quality",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r2/sop/quality",
+      "summary": {
+        "attempts": 104,
+        "valid": 104,
+        "correct": 98,
+        "failures": 0,
+        "accuracy": 0.9423076923076923
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:53:38.645195+00:00",
+        "end_utc": "2026-11-20T15:53:42.726033+00:00",
+        "offered_end_utc": null,
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 2,
+          "utilization_mean_pct": 71.0,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 609.78
+        },
+        {
+          "gpu": 1,
+          "samples": 2,
+          "utilization_mean_pct": 74.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 567.45
+        }
+      ],
+      "rtx_quality_comparison": {
+        "source": "experiments/vllm-rps100-20261120/results/runs/rtx4-fp8-v1/b4/r4/sop/quality/requests.jsonl",
+        "choice_matches": 104,
+        "attempts": 104
+      }
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 2,
+      "stage": "low-load",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r2/sop/low-load",
+      "summary": {
+        "target_rps": 16,
+        "offered_seconds": 20,
+        "scheduled_requests": 320,
+        "attempts": 320,
+        "valid": 320,
+        "failures": 0,
+        "http_statuses": {
+          "200": 320
+        },
+        "replica_counts": {
+          "1": 160,
+          "0": 160
+        },
+        "correct": 302,
+        "elapsed_with_drain_s": 20.014256091999982,
+        "valid_rps_with_drain": 15.9886032500558,
+        "steady_valid_rps": 16.0,
+        "p50_ms": 75.26256999994985,
+        "p95_ms": 76.53421399993476,
+        "p99_ms": 77.4240739999641,
+        "http_p50_ms": 74.65153900000132,
+        "last_quarter_p50_ms": 75.11455799999567,
+        "max_send_lag_ms": 2.1080589999655786,
+        "valid_within_500ms": 320,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 1
+          },
+          {
+            "second": 2,
+            "pending": 1
+          },
+          {
+            "second": 3,
+            "pending": 1
+          },
+          {
+            "second": 4,
+            "pending": 1
+          },
+          {
+            "second": 5,
+            "pending": 1
+          },
+          {
+            "second": 6,
+            "pending": 1
+          },
+          {
+            "second": 7,
+            "pending": 1
+          },
+          {
+            "second": 8,
+            "pending": 1
+          },
+          {
+            "second": 9,
+            "pending": 1
+          },
+          {
+            "second": 10,
+            "pending": 1
+          },
+          {
+            "second": 11,
+            "pending": 1
+          },
+          {
+            "second": 12,
+            "pending": 1
+          },
+          {
+            "second": 13,
+            "pending": 1
+          },
+          {
+            "second": 14,
+            "pending": 1
+          },
+          {
+            "second": 15,
+            "pending": 1
+          },
+          {
+            "second": 16,
+            "pending": 1
+          },
+          {
+            "second": 17,
+            "pending": 1
+          },
+          {
+            "second": 18,
+            "pending": 1
+          },
+          {
+            "second": 19,
+            "pending": 1
+          },
+          {
+            "second": 20,
+            "pending": 1
+          }
+        ],
+        "backlog_slope_per_second": 0.0,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:53:42.845154+00:00",
+        "end_utc": "2026-11-20T15:54:02.860775+00:00",
+        "offered_end_utc": "2026-11-20T15:54:02.845154+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 36.285714285714285,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 446.9585714285714
+        },
+        {
+          "gpu": 1,
+          "samples": 7,
+          "utilization_mean_pct": 53.42857142857143,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 443.68857142857144
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 2,
+      "stage": "rps100",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r2/sop/rps100",
+      "summary": {
+        "target_rps": 100,
+        "offered_seconds": 20,
+        "scheduled_requests": 2000,
+        "attempts": 2000,
+        "valid": 794,
+        "failures": 1206,
+        "http_statuses": {
+          "200": 794,
+          "429": 1206
+        },
+        "replica_counts": {
+          "1": 399,
+          "0": 395
+        },
+        "correct": 752,
+        "elapsed_with_drain_s": 23.617418983999983,
+        "valid_rps_with_drain": 33.619253676191654,
+        "steady_valid_rps": 33.46666666666667,
+        "p50_ms": 3764.334593000058,
+        "p95_ms": 3825.5292129999816,
+        "p99_ms": 3834.98818999999,
+        "http_p50_ms": 3763.7430050000376,
+        "last_quarter_p50_ms": 3773.504055999979,
+        "max_send_lag_ms": 10.855475999960618,
+        "valid_within_500ms": 20,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 70
+          },
+          {
+            "second": 2,
+            "pending": 128
+          },
+          {
+            "second": 3,
+            "pending": 128
+          },
+          {
+            "second": 4,
+            "pending": 127
+          },
+          {
+            "second": 5,
+            "pending": 128
+          },
+          {
+            "second": 6,
+            "pending": 128
+          },
+          {
+            "second": 7,
+            "pending": 128
+          },
+          {
+            "second": 8,
+            "pending": 125
+          },
+          {
+            "second": 9,
+            "pending": 128
+          },
+          {
+            "second": 10,
+            "pending": 128
+          },
+          {
+            "second": 11,
+            "pending": 128
+          },
+          {
+            "second": 12,
+            "pending": 126
+          },
+          {
+            "second": 13,
+            "pending": 128
+          },
+          {
+            "second": 14,
+            "pending": 128
+          },
+          {
+            "second": 15,
+            "pending": 125
+          },
+          {
+            "second": 16,
+            "pending": 125
+          },
+          {
+            "second": 17,
+            "pending": 128
+          },
+          {
+            "second": 18,
+            "pending": 128
+          },
+          {
+            "second": 19,
+            "pending": 128
+          },
+          {
+            "second": 20,
+            "pending": 126
+          }
+        ],
+        "backlog_slope_per_second": -0.054411764705882354,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": false,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:54:02.982424+00:00",
+        "end_utc": "2026-11-20T15:54:26.605534+00:00",
+        "offered_end_utc": "2026-11-20T15:54:22.982424+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 98.71428571428571,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 696.2485714285715
+        },
+        {
+          "gpu": 1,
+          "samples": 7,
+          "utilization_mean_pct": 99.42857142857143,
+          "memory_max_gib": 111.0380859375,
+          "power_mean_w": 694.54
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 4,
+      "stage": "quality",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r4/sop/quality",
+      "summary": {
+        "attempts": 104,
+        "valid": 104,
+        "correct": 98,
+        "failures": 0,
+        "accuracy": 0.9423076923076923
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:54:26.651703+00:00",
+        "end_utc": "2026-11-20T15:54:28.841535+00:00",
+        "offered_end_utc": null,
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 1,
+          "utilization_mean_pct": 72.0,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 556.76
+        },
+        {
+          "gpu": 1,
+          "samples": 1,
+          "utilization_mean_pct": 71.0,
+          "memory_max_gib": 111.0380859375,
+          "power_mean_w": 537.09
+        },
+        {
+          "gpu": 2,
+          "samples": 1,
+          "utilization_mean_pct": 61.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 492.8
+        },
+        {
+          "gpu": 3,
+          "samples": 1,
+          "utilization_mean_pct": 73.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 488.69
+        }
+      ],
+      "rtx_quality_comparison": {
+        "source": "experiments/vllm-rps100-20261120/results/runs/rtx4-fp8-v1/b4/r4/sop/quality/requests.jsonl",
+        "choice_matches": 104,
+        "attempts": 104
+      }
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 4,
+      "stage": "low-load",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r4/sop/low-load",
+      "summary": {
+        "target_rps": 32,
+        "offered_seconds": 20,
+        "scheduled_requests": 640,
+        "attempts": 640,
+        "valid": 640,
+        "failures": 0,
+        "http_statuses": {
+          "200": 640
+        },
+        "replica_counts": {
+          "3": 160,
+          "0": 160,
+          "1": 160,
+          "2": 160
+        },
+        "correct": 604,
+        "elapsed_with_drain_s": 20.043514795999954,
+        "valid_rps_with_drain": 31.9305274805257,
+        "steady_valid_rps": 32.0,
+        "p50_ms": 74.87147999995614,
+        "p95_ms": 77.31633399998827,
+        "p99_ms": 78.94060699993588,
+        "http_p50_ms": 73.99968699996862,
+        "last_quarter_p50_ms": 74.69495899999856,
+        "max_send_lag_ms": 2.1488129999625016,
+        "valid_within_500ms": 640,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 2
+          },
+          {
+            "second": 2,
+            "pending": 2
+          },
+          {
+            "second": 3,
+            "pending": 2
+          },
+          {
+            "second": 4,
+            "pending": 2
+          },
+          {
+            "second": 5,
+            "pending": 2
+          },
+          {
+            "second": 6,
+            "pending": 2
+          },
+          {
+            "second": 7,
+            "pending": 2
+          },
+          {
+            "second": 8,
+            "pending": 2
+          },
+          {
+            "second": 9,
+            "pending": 2
+          },
+          {
+            "second": 10,
+            "pending": 2
+          },
+          {
+            "second": 11,
+            "pending": 2
+          },
+          {
+            "second": 12,
+            "pending": 2
+          },
+          {
+            "second": 13,
+            "pending": 2
+          },
+          {
+            "second": 14,
+            "pending": 2
+          },
+          {
+            "second": 15,
+            "pending": 2
+          },
+          {
+            "second": 16,
+            "pending": 2
+          },
+          {
+            "second": 17,
+            "pending": 2
+          },
+          {
+            "second": 18,
+            "pending": 2
+          },
+          {
+            "second": 19,
+            "pending": 2
+          },
+          {
+            "second": 20,
+            "pending": 2
+          }
+        ],
+        "backlog_slope_per_second": 0.0,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:54:28.960860+00:00",
+        "end_utc": "2026-11-20T15:54:49.006885+00:00",
+        "offered_end_utc": "2026-11-20T15:54:48.960860+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 62.285714285714285,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 464.4485714285714
+        },
+        {
+          "gpu": 1,
+          "samples": 7,
+          "utilization_mean_pct": 22.714285714285715,
+          "memory_max_gib": 111.0380859375,
+          "power_mean_w": 443.35571428571427
+        },
+        {
+          "gpu": 2,
+          "samples": 7,
+          "utilization_mean_pct": 52.285714285714285,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 438.39285714285717
+        },
+        {
+          "gpu": 3,
+          "samples": 7,
+          "utilization_mean_pct": 29.142857142857142,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 443.24
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 4,
+      "stage": "rps100",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r4/sop/rps100",
+      "summary": {
+        "target_rps": 100,
+        "offered_seconds": 20,
+        "scheduled_requests": 2000,
+        "attempts": 2000,
+        "valid": 1591,
+        "failures": 409,
+        "http_statuses": {
+          "200": 1591,
+          "429": 409
+        },
+        "replica_counts": {
+          "3": 400,
+          "0": 393,
+          "1": 398,
+          "2": 400
+        },
+        "correct": 1503,
+        "elapsed_with_drain_s": 23.688428662999968,
+        "valid_rps_with_drain": 67.16359377965222,
+        "steady_valid_rps": 68.0,
+        "p50_ms": 3688.1687439998814,
+        "p95_ms": 3829.238499999974,
+        "p99_ms": 3842.5134769998976,
+        "http_p50_ms": 3687.219356000014,
+        "last_quarter_p50_ms": 3763.8212279999834,
+        "max_send_lag_ms": 12.060803999929703,
+        "valid_within_500ms": 63,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 52
+          },
+          {
+            "second": 2,
+            "pending": 72
+          },
+          {
+            "second": 3,
+            "pending": 108
+          },
+          {
+            "second": 4,
+            "pending": 144
+          },
+          {
+            "second": 5,
+            "pending": 180
+          },
+          {
+            "second": 6,
+            "pending": 204
+          },
+          {
+            "second": 7,
+            "pending": 240
+          },
+          {
+            "second": 8,
+            "pending": 253
+          },
+          {
+            "second": 9,
+            "pending": 256
+          },
+          {
+            "second": 10,
+            "pending": 252
+          },
+          {
+            "second": 11,
+            "pending": 253
+          },
+          {
+            "second": 12,
+            "pending": 256
+          },
+          {
+            "second": 13,
+            "pending": 256
+          },
+          {
+            "second": 14,
+            "pending": 248
+          },
+          {
+            "second": 15,
+            "pending": 251
+          },
+          {
+            "second": 16,
+            "pending": 256
+          },
+          {
+            "second": 17,
+            "pending": 256
+          },
+          {
+            "second": 18,
+            "pending": 253
+          },
+          {
+            "second": 19,
+            "pending": 256
+          },
+          {
+            "second": 20,
+            "pending": 251
+          }
+        ],
+        "backlog_slope_per_second": 2.7808823529411764,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": false,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:54:49.130291+00:00",
+        "end_utc": "2026-11-20T15:55:12.825795+00:00",
+        "offered_end_utc": "2026-11-20T15:55:09.130291+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 98.71428571428571,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 694.8485714285714
+        },
+        {
+          "gpu": 1,
+          "samples": 7,
+          "utilization_mean_pct": 99.14285714285714,
+          "memory_max_gib": 111.0380859375,
+          "power_mean_w": 694.1157142857143
+        },
+        {
+          "gpu": 2,
+          "samples": 7,
+          "utilization_mean_pct": 98.71428571428571,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 695.29
+        },
+        {
+          "gpu": 3,
+          "samples": 7,
+          "utilization_mean_pct": 98.71428571428571,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 695.9085714285715
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 8,
+      "stage": "quality",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r8/sop/quality",
+      "summary": {
+        "attempts": 104,
+        "valid": 104,
+        "correct": 98,
+        "failures": 0,
+        "accuracy": 0.9423076923076923
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:55:12.878067+00:00",
+        "end_utc": "2026-11-20T15:55:15.092280+00:00",
+        "offered_end_utc": null,
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 1,
+          "utilization_mean_pct": 38.0,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 405.06
+        },
+        {
+          "gpu": 1,
+          "samples": 1,
+          "utilization_mean_pct": 32.0,
+          "memory_max_gib": 111.0380859375,
+          "power_mean_w": 410.91
+        },
+        {
+          "gpu": 2,
+          "samples": 1,
+          "utilization_mean_pct": 0.0,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 359.05
+        },
+        {
+          "gpu": 3,
+          "samples": 1,
+          "utilization_mean_pct": 3.0,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 376.48
+        },
+        {
+          "gpu": 4,
+          "samples": 1,
+          "utilization_mean_pct": 30.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 233.77
+        },
+        {
+          "gpu": 5,
+          "samples": 1,
+          "utilization_mean_pct": 0.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 238.11
+        },
+        {
+          "gpu": 6,
+          "samples": 1,
+          "utilization_mean_pct": 0.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 231.37
+        },
+        {
+          "gpu": 7,
+          "samples": 1,
+          "utilization_mean_pct": 11.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 244.1
+        }
+      ],
+      "rtx_quality_comparison": {
+        "source": "experiments/vllm-rps100-20261120/results/runs/rtx4-fp8-v1/b4/r4/sop/quality/requests.jsonl",
+        "choice_matches": 104,
+        "attempts": 104
+      }
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 8,
+      "stage": "low-load",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r8/sop/low-load",
+      "summary": {
+        "target_rps": 64,
+        "offered_seconds": 20,
+        "scheduled_requests": 1280,
+        "attempts": 1280,
+        "valid": 1280,
+        "failures": 0,
+        "http_statuses": {
+          "200": 1280
+        },
+        "replica_counts": {
+          "7": 160,
+          "0": 160,
+          "1": 160,
+          "2": 160,
+          "3": 160,
+          "4": 160,
+          "5": 160,
+          "6": 160
+        },
+        "correct": 1208,
+        "elapsed_with_drain_s": 20.057766541999968,
+        "valid_rps_with_drain": 63.81567944365807,
+        "steady_valid_rps": 64.0,
+        "p50_ms": 75.04480199997943,
+        "p95_ms": 80.53202400003556,
+        "p99_ms": 86.85961200001202,
+        "http_p50_ms": 74.45981800003665,
+        "last_quarter_p50_ms": 74.9405569999908,
+        "max_send_lag_ms": 2.9782249999925625,
+        "valid_within_500ms": 1280,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 5
+          },
+          {
+            "second": 2,
+            "pending": 4
+          },
+          {
+            "second": 3,
+            "pending": 4
+          },
+          {
+            "second": 4,
+            "pending": 4
+          },
+          {
+            "second": 5,
+            "pending": 4
+          },
+          {
+            "second": 6,
+            "pending": 4
+          },
+          {
+            "second": 7,
+            "pending": 4
+          },
+          {
+            "second": 8,
+            "pending": 5
+          },
+          {
+            "second": 9,
+            "pending": 4
+          },
+          {
+            "second": 10,
+            "pending": 4
+          },
+          {
+            "second": 11,
+            "pending": 4
+          },
+          {
+            "second": 12,
+            "pending": 4
+          },
+          {
+            "second": 13,
+            "pending": 4
+          },
+          {
+            "second": 14,
+            "pending": 4
+          },
+          {
+            "second": 15,
+            "pending": 4
+          },
+          {
+            "second": 16,
+            "pending": 4
+          },
+          {
+            "second": 17,
+            "pending": 4
+          },
+          {
+            "second": 18,
+            "pending": 4
+          },
+          {
+            "second": 19,
+            "pending": 4
+          },
+          {
+            "second": 20,
+            "pending": 4
+          }
+        ],
+        "backlog_slope_per_second": -0.013235294117647059,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:55:15.212623+00:00",
+        "end_utc": "2026-11-20T15:55:35.276511+00:00",
+        "offered_end_utc": "2026-11-20T15:55:35.212623+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 57.42857142857143,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 464.1642857142857
+        },
+        {
+          "gpu": 1,
+          "samples": 7,
+          "utilization_mean_pct": 44.57142857142857,
+          "memory_max_gib": 111.0380859375,
+          "power_mean_w": 444.11857142857144
+        },
+        {
+          "gpu": 2,
+          "samples": 7,
+          "utilization_mean_pct": 35.857142857142854,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 450.17285714285714
+        },
+        {
+          "gpu": 3,
+          "samples": 7,
+          "utilization_mean_pct": 55.142857142857146,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 443.01714285714286
+        },
+        {
+          "gpu": 4,
+          "samples": 7,
+          "utilization_mean_pct": 37.714285714285715,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 434.72285714285715
+        },
+        {
+          "gpu": 5,
+          "samples": 7,
+          "utilization_mean_pct": 54.57142857142857,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 436.31142857142856
+        },
+        {
+          "gpu": 6,
+          "samples": 7,
+          "utilization_mean_pct": 48.857142857142854,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 445.09714285714284
+        },
+        {
+          "gpu": 7,
+          "samples": 7,
+          "utilization_mean_pct": 33.285714285714285,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 435.60571428571427
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "sweep",
+      "batch": 4,
+      "replicas": 8,
+      "stage": "rps100",
+      "source": "results/runs/h200-fp8-v2/sweep/b4/r8/sop/rps100",
+      "summary": {
+        "target_rps": 100,
+        "offered_seconds": 20,
+        "scheduled_requests": 2000,
+        "attempts": 2000,
+        "valid": 2000,
+        "failures": 0,
+        "http_statuses": {
+          "200": 2000
+        },
+        "replica_counts": {
+          "7": 250,
+          "0": 250,
+          "1": 250,
+          "2": 250,
+          "3": 250,
+          "4": 250,
+          "5": 250,
+          "6": 250
+        },
+        "correct": 1886,
+        "elapsed_with_drain_s": 20.066198634999978,
+        "valid_rps_with_drain": 99.67009877553733,
+        "steady_valid_rps": 100.0,
+        "p50_ms": 76.094047999959,
+        "p95_ms": 78.52663900007428,
+        "p99_ms": 79.92788599995038,
+        "http_p50_ms": 75.50958700005594,
+        "last_quarter_p50_ms": 76.17371300000286,
+        "max_send_lag_ms": 9.756936000030692,
+        "valid_within_500ms": 2000,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 7
+          },
+          {
+            "second": 2,
+            "pending": 7
+          },
+          {
+            "second": 3,
+            "pending": 7
+          },
+          {
+            "second": 4,
+            "pending": 7
+          },
+          {
+            "second": 5,
+            "pending": 7
+          },
+          {
+            "second": 6,
+            "pending": 7
+          },
+          {
+            "second": 7,
+            "pending": 7
+          },
+          {
+            "second": 8,
+            "pending": 7
+          },
+          {
+            "second": 9,
+            "pending": 7
+          },
+          {
+            "second": 10,
+            "pending": 7
+          },
+          {
+            "second": 11,
+            "pending": 7
+          },
+          {
+            "second": 12,
+            "pending": 7
+          },
+          {
+            "second": 13,
+            "pending": 7
+          },
+          {
+            "second": 14,
+            "pending": 7
+          },
+          {
+            "second": 15,
+            "pending": 7
+          },
+          {
+            "second": 16,
+            "pending": 7
+          },
+          {
+            "second": 17,
+            "pending": 7
+          },
+          {
+            "second": 18,
+            "pending": 7
+          },
+          {
+            "second": 19,
+            "pending": 7
+          },
+          {
+            "second": 20,
+            "pending": 7
+          }
+        ],
+        "backlog_slope_per_second": 0.0,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": false
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:55:35.409406+00:00",
+        "end_utc": "2026-11-20T15:55:55.484425+00:00",
+        "offered_end_utc": "2026-11-20T15:55:55.409406+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 7,
+          "utilization_mean_pct": 77.28571428571429,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 621.1228571428571
+        },
+        {
+          "gpu": 1,
+          "samples": 7,
+          "utilization_mean_pct": 75.71428571428571,
+          "memory_max_gib": 111.0380859375,
+          "power_mean_w": 617.0285714285715
+        },
+        {
+          "gpu": 2,
+          "samples": 7,
+          "utilization_mean_pct": 63.0,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 610.9271428571428
+        },
+        {
+          "gpu": 3,
+          "samples": 7,
+          "utilization_mean_pct": 77.0,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 614.6228571428571
+        },
+        {
+          "gpu": 4,
+          "samples": 7,
+          "utilization_mean_pct": 62.142857142857146,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 611.4742857142858
+        },
+        {
+          "gpu": 5,
+          "samples": 7,
+          "utilization_mean_pct": 76.28571428571429,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 612.59
+        },
+        {
+          "gpu": 6,
+          "samples": 7,
+          "utilization_mean_pct": 70.28571428571429,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 592.9171428571428
+        },
+        {
+          "gpu": 7,
+          "samples": 7,
+          "utilization_mean_pct": 65.14285714285714,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 618.0814285714285
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "confirmation",
+      "batch": 4,
+      "replicas": 8,
+      "stage": "quality",
+      "source": "results/runs/h200-fp8-v2/confirmation/b4/r8/sop/quality",
+      "summary": {
+        "attempts": 104,
+        "valid": 104,
+        "correct": 98,
+        "failures": 0,
+        "accuracy": 0.9423076923076923
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:55:55.539662+00:00",
+        "end_utc": "2026-11-20T15:55:56.604695+00:00",
+        "offered_end_utc": null,
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 1,
+          "utilization_mean_pct": 0.0,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 560.23
+        },
+        {
+          "gpu": 1,
+          "samples": 1,
+          "utilization_mean_pct": 0.0,
+          "memory_max_gib": 111.0380859375,
+          "power_mean_w": 553.72
+        },
+        {
+          "gpu": 2,
+          "samples": 1,
+          "utilization_mean_pct": 7.0,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 564.0
+        },
+        {
+          "gpu": 3,
+          "samples": 1,
+          "utilization_mean_pct": 53.0,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 572.34
+        },
+        {
+          "gpu": 4,
+          "samples": 1,
+          "utilization_mean_pct": 51.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 570.47
+        },
+        {
+          "gpu": 5,
+          "samples": 1,
+          "utilization_mean_pct": 42.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 578.91
+        },
+        {
+          "gpu": 6,
+          "samples": 1,
+          "utilization_mean_pct": 55.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 584.63
+        },
+        {
+          "gpu": 7,
+          "samples": 1,
+          "utilization_mean_pct": 10.0,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 544.21
+        }
+      ],
+      "rtx_quality_comparison": {
+        "source": "experiments/vllm-rps100-20261120/results/runs/rtx4-fp8-v1/b4/r4/sop/quality/requests.jsonl",
+        "choice_matches": 104,
+        "attempts": 104
+      }
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "confirmation",
+      "batch": 4,
+      "replicas": 8,
+      "stage": "confirm",
+      "source": "results/runs/h200-fp8-v2/confirmation/b4/r8/sop/confirm",
+      "summary": {
+        "target_rps": 100,
+        "offered_seconds": 120,
+        "scheduled_requests": 12000,
+        "attempts": 12000,
+        "valid": 12000,
+        "failures": 0,
+        "http_statuses": {
+          "200": 12000
+        },
+        "replica_counts": {
+          "5": 1500,
+          "6": 1500,
+          "7": 1500,
+          "0": 1500,
+          "1": 1500,
+          "2": 1500,
+          "3": 1500,
+          "4": 1500
+        },
+        "correct": 11310,
+        "elapsed_with_drain_s": 120.06926353699998,
+        "valid_rps_with_drain": 99.94231368215344,
+        "steady_valid_rps": 100.0,
+        "p50_ms": 76.57992399992963,
+        "p95_ms": 82.63375599995015,
+        "p99_ms": 84.59426199999598,
+        "http_p50_ms": 75.94287599999916,
+        "last_quarter_p50_ms": 76.35149599991564,
+        "max_send_lag_ms": 49.43351700001131,
+        "valid_within_500ms": 12000,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 7
+          },
+          {
+            "second": 2,
+            "pending": 7
+          },
+          {
+            "second": 3,
+            "pending": 7
+          },
+          {
+            "second": 4,
+            "pending": 7
+          },
+          {
+            "second": 5,
+            "pending": 7
+          },
+          {
+            "second": 6,
+            "pending": 7
+          },
+          {
+            "second": 7,
+            "pending": 7
+          },
+          {
+            "second": 8,
+            "pending": 7
+          },
+          {
+            "second": 9,
+            "pending": 7
+          },
+          {
+            "second": 10,
+            "pending": 7
+          },
+          {
+            "second": 11,
+            "pending": 7
+          },
+          {
+            "second": 12,
+            "pending": 7
+          },
+          {
+            "second": 13,
+            "pending": 7
+          },
+          {
+            "second": 14,
+            "pending": 7
+          },
+          {
+            "second": 15,
+            "pending": 7
+          },
+          {
+            "second": 16,
+            "pending": 7
+          },
+          {
+            "second": 17,
+            "pending": 7
+          },
+          {
+            "second": 18,
+            "pending": 7
+          },
+          {
+            "second": 19,
+            "pending": 7
+          },
+          {
+            "second": 20,
+            "pending": 7
+          },
+          {
+            "second": 21,
+            "pending": 7
+          },
+          {
+            "second": 22,
+            "pending": 7
+          },
+          {
+            "second": 23,
+            "pending": 7
+          },
+          {
+            "second": 24,
+            "pending": 7
+          },
+          {
+            "second": 25,
+            "pending": 7
+          },
+          {
+            "second": 26,
+            "pending": 7
+          },
+          {
+            "second": 27,
+            "pending": 7
+          },
+          {
+            "second": 28,
+            "pending": 7
+          },
+          {
+            "second": 29,
+            "pending": 7
+          },
+          {
+            "second": 30,
+            "pending": 7
+          },
+          {
+            "second": 31,
+            "pending": 7
+          },
+          {
+            "second": 32,
+            "pending": 7
+          },
+          {
+            "second": 33,
+            "pending": 7
+          },
+          {
+            "second": 34,
+            "pending": 7
+          },
+          {
+            "second": 35,
+            "pending": 7
+          },
+          {
+            "second": 36,
+            "pending": 7
+          },
+          {
+            "second": 37,
+            "pending": 7
+          },
+          {
+            "second": 38,
+            "pending": 7
+          },
+          {
+            "second": 39,
+            "pending": 7
+          },
+          {
+            "second": 40,
+            "pending": 7
+          },
+          {
+            "second": 41,
+            "pending": 7
+          },
+          {
+            "second": 42,
+            "pending": 7
+          },
+          {
+            "second": 43,
+            "pending": 7
+          },
+          {
+            "second": 44,
+            "pending": 7
+          },
+          {
+            "second": 45,
+            "pending": 7
+          },
+          {
+            "second": 46,
+            "pending": 7
+          },
+          {
+            "second": 47,
+            "pending": 8
+          },
+          {
+            "second": 48,
+            "pending": 7
+          },
+          {
+            "second": 49,
+            "pending": 7
+          },
+          {
+            "second": 50,
+            "pending": 7
+          },
+          {
+            "second": 51,
+            "pending": 7
+          },
+          {
+            "second": 52,
+            "pending": 7
+          },
+          {
+            "second": 53,
+            "pending": 7
+          },
+          {
+            "second": 54,
+            "pending": 7
+          },
+          {
+            "second": 55,
+            "pending": 7
+          },
+          {
+            "second": 56,
+            "pending": 7
+          },
+          {
+            "second": 57,
+            "pending": 7
+          },
+          {
+            "second": 58,
+            "pending": 7
+          },
+          {
+            "second": 59,
+            "pending": 7
+          },
+          {
+            "second": 60,
+            "pending": 7
+          },
+          {
+            "second": 61,
+            "pending": 7
+          },
+          {
+            "second": 62,
+            "pending": 7
+          },
+          {
+            "second": 63,
+            "pending": 7
+          },
+          {
+            "second": 64,
+            "pending": 7
+          },
+          {
+            "second": 65,
+            "pending": 7
+          },
+          {
+            "second": 66,
+            "pending": 7
+          },
+          {
+            "second": 67,
+            "pending": 7
+          },
+          {
+            "second": 68,
+            "pending": 7
+          },
+          {
+            "second": 69,
+            "pending": 7
+          },
+          {
+            "second": 70,
+            "pending": 7
+          },
+          {
+            "second": 71,
+            "pending": 7
+          },
+          {
+            "second": 72,
+            "pending": 7
+          },
+          {
+            "second": 73,
+            "pending": 7
+          },
+          {
+            "second": 74,
+            "pending": 7
+          },
+          {
+            "second": 75,
+            "pending": 7
+          },
+          {
+            "second": 76,
+            "pending": 7
+          },
+          {
+            "second": 77,
+            "pending": 7
+          },
+          {
+            "second": 78,
+            "pending": 7
+          },
+          {
+            "second": 79,
+            "pending": 7
+          },
+          {
+            "second": 80,
+            "pending": 7
+          },
+          {
+            "second": 81,
+            "pending": 7
+          },
+          {
+            "second": 82,
+            "pending": 7
+          },
+          {
+            "second": 83,
+            "pending": 8
+          },
+          {
+            "second": 84,
+            "pending": 7
+          },
+          {
+            "second": 85,
+            "pending": 7
+          },
+          {
+            "second": 86,
+            "pending": 7
+          },
+          {
+            "second": 87,
+            "pending": 7
+          },
+          {
+            "second": 88,
+            "pending": 7
+          },
+          {
+            "second": 89,
+            "pending": 7
+          },
+          {
+            "second": 90,
+            "pending": 7
+          },
+          {
+            "second": 91,
+            "pending": 7
+          },
+          {
+            "second": 92,
+            "pending": 7
+          },
+          {
+            "second": 93,
+            "pending": 7
+          },
+          {
+            "second": 94,
+            "pending": 7
+          },
+          {
+            "second": 95,
+            "pending": 7
+          },
+          {
+            "second": 96,
+            "pending": 7
+          },
+          {
+            "second": 97,
+            "pending": 7
+          },
+          {
+            "second": 98,
+            "pending": 7
+          },
+          {
+            "second": 99,
+            "pending": 7
+          },
+          {
+            "second": 100,
+            "pending": 7
+          },
+          {
+            "second": 101,
+            "pending": 7
+          },
+          {
+            "second": 102,
+            "pending": 7
+          },
+          {
+            "second": 103,
+            "pending": 7
+          },
+          {
+            "second": 104,
+            "pending": 7
+          },
+          {
+            "second": 105,
+            "pending": 7
+          },
+          {
+            "second": 106,
+            "pending": 7
+          },
+          {
+            "second": 107,
+            "pending": 7
+          },
+          {
+            "second": 108,
+            "pending": 7
+          },
+          {
+            "second": 109,
+            "pending": 7
+          },
+          {
+            "second": 110,
+            "pending": 7
+          },
+          {
+            "second": 111,
+            "pending": 7
+          },
+          {
+            "second": 112,
+            "pending": 7
+          },
+          {
+            "second": 113,
+            "pending": 7
+          },
+          {
+            "second": 114,
+            "pending": 7
+          },
+          {
+            "second": 115,
+            "pending": 7
+          },
+          {
+            "second": 116,
+            "pending": 7
+          },
+          {
+            "second": 117,
+            "pending": 7
+          },
+          {
+            "second": 118,
+            "pending": 7
+          },
+          {
+            "second": 119,
+            "pending": 7
+          },
+          {
+            "second": 120,
+            "pending": 7
+          }
+        ],
+        "backlog_slope_per_second": -0.00031852205765249244,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": true
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:55:56.725836+00:00",
+        "end_utc": "2026-11-20T15:57:57.075517+00:00",
+        "offered_end_utc": "2026-11-20T15:57:56.725836+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 45,
+          "utilization_mean_pct": 70.2,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 624.7953333333334
+        },
+        {
+          "gpu": 1,
+          "samples": 45,
+          "utilization_mean_pct": 75.4888888888889,
+          "memory_max_gib": 111.0380859375,
+          "power_mean_w": 618.3426666666667
+        },
+        {
+          "gpu": 2,
+          "samples": 45,
+          "utilization_mean_pct": 70.26666666666667,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 626.4433333333334
+        },
+        {
+          "gpu": 3,
+          "samples": 45,
+          "utilization_mean_pct": 76.11111111111111,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 614.1871111111111
+        },
+        {
+          "gpu": 4,
+          "samples": 45,
+          "utilization_mean_pct": 75.77777777777777,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 611.3611111111111
+        },
+        {
+          "gpu": 5,
+          "samples": 45,
+          "utilization_mean_pct": 73.2,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 588.8593333333333
+        },
+        {
+          "gpu": 6,
+          "samples": 45,
+          "utilization_mean_pct": 75.97777777777777,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 592.4811111111111
+        },
+        {
+          "gpu": 7,
+          "samples": 45,
+          "utilization_mean_pct": 72.42222222222222,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 598.3444444444444
+        }
+      ]
+    },
+    {
+      "run": "h200-fp8-v2",
+      "phase": "confirmation",
+      "batch": 4,
+      "replicas": 8,
+      "stage": "repeat",
+      "source": "results/runs/h200-fp8-v2/confirmation/b4/r8/sop/repeat",
+      "summary": {
+        "target_rps": 100,
+        "offered_seconds": 120,
+        "scheduled_requests": 12000,
+        "attempts": 12000,
+        "valid": 12000,
+        "failures": 0,
+        "http_statuses": {
+          "200": 12000
+        },
+        "replica_counts": {
+          "5": 1500,
+          "6": 1500,
+          "7": 1500,
+          "0": 1500,
+          "1": 1500,
+          "2": 1500,
+          "3": 1500,
+          "4": 1500
+        },
+        "correct": 11310,
+        "elapsed_with_drain_s": 120.06952352300027,
+        "valid_rps_with_drain": 99.94209727751027,
+        "steady_valid_rps": 100.0,
+        "p50_ms": 76.23562600019795,
+        "p95_ms": 78.61836600022798,
+        "p99_ms": 80.24740400014707,
+        "http_p50_ms": 75.60681199993269,
+        "last_quarter_p50_ms": 76.19457900023008,
+        "max_send_lag_ms": 56.96779800018703,
+        "valid_within_500ms": 12000,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 7
+          },
+          {
+            "second": 2,
+            "pending": 7
+          },
+          {
+            "second": 3,
+            "pending": 7
+          },
+          {
+            "second": 4,
+            "pending": 7
+          },
+          {
+            "second": 5,
+            "pending": 7
+          },
+          {
+            "second": 6,
+            "pending": 7
+          },
+          {
+            "second": 7,
+            "pending": 7
+          },
+          {
+            "second": 8,
+            "pending": 7
+          },
+          {
+            "second": 9,
+            "pending": 7
+          },
+          {
+            "second": 10,
+            "pending": 7
+          },
+          {
+            "second": 11,
+            "pending": 7
+          },
+          {
+            "second": 12,
+            "pending": 7
+          },
+          {
+            "second": 13,
+            "pending": 7
+          },
+          {
+            "second": 14,
+            "pending": 7
+          },
+          {
+            "second": 15,
+            "pending": 8
+          },
+          {
+            "second": 16,
+            "pending": 7
+          },
+          {
+            "second": 17,
+            "pending": 7
+          },
+          {
+            "second": 18,
+            "pending": 7
+          },
+          {
+            "second": 19,
+            "pending": 7
+          },
+          {
+            "second": 20,
+            "pending": 7
+          },
+          {
+            "second": 21,
+            "pending": 7
+          },
+          {
+            "second": 22,
+            "pending": 7
+          },
+          {
+            "second": 23,
+            "pending": 7
+          },
+          {
+            "second": 24,
+            "pending": 7
+          },
+          {
+            "second": 25,
+            "pending": 7
+          },
+          {
+            "second": 26,
+            "pending": 7
+          },
+          {
+            "second": 27,
+            "pending": 7
+          },
+          {
+            "second": 28,
+            "pending": 7
+          },
+          {
+            "second": 29,
+            "pending": 8
+          },
+          {
+            "second": 30,
+            "pending": 7
+          },
+          {
+            "second": 31,
+            "pending": 7
+          },
+          {
+            "second": 32,
+            "pending": 7
+          },
+          {
+            "second": 33,
+            "pending": 7
+          },
+          {
+            "second": 34,
+            "pending": 7
+          },
+          {
+            "second": 35,
+            "pending": 7
+          },
+          {
+            "second": 36,
+            "pending": 7
+          },
+          {
+            "second": 37,
+            "pending": 7
+          },
+          {
+            "second": 38,
+            "pending": 7
+          },
+          {
+            "second": 39,
+            "pending": 7
+          },
+          {
+            "second": 40,
+            "pending": 7
+          },
+          {
+            "second": 41,
+            "pending": 7
+          },
+          {
+            "second": 42,
+            "pending": 7
+          },
+          {
+            "second": 43,
+            "pending": 7
+          },
+          {
+            "second": 44,
+            "pending": 7
+          },
+          {
+            "second": 45,
+            "pending": 7
+          },
+          {
+            "second": 46,
+            "pending": 7
+          },
+          {
+            "second": 47,
+            "pending": 7
+          },
+          {
+            "second": 48,
+            "pending": 7
+          },
+          {
+            "second": 49,
+            "pending": 7
+          },
+          {
+            "second": 50,
+            "pending": 7
+          },
+          {
+            "second": 51,
+            "pending": 7
+          },
+          {
+            "second": 52,
+            "pending": 7
+          },
+          {
+            "second": 53,
+            "pending": 7
+          },
+          {
+            "second": 54,
+            "pending": 7
+          },
+          {
+            "second": 55,
+            "pending": 7
+          },
+          {
+            "second": 56,
+            "pending": 7
+          },
+          {
+            "second": 57,
+            "pending": 7
+          },
+          {
+            "second": 58,
+            "pending": 7
+          },
+          {
+            "second": 59,
+            "pending": 7
+          },
+          {
+            "second": 60,
+            "pending": 7
+          },
+          {
+            "second": 61,
+            "pending": 7
+          },
+          {
+            "second": 62,
+            "pending": 7
+          },
+          {
+            "second": 63,
+            "pending": 7
+          },
+          {
+            "second": 64,
+            "pending": 7
+          },
+          {
+            "second": 65,
+            "pending": 7
+          },
+          {
+            "second": 66,
+            "pending": 7
+          },
+          {
+            "second": 67,
+            "pending": 7
+          },
+          {
+            "second": 68,
+            "pending": 7
+          },
+          {
+            "second": 69,
+            "pending": 7
+          },
+          {
+            "second": 70,
+            "pending": 7
+          },
+          {
+            "second": 71,
+            "pending": 7
+          },
+          {
+            "second": 72,
+            "pending": 7
+          },
+          {
+            "second": 73,
+            "pending": 7
+          },
+          {
+            "second": 74,
+            "pending": 7
+          },
+          {
+            "second": 75,
+            "pending": 7
+          },
+          {
+            "second": 76,
+            "pending": 7
+          },
+          {
+            "second": 77,
+            "pending": 7
+          },
+          {
+            "second": 78,
+            "pending": 7
+          },
+          {
+            "second": 79,
+            "pending": 7
+          },
+          {
+            "second": 80,
+            "pending": 7
+          },
+          {
+            "second": 81,
+            "pending": 7
+          },
+          {
+            "second": 82,
+            "pending": 7
+          },
+          {
+            "second": 83,
+            "pending": 7
+          },
+          {
+            "second": 84,
+            "pending": 7
+          },
+          {
+            "second": 85,
+            "pending": 7
+          },
+          {
+            "second": 86,
+            "pending": 7
+          },
+          {
+            "second": 87,
+            "pending": 7
+          },
+          {
+            "second": 88,
+            "pending": 7
+          },
+          {
+            "second": 89,
+            "pending": 7
+          },
+          {
+            "second": 90,
+            "pending": 7
+          },
+          {
+            "second": 91,
+            "pending": 8
+          },
+          {
+            "second": 92,
+            "pending": 7
+          },
+          {
+            "second": 93,
+            "pending": 7
+          },
+          {
+            "second": 94,
+            "pending": 7
+          },
+          {
+            "second": 95,
+            "pending": 7
+          },
+          {
+            "second": 96,
+            "pending": 7
+          },
+          {
+            "second": 97,
+            "pending": 7
+          },
+          {
+            "second": 98,
+            "pending": 7
+          },
+          {
+            "second": 99,
+            "pending": 7
+          },
+          {
+            "second": 100,
+            "pending": 7
+          },
+          {
+            "second": 101,
+            "pending": 7
+          },
+          {
+            "second": 102,
+            "pending": 7
+          },
+          {
+            "second": 103,
+            "pending": 7
+          },
+          {
+            "second": 104,
+            "pending": 7
+          },
+          {
+            "second": 105,
+            "pending": 7
+          },
+          {
+            "second": 106,
+            "pending": 7
+          },
+          {
+            "second": 107,
+            "pending": 7
+          },
+          {
+            "second": 108,
+            "pending": 7
+          },
+          {
+            "second": 109,
+            "pending": 7
+          },
+          {
+            "second": 110,
+            "pending": 7
+          },
+          {
+            "second": 111,
+            "pending": 7
+          },
+          {
+            "second": 112,
+            "pending": 7
+          },
+          {
+            "second": 113,
+            "pending": 7
+          },
+          {
+            "second": 114,
+            "pending": 7
+          },
+          {
+            "second": 115,
+            "pending": 7
+          },
+          {
+            "second": 116,
+            "pending": 7
+          },
+          {
+            "second": 117,
+            "pending": 7
+          },
+          {
+            "second": 118,
+            "pending": 7
+          },
+          {
+            "second": 119,
+            "pending": 7
+          },
+          {
+            "second": 120,
+            "pending": 7
+          }
+        ],
+        "backlog_slope_per_second": 0.00025481764612199397,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": true
+      },
+      "timing": {
+        "begin_utc": "2026-11-20T15:57:57.313610+00:00",
+        "end_utc": "2026-11-20T15:59:57.655666+00:00",
+        "offered_end_utc": "2026-11-20T15:59:57.313610+00:00",
+        "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+      },
+      "gpu_steady_samples": [
+        {
+          "gpu": 0,
+          "samples": 45,
+          "utilization_mean_pct": 77.64444444444445,
+          "memory_max_gib": 110.8623046875,
+          "power_mean_w": 611.3388888888888
+        },
+        {
+          "gpu": 1,
+          "samples": 45,
+          "utilization_mean_pct": 60.37777777777778,
+          "memory_max_gib": 111.0380859375,
+          "power_mean_w": 596.9195555555556
+        },
+        {
+          "gpu": 2,
+          "samples": 45,
+          "utilization_mean_pct": 63.422222222222224,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 616.9242222222222
+        },
+        {
+          "gpu": 3,
+          "samples": 45,
+          "utilization_mean_pct": 77.04444444444445,
+          "memory_max_gib": 111.1708984375,
+          "power_mean_w": 610.8862222222223
+        },
+        {
+          "gpu": 4,
+          "samples": 45,
+          "utilization_mean_pct": 63.75555555555555,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 618.5597777777778
+        },
+        {
+          "gpu": 5,
+          "samples": 45,
+          "utilization_mean_pct": 76.82222222222222,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 611.7517777777778
+        },
+        {
+          "gpu": 6,
+          "samples": 45,
+          "utilization_mean_pct": 69.8,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 610.3675555555556
+        },
+        {
+          "gpu": 7,
+          "samples": 45,
+          "utilization_mean_pct": 57.4,
+          "memory_max_gib": 109.8974609375,
+          "power_mean_w": 599.1322222222223
+        }
+      ]
+    }
+  ],
+  "workers": [
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b1/server-0/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.8277716636657715,
+          "reserved_gib": 6.7421875
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b1/server-1/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.8277716636657715,
+          "reserved_gib": 6.7421875
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b1/server-2/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.8277716636657715,
+          "reserved_gib": 6.7421875
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b1/server-3/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.8277716636657715,
+          "reserved_gib": 6.7421875
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b1/server-4/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.8277716636657715,
+          "reserved_gib": 6.7421875
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b1/server-5/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.8277716636657715,
+          "reserved_gib": 6.7421875
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b1/server-6/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.8277716636657715,
+          "reserved_gib": 6.7421875
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b1/server-7/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.8277716636657715,
+          "reserved_gib": 6.7421875
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b4/server-0/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.86731481552124,
+          "reserved_gib": 9.189453125
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b4/server-1/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.86731481552124,
+          "reserved_gib": 9.189453125
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b4/server-2/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.86731481552124,
+          "reserved_gib": 9.189453125
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b4/server-3/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.86731481552124,
+          "reserved_gib": 9.189453125
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b4/server-4/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.86731481552124,
+          "reserved_gib": 9.189453125
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b4/server-5/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.86731481552124,
+          "reserved_gib": 9.189453125
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b4/server-6/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.86731481552124,
+          "reserved_gib": 9.189453125
+        }
+      ]
+    },
+    {
+      "source": "results/runs/h200-fp8-v2/sweep/b4/server-7/engine-config.json",
+      "workers": [
+        {
+          "parameter_elements_by_dtype": {
+            "torch.bfloat16": 640592128,
+            "torch.float32": 1784064,
+            "torch.float8_e4m3fn": 3565158400
+          },
+          "quant_methods": {
+            "UnquantizedEmbeddingMethod": 2,
+            "UnquantizedLinearMethod": 49,
+            "Fp8PtpcOnlineLinearMethod": 128
+          },
+          "attention": [
+            {
+              "module": "language_model.model.layers.3.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.7.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.11.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.15.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.19.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.23.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.27.self_attn.attn",
+              "type": "encoder_only"
+            },
+            {
+              "module": "language_model.model.layers.31.self_attn.attn",
+              "type": "encoder_only"
+            }
+          ],
+          "readout_dtype": "torch.float32",
+          "readout_shape": [
+            255,
+            2560
+          ],
+          "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+          "allocated_gib": 5.86731481552124,
+          "reserved_gib": 9.189453125
+        }
+      ]
+    }
+  ]
+}

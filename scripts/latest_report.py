@@ -15,7 +15,12 @@ def family_complete():
 
 
 def main():
-    if family_complete():
+    root = Path(__file__).resolve().parents[1]
+    h200 = root / "experiments/vllm-sop-h200-20261120/results/verification.json"
+    stopped = root / "operations/stop-20261120/infrastructure-stopped.json"
+    if h200.exists() and stopped.exists() and json.loads(h200.read_text()).get("confirmed"):
+        from project_report import main as render
+    elif family_complete():
         from family_report import main as render
     else:
         from concise_report import main as render

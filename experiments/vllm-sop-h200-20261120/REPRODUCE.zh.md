@@ -28,10 +28,12 @@ python scripts/sop_h200_suite.py \
 python scripts/sop_h200_report.py
 ```
 
-报告脚本重新核验原始响应、错误计数、时延、吞吐、配置选择和最终验收结论。它依赖本仓库保留的上一轮RTX输入和FP32输出头基线。`evidence-manifest.json`记录本轮最终文件哈希；`backup.json`记录私有S3归档及下载校验结果。重新生成报告会更新核验时间，因此不应将重新生成后的文件误当作原始封存版本。
+报告脚本重新核验原始响应、错误计数、时延、吞吐、配置选择和最终验收结论。它依赖本仓库保留的上一轮RTX输入和FP32输出头基线。`evidence-manifest.json`和`backup.json`记录Git提交`ccf3c30`时的测试封存及私有S3归档；本次按停机指令更新文档，修改前版本保存在仓库根目录的`operations/stop-20261120/previous/`。测试原始记录保持不变，当前文档版本应使用停机更新的清单核对。
 
-## 资源保留
+## 当前资源状态
 
-测试脚本完成后结束自己创建的模型和采样进程，EC2及磁盘继续保留；不会自动关闭任何EC2。单卡、双卡和四卡阶段仍按整台八卡实例计费。最终资源和价格记录分别为`results/infrastructure-final.json`、`results/pricing-final.json`。
+用户在本轮验证后要求全部EC2停止，现已执行stop，实例和EBS保留。最新状态见[停机核对记录](../../operations/stop-20261120/infrastructure-stopped.json)。停止期间不再产生实例计算费用，EBS和快照等保留资源仍可能计费。
+
+`results/infrastructure-final.json`是停机指令之前的历史快照，记录当时仍在运行的状态；`results/pricing-final.json`是运行时参考价格。单卡、双卡和四卡阶段均按整台八卡实例计费。冻结的测试脚本原本只停止自身进程，这次EC2停机由独立的用户指令触发。
 
 v1部署因缺少CPU测试依赖脚本而退出，未产生推理性能测量。v2补齐文件后重新冻结、通过六项CPU测试和八卡CUDA检查再开始测试。v1失败记录与v2结果分别保留。

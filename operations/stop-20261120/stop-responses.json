@@ -1,0 +1,101 @@
+[
+  {
+    "utc": "2026-11-20T16:06:20.672043+00:00",
+    "region": "us-east-1",
+    "response": {
+      "StoppingInstances": [
+        {
+          "InstanceId": "i-05d0c24c739f41ca5",
+          "CurrentState": {
+            "Code": 64,
+            "Name": "stopping"
+          },
+          "PreviousState": {
+            "Code": 16,
+            "Name": "running"
+          }
+        }
+      ],
+      "ResponseMetadata": {
+        "RequestId": "b5282a4c-d11b-408f-8801-8b4229a67a63",
+        "HTTPStatusCode": 200,
+        "HTTPHeaders": {
+          "x-amzn-requestid": "b5282a4c-d11b-408f-8801-8b4229a67a63",
+          "cache-control": "no-cache, no-store",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "content-type": "text/xml;charset=UTF-8",
+          "content-length": "411",
+          "date": "Fri, 20 Nov 2026 16:06:20 GMT",
+          "server": "AmazonEC2"
+        },
+        "RetryAttempts": 0
+      }
+    }
+  },
+  {
+    "utc": "2026-11-20T16:06:21.489514+00:00",
+    "region": "us-east-2",
+    "response": {
+      "StoppingInstances": [
+        {
+          "InstanceId": "i-091371593b3c4a5ff",
+          "CurrentState": {
+            "Code": 64,
+            "Name": "stopping"
+          },
+          "PreviousState": {
+            "Code": 16,
+            "Name": "running"
+          }
+        },
+        {
+          "InstanceId": "i-05b24e3b4a7ee864d",
+          "CurrentState": {
+            "Code": 64,
+            "Name": "stopping"
+          },
+          "PreviousState": {
+            "Code": 16,
+            "Name": "running"
+          }
+        },
+        {
+          "InstanceId": "i-0de4f061c2a04fe4b",
+          "CurrentState": {
+            "Code": 64,
+            "Name": "stopping"
+          },
+          "PreviousState": {
+            "Code": 16,
+            "Name": "running"
+          }
+        },
+        {
+          "InstanceId": "i-0c777e3714538d624",
+          "CurrentState": {
+            "Code": 64,
+            "Name": "stopping"
+          },
+          "PreviousState": {
+            "Code": 16,
+            "Name": "running"
+          }
+        }
+      ],
+      "ResponseMetadata": {
+        "RequestId": "6fdc3360-b61b-4952-9d93-35d396d66ba9",
+        "HTTPStatusCode": 200,
+        "HTTPHeaders": {
+          "x-amzn-requestid": "6fdc3360-b61b-4952-9d93-35d396d66ba9",
+          "cache-control": "no-cache, no-store",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "content-type": "text/xml;charset=UTF-8",
+          "content-length": "975",
+          "date": "Fri, 20 Nov 2026 16:06:21 GMT",
+          "server": "AmazonEC2"
+        },
+        "RetryAttempts": 0
+      }
+    }
+  }
+]

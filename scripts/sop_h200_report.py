@@ -6,6 +6,7 @@ import html
 import json
 import math
 from pathlib import Path
+import re
 import statistics
 
 from benchmark import validate
@@ -22,6 +23,13 @@ def load(path):
 def write(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
+
+
+def inline(text):
+    text = html.escape(text)
+    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', text)
+    text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
+    return re.sub(r"`([^`]+)`", r"<code>\1</code>", text)
 
 
 def main():
@@ -193,12 +201,21 @@ def main():
     instance = load(EXP / "results/instance.json")
     pricing_path = EXP / "results/pricing-final.json"
     pricing = load(pricing_path) if pricing_path.exists() else None
+    lifecycle_path = ROOT / "operations/stop-20261120/infrastructure-stopped.json"
+    lifecycle = None
+    if lifecycle_path.exists():
+        snapshot = load(lifecycle_path)
+        assert snapshot["all_stopped"]
+        lifecycle = {
+            "source": str(lifecycle_path.relative_to(ROOT)), "utc": snapshot["utc"],
+            "all_stopped": True, "instance_count": snapshot["instance_count"],
+        }
     verification = {
         "utc": dt.datetime.now(dt.timezone.utc).isoformat(), "verified_attempts": verified,
         "valid": valid_total, "failures": verified - valid_total, "correct": correct_total,
         "verified_stages": len(stages), "confirmed": verdict,
     }
-    data = {"verification": verification, "instance": instance, "pricing": pricing,
+    data = {"verification": verification, "instance": instance, "pricing": pricing, "lifecycle": lifecycle,
             "runs": runs, "stages": stages, "workers": workers}
     write(EXP / "results/verification.json", verification)
     write(EXP / "data.json", data)
@@ -209,6 +226,13 @@ def main():
         "固定100 RPS与端到端P50≤500ms验收包含本机完整HTTP、代理、排队、编码和推理；生产入口及跨区域链路未包含。",
         "质量与压力阶段均使用现有104条SOP合成样例，压力阶段循环复用；不是两个独立数据集，也不代表生产准确率。",
     ]
+    if lifecycle:
+        lines += [
+            "", f"**资源状态已更新：截至{lifecycle['utc']}，本项目全部"
+            f"{lifecycle['instance_count']}台EC2均已stopped。** 按用户新指令停止，实例及EBS保留，"
+            "实例计算计费已停止，保留的EBS与快照等仍可能计费。",
+            "[停机核对记录](../../operations/stop-20261120/infrastructure-stopped.json)。",
+        ]
     if verdict:
         confirmed_runs = {r["name"] for r in runs if r["confirmed"]}
         finals = [s for s in stages if s["run"] in confirmed_runs
@@ -282,7 +306,8 @@ def main():
         f"实例：{instance['InstanceType']}，8张H200，{instance['Placement']['AvailabilityZone']}。"
         f"启动时Spot参考价${instance['reference_usd_per_hour']:.4f}/小时，按需参考价"
         f"${instance['on_demand_usd_per_hour']:.3f}/小时。",
-        "即使某阶段只启用1／2／4张GPU，仍按整台8卡实例计费；不含旧测试资源、EBS、网络、IPv4等。EC2继续保留。",
+        "运行时即使某阶段只启用1／2／4张GPU，仍按整台8卡实例计费；不含旧测试资源、EBS、网络、IPv4等。"
+        + ("当前EC2已停止，以下为重新运行时的参考费用。" if lifecycle else "测试结束时EC2暂时保留运行。"),
     ]
     if pricing:
         hours = pricing["month_hours"]
@@ -307,6 +332,12 @@ def main():
         "", "[完整数据及GPU采样统计](data.json) · [核验记录](results/verification.json) · "
         "[冻结计划](PLAN.zh.md) · [复现说明](REPRODUCE.zh.md)",
     ]
+    if lifecycle:
+        lines += [
+            "", "本页及HTML已按停机指令更新。原始`evidence-manifest.json`和`backup.json`对应Git提交"
+            "`ccf3c30`时的测试封存；修改前的文档与生成器另存于"
+            "`operations/stop-20261120/previous/`，路径相对于仓库根目录。逐条测试结果及冻结运行源码未改动。",
+        ]
     markdown = "\n".join(lines) + "\n"
     (EXP / "RESULTS.zh.md").write_text(markdown)
     rendered, table_rows = [], []
@@ -331,7 +362,7 @@ def main():
         elif line.startswith("## "):
             rendered.append(f"<h2>{html.escape(line[3:])}</h2>")
         elif line:
-            rendered.append(f"<p>{html.escape(line).replace('**', '')}</p>")
+            rendered.append(f"<p>{inline(line)}</p>")
     flush_table()
     html_report = """<!doctype html><html lang="zh-CN"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">

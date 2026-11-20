@@ -4,6 +4,10 @@ Karpo 金融风控与 SOP 决策测试项目，两个场景分别验证。风控
 
 **当前：SOP全H200验证通过；风控保留已通过的四RTX结果（2026-11-20）**
 
+**最新资源状态：本项目6台EC2已全部stop。** 本次停止5台运行实例，另1台原本已停止；实例、EBS上的模型及测试备份保留。实例计算计费已停止，EBS和快照等保留资源仍可能计费。[停机核对记录](operations/stop-20261120/infrastructure-stopped.json)。
+
+[当前总览HTML](report.html) · [当前总览文档](RESULTS.zh.md) · [汇总数据](data.json)
+
 SOP使用一台 **AWS p5en.48xlarge，8张H200，us-east-2a（俄亥俄）**。每卡一个完整Karpo 4B副本，vLLM 0.34.0、FP8按通道量化、最大活跃序列数4。保留原始200候选、完整输入编码、双向全注意力和FP32决策输出头。
 
 | SOP正式确认 | 固定到达率 | 稳态有效吞吐 | 端到端P50 | 端到端P95 | 正确/全部 | 请求失败 |
@@ -15,13 +19,13 @@ SOP使用一台 **AWS p5en.48xlarge，8张H200，us-east-2a（俄亥俄）**。�
 
 本轮端到端时延从预定到达计至完整HTTP响应，包含调度滞后、代理、排队、编码和推理；压测客户端和模型位于同一H200主机，生产外部入口和跨区域网络不在本轮计时内。1／2／4／8卡扫描中只有8卡通过100 RPS探测；5／6／7卡尚未测试，不能据此认定8卡是绝对最少卡数。
 
-仅本台八卡H200计算费用：Spot参考价 **32.2512美元/小时，23,220.86美元/月**；按需 **63.296美元/小时，45,573.12美元/月**，按720小时/月估算。报价不含旧RTX/H100、EBS、网络和IPv4；Spot价格会变化，部分GPU空闲时仍按整台计费。测试结束后EC2继续保留。
+仅本台八卡H200运行时计算费用：Spot参考价 **32.2512美元/小时，23,220.86美元/月**；按需 **63.296美元/小时，45,573.12美元/月**，按720小时/月估算。报价不含旧RTX/H100、EBS、网络和IPv4；Spot价格会变化，部分GPU空闲时仍按整台计费。当前EC2已停止，以上为重新运行时的参考费用。
 
 [H200 SOP结果](experiments/vllm-sop-h200-20261120/RESULTS.zh.md) · [HTML报告](experiments/vllm-sop-h200-20261120/report.html) · [复现说明](experiments/vllm-sop-h200-20261120/REPRODUCE.zh.md) · [核验记录](experiments/vllm-sop-h200-20261120/results/verification.json) · [价格快照](experiments/vllm-sop-h200-20261120/results/pricing-final.json)
 
 **此前：四张同型号 RTX 验证，风控达标，SOP未达标（2026-11-20）**
 
-按用户选择，使用4张 RTX PRO 6000 Blackwell Server Edition 96GB，每卡一个完整模型副本，vLLM 0.34.0、FP8按通道量化、最大序列数4。现有3张在 **us-east-2c（俄亥俄）**，新增1张在 **us-east-1b（北弗吉尼亚）**。原H100保持运行，但没有参与本轮压测。
+按用户选择，使用4张 RTX PRO 6000 Blackwell Server Edition 96GB，每卡一个完整模型副本，vLLM 0.34.0、FP8按通道量化、最大序列数4。3张在 **us-east-2c（俄亥俄）**，另1张在 **us-east-1b（北弗吉尼亚）**。H100没有参与本轮压测，现已与其他测试实例一并停止。
 
 固定每秒发送100个请求，端到端完整HTTP时延包含排队、编码、推理、代理及跨区域SSH转发。保留全部原始输入，所有拒绝与超时计为失败。
 
@@ -34,7 +38,7 @@ SOP使用一台 **AWS p5en.48xlarge，8张H200，us-east-2a（俄亥俄）**。�
 
 风控两次正式压力测试的决策正确率均为95%（各11,400/12,000），使用的tune样本与独立quality质量集不同。SOP表中P50统计有效响应，但928个失败请求全部计入验收，因此没有继续两次120秒确认。合成准确率不能替代真实生产数据准确率；生产外部入口及特征查询尚未纳入。
 
-四张RTX参考Spot计算费用约 **7.90美元/小时**；加上保留的H100，全部4台运行中EC2合计约 **12.13美元/小时**，另计EBS、网络、公网IPv4等，Spot报价会变化。按用户要求，没有关闭任何EC2。
+四张RTX在该轮测试时的参考Spot计算费用约 **7.90美元/小时**，另计EBS、网络、公网IPv4等；H100不属于该方案。最新运行时参考费用见[当前总览](RESULTS.zh.md)，所有测试EC2现已停止。
 
 本轮已逐条核验28,344次四RTX请求。历史混合GPU、单卡、双卡和量化实验保留在总报告中；原混合扩容提案已被四RTX方案替代。下文历史实验的`stopped`仅是当时的状态记录。
 
@@ -97,9 +101,9 @@ SOP使用一台 **AWS p5en.48xlarge，8张H200，us-east-2a（俄亥俄）**。�
 
 在 RTX PRO 6000 Blackwell 上完成 31B / 12B / 9B / 4B 的七组单卡配置，以及官方单副本 / 双副本对照，共核验 **1,712 次调用**。这批测试中，最快的 4B FP8 为 123.3 ms、98/104 参考一致；质量最好的 12B BF16 为 432.6 ms、104/104。这里延迟均为 P50，没有配置达到 100 ms。
 
-主报告：[report.html](report.html)。展示问题到候选到实际回答的完整示例，支持 P50/P95 切换、质量与换序稳定性、单卡并发、下载汇总 JSON，以及打印 PDF。
+系列模型HTML：[report.html](experiments/family-20261120/report.html)。展示问题到候选到实际回答的完整示例，支持 P50/P95 切换、质量与换序稳定性、单卡并发、下载汇总 JSON，以及打印 PDF。
 
-文字报告：[RESULTS.zh.md](RESULTS.zh.md)。所有数值由逐条响应重算；实例状态是带时间的记录。
+系列模型文字报告：[RESULTS.zh.md](experiments/family-20261120/RESULTS.zh.md)。所有数值由逐条响应重算；实例状态是带时间的历史记录。
 
 | 配置 | P50 | P95 | 参考一致 |
 |---|---:|---:|---:|
@@ -220,14 +224,13 @@ Choose exactly one next SOP for the stated business domain using verified facts.
 - [单副本与双副本](experiments/replicas-retry-20261120/PLAN.zh.md)：544次；原始选择规则和首次退出记录也保留。
 - [上一轮描述实验](experiments/concise-fp8-20261119/report.html)：四种描述共848次，属于历史结果。历史表的延迟使用80次原有观察，新系列表使用原有及边界共104次，口径分别标明。
 
-重新生成主 HTML 和 Markdown：
+重新生成当前总览HTML和Markdown：
 
 ```bash
-python -m pip install -e .
-python scripts/build_html.py
+python scripts/report.py
 ```
 
-`scripts/report.py` 使用同一入口。生成器校验冻结文件、全部响应、覆盖范围、汇总数值和停止状态，不启动 GPU。运行新测试时应创建新的实验目录并冻结配置；现有执行文件及输入不可覆盖。
+总览读取已核验的四RTX风控、八H200 SOP结果及最新停机快照，不启动GPU。H200逐条响应复核使用`python scripts/sop_h200_report.py`。原始测试封存对应Git提交`ccf3c30`；本次修改前文档和生成器保存在`operations/stop-20261120/previous/`。运行新测试时应创建新的实验目录并冻结配置；既有原始记录不可覆盖。
 
 **实例保留（既有系列实验）**
 

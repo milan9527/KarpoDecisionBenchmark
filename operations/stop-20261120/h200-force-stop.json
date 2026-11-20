@@ -1,0 +1,35 @@
+{
+  "utc": "2026-11-20T16:14:52.704500+00:00",
+  "instance": "i-0c777e3714538d624",
+  "previous_state": "stopping",
+  "reason": "Normal stop remained stopping for over eight minutes; console confirms OS Power down.",
+  "response": {
+    "StoppingInstances": [
+      {
+        "InstanceId": "i-0c777e3714538d624",
+        "CurrentState": {
+          "Code": 64,
+          "Name": "stopping"
+        },
+        "PreviousState": {
+          "Code": 64,
+          "Name": "stopping"
+        }
+      }
+    ],
+    "ResponseMetadata": {
+      "RequestId": "1130c8f6-9a35-4787-a571-85f98a10787c",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "1130c8f6-9a35-4787-a571-85f98a10787c",
+        "cache-control": "no-cache, no-store",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "content-type": "text/xml;charset=UTF-8",
+        "content-length": "412",
+        "date": "Fri, 20 Nov 2026 16:14:53 GMT",
+        "server": "AmazonEC2"
+      },
+      "RetryAttempts": 0
+    }
+  }
+}

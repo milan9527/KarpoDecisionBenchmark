@@ -1,0 +1,67 @@
+{
+  "utc": "2026-11-20T16:13:56.411690+00:00",
+  "instance_status": {
+    "InstanceStatuses": [
+      {
+        "AvailabilityZone": "us-east-2a",
+        "AvailabilityZoneId": "use2-az1",
+        "Operator": {
+          "Managed": false
+        },
+        "InstanceId": "i-0c777e3714538d624",
+        "InstanceState": {
+          "Code": 64,
+          "Name": "stopping"
+        },
+        "InstanceStatus": {
+          "Status": "not-applicable"
+        },
+        "SystemStatus": {
+          "Status": "not-applicable"
+        }
+      }
+    ],
+    "ResponseMetadata": {
+      "RequestId": "485f8558-2a50-4fc1-bfe5-60cda267d523",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "485f8558-2a50-4fc1-bfe5-60cda267d523",
+        "cache-control": "no-cache, no-store",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "content-type": "text/xml;charset=UTF-8",
+        "content-length": "680",
+        "date": "Fri, 20 Nov 2026 16:13:55 GMT",
+        "server": "AmazonEC2"
+      },
+      "RetryAttempts": 0
+    }
+  },
+  "console_timestamp": "2026-11-20 16:13:56+00:00",
+  "console_shutdown_lines": [
+    "         Stopping \u001b[0;1;39muser-runtime-dir@1000.ser\u2026\u001b[0mRuntime Directory /run/user/1000...",
+    "[\u001b[0;32m  OK  \u001b[0m] Stopped \u001b[0;1;39msystemd-tmpfiles-clean.tim\ufffd         Stopping \u001b[0;1;39mserial-getty@ttyS0.service\u001b[0m - Serial Getty on ttyS0...",
+    "         Stopping \u001b[0;1;39msnap.amazon-ssm-agent.ama\u2026\u001b[0mmazon-ssm-agent.amazon-ssm-agent...",
+    "         Stopping \u001b[0;1;39msnapd.service\u001b[0m - Snap Daemon...",
+    "         Stopping \u001b[0;1;39mssh.service\u001b[0m - OpenBSD Secure Shell server...",
+    "         Stopping \u001b[0;1;39msystemd-logind.service\u001b[0m - User Login Management...",
+    "         Stopping \u001b[0;1;39msystemd-random-seed.service\u001b[0m - Load/Save OS Random Seed...",
+    "         Stopping \u001b[0;1;39mudisks2.service\u001b[0m - Disk Manager...",
+    "         Stopping \u001b[0;1;39mcontainerd.service\u001b[0m - containerd container runtime...",
+    "         Stopping \u001b[0;1;39mpolkit.service\u001b[0m - Authorization Manager...",
+    "         Stopping \u001b[0;1;39msystemd-user-sessions.service\u001b[0m - Permit User Sessions...",
+    "         Stopping \u001b[0;1;39msoci-snapshotter.service\u001b[0m \u2026ci snapshotter containerd plugin...",
+    "[\u001b[0;32m  OK  \u001b[0m] Stopped \u001b[0;1;39mfinalrd.service\u001b[0m - Create f\u2026untime dir for shutdown pivot root.",
+    "         Stopping \u001b[0;1;39msystemd-binfmt.service\u001b[0m - Set Up Additional Binary Formats...",
+    "         Stopping \u001b[0;1;39msystemd-networkd.service\u001b[0m - Network Configuration...",
+    "         Stopping \u001b[0;1;39msystemd-resolved.service\u001b[0m - Network Name Resolution...",
+    "         Stopping \u001b[0;1;39msystemd-update-utmp.servi\u2026\u001b[0mord System Boot/Shutdown in UTMP...",
+    "[\u001b[0;32m  OK  \u001b[0m] Stopped \u001b[0;1;39msystemd-update-utmp.servic\u2026\u001b[0mecord System Boot/Shutdown in UTMP.",
+    "         Stopping \u001b[0;1;39mlvm2-monitor.service\u001b[0m - Mo\u2026ing dmeventd or progress polling...",
+    "         Stopping \u001b[0;1;39mmultipathd.service\u001b[0m - Devi\u2026pper Multipath Device Controller...",
+    "[\u001b[0;32m  OK  \u001b[0m] Reached target \u001b[0;1;39mshutdown.target\u001b[0m - System Shutdown.",
+    "[\u001b[0;32m  OK  \u001b[0m] Reached target \u001b[0;1;39mfinal.target\u001b[0m - Late Shutdown Services.",
+    "[\u001b[0;32m  OK  \u001b[0m] Finished \u001b[0;1;39msystemd-poweroff.service\u001b[0m - System Power Off.",
+    "[\u001b[0;32m  OK  \u001b[0m] Reached target \u001b[0;1;39mpoweroff.target\u001b[0m - System Power Off.",
+    "[ 1566.402638] reboot: Power down"
+  ]
+}

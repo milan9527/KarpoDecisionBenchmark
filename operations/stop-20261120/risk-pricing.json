@@ -1,0 +1,282 @@
+{
+  "utc": "2026-11-20T16:07:21.744969+00:00",
+  "scope": "Risk scheme only: four RTX GPUs across three EC2 instances; no H100",
+  "instances": [
+    {
+      "region": "us-east-2",
+      "az": "us-east-2c",
+      "instance_type": "g7e.4xlarge",
+      "spot_usd_per_hour": 2.1861,
+      "on_demand_usd_per_hour": 3.99816,
+      "spot_source": [
+        {
+          "AvailabilityZone": "us-east-2c",
+          "AvailabilityZoneId": "use2-az3",
+          "InstanceType": "g7e.4xlarge",
+          "ProductDescription": "Linux/UNIX",
+          "SpotPrice": "2.186100",
+          "Timestamp": "2026-11-20 16:00:00+00:00"
+        }
+      ],
+      "on_demand_source": [
+        {
+          "product": {
+            "productFamily": "Compute Instance",
+            "attributes": {
+              "enhancedNetworkingSupported": "Yes",
+              "intelTurboAvailable": "No",
+              "memory": "128 GiB",
+              "dedicatedEbsThroughput": "8000 Mbps",
+              "vcpu": "16",
+              "classicnetworkingsupport": "false",
+              "capacitystatus": "Used",
+              "locationType": "AWS Region",
+              "storage": "1 x 1900 NVMe SSD",
+              "instanceFamily": "GPU instance",
+              "operatingSystem": "Linux",
+              "intelAvx2Available": "No",
+              "instanceFamilyCategory": "Accelerated Computing",
+              "regionCode": "us-east-2",
+              "physicalProcessor": "Intel Xeon Scalable (Emerald Rapids)",
+              "clockSpeed": "3.2 GHz",
+              "ecu": "NA",
+              "networkPerformance": "50 Gigabit",
+              "servicename": "Amazon Elastic Compute Cloud",
+              "gpuMemory": "96 GB",
+              "dedicatedEbsThroughputDescription": "8000 Mbps",
+              "vpcnetworkingsupport": "true",
+              "instanceType": "g7e.4xlarge",
+              "tenancy": "Shared",
+              "usagetype": "USE2-BoxUsage:g7e.4xlarge",
+              "normalizationSizeFactor": "1.188824663",
+              "gpu": "1",
+              "intelAvxAvailable": "No",
+              "processorFeatures": "Intel AMX",
+              "servicecode": "AmazonEC2",
+              "licenseModel": "No License required",
+              "currentGeneration": "Yes",
+              "preInstalledSw": "NA",
+              "location": "US East (Ohio)",
+              "processorArchitecture": "64-bit",
+              "marketoption": "OnDemand",
+              "operation": "RunInstances",
+              "availabilityzone": "NA"
+            },
+            "sku": "QKX9RKZW7KMF4WAV"
+          },
+          "serviceCode": "AmazonEC2",
+          "terms": {
+            "OnDemand": {
+              "QKX9RKZW7KMF4WAV.JRTCKXETXF": {
+                "priceDimensions": {
+                  "QKX9RKZW7KMF4WAV.JRTCKXETXF.6YS6EN2CT7": {
+                    "unit": "Hrs",
+                    "endRange": "Inf",
+                    "description": "$3.99816 per On Demand Linux g7e.4xlarge Instance Hour",
+                    "appliesTo": [],
+                    "rateCode": "QKX9RKZW7KMF4WAV.JRTCKXETXF.6YS6EN2CT7",
+                    "beginRange": "0",
+                    "pricePerUnit": {
+                      "USD": "3.9981600000"
+                    }
+                  }
+                },
+                "sku": "QKX9RKZW7KMF4WAV",
+                "effectiveDate": "2026-11-01T00:00:00Z",
+                "offerTermCode": "JRTCKXETXF",
+                "termAttributes": {}
+              }
+            }
+          },
+          "version": "20261120034850",
+          "publicationDate": "2026-11-20T03:48:50Z"
+        }
+      ]
+    },
+    {
+      "region": "us-east-2",
+      "az": "us-east-2c",
+      "instance_type": "g7e.12xlarge",
+      "spot_usd_per_hour": 4.1243,
+      "on_demand_usd_per_hour": 8.28608,
+      "spot_source": [
+        {
+          "AvailabilityZone": "us-east-2c",
+          "AvailabilityZoneId": "use2-az3",
+          "InstanceType": "g7e.12xlarge",
+          "ProductDescription": "Linux/UNIX",
+          "SpotPrice": "4.124300",
+          "Timestamp": "2026-11-20 10:00:00+00:00"
+        }
+      ],
+      "on_demand_source": [
+        {
+          "product": {
+            "productFamily": "Compute Instance",
+            "attributes": {
+              "enhancedNetworkingSupported": "Yes",
+              "intelTurboAvailable": "No",
+              "memory": "512 GiB",
+              "dedicatedEbsThroughput": "25000 Mbps",
+              "vcpu": "48",
+              "classicnetworkingsupport": "false",
+              "capacitystatus": "Used",
+              "locationType": "AWS Region",
+              "storage": "1 x 3800 NVMe SSD",
+              "instanceFamily": "GPU instance",
+              "operatingSystem": "Linux",
+              "intelAvx2Available": "No",
+              "instanceFamilyCategory": "Accelerated Computing",
+              "regionCode": "us-east-2",
+              "physicalProcessor": "Intel Xeon Scalable (Emerald Rapids)",
+              "clockSpeed": "3.2 GHz",
+              "ecu": "NA",
+              "networkPerformance": "400 Gigabit",
+              "servicename": "Amazon Elastic Compute Cloud",
+              "gpuMemory": "192 GB",
+              "dedicatedEbsThroughputDescription": "25000 Mbps",
+              "vpcnetworkingsupport": "true",
+              "instanceType": "g7e.12xlarge",
+              "tenancy": "Shared",
+              "usagetype": "USE2-BoxUsage:g7e.12xlarge",
+              "normalizationSizeFactor": "2.463807417",
+              "gpu": "2",
+              "intelAvxAvailable": "No",
+              "processorFeatures": "Intel AMX",
+              "servicecode": "AmazonEC2",
+              "licenseModel": "No License required",
+              "currentGeneration": "Yes",
+              "preInstalledSw": "NA",
+              "location": "US East (Ohio)",
+              "processorArchitecture": "64-bit",
+              "marketoption": "OnDemand",
+              "operation": "RunInstances",
+              "availabilityzone": "NA"
+            },
+            "sku": "AKDJMF5A3EDRTDCW"
+          },
+          "serviceCode": "AmazonEC2",
+          "terms": {
+            "OnDemand": {
+              "AKDJMF5A3EDRTDCW.JRTCKXETXF": {
+                "priceDimensions": {
+                  "AKDJMF5A3EDRTDCW.JRTCKXETXF.6YS6EN2CT7": {
+                    "unit": "Hrs",
+                    "endRange": "Inf",
+                    "description": "$8.28608 per On Demand Linux g7e.12xlarge Instance Hour",
+                    "appliesTo": [],
+                    "rateCode": "AKDJMF5A3EDRTDCW.JRTCKXETXF.6YS6EN2CT7",
+                    "beginRange": "0",
+                    "pricePerUnit": {
+                      "USD": "8.2860800000"
+                    }
+                  }
+                },
+                "sku": "AKDJMF5A3EDRTDCW",
+                "effectiveDate": "2026-11-01T00:00:00Z",
+                "offerTermCode": "JRTCKXETXF",
+                "termAttributes": {}
+              }
+            }
+          },
+          "version": "20261120034850",
+          "publicationDate": "2026-11-20T03:48:50Z"
+        }
+      ]
+    },
+    {
+      "region": "us-east-1",
+      "az": "us-east-1b",
+      "instance_type": "g7e.4xlarge",
+      "spot_usd_per_hour": 1.6044,
+      "on_demand_usd_per_hour": 3.99816,
+      "spot_source": [
+        {
+          "AvailabilityZone": "us-east-1b",
+          "AvailabilityZoneId": "use1-az2",
+          "InstanceType": "g7e.4xlarge",
+          "ProductDescription": "Linux/UNIX",
+          "SpotPrice": "1.604400",
+          "Timestamp": "2026-11-20 15:00:00+00:00"
+        }
+      ],
+      "on_demand_source": [
+        {
+          "product": {
+            "productFamily": "Compute Instance",
+            "attributes": {
+              "enhancedNetworkingSupported": "Yes",
+              "intelTurboAvailable": "No",
+              "memory": "128 GiB",
+              "dedicatedEbsThroughput": "8000 Mbps",
+              "vcpu": "16",
+              "classicnetworkingsupport": "false",
+              "capacitystatus": "Used",
+              "locationType": "AWS Region",
+              "storage": "1 x 1900 NVMe SSD",
+              "instanceFamily": "GPU instance",
+              "operatingSystem": "Linux",
+              "intelAvx2Available": "No",
+              "instanceFamilyCategory": "Accelerated Computing",
+              "regionCode": "us-east-1",
+              "physicalProcessor": "Intel Xeon Scalable (Emerald Rapids)",
+              "clockSpeed": "3.2 GHz",
+              "ecu": "NA",
+              "networkPerformance": "50 Gigabit",
+              "servicename": "Amazon Elastic Compute Cloud",
+              "gpuMemory": "96 GB",
+              "dedicatedEbsThroughputDescription": "8000 Mbps",
+              "vpcnetworkingsupport": "true",
+              "instanceType": "g7e.4xlarge",
+              "tenancy": "Shared",
+              "usagetype": "BoxUsage:g7e.4xlarge",
+              "normalizationSizeFactor": "1.188824663",
+              "gpu": "1",
+              "intelAvxAvailable": "No",
+              "processorFeatures": "Intel AMX",
+              "servicecode": "AmazonEC2",
+              "licenseModel": "No License required",
+              "currentGeneration": "Yes",
+              "preInstalledSw": "NA",
+              "location": "US East (N. Virginia)",
+              "processorArchitecture": "64-bit",
+              "marketoption": "OnDemand",
+              "operation": "RunInstances",
+              "availabilityzone": "NA"
+            },
+            "sku": "RGFDUQZDJ6RX28JK"
+          },
+          "serviceCode": "AmazonEC2",
+          "terms": {
+            "OnDemand": {
+              "RGFDUQZDJ6RX28JK.JRTCKXETXF": {
+                "priceDimensions": {
+                  "RGFDUQZDJ6RX28JK.JRTCKXETXF.6YS6EN2CT7": {
+                    "unit": "Hrs",
+                    "endRange": "Inf",
+                    "description": "$3.99816 per On Demand Linux g7e.4xlarge Instance Hour",
+                    "appliesTo": [],
+                    "rateCode": "RGFDUQZDJ6RX28JK.JRTCKXETXF.6YS6EN2CT7",
+                    "beginRange": "0",
+                    "pricePerUnit": {
+                      "USD": "3.9981600000"
+                    }
+                  }
+                },
+                "sku": "RGFDUQZDJ6RX28JK",
+                "effectiveDate": "2026-11-01T00:00:00Z",
+                "offerTermCode": "JRTCKXETXF",
+                "termAttributes": {}
+              }
+            }
+          },
+          "version": "20261120034850",
+          "publicationDate": "2026-11-20T03:48:50Z"
+        }
+      ]
+    }
+  ],
+  "spot_usd_per_hour": 7.9148,
+  "on_demand_usd_per_hour": 16.2824,
+  "month_hours": 720
+}

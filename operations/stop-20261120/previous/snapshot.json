@@ -1,0 +1,15 @@
+{
+  "source_commit": "ccf3c30b333da9738c801e946b740e5ec200c6bd",
+  "files": {
+    "README.md": "84067c1cda9cc626ca589ba81ab9dc316432313003549fc322302c94ec2414a9",
+    "RESULTS.zh.md": "e44e03b74ae1568dbb2d483e6f65bc4546748d94e0e729a63a68609d6a548a74",
+    "report.html": "ef8c6c85f23f300808554132a64e754267b682a06172ae298089a7c0fc0349b8",
+    "scripts/latest_report.py": "0cd578d682a983164f35d601534706b1a282fd1aec5fb2bcb16d360eae19238b",
+    "scripts/sop_h200_report.py": "f9038f364d54b8ce6e5a7fa6946c5e2163dba3ee2076520972be0981a7cf23d0",
+    "experiments/vllm-sop-h200-20261120/RESULTS.zh.md": "66a4a2747affb9cf4efd53cdcf02a504e76e1d38767d030927e90c21df5bca3b",
+    "experiments/vllm-sop-h200-20261120/report.html": "d4dec09a6ce02cb77571fbf6b61aa4062b157d8be4ee6239ddbfb8fee4a62290",
+    "experiments/vllm-sop-h200-20261120/data.json": "52e27ee67764edb5aec781e52de735c25e350efca05ae8a993889a96c68d33c6",
+    "experiments/vllm-sop-h200-20261120/REPRODUCE.zh.md": "64bd43fd6f09d900a5e08344c01cf43f41ef4c37523c03436d3f41f740576a5e",
+    "experiments/vllm-sop-h200-20261120/results/verification.json": "7b21e5b441f0fd2da1b529527649a8b399663aee44c9c3b7f9ed7abcceb182ed"
+  }
+}
