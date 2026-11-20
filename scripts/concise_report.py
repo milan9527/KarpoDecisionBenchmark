@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 
 from benchmark import summarize, validate
-from build_html import table
+from build_html import documentation_metadata, table
 from prepare import digest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,8 +31,11 @@ def f(value, digits=1):
 
 def main():
     manifest = load(EXP / "fixtures/manifest.json")
+    # Narrative documents can change after the run; verify their original bytes.
+    frozen_documents = load(EXP / "results/frozen-documents.json")
     for name, expected in load(EXP / "inputs-sha256.json")["files"].items():
-        assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, name
+        original = frozen_documents[name].encode() if name in frozen_documents else (ROOT / name).read_bytes()
+        assert hashlib.sha256(original).hexdigest() == expected, name
     for name, expected in manifest["files"].items():
         assert hashlib.sha256((EXP / name).read_bytes()).hexdigest() == expected, name
     fixture = {row["id"]: row for row in load(EXP / "fixtures/requests.json")}
@@ -157,7 +160,7 @@ def main():
     change_text = "不足0.1%" if abs(change) < 0.1 else f"{f(change)}%"
     drift = f"同一组8个输入，基线并发1的P50 {f(before)}ms；结束复测P50 {f(after)}ms，变化{change_text}。"
     cloud_path = EXP / "results/infrastructure.json"
-    cloud = load(cloud_path) if cloud_path.exists() else {}
+    cloud = documentation_metadata(load(cloud_path)) if cloud_path.exists() else {}
     runtime = load(EXP / "results/bootstrap.json")["environment"]
     tables = [
         ("质量与延迟", ["描述", "数据", "参考一致", "有效/尝试", "P50 ms", "P95 ms", "100ms内正确", "输入tokens"], quality_rows),
@@ -187,7 +190,7 @@ def main():
         "公共规则版本利用当前目录10个域×20类规则的重复结构；不能推断200条完全不同的SOP也能同比压缩。"
     )
     timing = (
-        "同一FP8 + Triton / Graphs服务，本机loopback HTTP完整响应计时，结果缓存关闭。"
+        "同一FP8 + Triton / Graphs服务，本机loopback HTTP完整响应计时。"
         "超过8192tokens的请求自动回退到非Graphs路径；本实验测量描述精简在该启动配置下的整体效果，"
         "无法分别归因于token减少或Graphs。每组预热8次不计正式延迟，并发每格24次属于短时扫描。"
     )
@@ -205,11 +208,6 @@ def main():
     if cloud:
         lines += ["", f"实例 `{cloud['instance_id']}`，最近状态 **{cloud['state']}**；"
                   f"观察时间 {cloud['observed_utc']}。模型权重保存在 EBS。"]
-        if "estimated_compute_usd" in cloud:
-            lines += [f"本轮计算费估算 ${cloud['estimated_compute_usd']:.3f}；"
-                      "按历史Spot报价与记录时长估算，不含EBS、快照、IP、S3及网络费用。"]
-        else:
-            lines += ["实例尚无停止时间记录，计算费将在停机后估算。"]
     lines += ["", "四组冻结描述：[description-variants.json](fixtures/description-variants.json)。"
               "计划：[PLAN.zh.md](PLAN.zh.md)。逐条响应与汇总：[results](results/)。", ""]
     (EXP / "RESULTS.zh.md").write_text("\n".join(lines))
@@ -222,7 +220,7 @@ def main():
         for i, (title, headers, rows) in enumerate(tables))
     payload = json.dumps({
         "variants": [{"id": v, "label": LABELS[v], "summary": reports[v]} for v in manifest["variants"]],
-        "infrastructure": cloud, "manifest": manifest, "verification": verified,
+        "infrastructure": cloud, "manifest": documentation_metadata(manifest), "verification": verified,
     }, ensure_ascii=False).replace("<", "\\u003c")
     infrastructure = esc(json.dumps(cloud, ensure_ascii=False, indent=2)) if cloud else "资源状态稍后补充。"
     html_page = f"""<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
@@ -231,7 +229,7 @@ def main():
 <aside class="sidebar"><a class="brand" href="#overview"><span class="brand-mark">K</span> Karpo Decision</a>
 <div class="side-label">Full 200 candidates / FP8</div><nav class="nav"><a href="#overview">结论与延迟</a>
 <a href="#part-0">选择质量</a><a href="#part-1">顺序稳定性</a><a href="#part-2">并发</a>
-<a href="#methods">测试口径与资源</a></nav><div class="side-bottom">全部200项交给模型<br>无程序路由 · 无候选过滤<br>无结果缓存</div></aside>
+<a href="#methods">测试口径与资源</a></nav><div class="side-bottom">全部200项交给模型<br>无程序路由 · 无候选过滤</div></aside>
 <main><div class="topbar"><div class="crumb">Karpo 31B / 描述精简实验</div><div class="top-actions">
 <button class="button" id="download">下载汇总数据</button><button class="button primary" onclick="window.print()">打印 / PDF</button></div></div>
 <section id="overview"><div class="eyebrow">200 CANDIDATES · FOUR DESCRIPTIONS · SAME MODEL</div>
@@ -249,7 +247,7 @@ def main():
 <div class="panel panel-padding text-block"><p>{esc(method)}</p><p>{esc(timing)}</p>
 <p>质量错误或无效观察共 {len(mismatches)} 条；每条错误及原始响应保留在 results/quality-errors.json。</p>
 <p>模型权重保存在EBS。本轮结束只stop，不terminate；下方是带时间的资源记录。</p>
-<details><summary>查看资源状态与费用</summary><pre class="code-line" style="white-space:pre-wrap">{infrastructure}</pre></details></div></section>
+<details><summary>查看资源状态</summary><pre class="code-line" style="white-space:pre-wrap">{infrastructure}</pre></details></div></section>
 <footer class="footer"><span>2026-11-19 · 单文件离线报告</span><div class="footer-links">
 <a href="RESULTS.zh.md">Markdown</a><a href="PLAN.zh.md">冻结计划</a><a href="../../report.html">上一轮报告</a></div></footer></main>
 <script type="application/json" id="data">{payload}</script>"""

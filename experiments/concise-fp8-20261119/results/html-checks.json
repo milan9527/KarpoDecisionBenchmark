@@ -1,6 +1,6 @@
 {
-  "checked_utc": "2026-11-19T16:15:49.535688+00:00",
-  "html_sha256": "358cf2a514d2f7f7602bc877f94a57ecb02080180e8675db72816412e52fd115",
+  "checked_utc": "2026-11-20T01:57:48.805616+00:00",
+  "html_sha256": "3070797a6121b6b3cb9315d72b8163e643c432acca8ce716c379aa072162006d",
   "checks": [
     "chart:p50_ms",
     "chart:p95_ms",
@@ -8,7 +8,8 @@
     "offline:zero_external_requests",
     "responsive:no_document_overflow",
     "print:pdf_generated",
-    "cloud:matches_resource_record"
+    "cloud:matches_resource_record",
+    "documentation:requested_topics_removed"
   ],
   "viewports": [
     {
@@ -34,5 +35,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 572059
+  "print_pdf_bytes": 566726
 }

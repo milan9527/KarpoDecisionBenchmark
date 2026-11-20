@@ -40,13 +40,27 @@ def table(headers, rows, caption):
     )
 
 
+def documentation_metadata(value):
+    """Select operational metadata for reports while retaining raw evidence."""
+    omitted = {
+        "estimated_total_compute_usd", "estimated_compute_usd", "hourly_compute_usd",
+        "usd_per_hour", "price_segments", "spot_history", "cost_scope",
+        "estimate_notes", "estimated_seconds", "spot_price_cap", "result_cache",
+    }
+    if isinstance(value, dict):
+        return {key: documentation_metadata(item) for key, item in value.items() if key not in omitted}
+    if isinstance(value, list):
+        return [documentation_metadata(item) for item in value]
+    return value
+
+
 def main():
     verification = read_json("results/verification.json")
     outcomes = read_json("results/suite-outcomes.json")
     if not verification["all_complete"] or any(c["status"] != "complete" for c in outcomes["configs"]):
         raise RuntimeError("Only completed, verified benchmark results can generate this report.")
     environment = read_json("results/environment.json")
-    cloud = read_json("results/cloud-lifecycle.json")
+    cloud = documentation_metadata(read_json("results/cloud-lifecycle.json"))
     configurations, raw = [], {}
     checks = {c["name"]: c for c in verification["checks"]}
     evidence_hashes = {}
@@ -137,7 +151,6 @@ def main():
         ["系统盘快照", snapshot["snapshot_id"], f'{snapshot["state"]} · {snapshot.get("progress", "—")}',
          snapshot["observed_utc"][:19].replace("T", " ") + " UTC"],
     ]
-    spot = next(s for s in cloud["instances"].values() if s.get("market") == "spot")
     for path in [
         "results/environment.json", "results/cloud-lifecycle.json", "results/verification.json",
         "results/suite-outcomes.json", "fixtures/manifest.json",
@@ -150,7 +163,7 @@ def main():
         "environment": environment, "cloud": cloud, "verification": verification,
         "outcomes": outcomes, "evidence_sha256": evidence_hashes,
         "scope": {
-            "result_cache": False, "network": "local loopback HTTP",
+            "network": "local loopback HTTP",
             "total_calls_including_warmup_and_repeats": total_calls,
             "synthetic_snapshots": 40, "synthetic_templates": 20, "orders_per_snapshot": 2,
             "existing_payment_snapshots": 40,
@@ -173,11 +186,6 @@ def main():
         "COMPACT_P50": number(compact["p50_ms"], 1),
         "THROUGHPUT": number(concurrent["valid_rps"], 2),
         "C8_P95": number(best["concurrency-8"]["p95_ms"] / 1000, 2),
-        "TOTAL_COST": number(cloud["estimated_total_compute_usd"], 2),
-        "SPOT_COST": number(spot["estimated_compute_usd"], 3),
-        "FALLBACK_COST": number(cloud["estimated_total_compute_usd"] - spot["estimated_compute_usd"], 3),
-        "SPOT_RATE": number(spot["hourly_compute_usd"], 4),
-        "SPOT_MINUTES": number(spot["estimated_seconds"] / 60, 1),
         "TORCH": esc(environment["torch"]),
         "TRANSFORMERS": esc(environment["transformers"]),
         "CUDA": esc(environment["cuda"]),

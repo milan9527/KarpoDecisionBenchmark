@@ -23,11 +23,9 @@
 
 英文精简适合作为继续优化的起点，本批观察的选择与基线一致，P50 降低约 48%；公共规则去重更快，但新增错误。四组均未达到 100 ms。原有 40 例、新增 12 例各测两种候选顺序，均为合成场景，不能据此证明生产准确率或 SOTA。
 
-本轮使用支持停机的 persistent Spot，并将约 62.6GB 原始权重保存在 EBS。已确认实例为 **stopped**，保留实例和磁盘；计算费估算约 $1.05，不含存储等费用。最新带时间的状态及估算口径见 [本轮资源记录](experiments/concise-fp8-20261119/results/infrastructure.json)。下方 AWS 历史记录描述的是首轮实例。
+本轮使用支持停机的 persistent Spot，并将约 62.6GB 原始权重保存在 EBS。已确认实例为 **stopped**，保留实例和磁盘；最新带时间的状态见 [本轮资源记录](experiments/concise-fp8-20261119/results/infrastructure.json)。下方 AWS 历史记录描述的是首轮实例。
 
 `scripts/concise_report.py` 从冻结输入和逐条响应重新核验 848 次调用后生成最新报告；它不调用 GPU。四组输入、运行代码和原始结果均独立保存在 `experiments/concise-fp8-20261119/` 及 `scripts/concise_*.py`。
-
-金融状态下的缓存键、失效策略和并发合并建议见 [CACHE.zh.md](CACHE.zh.md)；该方案未部署，也不参与本次模型测速。
 
 **测试数据**
 
@@ -43,7 +41,7 @@
 
 客户端与模型运行在同一实例，以 loopback HTTP 发起请求；延迟包含发送、服务端预处理、排队、推理与读取完整响应，未包含跨区域或生产入口网络。
 
-预热单列，不计入正式指标。禁用结果缓存，不检索缩减 200 个候选。HTTP / 格式失败计入完成率分母，不重试覆盖。P50/P95/P99 只统计有效响应，同时报告失败数、正确率与 100 ms 内正确完成率。
+预热单列，不计入正式指标。不检索缩减 200 个候选。HTTP / 格式失败计入完成率分母，不重试覆盖。P50/P95/P99 只统计有效响应，同时报告失败数、正确率与 100 ms 内正确完成率。
 
 除固定 worker 的并发扫描外，还包含按固定到达率发送的负载。后者延迟从计划发送时间起算，客户端限流丢弃也计失败；避免慢响应降低发送速率而隐藏排队。
 
@@ -100,12 +98,12 @@ RTX PRO 6000 的计算能力为 sm_120，上游专门提供 `--triton-attention`
 
 本次先尝试单卡 H100 / RTX PRO 6000 的按需容量，再尝试 Spot。Spot 可能被回收；已上传结果保留在 S3。启动脚本设置 120 分钟无人值守关机保护，这是上限保护，不是计划测试时长。EC2 对关机的处理取决于实例配置；本次使用的一次性 Spot 不支持保留实例停机。
 
-实际获得 `us-east-2c` 的 `g7e.8xlarge` Spot：32 vCPU、256 GiB 内存、单张 RTX PRO 6000 Blackwell 96GB。启动时 Spot 报价 $2.4857/小时，价格随时间与可用区变化。
+实际获得 `us-east-2c` 的 `g7e.8xlarge` Spot：32 vCPU、256 GiB 内存、单张 RTX PRO 6000 Blackwell 96GB。
 
 上游 `--fp8` 会先将原权重加载到 GPU，再量化 decoder projections。量化后的显存占用不等于启动所需显存，不能仅凭运行时占用低于 48GB 就认为原启动流程可在 48GB GPU 上运行。
 
 用户最新要求：**测试结束后只 stop GPU，不 terminate**。`python scripts/cloud.py stop` 现在只调用 `StopInstances`；不支持停机的实例会报错，绝不自动转成终止。`cleanup.py` 的删除操作在当前资源记录下已禁用，`status` 仍可查询。
 
-未来的 `try_spot.py` 已改为 persistent Spot + interruption behavior `stop`，启动脚本将权重放在 EBS，支持保留环境停机。停机后的 EBS 和快照继续产生存储费；重新启动仍取决于 Spot 容量。本次历史运行配置仍为 one-time Spot，不能通过修改本地脚本改变已提交的实例。
+未来的 `try_spot.py` 已改为 persistent Spot + interruption behavior `stop`，启动脚本将权重放在 EBS，支持保留环境停机。重新启动仍取决于 Spot 容量。本次历史运行配置仍为 one-time Spot，不能通过修改本地脚本改变已提交的实例。
 
 本次 GPU 实例的终止请求于 2026-11-19 12:41:58 UTC 提交，早于用户的上述消息；AWS 无法撤回该请求。随后停止了其他资源清理，成功关闭系统盘 `vol-0f216baca898aebbe` 的随实例删除选项，并提交快照 `snap-0a6e91176fce5e8fb`。快照完成状态及实例终态见 [云资源记录](results/cloud-lifecycle.json)。本地结果、S3、专用 IAM 和安全组均保留。历史运行的权重位于实例 NVMe，不包含在系统盘快照中，可按冻结 revision 重新下载。

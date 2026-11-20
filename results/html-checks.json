@@ -1,6 +1,6 @@
 {
-  "checked_utc": "2026-11-19T12:58:58.898514+00:00",
-  "html_sha256": "1260d7c263eb33d9cd3a6cf028db9ba878fc93f4a0aa41bc42b9305a08675215",
+  "checked_utc": "2026-11-20T01:57:49.296085+00:00",
+  "html_sha256": "faf2f7a61bc6db400cd6430436b0e1de11b32c5460e40b97579da4d4047c32d7",
   "checks": [
     "latency:quality-200-detailed:p50_ms",
     "latency:quality-200-detailed:p95_ms",
@@ -20,7 +20,8 @@
     "download:matches_embedded_data",
     "offline:zero_network_requests",
     "responsive:no_document_overflow",
-    "print:pdf_generated"
+    "print:pdf_generated",
+    "documentation:requested_topics_removed"
   ],
   "viewports": [
     {
@@ -46,5 +47,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 1091691
+  "print_pdf_bytes": 1010382
 }

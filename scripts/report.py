@@ -44,7 +44,7 @@ def main():
         f"Transformers `{environment['transformers']}`，CUDA `{environment['cuda']}`。",
         f"代码：`{environment['code_revision']}`；权重：`{environment['model_revision']}`。", "",
         "测试在单张 GPU 上运行，客户端通过本机 loopback HTTP 调用官方服务。延迟含客户端与服务排队、编码、推理和完整响应读取，"
-        "不含生产网关、跨主机网络或工具执行。结果缓存关闭，200 项测试完整传入所有候选，不做召回缩减。", "",
+        "不含生产网关、跨主机网络或工具执行。200 项测试完整传入所有候选，不做召回缩减。", "",
         "带 Graphs 的配置仅对单问题纯文本且不超过 8192 tokens 的请求使用上游 CUDA Graphs；"
         "更长请求自动回退。配置名称表示启动选项。", "",
         "**对部署选型的含义**", "",
@@ -53,7 +53,6 @@ def main():
         "增加 HTTP worker 不能据此视为推理吞吐提升。", "",
         "当前建议将 Karpo 31B 作为质量基线继续评估；若 100ms 是硬约束，需要另外实测候选召回、"
         "缩短候选描述或较小的决策模型，并用真实业务案例验证整个流程的准确率。"
-        "缓存可以帮助重复输入，无法降低本次测出的未命中推理耗时。"
         "本次没有测试其他 GPU 或其他候选模型，不能给出它们的性能排名。", "",
         "**判断效果**", "",
         "200 项数据为 40 个合成快照、20 类规则模板，每例原始与反转候选顺序各一次；"
@@ -164,15 +163,11 @@ def main():
         if snapshot.get("snapshot_id"):
             lines += ["", f"系统盘快照 `{snapshot['snapshot_id']}`：最近状态 `{snapshot['state']}`，"
                       f"进度 {snapshot.get('progress', '未记录')}。"]
-        lines += ["", "本地测试结果、私有 S3、专用 IAM 和安全组均保留。系统盘及快照继续产生存储费。"
+        lines += ["", "本地测试结果、私有 S3、专用 IAM 和安全组均保留。"
                   "历史测试的模型权重放在实例 NVMe，无法随停机或终止保留；系统盘和快照不包含权重，"
                   "恢复时应按冻结 revision 重新下载。后续启动脚本已改用 EBS 保存权重。", ""]
-        if "estimated_total_compute_usd" in cloud:
-            lines += [f"本次临时实例计算费估算 **${cloud['estimated_total_compute_usd']:.3f}**；"
-                      "不含 EBS、快照、IPv4、S3 和可能的网络费用。", ""]
-        lines += ["资源与费用估算见 [云资源记录](results/cloud-lifecycle.json)。计算费按运行时长和记录价格估算，不是 AWS 结算账单。", ""]
-    lines += ["原始结果目录：[results](results/)。测试代码与口径：[README](README.md)。"
-              "缓存建议：[CACHE.zh.md](CACHE.zh.md)。", ""]
+        lines += ["资源状态见 [云资源记录](results/cloud-lifecycle.json)。", ""]
+    lines += ["原始结果目录：[results](results/)。测试代码与口径：[README](README.md)。", ""]
     (ROOT / "RESULTS.zh.md").write_text("\n".join(lines))
     files = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
              for p in sorted(result_root.rglob("*")) if p.is_file() and p.name != "evidence-sha256.json"}
