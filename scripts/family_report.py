@@ -190,37 +190,9 @@ def verify():
     return manifest, reports, errors, record
 
 
-def qwen_quality_notes(reports, errors):
-    by_id = {r["id"]: r for r in reports}
-    nine, four = by_id["9b-fp8"], by_id["4b-fp8"]
-    wrong_nine = {r["request_id"] for r in errors if r["config"] == "9b-fp8"}
-    wrong_four = {r["request_id"] for r in errors if r["config"] == "4b-fp8"}
-    return [
-        "9B在这批完整200候选输入中更容易混淆候选，具体根因尚未确定。"
-        "参数量更大并不保证某个业务任务更准确；这些结果只覆盖52个合成案例的两种候选顺序。",
-        f"FP8下，9B参考一致 {nine['quality']['correct']}/104，4B为 {four['quality']['correct']}/104；"
-        f"BF16下分别为 {by_id['9b-bf16']['quality']['correct']}/104、"
-        f"{by_id['4b-bf16']['quality']['correct']}/104。差距在BF16下仍然存在，不能用FP8量化单独解释。"
-        "两者收到相同的完整200候选，输入均未截断。",
-        f"FP8下，候选反序后9B有 {nine['order_changes']}/{nine['valid_pairs']} 个案例改变选择，"
-        f"4B为 {four['order_changes']}/{four['valid_pairs']}。"
-        f"逐条配对后，两者共同答错 {len(wrong_nine & wrong_four)} 条；"
-        f"9B错而4B对的有 {len(wrong_nine - wrong_four)} 条，"
-        f"4B错而9B对的有 {len(wrong_four - wrong_nine)} 条。"
-        "这些是候选顺序敏感性和错误分布的观察，不能单凭它们确定训练或推理实现上的原因。",
-        "例如 boundary-duplicate-over-approved：系统已成功执行同一笔操作，用户要求重试，"
-        "参考答案是“防止重复操作”。9B FP8在原序下选择“拒绝超期退款”，"
-        "反序下选择“澄清意图”；4B FP8在两种顺序下均答对。",
-        "现有FP8和BF16配置都启用了Graphs，尚未完成关闭Graphs的BF16参考推理对照，"
-        "因此还不能排除优化执行路径的影响。下一步应先做该对照，再用更多随机候选顺序和真实业务案例"
-        "判断模型的任务适配情况；本报告没有将这些待验证解释写成已确定原因。",
-    ]
-
-
 def main():
     manifest, reports, errors, verification = verify()
     replicas = verify_replicas(reports)
-    qwen_notes = qwen_quality_notes(reports, errors)
     cloud = documentation_metadata(load(EXP / "results/infrastructure.json"))
     assert cloud["state"] == "stopped", "Publish the final resource state after stopping the GPU"
     assert all(i["state"] == "stopped" for i in cloud["related_instances"])
@@ -323,8 +295,6 @@ def main():
                   "|" + "|".join("---" for _ in headers) + "|"]
         lines += ["| " + " | ".join(map(str, row)) + " |" for row in rows]
         lines.append("")
-        if title == "质量与延迟":
-            lines += ["## 为什么这批测试中9B低于4B", "", "\n\n".join(qwen_notes), ""]
     lines += ["## 运行与证据", "",
               f"系列模型核验1168次调用，副本对照544次，合计1712次；系列质量错误或无效观察 {len(errors)} 次。",
               f"实例 `{cloud['instance_id']}`，类型 `{cloud['instance_type']}`，状态 **{cloud['state']}**；"
@@ -345,16 +315,9 @@ def main():
         "[完整结果](RESULTS.zh.md) · [HTML](report.html) · [资源记录](results/infrastructure.json)\n\n"
         "results/capacity-status.json保留启动成功之前的历史容量核对，不代表当前实验状态。\n")
     esc = html.escape
-    qwen_section = (
-        '<section id="qwen-quality"><div class="section-head"><h2>为什么这批测试中9B低于4B</h2></div>'
-        '<div class="panel panel-padding text-block">'
-        + "".join(f"<p>{esc(note)}</p>" for note in qwen_notes)
-        + "</div></section>"
-    )
     sections = "".join(
         f'<section id="part-{i}"><div class="section-head"><h2>{esc(title)}</h2></div>'
         f'<div class="panel">{table(headers, rows, title)}</div></section>'
-        + (qwen_section if i == 0 else "")
         for i, (title, headers, rows) in enumerate(tables))
     cards = "".join(
         f'<div class="kpi{" accent" if r["id"] == preferred["id"] else ""}">'
@@ -367,7 +330,6 @@ def main():
         "retry_manifest": documentation_metadata(load(QWEN / "manifest.json")), "verification": verification,
         "infrastructure": cloud, "preferred": preferred["id"], "quality_error_count": len(errors),
         "replicas": replicas,
-        "qwen_quality_notes": qwen_notes,
     }), ensure_ascii=False).replace("<", "\\u003c")
     css = (ROOT / "scripts/report.css").read_text()
     page = f"""<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
@@ -375,8 +337,7 @@ def main():
 <style>{css}</style></head><body><aside class="sidebar">
 <a class="brand" href="#overview"><span class="brand-mark">K</span> Karpo Decision</a>
 <div class="side-label">FULL 200 / MODEL FAMILY</div><nav class="nav"><a href="#overview">结论与延迟</a>
-<a href="#part-0">选择质量</a><a href="#qwen-quality">9B与4B差异</a>
-<a href="#part-1">顺序与基线</a><a href="#part-2">FP8 对照</a>
+<a href="#part-0">选择质量</a><a href="#part-1">顺序与基线</a><a href="#part-2">FP8 对照</a>
 <a href="#part-3">单卡并发</a><a href="#part-5">双副本对照</a><a href="#part-4">历史描述实验</a>
 <a href="#part-6">显存与启动</a><a href="#methods">口径与资源</a></nav></aside>
 <main><div class="topbar"><div class="crumb">2026-11-20 / 同规格单GPU模型对比</div>
