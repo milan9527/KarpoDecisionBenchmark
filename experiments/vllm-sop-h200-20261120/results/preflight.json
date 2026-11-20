@@ -1,0 +1,473 @@
+{
+  "utc": "2026-11-20T15:38:38.898065+00:00",
+  "regions": [
+    {
+      "region": "us-east-1",
+      "h200_types": [
+        {
+          "type": "p5en.48xlarge",
+          "vcpus": 192,
+          "gpus": {
+            "Gpus": [
+              {
+                "Name": "H200",
+                "Manufacturer": "NVIDIA",
+                "Count": 8,
+                "LogicalGpuCount": 8,
+                "GpuPartitionSize": 1.0,
+                "Workloads": [
+                  "ml-ai"
+                ],
+                "MemoryInfo": {
+                  "SizeInMiB": 144384
+                }
+              }
+            ],
+            "TotalGpuMemoryInMiB": 1155072
+          },
+          "memory_mib": 2097152,
+          "supported_usage_classes": [
+            "capacity-block",
+            "on-demand",
+            "spot"
+          ]
+        }
+      ],
+      "p_quotas": [
+        {
+          "name": "Concurrent P5en Capacity Blocks per account",
+          "code": "L-4F9BB70B",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P4d Capacity Blocks per account",
+          "code": "L-2C8F52B3",
+          "value": 24576.0
+        },
+        {
+          "name": "Concurrent P4de Capacity Blocks per organization",
+          "code": "L-9AC70153",
+          "value": 24576.0
+        },
+        {
+          "name": "Concurrent P4de Capacity Blocks per account",
+          "code": "L-CFF3E941",
+          "value": 24576.0
+        },
+        {
+          "name": "Concurrent P4d Capacity Blocks per organization",
+          "code": "L-B67430DE",
+          "value": 24576.0
+        },
+        {
+          "name": "Running On-Demand P instances",
+          "code": "L-417A185B",
+          "value": 768.0
+        },
+        {
+          "name": "Concurrent P5e Capacity Blocks per account",
+          "code": "L-C45F30BC",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P5 Capacity Blocks per account",
+          "code": "L-DA6814F2",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P5 Capacity Blocks per organization",
+          "code": "L-8131B2C6",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P5e Capacity Blocks per organization",
+          "code": "L-AD1D1866",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P5en Capacity Blocks per organization",
+          "code": "L-7EA86503",
+          "value": 49152.0
+        }
+      ],
+      "offerings": [
+        {
+          "InstanceType": "p5en.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-east-1d"
+        },
+        {
+          "InstanceType": "p5en.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-east-1b"
+        }
+      ],
+      "spot": [
+        {
+          "type": "p5en.48xlarge",
+          "az": "us-east-1b",
+          "usd_per_hour": "36.130000"
+        },
+        {
+          "type": "p5en.48xlarge",
+          "az": "us-east-1d",
+          "usd_per_hour": "40.551500"
+        }
+      ],
+      "p_instances": []
+    },
+    {
+      "region": "us-east-2",
+      "h200_types": [
+        {
+          "type": "p5en.48xlarge",
+          "vcpus": 192,
+          "gpus": {
+            "Gpus": [
+              {
+                "Name": "H200",
+                "Manufacturer": "NVIDIA",
+                "Count": 8,
+                "LogicalGpuCount": 8,
+                "GpuPartitionSize": 1.0,
+                "Workloads": [
+                  "ml-ai"
+                ],
+                "MemoryInfo": {
+                  "SizeInMiB": 144384
+                }
+              }
+            ],
+            "TotalGpuMemoryInMiB": 1155072
+          },
+          "memory_mib": 2097152,
+          "supported_usage_classes": [
+            "capacity-block",
+            "on-demand",
+            "spot"
+          ]
+        },
+        {
+          "type": "p5e.48xlarge",
+          "vcpus": 192,
+          "gpus": {
+            "Gpus": [
+              {
+                "Name": "H200",
+                "Manufacturer": "NVIDIA",
+                "Count": 8,
+                "LogicalGpuCount": 8,
+                "GpuPartitionSize": 1.0,
+                "Workloads": [
+                  "ml-ai"
+                ],
+                "MemoryInfo": {
+                  "SizeInMiB": 144384
+                }
+              }
+            ],
+            "TotalGpuMemoryInMiB": 1155072
+          },
+          "memory_mib": 2097152,
+          "supported_usage_classes": [
+            "capacity-block",
+            "on-demand",
+            "spot"
+          ]
+        }
+      ],
+      "p_quotas": [
+        {
+          "name": "Concurrent P5en Capacity Blocks per account",
+          "code": "L-4F9BB70B",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P4d Capacity Blocks per account",
+          "code": "L-2C8F52B3",
+          "value": 24576.0
+        },
+        {
+          "name": "Concurrent P4de Capacity Blocks per organization",
+          "code": "L-9AC70153",
+          "value": 24576.0
+        },
+        {
+          "name": "Concurrent P4de Capacity Blocks per account",
+          "code": "L-CFF3E941",
+          "value": 24576.0
+        },
+        {
+          "name": "Concurrent P4d Capacity Blocks per organization",
+          "code": "L-B67430DE",
+          "value": 24576.0
+        },
+        {
+          "name": "Concurrent P5e Capacity Blocks per account",
+          "code": "L-C45F30BC",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P5 Capacity Blocks per account",
+          "code": "L-DA6814F2",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P5 Capacity Blocks per organization",
+          "code": "L-8131B2C6",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P5e Capacity Blocks per organization",
+          "code": "L-AD1D1866",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P5en Capacity Blocks per organization",
+          "code": "L-7EA86503",
+          "value": 49152.0
+        },
+        {
+          "name": "Running On-Demand P instances",
+          "code": "L-417A185B",
+          "value": 384.0
+        }
+      ],
+      "offerings": [
+        {
+          "InstanceType": "p5en.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-east-2b"
+        },
+        {
+          "InstanceType": "p5en.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-east-2c"
+        },
+        {
+          "InstanceType": "p5e.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-east-2a"
+        },
+        {
+          "InstanceType": "p5en.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-east-2a"
+        },
+        {
+          "InstanceType": "p5e.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-east-2c"
+        },
+        {
+          "InstanceType": "p5e.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-east-2b"
+        }
+      ],
+      "spot": [
+        {
+          "type": "p5e.48xlarge",
+          "az": "us-east-2a",
+          "usd_per_hour": "35.714700"
+        },
+        {
+          "type": "p5en.48xlarge",
+          "az": "us-east-2b",
+          "usd_per_hour": "35.757800"
+        },
+        {
+          "type": "p5en.48xlarge",
+          "az": "us-east-2a",
+          "usd_per_hour": "32.251200"
+        },
+        {
+          "type": "p5en.48xlarge",
+          "az": "us-east-2c",
+          "usd_per_hour": "36.421300"
+        },
+        {
+          "type": "p5e.48xlarge",
+          "az": "us-east-2b",
+          "usd_per_hour": "33.544600"
+        },
+        {
+          "type": "p5e.48xlarge",
+          "az": "us-east-2c",
+          "usd_per_hour": "32.772600"
+        }
+      ],
+      "p_instances": [
+        {
+          "id": "i-091371593b3c4a5ff",
+          "type": "p5.4xlarge",
+          "state": "running",
+          "market": "spot"
+        }
+      ]
+    },
+    {
+      "region": "us-west-2",
+      "h200_types": [
+        {
+          "type": "p5en.48xlarge",
+          "vcpus": 192,
+          "gpus": {
+            "Gpus": [
+              {
+                "Name": "H200",
+                "Manufacturer": "NVIDIA",
+                "Count": 8,
+                "LogicalGpuCount": 8,
+                "GpuPartitionSize": 1.0,
+                "Workloads": [
+                  "ml-ai"
+                ],
+                "MemoryInfo": {
+                  "SizeInMiB": 144384
+                }
+              }
+            ],
+            "TotalGpuMemoryInMiB": 1155072
+          },
+          "memory_mib": 2097152,
+          "supported_usage_classes": [
+            "capacity-block",
+            "on-demand",
+            "spot"
+          ]
+        },
+        {
+          "type": "p5e.48xlarge",
+          "vcpus": 192,
+          "gpus": {
+            "Gpus": [
+              {
+                "Name": "H200",
+                "Manufacturer": "NVIDIA",
+                "Count": 8,
+                "LogicalGpuCount": 8,
+                "GpuPartitionSize": 1.0,
+                "Workloads": [
+                  "ml-ai"
+                ],
+                "MemoryInfo": {
+                  "SizeInMiB": 144384
+                }
+              }
+            ],
+            "TotalGpuMemoryInMiB": 1155072
+          },
+          "memory_mib": 2097152,
+          "supported_usage_classes": [
+            "capacity-block",
+            "on-demand",
+            "spot"
+          ]
+        }
+      ],
+      "p_quotas": [
+        {
+          "name": "Concurrent P5en Capacity Blocks per account",
+          "code": "L-4F9BB70B",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P4d Capacity Blocks per account",
+          "code": "L-2C8F52B3",
+          "value": 24576.0
+        },
+        {
+          "name": "Concurrent P4de Capacity Blocks per organization",
+          "code": "L-9AC70153",
+          "value": 24576.0
+        },
+        {
+          "name": "Concurrent P4de Capacity Blocks per account",
+          "code": "L-CFF3E941",
+          "value": 24576.0
+        },
+        {
+          "name": "Concurrent P4d Capacity Blocks per organization",
+          "code": "L-B67430DE",
+          "value": 24576.0
+        },
+        {
+          "name": "Concurrent P5e Capacity Blocks per account",
+          "code": "L-C45F30BC",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P5 Capacity Blocks per account",
+          "code": "L-DA6814F2",
+          "value": 49152.0
+        },
+        {
+          "name": "Running On-Demand P instances",
+          "code": "L-417A185B",
+          "value": 768.0
+        },
+        {
+          "name": "Concurrent P5 Capacity Blocks per organization",
+          "code": "L-8131B2C6",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P5e Capacity Blocks per organization",
+          "code": "L-AD1D1866",
+          "value": 49152.0
+        },
+        {
+          "name": "Concurrent P5en Capacity Blocks per organization",
+          "code": "L-7EA86503",
+          "value": 49152.0
+        }
+      ],
+      "offerings": [
+        {
+          "InstanceType": "p5en.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-west-2c"
+        },
+        {
+          "InstanceType": "p5en.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-west-2d"
+        },
+        {
+          "InstanceType": "p5en.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-west-2a"
+        },
+        {
+          "InstanceType": "p5e.48xlarge",
+          "LocationType": "availability-zone",
+          "Location": "us-west-2c"
+        }
+      ],
+      "spot": [
+        {
+          "type": "p5en.48xlarge",
+          "az": "us-west-2c",
+          "usd_per_hour": "40.502000"
+        },
+        {
+          "type": "p5en.48xlarge",
+          "az": "us-west-2d",
+          "usd_per_hour": "34.498400"
+        },
+        {
+          "type": "p5e.48xlarge",
+          "az": "us-west-2c",
+          "usd_per_hour": "33.799500"
+        },
+        {
+          "type": "p5en.48xlarge",
+          "az": "us-west-2a",
+          "usd_per_hour": "37.344400"
+        }
+      ],
+      "p_instances": []
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "CommandId": "21e32430-3486-4563-a8e3-a4b34480e717",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T15:42:19.892Z",
+  "ExecutionElapsedTime": "PT0.466S",
+  "ExecutionEndDateTime": "2026-11-20T15:42:19.892Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "index, name, memory.total [MiB], driver_version\n0, NVIDIA H200, 143771 MiB, 595.112.07\n1, NVIDIA H200, 143771 MiB, 595.112.07\n2, NVIDIA H200, 143771 MiB, 595.112.07\n3, NVIDIA H200, 143771 MiB, 595.112.07\n4, NVIDIA H200, 143771 MiB, 595.112.07\n5, NVIDIA H200, 143771 MiB, 595.112.07\n6, NVIDIA H200, 143771 MiB, 595.112.07\n7, NVIDIA H200, 143771 MiB, 595.112.07\n        GPU Fabric GUID                                : N/A\n    Inforom Version\n        Image Version                                  : G520.0280.02.02\n        OEM Object                                     : 2.1\n        ECC Object                                     : 7.16\n        Power Management Object                        : N/A\n    Inforom BBX Object Flush\n        Latest Timestamp                               : N/A\n        Latest Duration                                : N/A\n    GPU Operation Mode\n        Current                                        : N/A\n        Pending                                        : N/A\n    GPU C2C Mode                                       : Disabled\n    GPU Virtualization Mode\n        Virtualization Mode                            : Pass-Through\n        Host VGPU Mode                                 : N/A\nExecMainStatus=0\nActiveState=active\nSubState=running\nExecMainStatus=0\nActiveState=active\nSubState=running\n\nExecMainStatus=0\nActiveState=active\nSubState=running\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "1de26fc5-ef91-41aa-8a92-55d3aff53001",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 15:42:33 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1996",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "1de26fc5-ef91-41aa-8a92-55d3aff53001",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

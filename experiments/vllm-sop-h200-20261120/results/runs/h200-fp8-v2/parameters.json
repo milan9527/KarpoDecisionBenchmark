@@ -1,0 +1,16 @@
+{
+  "name": "h200-fp8-v2",
+  "revision": "v2",
+  "checkpoint": "/opt/karpo/models/karpo-4b",
+  "gpus": 8,
+  "replicas": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "batches": [
+    1,
+    4
+  ]
+}

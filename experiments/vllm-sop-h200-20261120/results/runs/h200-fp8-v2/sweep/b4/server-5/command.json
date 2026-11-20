@@ -1,0 +1,18 @@
+[
+  "/opt/karpo/venv-vllm034/bin/python",
+  "/opt/karpo/scripts/vllm_rps_server.py",
+  "--checkpoint",
+  "/opt/karpo/models/karpo-4b",
+  "--experiment",
+  "/opt/karpo/experiments/vllm-sop-h200-20261120",
+  "--output",
+  "/opt/karpo/experiments/vllm-sop-h200-20261120/results/runs/h200-fp8-v2/sweep/b4/server-5",
+  "--max-seqs",
+  "4",
+  "--replica-id",
+  "5",
+  "--port",
+  "18505",
+  "--admission-limit",
+  "64"
+]

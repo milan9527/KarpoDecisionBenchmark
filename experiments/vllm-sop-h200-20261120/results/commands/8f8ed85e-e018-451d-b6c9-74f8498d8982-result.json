@@ -1,0 +1,36 @@
+{
+  "CommandId": "8f8ed85e-e018-451d-b6c9-74f8498d8982",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T16:00:36.408Z",
+  "ExecutionElapsedTime": "PT0.378S",
+  "ExecutionEndDateTime": "2026-11-20T16:00:36.408Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "2026-11-20T16:00:36+00:00\nindex, name, memory.used [MiB], utilization.gpu [%], power.draw [W]\n0, NVIDIA H200, 0 MiB, 0 %, 134.02 W\n1, NVIDIA H200, 0 MiB, 0 %, 127.00 W\n2, NVIDIA H200, 0 MiB, 0 %, 129.17 W\n3, NVIDIA H200, 0 MiB, 0 %, 126.90 W\n4, NVIDIA H200, 0 MiB, 0 %, 126.41 W\n5, NVIDIA H200, 0 MiB, 0 %, 123.90 W\n6, NVIDIA H200, 0 MiB, 0 %, 128.82 W\n7, NVIDIA H200, 0 MiB, 0 %, 123.39 W\nExecMainStatus=0\nActiveState=inactive\nSubState=dead\nNEXT                             LEFT LAST                           PASSED UNIT                           ACTIVATES\nFri 2026-11-20 16:04:52 UTC  4min 15s Thu 2026-11-19 12:08:17 UTC         - fwupd-refresh.timer            fwupd-refresh.service\nFri 2026-11-20 16:10:00 UTC      9min Fri 2026-11-20 16:00:09 UTC   27s ago sysstat-collect.timer          sysstat-collect.service\nFri 2026-11-20 16:22:15 UTC     21min Thu 2026-11-19 12:25:21 UTC         - apt-daily-upgrade.timer        apt-daily-upgrade.service\nFri 2026-11-20 22:00:55 UTC        6h Tue 2026-11-17 07:01:15 UTC         - man-db.timer                   man-db.service\nFri 2026-11-20 22:20:28 UTC        6h Thu 2026-11-19 12:24:36 UTC         - apt-daily.timer                apt-daily.service\nFri 2026-11-20 23:53:59 UTC        7h Fri 2026-11-20 04:06:26 UTC         - motd-news.timer                motd-news.service\nSat 2026-11-21 00:00:00 UTC        7h Fri 2026-11-20 03:07:43 UTC         - dpkg-db-backup.timer           dpkg-db-backup.service\nSat 2026-11-21 00:00:00 UTC        7h Fri 2026-11-20 03:07:43 UTC         - logrotate.timer                logrotate.service\nSat 2026-11-21 00:07:00 UTC        8h -                                   - sysstat-summary.timer          sysstat-summary.service\nSat 2026-11-21 15:45:43 UTC       23h Fri 2026-11-20 15:45:43 UTC 14min ago update-notifier-download.timer update-notifier-download.service\nSat 2026-11-21 15:55:27 UTC       23h Fri 2026-11-20 15:55:27 UTC  5min ago systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service\nSun 2026-11-22 03:10:21 UTC 1 day 11h Tue 2026-11-17 07:01:15 UTC         - e2scrub_all.timer              e2scrub_all.service\nMon 2026-11-23 01:35:42 UTC    2 days Tue 2026-11-17 07:01:15 UTC         - fstrim.timer                   fstrim.service\nWed 2026-11-25 16:14:21 UTC    5 days Tue 2026-11-17 07:01:15 UTC         - update-notifier-motd.timer     update-notifier-motd.service\n-                                   - -                                   - apport-autoreport.timer        apport-autoreport.service\n-                                   - -                                   - snapd.snap-repair.timer        snapd.snap-repair.service\n-                                   - -                                   - ua-timer.timer                 ua-timer.service\n\n17 timers listed.\nno_scheduled_shutdown\n0\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "a3aba570-2735-483d-a46e-083785dea9af",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 16:00:55 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "3423",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "a3aba570-2735-483d-a46e-083785dea9af",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

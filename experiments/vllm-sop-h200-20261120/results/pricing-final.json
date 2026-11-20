@@ -1,0 +1,91 @@
+{
+  "utc": "2026-11-20T16:00:56.480274+00:00",
+  "scope": "H200 instance only; exclude retained RTX/H100, EBS, networking and IPv4",
+  "spot_usd_per_hour": 32.2512,
+  "on_demand_usd_per_hour": 63.296,
+  "spot_source": [
+    {
+      "AvailabilityZone": "us-east-2a",
+      "AvailabilityZoneId": "use2-az1",
+      "InstanceType": "p5en.48xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "32.251200",
+      "Timestamp": "2026-11-20 14:00:00+00:00"
+    }
+  ],
+  "on_demand_source": [
+    {
+      "product": {
+        "productFamily": "Compute Instance",
+        "attributes": {
+          "enhancedNetworkingSupported": "Yes",
+          "intelTurboAvailable": "No",
+          "memory": "2048 GiB",
+          "dedicatedEbsThroughput": "100 Gbps",
+          "vcpu": "192",
+          "classicnetworkingsupport": "false",
+          "capacitystatus": "Used",
+          "locationType": "AWS Region",
+          "storage": "8 x 3840 NVMe SSD",
+          "instanceFamily": "GPU instance",
+          "operatingSystem": "Linux",
+          "intelAvx2Available": "No",
+          "instanceFamilyCategory": "Accelerated Computing",
+          "regionCode": "us-east-2",
+          "physicalProcessor": "Intel Xeon Scalable (Sapphire Rapids)",
+          "clockSpeed": "3.2 GHz",
+          "ecu": "NA",
+          "networkPerformance": "3200 Gigabit",
+          "servicename": "Amazon Elastic Compute Cloud",
+          "gpuMemory": "141 GB HBM3e",
+          "dedicatedEbsThroughputDescription": "100 Gbps",
+          "vpcnetworkingsupport": "true",
+          "instanceType": "p5en.48xlarge",
+          "tenancy": "Shared",
+          "usagetype": "USE2-BoxUsage:p5en.48xlarge",
+          "normalizationSizeFactor": "384",
+          "gpu": "8",
+          "intelAvxAvailable": "No",
+          "processorFeatures": "Intel AMX",
+          "servicecode": "AmazonEC2",
+          "licenseModel": "No License required",
+          "currentGeneration": "Yes",
+          "preInstalledSw": "NA",
+          "location": "US East (Ohio)",
+          "processorArchitecture": "64-bit",
+          "marketoption": "OnDemand",
+          "operation": "RunInstances",
+          "availabilityzone": "NA"
+        },
+        "sku": "MFPA8X46BT9YR8TQ"
+      },
+      "serviceCode": "AmazonEC2",
+      "terms": {
+        "OnDemand": {
+          "MFPA8X46BT9YR8TQ.JRTCKXETXF": {
+            "priceDimensions": {
+              "MFPA8X46BT9YR8TQ.JRTCKXETXF.6YS6EN2CT7": {
+                "unit": "Hrs",
+                "endRange": "Inf",
+                "description": "$63.296 per On Demand Linux p5en.48xlarge Instance Hour",
+                "appliesTo": [],
+                "rateCode": "MFPA8X46BT9YR8TQ.JRTCKXETXF.6YS6EN2CT7",
+                "beginRange": "0",
+                "pricePerUnit": {
+                  "USD": "63.2960000000"
+                }
+              }
+            },
+            "sku": "MFPA8X46BT9YR8TQ",
+            "effectiveDate": "2026-11-01T00:00:00Z",
+            "offerTermCode": "JRTCKXETXF",
+            "termAttributes": {}
+          }
+        }
+      },
+      "version": "20261120034850",
+      "publicationDate": "2026-11-20T03:48:50Z"
+    }
+  ],
+  "month_hours": 720
+}

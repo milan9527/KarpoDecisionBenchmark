@@ -1,0 +1,113 @@
+{
+  "target_rps": 100,
+  "offered_seconds": 20,
+  "scheduled_requests": 2000,
+  "attempts": 2000,
+  "valid": 766,
+  "failures": 1234,
+  "http_statuses": {
+    "200": 766,
+    "429": 1234
+  },
+  "replica_counts": {
+    "0": 382,
+    "1": 384
+  },
+  "correct": 724,
+  "elapsed_with_drain_s": 24.013745536999977,
+  "valid_rps_with_drain": 31.898397474886206,
+  "steady_valid_rps": 32.0,
+  "p50_ms": 3993.437067000059,
+  "p95_ms": 4029.556728999978,
+  "p99_ms": 4042.8476589999036,
+  "http_p50_ms": 3992.6406849999694,
+  "last_quarter_p50_ms": 4007.290072999922,
+  "max_send_lag_ms": 16.31523000003199,
+  "valid_within_500ms": 22,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 70
+    },
+    {
+      "second": 2,
+      "pending": 128
+    },
+    {
+      "second": 3,
+      "pending": 128
+    },
+    {
+      "second": 4,
+      "pending": 128
+    },
+    {
+      "second": 5,
+      "pending": 128
+    },
+    {
+      "second": 6,
+      "pending": 128
+    },
+    {
+      "second": 7,
+      "pending": 127
+    },
+    {
+      "second": 8,
+      "pending": 127
+    },
+    {
+      "second": 9,
+      "pending": 127
+    },
+    {
+      "second": 10,
+      "pending": 128
+    },
+    {
+      "second": 11,
+      "pending": 128
+    },
+    {
+      "second": 12,
+      "pending": 127
+    },
+    {
+      "second": 13,
+      "pending": 128
+    },
+    {
+      "second": 14,
+      "pending": 128
+    },
+    {
+      "second": 15,
+      "pending": 128
+    },
+    {
+      "second": 16,
+      "pending": 128
+    },
+    {
+      "second": 17,
+      "pending": 128
+    },
+    {
+      "second": 18,
+      "pending": 128
+    },
+    {
+      "second": 19,
+      "pending": 128
+    },
+    {
+      "second": 20,
+      "pending": 128
+    }
+  ],
+  "backlog_slope_per_second": 0.041176470588235294,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": false,
+  "passes_performance_acceptance": false
+}

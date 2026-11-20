@@ -1,0 +1,17 @@
+EW1120 15:44:48.525000 6470 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1120 15:44:48.526000 6470 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1120 15:44:48.526000 6470 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+FlashInfer kernels are disabled: flashinfer-cubin is not installed and nvcc (CUDA_HOME, CUDA_PATH, PATH or /usr/local/cuda) or ninja (PATH) is missing. Set CUDA_HOME to a CUDA toolkit and put ninja on PATH, or run `vllm download-kernels`.
+...
+======================================================================
+ERROR: test_integrates_overlap_without_using_p50 (__main__.InflightTests.test_integrates_overlap_without_using_p50)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/karpo/tests/test_vllm_karpo.py", line 58, in test_integrates_overlap_without_using_p50
+    from vllm_single_benchmark import inflight
+ModuleNotFoundError: No module named 'vllm_single_benchmark'
+
+----------------------------------------------------------------------
+Ran 4 tests in 16.183s
+
+FAILED (errors=1)

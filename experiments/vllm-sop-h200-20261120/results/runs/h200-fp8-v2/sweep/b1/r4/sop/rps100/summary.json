@@ -1,0 +1,115 @@
+{
+  "target_rps": 100,
+  "offered_seconds": 20,
+  "scheduled_requests": 2000,
+  "attempts": 2000,
+  "valid": 1531,
+  "failures": 469,
+  "http_statuses": {
+    "200": 1531,
+    "429": 469
+  },
+  "replica_counts": {
+    "1": 383,
+    "2": 385,
+    "3": 384,
+    "0": 379
+  },
+  "correct": 1445,
+  "elapsed_with_drain_s": 24.066926210999895,
+  "valid_rps_with_drain": 63.614272407593525,
+  "steady_valid_rps": 63.93333333333333,
+  "p50_ms": 3969.14260799997,
+  "p95_ms": 4061.641596999948,
+  "p99_ms": 4074.5155359999217,
+  "http_p50_ms": 3967.865295000024,
+  "last_quarter_p50_ms": 4003.0029879999347,
+  "max_send_lag_ms": 15.872178999870812,
+  "valid_within_500ms": 78,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 39
+    },
+    {
+      "second": 2,
+      "pending": 75
+    },
+    {
+      "second": 3,
+      "pending": 110
+    },
+    {
+      "second": 4,
+      "pending": 147
+    },
+    {
+      "second": 5,
+      "pending": 183
+    },
+    {
+      "second": 6,
+      "pending": 218
+    },
+    {
+      "second": 7,
+      "pending": 254
+    },
+    {
+      "second": 8,
+      "pending": 255
+    },
+    {
+      "second": 9,
+      "pending": 255
+    },
+    {
+      "second": 10,
+      "pending": 254
+    },
+    {
+      "second": 11,
+      "pending": 254
+    },
+    {
+      "second": 12,
+      "pending": 254
+    },
+    {
+      "second": 13,
+      "pending": 254
+    },
+    {
+      "second": 14,
+      "pending": 255
+    },
+    {
+      "second": 15,
+      "pending": 256
+    },
+    {
+      "second": 16,
+      "pending": 256
+    },
+    {
+      "second": 17,
+      "pending": 255
+    },
+    {
+      "second": 18,
+      "pending": 256
+    },
+    {
+      "second": 19,
+      "pending": 255
+    },
+    {
+      "second": 20,
+      "pending": 255
+    }
+  ],
+  "backlog_slope_per_second": 2.3573529411764707,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": false,
+  "passes_performance_acceptance": false
+}

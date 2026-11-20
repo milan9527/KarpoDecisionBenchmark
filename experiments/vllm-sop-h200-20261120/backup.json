@@ -1,0 +1,10 @@
+{
+  "utc": "2026-11-20T16:02:54.366361+00:00",
+  "bucket": "karpo-benchmark-20261119-115003-632930644527",
+  "key": "archives/sop-h200-20261120-final-75dbb1e63698103e.tar.gz",
+  "bytes": 119698976,
+  "sha256": "75dbb1e63698103ed2292678df04a404700170d601f612d629928d1d8732ee60",
+  "download_verified": true,
+  "files_in_manifest": 263,
+  "scope": "New H200 experiment and current README/H200 scripts; old experiments are not modified"
+}

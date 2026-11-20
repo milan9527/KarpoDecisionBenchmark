@@ -1,0 +1,6 @@
+{
+  "id": "5752fa9b-ee31-413b-a451-526e7b716abd",
+  "control": "i-0de4f061c2a04fe4b",
+  "script": "set -u\nsystemctl show karpo-sop-h200-bootstrap-v1.service karpo-sop-h200-backup.service --property=ActiveState,SubState,ExecMainStatus --no-pager\ntail -n 18 /opt/karpo/experiments/vllm-sop-h200-20261120/results/setup/control-bootstrap.log\n",
+  "utc": "2026-11-20T15:42:03.496735+00:00"
+}

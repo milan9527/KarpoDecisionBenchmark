@@ -1,0 +1,6 @@
+{
+  "begin_utc": "2026-11-20T15:50:37.496368+00:00",
+  "end_utc": "2026-11-20T15:50:39.674540+00:00",
+  "offered_end_utc": null,
+  "clock": "UTC paired with time.perf_counter; request offsets use runner.begin"
+}

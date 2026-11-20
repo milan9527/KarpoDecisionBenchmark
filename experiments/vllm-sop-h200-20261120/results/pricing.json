@@ -1,0 +1,12 @@
+[
+  {
+    "type": "p5en.48xlarge",
+    "region": "us-east-2",
+    "usd_per_hour": "63.2960000000"
+  },
+  {
+    "type": "p5e.48xlarge",
+    "region": "us-east-2",
+    "usd_per_hour": "63.2960000000"
+  }
+]

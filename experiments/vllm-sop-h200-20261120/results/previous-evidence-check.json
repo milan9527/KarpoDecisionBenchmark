@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-20T15:59:26.009326+00:00",
+  "baseline": "experiments/vllm-rps100-20261120/evidence-manifest.json",
+  "sha256": "ba189cbc52ce0ad7d54ad907171e8027e497ec3b3c25aa777c407f614dcab75c",
+  "verified_files": 822,
+  "changed_files": []
+}

@@ -1,0 +1,36 @@
+{
+  "CommandId": "a621c50f-2f90-41e2-8f44-3ab32b018dde",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T16:01:21.511Z",
+  "ExecutionElapsedTime": "PT0.032S",
+  "ExecutionEndDateTime": "2026-11-20T16:01:21.511Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "Completed H200 run is mirrored; ending only the temporary backup loop.\nActiveState=inactive\nSubState=dead\n2026-11-20T16:01:21+00:00\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "c95de379-e5aa-4006-83a6-9205d21e5966",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 16:01:26 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "718",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "c95de379-e5aa-4006-83a6-9205d21e5966",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

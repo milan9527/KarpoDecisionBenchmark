@@ -1,0 +1,6 @@
+{
+  "id": "21e32430-3486-4563-a8e3-a4b34480e717",
+  "control": "i-0de4f061c2a04fe4b",
+  "script": "ssh -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts ubuntu@172.31.14.72 'sudo /bin/bash -s' <<'H200_PEER'\nset -u\nnvidia-smi --query-gpu=index,name,memory.total,driver_version --format=csv\nnvidia-smi -q -i 0 | sed -n '/Fabric/,/Processes/p' | head -n 16\nsystemctl show nvidia-fabricmanager.service --property=ActiveState,SubState,ExecMainStatus --no-pager\nsystemctl show karpo-rps-install-h200.service karpo-rps-h200-prefetch.service --property=ActiveState,SubState,ExecMainStatus --no-pager\ntail -n 10 /opt/karpo/experiments/vllm-sop-h200-20261120/results/setup/h200-install.log\nif test -f /opt/karpo/experiments/vllm-sop-h200-20261120/results/setup/h200-prefetch.json; then cat /opt/karpo/experiments/vllm-sop-h200-20261120/results/setup/h200-prefetch.json; fi\n\nH200_PEER\n",
+  "utc": "2026-11-20T15:42:19.703796+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "CommandId": "b5d99100-7e8f-4f67-a3d9-a0bccc01a4c5",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T15:42:56.475Z",
+  "ExecutionElapsedTime": "PT2.017S",
+  "ExecutionEndDateTime": "2026-11-20T15:42:58.475Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "download: s3://karpo-benchmark-20261119-115003-632930644527/inputs/sop-h200-v1.tar.gz to ../../../../tmp/sop-h200-v1.tar.gz\n/tmp/sop-h200-v1.tar.gz: OK\n/tmp/sop-h200-v1.tar.gz: OK\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-sop-h200-v1.service; invocation ID: 56be8453fca24128ad172926191b2d00\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "eb294c48-02ce-4400-9de3-df9a874baa87",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 15:43:04 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "858",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "eb294c48-02ce-4400-9de3-df9a874baa87",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

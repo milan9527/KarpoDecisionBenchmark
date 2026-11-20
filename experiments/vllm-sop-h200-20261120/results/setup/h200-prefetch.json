@@ -1,0 +1,5 @@
+{
+  "bytes": 9081227392,
+  "seconds": 98.336508365,
+  "purpose": "Read-only page-cache warming for cold AMI snapshot; not an inference latency measurement"
+}

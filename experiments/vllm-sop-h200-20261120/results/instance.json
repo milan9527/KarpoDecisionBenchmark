@@ -1,0 +1,22 @@
+{
+  "InstanceId": "i-0c777e3714538d624",
+  "InstanceType": "p5en.48xlarge",
+  "PrivateIpAddress": "172.31.14.72",
+  "Placement": {
+    "AvailabilityZoneId": "use2-az1",
+    "GroupName": "",
+    "Tenancy": "default",
+    "AvailabilityZone": "us-east-2a"
+  },
+  "region": "us-east-2",
+  "gpu_model": "H200",
+  "gpu_count": 8,
+  "market": "spot",
+  "reference_usd_per_hour": 32.2512,
+  "max_spot_usd_per_hour": 40,
+  "on_demand_usd_per_hour": 63.296,
+  "automatic_ec2_shutdown": false,
+  "management": "private_ssh_via_control",
+  "security_group": "sg-077c0629417a7de69",
+  "utc": "2026-11-20T15:39:53.996053+00:00"
+}

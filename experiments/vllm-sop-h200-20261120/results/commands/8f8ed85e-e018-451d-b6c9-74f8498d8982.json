@@ -1,0 +1,6 @@
+{
+  "id": "8f8ed85e-e018-451d-b6c9-74f8498d8982",
+  "control": "i-0de4f061c2a04fe4b",
+  "script": "ssh -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts ubuntu@172.31.14.72 'sudo /bin/bash -s' <<'H200_PEER'\nset -u\ndate -u --iso-8601=seconds\nnvidia-smi --query-gpu=index,name,memory.used,utilization.gpu,power.draw --format=csv\nsystemctl show karpo-sop-h200-v2.service --property=ActiveState,SubState,ExecMainStatus --no-pager\nsystemctl list-timers --all --no-pager\nif test -e /run/systemd/shutdown/scheduled; then cat /run/systemd/shutdown/scheduled; else echo no_scheduled_shutdown; fi\ncat /opt/karpo/experiments/vllm-sop-h200-20261120/results/setup/h200-suite-v2-exit.txt\n\nH200_PEER\n",
+  "utc": "2026-11-20T16:00:36.225100+00:00"
+}

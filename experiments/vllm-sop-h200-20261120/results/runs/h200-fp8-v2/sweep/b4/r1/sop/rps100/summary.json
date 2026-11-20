@@ -1,0 +1,112 @@
+{
+  "target_rps": 100,
+  "offered_seconds": 20,
+  "scheduled_requests": 2000,
+  "attempts": 2000,
+  "valid": 397,
+  "failures": 1603,
+  "http_statuses": {
+    "200": 397,
+    "429": 1603
+  },
+  "replica_counts": {
+    "0": 397
+  },
+  "correct": 377,
+  "elapsed_with_drain_s": 23.63608292699996,
+  "valid_rps_with_drain": 16.79635332242379,
+  "steady_valid_rps": 16.8,
+  "p50_ms": 3794.405582999957,
+  "p95_ms": 3822.4752079999007,
+  "p99_ms": 3830.058690999863,
+  "http_p50_ms": 3793.115653999962,
+  "last_quarter_p50_ms": 3803.2880439999417,
+  "max_send_lag_ms": 7.93543099996441,
+  "valid_within_500ms": 9,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 64
+    },
+    {
+      "second": 2,
+      "pending": 64
+    },
+    {
+      "second": 3,
+      "pending": 64
+    },
+    {
+      "second": 4,
+      "pending": 64
+    },
+    {
+      "second": 5,
+      "pending": 64
+    },
+    {
+      "second": 6,
+      "pending": 62
+    },
+    {
+      "second": 7,
+      "pending": 64
+    },
+    {
+      "second": 8,
+      "pending": 64
+    },
+    {
+      "second": 9,
+      "pending": 64
+    },
+    {
+      "second": 10,
+      "pending": 64
+    },
+    {
+      "second": 11,
+      "pending": 62
+    },
+    {
+      "second": 12,
+      "pending": 64
+    },
+    {
+      "second": 13,
+      "pending": 64
+    },
+    {
+      "second": 14,
+      "pending": 64
+    },
+    {
+      "second": 15,
+      "pending": 64
+    },
+    {
+      "second": 16,
+      "pending": 63
+    },
+    {
+      "second": 17,
+      "pending": 64
+    },
+    {
+      "second": 18,
+      "pending": 64
+    },
+    {
+      "second": 19,
+      "pending": 64
+    },
+    {
+      "second": 20,
+      "pending": 64
+    }
+  ],
+  "backlog_slope_per_second": 0.03676470588235294,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": false,
+  "passes_performance_acceptance": false
+}
