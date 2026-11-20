@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-11-20T03:49:10.998506+00:00",
+  "status": "complete",
+  "configs": [
+    {
+      "id": "replicas-1",
+      "ranks": 1,
+      "started_utc": "2026-11-20T03:49:11.200333+00:00",
+      "status": "complete",
+      "startup_seconds": 458.60097850400007,
+      "ended_utc": "2026-11-20T03:59:59.985819+00:00"
+    },
+    {
+      "id": "replicas-2",
+      "ranks": 2,
+      "started_utc": "2026-11-20T04:00:00.507993+00:00",
+      "status": "complete",
+      "startup_seconds": 283.5748469570001,
+      "ended_utc": "2026-11-20T04:07:10.987658+00:00"
+    }
+  ],
+  "active": "replicas-2",
+  "ended_utc": "2026-11-20T04:07:12.371247+00:00"
+}

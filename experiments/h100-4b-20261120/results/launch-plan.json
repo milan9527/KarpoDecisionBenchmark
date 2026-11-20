@@ -1,0 +1,10 @@
+{
+  "frozen_utc": "2026-11-20T03:50:58.818188+00:00",
+  "manifest_sha256": "5338c9880a44eb221377bd65a78d4a1087e602708543861973762844103840da",
+  "inputs_sha256": "371b25e5879383d3c5b2cb8f49cb5eb8c5b0f283e391b3ce41ab459621fe0a62",
+  "bootstrap_sha256": "3f00e497527a8725996277038d859e02282c36be80aa6283ebed56b86fdf30df",
+  "instance_type": "p5.4xlarge",
+  "gpu": "H100 80GB",
+  "calls": 208,
+  "lifecycle": "stop_only"
+}

@@ -1,9 +1,9 @@
 {
-  "checked_utc": "2026-11-20T03:01:05.216350+00:00",
-  "html_sha256": "3e89d76c26722cda09ddd910c7da487aa8308ace9a97cf8b605f237545ff129e",
-  "experiment": "experiments/concise-fp8-20261119",
+  "checked_utc": "2026-11-20T04:14:22.550066+00:00",
+  "html_sha256": "4108d140d02430d535cd054e95e7824220006ed85f6e3e0e7091989dfbd3da06",
+  "experiment": "experiments/family-20261120",
   "checks": [
-    "content:latest_four_variants_only",
+    "content:seven_model_configs_and_two_replica_configs",
     "cards:match_raw_summaries",
     "links:resolve",
     "chart:p50_ms",
@@ -38,5 +38,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 596855
+  "print_pdf_bytes": 620188
 }

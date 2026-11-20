@@ -1,0 +1,11 @@
+{
+  "observed_utc": "2026-11-20T03:41:30.757041+00:00",
+  "status": "passed",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.21.0",
+  "qwen_dependencies": {
+    "flash-linear-attention": "0.5.2",
+    "fla-core": "0.5.2"
+  },
+  "qwen_kernel_import": "passed"
+}

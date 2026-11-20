@@ -1,0 +1,12 @@
+{
+  "checked_utc": "2026-11-20T03:16:50.741587+00:00",
+  "status": "passed",
+  "checks": [
+    "Frozen execution files unchanged",
+    "104 quality observations / 52 paired cases",
+    "Every request has all 200 candidates",
+    "544 planned calls across replicas1 and2"
+  ],
+  "runtime_checked": false,
+  "model_calls": 0
+}

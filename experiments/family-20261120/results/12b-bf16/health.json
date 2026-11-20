@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "model": "12b-bf16",
+  "ranks": 1,
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "attention": "bidirectional",
+  "path": "graphs",
+  "kernels": [
+    "triton-attention"
+  ],
+  "max_length": 8192
+}

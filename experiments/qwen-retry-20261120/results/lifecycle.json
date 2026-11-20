@@ -1,0 +1,9 @@
+{
+  "instance_id": "i-05b24e3b4a7ee864d",
+  "reason": "Qwen dependencies missing in restored image; preserve first attempt and retry",
+  "force_stop": "2026-11-20T03:33:28.849602+00:00",
+  "restart": "2026-11-20T03:39:51.323866+00:00",
+  "same_instance_type": "g7e.12xlarge",
+  "original_instance_restart_attempt": "An error occurred (MaxSpotInstanceCountExceeded) when calling the StartInstances operation: You can't start your Spot Instances because the max Spot Instance count is exceeded.",
+  "actions": "stop and start only; volumes retained"
+}

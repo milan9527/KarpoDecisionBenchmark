@@ -1,0 +1,21 @@
+[
+  "/opt/karpo/venv/bin/python",
+  "-m",
+  "torch.distributed.run",
+  "--standalone",
+  "--nproc_per_node",
+  "1",
+  "-m",
+  "karpo_decision.serve.server",
+  "--checkpoint",
+  "/opt/karpo/models/karpo-9b",
+  "--name",
+  "9b-bf16",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "18440",
+  "--max-length",
+  "8192",
+  "--graphs"
+]

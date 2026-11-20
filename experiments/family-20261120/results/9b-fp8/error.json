@@ -1,0 +1,6 @@
+{
+  "id": "9b-fp8",
+  "started_utc": "2026-11-20T03:28:32.749124+00:00",
+  "status": "failed",
+  "error": "Traceback (most recent call last):\n  File \"/opt/karpo/scripts/family_suite.py\", line 151, in main\n    raise RuntimeError(f\"Server startup failed or timed out: exit={server.poll()}\")\nRuntimeError: Server startup failed or timed out: exit=1\n"
+}

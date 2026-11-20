@@ -1,0 +1,15 @@
+{
+  "model": {
+    "size": "12B",
+    "id": "MachinePulseAI/karpo-decision-12B",
+    "revision": "664640316919ce368750b3e16cc263e927ac6e2b",
+    "weights_bytes": 23923461192,
+    "family": "gemma"
+  },
+  "started_utc": "2026-11-20T03:12:50.456521+00:00",
+  "status": "complete",
+  "seconds": 54.44857335099999,
+  "ended_utc": "2026-11-20T03:13:44.905095+00:00",
+  "weights_bytes": 23923461192,
+  "directory": "/opt/karpo/models/karpo-12b"
+}

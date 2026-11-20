@@ -1,0 +1,7 @@
+{
+  "started_utc": "2026-11-20T03:29:17.747297+00:00",
+  "status": "failed",
+  "configs": [],
+  "error": "Traceback (most recent call last):\n  File \"/opt/karpo/scripts/replica_suite.py\", line 139, in main\n    config, selection = select()\n                        ^^^^^^^^\n  File \"/opt/karpo/scripts/replica_suite.py\", line 42, in select\n    assert status[\"status\"] == \"complete\", \"Family suite must finish successfully first\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Family suite must finish successfully first\n",
+  "ended_utc": "2026-11-20T03:29:17.821838+00:00"
+}

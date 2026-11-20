@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "model": "4b-fp8",
+  "ranks": 1,
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "attention": "bidirectional",
+  "path": "fp8-graphs",
+  "kernels": [],
+  "max_length": 8192
+}

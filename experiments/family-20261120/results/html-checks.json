@@ -1,15 +1,18 @@
 {
-  "checked_utc": "2026-11-20T03:01:04.741808+00:00",
-  "html_sha256": "dd57815298515be6f09c10e5f159fa40bd426e17d7db8933696270feff820679",
+  "checked_utc": "2026-11-20T04:14:22.585806+00:00",
+  "html_sha256": "8f90b9ddddebdeb9aecb46bbff1a6c53b3037b640751497089528a6d55e35d1b",
+  "experiment": "experiments/family-20261120",
   "checks": [
-    "zero_model_calls_and_unmeasured_status_match_evidence",
-    "seven_planned_configs",
-    "all_links_resolve",
-    "download_matches_embedded_data",
-    "responsive_no_overflow",
-    "offline_no_requests",
-    "no_javascript_errors",
-    "print_pdf_generated"
+    "content:seven_model_configs_and_two_replica_configs",
+    "cards:match_raw_summaries",
+    "links:resolve",
+    "chart:p50_ms",
+    "chart:p95_ms",
+    "download:matches_verified_summaries",
+    "offline:zero_external_requests",
+    "responsive:no_document_overflow",
+    "print:pdf_generated",
+    "cloud:matches_resource_record"
   ],
   "viewports": [
     {
@@ -35,5 +38,5 @@
   ],
   "page_errors": [],
   "external_requests": [],
-  "print_pdf_bytes": 374772
+  "print_pdf_bytes": 620188
 }

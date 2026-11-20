@@ -12,6 +12,7 @@ from benchmark import summarize, validate
 from report_common import documentation_metadata, table
 from prepare import digest
 from family_status_report import notice as family_notice
+from latest_report import family_complete
 
 ROOT = Path(__file__).resolve().parents[1]
 EXP = ROOT / "experiments/concise-fp8-20261119"
@@ -226,7 +227,8 @@ def main():
             "[查看实际进度](experiments/family-20261120/STATUS.zh.md)。"
             "下方为 11 月 19 日已完成的 31B 描述实验。\n\n" + main_markdown
         )
-    (ROOT / "RESULTS.zh.md").write_text(main_markdown)
+    if not family_complete():
+        (ROOT / "RESULTS.zh.md").write_text(main_markdown)
     css = (ROOT / "scripts/report.css").read_text()
     esc = html.escape
     table_html = "".join(
@@ -300,7 +302,8 @@ window.addEventListener('afterprint',()=>closed.forEach(x=>x.open=false));render
         "RESULTS": EXP / "RESULTS.zh.md", "PLAN": EXP / "PLAN.zh.md",
         "README": ROOT / "README.md", "ERRORS": EXP / "results/quality-errors.json",
     }
-    for destination in [ROOT / "report.html", EXP / "report.html"]:
+    destinations = [EXP / "report.html"] if family_complete() else [ROOT / "report.html", EXP / "report.html"]
+    for destination in destinations:
         page = re.sub(r"@@([A-Z]+)@@", lambda m: esc(os.path.relpath(targets[m[1]], destination.parent)), html_page)
         if destination.parent == ROOT:
             page = page.replace('<section id="overview">', '<section id="overview">' + family_notice(destination), 1)
@@ -310,7 +313,8 @@ window.addEventListener('afterprint',()=>closed.forEach(x=>x.open=false));render
                 if p.is_file() and p.name != "evidence-sha256.json"}
     (EXP / "results/evidence-sha256.json").write_text(json.dumps(evidence, indent=2) + "\n")
     print(conclusion)
-    print(f"Verified {total} calls; updated main and experiment Markdown/HTML; quality errors={len(mismatches)}.")
+    updated = "experiment" if family_complete() else "main and experiment"
+    print(f"Verified {total} calls; updated {updated} Markdown/HTML; quality errors={len(mismatches)}.")
 
 
 if __name__ == "__main__":

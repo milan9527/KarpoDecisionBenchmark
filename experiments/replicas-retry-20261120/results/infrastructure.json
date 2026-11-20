@@ -1,0 +1,54 @@
+{
+  "instance_id": "i-05b24e3b4a7ee864d",
+  "instance_type": "g7e.12xlarge",
+  "state": "stopped",
+  "observed_utc": "2026-11-20T04:14:14.567758+00:00",
+  "region": "us-east-2",
+  "availability_zone": "us-east-2c",
+  "market": "spot",
+  "spot_request_id": "sir-dfz8i1sj",
+  "spot_type": "persistent",
+  "spot_interruption_behavior": "stop",
+  "instance_shutdown_behavior": "stop",
+  "root_volumes": [
+    {
+      "volume_id": "vol-062a0dd0007413835",
+      "state": "in-use",
+      "size_gib": 300,
+      "type": "gp3",
+      "encrypted": true,
+      "delete_on_termination": false
+    }
+  ],
+  "related_instances": [
+    {
+      "instance_id": "i-048c3784bb87b6d86",
+      "instance_type": "g7e.8xlarge",
+      "state": "stopped",
+      "observed_utc": "2026-11-20T04:14:14.144283+00:00",
+      "region": "us-east-2",
+      "availability_zone": "us-east-2c",
+      "market": "spot",
+      "spot_request_id": "sir-5g1i2rjj",
+      "spot_type": "persistent",
+      "spot_interruption_behavior": "stop",
+      "instance_shutdown_behavior": "stop",
+      "root_volumes": [
+        {
+          "volume_id": "vol-02af28534c5b54eee",
+          "state": "in-use",
+          "size_gib": 300,
+          "type": "gp3",
+          "encrypted": true,
+          "delete_on_termination": false
+        }
+      ]
+    }
+  ],
+  "vcpus": 48,
+  "memory_gib": 512,
+  "gpu_count": 2,
+  "gpu_type": "RTX PRO 6000 Blackwell Server Edition",
+  "gpu_memory_gib_each": 96,
+  "family_gpus_per_request": 1
+}

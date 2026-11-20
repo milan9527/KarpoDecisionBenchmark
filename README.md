@@ -1,63 +1,72 @@
 # Karpo Decision Benchmark
 
-独立的 Karpo 决策模型测试项目。当前业务要求：每次完整传入 200 个工具 / SOP 候选，由模型一次选择；程序不做业务域判断、召回或候选过滤，不执行真实金融操作。
+独立的 Karpo 工具 / SOP 选择测试项目。每次完整传入 200 个候选，由模型一次选择；程序不做业务域判断或候选过滤。
 
-**2026-11-20 新实验进度：GPU 实测尚未开始。** 12B / 9B / 4B 的 FP8 与 BF16 对照、同机 31B 基线已经冻结，本地预检通过。G7e、B200 和替代 H100 的启动尝试未取得 AWS 容量，新增模型调用为 0；原 GPU 仍为 stopped。方案、容量记录及资源核对见 [新实验 HTML](experiments/family-20261120/report.html) 和 [状态说明](experiments/family-20261120/STATUS.zh.md)。下方为上一次已完成的实测。
+**最新结果：2026-11-20**
 
-测试对象为 `MachinePulseAI/karpo-decision-31B`。当前报告使用同一个 FP8 + Triton / Graphs 服务的四组描述实验，共记录并核验 848 次调用。
+在 RTX PRO 6000 Blackwell 上完成 31B / 12B / 9B / 4B 的七组单卡配置，以及官方单副本 / 双副本对照，共核验 **1,712 次调用**。这批测试中，最快的 4B FP8 为 123.3 ms、98/104 参考一致；质量最好的 12B BF16 为 432.6 ms、104/104。这里延迟均为 P50，没有配置达到 100 ms。
 
-**查看结果**
+主报告：[report.html](report.html)。支持 P50/P95 切换、质量与换序稳定性、FP8/BF16 对照、并发、显存与启动记录、下载汇总 JSON，以及打印 PDF。
 
-主报告：[report.html](report.html)。支持四组描述的 P50/P95 对比、正确率与错误明细、候选换序稳定性、并发数据、下载汇总 JSON，以及打印为 PDF。页面与下载数据均使用本轮完整 200 候选实验。
+文字报告：[RESULTS.zh.md](RESULTS.zh.md)。所有数值由逐条响应重算；实例状态是带时间的记录。
 
-文字报告：[RESULTS.zh.md](RESULTS.zh.md)。实验计划及逐条记录位于 [experiments/concise-fp8-20261119](experiments/concise-fp8-20261119/)。实例状态是带时间的记录，不实时查询 AWS。
+| 配置 | P50 | P95 | 参考一致 | 100ms 内正确 |
+|---|---:|---:|---:|---:|
+| 31B FP8 | 706.3 ms | 708.6 ms | 102/104 | 0/104 |
+| 12B FP8 | 277.7 ms | 278.9 ms | 103/104 | 0/104 |
+| 12B BF16 | 432.6 ms | 433.8 ms | 104/104 | 0/104 |
+| 9B FP8 | 176.8 ms | 177.3 ms | 83/104 | 0/104 |
+| 9B BF16 | 263.0 ms | 263.6 ms | 82/104 | 0/104 |
+| 4B FP8 | 123.3 ms | 124.1 ms | 98/104 | 0/104 |
+| 4B BF16 | 169.6 ms | 169.8 ms | 98/104 | 0/104 |
 
-| 描述 | 原有场景 P50 | 原有观察正确 | 新增边界正确 |
+每行是 52 个合成案例的两种候选顺序，共 104 次质量观察，不能代表 Redotpay 生产准确率或 SOTA。9B / 4B 的模型大小与本批质量不呈单调关系，具体错误和顺序变化见 HTML 及 [逐条错误](experiments/family-20261120/results/quality-errors.json)。
+
+**副本与高并发**
+
+副本测试按预先冻结的规则，在 FP8 配置中选择没有新增 31B 基线错误的最快模型，实际选中 `31b-fp8`。每张 GPU 加载一份完整模型，单次请求由一张卡处理。该规则与全配置质量对照分别报告。
+
+| GPU 副本 | 并发8有效请求/秒 | 并发8 P95 | 质量参考一致 |
 |---|---:|---:|---:|
-| 原始长描述 | 1346.8 ms | 80/80 | 22/24 |
-| 英文精简，保留条件 | 705.4 ms | 80/80 | 22/24 |
-| 中文精简，保留条件 | 827.6 ms | 80/80 | 23/24 |
-| 公共规则 + 候选引用 | 554.7 ms | 78/80 | 20/24 |
+| 1 | 1.442 | 5533.2 ms | 102/104 |
+| 2 | 2.850 | 2813.8 ms | 102/104 |
 
-英文精简适合作为继续优化的起点，本批观察的选择与基线一致，P50 降低约 48%；公共规则去重更快，但新增错误。四组均未达到 100 ms。英文精简并发 8 时吞吐约 1.43 请求/秒、P95 约 5.59 秒，官方服务仍有明显排队。
+并发扫描包含重复请求，属于短时吞吐和排队观察，不能作为持续高负载 SLA。增加副本不会直接将单次模型计算时间按卡数等比分摊。
 
-**测试数据与计时**
+**输入与计时**
 
-- 每次 200 个候选 SOP：10 个业务域 × 20 类处理动作。
-- 原有 40 个合成快照，新增 12 个优先级、边界及干扰用例；每例测试原序及反序。
-- 每组 104 次质量观察；四组共 416 次质量观察，另有 32 次预热、384 次并发观察及 16 次结束基线复测。
-- 各组保留相同状态、候选 ID、顺序及参考答案，只改变描述表达。
+候选描述采用上一轮的英文精简版本，状态保留原有中英文；候选、条件、参考答案及顺序均已冻结。40 个原有案例、12 个边界案例，每例测原序和反序。程序没有业务域预筛选，输入不截断。
 
-配对观察和重复请求不是新增独立案例，合成规则不能代表 Redotpay 真实政策或生产准确率，也不能证明 SOTA。公共规则去重利用了本目录的重复规则结构，不能推断 200 条完全不同的 SOP 也能同比压缩。
+客户端与模型同机，通过 loopback HTTP 计时到完整响应，包含预处理与排队，未包含生产入口网络或工具执行。预热单列，错误计入尝试分母。系列实验的 FP8 配置扫描并发 1/2/4/8，每格24次；副本实验扫描 1/2/4/8/16，每格32次。各模型使用自己的 tokenizer。
 
-客户端与模型运行在同一实例，以 loopback HTTP 发起请求；延迟包含预处理、排队、推理及读取完整响应，未包含生产入口网络和工具执行。预热单列，错误计入尝试分母。并发 1/2/4/8 每格 24 次，属于短时扫描。
+**GPU 与部署**
 
-官方 `Server-Timing` 的 `model` 字段包含 Runner 锁等待，不是纯 GPU kernel 耗时。增加 HTTP worker 不能直接视为推理吞吐提升。
+实际实例为 `g7e.12xlarge` Spot：48 vCPU、512 GiB内存、两张 RTX PRO 6000 Blackwell 96GB。系列模型每次使用一张 GPU，副本对照分别使用一张和两张。原 `g7e.8xlarge` 实例保留。
 
-**重新生成报告**
+部署使用 Karpo 官方 HTTP 服务（`karpo_decision.serve.server`），由 `torch.distributed.run` 启动。PyTorch `2.14.1+cu130`、Transformers `5.21.0`；代码 revision 为 `6600011eb5cf46232d056ec0717dc726146d29de`。Gemma 模型使用 Triton Attention + Graphs，Qwen 模型使用 Graphs；FP8/BF16 分开对照。具体参数和 health 响应保存在每个配置的结果目录。
+
+首轮镜像缺少 Qwen 依赖，9B/4B 四个配置在启动阶段失败，模型调用为0。补装 `flash-linear-attention==0.5.2`、`fla-core==0.5.2`、`einops==0.8.2` 后，在同一实例重启后单独重试；模型与核心运行库版本保持不变。首轮成功的31B/12B数据及失败记录全部保留。
+
+另外尝试了 B200 和 H100。最新 H100 尝试覆盖 us-east-1 / us-west-2 共10个可用区，Spot及按需20次均缺少容量，没有新增 H100 实例或测量结果。见 [H100记录](experiments/h100-4b-20261120/STATUS.zh.md)。
+
+**实验与复核**
+
+- [系列实验](experiments/family-20261120/PLAN.zh.md)：首轮三个成功配置共528次调用；合并核验见 [verification.json](experiments/family-20261120/results/verification.json)。
+- [Qwen依赖修复后重试](experiments/qwen-retry-20261120/PLAN.zh.md)：四个配置共640次，输入逐字相同。
+- [单副本与双副本](experiments/replicas-retry-20261120/PLAN.zh.md)：544次；原始选择规则和首次退出记录也保留。
+- [上一轮描述实验](experiments/concise-fp8-20261119/report.html)：四种描述共848次，属于历史结果。历史表的延迟使用80次原有观察，新系列表使用原有及边界共104次，口径分别标明。
+
+重新生成主 HTML 和 Markdown：
 
 ```bash
 python -m pip install -e .
-python scripts/family_status_report.py
 python scripts/build_html.py
 ```
 
-生成器先核验冻结输入、逐条响应、质量覆盖和汇总指标，再同时更新主目录与实验目录的 HTML / Markdown。该操作不启动 GPU 或修改云资源。`scripts/report.py` 和 `scripts/concise_report.py` 使用同一个生成入口。
-
-输入生成及测试执行脚本分别为 `scripts/concise_prepare.py`、`scripts/concise_benchmark.py` 和 `scripts/concise_suite.py`。脚本拒绝覆盖已有实验；进行新一轮测试时应创建独立的实验目录并重新冻结输入。
-
-**模型与推理环境**
-
-本轮为 AWS `us-east-2c` 的 `g7e.8xlarge`：32 vCPU、256 GiB 内存，单张 RTX PRO 6000 Blackwell 96GB。
-
-上游代码 revision：`6600011eb5cf46232d056ec0717dc726146d29de`。权重 revision：`b8e6fd7463cea8662c556d6257955d7ef9c10d19`。实际运行环境与启动参数见 [bootstrap.json](experiments/concise-fp8-20261119/results/bootstrap.json) 和 [server-command.json](experiments/concise-fp8-20261119/results/server-command.json)。
-
-上游 CUDA Graphs 仅覆盖单问题、纯文本、最长 8192 tokens 的请求。原始长描述超过此长度，自动回退至非 Graphs 路径；本轮衡量精简描述在同一启动配置下的整体效果，不能分别归因于 token 数减少或 Graphs。
-
-FP8 路径先加载原始权重再量化部分 decoder projections，运行时显存占用不等于启动所需显存。RTX PRO 6000 的计算能力为 sm_120，本轮使用上游 Triton 路径；该版本 FROST / FA4 的代码条件为 GPU 计算能力主版本 10（10.x），例如 B200。
+`scripts/report.py` 使用同一入口。生成器校验冻结文件、全部响应、覆盖范围、汇总数值和停止状态，不启动 GPU。运行新测试时应创建新的实验目录并冻结配置；现有执行文件及输入不可覆盖。
 
 **实例保留**
 
-本轮使用 persistent Spot，关机和回收行为均为 stop，系统盘随实例删除为 false。GPU 实例已确认 **stopped**，实例及 EBS 保留，约 62.6GB 原始权重位于根 EBS。
+测试结束后已确认新旧 GPU 实例均为 **stopped**，没有 terminate。实例及 EBS 上的模型保留；Spot中断行为、实例关机行为均为stop，系统盘随实例删除为false。最近核对时间：2026-11-20T04:14:14.567758+00:00。
 
-用户要求：**测试结束后只 stop，不 terminate**。当前资源状态见 [infrastructure.json](experiments/concise-fp8-20261119/results/infrastructure.json)，权重位置和模型进程退出检查见 [postflight.json](experiments/concise-fp8-20261119/results/postflight.json)。
+[资源状态](experiments/family-20261120/results/infrastructure.json) · [Qwen结束检查](experiments/qwen-retry-20261120/results/postflight.json) · [副本结束检查](experiments/replicas-retry-20261120/results/postflight.json)

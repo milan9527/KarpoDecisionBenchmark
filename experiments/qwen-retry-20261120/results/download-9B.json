@@ -1,0 +1,15 @@
+{
+  "model": {
+    "size": "9B",
+    "id": "MachinePulseAI/karpo-decision-9B",
+    "revision": "0fb729874694e9a4928882eefb2cb1aa49b93735",
+    "weights_bytes": 16789656992,
+    "family": "qwen"
+  },
+  "started_utc": "2026-11-20T03:41:59.751646+00:00",
+  "status": "complete",
+  "seconds": 0.12496518700000081,
+  "ended_utc": "2026-11-20T03:41:59.876610+00:00",
+  "weights_bytes": 16789656992,
+  "directory": "/opt/karpo/models/karpo-9b"
+}

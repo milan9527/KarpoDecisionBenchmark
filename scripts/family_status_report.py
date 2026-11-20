@@ -16,6 +16,8 @@ def load(path):
 
 
 def notice(destination):
+    if (EXP / "results/suite-status.json").exists():
+        return ""
     path = EXP / "results/capacity-status.json"
     if not path.exists():
         return ""
@@ -34,6 +36,13 @@ def notice(destination):
 
 
 def main():
+    suite = EXP / "results/suite-status.json"
+    if suite.exists():
+        from latest_report import family_complete
+        if family_complete():
+            from family_report import main as render
+            return render()
+        raise RuntimeError("A GPU run has started; refusing to render the historical capacity blocker as current.")
     status = load(EXP / "results/capacity-status.json")
     preflight = load(EXP / "results/preflight.json")
     manifest = load(EXP / "manifest.json")

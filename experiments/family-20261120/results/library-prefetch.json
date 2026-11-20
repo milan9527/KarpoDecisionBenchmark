@@ -1,0 +1,241 @@
+{
+  "files": [
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcublasLt.so.13",
+      "bytes": 541607888
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so",
+      "bytes": 502842281
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libtorch_cpu.so",
+      "bytes": 446314593
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcufft.so.12",
+      "bytes": 286542352
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cudnn/lib/libcudnn_engines_precompiled.so.9",
+      "bytes": 260072464
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nccl/lib/libnccl.so.2",
+      "bytes": 252204648
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cusparselt/lib/libcusparseLt.so.0",
+      "bytes": 233912153
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cudnn/lib/libcudnn_engines_tensor_ir.so.9",
+      "bytes": 201345448
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcusparse.so.12",
+      "bytes": 162565256
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcusolver.so.12",
+      "bytes": 141152872
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcurand.so.10",
+      "bytes": 132698328
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cudnn/lib/libcudnn_graph.so.9",
+      "bytes": 128148560
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cudnn/lib/libcudnn_ext.so.9",
+      "bytes": 127944928
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libnvJitLink.so.13",
+      "bytes": 117247464
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libnvrtc.alt.so.13",
+      "bytes": 109821488
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libnvrtc.so.13",
+      "bytes": 109338064
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cudnn/lib/libcudnn_adv.so.9",
+      "bytes": 109169040
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcusolverMg.so.12",
+      "bytes": 103956840
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cudnn/lib/libcudnn_heuristic.so.9",
+      "bytes": 60822216
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcublas.so.13",
+      "bytes": 54177976
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda_linalg.so",
+      "bytes": 43988825
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/libnvshmem_host.so.3",
+      "bytes": 41241312
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cudnn/lib/libcudnn_ops.so.9",
+      "bytes": 39855824
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libtorch_python.so",
+      "bytes": 34488761
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cudnn/lib/libcudnn_engines_runtime_compiled.so.9",
+      "bytes": 33586832
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libnvperf_host.so",
+      "bytes": 32405040
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libnvperf_target.so",
+      "bytes": 5304944
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libnvrtc-builtins.so.13.0",
+      "bytes": 4380616
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libnvrtc-builtins.alt.so.13.0",
+      "bytes": 4372424
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cudnn/lib/libcudnn_cnn.so.9",
+      "bytes": 4203896
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcupti.so.13",
+      "bytes": 4152208
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libtorch_nvshmem.so",
+      "bytes": 4053793
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcufile.so.0",
+      "bytes": 3170800
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libgomp.so.1",
+      "bytes": 2115577
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libc10.so",
+      "bytes": 1649953
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcheckpoint.so",
+      "bytes": 1382856
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/nvshmem_transport_ibgda.so.3",
+      "bytes": 1076872
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/nvshmem_transport_ibrc.so.3",
+      "bytes": 1042816
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/nvshmem_transport_ibdevx.so.3",
+      "bytes": 1042080
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/nvshmem_transport_libfabric.so.3",
+      "bytes": 1026672
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcufftw.so.12",
+      "bytes": 991704
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libnvblas.so.13",
+      "bytes": 737504
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcudart.so.13",
+      "bytes": 704288
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libpcsamplingutil.so",
+      "bytes": 703904
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libc10_cuda.so",
+      "bytes": 673217
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libtorch.so",
+      "bytes": 145745
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cudnn/lib/libcudnn.so.9",
+      "bytes": 129240
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/nvshmem_bootstrap_uid.so.3",
+      "bytes": 73704
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libshm.so",
+      "bytes": 58977
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/nvshmem_bootstrap_pmix.so.3",
+      "bytes": 56504
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/nvshmem_transport_ucx.so.3",
+      "bytes": 55912
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/nvshmem_bootstrap_pmi2.so.3",
+      "bytes": 54112
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libcufile_rdma.so.1",
+      "bytes": 43320
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/cu13/lib/libnvtx3interop.so.1",
+      "bytes": 40160
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/nvshmem_bootstrap_pmi.so.3",
+      "bytes": 39456
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libcaffe2_nvrtc.so",
+      "bytes": 24465
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/nvshmem_bootstrap_mpi.so.3",
+      "bytes": 23952
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/nvidia/nvshmem/lib/nvshmem_bootstrap_shmem.so.3",
+      "bytes": 19704
+    },
+    {
+      "file": "/opt/karpo/venv/lib/python3.12/site-packages/torch/lib/libtorch_global_deps.so",
+      "bytes": 18681
+    }
+  ],
+  "seconds": 138.797619578
+}

@@ -1,0 +1,27 @@
+{
+  "observed_utc": "2026-11-20T03:29:17.092424+00:00",
+  "suite_status": "partial",
+  "gpu_compute_processes": "",
+  "models": [
+    {
+      "size": "31B",
+      "directory": "/opt/karpo/models/karpo-31b",
+      "weights_bytes": 62551812872
+    },
+    {
+      "size": "12B",
+      "directory": "/opt/karpo/models/karpo-12b",
+      "weights_bytes": 23923461192
+    },
+    {
+      "size": "9B",
+      "directory": "/opt/karpo/models/karpo-9b",
+      "weights_bytes": 16789656992
+    },
+    {
+      "size": "4B",
+      "directory": "/opt/karpo/models/karpo-4b",
+      "weights_bytes": 9081227392
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "instance_id": "i-05b24e3b4a7ee864d",
+  "instance_type": "g7e.12xlarge",
+  "region": "us-east-2",
+  "availability_zone": "us-east-2c",
+  "market": "spot",
+  "launch_time": "2026-11-20T03:06:23+00:00",
+  "spot_request_id": "sir-dfz8i1sj",
+  "lifecycle_policy": "stop_only",
+  "prior_capacity_record": "capacity-status.json",
+  "family_input_bundle_sha256": {
+    "sha256": "f0192352c075969905da4e1298067ea5237d4e6212f14e29c15fa2f507b0b3f2",
+    "bytes": 118623
+  },
+  "replica_input_bundle_sha256": "6506e8645f9000d8547f87ae7fe1bd714dd1b713f9748752c9939b75a41e1688"
+}

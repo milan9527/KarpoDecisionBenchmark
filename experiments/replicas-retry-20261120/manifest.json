@@ -1,0 +1,32 @@
+{
+  "frozen_utc": "2026-11-20T03:31:49.201896+00:00",
+  "selection": "Fastest FP8 with all104 valid and zero new errors versus same-host31B",
+  "replicas": [
+    1,
+    2
+  ],
+  "max_length": 8192,
+  "warmup": 8,
+  "quality_existing": 80,
+  "quality_boundary": 24,
+  "concurrency": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "concurrency_requests": 32,
+  "expected_calls": 544,
+  "files": {
+    "scripts/replica_retry_suite.py": "45fb0ff2c3231c2d935e4a557401a4cb0bacf9fd50f47a950292fa7c510ad451",
+    "scripts/benchmark.py": "3eb29a865be73ea3a70e9fd16f1d2e72403ecf6edb900ada7d263be8ad4b7dc2",
+    "scripts/concise_suite.py": "4627b3f85999ff48abaa2c8de8a35923e9c8166d4b27f55111d7bad4e324849c",
+    "experiments/replicas-retry-20261120/PLAN.zh.md": "ee806def370548f011a3154785acde9240d36137928e8791f7cf60e2752fd80b",
+    "experiments/family-20261120/manifest.json": "533f1157e2f12af2c218b81f690c9d8f1b92b8813e62f8a7c32aefbc0da21eb6",
+    "experiments/family-20261120/requests.json": "e7adb21e5f93c668415ea2466af992862ba011d3a828076a46ce816478bf0765",
+    "experiments/qwen-retry-20261120/manifest.json": "e6b2b802f72d2d20ef6825e39a8b77694f49259f2a4e177e33180da9e211fe87",
+    "experiments/replicas-20261120/manifest.json": "f15b3e4b37ac96b6b98a055ff8a865c92a971a6d3880dc3ed3d272b01f10731c"
+  },
+  "selection_rule_originally_frozen_utc": "2026-11-20T03:13:49.133593+00:00"
+}

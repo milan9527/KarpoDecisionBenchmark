@@ -1,0 +1,47 @@
+{
+  "observed_utc": "2026-11-20T04:10:15.179185+00:00",
+  "instance_id": "i-05b24e3b4a7ee864d",
+  "state_before": "stopping",
+  "guest_power_down_confirmed": true,
+  "terminate_called": false,
+  "action": "StopInstances Force=True after guest completed shutdown",
+  "changes": [
+    {
+      "InstanceId": "i-05b24e3b4a7ee864d",
+      "CurrentState": {
+        "Code": 64,
+        "Name": "stopping"
+      },
+      "PreviousState": {
+        "Code": 64,
+        "Name": "stopping"
+      }
+    }
+  ],
+  "followup": {
+    "observed_utc": "2026-11-20T04:13:35.909169+00:00",
+    "state_before": "stopping",
+    "guest_shutdown_console": {
+      "instance_id": "i-05b24e3b4a7ee864d",
+      "console_timestamp": "2026-11-20 04:09:06+00:00",
+      "guest_power_down": true,
+      "power_down_lines": [
+        "[ 1637.052172] reboot: Power down"
+      ]
+    },
+    "action": "StopInstances Force=True SkipOsShutdown=True; guest already powered down",
+    "changes": [
+      {
+        "InstanceId": "i-05b24e3b4a7ee864d",
+        "CurrentState": {
+          "Code": 64,
+          "Name": "stopping"
+        },
+        "PreviousState": {
+          "Code": 64,
+          "Name": "stopping"
+        }
+      }
+    ]
+  }
+}

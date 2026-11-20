@@ -1,0 +1,23 @@
+{
+  "checked_utc": "2026-11-20T03:37:16.104297+00:00",
+  "status": "passed",
+  "scope": "Three completed Gemma configurations only; Qwen retries pending",
+  "total_calls": 528,
+  "checks": [
+    {
+      "config": "31b-fp8",
+      "observations": 208,
+      "raw_sha256": "983111c6ab52f364c2f59ce95d846c6125987866e1bc740a98b3ccd2f7640c44"
+    },
+    {
+      "config": "12b-fp8",
+      "observations": 208,
+      "raw_sha256": "23ba127b393fa3ee4215d3c762f4f634371d8f2c732e5512e76a0b4e2791320f"
+    },
+    {
+      "config": "12b-bf16",
+      "observations": 112,
+      "raw_sha256": "550797e7836cc499c2a15ede73f055e438225e1d4d8f196f72a8bb93337e32be"
+    }
+  ]
+}

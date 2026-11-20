@@ -1,0 +1,22 @@
+{
+  "checked_utc": "2026-11-20T04:14:18.171644+00:00",
+  "all_complete": true,
+  "total_calls": 544,
+  "checks": [
+    {
+      "replicas": 1,
+      "observations": 272,
+      "raw_sha256": "1f857288b00b447a1fb172102362dd3b48b5d31ca41e9e37b53889af3f5f51db"
+    },
+    {
+      "replicas": 2,
+      "observations": 272,
+      "raw_sha256": "cbca6dfe952bc0fda9a8125fd4cd2260e82d2abe6a485fad1a4872f3089a0b30"
+    }
+  ],
+  "comparison": {
+    "same_choices": 104,
+    "new_errors": 0,
+    "fixed_errors": 0
+  }
+}

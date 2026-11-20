@@ -1,0 +1,65 @@
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 14216.58it/s]
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/opt/karpo/venv/lib/python3.12/site-packages/karpo_decision/families/qwen/packed.py", line 38, in _kernels
+[rank0]:     from fla.modules.conv.causal_conv1d import causal_conv1d
+[rank0]: ModuleNotFoundError: No module named 'fla'
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank0]:   File "<frozen runpy>", line 88, in _run_code
+[rank0]:   File "/opt/karpo/venv/lib/python3.12/site-packages/karpo_decision/serve/server.py", line 428, in <module>
+[rank0]:     main()
+[rank0]:   File "/opt/karpo/venv/lib/python3.12/site-packages/karpo_decision/serve/server.py", line 399, in main
+[rank0]:     decider, warmup = load_decider(args.checkpoint, device, args.max_length, fp8=args.fp8,
+[rank0]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/karpo/venv/lib/python3.12/site-packages/karpo_decision/serve/server.py", line 128, in load_decider
+[rank0]:     decider = Decider.from_pretrained(checkpoint, device=device, max_length=max_length)
+[rank0]:               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/karpo/venv/lib/python3.12/site-packages/karpo_decision/decider.py", line 43, in from_pretrained
+[rank0]:     return cls(checkpoints.load(directory, device), **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/karpo/venv/lib/python3.12/site-packages/karpo_decision/decider.py", line 35, in __init__
+[rank0]:     self.model = ckpt.family.Packed(ckpt.backbone, ckpt.config.attention).eval()
+[rank0]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/karpo/venv/lib/python3.12/site-packages/karpo_decision/families/qwen/packed.py", line 71, in __init__
+[rank0]:     self._delta_rule, self._varlen, self._conv = _kernels()
+[rank0]:                                                  ^^^^^^^^^^
+[rank0]:   File "/opt/karpo/venv/lib/python3.12/site-packages/karpo_decision/families/qwen/packed.py", line 41, in _kernels
+[rank0]:     raise ImportError("the packed path needs flash-linear-attention: pip install 'karpo-decision[qwen]'") from error
+[rank0]: ImportError: the packed path needs flash-linear-attention: pip install 'karpo-decision[qwen]'
+E1120 03:29:15.330000 4469 opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/api.py:1002] failed (exitcode: 1) local_rank: 0 (pid: 4484) of binary: /opt/karpo/venv/bin/python
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/run.py", line 1142, in <module>
+    main()
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/run.py", line 1138, in main
+    run(args)
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/run.py", line 1129, in run
+    elastic_launch(
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 197, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 386, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+karpo_decision.serve.server FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-20_03:29:15
+  host      : ip-172-31-40-12.us-east-2.compute.internal
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 4484) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

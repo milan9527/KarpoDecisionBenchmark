@@ -1,0 +1,57 @@
+{
+  "started_utc": "2026-11-20T03:10:30.865199+00:00",
+  "status": "partial",
+  "configs": [
+    {
+      "id": "31b-fp8",
+      "started_utc": "2026-11-20T03:12:50.457533+00:00",
+      "status": "complete",
+      "startup_seconds": 383.18894299199997,
+      "ended_utc": "2026-11-20T03:21:41.302253+00:00"
+    },
+    {
+      "id": "12b-fp8",
+      "started_utc": "2026-11-20T03:21:42.007428+00:00",
+      "status": "complete",
+      "startup_seconds": 126.7074303930001,
+      "ended_utc": "2026-11-20T03:24:47.266165+00:00"
+    },
+    {
+      "id": "12b-bf16",
+      "started_utc": "2026-11-20T03:24:47.844033+00:00",
+      "status": "complete",
+      "startup_seconds": 174.96970178699985,
+      "ended_utc": "2026-11-20T03:28:32.100455+00:00"
+    },
+    {
+      "id": "9b-fp8",
+      "started_utc": "2026-11-20T03:28:32.749124+00:00",
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/opt/karpo/scripts/family_suite.py\", line 151, in main\n    raise RuntimeError(f\"Server startup failed or timed out: exit={server.poll()}\")\nRuntimeError: Server startup failed or timed out: exit=1\n",
+      "ended_utc": "2026-11-20T03:28:44.815841+00:00"
+    },
+    {
+      "id": "9b-bf16",
+      "started_utc": "2026-11-20T03:28:45.213015+00:00",
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/opt/karpo/scripts/family_suite.py\", line 151, in main\n    raise RuntimeError(f\"Server startup failed or timed out: exit={server.poll()}\")\nRuntimeError: Server startup failed or timed out: exit=1\n",
+      "ended_utc": "2026-11-20T03:28:57.279286+00:00"
+    },
+    {
+      "id": "4b-fp8",
+      "started_utc": "2026-11-20T03:28:57.676684+00:00",
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/opt/karpo/scripts/family_suite.py\", line 151, in main\n    raise RuntimeError(f\"Server startup failed or timed out: exit={server.poll()}\")\nRuntimeError: Server startup failed or timed out: exit=1\n",
+      "ended_utc": "2026-11-20T03:29:06.726646+00:00"
+    },
+    {
+      "id": "4b-bf16",
+      "started_utc": "2026-11-20T03:29:07.054457+00:00",
+      "status": "failed",
+      "error": "Traceback (most recent call last):\n  File \"/opt/karpo/scripts/family_suite.py\", line 151, in main\n    raise RuntimeError(f\"Server startup failed or timed out: exit={server.poll()}\")\nRuntimeError: Server startup failed or timed out: exit=1\n",
+      "ended_utc": "2026-11-20T03:29:16.104484+00:00"
+    }
+  ],
+  "active": "4b-bf16",
+  "ended_utc": "2026-11-20T03:29:17.052597+00:00"
+}

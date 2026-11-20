@@ -1,0 +1,204 @@
+{
+  "name": "karpo-h1004b-20261120-035146",
+  "started_utc": "2026-11-20T03:51:46.075601+00:00",
+  "attempts": [
+    {
+      "utc": "2026-11-20T03:51:47.530520+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1a",
+      "market": "spot",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1a). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1b, us-east-1c, us-east-1d, us-east-1e, us-east-1f."
+    },
+    {
+      "utc": "2026-11-20T03:51:48.274547+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1b",
+      "market": "spot",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1b). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1a, us-east-1c, us-east-1d, us-east-1e, us-east-1f."
+    },
+    {
+      "utc": "2026-11-20T03:51:49.021577+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1c",
+      "market": "spot",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1c). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1a, us-east-1b, us-east-1d, us-east-1e, us-east-1f."
+    },
+    {
+      "utc": "2026-11-20T03:51:49.794677+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1d",
+      "market": "spot",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1d). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1a, us-east-1b, us-east-1c, us-east-1e, us-east-1f."
+    },
+    {
+      "utc": "2026-11-20T03:51:50.581694+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1e",
+      "market": "spot",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1e). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1a, us-east-1b, us-east-1c, us-east-1d, us-east-1f."
+    },
+    {
+      "utc": "2026-11-20T03:51:51.399377+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1f",
+      "market": "spot",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1f). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1a, us-east-1b, us-east-1c, us-east-1d, us-east-1e."
+    },
+    {
+      "utc": "2026-11-20T03:51:52.106979+00:00",
+      "region": "us-west-2",
+      "az": "us-west-2a",
+      "market": "spot",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-west-2a). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-west-2b, us-west-2c, us-west-2d."
+    },
+    {
+      "utc": "2026-11-20T03:51:52.826471+00:00",
+      "region": "us-west-2",
+      "az": "us-west-2b",
+      "market": "spot",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-west-2b). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-west-2a, us-west-2c, us-west-2d."
+    },
+    {
+      "utc": "2026-11-20T03:51:53.654281+00:00",
+      "region": "us-west-2",
+      "az": "us-west-2c",
+      "market": "spot",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-west-2c). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-west-2a, us-west-2b, us-west-2d."
+    },
+    {
+      "utc": "2026-11-20T03:51:54.534761+00:00",
+      "region": "us-west-2",
+      "az": "us-west-2d",
+      "market": "spot",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-west-2d). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-west-2a, us-west-2b, us-west-2c."
+    },
+    {
+      "utc": "2026-11-20T03:51:55.343703+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1a",
+      "market": "on-demand",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1a). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1b, us-east-1c, us-east-1d, us-east-1e, us-east-1f."
+    },
+    {
+      "utc": "2026-11-20T03:51:56.216663+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1b",
+      "market": "on-demand",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1b). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1a, us-east-1c, us-east-1d, us-east-1e, us-east-1f."
+    },
+    {
+      "utc": "2026-11-20T03:51:56.899472+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1c",
+      "market": "on-demand",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1c). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1a, us-east-1b, us-east-1d, us-east-1e, us-east-1f."
+    },
+    {
+      "utc": "2026-11-20T03:51:57.627050+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1d",
+      "market": "on-demand",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1d). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1a, us-east-1b, us-east-1c, us-east-1e, us-east-1f."
+    },
+    {
+      "utc": "2026-11-20T03:51:58.367158+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1e",
+      "market": "on-demand",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1e). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1a, us-east-1b, us-east-1c, us-east-1d, us-east-1f."
+    },
+    {
+      "utc": "2026-11-20T03:51:59.134856+00:00",
+      "region": "us-east-1",
+      "az": "us-east-1f",
+      "market": "on-demand",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-east-1f). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1a, us-east-1b, us-east-1c, us-east-1d, us-east-1e."
+    },
+    {
+      "utc": "2026-11-20T03:51:59.979300+00:00",
+      "region": "us-west-2",
+      "az": "us-west-2a",
+      "market": "on-demand",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-west-2a). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-west-2b, us-west-2c, us-west-2d."
+    },
+    {
+      "utc": "2026-11-20T03:52:00.936757+00:00",
+      "region": "us-west-2",
+      "az": "us-west-2b",
+      "market": "on-demand",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-west-2b). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-west-2a, us-west-2c, us-west-2d."
+    },
+    {
+      "utc": "2026-11-20T03:52:01.875431+00:00",
+      "region": "us-west-2",
+      "az": "us-west-2c",
+      "market": "on-demand",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-west-2c). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-west-2a, us-west-2b, us-west-2d."
+    },
+    {
+      "utc": "2026-11-20T03:52:02.702633+00:00",
+      "region": "us-west-2",
+      "az": "us-west-2d",
+      "market": "on-demand",
+      "type": "p5.4xlarge",
+      "error_code": "InsufficientInstanceCapacity",
+      "error": "We currently do not have sufficient p5.4xlarge capacity in the Availability Zone you requested (us-west-2d). Our system will be working on provisioning additional capacity. You can currently get p5.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-west-2a, us-west-2b, us-west-2c."
+    }
+  ],
+  "lifecycle_policy": "stop_only",
+  "status": "capacity_unavailable",
+  "ended_utc": "2026-11-20T03:52:03.522776+00:00",
+  "observed_utc": "2026-11-20T03:52:31.176943+00:00",
+  "model_calls": 0,
+  "new_instances_created": 0,
+  "resource_checks": [
+    {
+      "region": "us-east-1",
+      "instances": [],
+      "matching_active_spot_requests": []
+    },
+    {
+      "region": "us-west-2",
+      "instances": [],
+      "matching_active_spot_requests": []
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 12846.78it/s]
+/opt/karpo/venv/lib/python3.12/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py:1482: UserWarning: No PYTORCH_KERNEL_CACHE_PATH or HOME environment variable set! This disables kernel caching. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/cuda/jit_utils.cpp:1488.)
+  split_sizes = (image_grid_thw.prod(-1) // self.visual.spatial_merge_size**2).tolist()
+{"event": "loaded", "seconds": 30, "warmup_seconds": 1.6, "ranks": 1, "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition", "attention": "bidirectional", "path": "graphs", "kernels": [], "max_length": 8192}
+{"event": "listening", "host": "127.0.0.1", "port": 18440, "model": "4b-bf16"}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5699, "sequences": 1, "encode_ms": 14.2, "share_ms": 0.0, "model_ms": 159.1, "total_ms": 173.7}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5715, "sequences": 1, "encode_ms": 12.1, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 168.5}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5707, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 157.1, "total_ms": 168.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5722, "sequences": 1, "encode_ms": 12.2, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 168.6}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5699, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5711, "sequences": 1, "encode_ms": 11.8, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5706, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5721, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5699, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5699, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5705, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.8}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5705, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.8}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5696, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.1, "total_ms": 167.8}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5696, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.1, "total_ms": 167.7}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5707, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5707, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.8}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5708, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5708, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5715, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5715, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5727, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5727, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.8}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5740, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5740, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5734, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5734, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5735, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5735, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5707, "sequences": 1, "encode_ms": 11.3, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.8}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5707, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5718, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5718, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.8}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5737, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5737, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5717, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5717, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5710, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5710, "sequences": 1, "encode_ms": 11.3, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.8}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5722, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5722, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5701, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5701, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5733, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5733, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5736, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5736, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5721, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5721, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5699, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5699, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5705, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5705, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5696, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.2, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5696, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5707, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5707, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5704, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5704, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 167.9}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5711, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.3, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5711, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5723, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5723, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5736, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5736, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5733, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5733, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.3}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5734, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5734, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5706, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5706, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5717, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5717, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5736, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5736, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5716, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5716, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5709, "sequences": 1, "encode_ms": 11.3, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5709, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5721, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5721, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5702, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.0}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5702, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5734, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5734, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5737, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5737, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.3}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5722, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5722, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5729, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5729, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5720, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5720, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5709, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5709, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5749, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5749, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5733, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5733, "sequences": 1, "encode_ms": 11.4, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5734, "sequences": 1, "encode_ms": 11.6, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.3}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5734, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5750, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5750, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5751, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5751, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5735, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5735, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5736, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5736, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5758, "sequences": 1, "encode_ms": 11.8, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.4}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5758, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.4, "total_ms": 168.1}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5742, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+{"event": "request", "status": 200, "questions": 1, "tokens": 5742, "sequences": 1, "encode_ms": 11.5, "share_ms": 0.0, "model_ms": 156.5, "total_ms": 168.2}
+W1120 03:49:07.541000 3988 opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/elastic/agent/server/api.py:753] Received 15 death signal, shutting down workers
+W1120 03:49:07.542000 3988 opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 3997 closing signal SIGTERM
+[rank0]:W1120 03:49:07.542000 3997 opt/karpo/venv/lib/python3.12/site-packages/torch/_inductor/compile_worker/subproc_pool.py:338] SubprocPool unclean exit
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/run.py", line 1142, in <module>
+    main()
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/run.py", line 1138, in main
+    run(args)
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/run.py", line 1129, in run
+    elastic_launch(
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 197, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 377, in launch_agent
+    result = agent.run()
+             ^^^^^^^^^^^
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/elastic/metrics/api.py", line 134, in wrapper
+    result = f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/elastic/agent/server/api.py", line 745, in run
+    result = self._invoke_run(role)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/elastic/agent/server/api.py", line 923, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/opt/karpo/venv/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 86, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 3988 got signal: 15

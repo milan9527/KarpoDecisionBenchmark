@@ -1,0 +1,47 @@
+{
+  "frozen_utc": "2026-11-20T03:50:58.818188+00:00",
+  "code_revision": "6600011eb5cf46232d056ec0717dc726146d29de",
+  "models": [
+    {
+      "size": "4B",
+      "id": "MachinePulseAI/karpo-decision-4B",
+      "revision": "f7f521cfc3219ca28518c6bba91960b8757dce06",
+      "weights_bytes": 9081227392,
+      "family": "qwen"
+    }
+  ],
+  "configs": [
+    {
+      "id": "4b-fp8",
+      "model": "4B",
+      "precision": "fp8",
+      "flags": [
+        "--graphs",
+        "--fp8"
+      ],
+      "concurrency": [
+        1,
+        2,
+        4,
+        8
+      ]
+    }
+  ],
+  "max_length": 8192,
+  "warmup": 8,
+  "quality_existing": 80,
+  "quality_boundary": 24,
+  "concurrency_requests": 24,
+  "expected_calls": 208,
+  "source_requests_sha256": "63ca0175f33fe6c2a9df26ade1371ca2721a0c0346d521c396f6213aacd2824b",
+  "source_manifest_sha256": "79e6c0ca7401186536b19080d2410e8d820b195ab960476b9f9060a4d2329968",
+  "files": {
+    "scripts/h100_suite.py": "e7fae985a3d5ab6813ba3f9f9046d536fd750909d7a3402101c8dc8ac5f04b31",
+    "scripts/h100_benchmark.py": "c9c0866a180b539b81fdcbf67ad482386329941e7918a98d5e7674dc2b69bc72",
+    "scripts/benchmark.py": "3eb29a865be73ea3a70e9fd16f1d2e72403ecf6edb900ada7d263be8ad4b7dc2",
+    "scripts/concise_suite.py": "4627b3f85999ff48abaa2c8de8a35923e9c8166d4b27f55111d7bad4e324849c",
+    "experiments/h100-4b-20261120/PLAN.zh.md": "92394e17d4b625790ffe053a4a99a5638b092747b093582292d2627d88923f7d",
+    "experiments/h100-4b-20261120/requests.json": "e7adb21e5f93c668415ea2466af992862ba011d3a828076a46ce816478bf0765",
+    "experiments/family-20261120/manifest.json": "533f1157e2f12af2c218b81f690c9d8f1b92b8813e62f8a7c32aefbc0da21eb6"
+  }
+}

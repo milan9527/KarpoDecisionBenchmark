@@ -1,0 +1,113 @@
+{
+  "selected_utc": "2026-11-20T03:49:11.197750+00:00",
+  "selected": {
+    "config": {
+      "id": "31b-fp8",
+      "model": "31B",
+      "precision": "fp8",
+      "flags": [
+        "--graphs",
+        "--fp8",
+        "--triton-attention"
+      ],
+      "concurrency": [
+        1,
+        2,
+        4,
+        8
+      ]
+    },
+    "valid": 104,
+    "correct": 102,
+    "new_errors_vs_31b": 0,
+    "p50_ms": 706.3021110000136
+  },
+  "candidates": [
+    {
+      "config": {
+        "id": "31b-fp8",
+        "model": "31B",
+        "precision": "fp8",
+        "flags": [
+          "--graphs",
+          "--fp8",
+          "--triton-attention"
+        ],
+        "concurrency": [
+          1,
+          2,
+          4,
+          8
+        ]
+      },
+      "valid": 104,
+      "correct": 102,
+      "new_errors_vs_31b": 0,
+      "p50_ms": 706.3021110000136
+    },
+    {
+      "config": {
+        "id": "12b-fp8",
+        "model": "12B",
+        "precision": "fp8",
+        "flags": [
+          "--graphs",
+          "--fp8",
+          "--triton-attention"
+        ],
+        "concurrency": [
+          1,
+          2,
+          4,
+          8
+        ]
+      },
+      "valid": 104,
+      "correct": 103,
+      "new_errors_vs_31b": 1,
+      "p50_ms": 277.6565560000108
+    },
+    {
+      "config": {
+        "id": "9b-fp8",
+        "model": "9B",
+        "precision": "fp8",
+        "flags": [
+          "--graphs",
+          "--fp8"
+        ],
+        "concurrency": [
+          1,
+          2,
+          4,
+          8
+        ]
+      },
+      "valid": 104,
+      "correct": 83,
+      "new_errors_vs_31b": 21,
+      "p50_ms": 176.83258400001023
+    },
+    {
+      "config": {
+        "id": "4b-fp8",
+        "model": "4B",
+        "precision": "fp8",
+        "flags": [
+          "--graphs",
+          "--fp8"
+        ],
+        "concurrency": [
+          1,
+          2,
+          4,
+          8
+        ]
+      },
+      "valid": 104,
+      "correct": 98,
+      "new_errors_vs_31b": 6,
+      "p50_ms": 123.32207499997594
+    }
+  ]
+}

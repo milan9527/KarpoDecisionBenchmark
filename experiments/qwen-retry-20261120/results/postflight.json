@@ -1,0 +1,17 @@
+{
+  "observed_utc": "2026-11-20T03:49:09.964927+00:00",
+  "suite_status": "complete",
+  "gpu_compute_processes": "",
+  "models": [
+    {
+      "size": "9B",
+      "directory": "/opt/karpo/models/karpo-9b",
+      "weights_bytes": 16789656992
+    },
+    {
+      "size": "4B",
+      "directory": "/opt/karpo/models/karpo-4b",
+      "weights_bytes": 9081227392
+    }
+  ]
+}
