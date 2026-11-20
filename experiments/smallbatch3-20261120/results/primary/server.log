@@ -1,0 +1,19 @@
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 97/723 [00:00<00:00, 965.11it/s]Loading weights:  28%|██▊       | 204/723 [00:00<00:00, 1023.81it/s]Loading weights:  46%|████▋     | 336/723 [00:00<00:00, 1156.62it/s]Loading weights:  63%|██████▎   | 452/723 [00:00<00:00, 1153.99it/s]Loading weights:  83%|████████▎ | 599/723 [00:00<00:00, 1267.45it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 1367.50it/s]
+{"event": "capture", "rank": 0, "batch": 4, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 3, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 2, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 4, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 3, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 1, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 2, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 1, "tokens_each": 2304}
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 15618.95it/s]
+{"event": "capture", "rank": 1, "batch": 4, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 3, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 2, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 4, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 3, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 1, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 2, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 1, "tokens_each": 2304}
+{"event": "ready", "replicas": 2}

@@ -1,0 +1,73 @@
+{
+  "attempts": 556,
+  "valid": 556,
+  "failures": 0,
+  "correct": 526,
+  "accuracy_all_attempts": 0.9460431654676259,
+  "valid_within_500ms": 1,
+  "correct_within_500ms": 1,
+  "elapsed_seconds": 72.21579917100007,
+  "valid_rps": 7.699146258610882,
+  "p50_ms": 12735.937379000006,
+  "p95_ms": 14383.495718000177,
+  "p99_ms": 14525.987019000013,
+  "max_ms": 14765.855658999953,
+  "all_attempts_p95_ms": 14383.495718000177,
+  "mean_ms": 11948.857513917264,
+  "tokens_min": 5696,
+  "tokens_max": 5758,
+  "response_batch_histogram": {
+    "1": 1,
+    "16": 352,
+    "6": 48,
+    "7": 70,
+    "5": 25,
+    "9": 36,
+    "8": 24
+  },
+  "http_statuses": {
+    "200": 556
+  },
+  "max_client_send_lag_ms": 0,
+  "max_gpu_allocated_gib": 9.221750736236572,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "closed",
+  "parameters": {
+    "concurrency": 100,
+    "seconds": 60
+  },
+  "after_ramp": {
+    "attempts": 387,
+    "valid": 387,
+    "failures": 0,
+    "correct": 366,
+    "accuracy_all_attempts": 0.9457364341085271,
+    "valid_within_500ms": 0,
+    "correct_within_500ms": 0,
+    "elapsed_seconds": 62.21748268300007,
+    "valid_rps": 6.220116650681232,
+    "p50_ms": 12987.517475999994,
+    "p95_ms": 14288.207202999956,
+    "p99_ms": 14399.211143000002,
+    "max_ms": 14765.855658999953,
+    "all_attempts_p95_ms": 14288.207202999956,
+    "mean_ms": 12931.965485767443,
+    "tokens_min": 5696,
+    "tokens_max": 5758,
+    "response_batch_histogram": {
+      "16": 228,
+      "6": 30,
+      "7": 49,
+      "5": 20,
+      "9": 36,
+      "8": 24
+    },
+    "http_statuses": {
+      "200": 387
+    },
+    "max_client_send_lag_ms": 0,
+    "max_gpu_allocated_gib": 9.22150182723999,
+    "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval."
+  },
+  "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+}

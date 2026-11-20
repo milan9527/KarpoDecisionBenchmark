@@ -1,0 +1,36 @@
+{
+  "CommandId": "3acf6c14-ebf7-4dc9-84f2-82cab2b8b01a",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T13:48:57.818Z",
+  "ExecutionElapsedTime": "PT0.387S",
+  "ExecutionEndDateTime": "2026-11-20T13:48:57.818Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "active\nfailed\n  Created wheel for karpo-decision: filename=karpo_decision-0.1.0-py3-none-any.whl size=98358 sha256=e554e14bc7beeee2919ad27a1e8aed540c473b602625f3401115fe67e0054386\n  Stored in directory: /tmp/pip-ephem-wheel-cache-u1ysl5qu/wheels/45/ae/12/f7c94a0b0bb0ab8c7de87ba3b9cfab5ac9bcd8e6ae04f778d8\nSuccessfully built karpo-decision\nInstalling collected packages: z3-solver, torchaudio, supervisor, py-cpuinfo, nvtx, nvidia-ml-py, nvidia-cusparselt-cu13, mpmath, cuda-toolkit, websockets, uvloop, urllib3, typing_extensions, truststore, triton, tqdm, torchcodec, tokenspeed-triton, tabulate, sympy, sniffio, six, shellingham, setuptools, setproctitle, sentencepiece, safetensors, rpds-py, rignore, regex, pyzmq, pyyaml, python-multipart, python-json-logger, python-dotenv, PyNvVideoCodec, pyjwt, pygments, pycparser, pycountry, pybase64, psutil, protobuf, propcache, prometheus_client, pillow, partial-json-parser, packaging, outlines_core, orjson, nvidia-nvvm, nvidia-nvtx, nvidia-nvshmem-cu13, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-curand, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, nvidia-cuda-crt, nvidia-cuda-cccl, numpy, ninja, networkx, multidict, msgspec, mdurl, MarkupSafe, loguru, llvmlite, llguidance, lark, jmespath, jiter, interegular, ijson, idna, httptools, hf-xet, h11, fsspec, frozenlist, filelock, fastar, einops, docstring-parser, dnspython, dill, detect-installer, cuda-pathfinder, cloudpickle, click, charset_normalizer, certifi, cbor2, cachetools, blake3, backports-zstd, attrs, astor, annotated-types, annotated-doc, aiohappyeyeballs, agent-detector, yarl, uvicorn, typing-inspection, sentry-sdk, requests, referencing, python-dateutil, pydantic-core, opentelemetry-proto, opentelemetry-api, opencv-python-headless, nvidia-cusparse, nvidia-cufft, nvidia-cuda-nvcc, nvidia-cublas, numba, ml-dtypes, markdown-it-py, jinja2, httpcore2, httpcore, grpcio, googleapis-common-protos, fla-core, email-validator, depyf, cuda-tile, cuda-core, cuda-bindings, cffi, apache-tvm-ffi, anyio, aiosignal, watchfiles, tiktoken, starlette, rich, pydantic, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, opentelemetry-exporter-http-transport, nvidia-cutlass-dsl-libs-core, nvidia-cusolver, nvidia-cudnn-cu13, nccl4py, jsonschema-specifications, httpx2, httpx, cuda-python, cryptography, botocore, aiohttp, typer, sse-starlette, s3transfer, rich-toolkit, pydantic-settings, pydantic-extra-types, prometheus-fastapi-instrumentator, oss-harmony, opentelemetry-sdk, openai, nvidia-cutlass-dsl-libs-base, nccl-extensions, mcp-types, lm-format-enforcer, jsonschema, huggingface_hub, fastapi, anthropic, torch, tokenizers, opentelemetry-semantic-conventions-ai, opentelemetry-exporter-otlp-common, nvidia-cutlass-dsl-libs-cu13, nvidia-cutlass-dsl-libs-cu12, model-hosting-container-standards, mcp, fastsafetensors, fastapi-cloud-cli, fastapi-cli, boto3, transformers, torchvision, torch-c-dlpack-ext, opentelemetry-exporter-otlp-proto-http, opentelemetry-exporter-otlp-proto-grpc, nvidia-cutlass-dsl, mistral_common, instanttensor, humming-kernels, xgrammar, tokenspeed-mla, tilelang, quack-kernels, opentelemetry-exporter-otlp, karpo-decision, flash-linear-attention, compressed-tensors, nvidia-cudnn-frontend, flashinfer-python, vllm\nname, memory.used [MiB], utilization.gpu [%]\nNVIDIA H100 80GB HBM3, 0 MiB, 0 %\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "dc049568-4bdc-4ca1-a6ac-e7127d519b82",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:49:05 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "3975",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "dc049568-4bdc-4ca1-a6ac-e7127d519b82",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

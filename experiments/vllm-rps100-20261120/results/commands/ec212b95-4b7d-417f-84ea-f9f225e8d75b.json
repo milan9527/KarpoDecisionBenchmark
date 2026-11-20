@@ -1,0 +1,8 @@
+{
+  "id": "ec212b95-4b7d-417f-84ea-f9f225e8d75b",
+  "host": "single",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-0de4f061c2a04fe4b",
+  "script": "set -Eeuo pipefail\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport json\nfrom pathlib import Path\nbase=Path('/opt/karpo/b12x-overlay/b12x')\npaths=[base/'_lib/dense_gemm.py', base/'gemm/blockscaled/_linear.py',base/'preparation/session.py']\npaths+=list(base.glob('gemm/blockscaled/*py'))\npaths+=list(base.glob('gemm/blockscaled/backend*/*py'))\npaths+=list(base.glob('_lib/*config*py'))\nv=Path('/opt/karpo/venv-vllm034/lib/python3.12/site-packages/vllm')\npaths+=[v/'model_executor/warmup/b12x_warmup.py',v/'model_executor/kernels/linear/mxfp4/b12x.py']\nout=Path('/opt/karpo/experiments/vllm-rps100-20261120/results/setup/b12x-source.json')\nout.write_text(json.dumps({str(p):p.read_text() for p in paths if p.is_file()},indent=2)+'\\n')\nPY\naws s3 cp /opt/karpo/experiments/vllm-rps100-20261120/results/setup/b12x-source.json s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-rps100-20261120/setup/b12x-source.json --region us-east-1 --no-progress\n",
+  "utc": "2026-11-20T13:46:31.119241+00:00"
+}

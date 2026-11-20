@@ -1,0 +1,8 @@
+{
+  "id": "ab20a0b7-bf9a-4f5c-8174-2629cd098e61",
+  "host": "fleet1",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-05d0c24c739f41ca5",
+  "script": "ssh -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts ubuntu@100.59.41.29 'sudo /bin/bash -s' <<'RPS_SSH_INNER'\nset -u\nsystemctl show karpo-rps-install-fleet1 karpo-rps-fleet1-node-v1 --property=Id,ActiveState,SubState,Result\npython3 - <<'CHECK'\nfrom pathlib import Path\nbase=Path('/opt/karpo/experiments/vllm-rps100-20261120/results')\nfor suffix in ('setup/fleet1-install-exit.txt','setup/fleet1-prefetch.json','runs/fleet1-fleetnode-v1/status.json'):\n p=base/suffix\n if p.exists(): print(suffix,p.read_text()[:1200])\nfor suffix in ('setup/fleet1-install.log','setup/fleet1-node-launch.log','runs/fleet1-fleetnode-v1/b4/server-3/server.log'):\n p=base/suffix\n if p.exists(): print(suffix,'\\n'.join(p.read_text(errors='replace').splitlines()[-6:]))\nCHECK\nnvidia-smi --query-gpu=index,name,memory.used,utilization.gpu --format=csv\n\nRPS_SSH_INNER",
+  "utc": "2026-11-20T14:46:19.889026+00:00"
+}

@@ -1,0 +1,70 @@
+{
+  "utc": "2026-11-20T14:58:00.411873+00:00",
+  "ec2_policy": "keep_running",
+  "instances": [
+    {
+      "id": "i-091371593b3c4a5ff",
+      "type": "p5.4xlarge",
+      "state": "running",
+      "region": "us-east-2",
+      "private_ip": "172.31.25.147",
+      "az": "us-east-2b",
+      "market": "spot",
+      "launch_time": "2026-11-20 13:44:45+00:00",
+      "in_rtx4_benchmark": false,
+      "reference_compute_usd_per_hour": 4.2298
+    },
+    {
+      "id": "i-048c3784bb87b6d86",
+      "type": "g7e.8xlarge",
+      "state": "stopped",
+      "region": "us-east-2",
+      "private_ip": "172.31.44.129",
+      "az": "us-east-2c",
+      "market": "spot",
+      "launch_time": "2026-11-19 15:43:56+00:00",
+      "in_rtx4_benchmark": false
+    },
+    {
+      "id": "i-05b24e3b4a7ee864d",
+      "type": "g7e.12xlarge",
+      "state": "running",
+      "region": "us-east-2",
+      "private_ip": "172.31.40.12",
+      "az": "us-east-2c",
+      "market": "spot",
+      "launch_time": "2026-11-20 13:21:05+00:00",
+      "in_rtx4_benchmark": true,
+      "reference_compute_usd_per_hour": 4.1243
+    },
+    {
+      "id": "i-0de4f061c2a04fe4b",
+      "type": "g7e.4xlarge",
+      "state": "running",
+      "region": "us-east-2",
+      "private_ip": "172.31.42.136",
+      "az": "us-east-2c",
+      "market": "spot",
+      "launch_time": "2026-11-20 13:21:04+00:00",
+      "in_rtx4_benchmark": true,
+      "reference_compute_usd_per_hour": 2.1769
+    },
+    {
+      "id": "i-05d0c24c739f41ca5",
+      "type": "g7e.4xlarge",
+      "state": "running",
+      "region": "us-east-1",
+      "private_ip": "172.31.85.230",
+      "az": "us-east-1b",
+      "market": "spot",
+      "launch_time": "2026-11-20 14:45:57+00:00",
+      "in_rtx4_benchmark": true,
+      "reference_compute_usd_per_hour": 1.5954
+    }
+  ],
+  "running_instances": 4,
+  "reference_compute_usd_per_hour": 12.1264,
+  "rtx4_reference_compute_usd_per_hour": 7.896599999999999,
+  "excludes": "EBS, network, public IPv4 and price changes",
+  "old_stopped_instance": "i-048c3784bb87b6d86 was stopped before this optimization; not stopped by this task"
+}

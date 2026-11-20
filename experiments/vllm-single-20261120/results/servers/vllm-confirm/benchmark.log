@@ -1,0 +1,4 @@
+results/measurements/vllm-confirm/risk/warmup {"attempts": 8, "valid": 8, "correct": 8, "valid_rps": 21.796052127947537, "p95_ms": 63.0968949999442}
+results/measurements/vllm-confirm/risk/sustained-100 {"attempts": 1811, "valid": 1811, "correct": 1751, "valid_rps": 28.535515761596546, "p95_ms": 3656.5571670000736}
+results/measurements/vllm-confirm/sop/warmup {"attempts": 8, "valid": 8, "correct": 8, "valid_rps": 8.869615814884938, "p95_ms": 113.04798300011498}
+results/measurements/vllm-confirm/sop/sustained-100 {"attempts": 717, "valid": 717, "correct": 678, "valid_rps": 10.383512498498545, "p95_ms": 9994.5327800001}

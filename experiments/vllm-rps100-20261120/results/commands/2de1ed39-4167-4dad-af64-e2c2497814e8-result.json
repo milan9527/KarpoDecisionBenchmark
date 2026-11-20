@@ -1,0 +1,36 @@
+{
+  "CommandId": "2de1ed39-4167-4dad-af64-e2c2497814e8",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T14:58:09.030Z",
+  "ExecutionElapsedTime": "PT0.055S",
+  "ExecutionEndDateTime": "2026-11-20T14:58:09.030Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "{\"utc\": \"2026-11-20T14:58:09.053916+00:00\", \"hostname\": \"ip-172-31-42-136\", \"scheduled_shutdown_present\": false, \"timers\": \"NEXT                             LEFT LAST                              PASSED UNIT                           ACTIVATES\\nFri 2026-11-20 15:00:00 UTC  1min 50s Fri 2026-11-20 14:50:30 UTC     7min ago sysstat-collect.timer          sysstat-collect.service\\nFri 2026-11-20 15:13:59 UTC     15min Fri 2026-11-20 04:06:26 UTC            - motd-news.timer                motd-news.service\\nFri 2026-11-20 15:32:07 UTC     33min Fri 2026-11-20 14:23:17 UTC    34min ago fwupd-refresh.timer            fwupd-refresh.service\\nFri 2026-11-20 16:06:46 UTC   1h 8min Tue 2026-11-17 07:01:15 UTC            - man-db.timer                   man-db.service\\nSat 2026-11-21 00:00:00 UTC        9h Fri 2026-11-20 03:07:43 UTC            - dpkg-db-backup.timer           dpkg-db-backup.service\\nSat 2026-11-21 00:00:00 UTC        9h Fri 2026-11-20 03:07:43 UTC            - logrotate.timer                logrotate.service\\nSat 2026-11-21 00:07:00 UTC        9h -                                      - sysstat-summary.timer          sysstat-summary.service\\nSat 2026-11-21 00:16:59 UTC        9h Thu 2026-11-19 12:24:36 UTC            - apt-daily.timer                apt-daily.service\\nSat 2026-11-21 06:38:19 UTC       15h Fri 2026-11-20 10:35:00 UTC            - apt-daily-upgrade.timer        apt-daily-upgrade.service\\nSat 2026-11-21 13:26:20 UTC       22h Fri 2026-11-20 13:26:20 UTC 1h 31min ago update-notifier-download.timer update-notifier-download.service\\nSat 2026-11-21 13:36:18 UTC       22h Fri 2026-11-20 13:36:18 UTC 1h 21min ago systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service\\nSun 2026-11-22 03:10:02 UTC 1 day 12h Tue 2026-11-17 07:01:15 UTC            - e2scrub_all.timer              e2scrub_all.service\\nMon 2026-11-23 00:16:40 UTC    2 days Tue 2026-11-17 07:01:15 UTC            - fstrim.timer                   fstrim.service\\nFri 2026-11-27 03:09:19 UTC    6 days Tue 2026-11-17 07:01:15 UTC            - update-notifier-motd.timer     update-notifier-motd.service\\n-                                   - -                                      - apport-autoreport.timer        apport-autoreport.service\\n-                                   - -                                      - snapd.snap-repair.timer        snapd.snap-repair.service\\n-                                   - -                                      - ua-timer.timer                 ua-timer.service\\n\\n17 timers listed.\\n\", \"karpo_units\": \"  UNIT                              LOAD   ACTIVE SUB     DESCRIPTION\\n  karpo-rps-fleet1-backup.service   loaded active running /bin/bash /opt/karpo/experiments/vllm-rps100-20261120/backup-fleet1.sh\\n  karpo-rps-h100-backup.service     loaded active running /bin/bash /opt/karpo/experiments/vllm-rps100-20261120/backup-h100.sh\\n  karpo-rps-rtx4-tunnel-v1.service  loaded active running /usr/bin/ssh -N -T -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts -o ExitOnForwardFailure=yes -o ServerAliveInterval=15 -o ServerAliveCountMax=3 -L 127.0.0.1:18503:127.0.0.1:18500 ubuntu@100.59.41.29\\n\\u25cf karpo-rps-single-b12x-v1.service  loaded failed failed  /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/scripts/vllm_rps_b12x_suite.py --name single-b12x-v1 --revision b12x-v1 --gpus 1 --replicas 1 --batches 1 2 4 8 --seconds 20\\n\\u25cf karpo-rps-single-fp4-v1.service   loaded failed failed  /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/scripts/vllm_rps_fp4_suite.py --name single-nvfp4-v1 --revision fp4-v1 --gpus 1 --replicas 1 --batches 1 2 4 8 --seconds 20\\n\\u25cf karpo-rps-single-mxfp4-v1.service loaded failed failed  /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/scripts/vllm_rps_mxfp4_suite.py --name single-nvmxfp4-v1 --revision mxfp4-v1 --gpus 1 --replicas 1 --batches 1 2 4 8 --seconds 20\\n  karpo-rps-single-node-v1.service  loaded active running /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/scripts/vllm_rps_fleet.py --mode node --name single-fleetnode-v1 --replica-ids 0 --batch 4\\n\\nLegend: LOAD   \\u2192 Reflects whether the unit definition was properly loaded.\\n        ACTIVE \\u2192 The high-level unit activation state, i.e. generalization of SUB.\\n        SUB    \\u2192 The low-level unit activation state, values depend on unit type.\\n\\n7 loaded units listed.\\nTo show all installed unit files use 'systemctl list-unit-files'.\\n\", \"gpu\": \"index, name, memory.used [MiB], utilization.gpu [%]\\n0, NVIDIA RTX PRO 6000 Blackwell Server Edition, 76861 MiB, 0 %\\n\"}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "954b0002-6828-463c-af06-f005c0a41f76",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 14:58:49 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "5304",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "954b0002-6828-463c-af06-f005c0a41f76",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

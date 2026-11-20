@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-20T14:59:22.667293+00:00",
+  "run": "rtx4-fp8-v1",
+  "attempts": 28344,
+  "valid": 27416,
+  "failures": 928,
+  "performance_stages": 4,
+  "quality_stages": 2,
+  "confirmed_scenarios": [
+    "risk"
+  ],
+  "verification_basis": "All raw requests recomputed by scripts/vllm_rps_report.py, including original input/token hashes, marker, latency and proxy replica identity."
+}

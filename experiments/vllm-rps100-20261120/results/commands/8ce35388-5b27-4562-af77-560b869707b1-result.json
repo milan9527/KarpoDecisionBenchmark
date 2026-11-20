@@ -1,0 +1,36 @@
+{
+  "CommandId": "8ce35388-5b27-4562-af77-560b869707b1",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T13:52:29.216Z",
+  "ExecutionElapsedTime": "PT0.393S",
+  "ExecutionEndDateTime": "2026-11-20T13:52:29.216Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "name, memory.used [MiB], utilization.gpu [%], power.draw [W]\nNVIDIA H100 80GB HBM3, 3403 MiB, 0 %, 115.84 W\n   3520 Sl         03:00  0.9  0.0 52372 /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/scripts/vllm_rps_h100_suite.py --name h100-fp8-v1 --gpus 1 --replicas 1 --batches 1 4 --seconds 20\n   3532 Ssl        02:54  8.1  0.6 1672856 /opt/karpo/venv-vllm034/bin/python /opt/karpo/scripts/vllm_rps_server.py --checkpoint /opt/karpo/models/karpo-4b --output /opt/karpo/experiments/vllm-rps100-20261120/results/runs/h100-fp8-v1/b1/server-0 --max-seqs 1 --replica-id 0 --port 18500 --admission-limit 64\n   3720 Dl         02:21  9.2  1.0 2820064 VLLM::EngineCore\n   4390 S          00:00  0.0  0.0  2180 grep -E EngineCore|vllm_rps_h100|vllm_rps_server\nrchar: 277265508\nwchar: 187394\nsyscr: 25198\nsyscw: 157\nread_bytes: 854441984\nwrite_bytes: 20480\ncancelled_write_bytes: 4096\ntotal 8.5G\n-rw-r--r-- 1 root root  12K Nov 20 03:14 LICENSE\n-rw-r--r-- 1 root root  845 Nov 20 03:14 NOTICE\n-rw-r--r-- 1 root root 7.3K Nov 20 03:14 README.md\n-rw-r--r-- 1 root root 7.6K Nov 20 03:14 chat_template.jinja\n-rw-r--r-- 1 root root 2.9K Nov 20 03:14 config.json\n-rw-r--r-- 1 root root 4.4K Nov 20 03:14 decision_config.json\ndrwxr-xr-x 2 root root 4.0K Nov 20 03:14 licenses\n-rw-r--r-- 1 root root 5.0G Nov 20 03:14 model-00001-of-00002.safetensors\n-rw-r--r-- 1 root root 3.5G Nov 20 03:14 model-00002-of-00002.safetensors\n-rw-r--r-- 1 root root  58K Nov 20 03:14 model.safetensors.index.json\n-rw-r--r-- 1 root root 1.2K Nov 20 03:14 processor_config.json\n-rw-r--r-- 1 root root 2.5M Nov 20 03:14 readout.safetensors\n-rw-r--r-- 1 root root  20M Nov 20 03:14 tokenizer.json\n-rw-r--r-- 1 root root 1.5K Nov 20 03:14 tokenizer_config.json\n/opt/karpo/models/karpo-4b/model-00002-of-00002.safetensors 3711649856\n/opt/karpo/models/karpo-4b/readout.safetensors 2611280\n/opt/karpo/models/karpo-4b/model-00001-of-00002.safetensors 5366966256\n(EngineCore pid=3720) INFO 11-20 13:50:18 [deep_gemm.py:259] deep_gemm not found in site-packages, trying vendored vllm.third_party.deep_gemm\n(EngineCore pid=3720) INFO 11-20 13:50:18 [deep_gemm.py:286] DeepGEMM PDL enabled on vllm.third_party.deep_gemm.\n(EngineCore pid=3720) INFO 11-20 13:50:18 [deep_gemm.py:198] DeepGEMM E8M0 enabled on current platform.\n(EngineCore pid=3720) INFO 11-20 13:50:18 [qwen_gdn_linear_attn.py:379] Using FlashInfer GDN prefill kernel (requested=auto, head_k_dim=128).\n(EngineCore pid=3720) WARNING 11-20 13:50:18 [qwen_gdn_linear_attn.py:386] FlashInfer GDN prefill is JIT-compiled; first run may take a while. Set --gdn-prefill-backend triton to skip JIT.\n(EngineCore pid=3720) INFO 11-20 13:50:20 [cuda.py:549] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'TRITON_ATTN', 'FLEX_ATTENTION'].\n(EngineCore pid=3720) INFO 11-20 13:50:20 [flash_attn.py:1131] Using FlashAttention version 3\n(EngineCore pid=3720) INFO 11-20 13:50:20 [base_loader.py:164] Quantizing 128 layers of types: linear_attn.in_proj_qkvz: 24 (from linear: fp8_per_channel_static); linear_attn.out_proj: 24 (from linear: fp8_per_channel_static); mlp.down_proj: 32 (from linear: fp8_per_channel_static); mlp.gate_up_proj: 32 (from linear: fp8_per_channel_static); self_attn.o_proj: 8 (from linear: fp8_per_channel_static); self_attn.qkv_proj: 8 (from linear: fp8_per_channel_static)\n(EngineCore pid=3720) INFO 11-20 13:50:20 [base_loader.py:95] Initializing model took 2.361556 seconds\n(EngineCore pid=3720) INFO 11-20 13:50:20 [weight_utils.py:1154] Filesystem type for checkpoints: EXT4. Checkpoint size: 8.46 GiB. Available RAM: 243.62 GiB.\n(EngineCore pid=3720) INFO 11-20 13:50:20 [weight_utils.py:1177] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.\n\rLoading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "9edc8984-8dd1-4ce3-9b55-e5a32f601fa9",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:52:38 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "4555",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "9edc8984-8dd1-4ce3-9b55-e5a32f601fa9",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

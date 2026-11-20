@@ -1,0 +1,59 @@
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 14210.72it/s]
+{"event": "capture", "rank": 0, "batch": 11, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 10, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 9, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 8, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 7, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 16, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 6, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 15, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 14, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 13, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 5, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 12, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 11, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 4, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 10, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 9, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 8, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 3, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 7, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 6, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 2, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 5, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 4, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 3, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 1, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 2, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 1, "tokens_each": 2304}
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 13182.58it/s]
+{"event": "capture", "rank": 1, "batch": 11, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 10, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 9, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 8, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 7, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 16, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 6, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 15, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 14, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 13, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 5, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 12, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 11, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 4, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 10, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 9, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 8, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 3, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 7, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 6, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 2, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 5, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 4, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 3, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 1, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 2, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 1, "tokens_each": 2304}
+{"event": "ready", "replicas": 2}
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

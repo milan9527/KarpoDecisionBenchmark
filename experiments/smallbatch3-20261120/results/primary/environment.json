@@ -1,0 +1,68 @@
+{
+  "observed_utc": "2026-11-20T09:43:53.559007+00:00",
+  "role": "primary",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.21.0",
+  "cuda": "13.0",
+  "code_source": {
+    "url": "https://github.com/machinepulse-ai/karpo-decision",
+    "vcs_info": {
+      "vcs": "git",
+      "commit_id": "6600011eb5cf46232d056ec0717dc726146d29de",
+      "requested_revision": "6600011eb5cf46232d056ec0717dc726146d29de"
+    }
+  },
+  "dependencies": {
+    "flash-linear-attention": "0.5.2",
+    "fla-core": "0.5.2"
+  },
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 595.112.07\nNVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 595.112.07\n",
+  "runtime_source_sha256": {
+    "blocks.py": "9b0311ddd68a96403937e20b59cb8827765176a25b54d4e1915b8bd0650f2e24",
+    "assets.py": "2216570bd2c141c9c1ab875694d955438338eb8ec504e250420073b296afe728",
+    "decider.py": "a6b583e17b1cc6d412d1823b0b4e31e2c0b2136751b7195781a16861719b40e7",
+    "config.py": "0a5190143b26e0ec5ae7a7d4d64d88e342a6ca2c3fd8cd2fb31cfb542e085436",
+    "__init__.py": "3769d4b85896376f36f8dee6b2d5bf7fdde09f4f5e7925d5dbe896db9f8ed7c5",
+    "protocol.py": "e2857253b8f59470ac9b4408637b6bbeb6813f98e00461d40331d89ebabad2e9",
+    "codes.py": "69218dc720bfc1c2f72905a727da68a18012a0a7777a134a4bfedd1ea24f6c0a",
+    "answers.py": "82a78c4d4cb654dc804d6e29a6f0f6daccb990b09915f6aa2bacb6bb2e2b47dc",
+    "views.py": "a4c3b5abdd570b0c242210802d83356f1031ac8e47de6925adb79fcdbe4accf3",
+    "templates.py": "ee2353143adc0f5b49b7fc75f7660f1dd683282b912ab501eebc9e2a7551ba15",
+    "encoding.py": "87145b9f465f583e870a70dd564db16839c27593c5bdb570cad7c11180793d0b",
+    "checkpoint.py": "e6b2e1ade1c40d69515645efaa1032c007aa9dd68d283f051068f106e84b73e5",
+    "serve/qwen_fp8.py": "1e23e59d998f0203346c594228e975da22c9180e2aeeff33e4f4f38177fff050",
+    "serve/graphs.py": "0b81607b4bc9ee1423a7fdba06a18b202b4e002cbbb3d6ac1745a4aa5b5dcd1f",
+    "serve/__init__.py": "af242348afe17e63f7752567e867e534303134489b8732ce05e5582f6dbec2fb",
+    "serve/paths.py": "dc63c4513d53e8b9bacccfb48c55b958f4be60892403eee251049cc9badf24bd",
+    "serve/server.py": "601278321af45df88d7f33e6c22f9b10e7cd2a2c11eb3e644601de909b10406b",
+    "serve/fp8.py": "25f8805816e3c55b12cc316e795c6cd38cbf986d07bd9272b61ab9f9fa78f5fb",
+    "serve/engine.py": "680a24f370fee99ebb96663a071adf461d42c03c727bd9284a7189f4dd7374e2",
+    "serve/wire.py": "74471f9998103c75c2f84fc6d0030b58eb0fd838fd659acd71f03289c26a2fa0",
+    "serve/qwen_graphs.py": "4fe28eb47b53135508d13b59c7ca010cec182ddcf6434fa4c8853e742bd16148",
+    "train/order.py": "a7ba84e206727ebc6207bd2370f8d5cad4e737169808e1e4d5e5c1315372a4fd",
+    "train/__init__.py": "547aa6b65a1e173ef89c6e095eed8238f66752c46e2ff3631b838a84bef5b6ee",
+    "families/__init__.py": "183f1d92a74a6e6394bcecd467b6ab36d72da5df00a13c66538e8cabab31051c",
+    "model/packed.py": "b18688e7375097033747527dd1d06d01ac44eaf9d5cb2c32fbbfbad923078bfd",
+    "model/readout.py": "9cfdb90898e47db4d82e2d7e42e9cd411b340ba37bd9fe178f1576a59ee19a42",
+    "model/__init__.py": "be77db07c217581e59b51239add5857e07ea07b763afc0579ed876d612ed14a0",
+    "families/qwen/packed.py": "e9c8ec134dc3fde0c4ae103d9dc2e7baa27893ed53e39097ec506c9f011ac0a3",
+    "families/qwen/fused.py": "0f5d25838c329b3758ecc5dfffc59cbd81befebab48dc43d83f9895877d89825",
+    "families/qwen/reference.py": "f8dc5b9a5f75b1b8ea3686e21bfef55ac48ac62d7cc212b8ef94828779aac7dd",
+    "families/qwen/__init__.py": "34bea3dec49c1c3ac16ee9b1d9460bae70561bde6d3ad88d1cc1a434ae057c55",
+    "families/gemma/packed.py": "a5dc1256fefece7e5188f4b394f61185832848839efb1403709e4e773405cdd3",
+    "families/gemma/triton_attention.py": "1518bb6b83f8546d5c3b6cf0c6d8271d8ba5a75bcd0e95cb0d2817455a91db41",
+    "families/gemma/vision.py": "4a7229d3854172728bb2ed3b2e90419d0fc1bbb0bfb85aa062f950bd57e2bb8c",
+    "families/gemma/fused.py": "2cb98c27668fef715b0aabe287bb84ecd0e3e33e92400bd301ac0d8ac106ae33",
+    "families/gemma/global_attention.py": "e961f8f8ba478685404fa1652541fc3c77c107d29e7bf325dc36c3f74f49d368",
+    "families/gemma/__init__.py": "2a2c6351da041b820c99a7d320734a1fb9841c45ac76a1b40df30bdcdc1d1fb8",
+    "families/gemma/sliding_attention.py": "476105d6f6ef76219e97fd04117496b74b88b47296cc281de5fcda07fe681e7f"
+  },
+  "model_metadata_sha256": {
+    "tokenizer.json": "a5cd9732badce41de57e6efce8302930ded1c1188c5f81feb2bd6c24c4a1941f",
+    "model.safetensors.index.json": "de58f0e5d378fb7ed46de2f85aa02e9b941eca50c749e61d17aeafe94bf7957e",
+    "processor_config.json": "b4b905eee2d1cf96dcbdac1c68b35113c8151958a4c1f76667242b01168572cd",
+    "config.json": "f9940e34c56718f5f0d4bd21784086e1cbae3e0d766c14ffced7d00687414ab1",
+    "decision_config.json": "7d4a66e3f0d0aaee301f78201579eb01e80cba8593e242b1b72bdfb42fc721b2",
+    "tokenizer_config.json": "44d30b6b485384681a21b3de5073e58439aab66cb650f30f2d3d1073da429af0"
+  }
+}

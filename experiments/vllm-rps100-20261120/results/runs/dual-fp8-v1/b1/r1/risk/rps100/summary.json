@@ -1,0 +1,112 @@
+{
+  "target_rps": 100.0,
+  "offered_seconds": 20.0,
+  "scheduled_requests": 2000,
+  "attempts": 2000,
+  "valid": 604,
+  "failures": 1396,
+  "http_statuses": {
+    "200": 604,
+    "429": 1396
+  },
+  "replica_counts": {
+    "0": 604
+  },
+  "correct": 572,
+  "elapsed_with_drain_s": 22.33099195999995,
+  "valid_rps_with_drain": 27.047611726425135,
+  "steady_valid_rps": 27.066666666666666,
+  "p50_ms": 2359.531843999946,
+  "p95_ms": 2367.153691999931,
+  "p99_ms": 2371.329773999946,
+  "http_p50_ms": 2358.926241000006,
+  "last_quarter_p50_ms": 2360.076053999933,
+  "max_send_lag_ms": 8.9658539999391,
+  "valid_within_500ms": 16,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 64
+    },
+    {
+      "second": 2,
+      "pending": 64
+    },
+    {
+      "second": 3,
+      "pending": 64
+    },
+    {
+      "second": 4,
+      "pending": 64
+    },
+    {
+      "second": 5,
+      "pending": 64
+    },
+    {
+      "second": 6,
+      "pending": 64
+    },
+    {
+      "second": 7,
+      "pending": 64
+    },
+    {
+      "second": 8,
+      "pending": 64
+    },
+    {
+      "second": 9,
+      "pending": 64
+    },
+    {
+      "second": 10,
+      "pending": 64
+    },
+    {
+      "second": 11,
+      "pending": 64
+    },
+    {
+      "second": 12,
+      "pending": 63
+    },
+    {
+      "second": 13,
+      "pending": 63
+    },
+    {
+      "second": 14,
+      "pending": 64
+    },
+    {
+      "second": 15,
+      "pending": 64
+    },
+    {
+      "second": 16,
+      "pending": 64
+    },
+    {
+      "second": 17,
+      "pending": 64
+    },
+    {
+      "second": 18,
+      "pending": 64
+    },
+    {
+      "second": 19,
+      "pending": 64
+    },
+    {
+      "second": 20,
+      "pending": 64
+    }
+  ],
+  "backlog_slope_per_second": 0.0,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": false,
+  "passes_performance_acceptance": false
+}

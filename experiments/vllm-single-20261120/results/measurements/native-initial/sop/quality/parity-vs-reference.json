@@ -1,0 +1,736 @@
+{
+  "observations": 104,
+  "same_choices": 104,
+  "new_errors": 0,
+  "max_probability_delta": 0.07693973520775099,
+  "details": [
+    {
+      "request_id": "concise-en:synthetic-card-collect_reference-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.011068980146700103
+    },
+    {
+      "request_id": "concise-en:synthetic-card-collect_reference-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.000872828689296945
+    },
+    {
+      "request_id": "concise-en:synthetic-card-verify_identity-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00022062711598545403
+    },
+    {
+      "request_id": "concise-en:synthetic-card-verify_identity-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.02914065376327868
+    },
+    {
+      "request_id": "concise-en:synthetic-card-clarify_request-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.000710005414337701
+    },
+    {
+      "request_id": "concise-en:synthetic-card-clarify_request-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.014483066718864901
+    },
+    {
+      "request_id": "concise-en:synthetic-card-compliance_review-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00115331929794249
+    },
+    {
+      "request_id": "concise-en:synthetic-card-compliance_review-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0015127695783229145
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-secure_account-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005326134681860606
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-secure_account-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015436054635106444
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-duplicate_check-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.017987996773091153
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-duplicate_check-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005723082952464376
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-await_confirmations-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.004581254464382345
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-await_confirmations-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002353842442553322
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-request_shortfall-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.003650478551277092
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-request_shortfall-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.018086456505975623
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-investigate_delay-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008658178485731804
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-investigate_delay-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.045791297921566554
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-reconcile_ledger-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006838208575556837
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-reconcile_ledger-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00818384130797789
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-verify_destination-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0019805469503942907
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-verify_destination-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015648383307729108
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-request_approval-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0018695983331362687
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-request_approval-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0003240602302257978
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-execute_authorized-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.004761218109179954
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-execute_authorized-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00018402939334137905
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-close_resolved-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0002061383217436541
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-close_resolved-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0034469028504828803
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-explain_fees-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0006902799213543975
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-explain_fees-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00021814939954166836
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-explain_limit-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.02805738955976167
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-explain_limit-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.009684474552616895
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-reject_unsupported-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010501941636502643
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-reject_unsupported-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008325895052580523
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-review_refund-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006423367491658061
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-review_refund-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007061059850765661
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-reject_late_refund-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0051146098584797794
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-reject_late_refund-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007288878604225918
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-restore_access-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002897927308789794
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-restore_access-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0009964299329775494
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-collect_reference-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0076724344708781755
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-collect_reference-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008238096323981314
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-verify_identity-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0010308328266755984
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-verify_identity-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00943186009143937
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-clarify_request-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006075975929477728
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-clarify_request-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.004156305387955195
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-compliance_review-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0009770525661378926
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-compliance_review-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 8.511575516034764e-05
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-secure_account-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0020976867063894344
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-secure_account-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.013056869870468724
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-duplicate_check-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0007703186468687728
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-duplicate_check-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.002337795244329685
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-await_confirmations-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.024701914990348572
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-await_confirmations-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0024761024965096468
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-request_shortfall-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005059774684683882
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-request_shortfall-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.003847702974305034
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-investigate_delay-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.014683388747913528
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-investigate_delay-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007602718644073803
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-reconcile_ledger-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010242339880425444
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-reconcile_ledger-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.014653744246639955
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-verify_destination-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.003116524427587475
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-verify_destination-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0011437471131225951
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-request_approval-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008189041732116653
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-request_approval-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006204496755646827
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-execute_authorized-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015361676305122529
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-execute_authorized-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006623940179734666
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-close_resolved-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.020128563938186295
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-close_resolved-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0008072270135109916
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-explain_fees-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0030013962689906526
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-explain_fees-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0004509120265144828
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-explain_limit-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.016914771386570937
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-explain_limit-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0011700011050096958
+    },
+    {
+      "request_id": "concise-en:synthetic-account-reject_unsupported-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002238253986385441
+    },
+    {
+      "request_id": "concise-en:synthetic-account-reject_unsupported-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01517831643176526
+    },
+    {
+      "request_id": "concise-en:synthetic-account-review_refund-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00807122679910819
+    },
+    {
+      "request_id": "concise-en:synthetic-account-review_refund-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.06653970117607383
+    },
+    {
+      "request_id": "concise-en:synthetic-account-reject_late_refund-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010788001357897481
+    },
+    {
+      "request_id": "concise-en:synthetic-account-reject_late_refund-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.04135493818160668
+    },
+    {
+      "request_id": "concise-en:synthetic-account-restore_access-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0029858216282323546
+    },
+    {
+      "request_id": "concise-en:synthetic-account-restore_access-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006372352277378868
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-approved-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.044091062071161535
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-approved-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010680106921447607
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-duplicate-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010023109128738716
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-duplicate-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0003968980144264389
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-compromise-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01322964124868109
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-compromise-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015606209048774855
+    },
+    {
+      "request_id": "concise-en:boundary-duplicate-over-approved-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.07693973520775099
+    },
+    {
+      "request_id": "concise-en:boundary-duplicate-over-approved-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.04853281673158827
+    },
+    {
+      "request_id": "concise-en:boundary-destination-before-execution-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0026631397117530264
+    },
+    {
+      "request_id": "concise-en:boundary-destination-before-execution-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00488945077209435
+    },
+    {
+      "request_id": "concise-en:boundary-approval-not-in-customer-text-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0015952074478420286
+    },
+    {
+      "request_id": "concise-en:boundary-approval-not-in-customer-text-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.03147381250614878
+    },
+    {
+      "request_id": "concise-en:boundary-confirmations-before-deadline-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00243314751931456
+    },
+    {
+      "request_id": "concise-en:boundary-confirmations-before-deadline-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.013823071671596188
+    },
+    {
+      "request_id": "concise-en:boundary-confirmation-wait-expired-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007759732855863177
+    },
+    {
+      "request_id": "concise-en:boundary-confirmation-wait-expired-reversed",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.015315674883720987
+    },
+    {
+      "request_id": "concise-en:boundary-refund-window-boundary-original",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.0077179526725208725
+    },
+    {
+      "request_id": "concise-en:boundary-refund-window-boundary-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0321406004168564
+    },
+    {
+      "request_id": "concise-en:boundary-refund-one-day-late-original",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.01778596230705788
+    },
+    {
+      "request_id": "concise-en:boundary-refund-one-day-late-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0015934557415582251
+    },
+    {
+      "request_id": "concise-en:boundary-limit-equality-approved-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00023184593023872768
+    },
+    {
+      "request_id": "concise-en:boundary-limit-equality-approved-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.000710339241400848
+    },
+    {
+      "request_id": "concise-en:boundary-domain-injection-original",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.03804683938558734
+    },
+    {
+      "request_id": "concise-en:boundary-domain-injection-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.019904178356151103
+    }
+  ]
+}

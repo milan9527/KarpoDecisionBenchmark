@@ -1,0 +1,36 @@
+{
+  "CommandId": "00c7325e-c817-4d58-b357-129be45e1f23",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T12:34:29.376Z",
+  "ExecutionElapsedTime": "PT1.279S",
+  "ExecutionEndDateTime": "2026-11-20T12:34:30.376Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "active\nW1120 12:34:16.225000 2982 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead\nW1120 12:34:16.226000 2982 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead\nW1120 12:34:16.226000 2982 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead\nINFO:     Started server process [2982]\nINFO:     Waiting for application startup.\n(MainProcess pid=2982) WARNING 11-20 12:34:27 [flashinfer.py:107] FlashInfer kernels are disabled: flashinfer-cubin is not installed and nvcc (CUDA_HOME, CUDA_PATH, PATH or /usr/local/cuda) or ninja (PATH) is missing. Set CUDA_HOME to a CUDA toolkit and put ninja on PATH, or run `vllm download-kernels`.\n(MainProcess pid=2982) INFO 11-20 12:34:28 [model.py:761] Resolved architecture: KarpoForSequenceClassification\n(MainProcess pid=2982) INFO 11-20 12:34:28 [model.py:2214] Using max model len 8192\n(MainProcess pid=2982) INFO 11-20 12:34:28 [model.py:984] All limits of multimodal modalities supported by the model are set to 0, running in text-only mode.\n(MainProcess pid=2982) INFO 11-20 12:34:28 [model.py:1041] Disabled mm_prefix attention mode because multimodal inputs are configuration-disabled. Attention backends without mm_prefix support may now be selected.\n(MainProcess pid=2982) WARNING 11-20 12:34:28 [scheduler.py:392] max_num_batched_tokens (65536) exceeds max_num_seqs * max_model_len (8192). This may lead to unexpected behavior.\n(MainProcess pid=2982) INFO 11-20 12:34:28 [kernel.py:517] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])\n(MainProcess pid=2982) WARNING 11-20 12:34:28 [vllm.py:1869] Pooling models do not support full cudagraphs. Overriding cudagraph_mode to PIECEWISE.\n(MainProcess pid=2982) INFO 11-20 12:34:28 [numa_utils.py:575] Automatic NUMA binding unavailable on this host; starting unbound. Enable debug logging for the skip reason.\n.W1120 12:34:09.625000 2942 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead\nW1120 12:34:09.625000 2942 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead\nW1120 12:34:09.626000 2942 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead\nFlashInfer kernels are disabled: flashinfer-cubin is not installed and nvcc (CUDA_HOME, CUDA_PATH, PATH or /usr/local/cuda) or ninja (PATH) is missing. Set CUDA_HOME to a CUDA toolkit and put ninja on PATH, or run `vllm download-kernels`.\n...\n----------------------------------------------------------------------\nRan 4 tests in 5.865s\n\nOK\n3 MiB, 0 %\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/development-01/server.log to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/development-01/server.log\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/setup/adapter-tests.log to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/setup/adapter-tests.log\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "9eedcbec-9d93-460c-81da-7475f2e6d5b6",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 12:34:58 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "3804",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "9eedcbec-9d93-460c-81da-7475f2e6d5b6",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

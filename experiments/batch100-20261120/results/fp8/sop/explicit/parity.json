@@ -1,0 +1,2204 @@
+[
+  {
+    "seconds": 0.17234144999997625,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5699
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.97535400014749,
+      "model_ms": 114.32067400005508,
+      "peak_allocated_gib": 7.152241230010986,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.12914299986732658
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-card-collect_reference-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17259892599986415,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5705
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.8689059999233,
+      "model_ms": 114.37894300001972,
+      "peak_allocated_gib": 7.1524128913879395,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.13646899992636463
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-card-verify_identity-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17262336399994638,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5707
+      ],
+      "graph_replays": 1,
+      "encode_ms": 16.204046000211747,
+      "model_ms": 114.33031399997162,
+      "peak_allocated_gib": 7.152470111846924,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.13044299998909992
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-card-compliance_review-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17164459399987209,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5708
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.157747000102972,
+      "model_ms": 114.33195299991894,
+      "peak_allocated_gib": 7.152498722076416,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.1287449999836099
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-atm-secure_account-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17263863599987417,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5727
+      ],
+      "graph_replays": 1,
+      "encode_ms": 16.32288299992979,
+      "model_ms": 114.41167900011351,
+      "peak_allocated_gib": 7.153042793273926,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.12963300014234846
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-atm-await_confirmations-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.172624930999973,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5734
+      ],
+      "graph_replays": 1,
+      "encode_ms": 16.04966400009289,
+      "model_ms": 114.40417099993283,
+      "peak_allocated_gib": 7.153243064880371,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.13208099994699296
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-deposit-investigate_delay-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17262788999983059,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5735
+      ],
+      "graph_replays": 1,
+      "encode_ms": 16.0505579999608,
+      "model_ms": 114.39374299993688,
+      "peak_allocated_gib": 7.153271675109863,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.13949800018053793
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-deposit-reconcile_ledger-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17260973799989188,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5718
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.879716999961602,
+      "model_ms": 114.29534300009436,
+      "peak_allocated_gib": 7.152785301208496,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.13134699997863208
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-deposit-request_approval-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.1726289989999259,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5717
+      ],
+      "graph_replays": 1,
+      "encode_ms": 16.087005999906978,
+      "model_ms": 114.31521899999098,
+      "peak_allocated_gib": 7.152756214141846,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.13235400001576636
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-withdrawal-close_resolved-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17262359800020022,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5710
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.955179000002317,
+      "model_ms": 114.33641700000408,
+      "peak_allocated_gib": 7.1525559425354,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.12967099996785691
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-withdrawal-explain_fees-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17261994199998298,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5701
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.994750000118074,
+      "model_ms": 114.30599599998459,
+      "peak_allocated_gib": 7.152298450469971,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.13354199995774252
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-merchant-reject_unsupported-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17162056699999084,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5733
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.1097729999492,
+      "model_ms": 114.35449400005382,
+      "peak_allocated_gib": 7.153214454650879,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.1302910000049451
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-merchant-review_refund-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17263285100011672,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5721
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.916045000039958,
+      "model_ms": 114.32489599997098,
+      "peak_allocated_gib": 7.152871131896973,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.13230500007921364
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-merchant-restore_access-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17163377299993954,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5705
+      ],
+      "graph_replays": 1,
+      "encode_ms": 14.845235000166213,
+      "model_ms": 114.3448539999099,
+      "peak_allocated_gib": 7.1524128913879395,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.12915799993606925
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-transfer-verify_identity-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17261928099992474,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5696
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.861562000054619,
+      "model_ms": 114.14294099995459,
+      "peak_allocated_gib": 7.152153968811035,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.12792699999408796
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-transfer-clarify_request-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.1726121469998816,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5704
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.927186999988407,
+      "model_ms": 114.26204899998993,
+      "peak_allocated_gib": 7.152384281158447,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.12590999995154561
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-exchange-secure_account-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17264205399987986,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5723
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.88782099997843,
+      "model_ms": 114.2393400000401,
+      "peak_allocated_gib": 7.152928352355957,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.1335950000793673
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-exchange-await_confirmations-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17263405600010628,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5736
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.860287999885259,
+      "model_ms": 114.22878500002298,
+      "peak_allocated_gib": 7.1533002853393555,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.12996100008422218
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-exchange-request_shortfall-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17261822099999335,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5734
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.865415000007488,
+      "model_ms": 114.23472599994966,
+      "peak_allocated_gib": 7.153243064880371,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.13241400006336335
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-refund-reconcile_ledger-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17264301499994872,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5706
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.783127999839053,
+      "model_ms": 114.23932500019873,
+      "peak_allocated_gib": 7.152441501617432,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.1276190000680799
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-refund-verify_destination-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.1726216070001101,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5736
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.885174000004554,
+      "model_ms": 114.2823339998813,
+      "peak_allocated_gib": 7.1533002853393555,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.14170300005389436
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-dispute-execute_authorized-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17161289800014856,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5709
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.714434000074107,
+      "model_ms": 114.20477499996196,
+      "peak_allocated_gib": 7.152527332305908,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.12738700002046244
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-dispute-explain_fees-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17161635000002207,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5721
+      ],
+      "graph_replays": 1,
+      "encode_ms": 14.906044999861479,
+      "model_ms": 114.26451300008011,
+      "peak_allocated_gib": 7.152871131896973,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.13065600001027633
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-dispute-explain_limit-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17263881899998523,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5734
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.757167000174377,
+      "model_ms": 114.2217009999058,
+      "peak_allocated_gib": 7.153243064880371,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.12507999986155482
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-account-review_refund-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17263423300005343,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5722
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.840383000067959,
+      "model_ms": 114.22423999988496,
+      "peak_allocated_gib": 7.152899742126465,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.1278960000945517
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-account-restore_access-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17261330499991345,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5729
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.838092000194592,
+      "model_ms": 114.24431399996138,
+      "peak_allocated_gib": 7.15310001373291,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.12689799996223883
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:boundary-hold-over-approved-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17264968000017689,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5709
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.763348999826121,
+      "model_ms": 114.29354100005185,
+      "peak_allocated_gib": 7.152527332305908,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.1313850000315142
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:boundary-hold-over-compromise-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17174287500006358,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5749
+      ],
+      "graph_replays": 1,
+      "encode_ms": 14.8710639998626,
+      "model_ms": 114.38230199996724,
+      "peak_allocated_gib": 7.153672695159912,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.1313390000632353
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:boundary-duplicate-over-approved-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17249994899998455,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5734
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.880099000014525,
+      "model_ms": 114.3456550000792,
+      "peak_allocated_gib": 7.153243064880371,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.1631350000934617
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:boundary-approval-not-in-customer-text-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17260075400008645,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5751
+      ],
+      "graph_replays": 1,
+      "encode_ms": 15.945023000085712,
+      "model_ms": 114.3714119998549,
+      "peak_allocated_gib": 7.1537299156188965,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.1629260000299837
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:boundary-confirmation-wait-expired-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17262029500011522,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5735
+      ],
+      "graph_replays": 1,
+      "encode_ms": 16.032389999963925,
+      "model_ms": 114.33905600006256,
+      "peak_allocated_gib": 7.153271675109863,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.16214399988712103
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:boundary-refund-window-boundary-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.17266073300015705,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        5758
+      ],
+      "graph_replays": 1,
+      "encode_ms": 16.023838000137403,
+      "model_ms": 114.38576000000467,
+      "peak_allocated_gib": 7.153930187225342,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.17075999994631275
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:boundary-limit-equality-approved-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.3033586750000268,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11404
+      ],
+      "graph_replays": 1,
+      "encode_ms": 31.31102799989094,
+      "model_ms": 229.7317140000814,
+      "peak_allocated_gib": 7.383150100708008,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.22855900010654295
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-card-collect_reference-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.012441331977582792
+      },
+      {
+        "request_id": "concise-en:synthetic-card-verify_identity-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.028543408322522
+      }
+    ]
+  },
+  {
+    "seconds": 0.3033369729998867,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11415
+      ],
+      "graph_replays": 1,
+      "encode_ms": 31.65605999993204,
+      "model_ms": 228.98224300001857,
+      "peak_allocated_gib": 7.383538722991943,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.2162609998777043
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-card-compliance_review-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0004688346704576629
+      },
+      {
+        "request_id": "concise-en:synthetic-atm-secure_account-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.020706476580384714
+      }
+    ]
+  },
+  {
+    "seconds": 0.30332524100003866,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11461
+      ],
+      "graph_replays": 1,
+      "encode_ms": 31.526864999932513,
+      "model_ms": 228.99867099999938,
+      "peak_allocated_gib": 7.385164260864258,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.2567490000728867
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-atm-await_confirmations-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0032075909315125717
+      },
+      {
+        "request_id": "concise-en:synthetic-deposit-investigate_delay-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.01198399896348612
+      }
+    ]
+  },
+  {
+    "seconds": 0.3023198460000458,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11453
+      ],
+      "graph_replays": 1,
+      "encode_ms": 30.294575999960216,
+      "model_ms": 228.88851000016075,
+      "peak_allocated_gib": 7.384880065917969,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.23051099992699164
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-deposit-reconcile_ledger-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.043790097760159186
+      },
+      {
+        "request_id": "concise-en:synthetic-deposit-request_approval-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.010824367427672343
+      }
+    ]
+  },
+  {
+    "seconds": 0.3023515329998645,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11427
+      ],
+      "graph_replays": 1,
+      "encode_ms": 30.55442899994887,
+      "model_ms": 228.91366900012144,
+      "peak_allocated_gib": 7.383962154388428,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.22821700008535117
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-withdrawal-close_resolved-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0007888168143528329
+      },
+      {
+        "request_id": "concise-en:synthetic-withdrawal-explain_fees-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0014552922274733149
+      }
+    ]
+  },
+  {
+    "seconds": 0.3033455730001151,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11434
+      ],
+      "graph_replays": 1,
+      "encode_ms": 31.400669000049675,
+      "model_ms": 228.84464300000218,
+      "peak_allocated_gib": 7.384209156036377,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.229155999932118
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-merchant-reject_unsupported-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0010749940349495824
+      },
+      {
+        "request_id": "concise-en:synthetic-merchant-review_refund-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.02351286808756814
+      }
+    ]
+  },
+  {
+    "seconds": 0.3033510790000946,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11426
+      ],
+      "graph_replays": 1,
+      "encode_ms": 31.321063000177674,
+      "model_ms": 228.84939799996573,
+      "peak_allocated_gib": 7.383926868438721,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.22764400000596652
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-merchant-restore_access-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0014287673608388562
+      },
+      {
+        "request_id": "concise-en:synthetic-transfer-verify_identity-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006390306705554516
+      }
+    ]
+  },
+  {
+    "seconds": 0.3023305460001211,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11400
+      ],
+      "graph_replays": 1,
+      "encode_ms": 30.414565000000948,
+      "model_ms": 228.79256300007,
+      "peak_allocated_gib": 7.38300895690918,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.2327409999907104
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-transfer-clarify_request-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006577313431534226
+      },
+      {
+        "request_id": "concise-en:synthetic-exchange-secure_account-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005188387033951414
+      }
+    ]
+  },
+  {
+    "seconds": 0.301341013000183,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11459
+      ],
+      "graph_replays": 1,
+      "encode_ms": 29.331150999951205,
+      "model_ms": 228.8466980000976,
+      "peak_allocated_gib": 7.385093688964844,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.23007899994809122
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-exchange-await_confirmations-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007198390249879116
+      },
+      {
+        "request_id": "concise-en:synthetic-exchange-request_shortfall-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.004303385994877215
+      }
+    ]
+  },
+  {
+    "seconds": 0.3033475269999144,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11440
+      ],
+      "graph_replays": 1,
+      "encode_ms": 31.40917000018817,
+      "model_ms": 228.84239599989087,
+      "peak_allocated_gib": 7.384421348571777,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.2289309998104727
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-refund-reconcile_ledger-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.01082909205339111
+      },
+      {
+        "request_id": "concise-en:synthetic-refund-verify_destination-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0013462492607430043
+      }
+    ]
+  },
+  {
+    "seconds": 0.30335755700002665,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11445
+      ],
+      "graph_replays": 1,
+      "encode_ms": 31.317564999881142,
+      "model_ms": 228.8921910001136,
+      "peak_allocated_gib": 7.3845977783203125,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.24810100012473413
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-dispute-execute_authorized-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0009427104461728897
+      },
+      {
+        "request_id": "concise-en:synthetic-dispute-explain_fees-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005762340136389099
+      }
+    ]
+  },
+  {
+    "seconds": 0.3033312239999759,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11455
+      ],
+      "graph_replays": 1,
+      "encode_ms": 31.454247000056057,
+      "model_ms": 229.10604499998044,
+      "peak_allocated_gib": 7.384950637817383,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.22037600001567625
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-dispute-explain_limit-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00738221756098556
+      },
+      {
+        "request_id": "concise-en:synthetic-account-review_refund-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.031580553449216064
+      }
+    ]
+  },
+  {
+    "seconds": 0.3033249910001814,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11451
+      ],
+      "graph_replays": 1,
+      "encode_ms": 32.04295299997284,
+      "model_ms": 229.03149700005088,
+      "peak_allocated_gib": 7.384809494018555,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.2194169999256701
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-account-restore_access-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.001597951207539805
+      },
+      {
+        "request_id": "concise-en:boundary-hold-over-approved-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0008946105768673496
+      }
+    ]
+  },
+  {
+    "seconds": 0.3024325910000698,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11458
+      ],
+      "graph_replays": 1,
+      "encode_ms": 30.205310999917856,
+      "model_ms": 229.0703730000132,
+      "peak_allocated_gib": 7.385058403015137,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.2316340001016215
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:boundary-hold-over-compromise-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.02054933697640804
+      },
+      {
+        "request_id": "concise-en:boundary-duplicate-over-approved-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.036312639043213635
+      }
+    ]
+  },
+  {
+    "seconds": 0.30120413999998163,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11485
+      ],
+      "graph_replays": 1,
+      "encode_ms": 29.864813000131107,
+      "model_ms": 229.08136399996692,
+      "peak_allocated_gib": 7.386011600494385,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.20699800006696023
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:boundary-approval-not-in-customer-text-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0038300723341228027
+      },
+      {
+        "request_id": "concise-en:boundary-confirmation-wait-expired-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.031254171254916474
+      }
+    ]
+  },
+  {
+    "seconds": 0.3013614609999422,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        11493
+      ],
+      "graph_replays": 1,
+      "encode_ms": 29.87022899992553,
+      "model_ms": 229.01916099999653,
+      "peak_allocated_gib": 7.386293888092041,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.2315879999059689
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:boundary-refund-window-boundary-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.027529752969497
+      },
+      {
+        "request_id": "concise-en:boundary-limit-equality-approved-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 1.5209046744640029e-05
+      }
+    ]
+  },
+  {
+    "seconds": 0.5641490919999796,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        22819
+      ],
+      "graph_replays": 1,
+      "encode_ms": 62.58650299992041,
+      "model_ms": 458.2496450000235,
+      "peak_allocated_gib": 7.789057731628418,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.4042370001116069
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-card-collect_reference-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.013117754705942564
+      },
+      {
+        "request_id": "concise-en:synthetic-card-verify_identity-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.028220287340675054
+      },
+      {
+        "request_id": "concise-en:synthetic-card-compliance_review-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0004933177315310511
+      },
+      {
+        "request_id": "concise-en:synthetic-atm-secure_account-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.022929961019774514
+      }
+    ]
+  },
+  {
+    "seconds": 0.5596814519999498,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        22914
+      ],
+      "graph_replays": 1,
+      "encode_ms": 58.98613799990926,
+      "model_ms": 456.91903800002365,
+      "peak_allocated_gib": 7.792438507080078,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.29400400012491446
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-atm-await_confirmations-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.003733374873563622
+      },
+      {
+        "request_id": "concise-en:synthetic-deposit-investigate_delay-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.012215633279550442
+      },
+      {
+        "request_id": "concise-en:synthetic-deposit-reconcile_ledger-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.040304809739845515
+      },
+      {
+        "request_id": "concise-en:synthetic-deposit-request_approval-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.009632520755590845
+      }
+    ]
+  },
+  {
+    "seconds": 0.5597662299999229,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        22861
+      ],
+      "graph_replays": 1,
+      "encode_ms": 58.75299000013001,
+      "model_ms": 456.99507599988465,
+      "peak_allocated_gib": 7.790552616119385,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.2975229999719886
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-withdrawal-close_resolved-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0006788570947848793
+      },
+      {
+        "request_id": "concise-en:synthetic-withdrawal-explain_fees-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0012614522041067833
+      },
+      {
+        "request_id": "concise-en:synthetic-merchant-reject_unsupported-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0010530546964700582
+      },
+      {
+        "request_id": "concise-en:synthetic-merchant-review_refund-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.023544598879480905
+      }
+    ]
+  },
+  {
+    "seconds": 0.5597820959999353,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        22826
+      ],
+      "graph_replays": 1,
+      "encode_ms": 58.77154099994186,
+      "model_ms": 457.3925260001488,
+      "peak_allocated_gib": 7.789306640625,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.2991329999986192
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-merchant-restore_access-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00137424641131767
+      },
+      {
+        "request_id": "concise-en:synthetic-transfer-verify_identity-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0060090359536562055
+      },
+      {
+        "request_id": "concise-en:synthetic-transfer-clarify_request-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006606683880143849
+      },
+      {
+        "request_id": "concise-en:synthetic-exchange-secure_account-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005023682264243545
+      }
+    ]
+  },
+  {
+    "seconds": 0.5597623490000387,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        22899
+      ],
+      "graph_replays": 1,
+      "encode_ms": 58.866998999974385,
+      "model_ms": 457.51516800009995,
+      "peak_allocated_gib": 7.791903018951416,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.2960409999559488
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-exchange-await_confirmations-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006392638989445205
+      },
+      {
+        "request_id": "concise-en:synthetic-exchange-request_shortfall-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.004263042905014405
+      },
+      {
+        "request_id": "concise-en:synthetic-refund-reconcile_ledger-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.009729142127271051
+      },
+      {
+        "request_id": "concise-en:synthetic-refund-verify_destination-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0012279989429554439
+      }
+    ]
+  },
+  {
+    "seconds": 0.5607510049999291,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        22900
+      ],
+      "graph_replays": 1,
+      "encode_ms": 59.61536600011641,
+      "model_ms": 457.4697539999306,
+      "peak_allocated_gib": 7.791938304901123,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.3071050000471587
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-dispute-execute_authorized-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0009148538510858062
+      },
+      {
+        "request_id": "concise-en:synthetic-dispute-explain_fees-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005775585084686563
+      },
+      {
+        "request_id": "concise-en:synthetic-dispute-explain_limit-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007552174402885359
+      },
+      {
+        "request_id": "concise-en:synthetic-account-review_refund-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.032219258175342325
+      }
+    ]
+  },
+  {
+    "seconds": 0.5608985999999732,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        22909
+      ],
+      "graph_replays": 1,
+      "encode_ms": 59.56350799988286,
+      "model_ms": 457.43099200012693,
+      "peak_allocated_gib": 7.7922587394714355,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.29988000005687354
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-account-restore_access-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00192742593873374
+      },
+      {
+        "request_id": "concise-en:boundary-hold-over-approved-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0009282605277062261
+      },
+      {
+        "request_id": "concise-en:boundary-hold-over-compromise-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.02120608419593195
+      },
+      {
+        "request_id": "concise-en:boundary-duplicate-over-approved-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.03656037721679323
+      }
+    ]
+  },
+  {
+    "seconds": 0.5636522229999628,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        22978
+      ],
+      "graph_replays": 1,
+      "encode_ms": 62.76783699991029,
+      "model_ms": 457.23474700002953,
+      "peak_allocated_gib": 7.79471492767334,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.2927170000930346
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:boundary-approval-not-in-customer-text-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006534057983492936
+      },
+      {
+        "request_id": "concise-en:boundary-confirmation-wait-expired-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.03158776130564389
+      },
+      {
+        "request_id": "concise-en:boundary-refund-window-boundary-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.027615508888610862
+      },
+      {
+        "request_id": "concise-en:boundary-limit-equality-approved-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 1.5407377925595207e-05
+      }
+    ]
+  },
+  {
+    "seconds": 1.0785333530000116,
+    "count": 8,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 8,
+      "packs": 1,
+      "pack_tokens": [
+        45733
+      ],
+      "graph_replays": 1,
+      "encode_ms": 117.5372249999782,
+      "model_ms": 914.9349849999453,
+      "peak_allocated_gib": 8.60688066482544,
+      "peak_reserved_gib": 20.88671875,
+      "queue_ms": 0.7108390000212239
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-card-collect_reference-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.013380815185099038
+      },
+      {
+        "request_id": "concise-en:synthetic-card-verify_identity-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.022059096461993444
+      },
+      {
+        "request_id": "concise-en:synthetic-card-compliance_review-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0004675553025537127
+      },
+      {
+        "request_id": "concise-en:synthetic-atm-secure_account-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.02066540273759021
+      },
+      {
+        "request_id": "concise-en:synthetic-atm-await_confirmations-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0037013940554708746
+      },
+      {
+        "request_id": "concise-en:synthetic-deposit-investigate_delay-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.012842886039796775
+      },
+      {
+        "request_id": "concise-en:synthetic-deposit-reconcile_ledger-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.04038361257740708
+      },
+      {
+        "request_id": "concise-en:synthetic-deposit-request_approval-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00920343421759251
+      }
+    ]
+  },
+  {
+    "seconds": 1.0766901580000194,
+    "count": 8,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 8,
+      "packs": 1,
+      "pack_tokens": [
+        45687
+      ],
+      "graph_replays": 1,
+      "encode_ms": 116.95622000002004,
+      "model_ms": 914.4744199998058,
+      "peak_allocated_gib": 8.606460094451904,
+      "peak_reserved_gib": 20.88671875,
+      "queue_ms": 0.5869680001069355
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-withdrawal-close_resolved-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0006967258956847022
+      },
+      {
+        "request_id": "concise-en:synthetic-withdrawal-explain_fees-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0014454169679212203
+      },
+      {
+        "request_id": "concise-en:synthetic-merchant-reject_unsupported-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0010943397787721576
+      },
+      {
+        "request_id": "concise-en:synthetic-merchant-review_refund-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.022692439173968015
+      },
+      {
+        "request_id": "concise-en:synthetic-merchant-restore_access-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.003837960982925548
+      },
+      {
+        "request_id": "concise-en:synthetic-transfer-verify_identity-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005942474341836701
+      },
+      {
+        "request_id": "concise-en:synthetic-transfer-clarify_request-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0067586722903109075
+      },
+      {
+        "request_id": "concise-en:synthetic-exchange-secure_account-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005202440156545252
+      }
+    ]
+  },
+  {
+    "seconds": 1.0807326229999035,
+    "count": 8,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 8,
+      "packs": 1,
+      "pack_tokens": [
+        45799
+      ],
+      "graph_replays": 1,
+      "encode_ms": 119.2444069999965,
+      "model_ms": 915.6669159999637,
+      "peak_allocated_gib": 8.610587120056152,
+      "peak_reserved_gib": 20.88671875,
+      "queue_ms": 0.56385500010947
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-exchange-await_confirmations-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0068835649554375156
+      },
+      {
+        "request_id": "concise-en:synthetic-exchange-request_shortfall-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0039561665933218575
+      },
+      {
+        "request_id": "concise-en:synthetic-refund-reconcile_ledger-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.010056120457396456
+      },
+      {
+        "request_id": "concise-en:synthetic-refund-verify_destination-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0011101620500166831
+      },
+      {
+        "request_id": "concise-en:synthetic-dispute-execute_authorized-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0008521955280295698
+      },
+      {
+        "request_id": "concise-en:synthetic-dispute-explain_fees-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005822794365788808
+      },
+      {
+        "request_id": "concise-en:synthetic-dispute-explain_limit-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007770758161519287
+      },
+      {
+        "request_id": "concise-en:synthetic-account-review_refund-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.032593580605195904
+      }
+    ]
+  },
+  {
+    "seconds": 1.0805902139998125,
+    "count": 8,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 8,
+      "packs": 1,
+      "pack_tokens": [
+        45887
+      ],
+      "graph_replays": 1,
+      "encode_ms": 120.05576299998211,
+      "model_ms": 915.0736550000147,
+      "peak_allocated_gib": 8.611346244812012,
+      "peak_reserved_gib": 21.765625,
+      "queue_ms": 0.5682829998931993
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-account-restore_access-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0020099982297934194
+      },
+      {
+        "request_id": "concise-en:boundary-hold-over-approved-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0007732189634858111
+      },
+      {
+        "request_id": "concise-en:boundary-hold-over-compromise-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.02161165900987716
+      },
+      {
+        "request_id": "concise-en:boundary-duplicate-over-approved-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0392901239959948
+      },
+      {
+        "request_id": "concise-en:boundary-approval-not-in-customer-text-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00787391326889264
+      },
+      {
+        "request_id": "concise-en:boundary-confirmation-wait-expired-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0314480234399811
+      },
+      {
+        "request_id": "concise-en:boundary-refund-window-boundary-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.026920458655787072
+      },
+      {
+        "request_id": "concise-en:boundary-limit-equality-approved-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 1.5543712137854474e-05
+      }
+    ]
+  },
+  {
+    "seconds": 2.068199196000023,
+    "count": 16,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 16,
+      "packs": 2,
+      "pack_tokens": [
+        62861,
+        28559
+      ],
+      "graph_replays": 2,
+      "encode_ms": 234.8217090000162,
+      "model_ms": 1824.235438999949,
+      "peak_allocated_gib": 9.213958263397217,
+      "peak_reserved_gib": 22.96484375,
+      "queue_ms": 1.0833060000550176
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-card-collect_reference-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.01357954932830574
+      },
+      {
+        "request_id": "concise-en:synthetic-card-verify_identity-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.021484803688541554
+      },
+      {
+        "request_id": "concise-en:synthetic-card-compliance_review-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0004689946324991645
+      },
+      {
+        "request_id": "concise-en:synthetic-atm-secure_account-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.020894949646739658
+      },
+      {
+        "request_id": "concise-en:synthetic-atm-await_confirmations-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.003698865871000989
+      },
+      {
+        "request_id": "concise-en:synthetic-deposit-investigate_delay-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.013515923958626996
+      },
+      {
+        "request_id": "concise-en:synthetic-deposit-reconcile_ledger-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0403023911462399
+      },
+      {
+        "request_id": "concise-en:synthetic-deposit-request_approval-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00995056477225087
+      },
+      {
+        "request_id": "concise-en:synthetic-withdrawal-close_resolved-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0007607317972906369
+      },
+      {
+        "request_id": "concise-en:synthetic-withdrawal-explain_fees-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0015191947212486179
+      },
+      {
+        "request_id": "concise-en:synthetic-merchant-reject_unsupported-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0015820403794447602
+      },
+      {
+        "request_id": "concise-en:synthetic-merchant-review_refund-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.023271771708893607
+      },
+      {
+        "request_id": "concise-en:synthetic-merchant-restore_access-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0013689831614376313
+      },
+      {
+        "request_id": "concise-en:synthetic-transfer-verify_identity-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0058887591868197475
+      },
+      {
+        "request_id": "concise-en:synthetic-transfer-clarify_request-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00673284739776292
+      },
+      {
+        "request_id": "concise-en:synthetic-exchange-secure_account-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005202440156545252
+      }
+    ]
+  },
+  {
+    "seconds": 2.0720625239998753,
+    "count": 16,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 16,
+      "packs": 2,
+      "pack_tokens": [
+        62959,
+        28727
+      ],
+      "graph_replays": 2,
+      "encode_ms": 238.4778709999864,
+      "model_ms": 1824.5322830000532,
+      "peak_allocated_gib": 9.21720027923584,
+      "peak_reserved_gib": 24.16796875,
+      "queue_ms": 1.042325000071287
+    },
+    "parity": [
+      {
+        "request_id": "concise-en:synthetic-exchange-await_confirmations-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007015873539586881
+      },
+      {
+        "request_id": "concise-en:synthetic-exchange-request_shortfall-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0039061851926065275
+      },
+      {
+        "request_id": "concise-en:synthetic-refund-reconcile_ledger-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.010582599469649234
+      },
+      {
+        "request_id": "concise-en:synthetic-refund-verify_destination-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0013314327729163633
+      },
+      {
+        "request_id": "concise-en:synthetic-dispute-execute_authorized-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0007880845013855664
+      },
+      {
+        "request_id": "concise-en:synthetic-dispute-explain_fees-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0057865989973471255
+      },
+      {
+        "request_id": "concise-en:synthetic-dispute-explain_limit-200-detailed-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007766136982800376
+      },
+      {
+        "request_id": "concise-en:synthetic-account-review_refund-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.03146138675280796
+      },
+      {
+        "request_id": "concise-en:synthetic-account-restore_access-200-detailed-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.002285173676710439
+      },
+      {
+        "request_id": "concise-en:boundary-hold-over-approved-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.000850987842587525
+      },
+      {
+        "request_id": "concise-en:boundary-hold-over-compromise-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.020867414373709647
+      },
+      {
+        "request_id": "concise-en:boundary-duplicate-over-approved-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0377862585983777
+      },
+      {
+        "request_id": "concise-en:boundary-approval-not-in-customer-text-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0029501196069281477
+      },
+      {
+        "request_id": "concise-en:boundary-confirmation-wait-expired-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.03323728240638801
+      },
+      {
+        "request_id": "concise-en:boundary-refund-window-boundary-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.026482267480726462
+      },
+      {
+        "request_id": "concise-en:boundary-limit-equality-approved-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 1.564753018100249e-05
+      }
+    ]
+  }
+]

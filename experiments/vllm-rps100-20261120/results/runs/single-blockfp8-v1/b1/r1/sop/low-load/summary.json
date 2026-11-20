@@ -1,0 +1,111 @@
+{
+  "target_rps": 8.0,
+  "offered_seconds": 20.0,
+  "scheduled_requests": 160,
+  "attempts": 160,
+  "valid": 160,
+  "failures": 0,
+  "http_statuses": {
+    "200": 160
+  },
+  "replica_counts": {
+    "0": 160
+  },
+  "correct": 153,
+  "elapsed_with_drain_s": 20.00345888600009,
+  "valid_rps_with_drain": 7.998616684836437,
+  "steady_valid_rps": 8.0,
+  "p50_ms": 129.1568140002255,
+  "p95_ms": 131.51698300021053,
+  "p99_ms": 135.22245000012845,
+  "http_p50_ms": 128.41524300006313,
+  "last_quarter_p50_ms": 128.3408120000331,
+  "max_send_lag_ms": 2.1621400001095026,
+  "valid_within_500ms": 160,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 1
+    },
+    {
+      "second": 2,
+      "pending": 1
+    },
+    {
+      "second": 3,
+      "pending": 1
+    },
+    {
+      "second": 4,
+      "pending": 1
+    },
+    {
+      "second": 5,
+      "pending": 1
+    },
+    {
+      "second": 6,
+      "pending": 1
+    },
+    {
+      "second": 7,
+      "pending": 1
+    },
+    {
+      "second": 8,
+      "pending": 1
+    },
+    {
+      "second": 9,
+      "pending": 1
+    },
+    {
+      "second": 10,
+      "pending": 1
+    },
+    {
+      "second": 11,
+      "pending": 1
+    },
+    {
+      "second": 12,
+      "pending": 1
+    },
+    {
+      "second": 13,
+      "pending": 1
+    },
+    {
+      "second": 14,
+      "pending": 1
+    },
+    {
+      "second": 15,
+      "pending": 1
+    },
+    {
+      "second": 16,
+      "pending": 1
+    },
+    {
+      "second": 17,
+      "pending": 1
+    },
+    {
+      "second": 18,
+      "pending": 1
+    },
+    {
+      "second": 19,
+      "pending": 1
+    },
+    {
+      "second": 20,
+      "pending": 1
+    }
+  ],
+  "backlog_slope_per_second": 0.0,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": true,
+  "passes_performance_acceptance": false
+}

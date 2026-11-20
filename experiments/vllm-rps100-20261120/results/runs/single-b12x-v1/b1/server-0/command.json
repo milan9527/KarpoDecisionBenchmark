@@ -1,0 +1,16 @@
+[
+  "/opt/karpo/venv-vllm034/bin/python",
+  "/opt/karpo/scripts/vllm_rps_b12x_server.py",
+  "--checkpoint",
+  "/opt/karpo/models/karpo-4b",
+  "--output",
+  "/opt/karpo/experiments/vllm-rps100-20261120/results/runs/single-b12x-v1/b1/server-0",
+  "--max-seqs",
+  "1",
+  "--replica-id",
+  "0",
+  "--port",
+  "18500",
+  "--admission-limit",
+  "64"
+]

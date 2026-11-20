@@ -1,0 +1,36 @@
+{
+  "CommandId": "cbcfc520-4707-45f4-9b22-42d41dad1267",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T14:47:30.658Z",
+  "ExecutionElapsedTime": "PT0.086S",
+  "ExecutionEndDateTime": "2026-11-20T14:47:30.658Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "Result=success\nId=karpo-rps-bootstrap-fleet1.service\nActiveState=inactive\nSubState=dead\n\nResult=success\nId=karpo-rps-rtx4-tunnel-v1.service\nActiveState=active\nSubState=running\n13.58.107.90\nfleet1-control.log ssh: connect to host 100.59.41.29 port 22: Connection timed out\nssh: connect to host 100.59.41.29 port 22: Connection timed out\nssh: connect to host 100.59.41.29 port 22: Connection refused\ndownload: s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-rps-fleet-v1.tar.gz to tmp/vllm-rps-fleet-v1.tar.gz\n/tmp/vllm-rps-fleet-v1.tar.gz: OK\n/tmp/vllm-rps-fleet-v1.tar.gz: OK\nRunning as unit: karpo-rps-install-fleet1.service; invocation ID: 255a8bb46e4741da9841b2e89e9fe535\nRunning as unit: karpo-rps-fleet1-prefetch.service; invocation ID: 60451579517345b484b5a02679ae24f8\nRunning as unit: karpo-rps-fleet1-node-v1.service; invocation ID: 35ee0bdb480f495eac52ffe00cc49663\nRunning as unit: karpo-rps-fleet1-backup.service; invocation ID: ac5a3adf89884e12ad73d3f53f5f2c42\nrtx4-tunnel.log ssh: connect to host 100.59.41.29 port 22: Connection timed out\nssh: connect to host 100.59.41.29 port 22: Connection timed out\nssh: connect to host 100.59.41.29 port 22: Connection timed out\nssh: connect to host 100.59.41.29 port 22: Connection refused\nWarning: Permanently added '100.59.41.29' (ED25519) to the list of known hosts.\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "1dfc5955-84eb-49a9-90f3-fa76200e5072",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 14:47:41 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1943",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "1dfc5955-84eb-49a9-90f3-fa76200e5072",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

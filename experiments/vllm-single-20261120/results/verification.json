@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "verified_utc": "2026-11-20T13:10:32.765984+00:00",
+  "stages": 40,
+  "sustained_c100_runs": 12,
+  "http_attempts": 16197,
+  "valid_http_responses": 16197,
+  "failures": 0,
+  "quality_error_observations": 51,
+  "identical_encoded_fixtures": 464,
+  "verified_vllm_response_tokens": 11489,
+  "frozen_files_verified": 24,
+  "archived_sources_verified": [
+    "tests/test_vllm_karpo.py"
+  ]
+}

@@ -1,0 +1,1294 @@
+{
+  "utc": "2026-11-20T14:30:58.796653+00:00",
+  "ondemand2": [
+    "{\"product\":{\"productFamily\":\"Compute Instance\",\"attributes\":{\"enhancedNetworkingSupported\":\"Yes\",\"intelTurboAvailable\":\"No\",\"memory\":\"64 GiB\",\"dedicatedEbsThroughput\":\"Up to 5000 Mbps\",\"vcpu\":\"8\",\"classicnetworkingsupport\":\"false\",\"capacitystatus\":\"Used\",\"locationType\":\"AWS Region\",\"storage\":\"1 x 1900 NVMe SSD\",\"instanceFamily\":\"GPU instance\",\"operatingSystem\":\"Linux\",\"intelAvx2Available\":\"No\",\"instanceFamilyCategory\":\"Accelerated Computing\",\"regionCode\":\"us-east-2\",\"physicalProcessor\":\"Intel Xeon Scalable (Emerald Rapids)\",\"clockSpeed\":\"3.2 GHz\",\"ecu\":\"NA\",\"networkPerformance\":\"50 Gigabit\",\"servicename\":\"Amazon Elastic Compute Cloud\",\"gpuMemory\":\"96 GB\",\"dedicatedEbsThroughputDescription\":\"2000 Mbps\",\"vpcnetworkingsupport\":\"true\",\"instanceType\":\"g7e.2xlarge\",\"tenancy\":\"Shared\",\"usagetype\":\"USE2-BoxUsage:g7e.2xlarge\",\"normalizationSizeFactor\":\"1\",\"gpu\":\"1\",\"intelAvxAvailable\":\"No\",\"processorFeatures\":\"Intel AMX\",\"servicecode\":\"AmazonEC2\",\"licenseModel\":\"No License required\",\"currentGeneration\":\"Yes\",\"preInstalledSw\":\"NA\",\"location\":\"US East (Ohio)\",\"processorArchitecture\":\"64-bit\",\"marketoption\":\"OnDemand\",\"operation\":\"RunInstances\",\"availabilityzone\":\"NA\"},\"sku\":\"84MJTJ2X73HAYM9Q\"},\"serviceCode\":\"AmazonEC2\",\"terms\":{\"OnDemand\":{\"84MJTJ2X73HAYM9Q.JRTCKXETXF\":{\"priceDimensions\":{\"84MJTJ2X73HAYM9Q.JRTCKXETXF.6YS6EN2CT7\":{\"unit\":\"Hrs\",\"endRange\":\"Inf\",\"description\":\"$3.36312 per On Demand Linux g7e.2xlarge Instance Hour\",\"appliesTo\":[],\"rateCode\":\"84MJTJ2X73HAYM9Q.JRTCKXETXF.6YS6EN2CT7\",\"beginRange\":\"0\",\"pricePerUnit\":{\"USD\":\"3.3631200000\"}}},\"sku\":\"84MJTJ2X73HAYM9Q\",\"effectiveDate\":\"2026-11-01T00:00:00Z\",\"offerTermCode\":\"JRTCKXETXF\",\"termAttributes\":{}}}},\"version\":\"20261120034850\",\"publicationDate\":\"2026-11-20T03:48:50Z\"}"
+  ],
+  "ondemand": [
+    "{\"product\":{\"productFamily\":\"Compute Instance\",\"attributes\":{\"enhancedNetworkingSupported\":\"Yes\",\"intelTurboAvailable\":\"No\",\"memory\":\"128 GiB\",\"dedicatedEbsThroughput\":\"8000 Mbps\",\"vcpu\":\"16\",\"classicnetworkingsupport\":\"false\",\"capacitystatus\":\"Used\",\"locationType\":\"AWS Region\",\"storage\":\"1 x 1900 NVMe SSD\",\"instanceFamily\":\"GPU instance\",\"operatingSystem\":\"Linux\",\"intelAvx2Available\":\"No\",\"instanceFamilyCategory\":\"Accelerated Computing\",\"regionCode\":\"us-east-2\",\"physicalProcessor\":\"Intel Xeon Scalable (Emerald Rapids)\",\"clockSpeed\":\"3.2 GHz\",\"ecu\":\"NA\",\"networkPerformance\":\"50 Gigabit\",\"servicename\":\"Amazon Elastic Compute Cloud\",\"gpuMemory\":\"96 GB\",\"dedicatedEbsThroughputDescription\":\"8000 Mbps\",\"vpcnetworkingsupport\":\"true\",\"instanceType\":\"g7e.4xlarge\",\"tenancy\":\"Shared\",\"usagetype\":\"USE2-BoxUsage:g7e.4xlarge\",\"normalizationSizeFactor\":\"1.188824663\",\"gpu\":\"1\",\"intelAvxAvailable\":\"No\",\"processorFeatures\":\"Intel AMX\",\"servicecode\":\"AmazonEC2\",\"licenseModel\":\"No License required\",\"currentGeneration\":\"Yes\",\"preInstalledSw\":\"NA\",\"location\":\"US East (Ohio)\",\"processorArchitecture\":\"64-bit\",\"marketoption\":\"OnDemand\",\"operation\":\"RunInstances\",\"availabilityzone\":\"NA\"},\"sku\":\"QKX9RKZW7KMF4WAV\"},\"serviceCode\":\"AmazonEC2\",\"terms\":{\"OnDemand\":{\"QKX9RKZW7KMF4WAV.JRTCKXETXF\":{\"priceDimensions\":{\"QKX9RKZW7KMF4WAV.JRTCKXETXF.6YS6EN2CT7\":{\"unit\":\"Hrs\",\"endRange\":\"Inf\",\"description\":\"$3.99816 per On Demand Linux g7e.4xlarge Instance Hour\",\"appliesTo\":[],\"rateCode\":\"QKX9RKZW7KMF4WAV.JRTCKXETXF.6YS6EN2CT7\",\"beginRange\":\"0\",\"pricePerUnit\":{\"USD\":\"3.9981600000\"}}},\"sku\":\"QKX9RKZW7KMF4WAV\",\"effectiveDate\":\"2026-11-01T00:00:00Z\",\"offerTermCode\":\"JRTCKXETXF\",\"termAttributes\":{}}}},\"version\":\"20261120034850\",\"publicationDate\":\"2026-11-20T03:48:50Z\"}"
+  ],
+  "gpu_types": [
+    {
+      "InstanceType": "g7e.8xlarge",
+      "CurrentGeneration": true,
+      "FreeTierEligible": false,
+      "SupportedUsageClasses": [
+        "on-demand",
+        "spot"
+      ],
+      "SupportedRootDeviceTypes": [
+        "ebs"
+      ],
+      "SupportedVirtualizationTypes": [
+        "hvm"
+      ],
+      "BareMetal": false,
+      "Hypervisor": "nitro",
+      "ProcessorInfo": {
+        "SupportedArchitectures": [
+          "x86_64"
+        ],
+        "SustainedClockSpeedInGhz": 2.4,
+        "Manufacturer": "Intel"
+      },
+      "VCpuInfo": {
+        "DefaultVCpus": 32,
+        "DefaultCores": 16,
+        "DefaultThreadsPerCore": 2,
+        "ValidCores": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "ValidThreadsPerCore": [
+          1,
+          2
+        ]
+      },
+      "MemoryInfo": {
+        "SizeInMiB": 262144
+      },
+      "InstanceStorageSupported": true,
+      "InstanceStorageInfo": {
+        "TotalSizeInGB": 1900,
+        "Disks": [
+          {
+            "SizeInGB": 1900,
+            "Count": 1,
+            "Type": "ssd"
+          }
+        ],
+        "NvmeSupport": "required",
+        "EncryptionSupport": "required"
+      },
+      "EbsInfo": {
+        "EbsOptimizedSupport": "default",
+        "EncryptionSupport": "supported",
+        "EbsOptimizedInfo": {
+          "BaselineBandwidthInMbps": 16000,
+          "BaselineThroughputInMBps": 2000.0,
+          "BaselineIops": 64000,
+          "MaximumBandwidthInMbps": 16000,
+          "MaximumThroughputInMBps": 2000.0,
+          "MaximumIops": 64000
+        },
+        "NvmeSupport": "required",
+        "MaximumEbsAttachments": 32,
+        "AttachmentLimitType": "dedicated"
+      },
+      "NetworkInfo": {
+        "NetworkPerformance": "100 Gigabit",
+        "MaximumNetworkInterfaces": 8,
+        "MaximumNetworkCards": 1,
+        "DefaultNetworkCardIndex": 0,
+        "NetworkCards": [
+          {
+            "NetworkCardIndex": 0,
+            "NetworkPerformance": "100 Gigabit",
+            "MaximumNetworkInterfaces": 8,
+            "BaselineBandwidthInGbps": 100.0,
+            "PeakBandwidthInGbps": 100.0,
+            "DefaultEnaQueueCountPerInterface": 32
+          }
+        ],
+        "Ipv4AddressesPerInterface": 64,
+        "Ipv6AddressesPerInterface": 64,
+        "Ipv6Supported": true,
+        "EnaSupport": "required",
+        "EfaSupported": true,
+        "EfaInfo": {
+          "MaximumEfaInterfaces": 1
+        },
+        "EncryptionInTransitSupported": true,
+        "EnaSrdSupported": false,
+        "FlexibleEnaQueuesSupport": "unsupported",
+        "ConnectionTrackingConfiguration": {
+          "DefaultTcpEstablishedTimeout": 350,
+          "DefaultUdpTimeout": 30,
+          "DefaultUdpStreamTimeout": 180
+        },
+        "SecondaryNetworkSupported": false,
+        "Ipv4AddressesPerSecondaryInterface": 0
+      },
+      "GpuInfo": {
+        "Gpus": [
+          {
+            "Name": "RTX PRO Server 6000",
+            "Manufacturer": "NVIDIA",
+            "Count": 1,
+            "LogicalGpuCount": 1,
+            "GpuPartitionSize": 1.0,
+            "Workloads": [
+              "graphics",
+              "ml-ai"
+            ],
+            "MemoryInfo": {
+              "SizeInMiB": 98304
+            }
+          }
+        ],
+        "TotalGpuMemoryInMiB": 98304
+      },
+      "PlacementGroupInfo": {
+        "SupportedStrategies": [
+          "cluster",
+          "partition",
+          "spread"
+        ]
+      },
+      "HibernationSupported": false,
+      "BurstablePerformanceSupported": false,
+      "DedicatedHostsSupported": false,
+      "AutoRecoverySupported": false,
+      "SupportedBootModes": [
+        "legacy-bios",
+        "uefi"
+      ],
+      "NitroEnclavesSupport": "supported",
+      "NitroTpmSupport": "supported",
+      "NitroTpmInfo": {
+        "SupportedVersions": [
+          "2.0"
+        ]
+      },
+      "PhcSupport": "unsupported",
+      "RebootMigrationSupport": "unsupported"
+    },
+    {
+      "InstanceType": "g7e.4xlarge",
+      "CurrentGeneration": true,
+      "FreeTierEligible": false,
+      "SupportedUsageClasses": [
+        "on-demand",
+        "spot"
+      ],
+      "SupportedRootDeviceTypes": [
+        "ebs"
+      ],
+      "SupportedVirtualizationTypes": [
+        "hvm"
+      ],
+      "BareMetal": false,
+      "Hypervisor": "nitro",
+      "ProcessorInfo": {
+        "SupportedArchitectures": [
+          "x86_64"
+        ],
+        "SustainedClockSpeedInGhz": 2.4,
+        "Manufacturer": "Intel"
+      },
+      "VCpuInfo": {
+        "DefaultVCpus": 16,
+        "DefaultCores": 8,
+        "DefaultThreadsPerCore": 2,
+        "ValidCores": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "ValidThreadsPerCore": [
+          1,
+          2
+        ]
+      },
+      "MemoryInfo": {
+        "SizeInMiB": 131072
+      },
+      "InstanceStorageSupported": true,
+      "InstanceStorageInfo": {
+        "TotalSizeInGB": 1900,
+        "Disks": [
+          {
+            "SizeInGB": 1900,
+            "Count": 1,
+            "Type": "ssd"
+          }
+        ],
+        "NvmeSupport": "required",
+        "EncryptionSupport": "required"
+      },
+      "EbsInfo": {
+        "EbsOptimizedSupport": "default",
+        "EncryptionSupport": "supported",
+        "EbsOptimizedInfo": {
+          "BaselineBandwidthInMbps": 8000,
+          "BaselineThroughputInMBps": 1000.0,
+          "BaselineIops": 32000,
+          "MaximumBandwidthInMbps": 8000,
+          "MaximumThroughputInMBps": 1000.0,
+          "MaximumIops": 32000
+        },
+        "NvmeSupport": "required",
+        "MaximumEbsAttachments": 32,
+        "AttachmentLimitType": "dedicated"
+      },
+      "NetworkInfo": {
+        "NetworkPerformance": "50 Gigabit",
+        "MaximumNetworkInterfaces": 8,
+        "MaximumNetworkCards": 1,
+        "DefaultNetworkCardIndex": 0,
+        "NetworkCards": [
+          {
+            "NetworkCardIndex": 0,
+            "NetworkPerformance": "50 Gigabit",
+            "MaximumNetworkInterfaces": 8,
+            "BaselineBandwidthInGbps": 50.0,
+            "PeakBandwidthInGbps": 50.0,
+            "DefaultEnaQueueCountPerInterface": 16
+          }
+        ],
+        "Ipv4AddressesPerInterface": 64,
+        "Ipv6AddressesPerInterface": 64,
+        "Ipv6Supported": true,
+        "EnaSupport": "required",
+        "EfaSupported": false,
+        "EncryptionInTransitSupported": true,
+        "EnaSrdSupported": false,
+        "FlexibleEnaQueuesSupport": "unsupported",
+        "ConnectionTrackingConfiguration": {
+          "DefaultTcpEstablishedTimeout": 350,
+          "DefaultUdpTimeout": 30,
+          "DefaultUdpStreamTimeout": 180
+        },
+        "SecondaryNetworkSupported": false,
+        "Ipv4AddressesPerSecondaryInterface": 0
+      },
+      "GpuInfo": {
+        "Gpus": [
+          {
+            "Name": "RTX PRO Server 6000",
+            "Manufacturer": "NVIDIA",
+            "Count": 1,
+            "LogicalGpuCount": 1,
+            "GpuPartitionSize": 1.0,
+            "Workloads": [
+              "graphics",
+              "ml-ai"
+            ],
+            "MemoryInfo": {
+              "SizeInMiB": 98304
+            }
+          }
+        ],
+        "TotalGpuMemoryInMiB": 98304
+      },
+      "PlacementGroupInfo": {
+        "SupportedStrategies": [
+          "cluster",
+          "partition",
+          "spread"
+        ]
+      },
+      "HibernationSupported": false,
+      "BurstablePerformanceSupported": false,
+      "DedicatedHostsSupported": false,
+      "AutoRecoverySupported": false,
+      "SupportedBootModes": [
+        "legacy-bios",
+        "uefi"
+      ],
+      "NitroEnclavesSupport": "supported",
+      "NitroTpmSupport": "supported",
+      "NitroTpmInfo": {
+        "SupportedVersions": [
+          "2.0"
+        ]
+      },
+      "PhcSupport": "unsupported",
+      "RebootMigrationSupport": "unsupported"
+    },
+    {
+      "InstanceType": "g7e.2xlarge",
+      "CurrentGeneration": true,
+      "FreeTierEligible": false,
+      "SupportedUsageClasses": [
+        "on-demand",
+        "spot"
+      ],
+      "SupportedRootDeviceTypes": [
+        "ebs"
+      ],
+      "SupportedVirtualizationTypes": [
+        "hvm"
+      ],
+      "BareMetal": false,
+      "Hypervisor": "nitro",
+      "ProcessorInfo": {
+        "SupportedArchitectures": [
+          "x86_64"
+        ],
+        "SustainedClockSpeedInGhz": 2.4,
+        "Manufacturer": "Intel"
+      },
+      "VCpuInfo": {
+        "DefaultVCpus": 8,
+        "DefaultCores": 4,
+        "DefaultThreadsPerCore": 2,
+        "ValidCores": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "ValidThreadsPerCore": [
+          1,
+          2
+        ]
+      },
+      "MemoryInfo": {
+        "SizeInMiB": 65536
+      },
+      "InstanceStorageSupported": true,
+      "InstanceStorageInfo": {
+        "TotalSizeInGB": 1900,
+        "Disks": [
+          {
+            "SizeInGB": 1900,
+            "Count": 1,
+            "Type": "ssd"
+          }
+        ],
+        "NvmeSupport": "required",
+        "EncryptionSupport": "required"
+      },
+      "EbsInfo": {
+        "EbsOptimizedSupport": "default",
+        "EncryptionSupport": "supported",
+        "EbsOptimizedInfo": {
+          "BaselineBandwidthInMbps": 2000,
+          "BaselineThroughputInMBps": 250.0,
+          "BaselineIops": 8000,
+          "MaximumBandwidthInMbps": 5000,
+          "MaximumThroughputInMBps": 625.0,
+          "MaximumIops": 20000
+        },
+        "NvmeSupport": "required",
+        "MaximumEbsAttachments": 32,
+        "AttachmentLimitType": "dedicated"
+      },
+      "NetworkInfo": {
+        "NetworkPerformance": "50 Gigabit",
+        "MaximumNetworkInterfaces": 4,
+        "MaximumNetworkCards": 1,
+        "DefaultNetworkCardIndex": 0,
+        "NetworkCards": [
+          {
+            "NetworkCardIndex": 0,
+            "NetworkPerformance": "50 Gigabit",
+            "MaximumNetworkInterfaces": 4,
+            "BaselineBandwidthInGbps": 50.0,
+            "PeakBandwidthInGbps": 50.0,
+            "DefaultEnaQueueCountPerInterface": 8
+          }
+        ],
+        "Ipv4AddressesPerInterface": 64,
+        "Ipv6AddressesPerInterface": 64,
+        "Ipv6Supported": true,
+        "EnaSupport": "required",
+        "EfaSupported": false,
+        "EncryptionInTransitSupported": true,
+        "EnaSrdSupported": false,
+        "FlexibleEnaQueuesSupport": "unsupported",
+        "ConnectionTrackingConfiguration": {
+          "DefaultTcpEstablishedTimeout": 350,
+          "DefaultUdpTimeout": 30,
+          "DefaultUdpStreamTimeout": 180
+        },
+        "SecondaryNetworkSupported": false,
+        "Ipv4AddressesPerSecondaryInterface": 0
+      },
+      "GpuInfo": {
+        "Gpus": [
+          {
+            "Name": "RTX PRO Server 6000",
+            "Manufacturer": "NVIDIA",
+            "Count": 1,
+            "LogicalGpuCount": 1,
+            "GpuPartitionSize": 1.0,
+            "Workloads": [
+              "graphics",
+              "ml-ai"
+            ],
+            "MemoryInfo": {
+              "SizeInMiB": 98304
+            }
+          }
+        ],
+        "TotalGpuMemoryInMiB": 98304
+      },
+      "PlacementGroupInfo": {
+        "SupportedStrategies": [
+          "cluster",
+          "partition",
+          "spread"
+        ]
+      },
+      "HibernationSupported": false,
+      "BurstablePerformanceSupported": false,
+      "DedicatedHostsSupported": false,
+      "AutoRecoverySupported": false,
+      "SupportedBootModes": [
+        "legacy-bios",
+        "uefi"
+      ],
+      "NitroEnclavesSupport": "supported",
+      "NitroTpmSupport": "supported",
+      "NitroTpmInfo": {
+        "SupportedVersions": [
+          "2.0"
+        ]
+      },
+      "PhcSupport": "unsupported",
+      "RebootMigrationSupport": "unsupported"
+    }
+  ],
+  "prices": [
+    {
+      "AvailabilityZone": "us-east-2b",
+      "AvailabilityZoneId": "use2-az2",
+      "InstanceType": "g7e.4xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "2.177800",
+      "Timestamp": "2026-11-20 14:00:00+00:00"
+    },
+    {
+      "AvailabilityZone": "us-east-2b",
+      "AvailabilityZoneId": "use2-az2",
+      "InstanceType": "g7e.12xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "4.533300",
+      "Timestamp": "2026-11-20 14:00:00+00:00"
+    },
+    {
+      "AvailabilityZone": "us-east-2a",
+      "AvailabilityZoneId": "use2-az1",
+      "InstanceType": "g7e.12xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "3.728800",
+      "Timestamp": "2026-11-20 14:00:00+00:00"
+    },
+    {
+      "AvailabilityZone": "us-east-2c",
+      "AvailabilityZoneId": "use2-az3",
+      "InstanceType": "g7e.2xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "1.914200",
+      "Timestamp": "2026-11-20 13:00:00+00:00"
+    },
+    {
+      "AvailabilityZone": "us-east-2c",
+      "AvailabilityZoneId": "use2-az3",
+      "InstanceType": "p5.4xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "4.672200",
+      "Timestamp": "2026-11-20 12:00:00+00:00"
+    },
+    {
+      "AvailabilityZone": "us-east-2a",
+      "AvailabilityZoneId": "use2-az1",
+      "InstanceType": "g7e.4xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "2.164900",
+      "Timestamp": "2026-11-20 12:00:00+00:00"
+    },
+    {
+      "AvailabilityZone": "us-east-2c",
+      "AvailabilityZoneId": "use2-az3",
+      "InstanceType": "g7e.4xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "2.176900",
+      "Timestamp": "2026-11-20 11:00:00+00:00"
+    },
+    {
+      "AvailabilityZone": "us-east-2a",
+      "AvailabilityZoneId": "use2-az1",
+      "InstanceType": "p5.4xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "4.672200",
+      "Timestamp": "2026-11-20 10:00:00+00:00"
+    },
+    {
+      "AvailabilityZone": "us-east-2c",
+      "AvailabilityZoneId": "use2-az3",
+      "InstanceType": "g7e.12xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "4.124300",
+      "Timestamp": "2026-11-20 10:00:00+00:00"
+    },
+    {
+      "AvailabilityZone": "us-east-2b",
+      "AvailabilityZoneId": "use2-az2",
+      "InstanceType": "g7e.2xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "1.827300",
+      "Timestamp": "2026-11-20 08:00:00+00:00"
+    },
+    {
+      "AvailabilityZone": "us-east-2a",
+      "AvailabilityZoneId": "use2-az1",
+      "InstanceType": "g7e.2xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "2.207300",
+      "Timestamp": "2026-11-20 07:00:00+00:00"
+    },
+    {
+      "AvailabilityZone": "us-east-2b",
+      "AvailabilityZoneId": "use2-az2",
+      "InstanceType": "p5.4xlarge",
+      "ProductDescription": "Linux/UNIX",
+      "SpotPrice": "4.229800",
+      "Timestamp": "2026-11-20 06:00:00+00:00"
+    }
+  ],
+  "quotas": [
+    {
+      "ServiceCode": "ec2",
+      "ServiceName": "Amazon Elastic Compute Cloud (Amazon EC2)",
+      "QuotaArn": "arn:aws:servicequotas:us-east-2:632930644527:ec2/L-3819A6DF",
+      "QuotaCode": "L-3819A6DF",
+      "QuotaName": "All G and VT Spot Instance Requests",
+      "Value": 64.0,
+      "Unit": "None",
+      "Adjustable": true,
+      "GlobalQuota": false,
+      "UsageMetric": {
+        "MetricNamespace": "AWS/Usage",
+        "MetricName": "ResourceCount",
+        "MetricDimensions": {
+          "Class": "G/Spot",
+          "Resource": "vCPU",
+          "Service": "EC2",
+          "Type": "Resource"
+        },
+        "MetricStatisticRecommendation": "Maximum"
+      },
+      "QuotaAppliedAtLevel": "ACCOUNT",
+      "Description": "The maximum number of vCPUs for all running or requested G and VT Spot Instances per Region"
+    },
+    {
+      "ServiceCode": "ec2",
+      "ServiceName": "Amazon Elastic Compute Cloud (Amazon EC2)",
+      "QuotaArn": "arn:aws:servicequotas:us-east-2:632930644527:ec2/L-DB2E81BA",
+      "QuotaCode": "L-DB2E81BA",
+      "QuotaName": "Running On-Demand G and VT instances",
+      "Value": 64.0,
+      "Unit": "None",
+      "Adjustable": true,
+      "GlobalQuota": false,
+      "UsageMetric": {
+        "MetricNamespace": "AWS/Usage",
+        "MetricName": "ResourceCount",
+        "MetricDimensions": {
+          "Class": "G/OnDemand",
+          "Resource": "vCPU",
+          "Service": "EC2",
+          "Type": "Resource"
+        },
+        "MetricStatisticRecommendation": "Maximum"
+      },
+      "QuotaAppliedAtLevel": "ACCOUNT",
+      "Description": "Maximum number of vCPUs assigned to the Running On-Demand G and VT instances."
+    }
+  ],
+  "instances": [
+    {
+      "ReservationId": "r-0d476227f81f28532",
+      "OwnerId": "632930644527",
+      "Groups": [],
+      "Instances": [
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-11-20 13:44:46+00:00",
+                "DeleteOnTermination": false,
+                "Status": "attached",
+                "VolumeId": "vol-004bb94e0313a2f79",
+                "EbsCardIndex": 0
+              }
+            }
+          ],
+          "ClientToken": "karpo-rps100-h100-spot-v1-20261120-us-east-2b",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "InstanceLifecycle": "spot",
+          "NetworkInterfaces": [
+            {
+              "Association": {
+                "IpOwnerId": "amazon",
+                "PublicDnsName": "ec2-3-150-111-135.us-east-2.compute.amazonaws.com",
+                "PublicIp": "3.150.111.135"
+              },
+              "Attachment": {
+                "AttachTime": "2026-11-20 13:44:45+00:00",
+                "AttachmentId": "eni-attach-0de47c997c8158a90",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-077c0629417a7de69",
+                  "GroupName": "karpo-rps100-h100-private-20261120"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "06:ff:ee:50:a1:ab",
+              "NetworkInterfaceId": "eni-0dfb1c208937fc859",
+              "OwnerId": "632930644527",
+              "PrivateDnsName": "ip-172-31-25-147.us-east-2.compute.internal",
+              "PrivateIpAddress": "172.31.25.147",
+              "PrivateIpAddresses": [
+                {
+                  "Association": {
+                    "IpOwnerId": "amazon",
+                    "PublicDnsName": "ec2-3-150-111-135.us-east-2.compute.amazonaws.com",
+                    "PublicIp": "3.150.111.135"
+                  },
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-25-147.us-east-2.compute.internal",
+                  "PrivateIpAddress": "172.31.25.147"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-076c65a355de813cf",
+              "VpcId": "vpc-0d829be5b32cedda7",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-077c0629417a7de69",
+              "GroupName": "karpo-rps100-h100-private-20261120"
+            }
+          ],
+          "SourceDestCheck": true,
+          "SpotInstanceRequestId": "sir-cbtr155h",
+          "Tags": [
+            {
+              "Key": "KeepRunning",
+              "Value": "User requested no EC2 shutdown before good results"
+            },
+            {
+              "Key": "Name",
+              "Value": "karpo-rps100-h100-20261120"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 8,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-11-20 13:44:45+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "SecondaryInterfaces": [],
+          "InstanceId": "i-091371593b3c4a5ff",
+          "ImageId": "ami-00ab7faabf42ddbe2",
+          "State": {
+            "Code": 16,
+            "Name": "running"
+          },
+          "PrivateDnsName": "ip-172-31-25-147.us-east-2.compute.internal",
+          "PublicDnsName": "ec2-3-150-111-135.us-east-2.compute.amazonaws.com",
+          "StateTransitionReason": "",
+          "KeyName": "karpo-rps100-private-20261120",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "p5.4xlarge",
+          "LaunchTime": "2026-11-20 13:44:45+00:00",
+          "Placement": {
+            "AvailabilityZoneId": "use2-az2",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-2b"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-076c65a355de813cf",
+          "VpcId": "vpc-0d829be5b32cedda7",
+          "PrivateIpAddress": "172.31.25.147",
+          "PublicIpAddress": "3.150.111.135"
+        }
+      ]
+    },
+    {
+      "ReservationId": "r-0b7ce8050112d29e2",
+      "OwnerId": "632930644527",
+      "Groups": [],
+      "Instances": [
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-11-19 15:43:57+00:00",
+                "DeleteOnTermination": false,
+                "Status": "attached",
+                "VolumeId": "vol-02af28534c5b54eee",
+                "EbsCardIndex": 0
+              }
+            }
+          ],
+          "ClientToken": "e230c9441a1ef20d1b027cfcb9925c918f4a2dee368cff13d4e1d4455b0f4ff9",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003",
+            "Id": "AIPAZGXM3GIXYN2FTJRMY"
+          },
+          "InstanceLifecycle": "spot",
+          "NetworkInterfaces": [
+            {
+              "Attachment": {
+                "AttachTime": "2026-11-19 15:43:56+00:00",
+                "AttachmentId": "eni-attach-08bcdfebffd5f9d1d",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-0b1141d41de58ca31",
+                  "GroupName": "karpo-benchmark-20261119-115003"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "0a:ff:e4:6c:ee:3b",
+              "NetworkInterfaceId": "eni-0b8d66ee0909d71f4",
+              "OwnerId": "632930644527",
+              "PrivateDnsName": "ip-172-31-44-129.us-east-2.compute.internal",
+              "PrivateIpAddress": "172.31.44.129",
+              "PrivateIpAddresses": [
+                {
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-44-129.us-east-2.compute.internal",
+                  "PrivateIpAddress": "172.31.44.129"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-08cac12e7a232540b",
+              "VpcId": "vpc-0d829be5b32cedda7",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-0b1141d41de58ca31",
+              "GroupName": "karpo-benchmark-20261119-115003"
+            }
+          ],
+          "SourceDestCheck": true,
+          "SpotInstanceRequestId": "sir-5g1i2rjj",
+          "StateReason": {
+            "Code": "Client.UserInitiatedShutdown",
+            "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+          },
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "karpo-concise-20261119-154354"
+            },
+            {
+              "Key": "Lifecycle",
+              "Value": "stop-only"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 16,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-11-19 15:43:56+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "SecondaryInterfaces": [],
+          "InstanceId": "i-048c3784bb87b6d86",
+          "ImageId": "ami-0bc08965f421c8494",
+          "State": {
+            "Code": 80,
+            "Name": "stopped"
+          },
+          "PrivateDnsName": "ip-172-31-44-129.us-east-2.compute.internal",
+          "PublicDnsName": "",
+          "StateTransitionReason": "User initiated (2026-11-19 16:09:22 GMT)",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "g7e.8xlarge",
+          "LaunchTime": "2026-11-19 15:43:56+00:00",
+          "Placement": {
+            "AvailabilityZoneId": "use2-az3",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-2c"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-08cac12e7a232540b",
+          "VpcId": "vpc-0d829be5b32cedda7",
+          "PrivateIpAddress": "172.31.44.129"
+        }
+      ]
+    },
+    {
+      "ReservationId": "r-0e7e19f06797a5f8e",
+      "OwnerId": "632930644527",
+      "Groups": [],
+      "Instances": [
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-11-20 03:06:24+00:00",
+                "DeleteOnTermination": false,
+                "Status": "attached",
+                "VolumeId": "vol-062a0dd0007413835",
+                "EbsCardIndex": 0
+              }
+            }
+          ],
+          "ClientToken": "6c084f91d1c90d08d7cd920ccf27ec391a8936eb4eef087ee5e30311b42be8b8",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003",
+            "Id": "AIPAZGXM3GIXYN2FTJRMY"
+          },
+          "InstanceLifecycle": "spot",
+          "NetworkInterfaces": [
+            {
+              "Association": {
+                "IpOwnerId": "amazon",
+                "PublicDnsName": "ec2-3-144-161-117.us-east-2.compute.amazonaws.com",
+                "PublicIp": "3.144.161.117"
+              },
+              "Attachment": {
+                "AttachTime": "2026-11-20 03:06:23+00:00",
+                "AttachmentId": "eni-attach-012a0c197f1659c31",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-0b1141d41de58ca31",
+                  "GroupName": "karpo-benchmark-20261119-115003"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "0a:ff:e9:fa:9d:95",
+              "NetworkInterfaceId": "eni-00c1be1edcd3fd98f",
+              "OwnerId": "632930644527",
+              "PrivateDnsName": "ip-172-31-40-12.us-east-2.compute.internal",
+              "PrivateIpAddress": "172.31.40.12",
+              "PrivateIpAddresses": [
+                {
+                  "Association": {
+                    "IpOwnerId": "amazon",
+                    "PublicDnsName": "ec2-3-144-161-117.us-east-2.compute.amazonaws.com",
+                    "PublicIp": "3.144.161.117"
+                  },
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-40-12.us-east-2.compute.internal",
+                  "PrivateIpAddress": "172.31.40.12"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-08cac12e7a232540b",
+              "VpcId": "vpc-0d829be5b32cedda7",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-0b1141d41de58ca31",
+              "GroupName": "karpo-benchmark-20261119-115003"
+            }
+          ],
+          "SourceDestCheck": true,
+          "SpotInstanceRequestId": "sir-dfz8i1sj",
+          "Tags": [
+            {
+              "Key": "Lifecycle",
+              "Value": "stop-only"
+            },
+            {
+              "Key": "Name",
+              "Value": "karpo-more-20261120-030622"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 24,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-11-20 03:06:23+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "SecondaryInterfaces": [],
+          "InstanceId": "i-05b24e3b4a7ee864d",
+          "ImageId": "ami-0bc08965f421c8494",
+          "State": {
+            "Code": 16,
+            "Name": "running"
+          },
+          "PrivateDnsName": "ip-172-31-40-12.us-east-2.compute.internal",
+          "PublicDnsName": "ec2-3-144-161-117.us-east-2.compute.amazonaws.com",
+          "StateTransitionReason": "",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "g7e.12xlarge",
+          "LaunchTime": "2026-11-20 13:21:05+00:00",
+          "Placement": {
+            "AvailabilityZoneId": "use2-az3",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-2c"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-08cac12e7a232540b",
+          "VpcId": "vpc-0d829be5b32cedda7",
+          "PrivateIpAddress": "172.31.40.12",
+          "PublicIpAddress": "3.144.161.117"
+        }
+      ]
+    },
+    {
+      "ReservationId": "r-04f638b75e9f32a4a",
+      "OwnerId": "632930644527",
+      "Groups": [],
+      "Instances": [
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-11-20 09:42:42+00:00",
+                "DeleteOnTermination": false,
+                "Status": "attached",
+                "VolumeId": "vol-0e83aac1ae559b643",
+                "EbsCardIndex": 0
+              }
+            }
+          ],
+          "ClientToken": "karpo-smallbatch-g7e4-spot-us-east-2c",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003",
+            "Id": "AIPAZGXM3GIXYN2FTJRMY"
+          },
+          "InstanceLifecycle": "spot",
+          "NetworkInterfaces": [
+            {
+              "Association": {
+                "IpOwnerId": "amazon",
+                "PublicDnsName": "ec2-13-58-107-90.us-east-2.compute.amazonaws.com",
+                "PublicIp": "13.58.107.90"
+              },
+              "Attachment": {
+                "AttachTime": "2026-11-20 09:42:41+00:00",
+                "AttachmentId": "eni-attach-05befc5fc2ad8e43f",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-015c45dfc878c7919",
+                  "GroupName": "karpo-smallbatch-private-20261120"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "0a:ff:eb:93:a7:89",
+              "NetworkInterfaceId": "eni-0d98882de779b9f2b",
+              "OwnerId": "632930644527",
+              "PrivateDnsName": "ip-172-31-42-136.us-east-2.compute.internal",
+              "PrivateIpAddress": "172.31.42.136",
+              "PrivateIpAddresses": [
+                {
+                  "Association": {
+                    "IpOwnerId": "amazon",
+                    "PublicDnsName": "ec2-13-58-107-90.us-east-2.compute.amazonaws.com",
+                    "PublicIp": "13.58.107.90"
+                  },
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-42-136.us-east-2.compute.internal",
+                  "PrivateIpAddress": "172.31.42.136"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-08cac12e7a232540b",
+              "VpcId": "vpc-0d829be5b32cedda7",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-015c45dfc878c7919",
+              "GroupName": "karpo-smallbatch-private-20261120"
+            }
+          ],
+          "SourceDestCheck": true,
+          "SpotInstanceRequestId": "sir-khwi3vgh",
+          "Tags": [
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            },
+            {
+              "Key": "Name",
+              "Value": "karpo-smallbatch-secondary-20261120"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 8,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-11-20 09:42:41+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "SecondaryInterfaces": [],
+          "InstanceId": "i-0de4f061c2a04fe4b",
+          "ImageId": "ami-00ab7faabf42ddbe2",
+          "State": {
+            "Code": 16,
+            "Name": "running"
+          },
+          "PrivateDnsName": "ip-172-31-42-136.us-east-2.compute.internal",
+          "PublicDnsName": "ec2-13-58-107-90.us-east-2.compute.amazonaws.com",
+          "StateTransitionReason": "",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "g7e.4xlarge",
+          "LaunchTime": "2026-11-20 13:21:04+00:00",
+          "Placement": {
+            "AvailabilityZoneId": "use2-az3",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-2c"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-08cac12e7a232540b",
+          "VpcId": "vpc-0d829be5b32cedda7",
+          "PrivateIpAddress": "172.31.42.136",
+          "PublicIpAddress": "13.58.107.90"
+        }
+      ]
+    }
+  ]
+}

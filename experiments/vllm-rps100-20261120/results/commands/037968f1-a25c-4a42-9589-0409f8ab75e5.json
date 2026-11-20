@@ -1,0 +1,8 @@
+{
+  "id": "037968f1-a25c-4a42-9589-0409f8ab75e5",
+  "host": "dual",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target_instance": "i-05b24e3b4a7ee864d",
+  "script": "set -Eeuo pipefail\nif systemctl is-active --quiet karpo-rps-dual-node-v1; then systemctl stop karpo-rps-dual-node-v1; fi\naws s3 cp s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-rps-humming-v1.tar.gz /tmp/vllm-rps-humming-v1.tar.gz --region us-east-1 --no-progress\nprintf '%s  %s\\n' a1116a059d45dd0c55f973e748e176f802d23f12f50d712f215eecd677d7781b /tmp/vllm-rps-humming-v1.tar.gz | sha256sum -c -\ntar -xzf /tmp/vllm-rps-humming-v1.tar.gz -C /opt/karpo\n/opt/karpo/venv-vllm034/bin/python -m pip freeze > /opt/karpo/experiments/vllm-rps100-20261120/results/setup/humming-dual-freeze.txt\naws s3 cp /opt/karpo/experiments/vllm-rps100-20261120/results/setup/humming-dual-freeze.txt s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-rps100-20261120/setup/humming-dual-freeze.txt --region us-east-1 --no-progress\nsystemd-run --unit=karpo-rps-dualhost-humming-v1 --property=RuntimeMaxSec=5400 --property=StandardOutput=append:/opt/karpo/experiments/vllm-rps100-20261120/results/setup/humming-dual-launch.log --property=StandardError=inherit /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/scripts/vllm_rps_humming_suite.py --name dualhost-humming-v1 --revision humming-v1 --gpus 1 --replicas 1 --batches 1 4 --seconds 20\n",
+  "utc": "2026-11-20T13:54:13.691963+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "InstanceId": "i-048c3784bb87b6d86",
+  "original_type": "g7e.8xlarge",
+  "InstanceType": "p5.4xlarge",
+  "PrivateIpAddress": "172.31.44.129",
+  "region": "us-east-2",
+  "hourly_compute_usd": 6.88,
+  "automatic_shutdown": false,
+  "utc": "2026-11-20T13:28:57.934976+00:00",
+  "existing_role_and_ebs_unchanged": true,
+  "launch_method": "reuse_existing_stopped_instance"
+}

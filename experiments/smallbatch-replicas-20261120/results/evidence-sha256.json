@@ -1,0 +1,15 @@
+{
+  "experiments/smallbatch-replicas-20261120/PLAN.zh.md": "3d5f8d92f701b6d1cb34ec4d9c3ce81993ff46e4d79729ddcd8e9bef5d834174",
+  "experiments/smallbatch-replicas-20261120/RESULTS.zh.md": "3378b99a5241607180e38902936ef90325bb90a79309b35de11bdbbba7fde013",
+  "experiments/smallbatch-replicas-20261120/data.json": "4667498a383e13b8e558957ed3f123954d98ce7719b124b57c0b1e5bd61aba7c",
+  "experiments/smallbatch-replicas-20261120/manifest.json": "61bcb5965f070f8c3ec8cc763c97176d3ae7da9e741c374e9e91590b2a432348",
+  "experiments/smallbatch-replicas-20261120/report.html": "1bc5c84db1197c01200f9b31ddf85017161bedd0657e706909ff10d3ebf19a35",
+  "experiments/smallbatch-replicas-20261120/results/provisioning.json": "bb891b0350ace42dc5226c56e25d11da24b561f9047982245fb145cdb2d31b2c",
+  "experiments/smallbatch-replicas-20261120/results/quality-errors.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "experiments/smallbatch-replicas-20261120/results/verification.json": "3663040c2cdd6137174da9163820ce60b6b26e02f3990f806dbc85fe241dd51d",
+  "experiments/smallbatch-replicas-20261120/risk-feature-schema.json": "e2cb67e4973eda8e6e7a0d3bcdaba7285c01b8d8abb96a14b993671dd6bd7e78",
+  "experiments/smallbatch-replicas-20261120/risk-requests.json": "a0d104990d5e54db3089b4e6c411d4087a2b7a84d31ad6e7ccb40dcb9b6fcc1b",
+  "experiments/smallbatch-replicas-20261120/sop-requests.json": "67860c1ff0150604e6ad93c3b189020bfab0211360e7d60509d28b621b8b134d",
+  "scripts/smallbatch_report.py": "407cf4f4a4525fd78c5bbd6c89d3b58cee52dd8bd97c15b3e96a6a5996ad636e",
+  "tests/test_smallbatch.py": "ee3d3b9fa96d53b3310058f60dcaaadcd870dfac2e7707450c1bc830d2651b59"
+}

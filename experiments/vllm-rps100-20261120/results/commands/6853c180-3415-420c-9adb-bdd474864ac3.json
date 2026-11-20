@@ -1,0 +1,8 @@
+{
+  "id": "6853c180-3415-420c-9adb-bdd474864ac3",
+  "host": "single",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-0de4f061c2a04fe4b",
+  "script": "set -Eeuo pipefail\naws s3 cp s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-rps-mxfp4-v1.tar.gz /tmp/vllm-rps-mxfp4-v1.tar.gz --region us-east-1 --no-progress\nprintf '%s  %s\\n' 41912c456f537e96505fac84b23dae68019667c032d308fc22f5cf525cc5dae5 /tmp/vllm-rps-mxfp4-v1.tar.gz | sha256sum -c -\ntar -xzf /tmp/vllm-rps-mxfp4-v1.tar.gz -C /opt/karpo\nsystemd-run --unit=karpo-rps-single-mxfp4-v1 --property=RuntimeMaxSec=3600 --property=StandardOutput=append:/opt/karpo/experiments/vllm-rps100-20261120/results/setup/fp4-launch.log --property=StandardError=inherit /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/scripts/vllm_rps_mxfp4_suite.py --name single-nvmxfp4-v1 --revision mxfp4-v1 --gpus 1 --replicas 1 --batches 1 2 4 8 --seconds 20\n",
+  "utc": "2026-11-20T13:35:04.254363+00:00"
+}

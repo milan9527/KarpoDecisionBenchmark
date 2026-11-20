@@ -1,0 +1,20 @@
+{
+  "mode": "driver",
+  "name": "mixed4-fp8-v1",
+  "revision": "fleet-v1",
+  "batch": 4,
+  "replica_ids": null,
+  "urls": [
+    "http://127.0.0.1:18500",
+    "http://172.31.40.12:18500",
+    "http://172.31.40.12:18501",
+    "http://172.31.25.147:18500"
+  ],
+  "scenarios": [
+    "risk",
+    "sop"
+  ],
+  "seconds": 20,
+  "confirm": true,
+  "roleless": false
+}

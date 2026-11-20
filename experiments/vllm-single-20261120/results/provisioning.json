@@ -1,0 +1,20 @@
+{
+  "instance_id": "i-0de4f061c2a04fe4b",
+  "region": "us-east-2",
+  "started_utc": "2026-11-20T12:29:15.554427+00:00",
+  "s3_bucket": "karpo-benchmark-20261119-115003-632930644527",
+  "action": "start existing single GPU",
+  "response": [
+    {
+      "InstanceId": "i-0de4f061c2a04fe4b",
+      "CurrentState": {
+        "Code": 0,
+        "Name": "pending"
+      },
+      "PreviousState": {
+        "Code": 80,
+        "Name": "stopped"
+      }
+    }
+  ]
+}

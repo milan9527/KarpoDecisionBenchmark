@@ -1,0 +1,41 @@
+{
+  "attempts": 200,
+  "valid": 200,
+  "failures": 0,
+  "correct": 191,
+  "accuracy_all_attempts": 0.955,
+  "valid_within_500ms": 1,
+  "correct_within_500ms": 1,
+  "elapsed_seconds": 26.053068968999924,
+  "valid_rps": 7.676638795912159,
+  "p50_ms": 11749.294216999942,
+  "p95_ms": 13903.313733999994,
+  "p99_ms": 14561.120697999968,
+  "max_ms": 14926.908852999986,
+  "all_attempts_p95_ms": 13903.313733999994,
+  "mean_ms": 10133.67838026999,
+  "tokens_min": 5696,
+  "tokens_max": 5758,
+  "response_batch_histogram": {
+    "1": 1,
+    "16": 96,
+    "10": 20,
+    "8": 48,
+    "6": 12,
+    "9": 9,
+    "7": 7,
+    "4": 4,
+    "3": 3
+  },
+  "http_statuses": {
+    "200": 200
+  },
+  "max_client_send_lag_ms": 0,
+  "max_gpu_allocated_gib": 9.219989776611328,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "closed",
+  "parameters": {
+    "concurrency": 100,
+    "count": 200
+  }
+}

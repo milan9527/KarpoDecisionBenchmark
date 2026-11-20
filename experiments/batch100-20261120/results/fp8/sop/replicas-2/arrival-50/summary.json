@@ -1,0 +1,82 @@
+{
+  "attempts": 500,
+  "valid": 396,
+  "failures": 104,
+  "correct": 373,
+  "accuracy_all_attempts": 0.746,
+  "valid_within_500ms": 8,
+  "correct_within_500ms": 8,
+  "elapsed_seconds": 25.832927904999906,
+  "valid_rps": 15.329272835672455,
+  "p50_ms": 9978.262190999885,
+  "p95_ms": 16707.191547999628,
+  "p99_ms": 17519.039228999645,
+  "max_ms": 17711.240855999677,
+  "all_attempts_p95_ms": 16521.63076099987,
+  "mean_ms": 9562.997347896251,
+  "tokens_min": 5696,
+  "tokens_max": 5758,
+  "response_batch_histogram": {
+    "1": 2,
+    "3": 9,
+    "9": 27,
+    "10": 40,
+    "6": 18,
+    "16": 192,
+    "4": 4,
+    "8": 40,
+    "7": 42,
+    "5": 20,
+    "2": 2
+  },
+  "http_statuses": {
+    "200": 396,
+    "None": 104
+  },
+  "max_client_send_lag_ms": 5.094931999792607,
+  "max_gpu_allocated_gib": 9.22141408920288,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "open",
+  "parameters": {
+    "qps": 50,
+    "seconds": 10,
+    "cap": 256
+  },
+  "after_ramp": {
+    "attempts": 375,
+    "valid": 271,
+    "failures": 104,
+    "correct": 254,
+    "accuracy_all_attempts": 0.6773333333333333,
+    "valid_within_500ms": 0,
+    "correct_within_500ms": 0,
+    "elapsed_seconds": 23.33413420299985,
+    "valid_rps": 11.613887091005077,
+    "p50_ms": 12183.425795999483,
+    "p95_ms": 16776.37232699999,
+    "p99_ms": 17574.72122399986,
+    "max_ms": 17711.240855999677,
+    "all_attempts_p95_ms": 16710.700765999718,
+    "mean_ms": 12327.456378663997,
+    "tokens_min": 5696,
+    "tokens_max": 5758,
+    "response_batch_histogram": {
+      "8": 25,
+      "7": 42,
+      "16": 141,
+      "9": 18,
+      "5": 20,
+      "3": 3,
+      "10": 20,
+      "2": 2
+    },
+    "http_statuses": {
+      "None": 104,
+      "200": 271
+    },
+    "max_client_send_lag_ms": 5.094931999792607,
+    "max_gpu_allocated_gib": 9.22141408920288,
+    "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval."
+  },
+  "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+}

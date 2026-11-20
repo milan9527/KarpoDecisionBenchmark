@@ -1,0 +1,187 @@
+{
+  "same_choices": 222,
+  "observations": 240,
+  "new_errors": 15,
+  "differences": [
+    {
+      "request_id": "risk-deny-15-original",
+      "reference": {
+        "action": "deny"
+      },
+      "actual": {
+        "action": "deduplicate"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-deduplicate-24-reversed",
+      "reference": {
+        "action": "deduplicate"
+      },
+      "actual": {
+        "action": "throttle"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-throttle-16-original",
+      "reference": {
+        "action": "throttle"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-throttle-18-original",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "throttle"
+      },
+      "correct": true
+    },
+    {
+      "request_id": "risk-throttle-18-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "throttle"
+      },
+      "correct": true
+    },
+    {
+      "request_id": "risk-throttle-22-original",
+      "reference": {
+        "action": "throttle"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-challenge-15-original",
+      "reference": {
+        "action": "challenge"
+      },
+      "actual": {
+        "action": "review"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-challenge-18-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "challenge"
+      },
+      "correct": true
+    },
+    {
+      "request_id": "risk-challenge-20-reversed",
+      "reference": {
+        "action": "challenge"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-challenge-25-reversed",
+      "reference": {
+        "action": "challenge"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-challenge-27-original",
+      "reference": {
+        "action": "challenge"
+      },
+      "actual": {
+        "action": "review"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-review-12-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-review-16-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-review-20-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-review-24-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-review-28-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "throttle"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-allow-12-reversed",
+      "reference": {
+        "action": "allow"
+      },
+      "actual": {
+        "action": "throttle"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-allow-24-reversed",
+      "reference": {
+        "action": "allow"
+      },
+      "actual": {
+        "action": "throttle"
+      },
+      "correct": false
+    }
+  ]
+}

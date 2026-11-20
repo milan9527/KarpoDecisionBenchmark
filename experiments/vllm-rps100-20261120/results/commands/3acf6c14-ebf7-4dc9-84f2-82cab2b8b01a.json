@@ -1,0 +1,8 @@
+{
+  "id": "3acf6c14-ebf7-4dc9-84f2-82cab2b8b01a",
+  "host": "h100",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-091371593b3c4a5ff",
+  "script": "ssh -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts ubuntu@172.31.25.147 'sudo /bin/bash -s' <<'RPS_SSH_INNER'\nset -Eeuo pipefail\nsystemctl is-active karpo-rps-install-h100 karpo-rps-h100-v1 || true\ntail -4 /opt/karpo/experiments/vllm-rps100-20261120/results/setup/h100-install.log\nif [ -f /opt/karpo/experiments/vllm-rps100-20261120/results/setup/h100-install-exit.txt ]; then cat /opt/karpo/experiments/vllm-rps100-20261120/results/setup/h100-install-exit.txt; fi\nif [ -f /opt/karpo/experiments/vllm-rps100-20261120/results/setup/h100-launch.log ]; then tail -8 /opt/karpo/experiments/vllm-rps100-20261120/results/setup/h100-launch.log; fi\ntest ! -e /run/systemd/shutdown/scheduled\nnvidia-smi --query-gpu=name,memory.used,utilization.gpu --format=csv\n\nRPS_SSH_INNER",
+  "utc": "2026-11-20T13:48:57.645619+00:00"
+}

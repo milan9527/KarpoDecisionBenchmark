@@ -1,0 +1,36 @@
+{
+  "CommandId": "84aa5f5a-7b00-4749-8ef7-d0d4de159d29",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T12:37:35.026Z",
+  "ExecutionElapsedTime": "PT3M42.584S",
+  "ExecutionEndDateTime": "2026-11-20T12:41:17.026Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "download: s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-single-smoke.py to ../../../../opt/karpo/scripts/vllm_single_smoke.py\n/opt/karpo/scripts/vllm_single_smoke.py: OK\n{\"risk\": {\"observations\": 16, \"same_choices\": 16, \"correct\": 16}, \"sop\": {\"observations\": 16, \"same_choices\": 16, \"correct\": 16}}\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/smoke.json to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/smoke.json\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "28b34f09-d834-478a-b4e9-73524c8f6a80",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 12:41:22 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1096",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "28b34f09-d834-478a-b4e9-73524c8f6a80",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "c3c00f0c-ccdc-43de-ba9e-cde94feefa6a",
+  "host": "h100",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-091371593b3c4a5ff",
+  "script": "ssh -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts ubuntu@172.31.25.147 'sudo /bin/bash -s' <<'RPS_SSH_INNER'\nset -Eeuo pipefail\npython3 - <<'PY'\nimport time,json\nfrom pathlib import Path\ndef read():\n return {line.split()[2]:[int(x) for x in line.split()[3:]] for line in Path('/proc/diskstats').read_text().splitlines() if line.split()[2]=='nvme0n1'}\na=read(); time.sleep(5); b=read(); print('disk',a,b); print('read_MiB_s',(b['nvme0n1'][2]-a['nvme0n1'][2])*512/2**20/5)\nPY\nsystemctl is-active karpo-rps-h100-prefetch\nps -eo pid,stat,etime,pcpu,rss,args | grep -E 'EngineCore|prefetch-h100' | head -10\nfor p in $(pgrep -f 'EngineCore|prefetch-h100.py'); do cat /proc/$p/io || true; done\ntail -7 /opt/karpo/experiments/vllm-rps100-20261120/results/runs/h100-fp8-v1/b1/server-0/server.log\n\nRPS_SSH_INNER",
+  "utc": "2026-11-20T13:54:09.306595+00:00"
+}

@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-20T14:34:32.733627+00:00",
+  "snapshots": [
+    {
+      "SnapshotId": "snap-0e0c1410e24ded3f1",
+      "State": "pending",
+      "Progress": "0%",
+      "StartTime": "2026-11-20 14:32:27.172000+00:00",
+      "VolumeSize": 300,
+      "Description": "Copied for DestinationAmi ami-0961bdc9d1646251d from SourceAmi ami-00ab7faabf42ddbe2 for SourceSnapshot snap-0b60ebe3f98361dbe. Task created on 1,795,185,146,204."
+    }
+  ]
+}

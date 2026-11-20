@@ -1,0 +1,112 @@
+{
+  "target_rps": 100.0,
+  "offered_seconds": 20.0,
+  "scheduled_requests": 2000,
+  "attempts": 2000,
+  "valid": 370,
+  "failures": 1630,
+  "http_statuses": {
+    "200": 370,
+    "429": 1630
+  },
+  "replica_counts": {
+    "0": 370
+  },
+  "correct": 359,
+  "elapsed_with_drain_s": 24.097777923999956,
+  "valid_rps_with_drain": 15.354112780311663,
+  "steady_valid_rps": 15.4,
+  "p50_ms": 4160.395755999957,
+  "p95_ms": 4174.0337909999425,
+  "p99_ms": 4175.402507999934,
+  "http_p50_ms": 4159.701327999983,
+  "last_quarter_p50_ms": 4161.588769999867,
+  "max_send_lag_ms": 10.365599000010661,
+  "valid_within_500ms": 8,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 64
+    },
+    {
+      "second": 2,
+      "pending": 64
+    },
+    {
+      "second": 3,
+      "pending": 64
+    },
+    {
+      "second": 4,
+      "pending": 64
+    },
+    {
+      "second": 5,
+      "pending": 64
+    },
+    {
+      "second": 6,
+      "pending": 64
+    },
+    {
+      "second": 7,
+      "pending": 64
+    },
+    {
+      "second": 8,
+      "pending": 64
+    },
+    {
+      "second": 9,
+      "pending": 64
+    },
+    {
+      "second": 10,
+      "pending": 64
+    },
+    {
+      "second": 11,
+      "pending": 64
+    },
+    {
+      "second": 12,
+      "pending": 64
+    },
+    {
+      "second": 13,
+      "pending": 64
+    },
+    {
+      "second": 14,
+      "pending": 64
+    },
+    {
+      "second": 15,
+      "pending": 64
+    },
+    {
+      "second": 16,
+      "pending": 64
+    },
+    {
+      "second": 17,
+      "pending": 64
+    },
+    {
+      "second": 18,
+      "pending": 64
+    },
+    {
+      "second": 19,
+      "pending": 64
+    },
+    {
+      "second": 20,
+      "pending": 63
+    }
+  ],
+  "backlog_slope_per_second": -0.022058823529411766,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": false,
+  "passes_performance_acceptance": false
+}

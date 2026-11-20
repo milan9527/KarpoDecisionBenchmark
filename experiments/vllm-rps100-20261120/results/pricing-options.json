@@ -1,0 +1,47 @@
+[
+  {
+    "instance_type": "g7e.4xlarge",
+    "prices": [
+      {
+        "unit": "Hrs",
+        "usd": "3.9981600000",
+        "description": "$3.99816 per On Demand Linux g7e.4xlarge Instance Hour"
+      }
+    ]
+  },
+  {
+    "instance_type": "g7e.12xlarge",
+    "prices": [
+      {
+        "unit": "Hrs",
+        "usd": "8.2860800000",
+        "description": "$8.28608 per On Demand Linux g7e.12xlarge Instance Hour"
+      }
+    ]
+  },
+  {
+    "instance_type": "p5e.48xlarge",
+    "prices": [
+      {
+        "unit": "Hrs",
+        "usd": "0.0000000000",
+        "description": "$0.00 per Capacity Block Linux p5e.48xlarge Instance Hour"
+      },
+      {
+        "unit": "Hrs",
+        "usd": "63.2960000000",
+        "description": "$63.296 per On Demand Linux p5e.48xlarge Instance Hour"
+      }
+    ]
+  },
+  {
+    "instance_type": "p6-b200.48xlarge",
+    "prices": [
+      {
+        "unit": "Hrs",
+        "usd": "113.9328000000",
+        "description": "$113.9328 per On Demand Linux p6-b200.48xlarge Instance Hour"
+      }
+    ]
+  }
+]

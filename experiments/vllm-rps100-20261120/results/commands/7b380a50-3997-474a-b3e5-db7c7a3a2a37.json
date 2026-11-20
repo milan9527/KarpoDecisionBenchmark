@@ -1,0 +1,8 @@
+{
+  "id": "7b380a50-3997-474a-b3e5-db7c7a3a2a37",
+  "host": "single",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-0de4f061c2a04fe4b",
+  "script": "set -Eeuo pipefail\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport httpx\nurls=['http://127.0.0.1:18500','http://172.31.40.12:18500','http://172.31.40.12:18501','http://172.31.25.147:18500']\nfor i,url in enumerate(urls):\n r=httpx.get(url+'/healthz',timeout=10,trust_env=False)\n r.raise_for_status()\n assert r.json()['replica_id']==i,(url,r.text)\n assert r.json()['settings']['quantization']=='fp8_per_channel'\nprint('All four private replicas ready')\nPY\nsystemd-run --unit=karpo-rps-mixed4-v1 --property=RuntimeMaxSec=3600 --property=StandardOutput=append:/opt/karpo/experiments/vllm-rps100-20261120/results/setup/mixed4-launch.log --property=StandardError=inherit /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/scripts/vllm_rps_fleet.py --mode driver --name mixed4-fp8-v1 --urls http://127.0.0.1:18500 http://172.31.40.12:18500 http://172.31.40.12:18501 http://172.31.25.147:18500 --batch 4 --confirm\n",
+  "utc": "2026-11-20T14:02:58.288605+00:00"
+}

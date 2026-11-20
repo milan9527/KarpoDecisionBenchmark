@@ -1,0 +1,36 @@
+{
+  "CommandId": "037968f1-a25c-4a42-9589-0409f8ab75e5",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T13:54:13.865Z",
+  "ExecutionElapsedTime": "PT1.786S",
+  "ExecutionEndDateTime": "2026-11-20T13:54:14.865Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "download: s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-rps-humming-v1.tar.gz to ../../../../tmp/vllm-rps-humming-v1.tar.gz\n/tmp/vllm-rps-humming-v1.tar.gz: OK\nupload: ../../../../opt/karpo/experiments/vllm-rps100-20261120/results/setup/humming-dual-freeze.txt to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-rps100-20261120/setup/humming-dual-freeze.txt\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-rps-dualhost-humming-v1.service; invocation ID: 823b04d835424af6b7bb3106d4b183e8\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "f4aeeddb-2608-4fb2-a582-9f7bdda02d9b",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:54:28 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1079",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "f4aeeddb-2608-4fb2-a582-9f7bdda02d9b",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

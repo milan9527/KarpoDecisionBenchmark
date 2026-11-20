@@ -1,0 +1,8 @@
+{
+  "id": "1060912a-d5dc-4a0d-bea7-56e41d2ac8d2",
+  "host": "h100",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-091371593b3c4a5ff",
+  "script": "ssh -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts ubuntu@172.31.25.147 'sudo /bin/bash -s' <<'RPS_SSH_INNER'\nset -Eeuo pipefail\ncat > /opt/karpo/experiments/vllm-rps100-20261120/prefetch-h100.py <<'PY'\nimport concurrent.futures,json,time\nfrom pathlib import Path\nroot=Path('/opt/karpo/models/karpo-4b')\nstarted=time.monotonic()\nchunk=32*1024*1024\njobs=[(p,offset,min(chunk,p.stat().st_size-offset)) for p in root.glob('*.safetensors') for offset in range(0,p.stat().st_size,chunk)]\ndef read(job):\n p,offset,size=job\n with p.open('rb') as f:\n  f.seek(offset)\n  data=f.read(size)\n  assert len(data)==size\n return len(data)\nwith concurrent.futures.ThreadPoolExecutor(max_workers=16) as pool:\n total=sum(pool.map(read,jobs))\nout=Path('/opt/karpo/experiments/vllm-rps100-20261120/results/setup/h100-prefetch.json')\nout.write_text(json.dumps({'bytes':total,'seconds':time.monotonic()-started,'purpose':'Read-only page-cache warming for cold AMI snapshot; not an inference latency measurement'},indent=2)+'\\n')\nPY\nsystemd-run --unit=karpo-rps-h100-prefetch --property=RuntimeMaxSec=900 /opt/karpo/venv-vllm034/bin/python /opt/karpo/experiments/vllm-rps100-20261120/prefetch-h100.py\n\nRPS_SSH_INNER",
+  "utc": "2026-11-20T13:52:51.357720+00:00"
+}

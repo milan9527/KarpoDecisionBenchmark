@@ -1,0 +1,112 @@
+{
+  "target_rps": 100.0,
+  "offered_seconds": 20.0,
+  "scheduled_requests": 2000,
+  "attempts": 2000,
+  "valid": 225,
+  "failures": 1775,
+  "http_statuses": {
+    "200": 225,
+    "429": 1775
+  },
+  "replica_counts": {
+    "0": 225
+  },
+  "correct": 212,
+  "elapsed_with_drain_s": 27.423198171000195,
+  "valid_rps_with_drain": 8.204732307187118,
+  "steady_valid_rps": 8.266666666666667,
+  "p50_ms": 7770.626914000104,
+  "p95_ms": 7794.860390000167,
+  "p99_ms": 7803.575182000031,
+  "http_p50_ms": 7769.345552999994,
+  "last_quarter_p50_ms": 7786.486534000005,
+  "max_send_lag_ms": 5.861287000016091,
+  "valid_within_500ms": 1,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 64
+    },
+    {
+      "second": 2,
+      "pending": 64
+    },
+    {
+      "second": 3,
+      "pending": 64
+    },
+    {
+      "second": 4,
+      "pending": 64
+    },
+    {
+      "second": 5,
+      "pending": 64
+    },
+    {
+      "second": 6,
+      "pending": 61
+    },
+    {
+      "second": 7,
+      "pending": 64
+    },
+    {
+      "second": 8,
+      "pending": 64
+    },
+    {
+      "second": 9,
+      "pending": 64
+    },
+    {
+      "second": 10,
+      "pending": 64
+    },
+    {
+      "second": 11,
+      "pending": 64
+    },
+    {
+      "second": 12,
+      "pending": 64
+    },
+    {
+      "second": 13,
+      "pending": 64
+    },
+    {
+      "second": 14,
+      "pending": 64
+    },
+    {
+      "second": 15,
+      "pending": 64
+    },
+    {
+      "second": 16,
+      "pending": 64
+    },
+    {
+      "second": 17,
+      "pending": 64
+    },
+    {
+      "second": 18,
+      "pending": 64
+    },
+    {
+      "second": 19,
+      "pending": 64
+    },
+    {
+      "second": 20,
+      "pending": 64
+    }
+  ],
+  "backlog_slope_per_second": 0.057352941176470586,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": false,
+  "passes_performance_acceptance": false
+}

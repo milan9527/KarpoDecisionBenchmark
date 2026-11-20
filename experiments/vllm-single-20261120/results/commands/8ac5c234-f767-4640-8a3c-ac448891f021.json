@@ -1,0 +1,6 @@
+{
+  "id": "8ac5c234-f767-4640-8a3c-ac448891f021",
+  "instance": "i-0de4f061c2a04fe4b",
+  "script": "set -eu\naws s3 cp s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-single-settle-observer.py /opt/karpo/experiments/vllm-single-20261120/settle-observer.py --region us-east-1 --no-progress\nprintf '%s  %s\\n' '60f7c021ccb607fa997b484a556906c959d93e7da73893a2afd87d397865b5ab' /opt/karpo/experiments/vllm-single-20261120/settle-observer.py | sha256sum -c -\nsystemd-run --unit=karpo-vllm-settle-observer --property=RuntimeMaxSec=3630 /opt/karpo/venv/bin/python /opt/karpo/experiments/vllm-single-20261120/settle-observer.py\n",
+  "utc": "2026-11-20T12:54:05.698941+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "CommandId": "c3c00f0c-ccdc-43de-ba9e-cde94feefa6a",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 4,
+  "ExecutionStartDateTime": "2026-11-20T13:54:09.466Z",
+  "ExecutionElapsedTime": "PT5.381S",
+  "ExecutionEndDateTime": "2026-11-20T13:54:14.466Z",
+  "Status": "Failed",
+  "StatusDetails": "Failed",
+  "StandardOutputContent": "disk {'nvme0n1': [52119, 5870, 18997090, 3156007, 76350, 145738, 28731731, 345343, 0, 372942, 3501350, 0, 0, 0, 0, 0, 0]} {'nvme0n1': [52697, 5870, 19283482, 3202802, 76373, 145739, 28739707, 345361, 0, 376333, 3548163, 0, 0, 0, 0, 0, 0]}\nread_MiB_s 27.96796875\ninactive\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "failed to run commands: exit status 4",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "86c68e72-17bc-4fa6-aefd-d20538593206",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:54:28 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "891",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "86c68e72-17bc-4fa6-aefd-d20538593206",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

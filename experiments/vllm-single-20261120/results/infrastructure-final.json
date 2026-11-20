@@ -1,0 +1,62 @@
+{
+  "observed_utc": "2026-11-20T13:10:24.099482+00:00",
+  "all_gpu_instances_stopped": true,
+  "instances": [
+    {
+      "instance_id": "i-048c3784bb87b6d86",
+      "state": "stopped",
+      "instance_type": "g7e.8xlarge",
+      "volumes": [
+        {
+          "volume_id": "vol-02af28534c5b54eee",
+          "delete_on_termination": false
+        }
+      ]
+    },
+    {
+      "instance_id": "i-05b24e3b4a7ee864d",
+      "state": "stopped",
+      "instance_type": "g7e.12xlarge",
+      "volumes": [
+        {
+          "volume_id": "vol-062a0dd0007413835",
+          "delete_on_termination": false
+        }
+      ]
+    },
+    {
+      "instance_id": "i-0de4f061c2a04fe4b",
+      "state": "stopped",
+      "instance_type": "g7e.4xlarge",
+      "volumes": [
+        {
+          "volume_id": "vol-0e83aac1ae559b643",
+          "delete_on_termination": false
+        }
+      ]
+    }
+  ],
+  "volumes": [
+    {
+      "VolumeId": "vol-02af28534c5b54eee",
+      "State": "in-use",
+      "Size": 300,
+      "VolumeType": "gp3",
+      "Encrypted": true
+    },
+    {
+      "VolumeId": "vol-062a0dd0007413835",
+      "State": "in-use",
+      "Size": 300,
+      "VolumeType": "gp3",
+      "Encrypted": true
+    },
+    {
+      "VolumeId": "vol-0e83aac1ae559b643",
+      "State": "in-use",
+      "Size": 300,
+      "VolumeType": "gp3",
+      "Encrypted": true
+    }
+  ]
+}

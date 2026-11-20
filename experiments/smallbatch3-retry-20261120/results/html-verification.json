@@ -1,0 +1,14 @@
+{
+  "observed_utc": "2026-11-20T10:44:55.122017+00:00",
+  "status": "passed",
+  "checks": [
+    "58 stages verified",
+    "18 matrix rows match data",
+    "6 replica comparisons",
+    "2 confirmation cards match data",
+    "scenario and replica filters",
+    "local links",
+    "offline render",
+    "mobile width"
+  ]
+}

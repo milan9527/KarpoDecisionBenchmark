@@ -1,0 +1,46 @@
+{
+  "experiment": "smallbatch3-20261120",
+  "model": "MachinePulseAI/karpo-decision-4B",
+  "model_revision": "f7f521cfc3219ca28518c6bba91960b8757dce06",
+  "code_revision": "6600011eb5cf46232d056ec0717dc726146d29de",
+  "precision": "FP8",
+  "batch_sizes": [
+    1,
+    2,
+    4
+  ],
+  "wait_ms": [
+    0
+  ],
+  "replicas": [
+    1,
+    2,
+    3
+  ],
+  "concurrency": 100,
+  "sustained_seconds": 60,
+  "max_length": 8192,
+  "token_budget": 65536,
+  "selection": "Three replicas: no performance/quality failures, synthetic quality >90%, lowest sustained P50; tie higher valid RPS. Repeat once.",
+  "files": {
+    "experiments/batch100-20261120/risk-requests.json": "a0d104990d5e54db3089b4e6c411d4087a2b7a84d31ad6e7ccb40dcb9b6fcc1b",
+    "experiments/smallbatch3-20261120/risk-requests.json": "a0d104990d5e54db3089b4e6c411d4087a2b7a84d31ad6e7ccb40dcb9b6fcc1b",
+    "experiments/batch100-20261120/sop-requests.json": "67860c1ff0150604e6ad93c3b189020bfab0211360e7d60509d28b621b8b134d",
+    "experiments/smallbatch3-20261120/sop-requests.json": "67860c1ff0150604e6ad93c3b189020bfab0211360e7d60509d28b621b8b134d",
+    "experiments/batch100-20261120/risk-feature-schema.json": "e2cb67e4973eda8e6e7a0d3bcdaba7285c01b8d8abb96a14b993671dd6bd7e78",
+    "experiments/smallbatch3-20261120/risk-feature-schema.json": "e2cb67e4973eda8e6e7a0d3bcdaba7285c01b8d8abb96a14b993671dd6bd7e78",
+    "experiments/batch100-20261120/results/fp8/risk/quality-serial/requests.jsonl": "68bbb6842d1d3288ff30dc1b824a7aa66c3e9d1075bcb360885ea1978b8d7c89",
+    "experiments/batch100-20261120/results/fp8/sop/quality-serial/requests.jsonl": "02c9444690dd87c5f4eb3036e01131cd86843e5654b30edfb165e21616b136f4",
+    "scripts/smallbatch3_prepare.py": "a64200b0656c4d73e6024ef9f083ae80eba3157193847d282a1bc59a6294f740",
+    "scripts/smallbatch_server.py": "a7feb8f7c89c5919cf88f4dfc9869055b132f7bf3ad90395c3fed3f169ec5a26",
+    "scripts/smallbatch3_proxy.py": "034c842869e60d601e60d370b913dd83488d039dcfda762ca9703a1baecbf074",
+    "scripts/smallbatch_proxy.py": "1e98eef59e9e00f7715d0c237ddcd67b20bcce406e0ce12e1f977f1a38ea1e1f",
+    "scripts/smallbatch3_benchmark.py": "c9dd4208698ac920b2acac9db026211d735d9a4819186b312a327ae0108cedb1",
+    "scripts/smallbatch3_suite.py": "dba1e94a6539b483f39c7f77135a6dcaaeb26df101684a3c88c530f9657eeb71",
+    "scripts/batch100_server.py": "ffe4a6fd0eab9a80d2d7e1d837553d35374bd0f931ac252e3a11ebd7a800b27b",
+    "scripts/batch100_benchmark.py": "384ca07491194ed6c662f120c005a3e927acb9cf75e6ded63ca9ac0fef890868",
+    "scripts/benchmark.py": "3eb29a865be73ea3a70e9fd16f1d2e72403ecf6edb900ada7d263be8ad4b7dc2",
+    "scripts/concise_suite.py": "4627b3f85999ff48abaa2c8de8a35923e9c8166d4b27f55111d7bad4e324849c",
+    "experiments/smallbatch3-20261120/PLAN.zh.md": "5c13b78aa81b0717bcd4a8d553b57449e0a61ab37e8ce3b938269d95010f40d8"
+  }
+}

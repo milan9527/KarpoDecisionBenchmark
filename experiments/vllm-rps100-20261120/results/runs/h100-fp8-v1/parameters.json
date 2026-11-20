@@ -1,0 +1,15 @@
+{
+  "name": "h100-fp8-v1",
+  "revision": "h100-v1",
+  "gpus": 1,
+  "replicas": [
+    1
+  ],
+  "batches": [
+    1,
+    4
+  ],
+  "seconds": 20.0,
+  "skip_quality": false,
+  "only_target": false
+}

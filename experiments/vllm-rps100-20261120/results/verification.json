@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-20T14:59:22.667293+00:00",
+  "verified_attempts": 125424,
+  "valid": 85642,
+  "failures": 39782,
+  "verified_performance_stages": 62,
+  "verified_quality_stages": 32,
+  "awaiting_sync_stages": 0,
+  "confirmed_scenarios": [
+    "risk"
+  ]
+}

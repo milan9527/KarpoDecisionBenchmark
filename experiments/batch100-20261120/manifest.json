@@ -1,0 +1,61 @@
+{
+  "experiment": "batch100-20261120",
+  "model": "MachinePulseAI/karpo-decision-4B",
+  "model_revision": "f7f521cfc3219ca28518c6bba91960b8757dce06",
+  "code_revision": "6600011eb5cf46232d056ec0717dc726146d29de",
+  "precision": "FP8; BF16 consistency reference",
+  "batch_sizes": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "wait_ms": [
+    0,
+    2,
+    5
+  ],
+  "max_length": 8192,
+  "token_budget": 65536,
+  "concurrency": [
+    1,
+    4,
+    8,
+    16,
+    32,
+    64,
+    100
+  ],
+  "scan_requests": 128,
+  "sustained_seconds": 60,
+  "burst_requests": 100,
+  "open_loop_qps": [
+    10,
+    25,
+    50,
+    100,
+    200
+  ],
+  "open_loop_seconds": 10,
+  "client_max_inflight": 256,
+  "replicas": [
+    1,
+    2
+  ],
+  "selection": "Per scenario: among valid tuning scans select highest valid_rps, tie lower p95; no quality labels used for speed selection.",
+  "scope": "same-host complete HTTP; no production feature retrieval/network. Risk synthetic only.",
+  "lifecycle": "Reuse existing 2-GPU instance. Stop only, preserve all models and EBS.",
+  "files": {
+    "experiments/batch100-20261120/risk-requests.json": "a0d104990d5e54db3089b4e6c411d4087a2b7a84d31ad6e7ccb40dcb9b6fcc1b",
+    "experiments/batch100-20261120/sop-requests.json": "67860c1ff0150604e6ad93c3b189020bfab0211360e7d60509d28b621b8b134d",
+    "experiments/batch100-20261120/risk-feature-schema.json": "e2cb67e4973eda8e6e7a0d3bcdaba7285c01b8d8abb96a14b993671dd6bd7e78",
+    "experiments/batch100-20261120/PLAN.zh.md": "89104c11342c9137dd66f0c406890bb0aaf7275ecee09ac9aa471348b17b5d4a",
+    "scripts/batch100_prepare.py": "732fd7c39d40f51b479ed1b6045211c82be0434a0203fa5e74fb53d110cb2f8d",
+    "scripts/batch100_server.py": "ffe4a6fd0eab9a80d2d7e1d837553d35374bd0f931ac252e3a11ebd7a800b27b",
+    "scripts/batch100_benchmark.py": "384ca07491194ed6c662f120c005a3e927acb9cf75e6ded63ca9ac0fef890868",
+    "scripts/batch100_suite.py": "b7ac69914219e178663cbbd2cf62abf21628f25b190d83a9c5220bd0522d1052",
+    "scripts/benchmark.py": "3eb29a865be73ea3a70e9fd16f1d2e72403ecf6edb900ada7d263be8ad4b7dc2",
+    "scripts/concise_suite.py": "4627b3f85999ff48abaa2c8de8a35923e9c8166d4b27f55111d7bad4e324849c"
+  }
+}

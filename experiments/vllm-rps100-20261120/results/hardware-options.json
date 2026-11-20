@@ -1,0 +1,364 @@
+{
+  "types": [
+    {
+      "InstanceType": "p5e.48xlarge",
+      "VCpuInfo": {
+        "DefaultVCpus": 192,
+        "DefaultCores": 96,
+        "DefaultThreadsPerCore": 2,
+        "ValidCores": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96
+        ],
+        "ValidThreadsPerCore": [
+          1,
+          2
+        ]
+      },
+      "MemoryInfo": {
+        "SizeInMiB": 2097152
+      },
+      "GpuInfo": {
+        "Gpus": [
+          {
+            "Name": "H200",
+            "Manufacturer": "NVIDIA",
+            "Count": 8,
+            "LogicalGpuCount": 8,
+            "GpuPartitionSize": 1.0,
+            "Workloads": [
+              "ml-ai"
+            ],
+            "MemoryInfo": {
+              "SizeInMiB": 144384
+            }
+          }
+        ],
+        "TotalGpuMemoryInMiB": 1155072
+      },
+      "ProcessorInfo": {
+        "SupportedArchitectures": [
+          "x86_64"
+        ],
+        "SustainedClockSpeedInGhz": 3.6,
+        "Manufacturer": "AMD"
+      }
+    },
+    {
+      "InstanceType": "p5en.48xlarge",
+      "VCpuInfo": {
+        "DefaultVCpus": 192,
+        "DefaultCores": 96,
+        "DefaultThreadsPerCore": 2,
+        "ValidCores": [
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28,
+          30,
+          32,
+          34,
+          36,
+          38,
+          40,
+          42,
+          44,
+          46,
+          48,
+          50,
+          52,
+          54,
+          56,
+          58,
+          60,
+          62,
+          64,
+          66,
+          68,
+          70,
+          72,
+          74,
+          76,
+          78,
+          80,
+          82,
+          84,
+          86,
+          88,
+          90,
+          92,
+          94,
+          96
+        ],
+        "ValidThreadsPerCore": [
+          1,
+          2
+        ]
+      },
+      "MemoryInfo": {
+        "SizeInMiB": 2097152
+      },
+      "GpuInfo": {
+        "Gpus": [
+          {
+            "Name": "H200",
+            "Manufacturer": "NVIDIA",
+            "Count": 8,
+            "LogicalGpuCount": 8,
+            "GpuPartitionSize": 1.0,
+            "Workloads": [
+              "ml-ai"
+            ],
+            "MemoryInfo": {
+              "SizeInMiB": 144384
+            }
+          }
+        ],
+        "TotalGpuMemoryInMiB": 1155072
+      },
+      "ProcessorInfo": {
+        "SupportedArchitectures": [
+          "x86_64"
+        ],
+        "SustainedClockSpeedInGhz": 2.4,
+        "Manufacturer": "Intel"
+      }
+    },
+    {
+      "InstanceType": "p6-b200.48xlarge",
+      "VCpuInfo": {
+        "DefaultVCpus": 192,
+        "DefaultCores": 96,
+        "DefaultThreadsPerCore": 2,
+        "ValidCores": [
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28,
+          30,
+          32,
+          34,
+          36,
+          38,
+          40,
+          42,
+          44,
+          46,
+          48,
+          50,
+          52,
+          54,
+          56,
+          58,
+          60,
+          62,
+          64,
+          66,
+          68,
+          70,
+          72,
+          74,
+          76,
+          78,
+          80,
+          82,
+          84,
+          86,
+          88,
+          90,
+          92,
+          94,
+          96
+        ],
+        "ValidThreadsPerCore": [
+          1,
+          2
+        ]
+      },
+      "MemoryInfo": {
+        "SizeInMiB": 2097152
+      },
+      "GpuInfo": {
+        "Gpus": [
+          {
+            "Name": "B200",
+            "Manufacturer": "NVIDIA",
+            "Count": 8,
+            "LogicalGpuCount": 8,
+            "GpuPartitionSize": 1.0,
+            "Workloads": [
+              "ml-ai"
+            ],
+            "MemoryInfo": {
+              "SizeInMiB": 183359
+            }
+          }
+        ],
+        "TotalGpuMemoryInMiB": 1466872
+      },
+      "ProcessorInfo": {
+        "SupportedArchitectures": [
+          "x86_64"
+        ],
+        "SustainedClockSpeedInGhz": 2.4,
+        "Manufacturer": "Intel"
+      }
+    },
+    {
+      "InstanceType": "p5.48xlarge",
+      "VCpuInfo": {
+        "DefaultVCpus": 192,
+        "DefaultCores": 96,
+        "DefaultThreadsPerCore": 2,
+        "ValidCores": [
+          12,
+          24,
+          36,
+          48,
+          60,
+          72,
+          84,
+          96
+        ],
+        "ValidThreadsPerCore": [
+          1,
+          2
+        ]
+      },
+      "MemoryInfo": {
+        "SizeInMiB": 2097152
+      },
+      "GpuInfo": {
+        "Gpus": [
+          {
+            "Name": "H100",
+            "Manufacturer": "NVIDIA",
+            "Count": 8,
+            "LogicalGpuCount": 8,
+            "GpuPartitionSize": 1.0,
+            "Workloads": [
+              "ml-ai"
+            ],
+            "MemoryInfo": {
+              "SizeInMiB": 81920
+            }
+          }
+        ],
+        "TotalGpuMemoryInMiB": 655360
+      },
+      "ProcessorInfo": {
+        "SupportedArchitectures": [
+          "x86_64"
+        ],
+        "SustainedClockSpeedInGhz": 3.6,
+        "Manufacturer": "AMD"
+      }
+    },
+    {
+      "InstanceType": "p5.4xlarge",
+      "VCpuInfo": {
+        "DefaultVCpus": 16,
+        "DefaultCores": 8,
+        "DefaultThreadsPerCore": 2,
+        "ValidCores": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "ValidThreadsPerCore": [
+          1,
+          2
+        ]
+      },
+      "MemoryInfo": {
+        "SizeInMiB": 262144
+      },
+      "GpuInfo": {
+        "Gpus": [
+          {
+            "Name": "H100",
+            "Manufacturer": "NVIDIA",
+            "Count": 1,
+            "LogicalGpuCount": 1,
+            "GpuPartitionSize": 1.0,
+            "Workloads": [
+              "ml-ai"
+            ],
+            "MemoryInfo": {
+              "SizeInMiB": 81920
+            }
+          }
+        ],
+        "TotalGpuMemoryInMiB": 81920
+      },
+      "ProcessorInfo": {
+        "SupportedArchitectures": [
+          "x86_64"
+        ],
+        "SustainedClockSpeedInGhz": 3.6,
+        "Manufacturer": "AMD"
+      }
+    }
+  ],
+  "offerings": [
+    {
+      "InstanceType": "p5.4xlarge",
+      "LocationType": "availability-zone",
+      "Location": "us-east-2a"
+    },
+    {
+      "InstanceType": "p5en.48xlarge",
+      "LocationType": "availability-zone",
+      "Location": "us-east-2c"
+    },
+    {
+      "InstanceType": "p5.4xlarge",
+      "LocationType": "availability-zone",
+      "Location": "us-east-2b"
+    },
+    {
+      "InstanceType": "p5.4xlarge",
+      "LocationType": "availability-zone",
+      "Location": "us-east-2c"
+    },
+    {
+      "InstanceType": "p5en.48xlarge",
+      "LocationType": "availability-zone",
+      "Location": "us-east-2a"
+    },
+    {
+      "InstanceType": "p5en.48xlarge",
+      "LocationType": "availability-zone",
+      "Location": "us-east-2b"
+    }
+  ]
+}

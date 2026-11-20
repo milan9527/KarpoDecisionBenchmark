@@ -1,0 +1,14 @@
+[
+  {
+    "InstanceType": "g7e.4xlarge",
+    "SpotPrice": "2.176900",
+    "Timestamp": "2026-11-20 11:00:00+00:00",
+    "AvailabilityZone": "us-east-2c"
+  },
+  {
+    "InstanceType": "g7e.12xlarge",
+    "SpotPrice": "4.124300",
+    "Timestamp": "2026-11-20 10:00:00+00:00",
+    "AvailabilityZone": "us-east-2c"
+  }
+]

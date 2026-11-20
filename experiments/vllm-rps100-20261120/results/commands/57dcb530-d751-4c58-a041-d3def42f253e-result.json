@@ -1,0 +1,36 @@
+{
+  "CommandId": "57dcb530-d751-4c58-a041-d3def42f253e",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T13:46:44.440Z",
+  "ExecutionElapsedTime": "PT0.261S",
+  "ExecutionEndDateTime": "2026-11-20T13:46:44.440Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-rps-install-h100.service; invocation ID: f6712496d824410ba2e1e15ebe1eb2ef\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "6c670d7a-5002-485d-846a-011649465484",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:46:52 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "680",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "6c670d7a-5002-485d-846a-011649465484",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

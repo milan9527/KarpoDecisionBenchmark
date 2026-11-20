@@ -1,0 +1,8 @@
+results/measurements/native-initial/risk/warmup {"attempts": 8, "valid": 8, "correct": 8, "valid_rps": 2.200922072560733, "p95_ms": 3028.809383999942}
+results/measurements/native-initial/risk/quality {"attempts": 240, "valid": 240, "correct": 233, "valid_rps": 11.638949029264921, "p95_ms": 85.99200399999063}
+results/measurements/native-initial/risk/serial {"attempts": 60, "valid": 60, "correct": 58, "valid_rps": 11.688952932125215, "p95_ms": 85.99383000000671}
+results/measurements/native-initial/risk/sustained-100 {"attempts": 1502, "valid": 1502, "correct": 1452, "valid_rps": 23.37981445999408, "p95_ms": 4313.019293000025}
+results/measurements/native-initial/sop/warmup {"attempts": 8, "valid": 8, "correct": 8, "valid_rps": 6.249452518665163, "p95_ms": 165.18952400008402}
+results/measurements/native-initial/sop/quality {"attempts": 104, "valid": 104, "correct": 98, "valid_rps": 6.1412650195127965, "p95_ms": 163.80200200001127}
+results/measurements/native-initial/sop/serial {"attempts": 60, "valid": 60, "correct": 57, "valid_rps": 6.147552784892329, "p95_ms": 162.90749200004484}
+results/measurements/native-initial/sop/sustained-100 {"attempts": 595, "valid": 595, "correct": 562, "valid_rps": 8.257520536287178, "p95_ms": 12127.990638000028}

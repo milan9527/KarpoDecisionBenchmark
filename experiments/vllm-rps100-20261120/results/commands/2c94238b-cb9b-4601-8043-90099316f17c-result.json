@@ -1,0 +1,36 @@
+{
+  "CommandId": "2c94238b-cb9b-4601-8043-90099316f17c",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T14:47:43.825Z",
+  "ExecutionElapsedTime": "PT0.398S",
+  "ExecutionEndDateTime": "2026-11-20T14:47:43.825Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "Result=success\nId=karpo-rps-install-fleet1.service\nActiveState=active\nSubState=running\n\nResult=success\nId=karpo-rps-fleet1-node-v1.service\nActiveState=active\nSubState=running\nsetup/fleet1-install.log   Cloning https://github.com/machinepulse-ai/karpo-decision (to revision 6600011eb5cf46232d056ec0717dc726146d29de) to ./tmp/pip-install-f_3ep332/karpo-decision_2693c583cb3247259c914b6540e08f39\n  Running command git clone --filter=blob:none --quiet https://github.com/machinepulse-ai/karpo-decision /tmp/pip-install-f_3ep332/karpo-decision_2693c583cb3247259c914b6540e08f39\n  Running command git rev-parse -q --verify '6600011eb5cf46232d056ec0717dc726146d29de^{commit}'\n  6600011eb5cf46232d056ec0717dc726146d29de\n  Resolved https://github.com/machinepulse-ai/karpo-decision to commit 6600011eb5cf46232d056ec0717dc726146d29de\n  Installing build dependencies: started\nsetup/fleet1-node-launch.log \nindex, name, memory.used [MiB], utilization.gpu [%]\n0, NVIDIA RTX PRO 6000 Blackwell Server Edition, 0 MiB, 0 %\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "87726496-3aa1-4a17-b675-58e2f6b99ae1",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 14:47:55 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1606",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "87726496-3aa1-4a17-b675-58e2f6b99ae1",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

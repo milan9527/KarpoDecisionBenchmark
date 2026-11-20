@@ -1,0 +1,3 @@
+index, name, memory.total [MiB], driver_version
+0, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 595.112.07
+1, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 595.112.07

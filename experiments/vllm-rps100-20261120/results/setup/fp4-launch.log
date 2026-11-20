@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/opt/karpo/scripts/vllm_rps_fp4_suite.py", line 197, in <module>
+    main(args)
+  File "/opt/karpo/scripts/vllm_rps_fp4_suite.py", line 124, in main
+    dump(config_dir / f"server-{replica}/health.json", wait_health(server, url))
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/karpo/scripts/vllm_rps_fp4_suite.py", line 40, in wait_health
+    raise RuntimeError(f"Server exited {process.returncode}: {url}")
+RuntimeError: Server exited 3: http://127.0.0.1:18500
+Traceback (most recent call last):
+  File "/opt/karpo/scripts/vllm_rps_mxfp4_suite.py", line 197, in <module>
+    main(args)
+  File "/opt/karpo/scripts/vllm_rps_mxfp4_suite.py", line 124, in main
+    dump(config_dir / f"server-{replica}/health.json", wait_health(server, url))
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/karpo/scripts/vllm_rps_mxfp4_suite.py", line 40, in wait_health
+    raise RuntimeError(f"Server exited {process.returncode}: {url}")
+RuntimeError: Server exited 3: http://127.0.0.1:18500

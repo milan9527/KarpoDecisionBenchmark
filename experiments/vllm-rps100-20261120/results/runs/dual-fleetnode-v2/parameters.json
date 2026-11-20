@@ -1,0 +1,18 @@
+{
+  "mode": "node",
+  "name": "dual-fleetnode-v2",
+  "revision": "fleet-v1",
+  "batch": 4,
+  "replica_ids": [
+    1,
+    2
+  ],
+  "urls": null,
+  "scenarios": [
+    "risk",
+    "sop"
+  ],
+  "seconds": 20,
+  "confirm": false,
+  "roleless": false
+}

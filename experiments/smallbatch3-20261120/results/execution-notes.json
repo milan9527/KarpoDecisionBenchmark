@@ -1,0 +1,7 @@
+{
+  "status": "startup_failed_before_measurements",
+  "model_measurement_calls": 0,
+  "primary_service_reset_utc": "2026-11-20T10:03:46.904995+00:00",
+  "reason": "Secondary lacked S3 GetObject for primary coordination status; primary was still waiting. No benchmark stage had begun.",
+  "retry_experiment": "smallbatch3-retry-20261120"
+}

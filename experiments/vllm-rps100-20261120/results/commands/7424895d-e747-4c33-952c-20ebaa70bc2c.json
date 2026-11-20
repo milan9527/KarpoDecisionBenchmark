@@ -1,0 +1,8 @@
+{
+  "id": "7424895d-e747-4c33-952c-20ebaa70bc2c",
+  "host": "single",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-0de4f061c2a04fe4b",
+  "script": "set -Eeuo pipefail\nsystemd-run --unit=karpo-rps-rtx4-tunnel-v1 --property=RuntimeMaxSec=21600 --property=Restart=on-failure --property=RestartSec=5 --property=StandardOutput=append:/opt/karpo/experiments/vllm-rps100-20261120/results/setup/rtx4-tunnel.log --property=StandardError=inherit /usr/bin/ssh -N -T -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts -o ExitOnForwardFailure=yes -o ServerAliveInterval=15 -o ServerAliveCountMax=3 -L 127.0.0.1:18503:127.0.0.1:18500 ubuntu@100.59.41.29\n",
+  "utc": "2026-11-20T14:46:15.747451+00:00"
+}

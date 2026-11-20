@@ -1,0 +1,77 @@
+{
+  "attempts": 1000,
+  "valid": 331,
+  "failures": 669,
+  "correct": 315,
+  "accuracy_all_attempts": 0.315,
+  "valid_within_500ms": 1,
+  "correct_within_500ms": 1,
+  "elapsed_seconds": 42.93598420799981,
+  "valid_rps": 7.709151335544051,
+  "p50_ms": 21480.787936999834,
+  "p95_ms": 33538.25331099983,
+  "p99_ms": 34369.46907999982,
+  "max_ms": 34406.38705099991,
+  "all_attempts_p95_ms": 32483.184977999827,
+  "mean_ms": 19903.688156682707,
+  "tokens_min": 5696,
+  "tokens_max": 5758,
+  "response_batch_histogram": {
+    "1": 1,
+    "13": 13,
+    "7": 49,
+    "16": 144,
+    "8": 40,
+    "5": 15,
+    "6": 24,
+    "9": 45
+  },
+  "http_statuses": {
+    "200": 331,
+    "None": 669
+  },
+  "max_client_send_lag_ms": 10.290740000073129,
+  "max_gpu_allocated_gib": 9.220795631408691,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "open",
+  "parameters": {
+    "qps": 100,
+    "seconds": 10,
+    "cap": 256
+  },
+  "after_ramp": {
+    "attempts": 750,
+    "valid": 81,
+    "failures": 669,
+    "correct": 77,
+    "accuracy_all_attempts": 0.10266666666666667,
+    "valid_within_500ms": 0,
+    "correct_within_500ms": 0,
+    "elapsed_seconds": 40.43735160099982,
+    "valid_rps": 2.003098541151673,
+    "p50_ms": 32554.48116100001,
+    "p95_ms": 34360.90030799983,
+    "p99_ms": 34406.38705099991,
+    "max_ms": 34406.38705099991,
+    "all_attempts_p95_ms": 32571.933127999953,
+    "mean_ms": 32684.44034885179,
+    "tokens_min": 5696,
+    "tokens_max": 5758,
+    "response_batch_histogram": {
+      "16": 20,
+      "8": 16,
+      "9": 27,
+      "7": 7,
+      "6": 6,
+      "5": 5
+    },
+    "http_statuses": {
+      "None": 669,
+      "200": 81
+    },
+    "max_client_send_lag_ms": 10.290740000073129,
+    "max_gpu_allocated_gib": 9.217413902282715,
+    "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval."
+  },
+  "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+}

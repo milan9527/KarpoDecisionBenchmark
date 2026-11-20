@@ -1,0 +1,7 @@
+{
+  "id": "9066d9c1-eedc-41c0-998f-c9aa088ccaa5",
+  "host": "single",
+  "instance": "i-0de4f061c2a04fe4b",
+  "script": "set -Eeuo pipefail\ninstall -d -m 700 /opt/karpo/.ssh\nif [ ! -e /opt/karpo/.ssh/rps-h100 ]; then\n ssh-keygen -q -t ed25519 -N '' -C karpo-rps100-private-control -f /opt/karpo/.ssh/rps-h100\nfi\ncp /opt/karpo/.ssh/rps-h100.pub /opt/karpo/experiments/vllm-rps100-20261120/results/setup/control-public-key.txt\naws s3 cp /opt/karpo/experiments/vllm-rps100-20261120/results/setup/control-public-key.txt s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-rps100-20261120/setup/control-public-key.txt --region us-east-1 --no-progress\n",
+  "utc": "2026-11-20T13:31:04.316052+00:00"
+}

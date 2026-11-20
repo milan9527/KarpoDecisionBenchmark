@@ -1,0 +1,36 @@
+{
+  "CommandId": "444aba39-a9e9-4704-a8d4-677656509ba4",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T14:52:37.687Z",
+  "ExecutionElapsedTime": "PT0.214S",
+  "ExecutionEndDateTime": "2026-11-20T14:52:37.687Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "Four RTX replicas ready with identical inference settings; replica 3 uses SSH forwarding\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-rps-rtx4-v1.service; invocation ID: 31c65a8b38ee46ae9f37b0a76d9d389f\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "c9e50f9f-4a9e-4132-8966-73cf58b65ebe",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 14:52:40 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "765",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "c9e50f9f-4a9e-4132-8966-73cf58b65ebe",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

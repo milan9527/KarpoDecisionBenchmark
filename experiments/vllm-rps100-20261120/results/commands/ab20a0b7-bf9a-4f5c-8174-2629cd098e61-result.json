@@ -1,0 +1,36 @@
+{
+  "CommandId": "ab20a0b7-bf9a-4f5c-8174-2629cd098e61",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 255,
+  "ExecutionStartDateTime": "2026-11-20T14:46:20.073Z",
+  "ExecutionElapsedTime": "PT15.014S",
+  "ExecutionEndDateTime": "2026-11-20T14:46:35.073Z",
+  "Status": "Failed",
+  "StatusDetails": "Failed",
+  "StandardOutputContent": "",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "ssh: connect to host 100.59.41.29 port 22: Connection timed out\r\nfailed to run commands: exit status 255",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "94716057-e976-4934-a742-dddab50c0738",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 14:46:36 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "689",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "94716057-e976-4934-a742-dddab50c0738",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

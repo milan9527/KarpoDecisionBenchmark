@@ -1,0 +1,36 @@
+{
+  "CommandId": "3d96fbf3-7d22-4f98-bd62-bd5736031ce4",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 1,
+  "ExecutionStartDateTime": "2026-11-20T12:33:07.844Z",
+  "ExecutionElapsedTime": "PT36.323S",
+  "ExecutionEndDateTime": "2026-11-20T12:33:43.844Z",
+  "Status": "Failed",
+  "StatusDetails": "Failed",
+  "StandardOutputContent": "download: s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-single-development-01.tar.gz to ../../../../tmp/karpo-vllm-development.tar.gz\n/tmp/karpo-vllm-development.tar.gz: OK\n0\nProcessing /opt/karpo/serving/vllm_karpo\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'done'\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: karpo-vllm-benchmark-adapter\n  Building wheel for karpo-vllm-benchmark-adapter (pyproject.toml): started\n  Building wheel for karpo-vllm-benchmark-adapter (pyproject.toml): finished with status 'done'\n  Created wheel for karpo-vllm-benchmark-adapter: filename=karpo_vllm_benchmark_adapter-0.1.0-py3-none-any.whl size=3566 sha256=bff5da64bea8203758acd7ed1fd5869ca11966d4e9790211c579af11d8e1b8b8\n  Stored in directory: /tmp/pip-ephem-wheel-cache-ppa3slv_/wheels/06/c6/20/5df885099dc888500ee636664f60c7372ac03976fac2fd9d8d\nSuccessfully built karpo-vllm-benchmark-adapter\nInstalling collected packages: karpo-vllm-benchmark-adapter\nSuccessfully installed karpo-vllm-benchmark-adapter-0.1.0\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: User: arn:aws:sts::632930644527:assumed-role/karpo-benchmark-20261119-115003/i-0de4f061c2a04fe4b is not authorized to perform: s3:ListBucket on resource: \"arn:aws:s3:::karpo-benchmark-20261119-115003-632930644527\" because no identity-based policy allows the s3:ListBucket action\nfailed to run commands: exit status 1",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "3befae9d-7abb-41f8-9027-d4b250763be6",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 12:33:52 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2294",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "3befae9d-7abb-41f8-9027-d4b250763be6",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

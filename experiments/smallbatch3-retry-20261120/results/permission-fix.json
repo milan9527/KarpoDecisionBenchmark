@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-20T10:03:26.802636+00:00",
+  "role": "karpo-benchmark-20261119-115003",
+  "policy_name": "smallbatch3-coordinator-status-read",
+  "policy": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "s3:GetObject"
+        ],
+        "Resource": "arn:aws:s3:::karpo-benchmark-20261119-115003-632930644527/results/smallbatch3-retry-20261120/primary/suite-status.json"
+      }
+    ]
+  },
+  "reason": "Secondary polls the coordinator completion status; previous role had result upload but not result read permission."
+}

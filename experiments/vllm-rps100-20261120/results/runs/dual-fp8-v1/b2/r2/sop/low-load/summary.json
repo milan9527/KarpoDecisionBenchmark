@@ -1,0 +1,112 @@
+{
+  "target_rps": 16.0,
+  "offered_seconds": 20.0,
+  "scheduled_requests": 320,
+  "attempts": 320,
+  "valid": 320,
+  "failures": 0,
+  "http_statuses": {
+    "200": 320
+  },
+  "replica_counts": {
+    "1": 160,
+    "0": 160
+  },
+  "correct": 302,
+  "elapsed_with_drain_s": 20.053418243999886,
+  "valid_rps_with_drain": 15.957379241104997,
+  "steady_valid_rps": 16.0,
+  "p50_ms": 116.0739829999784,
+  "p95_ms": 117.10715699996399,
+  "p99_ms": 117.43102799994176,
+  "http_p50_ms": 114.97121200000038,
+  "last_quarter_p50_ms": 116.09027199995126,
+  "max_send_lag_ms": 2.0977869999114773,
+  "valid_within_500ms": 320,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 1
+    },
+    {
+      "second": 2,
+      "pending": 1
+    },
+    {
+      "second": 3,
+      "pending": 1
+    },
+    {
+      "second": 4,
+      "pending": 1
+    },
+    {
+      "second": 5,
+      "pending": 1
+    },
+    {
+      "second": 6,
+      "pending": 1
+    },
+    {
+      "second": 7,
+      "pending": 1
+    },
+    {
+      "second": 8,
+      "pending": 1
+    },
+    {
+      "second": 9,
+      "pending": 1
+    },
+    {
+      "second": 10,
+      "pending": 1
+    },
+    {
+      "second": 11,
+      "pending": 1
+    },
+    {
+      "second": 12,
+      "pending": 1
+    },
+    {
+      "second": 13,
+      "pending": 1
+    },
+    {
+      "second": 14,
+      "pending": 1
+    },
+    {
+      "second": 15,
+      "pending": 1
+    },
+    {
+      "second": 16,
+      "pending": 1
+    },
+    {
+      "second": 17,
+      "pending": 1
+    },
+    {
+      "second": 18,
+      "pending": 1
+    },
+    {
+      "second": 19,
+      "pending": 1
+    },
+    {
+      "second": 20,
+      "pending": 1
+    }
+  ],
+  "backlog_slope_per_second": 0.0,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": true,
+  "passes_performance_acceptance": false
+}

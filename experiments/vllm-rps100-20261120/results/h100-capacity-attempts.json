@@ -1,0 +1,9 @@
+[
+  {
+    "zone": "us-east-2c",
+    "error": {
+      "Code": "UnauthorizedOperation",
+      "Message": "You are not authorized to perform this operation. User: arn:aws:iam::632930644527:user/milan is not authorized to perform: iam:PassRole on resource: arn:aws:iam::632930644527:role/karpo-benchmark-20261119-115003 because no identity-based policy allows the iam:PassRole action. Go to https://us-east-2.console.aws.amazon.com/iam/home?region=us-east-2#/authorization-details/cuu8eh8eef5cmwy9v9btly3oj for complete details, or call the GetRequestAuthorizationDetails API with the following authorization id: cuu8eh8eef5cmwy9v9btly3oj. Encoded authorization failure message: 85wImqTEgW8nU0R7KHsHjxsrZNFdu4bAKQADYH0fM-tewsE3Hk-WsHHdSAi1HwIbT39oh9Hz8E3KPShu98ZgNRqGEDTk5i-z_kFFCkgACQQ5gl1Pqaw3kH127JOYFMR2Ths0pNebL0m4_MTEtKe4jRiXT4dTDDQ4CVRkqzRofETmZPafOCyti6Iy6THrHLNuFxnTQ52gIrze1JJgQM6CAxpTPLwnHHN1iMdSRwHDisUFpQZPw-0jsheIcVFfvgNwxJjvMjfkOhayLF7LE7dc_Th561nkyXVLdoYwV5r1SFSiJ4XIHT-wP-CQPYnY1a6tgs734i29PtBt_gUFQK4vr9ERZ1TP2H2QN7nhA-o06e9tsTGtaM5zRrSBi65CF0O3zrua9U1CzqvkTXLWDDKecKKqNVhIMVYUNq80DzRHhT3tBlQXMKcXgvWTvzHDdUeTw-KlY6RVwFei2GpCWY8y6GEHDyRXZsq2_9HMVFsTh3cjlVox4fz-sJD8VYYPU-l-8w6wjVFbxlD4Bg_sdfYoyEJteAG_Akl9"
+    }
+  }
+]

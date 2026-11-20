@@ -1,0 +1,6 @@
+{
+  "id": "84aa5f5a-7b00-4749-8ef7-d0d4de159d29",
+  "instance": "i-0de4f061c2a04fe4b",
+  "script": "set -Eeuo pipefail\naws s3 cp s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-single-smoke.py /opt/karpo/scripts/vllm_single_smoke.py --region us-east-1 --no-progress\nprintf '%s  %s\\n' 'cdd62d7b9d5d39d22c8a707510c02bfc9fdbbe03be0d7a1d3f75d873444043bb' /opt/karpo/scripts/vllm_single_smoke.py | sha256sum -c -\ntrap 'aws s3 cp /opt/karpo/experiments/vllm-single-20261120/results/smoke.json s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/smoke.json --region us-east-1 --no-progress || true' EXIT\n/opt/karpo/venv/bin/python /opt/karpo/scripts/vllm_single_smoke.py\n",
+  "utc": "2026-11-20T12:37:34.808348+00:00"
+}

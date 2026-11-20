@@ -1,0 +1,36 @@
+{
+  "CommandId": "4d3089e8-ff55-4ffa-8c5a-4b7801931e58",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T12:36:20.345Z",
+  "ExecutionElapsedTime": "PT1.44S",
+  "ExecutionEndDateTime": "2026-11-20T12:36:21.345Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "upload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/development-01/server.log to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/development-01/server.log\ndownload: s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-single-development-03-server.py to ../../../../opt/karpo/scripts/vllm_karpo_server.py\n/opt/karpo/scripts/vllm_karpo_server.py: OK\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-vllm-development-02.service; invocation ID: bfb2e46574fc46e3a7235c06e4d0584c\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "34b1f97b-2e21-4ca6-9c05-15e0aff659e8",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 12:36:33 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1092",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "34b1f97b-2e21-4ca6-9c05-15e0aff659e8",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

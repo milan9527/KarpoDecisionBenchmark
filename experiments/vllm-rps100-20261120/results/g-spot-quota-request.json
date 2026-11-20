@@ -1,0 +1,29 @@
+{
+  "RequestedQuota": {
+    "Id": "ce3db8fa506148a38d28272978699922y6olbCQj",
+    "ServiceCode": "ec2",
+    "ServiceName": "Amazon Elastic Compute Cloud (Amazon EC2)",
+    "QuotaCode": "L-3819A6DF",
+    "QuotaName": "All G and VT Spot Instance Requests",
+    "DesiredValue": 128.0,
+    "Status": "PENDING",
+    "Created": "2026-11-20 13:57:35.463000+00:00",
+    "Requester": "{\"accountId\":\"632930644527\",\"callerArn\":\"arn:aws:iam::632930644527:user/milan\"}",
+    "QuotaArn": "arn:aws:servicequotas:us-east-2:632930644527:ec2/L-3819A6DF",
+    "GlobalQuota": false,
+    "Unit": "None",
+    "QuotaRequestedAtLevel": "ACCOUNT"
+  },
+  "ResponseMetadata": {
+    "RequestId": "561ae75e-8afc-4955-be06-459bdfb2ba3f",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "date": "Fri, 20 Nov 2026 13:57:35 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "531",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "561ae75e-8afc-4955-be06-459bdfb2ba3f"
+    },
+    "RetryAttempts": 0
+  }
+}

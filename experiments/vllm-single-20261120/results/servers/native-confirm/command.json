@@ -1,0 +1,12 @@
+[
+  "/opt/karpo/venv/bin/python",
+  "/opt/karpo/scripts/smallbatch_server.py",
+  "--checkpoint",
+  "/opt/karpo/models/karpo-4b",
+  "--experiment",
+  "/opt/karpo/experiments/vllm-single-20261120",
+  "--replicas",
+  "1",
+  "--max-batch",
+  "1"
+]

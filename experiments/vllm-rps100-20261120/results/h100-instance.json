@@ -1,0 +1,21 @@
+{
+  "InstanceId": "i-091371593b3c4a5ff",
+  "InstanceType": "p5.4xlarge",
+  "PrivateIpAddress": "172.31.25.147",
+  "Placement": {
+    "AvailabilityZoneId": "use2-az2",
+    "GroupName": "",
+    "Tenancy": "default",
+    "AvailabilityZone": "us-east-2b"
+  },
+  "utc": "2026-11-20T13:44:46.110759+00:00",
+  "region": "us-east-2",
+  "hourly_compute_usd": 6.88,
+  "automatic_shutdown": false,
+  "prior_attempts": [],
+  "management": "private_ssh_via_single",
+  "iam_instance_role": null,
+  "private_ssh_group": "sg-077c0629417a7de69",
+  "pricing_model": "spot",
+  "spot_price_reference_usd": 4.2298
+}

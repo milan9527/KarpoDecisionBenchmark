@@ -1,0 +1,36 @@
+{
+  "CommandId": "9fb2a714-bcd4-41f1-ac96-f612d1f7b3f3",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T14:00:37.845Z",
+  "ExecutionElapsedTime": "PT1.274S",
+  "ExecutionEndDateTime": "2026-11-20T14:00:38.845Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "download: s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-rps-fleet-v1.tar.gz to ../../../../tmp/vllm-rps-fleet-v1.tar.gz\n/tmp/vllm-rps-fleet-v1.tar.gz: OK\n/tmp/vllm-rps-fleet-v1.tar.gz: OK\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-rps-h100-node-v1.service; invocation ID: c946a3e6348f45aa92f5916879cde5a8\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "d4186239-f265-4bc7-a382-ab85da9bc8eb",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 14:01:36 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "887",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "d4186239-f265-4bc7-a382-ab85da9bc8eb",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

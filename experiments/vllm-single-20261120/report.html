@@ -1,0 +1,28 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Karpo · vLLM 单卡对照</title>
+<style>body{margin:0;background:#f4f6f9;color:#17263a;font:16px/1.65 system-ui,sans-serif}
+main{max-width:1080px;margin:auto;padding:40px 22px}h1{font-size:clamp(26px,4vw,42px);line-height:1.2}
+.eyebrow{color:#376898;font-size:13px;letter-spacing:2px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:30px 0}
+article{background:white;border:1px solid #dbe2eb;border-radius:16px;padding:24px}
+article strong{display:block;font-size:50px;line-height:1.6;color:#174c7a}article span{font-size:20px}
+small,p{color:#526478}.table{overflow:auto;background:white;border:1px solid #dbe2eb;border-radius:12px}
+table{border-collapse:collapse;width:100%;white-space:nowrap;text-align:right}th,td{padding:14px;border-bottom:1px solid #e5ebf1}
+th:first-child,td:first-child,td:nth-child(2){text-align:left}th{background:#edf2f7}
+.note{border-left:4px solid #376898;padding:8px 20px;margin:26px 0}a{color:#175c93}
+@media(max-width:640px){.cards{grid-template-columns:1fr}main{padding:24px 16px}}</style>
+<main><div class="eyebrow">KARPO DECISION BENCHMARK / 2026-11-20</div>
+<h1>vLLM 与原生 FP8<br>同一张 GPU，完整原始输入</h1>
+<p>RTX PRO 6000 Blackwell Server Edition · 96GB · AWS g7e.4xlarge<br>风控与 SOP 分别验证，验收目标为持续100并发、完整 HTTP P50 ≤500ms。</p>
+<section class="cards"><article><small>风控 · vLLM 最多8序列 · 独立复测</small>
+<strong>3,382<span> ms</span></strong>
+<p>完整 HTTP P50 · 持续100并发</p><b>28.5 请求/秒</b>
+<p>原生复测 P50：4,234 ms</p>
+<p>相对原生复测 1.25× · 未达到500ms</p></article><article><small>SOP · vLLM 最多8序列 · 独立复测</small>
+<strong>9,235<span> ms</span></strong>
+<p>完整 HTTP P50 · 持续100并发</p><b>10.4 请求/秒</b>
+<p>原生复测 P50：11,983 ms</p>
+<p>相对原生复测 1.30× · 未达到500ms</p></article></section><h2>全部单卡配置</h2>
+<div class="table"><table><thead><tr><th>场景</th><th>配置</th><th>C1 P50 / ms</th><th>C100 P50 / ms</th><th>P95 / ms</th><th>请求/秒</th><th>合成正确率</th></tr></thead><tbody><tr><td>风控</td><td>native-initial</td><td>85.9</td><td>4,272.0</td><td>4,313.0</td><td>23.38</td><td>97.08%</td></tr><tr><td>风控</td><td>vllm-b1</td><td>44.2</td><td>3,657.4</td><td>3,662.6</td><td>27.30</td><td>97.08%</td></tr><tr><td>风控</td><td>vllm-b4</td><td>44.8</td><td>3,470.1</td><td>3,488.2</td><td>28.77</td><td>97.50%</td></tr><tr><td>风控</td><td>vllm-b8</td><td>44.9</td><td>3,383.2</td><td>3,657.7</td><td>28.48</td><td>97.08%</td></tr><tr><td>SOP</td><td>native-initial</td><td>162.8</td><td>12,103.8</td><td>12,128.0</td><td>8.26</td><td>94.23%</td></tr><tr><td>SOP</td><td>vllm-b1</td><td>111.2</td><td>10,000.5</td><td>10,003.7</td><td>9.99</td><td>94.23%</td></tr><tr><td>SOP</td><td>vllm-b4</td><td>111.7</td><td>9,648.5</td><td>9,659.4</td><td>10.36</td><td>94.23%</td></tr><tr><td>SOP</td><td>vllm-b8</td><td>112.0</td><td>9,239.8</td><td>10,000.3</td><td>10.39</td><td>94.23%</td></tr></tbody></table></div>
+<div class="note"><b>输入与决策语义</b><p>464 条请求的 token 和 marker 一致；完整保留200特征／200选项以及 marker 后的模板 token。关闭前缀缓存和分块 prefill，原始 FP32 输出头权重逐次核对。</p></div>
+<p>16,197 次 HTTP 请求有效，12 次持续并发测试均还原检查在途请求。合成正确率不代表生产准确率；时延不含生产网络及特征查询。服务前端和 Torch 版本差异包含在比较中。</p>
+<p><a href="RESULTS.zh.md">完整中文报告</a> · <a href="data.json">结构化结果</a> · <a href="results/verification.json">验证记录</a> · <a href="PLAN.zh.md">实验方案</a></p></main></html>

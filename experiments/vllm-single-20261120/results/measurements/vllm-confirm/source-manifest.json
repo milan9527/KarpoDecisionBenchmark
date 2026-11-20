@@ -1,0 +1,42 @@
+{
+  "experiment": "vllm-single-20261120",
+  "model": "MachinePulseAI/karpo-decision-4B",
+  "model_revision": "f7f521cfc3219ca28518c6bba91960b8757dce06",
+  "code_revision": "6600011eb5cf46232d056ec0717dc726146d29de",
+  "vllm_version": "0.34.0",
+  "precision": "FP8",
+  "replicas": 1,
+  "vllm_max_num_seqs": [
+    1,
+    4,
+    8
+  ],
+  "concurrency": 100,
+  "sustained_seconds": 60,
+  "files": {
+    "experiments/vllm-single-20261120/risk-requests.json": "a0d104990d5e54db3089b4e6c411d4087a2b7a84d31ad6e7ccb40dcb9b6fcc1b",
+    "experiments/vllm-single-20261120/sop-requests.json": "67860c1ff0150604e6ad93c3b189020bfab0211360e7d60509d28b621b8b134d",
+    "experiments/vllm-single-20261120/risk-feature-schema.json": "e2cb67e4973eda8e6e7a0d3bcdaba7285c01b8d8abb96a14b993671dd6bd7e78",
+    "scripts/vllm_karpo_encoding.py": "56e14b5dde797f6be93cd57dd9176faca351d0e26d7af8e1445b761d2cadd2a7",
+    "scripts/vllm_karpo_server.py": "4151c92082857f7d712c18da1bc033eee267edcd11868194ede2ad9626880c66",
+    "scripts/vllm_single_benchmark.py": "dfdfc710e36ed6f0774ddb55ece8731c9d74889969bf79ba2f604c96785b0f1d",
+    "scripts/vllm_single_prepare.py": "fde15ff1ba0c540c82b1723af1acf517889b8df6132e0238e987b81d198d5830",
+    "scripts/vllm_single_suite.py": "8d99170fdbe2e499375f2d870dfb280aaac827ebfb56dea0cd43879c3a3952cd",
+    "scripts/batch100_benchmark.py": "384ca07491194ed6c662f120c005a3e927acb9cf75e6ded63ca9ac0fef890868",
+    "scripts/benchmark.py": "3eb29a865be73ea3a70e9fd16f1d2e72403ecf6edb900ada7d263be8ad4b7dc2",
+    "scripts/smallbatch_server.py": "a7feb8f7c89c5919cf88f4dfc9869055b132f7bf3ad90395c3fed3f169ec5a26",
+    "scripts/batch100_server.py": "ffe4a6fd0eab9a80d2d7e1d837553d35374bd0f931ac252e3a11ebd7a800b27b",
+    "scripts/vllm_single_environment.py": "aa7a40c330f960ed2a334b5ca68eddd287f153734a403be51e3a27e1a542c320",
+    "scripts/vllm_single_smoke.py": "cdd62d7b9d5d39d22c8a707510c02bfc9fdbbe03be0d7a1d3f75d873444043bb",
+    "serving/vllm_karpo/karpo_vllm.py": "a1021cfe7e0a0c14f4ca4e3aabc18da4db88bc2209444f91f439283aafec0176",
+    "serving/vllm_karpo/karpo_vllm_model.py": "ef5de106f0c5464b50c374215c9e33e71b0be6e4a1274e87209a802dce7b5bd0",
+    "serving/vllm_karpo/karpo_vllm_worker.py": "15a082fc7dbb62f266ae7c451e203f63e01624279d404605d90eb0cb1222be7d",
+    "serving/vllm_karpo/pyproject.toml": "62ad45fff29c9928b3f9e8bc462e0295a2d63adb7a034443c87a318be1e4ae88",
+    "experiments/vllm-single-20261120/PLAN.zh.md": "501aea6e51ad0b3a88ea7213111f18d4bc606b95e77bb5c2f89c293d23125d32",
+    "tests/test_vllm_karpo.py": "7fe1b13b514099409bb21b39e8afb512138e546297726b99a11f8515470d1424",
+    "experiments/batch100-20261120/results/fp8/risk/quality-serial/requests.jsonl": "68bbb6842d1d3288ff30dc1b824a7aa66c3e9d1075bcb360885ea1978b8d7c89",
+    "experiments/batch100-20261120/results/bf16/risk/quality-serial/requests.jsonl": "73d910e9b077fcd01a76e8d0c8e073405f09cf3a34cfd58ae485e66b725eeb87",
+    "experiments/batch100-20261120/results/fp8/sop/quality-serial/requests.jsonl": "02c9444690dd87c5f4eb3036e01131cd86843e5654b30edfb165e21616b136f4",
+    "experiments/batch100-20261120/results/bf16/sop/quality-serial/requests.jsonl": "676855a8337efd7170e7952631339f607541d3be97b3821c9f7dc9a363180f51"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "d8ee7ee6-4407-46da-ae9d-0baa2daed9b2",
+  "reason": "Stop the waiting failed-attempt service before retry; preserve loaded disk cache, instance and files. No measured calls had started.",
+  "result": {
+    "Status": "Success",
+    "StandardOutputContent": "",
+    "StandardErrorContent": ""
+  }
+}

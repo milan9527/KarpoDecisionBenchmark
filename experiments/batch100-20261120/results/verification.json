@@ -1,0 +1,10 @@
+{
+  "verified_single_request_attempts": 30106,
+  "http_attempts": 21591,
+  "client_dropped_requests": 8515,
+  "valid_http_responses": 21591,
+  "explicit_model_requests": 320,
+  "stages": 94,
+  "quality_error_observations": 55,
+  "status": "complete"
+}

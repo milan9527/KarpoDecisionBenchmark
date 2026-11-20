@@ -1,0 +1,6 @@
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 16176.26it/s]
+{"event": "capture", "rank": 0, "batch": 1, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 1, "tokens_each": 2304}
+{"event": "ready", "replicas": 1}
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 7 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

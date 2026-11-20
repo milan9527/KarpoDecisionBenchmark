@@ -1,0 +1,9 @@
+{
+  "original_command": {
+    "id": "06b4a1a8-dc11-4ad0-b96d-827598bfde56",
+    "bundle_sha256": "4bd9f85e0fa23d8ae95cc2c2d1bc2d33df068c7fea1ac246931f78b1dc1fd7d9"
+  },
+  "status": "Failed",
+  "error": "/var/lib/amazon/ssm/i-05b24e3b4a7ee864d/document/orchestration/06b4a1a8-dc11-4ad0-b96d-827598bfde56/awsrunShellScript/0.awsrunShellScript/_script.sh: 1: set: Illegal option -o pipefail\nfailed to run commands: exit status 2",
+  "fix": "Run launch script explicitly under bash; no model calls before failure."
+}

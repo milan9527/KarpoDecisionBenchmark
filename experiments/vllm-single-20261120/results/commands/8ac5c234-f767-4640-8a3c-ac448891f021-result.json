@@ -1,0 +1,36 @@
+{
+  "CommandId": "8ac5c234-f767-4640-8a3c-ac448891f021",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T12:54:05.871Z",
+  "ExecutionElapsedTime": "PT0.695S",
+  "ExecutionEndDateTime": "2026-11-20T12:54:05.871Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "download: s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-single-settle-observer.py to ../../../../opt/karpo/experiments/vllm-single-20261120/settle-observer.py\n/opt/karpo/experiments/vllm-single-20261120/settle-observer.py: OK\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-vllm-settle-observer.service; invocation ID: 65b8375b008f4b7dba38f2656334fd46\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "55ae0151-3ad3-4f6b-a34b-222a1169f0a3",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 12:55:19 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "928",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "55ae0151-3ad3-4f6b-a34b-222a1169f0a3",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

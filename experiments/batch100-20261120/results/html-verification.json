@@ -1,0 +1,12 @@
+{
+  "observed_utc": "2026-11-20T08:49:53.136130+00:00",
+  "status": "passed",
+  "checks": [
+    "94 measured stages",
+    "P50 acceptance",
+    "all local links",
+    "displayed P50 and valid counts match verified data",
+    "offline render",
+    "mobile width"
+  ]
+}

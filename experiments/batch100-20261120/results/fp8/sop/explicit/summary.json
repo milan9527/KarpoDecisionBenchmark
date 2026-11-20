@@ -1,0 +1,62 @@
+[
+  {
+    "batch": 1,
+    "requests": 32,
+    "valid_rps": 5.7994658547324285,
+    "batch_p95_ms": 172.6496800001769,
+    "same_choices": 32,
+    "correct": 32,
+    "max_probability_delta": 0.0,
+    "max_packs": 1,
+    "graph_replays": 32,
+    "peak_allocated_gib": 7.153930187225342
+  },
+  {
+    "batch": 2,
+    "requests": 32,
+    "valid_rps": 6.606901775646952,
+    "batch_p95_ms": 303.3586750000268,
+    "same_choices": 32,
+    "correct": 32,
+    "max_probability_delta": 0.043790097760159186,
+    "max_packs": 1,
+    "graph_replays": 16,
+    "peak_allocated_gib": 7.386293888092041
+  },
+  {
+    "batch": 4,
+    "requests": 32,
+    "valid_rps": 7.129420974025829,
+    "batch_p95_ms": 564.1490919999796,
+    "same_choices": 32,
+    "correct": 32,
+    "max_probability_delta": 0.040304809739845515,
+    "max_packs": 1,
+    "graph_replays": 8,
+    "peak_allocated_gib": 7.79471492767334
+  },
+  {
+    "batch": 8,
+    "requests": 32,
+    "valid_rps": 7.413334045359791,
+    "batch_p95_ms": 1080.7326229999035,
+    "same_choices": 32,
+    "correct": 32,
+    "max_probability_delta": 0.04038361257740708,
+    "max_packs": 1,
+    "graph_replays": 4,
+    "peak_allocated_gib": 8.611346244812012
+  },
+  {
+    "batch": 16,
+    "requests": 32,
+    "valid_rps": 7.7289799930814,
+    "batch_p95_ms": 2072.0625239998753,
+    "same_choices": 32,
+    "correct": 32,
+    "max_probability_delta": 0.0403023911462399,
+    "max_packs": 2,
+    "graph_replays": 4,
+    "peak_allocated_gib": 9.21720027923584
+  }
+]

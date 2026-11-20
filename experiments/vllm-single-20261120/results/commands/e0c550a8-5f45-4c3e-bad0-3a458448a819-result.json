@@ -1,0 +1,36 @@
+{
+  "CommandId": "e0c550a8-5f45-4c3e-bad0-3a458448a819",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T12:35:13.375Z",
+  "ExecutionElapsedTime": "PT23.284S",
+  "ExecutionEndDateTime": "2026-11-20T12:35:36.375Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "/opt/karpo/venv-vllm034/bin ['/opt/karpo/venv-vllm034/bin/ninja']\n/opt/karpo/venv-vllm034/lib/python3.12/site-packages/nvidia ['/opt/karpo/venv-vllm034/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc', '/opt/karpo/venv-vllm034/lib/python3.12/site-packages/nvidia/cu13/include/cuda.h']\n/usr/local ['/usr/local/cuda-12.8/bin/nvcc', '/usr/local/cuda-13.0/bin/nvcc', '/usr/local/cuda-12.9/bin/nvcc', '/usr/local/cuda-13.2/bin/nvcc', '/usr/local/cuda-12.8/targets/x86_64-linux/include/cuda.h', '/usr/local/cuda-13.0/targets/x86_64-linux/include/cuda.h', '/usr/local/cuda-12.9/targets/x86_64-linux/include/cuda.h', '/usr/local/cuda-13.2/targets/x86_64-linux/include/cuda.h']\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "7c1065f2-d448-4a16-8fb0-66581cd6b4cf",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 12:35:51 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1257",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "7c1065f2-d448-4a16-8fb0-66581cd6b4cf",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

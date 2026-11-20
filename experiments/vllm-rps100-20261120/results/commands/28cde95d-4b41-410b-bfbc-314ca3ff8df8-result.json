@@ -1,0 +1,36 @@
+{
+  "CommandId": "28cde95d-4b41-410b-bfbc-314ca3ff8df8",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T14:46:52.349Z",
+  "ExecutionElapsedTime": "PT0.067S",
+  "ExecutionEndDateTime": "2026-11-20T14:46:52.349Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "Result=success\nId=karpo-rps-bootstrap-fleet1.service\nActiveState=active\nSubState=running\n\nResult=exit-code\nId=karpo-rps-rtx4-tunnel-v1.service\nActiveState=activating\nSubState=auto-restart\n13.58.107.90\nfleet1-control.log ssh: connect to host 100.59.41.29 port 22: Connection timed out\nssh: connect to host 100.59.41.29 port 22: Connection timed out\nssh: connect to host 100.59.41.29 port 22: Connection timed out\nssh: connect to host 100.59.41.29 port 22: Connection timed out\nrtx4-tunnel.log ssh: connect to host 100.59.41.29 port 22: Connection timed out\nssh: connect to host 100.59.41.29 port 22: Connection timed out\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "ebf3b83c-e39c-4c7e-b0c9-b90018f4f233",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 14:46:58 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1218",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "ebf3b83c-e39c-4c7e-b0c9-b90018f4f233",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

@@ -1,0 +1,736 @@
+{
+  "observations": 104,
+  "same_choices": 104,
+  "new_errors": 0,
+  "max_probability_delta": 0.09505449559766893,
+  "details": [
+    {
+      "request_id": "concise-en:synthetic-card-collect_reference-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.03285480198841373
+    },
+    {
+      "request_id": "concise-en:synthetic-card-collect_reference-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0008858773470897807
+    },
+    {
+      "request_id": "concise-en:synthetic-card-clarify_request-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.011744812856353093
+    },
+    {
+      "request_id": "concise-en:synthetic-card-compliance_review-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0010554801545503197
+    },
+    {
+      "request_id": "concise-en:synthetic-card-verify_identity-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.004248661141024734
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-await_confirmations-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.014509733346355413
+    },
+    {
+      "request_id": "concise-en:synthetic-card-compliance_review-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0013049782292040568
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-investigate_delay-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.018909279807395152
+    },
+    {
+      "request_id": "concise-en:synthetic-card-verify_identity-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0017732601704831819
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-duplicate_check-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.012527541399417669
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-execute_authorized-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0009454596406971438
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-investigate_delay-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.030011865687001982
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-request_approval-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0002887838943265164
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-explain_limit-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0018967078712056606
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-reconcile_ledger-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008671626094726492
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-await_confirmations-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.028504823936299828
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-restore_access-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00403157265551235
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-close_resolved-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.004879977438732475
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-restore_access-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.000543195741655178
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-reconcile_ledger-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.025162730814847545
+    },
+    {
+      "request_id": "concise-en:synthetic-card-clarify_request-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.05285022819441243
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-duplicate_check-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.020749629070922482
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-secure_account-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006911137408227241
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-collect_reference-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.02454010065485157
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-close_resolved-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0027576110843766655
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-request_approval-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.012060450865235661
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-investigate_delay-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0021152982748656735
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-reject_unsupported-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0036072221652098113
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-await_confirmations-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015051679664017215
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-compliance_review-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.001205379303859333
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-compliance_review-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 5.511761312215757e-05
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-explain_fees-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002563324869504613
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-collect_reference-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010730417180680019
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-request_approval-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007073167853479223
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-secure_account-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01733490308531227
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-await_confirmations-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005801383923728198
+    },
+    {
+      "request_id": "concise-en:synthetic-account-restore_access-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0023516338529834258
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-verify_identity-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006233595163028738
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-reject_late_refund-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.023176124324152114
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-verify_destination-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008944025450468907
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-secure_account-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007769968992615728
+    },
+    {
+      "request_id": "concise-en:synthetic-account-review_refund-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.041544811943922566
+    },
+    {
+      "request_id": "concise-en:boundary-confirmations-before-deadline-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.040118396102164944
+    },
+    {
+      "request_id": "concise-en:synthetic-account-reject_unsupported-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010938591775502132
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-compromise-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00275039835371442
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-approved-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.04662616580690582
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-reject_late_refund-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0036857143442319273
+    },
+    {
+      "request_id": "concise-en:synthetic-account-reject_late_refund-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.055508074020947346
+    },
+    {
+      "request_id": "concise-en:synthetic-account-review_refund-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.036789631946254286
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-request_shortfall-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005688330727754098
+    },
+    {
+      "request_id": "concise-en:boundary-refund-one-day-late-original",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.031078115998708467
+    },
+    {
+      "request_id": "concise-en:boundary-limit-equality-approved-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0003591300183529711
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-explain_limit-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.03593721021460383
+    },
+    {
+      "request_id": "concise-en:boundary-confirmation-wait-expired-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01035644113984202
+    },
+    {
+      "request_id": "concise-en:synthetic-account-restore_access-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006373981296268205
+    },
+    {
+      "request_id": "concise-en:synthetic-account-reject_unsupported-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.003585658320747087
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-explain_fees-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0068985674514046025
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-request_shortfall-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00527942570578388
+    },
+    {
+      "request_id": "concise-en:boundary-duplicate-over-approved-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.09505449559766893
+    },
+    {
+      "request_id": "concise-en:synthetic-deposit-verify_destination-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.001367254365865267
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-close_resolved-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0002060469518062602
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-request_approval-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005211378550033063
+    },
+    {
+      "request_id": "concise-en:boundary-refund-one-day-late-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.02884212240956341
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-explain_fees-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0002206617137852085
+    },
+    {
+      "request_id": "concise-en:boundary-duplicate-over-approved-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.013973466004973012
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-review_refund-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006789731581917868
+    },
+    {
+      "request_id": "concise-en:boundary-destination-before-execution-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.011448801040801038
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-investigate_delay-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008566098569504216
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-verify_destination-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00014388134369514548
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-reconcile_ledger-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.013134207867965764
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-approved-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0060517497957123245
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-secure_account-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00275988319063359
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-duplicate_check-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.011694495368956725
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-explain_limit-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0024784027667439056
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-execute_authorized-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.021389049632891566
+    },
+    {
+      "request_id": "concise-en:boundary-approval-not-in-customer-text-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0016185920549892652
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-reconcile_ledger-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006614805086743947
+    },
+    {
+      "request_id": "concise-en:synthetic-withdrawal-execute_authorized-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0002756125927170063
+    },
+    {
+      "request_id": "concise-en:synthetic-account-reject_late_refund-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015080040101282055
+    },
+    {
+      "request_id": "concise-en:boundary-destination-before-execution-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0005471703134340977
+    },
+    {
+      "request_id": "concise-en:boundary-refund-window-boundary-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.07069892111791087
+    },
+    {
+      "request_id": "concise-en:boundary-refund-window-boundary-original",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.020826013390802256
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-explain_limit-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.04899694270836574
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-clarify_request-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002209679093717609
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-compromise-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0164785568938296
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-close_resolved-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.011764888409195873
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-execute_authorized-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0163886521873855
+    },
+    {
+      "request_id": "concise-en:boundary-domain-injection-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.06007740775055542
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-reject_unsupported-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0010550841869632066
+    },
+    {
+      "request_id": "concise-en:synthetic-refund-verify_destination-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00909722022369397
+    },
+    {
+      "request_id": "concise-en:boundary-limit-equality-approved-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00021611981112723555
+    },
+    {
+      "request_id": "concise-en:boundary-confirmations-before-deadline-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007141420571932844
+    },
+    {
+      "request_id": "concise-en:synthetic-dispute-explain_fees-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0006708647576245674
+    },
+    {
+      "request_id": "concise-en:boundary-domain-injection-original",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.07803405045544193
+    },
+    {
+      "request_id": "concise-en:synthetic-atm-request_shortfall-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.013149577779747568
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-duplicate-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006346314471095071
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-verify_identity-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.011067988410723095
+    },
+    {
+      "request_id": "concise-en:boundary-approval-not-in-customer-text-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.011788205721557699
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-request_shortfall-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0063684185551134975
+    },
+    {
+      "request_id": "concise-en:synthetic-transfer-clarify_request-200-detailed-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006137282615508943
+    },
+    {
+      "request_id": "concise-en:synthetic-exchange-duplicate_check-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.024548822821382543
+    },
+    {
+      "request_id": "concise-en:boundary-confirmation-wait-expired-reversed",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.023706890455937435
+    },
+    {
+      "request_id": "concise-en:synthetic-merchant-review_refund-200-detailed-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.021235332113029526
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-duplicate-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015300368888958693
+    }
+  ]
+}

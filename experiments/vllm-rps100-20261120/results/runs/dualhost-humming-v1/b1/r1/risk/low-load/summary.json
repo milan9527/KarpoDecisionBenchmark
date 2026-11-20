@@ -1,0 +1,111 @@
+{
+  "target_rps": 20.0,
+  "offered_seconds": 20.0,
+  "scheduled_requests": 400,
+  "attempts": 400,
+  "valid": 400,
+  "failures": 0,
+  "http_statuses": {
+    "200": 400
+  },
+  "replica_counts": {
+    "0": 400
+  },
+  "correct": 374,
+  "elapsed_with_drain_s": 20.00068073300008,
+  "valid_rps_with_drain": 19.999319290169,
+  "steady_valid_rps": 20.0,
+  "p50_ms": 50.383592000343924,
+  "p95_ms": 51.23127100023339,
+  "p99_ms": 52.17203300026085,
+  "http_p50_ms": 49.77811600019777,
+  "last_quarter_p50_ms": 50.4196070000944,
+  "max_send_lag_ms": 1.0918290004156006,
+  "valid_within_500ms": 400,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 1
+    },
+    {
+      "second": 2,
+      "pending": 1
+    },
+    {
+      "second": 3,
+      "pending": 1
+    },
+    {
+      "second": 4,
+      "pending": 1
+    },
+    {
+      "second": 5,
+      "pending": 1
+    },
+    {
+      "second": 6,
+      "pending": 0
+    },
+    {
+      "second": 7,
+      "pending": 0
+    },
+    {
+      "second": 8,
+      "pending": 0
+    },
+    {
+      "second": 9,
+      "pending": 0
+    },
+    {
+      "second": 10,
+      "pending": 1
+    },
+    {
+      "second": 11,
+      "pending": 1
+    },
+    {
+      "second": 12,
+      "pending": 0
+    },
+    {
+      "second": 13,
+      "pending": 1
+    },
+    {
+      "second": 14,
+      "pending": 1
+    },
+    {
+      "second": 15,
+      "pending": 0
+    },
+    {
+      "second": 16,
+      "pending": 1
+    },
+    {
+      "second": 17,
+      "pending": 0
+    },
+    {
+      "second": 18,
+      "pending": 1
+    },
+    {
+      "second": 19,
+      "pending": 1
+    },
+    {
+      "second": 20,
+      "pending": 1
+    }
+  ],
+  "backlog_slope_per_second": 0.039705882352941174,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": true,
+  "passes_performance_acceptance": false
+}

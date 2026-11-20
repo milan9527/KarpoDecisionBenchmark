@@ -1,0 +1,1688 @@
+{
+  "observations": 240,
+  "same_choices": 239,
+  "new_errors": 0,
+  "max_probability_delta": 0.08812478537132251,
+  "details": [
+    {
+      "request_id": "risk-deny-10-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0
+    },
+    {
+      "request_id": "risk-deny-10-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 2.5055423499614554e-06
+    },
+    {
+      "request_id": "risk-deny-12-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0001007978976410584
+    },
+    {
+      "request_id": "risk-deny-11-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0
+    },
+    {
+      "request_id": "risk-deny-13-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 1.3674541497699089e-05
+    },
+    {
+      "request_id": "risk-deny-16-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00014219579856367126
+    },
+    {
+      "request_id": "risk-deny-15-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00754070479628921
+    },
+    {
+      "request_id": "risk-deny-11-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.02085321084800873
+    },
+    {
+      "request_id": "risk-deny-13-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0010177439557568224
+    },
+    {
+      "request_id": "risk-deny-18-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 5.179246567199898e-06
+    },
+    {
+      "request_id": "risk-deny-21-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00851506127509949
+    },
+    {
+      "request_id": "risk-throttle-21-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01872730948467216
+    },
+    {
+      "request_id": "risk-deny-25-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 4.0792614901995965e-06
+    },
+    {
+      "request_id": "risk-deny-22-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 3.613137400604316e-06
+    },
+    {
+      "request_id": "risk-deny-14-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 1.2417061805436447e-06
+    },
+    {
+      "request_id": "risk-deny-17-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 2.0209735417053842e-05
+    },
+    {
+      "request_id": "risk-throttle-22-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002999933106080599
+    },
+    {
+      "request_id": "risk-deny-27-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0037933256680462435
+    },
+    {
+      "request_id": "risk-deny-17-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0010271326458881624
+    },
+    {
+      "request_id": "risk-throttle-20-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006161325344426705
+    },
+    {
+      "request_id": "risk-throttle-23-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0053518385019162285
+    },
+    {
+      "request_id": "risk-throttle-23-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0025160352494636197
+    },
+    {
+      "request_id": "risk-deny-26-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 5.10325528713107e-06
+    },
+    {
+      "request_id": "risk-deduplicate-10-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015262220371951796
+    },
+    {
+      "request_id": "risk-deny-21-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.001155392845917258
+    },
+    {
+      "request_id": "risk-deny-20-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 6.856912523445224e-05
+    },
+    {
+      "request_id": "risk-throttle-24-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015433528490265025
+    },
+    {
+      "request_id": "risk-deduplicate-14-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.003581437570602808
+    },
+    {
+      "request_id": "risk-throttle-24-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.05975296890592796
+    },
+    {
+      "request_id": "risk-deduplicate-21-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01756110394190502
+    },
+    {
+      "request_id": "risk-deduplicate-15-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.08333616158211432
+    },
+    {
+      "request_id": "risk-throttle-28-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002509912875474196
+    },
+    {
+      "request_id": "risk-throttle-26-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002196309136791544
+    },
+    {
+      "request_id": "risk-throttle-26-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.012072069456877998
+    },
+    {
+      "request_id": "risk-deduplicate-17-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006482004554417609
+    },
+    {
+      "request_id": "risk-throttle-25-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0019834001158225423
+    },
+    {
+      "request_id": "risk-deny-28-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 3.381519796928731e-05
+    },
+    {
+      "request_id": "risk-deduplicate-23-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0031250802901399144
+    },
+    {
+      "request_id": "risk-deduplicate-28-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.060397635095104985
+    },
+    {
+      "request_id": "risk-throttle-28-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00028944494359767897
+    },
+    {
+      "request_id": "risk-deduplicate-27-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.022363823665498772
+    },
+    {
+      "request_id": "risk-challenge-13-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.013513065407587233
+    },
+    {
+      "request_id": "risk-challenge-11-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0372017278196215
+    },
+    {
+      "request_id": "risk-throttle-29-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005729456367147112
+    },
+    {
+      "request_id": "risk-deduplicate-10-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010245014743381978
+    },
+    {
+      "request_id": "risk-challenge-10-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0349442037410794
+    },
+    {
+      "request_id": "risk-throttle-12-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.031893418565043935
+    },
+    {
+      "request_id": "risk-challenge-14-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00687239699223452
+    },
+    {
+      "request_id": "risk-throttle-14-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.012155768611533113
+    },
+    {
+      "request_id": "risk-deny-23-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 1.0388817223927482e-05
+    },
+    {
+      "request_id": "risk-challenge-16-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.023991190856557765
+    },
+    {
+      "request_id": "risk-challenge-15-reversed",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.019932553278700138
+    },
+    {
+      "request_id": "risk-challenge-15-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007218515631483402
+    },
+    {
+      "request_id": "risk-throttle-18-original",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.03776521807601546
+    },
+    {
+      "request_id": "risk-challenge-16-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006508321971620098
+    },
+    {
+      "request_id": "risk-challenge-18-original",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.011088689821387776
+    },
+    {
+      "request_id": "risk-throttle-20-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005187267216392177
+    },
+    {
+      "request_id": "risk-throttle-19-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.009946391198770943
+    },
+    {
+      "request_id": "risk-deny-19-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.003732757390554564
+    },
+    {
+      "request_id": "risk-deny-26-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 3.3875127193661037e-05
+    },
+    {
+      "request_id": "risk-challenge-18-reversed",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.002888314655138724
+    },
+    {
+      "request_id": "risk-challenge-17-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01494249909565648
+    },
+    {
+      "request_id": "risk-challenge-21-reversed",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.018428964393051417
+    },
+    {
+      "request_id": "risk-challenge-19-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.003806013051415702
+    },
+    {
+      "request_id": "risk-deduplicate-11-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.003990262111727372
+    },
+    {
+      "request_id": "risk-challenge-23-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0044038225741996895
+    },
+    {
+      "request_id": "risk-deduplicate-22-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.014389427182517567
+    },
+    {
+      "request_id": "risk-challenge-22-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.02315421567377013
+    },
+    {
+      "request_id": "risk-deny-20-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 1.5072985632615036e-06
+    },
+    {
+      "request_id": "risk-throttle-13-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008609387998820273
+    },
+    {
+      "request_id": "risk-challenge-25-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.039418520222161635
+    },
+    {
+      "request_id": "risk-challenge-25-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0006866537676059881
+    },
+    {
+      "request_id": "risk-deduplicate-20-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.03210009329965047
+    },
+    {
+      "request_id": "risk-deduplicate-16-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.025215919609997084
+    },
+    {
+      "request_id": "risk-review-10-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008091051940031874
+    },
+    {
+      "request_id": "risk-challenge-29-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0017452260974868822
+    },
+    {
+      "request_id": "risk-challenge-19-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0046397028309343585
+    },
+    {
+      "request_id": "risk-review-10-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.03488897723054607
+    },
+    {
+      "request_id": "risk-challenge-27-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.05664176034279278
+    },
+    {
+      "request_id": "risk-challenge-28-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015703710595020404
+    },
+    {
+      "request_id": "risk-review-11-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.024256825255116077
+    },
+    {
+      "request_id": "risk-throttle-11-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0
+    },
+    {
+      "request_id": "risk-challenge-28-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.003994622153851969
+    },
+    {
+      "request_id": "risk-throttle-18-reversed",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.026002414104954685
+    },
+    {
+      "request_id": "risk-review-15-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.021072150819386737
+    },
+    {
+      "request_id": "risk-review-15-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01591680293277331
+    },
+    {
+      "request_id": "risk-deduplicate-12-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0
+    },
+    {
+      "request_id": "risk-throttle-16-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0
+    },
+    {
+      "request_id": "risk-review-17-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01152695707916851
+    },
+    {
+      "request_id": "risk-review-17-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.003867856989058893
+    },
+    {
+      "request_id": "risk-review-18-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005978034538719701
+    },
+    {
+      "request_id": "risk-review-19-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005914790458994901
+    },
+    {
+      "request_id": "risk-review-19-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.016534385873753304
+    },
+    {
+      "request_id": "risk-review-18-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.009489240496415197
+    },
+    {
+      "request_id": "risk-deny-15-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0010690332760855403
+    },
+    {
+      "request_id": "risk-throttle-16-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002994373778583581
+    },
+    {
+      "request_id": "risk-deduplicate-18-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.02411680472823774
+    },
+    {
+      "request_id": "risk-review-21-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015462104406046895
+    },
+    {
+      "request_id": "risk-challenge-26-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.023777849271894747
+    },
+    {
+      "request_id": "risk-deduplicate-21-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.08812478537132251
+    },
+    {
+      "request_id": "risk-deny-24-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0003340657173448447
+    },
+    {
+      "request_id": "risk-deduplicate-24-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.05271778566376342
+    },
+    {
+      "request_id": "risk-deny-22-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 3.0180953469072236e-05
+    },
+    {
+      "request_id": "risk-review-23-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008822801334656294
+    },
+    {
+      "request_id": "risk-throttle-12-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.041393731418362945
+    },
+    {
+      "request_id": "risk-review-25-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.014614035006795256
+    },
+    {
+      "request_id": "risk-review-24-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.019169607660155075
+    },
+    {
+      "request_id": "risk-throttle-11-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005606768165919429
+    },
+    {
+      "request_id": "risk-deny-16-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 1.9221056501650402e-05
+    },
+    {
+      "request_id": "risk-review-11-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.019683029667717844
+    },
+    {
+      "request_id": "risk-review-24-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.04120855883933505
+    },
+    {
+      "request_id": "risk-review-26-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.001388930744613548
+    },
+    {
+      "request_id": "risk-deduplicate-24-reversed",
+      "same_choice": false,
+      "reference_correct": false,
+      "actual_correct": true,
+      "max_probability_delta": 0.030285592017254337
+    },
+    {
+      "request_id": "risk-review-28-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.011804193996168992
+    },
+    {
+      "request_id": "risk-deduplicate-18-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008544089578452096
+    },
+    {
+      "request_id": "risk-deduplicate-15-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.06056239239970029
+    },
+    {
+      "request_id": "risk-review-27-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.011565821516732577
+    },
+    {
+      "request_id": "risk-review-27-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005883451270965012
+    },
+    {
+      "request_id": "risk-throttle-10-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0087816195564272
+    },
+    {
+      "request_id": "risk-allow-10-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.009172300917977383
+    },
+    {
+      "request_id": "risk-review-12-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.014788205168763224
+    },
+    {
+      "request_id": "risk-allow-15-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.014220246803199665
+    },
+    {
+      "request_id": "risk-challenge-17-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0035257218827001724
+    },
+    {
+      "request_id": "risk-deduplicate-20-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00469560270497571
+    },
+    {
+      "request_id": "risk-allow-14-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010287244092724301
+    },
+    {
+      "request_id": "risk-allow-12-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.029315931835769637
+    },
+    {
+      "request_id": "risk-throttle-15-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.04933279853589334
+    },
+    {
+      "request_id": "risk-review-26-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01393219363693976
+    },
+    {
+      "request_id": "risk-deny-19-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 1.1119278488513906e-05
+    },
+    {
+      "request_id": "risk-allow-16-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0018246980443195945
+    },
+    {
+      "request_id": "risk-allow-13-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.014585248554831565
+    },
+    {
+      "request_id": "risk-challenge-20-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0
+    },
+    {
+      "request_id": "risk-throttle-14-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007943070787665735
+    },
+    {
+      "request_id": "risk-allow-19-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.018151038695150223
+    },
+    {
+      "request_id": "risk-deduplicate-13-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0
+    },
+    {
+      "request_id": "risk-review-16-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0
+    },
+    {
+      "request_id": "risk-allow-21-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.003446823129587242
+    },
+    {
+      "request_id": "risk-allow-22-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007574675285204835
+    },
+    {
+      "request_id": "risk-allow-23-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0
+    },
+    {
+      "request_id": "risk-allow-22-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0017740798084749931
+    },
+    {
+      "request_id": "risk-challenge-13-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.023845770919105502
+    },
+    {
+      "request_id": "risk-deny-23-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00046603732844541224
+    },
+    {
+      "request_id": "risk-deduplicate-19-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0037171008106968717
+    },
+    {
+      "request_id": "risk-deduplicate-26-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.004449083502151119
+    },
+    {
+      "request_id": "risk-throttle-22-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0013514656187636476
+    },
+    {
+      "request_id": "risk-allow-18-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007626242474385148
+    },
+    {
+      "request_id": "risk-allow-10-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01541844741881726
+    },
+    {
+      "request_id": "risk-throttle-17-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.000729758909240881
+    },
+    {
+      "request_id": "risk-review-12-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0
+    },
+    {
+      "request_id": "risk-throttle-21-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0013180493741254962
+    },
+    {
+      "request_id": "risk-deduplicate-16-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.07074680986508519
+    },
+    {
+      "request_id": "risk-throttle-19-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01842906083779894
+    },
+    {
+      "request_id": "risk-throttle-27-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.02840144930275934
+    },
+    {
+      "request_id": "risk-challenge-21-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005184854984491727
+    },
+    {
+      "request_id": "risk-allow-28-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015524509772763984
+    },
+    {
+      "request_id": "risk-deduplicate-12-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.03115179715053651
+    },
+    {
+      "request_id": "risk-deduplicate-17-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.03947996432840606
+    },
+    {
+      "request_id": "risk-allow-29-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002307866098011511
+    },
+    {
+      "request_id": "risk-deduplicate-27-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015258221256747972
+    },
+    {
+      "request_id": "risk-allow-16-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0077653086653264175
+    },
+    {
+      "request_id": "risk-challenge-24-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.03669752984677116
+    },
+    {
+      "request_id": "risk-allow-11-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008374382423192994
+    },
+    {
+      "request_id": "risk-challenge-29-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.026283147244551275
+    },
+    {
+      "request_id": "risk-throttle-25-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01696723062121197
+    },
+    {
+      "request_id": "risk-allow-27-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0032700897095476744
+    },
+    {
+      "request_id": "risk-review-29-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0020549078684515276
+    },
+    {
+      "request_id": "risk-deny-24-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 4.397490147418207e-05
+    },
+    {
+      "request_id": "risk-allow-20-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.005559407204022593
+    },
+    {
+      "request_id": "risk-allow-15-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.012477528429496676
+    },
+    {
+      "request_id": "risk-allow-20-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006313028561849454
+    },
+    {
+      "request_id": "risk-throttle-29-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006263743488956419
+    },
+    {
+      "request_id": "risk-deny-14-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 2.9207799431385517e-05
+    },
+    {
+      "request_id": "risk-review-21-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.03219511903960082
+    },
+    {
+      "request_id": "risk-deduplicate-29-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.013023256141211137
+    },
+    {
+      "request_id": "risk-challenge-10-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002048052873683929
+    },
+    {
+      "request_id": "risk-allow-27-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.018581419804921895
+    },
+    {
+      "request_id": "risk-deduplicate-19-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015573595713003208
+    },
+    {
+      "request_id": "risk-review-20-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.02781830688256659
+    },
+    {
+      "request_id": "risk-challenge-12-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.05901726771432214
+    },
+    {
+      "request_id": "risk-challenge-27-reversed",
+      "same_choice": true,
+      "reference_correct": false,
+      "actual_correct": false,
+      "max_probability_delta": 0.024352967272356307
+    },
+    {
+      "request_id": "risk-allow-25-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.012746492222935002
+    },
+    {
+      "request_id": "risk-allow-28-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.011063698744281036
+    },
+    {
+      "request_id": "risk-deny-29-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0004540839432670696
+    },
+    {
+      "request_id": "risk-challenge-23-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.03579287389117114
+    },
+    {
+      "request_id": "risk-review-13-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01835363008466029
+    },
+    {
+      "request_id": "risk-deduplicate-26-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.020446323103251784
+    },
+    {
+      "request_id": "risk-deny-18-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0003607410455929161
+    },
+    {
+      "request_id": "risk-deduplicate-13-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.06229958374024919
+    },
+    {
+      "request_id": "risk-deduplicate-22-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010304794878064794
+    },
+    {
+      "request_id": "risk-challenge-22-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01561108843031267
+    },
+    {
+      "request_id": "risk-allow-26-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010284963828565724
+    },
+    {
+      "request_id": "risk-throttle-17-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.004952032119251659
+    },
+    {
+      "request_id": "risk-deduplicate-23-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006001999369050215
+    },
+    {
+      "request_id": "risk-review-16-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.08726409676404695
+    },
+    {
+      "request_id": "risk-review-14-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0019129410036310412
+    },
+    {
+      "request_id": "risk-review-22-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0051920849389871515
+    },
+    {
+      "request_id": "risk-review-20-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0035353664157682374
+    },
+    {
+      "request_id": "risk-allow-21-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.012996153123250975
+    },
+    {
+      "request_id": "risk-deduplicate-11-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.007513083759121464
+    },
+    {
+      "request_id": "risk-deduplicate-25-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.034021047486011424
+    },
+    {
+      "request_id": "risk-review-28-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.013203299761418319
+    },
+    {
+      "request_id": "risk-allow-11-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.02086701881255773
+    },
+    {
+      "request_id": "risk-challenge-20-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.021649061717623375
+    },
+    {
+      "request_id": "risk-challenge-11-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.009026485849812442
+    },
+    {
+      "request_id": "risk-deny-28-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 8.384136990668978e-06
+    },
+    {
+      "request_id": "risk-allow-17-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.004757901187786712
+    },
+    {
+      "request_id": "risk-allow-13-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.012356171730741425
+    },
+    {
+      "request_id": "risk-allow-29-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.009101956395961452
+    },
+    {
+      "request_id": "risk-allow-24-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002470860203966155
+    },
+    {
+      "request_id": "risk-deduplicate-25-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.004619732485707018
+    },
+    {
+      "request_id": "risk-deduplicate-28-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.044253531585986994
+    },
+    {
+      "request_id": "risk-throttle-27-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.028347477739265048
+    },
+    {
+      "request_id": "risk-throttle-13-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.017920536461111913
+    },
+    {
+      "request_id": "risk-challenge-24-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.015086314687681901
+    },
+    {
+      "request_id": "risk-allow-25-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0055911873575293924
+    },
+    {
+      "request_id": "risk-review-13-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0157832724041973
+    },
+    {
+      "request_id": "risk-allow-23-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.004869922645521663
+    },
+    {
+      "request_id": "risk-review-22-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.016875885381607225
+    },
+    {
+      "request_id": "risk-throttle-15-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0098956527730506
+    },
+    {
+      "request_id": "risk-review-14-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.009450529649211212
+    },
+    {
+      "request_id": "risk-challenge-26-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.013215539546878707
+    },
+    {
+      "request_id": "risk-deny-25-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.002654220998466683
+    },
+    {
+      "request_id": "risk-allow-17-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.006421767510474408
+    },
+    {
+      "request_id": "risk-allow-26-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0031918199776137524
+    },
+    {
+      "request_id": "risk-review-23-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.00862199423968217
+    },
+    {
+      "request_id": "risk-challenge-12-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.010573895609693795
+    },
+    {
+      "request_id": "risk-allow-18-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.004354651809983734
+    },
+    {
+      "request_id": "risk-deny-27-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0005874964031307162
+    },
+    {
+      "request_id": "risk-allow-19-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008148159873499428
+    },
+    {
+      "request_id": "risk-review-25-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01332607586954282
+    },
+    {
+      "request_id": "risk-review-29-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.008822516506711842
+    },
+    {
+      "request_id": "risk-throttle-10-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.029888908122495894
+    },
+    {
+      "request_id": "risk-deny-12-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 6.90073426854454e-05
+    },
+    {
+      "request_id": "risk-allow-24-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.05017631333750516
+    },
+    {
+      "request_id": "risk-deduplicate-29-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.001974152510161864
+    },
+    {
+      "request_id": "risk-allow-12-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0052777897172605615
+    },
+    {
+      "request_id": "risk-allow-14-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.01937785795818514
+    },
+    {
+      "request_id": "risk-challenge-14-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0015744668331625356
+    },
+    {
+      "request_id": "risk-deny-29-reversed",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 3.690452746629713e-05
+    },
+    {
+      "request_id": "risk-deduplicate-14-original",
+      "same_choice": true,
+      "reference_correct": true,
+      "actual_correct": true,
+      "max_probability_delta": 0.0015881552679045743
+    }
+  ]
+}

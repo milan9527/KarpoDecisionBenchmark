@@ -1,0 +1,157 @@
+{
+  "same_choices": 225,
+  "observations": 240,
+  "new_errors": 11,
+  "differences": [
+    {
+      "request_id": "risk-deduplicate-16-original",
+      "reference": {
+        "action": "deduplicate"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-deduplicate-24-reversed",
+      "reference": {
+        "action": "deduplicate"
+      },
+      "actual": {
+        "action": "throttle"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-throttle-18-original",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "throttle"
+      },
+      "correct": true
+    },
+    {
+      "request_id": "risk-throttle-18-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "throttle"
+      },
+      "correct": true
+    },
+    {
+      "request_id": "risk-challenge-15-original",
+      "reference": {
+        "action": "challenge"
+      },
+      "actual": {
+        "action": "review"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-challenge-18-original",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "challenge"
+      },
+      "correct": true
+    },
+    {
+      "request_id": "risk-challenge-18-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "challenge"
+      },
+      "correct": true
+    },
+    {
+      "request_id": "risk-challenge-21-original",
+      "reference": {
+        "action": "challenge"
+      },
+      "actual": {
+        "action": "review"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-challenge-27-original",
+      "reference": {
+        "action": "challenge"
+      },
+      "actual": {
+        "action": "review"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-review-16-original",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-review-16-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-review-20-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-review-24-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-review-28-original",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "risk-review-28-reversed",
+      "reference": {
+        "action": "review"
+      },
+      "actual": {
+        "action": "allow"
+      },
+      "correct": false
+    }
+  ]
+}

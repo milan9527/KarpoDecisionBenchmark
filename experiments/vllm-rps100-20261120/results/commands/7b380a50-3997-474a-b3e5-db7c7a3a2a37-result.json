@@ -1,0 +1,36 @@
+{
+  "CommandId": "7b380a50-3997-474a-b3e5-db7c7a3a2a37",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T14:02:58.459Z",
+  "ExecutionElapsedTime": "PT0.196S",
+  "ExecutionEndDateTime": "2026-11-20T14:02:58.459Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "All four private replicas ready\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-rps-mixed4-v1.service; invocation ID: 9f8308c5e70446a7a29d0604a6ba7e3e\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "6e5957aa-81b9-49d9-aad0-dac2848a8466",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 14:03:41 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "710",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "6e5957aa-81b9-49d9-aad0-dac2848a8466",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

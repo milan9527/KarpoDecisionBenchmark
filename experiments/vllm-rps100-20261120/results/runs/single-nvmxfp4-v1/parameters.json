@@ -1,0 +1,17 @@
+{
+  "name": "single-nvmxfp4-v1",
+  "revision": "mxfp4-v1",
+  "gpus": 1,
+  "replicas": [
+    1
+  ],
+  "batches": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "seconds": 20.0,
+  "skip_quality": false,
+  "only_target": false
+}

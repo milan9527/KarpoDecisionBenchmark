@@ -1,0 +1,12 @@
+[
+  "/opt/karpo/venv/bin/python",
+  "/opt/karpo/scripts/batch100_server.py",
+  "--checkpoint",
+  "/opt/karpo/models/karpo-4b",
+  "--experiment",
+  "/opt/karpo/experiments/batch100-20261120",
+  "--precision",
+  "bf16",
+  "--replicas",
+  "1"
+]

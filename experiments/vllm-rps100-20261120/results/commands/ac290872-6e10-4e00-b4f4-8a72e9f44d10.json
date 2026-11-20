@@ -1,0 +1,8 @@
+{
+  "id": "ac290872-6e10-4e00-b4f4-8a72e9f44d10",
+  "host": "h100",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-091371593b3c4a5ff",
+  "script": "ssh -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts ubuntu@172.31.25.147 'sudo /bin/bash -s' <<'RPS_SSH_INNER'\nset -Eeuo pipefail\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport datetime as dt,json,subprocess\nfrom pathlib import Path\nresult={\n 'utc':dt.datetime.now(dt.timezone.utc).isoformat(),\n 'hostname':subprocess.check_output(['hostname'],text=True).strip(),\n 'scheduled_shutdown_present':Path('/run/systemd/shutdown/scheduled').exists(),\n 'timers':subprocess.check_output(['systemctl','list-timers','--all','--no-pager'],text=True),\n 'karpo_units':subprocess.check_output(['systemctl','list-units','--all','--no-pager','karpo*'],text=True),\n 'gpu':subprocess.check_output(['nvidia-smi','--query-gpu=index,name,memory.used,utilization.gpu','--format=csv'],text=True),\n}\nassert not result['scheduled_shutdown_present']\nprint(json.dumps(result))\nPY\n\nRPS_SSH_INNER",
+  "utc": "2026-11-20T14:58:08.855794+00:00"
+}

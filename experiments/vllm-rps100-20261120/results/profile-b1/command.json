@@ -1,0 +1,14 @@
+[
+  "/opt/karpo/venv-vllm034/bin/python",
+  "/opt/karpo/scripts/vllm_rps_profile_server.py",
+  "--checkpoint",
+  "/opt/karpo/models/karpo-4b",
+  "--output",
+  "/opt/karpo/experiments/vllm-rps100-20261120/results/profile-b1/server",
+  "--profile-dir",
+  "/opt/karpo/experiments/vllm-rps100-20261120/results/profile-b1/traces",
+  "--max-seqs",
+  "1",
+  "--port",
+  "18600"
+]

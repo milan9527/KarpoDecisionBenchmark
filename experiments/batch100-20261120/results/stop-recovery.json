@@ -1,0 +1,6 @@
+{
+  "observed_utc": "2026-11-20T08:54:11.146298+00:00",
+  "instance_id": "i-05b24e3b4a7ee864d",
+  "state_before": "stopped",
+  "action": "none; state changed before recovery request"
+}

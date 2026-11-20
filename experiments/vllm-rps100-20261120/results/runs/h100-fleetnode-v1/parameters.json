@@ -1,0 +1,17 @@
+{
+  "mode": "node",
+  "name": "h100-fleetnode-v1",
+  "revision": "fleet-v1",
+  "batch": 4,
+  "replica_ids": [
+    3
+  ],
+  "urls": null,
+  "scenarios": [
+    "risk",
+    "sop"
+  ],
+  "seconds": 20,
+  "confirm": false,
+  "roleless": true
+}

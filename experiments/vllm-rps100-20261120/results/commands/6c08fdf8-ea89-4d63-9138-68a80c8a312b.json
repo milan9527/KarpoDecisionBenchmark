@@ -1,0 +1,8 @@
+{
+  "id": "6c08fdf8-ea89-4d63-9138-68a80c8a312b",
+  "host": "single",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-0de4f061c2a04fe4b",
+  "script": "set -Eeuo pipefail\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport json\nfrom pathlib import Path\nimport vllm\nroot = Path(vllm.__file__).parent\nresult = []\nfor path in [*root.glob(\"config/quantization*.py\"), *root.glob(\"model_executor/layers/quantization/**/online*.py\"), *root.glob(\"model_executor/layers/quantization/**/config*.py\"), *root.glob(\"model_executor/layers/quantization/utils/quant_utils.py\")]:\n    text = path.read_text()\n    result.append({\"file\":str(path.relative_to(root)), \"source\":text})\nout = Path(\"/opt/karpo/experiments/vllm-rps100-20261120/results/setup/online-quant-source.json\")\nout.write_text(json.dumps(result,indent=2)+\"\\n\")\nprint(\"Saved\",len(result),\"source files\")\nPY\naws s3 cp /opt/karpo/experiments/vllm-rps100-20261120/results/setup/online-quant-source.json s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-rps100-20261120/setup/online-quant-source.json --region us-east-1 --no-progress\n",
+  "utc": "2026-11-20T13:33:13.600666+00:00"
+}

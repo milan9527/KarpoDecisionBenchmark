@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "started_utc": "2026-11-20T13:35:07.574789+00:00",
+  "ec2_policy": "keep_running",
+  "stages": [],
+  "error": "Traceback (most recent call last):\n  File \"/opt/karpo/scripts/vllm_rps_mxfp4_suite.py\", line 124, in main\n    dump(config_dir / f\"server-{replica}/health.json\", wait_health(server, url))\n                                                       ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/scripts/vllm_rps_mxfp4_suite.py\", line 40, in wait_health\n    raise RuntimeError(f\"Server exited {process.returncode}: {url}\")\nRuntimeError: Server exited 3: http://127.0.0.1:18500\n",
+  "ended_utc": "2026-11-20T13:36:00.652310+00:00"
+}

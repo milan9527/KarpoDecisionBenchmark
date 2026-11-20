@@ -1,0 +1,6 @@
+{
+  "id": "0e1eda67-2ba0-4873-ae9f-5e59dc498c44",
+  "instance": "i-0de4f061c2a04fe4b",
+  "script": "set -u\nsystemctl is-active karpo-vllm-development-03.service || true\ntail -n 38 /opt/karpo/experiments/vllm-single-20261120/results/development-03/server.log\nnvidia-smi --query-gpu=memory.used,utilization.gpu --format=csv,noheader\naws s3 cp /opt/karpo/experiments/vllm-single-20261120/results/development-03/ s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/development-03/ --recursive --region us-east-1 --no-progress\n",
+  "utc": "2026-11-20T12:39:29.772654+00:00"
+}

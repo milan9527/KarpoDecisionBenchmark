@@ -1,0 +1,12 @@
+vLLM b12x optional dependencies: ['b12x==1.5.1']
+Collecting b12x==1.5.1
+  Downloading b12x-1.5.1-py3-none-any.whl.metadata (30 kB)
+Downloading b12x-1.5.1-py3-none-any.whl (2.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 40.4 MB/s  0:00:00
+Installing collected packages: b12x
+Successfully installed b12x-1.5.1
+W1120 13:39:50.946000 3644 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead
+W1120 13:39:50.946000 3644 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead
+W1120 13:39:50.947000 3644 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead
+FlashInfer kernels are disabled: flashinfer-cubin is not installed and nvcc (CUDA_HOME, CUDA_PATH, PATH or /usr/local/cuda) or ninja (PATH) is missing. Set CUDA_HOME to a CUDA toolkit and put ninja on PATH, or run `vllm download-kernels`.
+{'supported': True, 'reason': None}

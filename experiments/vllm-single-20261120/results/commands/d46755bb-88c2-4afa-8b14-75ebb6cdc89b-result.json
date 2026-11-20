@@ -1,0 +1,36 @@
+{
+  "CommandId": "d46755bb-88c2-4afa-8b14-75ebb6cdc89b",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 255,
+  "ExecutionStartDateTime": "2026-11-20T12:37:35.331Z",
+  "ExecutionElapsedTime": "PT0.519S",
+  "ExecutionEndDateTime": "2026-11-20T12:37:35.331Z",
+  "Status": "Failed",
+  "StatusDetails": "Failed",
+  "StandardOutputContent": "inactive\n6811 MiB, 0 %\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "tail: cannot open '/opt/karpo/experiments/vllm-single-20261120/results/development-03/server.log' for reading: No such file or directory\n\naws: [ERROR]: The user-provided path /opt/karpo/experiments/vllm-single-20261120/results/development-03/ does not exist.\nfailed to run commands: exit status 255",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "1d3712c7-b8fc-4da8-a150-39b3a5c68db1",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 12:37:56 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "908",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "1d3712c7-b8fc-4da8-a150-39b3a5c68db1",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

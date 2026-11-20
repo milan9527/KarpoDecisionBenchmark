@@ -1,0 +1,62 @@
+{
+  "attempts": 1408,
+  "valid": 1408,
+  "failures": 0,
+  "correct": 1361,
+  "accuracy_all_attempts": 0.9666193181818182,
+  "valid_within_500ms": 7,
+  "correct_within_500ms": 7,
+  "elapsed_seconds": 64.57180466399996,
+  "valid_rps": 21.805182731480752,
+  "p50_ms": 4573.682888999997,
+  "p95_ms": 4613.070482000012,
+  "p99_ms": 4620.503314000075,
+  "max_ms": 5319.14317799999,
+  "all_attempts_p95_ms": 4613.070482000012,
+  "mean_ms": 4420.212806914773,
+  "tokens_min": 2265,
+  "tokens_max": 2298,
+  "response_batch_histogram": {
+    "1": 1408
+  },
+  "http_statuses": {
+    "200": 1408
+  },
+  "max_client_send_lag_ms": 0,
+  "max_gpu_allocated_gib": 7.049483299255371,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "closed",
+  "parameters": {
+    "concurrency": 100,
+    "seconds": 60
+  },
+  "after_ramp": {
+    "attempts": 1094,
+    "valid": 1094,
+    "failures": 0,
+    "correct": 1057,
+    "accuracy_all_attempts": 0.9661791590493601,
+    "valid_within_500ms": 0,
+    "correct_within_500ms": 0,
+    "elapsed_seconds": 54.575808532999986,
+    "valid_rps": 20.045511544524317,
+    "p50_ms": 4573.10823399996,
+    "p95_ms": 4577.967417999957,
+    "p99_ms": 4578.97273399999,
+    "max_ms": 4579.98609699996,
+    "all_attempts_p95_ms": 4577.967417999957,
+    "mean_ms": 4573.331060976234,
+    "tokens_min": 2265,
+    "tokens_max": 2298,
+    "response_batch_histogram": {
+      "1": 1094
+    },
+    "http_statuses": {
+      "200": 1094
+    },
+    "max_client_send_lag_ms": 0,
+    "max_gpu_allocated_gib": 7.049483299255371,
+    "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval."
+  },
+  "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+}

@@ -1,0 +1,62 @@
+{
+  "attempts": 574,
+  "valid": 574,
+  "failures": 0,
+  "correct": 541,
+  "accuracy_all_attempts": 0.9425087108013938,
+  "valid_within_500ms": 3,
+  "correct_within_500ms": 3,
+  "elapsed_seconds": 72.54547094999998,
+  "valid_rps": 7.91227891256801,
+  "p50_ms": 12617.830161999791,
+  "p95_ms": 12703.353363000133,
+  "p99_ms": 12704.808429999957,
+  "max_ms": 12783.11194700018,
+  "all_attempts_p95_ms": 12703.353363000133,
+  "mean_ms": 11544.754154576662,
+  "tokens_min": 5696,
+  "tokens_max": 5758,
+  "response_batch_histogram": {
+    "1": 574
+  },
+  "http_statuses": {
+    "200": 574
+  },
+  "max_client_send_lag_ms": 0,
+  "max_gpu_allocated_gib": 5.863203048706055,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "closed",
+  "parameters": {
+    "concurrency": 100,
+    "seconds": 60
+  },
+  "after_ramp": {
+    "attempts": 396,
+    "valid": 396,
+    "failures": 0,
+    "correct": 372,
+    "accuracy_all_attempts": 0.9393939393939394,
+    "valid_within_500ms": 0,
+    "correct_within_500ms": 0,
+    "elapsed_seconds": 62.54713885500041,
+    "valid_rps": 6.331224852954905,
+    "p50_ms": 12617.855858999974,
+    "p95_ms": 12701.66056800008,
+    "p99_ms": 12704.558537000139,
+    "max_ms": 12704.916799999864,
+    "all_attempts_p95_ms": 12701.66056800008,
+    "mean_ms": 12613.425412101024,
+    "tokens_min": 5696,
+    "tokens_max": 5758,
+    "response_batch_histogram": {
+      "1": 396
+    },
+    "http_statuses": {
+      "200": 396
+    },
+    "max_client_send_lag_ms": 0,
+    "max_gpu_allocated_gib": 5.863203048706055,
+    "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval."
+  },
+  "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+}

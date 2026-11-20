@@ -1,0 +1,36 @@
+{
+  "CommandId": "6c08fdf8-ea89-4d63-9138-68a80c8a312b",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T13:33:13.784Z",
+  "ExecutionElapsedTime": "PT1.853S",
+  "ExecutionEndDateTime": "2026-11-20T13:33:14.784Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "Saved 5 source files\nupload: ../../../../opt/karpo/experiments/vllm-rps100-20261120/results/setup/online-quant-source.json to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-rps100-20261120/setup/online-quant-source.json\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "6130e5c8-8ec6-4523-a74e-ca0708c2bae2",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:33:41 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "820",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "6130e5c8-8ec6-4523-a74e-ca0708c2bae2",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

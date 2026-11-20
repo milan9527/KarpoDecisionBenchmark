@@ -1,0 +1,8 @@
+{
+  "observed_utc": "2026-11-20T08:21:01.680502+00:00",
+  "remaining_precision": "fp8",
+  "bf16": "Reference phase already completed at 2026-11-20T08:15:22Z; retain its results, no further BF16 runs.",
+  "user_preference": "Use FP8 only for remaining performance/concurrency validation to save resources.",
+  "acceptance_clarification_observed_utc": "2026-11-20T08:34:38+00:00",
+  "acceptance": "100 concurrent in-flight requests, complete HTTP P50 <= 500 ms; P95/P99 observational only. Re-evaluate saved data; do not repeat runs."
+}

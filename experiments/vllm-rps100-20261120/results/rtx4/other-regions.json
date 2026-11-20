@@ -1,0 +1,616 @@
+{
+  "us-east-1": {
+    "quotas": [
+      {
+        "QuotaName": "All G and VT Spot Instance Requests",
+        "Value": 64.0
+      },
+      {
+        "QuotaName": "Running On-Demand G and VT instances",
+        "Value": 768.0
+      }
+    ],
+    "offerings": [
+      {
+        "InstanceType": "g7e.2xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1d"
+      },
+      {
+        "InstanceType": "g7e.2xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1b"
+      },
+      {
+        "InstanceType": "g7e.2xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1c"
+      },
+      {
+        "InstanceType": "g7e.4xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1b"
+      },
+      {
+        "InstanceType": "g7e.4xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1c"
+      },
+      {
+        "InstanceType": "g7e.4xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1d"
+      }
+    ],
+    "owned_images": [
+      {
+        "ImageId": "ami-03c0b1469a0960e87",
+        "Name": "test-server-img",
+        "State": "available",
+        "Description": "test-server-img"
+      },
+      {
+        "ImageId": "ami-045934e81190c6fcf",
+        "Name": "deploy-image",
+        "State": "available",
+        "Description": "deploy-image"
+      },
+      {
+        "ImageId": "ami-044dea3116747ee0c",
+        "Name": "redis-search",
+        "State": "available",
+        "Description": "redis-search"
+      },
+      {
+        "ImageId": "ami-06e98ca0eb23f4efb",
+        "Name": "redis-vss",
+        "State": "available",
+        "Description": null
+      },
+      {
+        "ImageId": "ami-0915923ed62280711",
+        "Name": "oracle",
+        "State": "available",
+        "Description": null
+      },
+      {
+        "ImageId": "ami-0591e0acfc6f471d7",
+        "Name": "dev-image",
+        "State": "available",
+        "Description": "dev-image for kiro remote projects"
+      },
+      {
+        "ImageId": "ami-0b37f8bb170d1adb8",
+        "Name": "dev20260531",
+        "State": "available",
+        "Description": "dev20260531"
+      },
+      {
+        "ImageId": "ami-0458d22a4da787d93",
+        "Name": "mcp-demo",
+        "State": "available",
+        "Description": "mcp-demo"
+      },
+      {
+        "ImageId": "ami-0dd7c327637822e79",
+        "Name": "rds-client",
+        "State": "available",
+        "Description": null
+      },
+      {
+        "ImageId": "ami-0e4d0480149793087",
+        "Name": "oracle19c",
+        "State": "available",
+        "Description": "oracle19c"
+      },
+      {
+        "ImageId": "ami-045d4911f2d271d66",
+        "Name": "redis-serverless-bench",
+        "State": "available",
+        "Description": "redis-serverless-bench memtier"
+      },
+      {
+        "ImageId": "ami-06ef1e8012e8ae992",
+        "Name": "intel-inference",
+        "State": "available",
+        "Description": "intel-inference tensorflow"
+      },
+      {
+        "ImageId": "ami-0db0d00a71e246bef",
+        "Name": "test-server",
+        "State": "available",
+        "Description": "test-server Dec5"
+      },
+      {
+        "ImageId": "ami-0d5508eb7bd5c733d",
+        "Name": "db-benchmark",
+        "State": "available",
+        "Description": "db-benchmark"
+      },
+      {
+        "ImageId": "ami-030c3d10fc1c82a1e",
+        "Name": "kafka-client",
+        "State": "available",
+        "Description": "kafka client for Aurora CDC to DDB with Debezium"
+      },
+      {
+        "ImageId": "ami-0b86fa928d6dd6c57",
+        "Name": "sglang-bench-p5",
+        "State": "available",
+        "Description": "sglang-bench-p5"
+      },
+      {
+        "ImageId": "ami-0bc40aab30f186fad",
+        "Name": "mcp-demo-mysql",
+        "State": "available",
+        "Description": "mcp-demo"
+      },
+      {
+        "ImageId": "ami-06208eb8e8142bdc6",
+        "Name": "mcpdemo",
+        "State": "available",
+        "Description": "mcp-demo with Aurora mysql data api"
+      },
+      {
+        "ImageId": "ami-0bbe9b1069c4f54cd",
+        "Name": "test2-image",
+        "State": "available",
+        "Description": "test2-image"
+      },
+      {
+        "ImageId": "ami-090699c13bd94e85b",
+        "Name": "sglang-bench-48x",
+        "State": "available",
+        "Description": "sglang-bench-48x"
+      },
+      {
+        "ImageId": "ami-080464141e6e39f0d",
+        "Name": "dev2-image1",
+        "State": "available",
+        "Description": "dev2-image1"
+      },
+      {
+        "ImageId": "ami-00db9044ac43d6877",
+        "Name": "dinky",
+        "State": "available",
+        "Description": null
+      },
+      {
+        "ImageId": "ami-0ed39f6f060c9698f",
+        "Name": "mcp-db",
+        "State": "available",
+        "Description": "mcp-db for rds & neptune"
+      },
+      {
+        "ImageId": "ami-089c90f9be4385204",
+        "Name": "valkey8",
+        "State": "available",
+        "Description": null
+      },
+      {
+        "ImageId": "ami-0d1cc5a23978299ae",
+        "Name": "ann-benchmark",
+        "State": "available",
+        "Description": null
+      },
+      {
+        "ImageId": "ami-0d0fa3fa5fc08681d",
+        "Name": "spr-llm",
+        "State": "available",
+        "Description": "intel cpu llm inference"
+      },
+      {
+        "ImageId": "ami-0e488c6b93963dc37",
+        "Name": "dev2-image20260531",
+        "State": "available",
+        "Description": "dev2-image20260531"
+      },
+      {
+        "ImageId": "ami-0182bc82bacfa8736",
+        "Name": "intel-qat",
+        "State": "available",
+        "Description": "qat test"
+      },
+      {
+        "ImageId": "ami-0807666430d09f7ed",
+        "Name": "llm-image",
+        "State": "available",
+        "Description": "llm-image"
+      },
+      {
+        "ImageId": "ami-098fe3e1f108c2eab",
+        "Name": "demo-deploy",
+        "State": "available",
+        "Description": "demo-deploy"
+      },
+      {
+        "ImageId": "ami-04ee6ace1706891e9",
+        "Name": "dev-remote",
+        "State": "available",
+        "Description": "dev-remote host"
+      },
+      {
+        "ImageId": "ami-0664a8ed8a5964496",
+        "Name": "dev2-image",
+        "State": "available",
+        "Description": null
+      },
+      {
+        "ImageId": "ami-0876e26140f296a56",
+        "Name": "mongodbrs",
+        "State": "available",
+        "Description": "mongodb rs"
+      },
+      {
+        "ImageId": "ami-021463c538e9fa3f4",
+        "Name": "rds-sysbench-client",
+        "State": "available",
+        "Description": "rds-sysbench-client"
+      },
+      {
+        "ImageId": "ami-0d97e29ddc1b55576",
+        "Name": "mongodb",
+        "State": "available",
+        "Description": "mongodb"
+      },
+      {
+        "ImageId": "ami-0a8dc0268dc18d3e7",
+        "Name": "amazonq",
+        "State": "available",
+        "Description": "amazonq cli"
+      },
+      {
+        "ImageId": "ami-0f215657c71fe0d30",
+        "Name": "emr-flink-master",
+        "State": "available",
+        "Description": null
+      }
+    ],
+    "instances": [
+      {
+        "InstanceId": "i-04fad627049e165c3",
+        "InstanceType": "m8i.large",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0009053c8657ff682",
+        "InstanceType": "m9g.xlarge",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0303f773996b9b626",
+        "InstanceType": "m8i.2xlarge",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0f7fa05c26b4f1720",
+        "InstanceType": "m8g.2xlarge",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0d9726eba1919752c",
+        "InstanceType": "m8g.2xlarge",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0132929cb5017e481",
+        "InstanceType": "c7g.large",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-05902e8beb252d22c",
+        "InstanceType": "m8i.xlarge",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0adf7a16ed423f182",
+        "InstanceType": "m8i.large",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-060214a5ad0e447bc",
+        "InstanceType": "m9g.xlarge",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0e1ceaf04cbceba4e",
+        "InstanceType": "m9g.xlarge",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0ae7eb0abcb815af3",
+        "InstanceType": "g6.xlarge",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0daca64f56056aa1c",
+        "InstanceType": "g6.xlarge",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0bd4d9196f1c163c0",
+        "InstanceType": "g6.xlarge",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-08e74560345b3bba1",
+        "InstanceType": "c7i.xlarge",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0d53989f608af5eb3",
+        "InstanceType": "t3.small",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-06b78431e94a9ee82",
+        "InstanceType": "c6a.large",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0b4db8107760907a5",
+        "InstanceType": "c6g.large",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-0c8db86056e0205ca",
+        "InstanceType": "c6a.large",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      }
+    ],
+    "prices": [
+      {
+        "AvailabilityZone": "us-east-1c",
+        "AvailabilityZoneId": "use1-az4",
+        "InstanceType": "g7e.2xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "2.626100",
+        "Timestamp": "2026-11-20 14:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-east-1c",
+        "AvailabilityZoneId": "use1-az4",
+        "InstanceType": "g7e.4xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "1.521900",
+        "Timestamp": "2026-11-20 12:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-east-1d",
+        "AvailabilityZoneId": "use1-az6",
+        "InstanceType": "g7e.2xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "2.107000",
+        "Timestamp": "2026-11-20 12:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-east-1b",
+        "AvailabilityZoneId": "use1-az2",
+        "InstanceType": "g7e.2xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "2.071900",
+        "Timestamp": "2026-11-20 12:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-east-1d",
+        "AvailabilityZoneId": "use1-az6",
+        "InstanceType": "g7e.4xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "1.464500",
+        "Timestamp": "2026-11-20 10:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-east-1b",
+        "AvailabilityZoneId": "use1-az2",
+        "InstanceType": "g7e.4xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "1.595400",
+        "Timestamp": "2026-11-20 09:00:00+00:00"
+      }
+    ]
+  },
+  "us-west-2": {
+    "quotas": [
+      {
+        "QuotaName": "All G and VT Spot Instance Requests",
+        "Value": 64.0
+      },
+      {
+        "QuotaName": "Running On-Demand G and VT instances",
+        "Value": 768.0
+      }
+    ],
+    "offerings": [
+      {
+        "InstanceType": "g7e.4xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-west-2c"
+      },
+      {
+        "InstanceType": "g7e.4xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-west-2b"
+      },
+      {
+        "InstanceType": "g7e.4xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-west-2d"
+      },
+      {
+        "InstanceType": "g7e.2xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-west-2a"
+      },
+      {
+        "InstanceType": "g7e.2xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-west-2b"
+      },
+      {
+        "InstanceType": "g7e.2xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-west-2c"
+      },
+      {
+        "InstanceType": "g7e.4xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-west-2a"
+      },
+      {
+        "InstanceType": "g7e.2xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-west-2d"
+      }
+    ],
+    "owned_images": [
+      {
+        "ImageId": "ami-0afa9befb8913704d",
+        "Name": "amazonq-flink-workshop-ami",
+        "State": "available",
+        "Description": "amazonq-flink-workshop-ami"
+      },
+      {
+        "ImageId": "ami-096cd3fb9d0e922a2",
+        "Name": "flink-workshop-lab",
+        "State": "available",
+        "Description": "flink-workshop-lab"
+      },
+      {
+        "ImageId": "ami-0168e9eade72a64a0",
+        "Name": "strands-memory",
+        "State": "available",
+        "Description": "strands-memory"
+      }
+    ],
+    "instances": [
+      {
+        "InstanceId": "i-08166d785ffc3bc01",
+        "InstanceType": "t4g.large",
+        "State": {
+          "Code": 16,
+          "Name": "running"
+        }
+      }
+    ],
+    "prices": [
+      {
+        "AvailabilityZone": "us-west-2b",
+        "AvailabilityZoneId": "usw2-az1",
+        "InstanceType": "g7e.2xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "2.212900",
+        "Timestamp": "2026-11-20 14:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-west-2c",
+        "AvailabilityZoneId": "usw2-az3",
+        "InstanceType": "g7e.4xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "1.525600",
+        "Timestamp": "2026-11-20 13:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-west-2a",
+        "AvailabilityZoneId": "usw2-az2",
+        "InstanceType": "g7e.4xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "3.951400",
+        "Timestamp": "2026-11-20 13:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-west-2d",
+        "AvailabilityZoneId": "usw2-az4",
+        "InstanceType": "g7e.2xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "1.642300",
+        "Timestamp": "2026-11-20 13:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-west-2d",
+        "AvailabilityZoneId": "usw2-az4",
+        "InstanceType": "g7e.4xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "3.954900",
+        "Timestamp": "2026-11-20 12:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-west-2b",
+        "AvailabilityZoneId": "usw2-az1",
+        "InstanceType": "g7e.4xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "3.129100",
+        "Timestamp": "2026-11-20 11:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-west-2a",
+        "AvailabilityZoneId": "usw2-az2",
+        "InstanceType": "g7e.2xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "0.570300",
+        "Timestamp": "2026-11-20 10:00:00+00:00"
+      },
+      {
+        "AvailabilityZone": "us-west-2c",
+        "AvailabilityZoneId": "usw2-az3",
+        "InstanceType": "g7e.2xlarge",
+        "ProductDescription": "Linux/UNIX",
+        "SpotPrice": "1.695900",
+        "Timestamp": "2026-11-20 08:00:00+00:00"
+      }
+    ]
+  }
+}

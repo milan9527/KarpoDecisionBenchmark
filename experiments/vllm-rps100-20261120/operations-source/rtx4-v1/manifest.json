@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-20T14:36:07.176346+00:00",
+  "purpose": "Four identical RTX GPUs; retain all EC2; frozen serving bundle fleet-v1",
+  "files": {
+    ".state/rps-rtx4-launch.py": "254150ea1b9591120627e2167225674501f353ee854e345fd802d640e0d3192c",
+    ".state/rps-rtx4-east1-launch.py": "b0a293d24aba0024beba82dfd7f827283de473e0284be5248052dacbc04c0885",
+    ".state/rps-rtx4-connect.py": "b4bd408c3d1c68197cf8628f51f1299011d59034033af843e5103e0e8f734fbd",
+    ".state/rps-bootstrap-peer.py": "93fa1b652a2560d6c8c5d82e876e7f6daa728ac43083767489df8c79e6d68f97",
+    ".state/rps-cloud.py": "1781c9169981fa8ef19355387ef21d4d9f1006ca9f3f30355225706e5c815478",
+    ".state/rps-launch-rtx4.sh": "5e190c0350e41355ac8ce6abad830eac5c7f36fcec01ccb6f4a86c30346eb298",
+    ".state/rps-rtx4-result.py": "6704d8e27165a434258bfb82198db42562305b076f0f4a2dc60cc7ce7cadae89"
+  }
+}

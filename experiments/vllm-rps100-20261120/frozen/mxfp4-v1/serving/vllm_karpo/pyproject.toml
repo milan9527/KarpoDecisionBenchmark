@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "karpo-vllm-benchmark-adapter"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Original-input Karpo 4B classification adapter for vLLM 0.34.0"
+
+[project.entry-points."vllm.general_plugins"]
+karpo_benchmark = "karpo_vllm:register"
+
+[tool.setuptools]
+py-modules = ["karpo_vllm", "karpo_vllm_model", "karpo_vllm_worker"]

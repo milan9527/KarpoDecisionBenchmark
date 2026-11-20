@@ -1,8 +1,80 @@
 # Karpo Decision Benchmark
 
-独立的 Karpo 工具 / SOP 选择测试项目。每次完整传入 200 个候选，由模型一次选择；程序不做业务域判断或候选过滤。
+Karpo 金融风控与 SOP 决策测试项目，两个场景分别验证。风控输入200个特征；SOP每次完整传入200个候选，由模型一次选择，程序不做业务域判断或候选过滤。
 
-**最新结果：2026-11-20**
+**当前：四张同型号 RTX 验证完成，风控达标，SOP未达标（2026-11-20）**
+
+按用户选择，使用4张 RTX PRO 6000 Blackwell Server Edition 96GB，每卡一个完整模型副本，vLLM 0.34.0、FP8按通道量化、最大序列数4。现有3张在 **us-east-2c（俄亥俄）**，新增1张在 **us-east-1b（北弗吉尼亚）**。原H100保持运行，但没有参与本轮压测。
+
+固定每秒发送100个请求，端到端完整HTTP时延包含排队、编码、推理、代理及跨区域SSH转发。保留全部原始输入，所有拒绝与超时计为失败。
+
+| 场景 | 固定到达率 | 稳态有效吞吐 | 端到端P50 | 独立合成质量 | 结果 |
+|---|---:|---:|---:|---:|---|
+| 风控 | 100 RPS | 两轮均约99.99 RPS | 65.86／64.92 ms | 233/240（97.08%） | 两次120秒均通过，24,000请求全部成功 |
+| SOP | 100 RPS | 41.33 RPS | 6126.95 ms | 98/104（94.23%） | 20秒探测失败，928/2,000请求被拒绝 |
+
+风控两次正式压力测试的决策正确率均为95%（各11,400/12,000），使用的tune样本与独立quality质量集不同。SOP表中P50统计有效响应，但928个失败请求全部计入验收，因此没有继续两次120秒确认。合成准确率不能替代真实生产数据准确率；生产外部入口及特征查询尚未纳入。
+
+四张RTX参考Spot计算费用约 **7.90美元/小时**；加上保留的H100，全部4台运行中EC2合计约 **12.13美元/小时**，另计EBS、网络、公网IPv4等，Spot报价会变化。按用户要求，没有关闭任何EC2。
+
+本轮已逐条核验28,344次四RTX请求。历史混合GPU、单卡、双卡和量化实验保留在总报告中；原混合扩容提案已被四RTX方案替代。下文历史实验的`stopped`仅是当时的状态记录。
+
+[四RTX专项结果](experiments/vllm-rps100-20261120/RTX4.zh.md) · [本轮HTML报告](experiments/vllm-rps100-20261120/report.html) · [逐阶段结果](experiments/vllm-rps100-20261120/RESULTS.zh.md) · [部署结论](experiments/vllm-rps100-20261120/DECISION.zh.md) · [核验记录](experiments/vllm-rps100-20261120/results/verification.json)
+
+**此前：vLLM 适配与单卡 FP8 对照（2026-11-20）**
+
+在同一张 RTX PRO 6000 Blackwell Server Edition 96GB（AWS g7e.4xlarge）上，顺序比较原生 Karpo FP8 与 vLLM 0.34.0。464条请求的原始编码全部一致；保留双向全注意力、完整候选、marker后模板token和原始FP32输出头。测试vLLM最大序列数1/4/8，按持续100并发P50选优，再独立复测：
+
+| 场景 | 原生复测 P50 | vLLM复测 P50 | 原生请求/秒 | vLLM请求/秒 | vLLM合成正确率 |
+|---|---:|---:|---:|---:|---:|
+| 风控：200特征 | 4.234 s | 3.382 s | 23.60 | 28.54 | 233/240（97.08%） |
+| SOP：完整200候选 | 11.983 s | 9.235 s | 8.33 | 10.38 | 98/104（94.23%） |
+
+两场景均选中最大8序列配置。P50分别降低约20%和23%，**单卡仍未达到持续100并发、P50≤500ms**。最优配置的344条质量观察与原生选择全部一致，概率数值存在差异。质量仅为合成样例；完整HTTP时延不含生产入口和特征查询。两套服务的前端与Torch版本差异包含在比较中。
+
+共核验16,197次HTTP请求，全部有效；40个测量阶段、12次持续100并发测试，实际在途并发逐条还原核对。已确认三个相关GPU实例全部 **stopped**，模型、EBS及原生和vLLM环境保留。[本轮最终资源状态](experiments/vllm-single-20261120/results/infrastructure-final.json)
+
+[最新HTML报告](experiments/vllm-single-20261120/report.html) · [文字报告](experiments/vllm-single-20261120/RESULTS.zh.md) · [全部数据](experiments/vllm-single-20261120/data.json) · [适配器与运行说明](serving/vllm_karpo/README.md) · [验证记录](experiments/vllm-single-20261120/results/verification.json)
+
+重新生成本轮报告：`python scripts/vllm_single_report.py`。GPU测试时的原始测试源码保存在本轮`frozen/`目录；工作区测试增加了缺少可选vLLM环境时的跳过逻辑。
+
+**此前：原始输入、小batch与GPU副本验证（2026-11-20）**
+
+保持上一轮输入逐字一致，FP8，两个场景分别测试batch上限1/2/4、GPU副本1/2/3，等待0ms。每组合持续100个在途请求60秒，三副本最快配置再独立重复确认。没有输入压缩、候选筛选或答案缓存。
+
+| 场景 | 1 GPU P50 | 2 GPU P50 | 3 GPU复测 P50 | 3 GPU请求/秒 | 合成质量 |
+|---|---:|---:|---:|---:|---:|
+| 风控：200特征 | 4.45 s | 2.20 s | 1.46 s | 68.24 | 234/240 |
+| SOP：完整200候选 | 12.62 s | 6.13 s | 4.12 s | 24.10 | 98/104 |
+
+前两列为每档副本数的最低P50配置，三卡列为独立重复确认。各档最低P50均为batch=1；增加GPU副本使吞吐接近线性增长，小batch调整没有带来明显额外提速。**三个GPU仍未达到持续100并发、P50≤500ms。**
+
+三卡由原g7e.12xlarge两卡与新增g7e.4xlarge单卡组成，GPU均为RTX PRO 6000 Blackwell 96GB；三卡结果包含同可用区私网转发，CPU/内存配置不同。质量仍为已有合成案例，不能代表生产准确率；生产入口网络和特征查询不在计时内。四副本因按需容量及Spot配额限制未测，容量失败和一次状态读取权限修复的启动日志均保留。
+
+[三卡HTML报告](experiments/smallbatch3-retry-20261120/report.html) · [文字报告](experiments/smallbatch3-retry-20261120/RESULTS.zh.md) · [冻结计划](experiments/smallbatch3-retry-20261120/PLAN.zh.md) · [全部数据](experiments/smallbatch3-retry-20261120/data.json)
+
+共核验43,365次请求，全部有效；完整18组合与2次确认均保留。三个相关GPU实例已全部 **stopped**，模型、EBS和克隆镜像保留。核对时间：2026-11-20T10:44:36.155918+00:00。[最终资源状态](experiments/smallbatch3-retry-20261120/results/infrastructure-final.json)
+
+重新生成本轮报告：`python scripts/smallbatch3_retry_report.py`。
+
+**此前两卡100并发验证：2026-11-20**
+
+按用户明确的 **100并发、P50≤500ms** 验收。两张 RTX PRO 6000 Blackwell 96GB，每卡一个 Karpo 4B FP8 副本，使用原生动态批处理；持续100并发投递60秒后排空：
+
+| 场景 | P50 | 有效请求/秒 | 合成质量一致率 |
+|---|---:|---:|---:|
+| 风控：200特征 | 2,283.4 ms | 43.65 | 232/240（96.7%） |
+| SOP：200候选 | 6,349.5 ms | 15.27 | 98/104（94.2%） |
+
+两场景均未达到本次延迟目标。质量为合成案例一致率，时延为同机完整HTTP，不能替代生产数据和生产链路验收。BF16仅保留已完成的质量参考，所有批处理及压力测试使用FP8；本轮未实测vLLM。
+
+[100并发HTML报告](experiments/batch100-20261120/report.html) · [文字报告](experiments/batch100-20261120/RESULTS.zh.md) · [最新验收口径](experiments/batch100-20261120/ACCEPTANCE.zh.md) · [实验计划](experiments/batch100-20261120/PLAN.zh.md)
+
+本轮报告由 `python scripts/batch100_report.py` 根据逐条响应重算，独立保留原实验记录。
+
+本轮结束后已确认新旧GPU实例均为 **stopped**，没有terminate，模型与EBS保留。核对时间：2026-11-20T08:54:15.134521+00:00。[资源状态](experiments/batch100-20261120/results/infrastructure-final.json)
+
+**既有多型号结果：2026-11-20**
 
 在 RTX PRO 6000 Blackwell 上完成 31B / 12B / 9B / 4B 的七组单卡配置，以及官方单副本 / 双副本对照，共核验 **1,712 次调用**。这批测试中，最快的 4B FP8 为 123.3 ms、98/104 参考一致；质量最好的 12B BF16 为 432.6 ms、104/104。这里延迟均为 P50，没有配置达到 100 ms。
 
@@ -138,7 +210,7 @@ python scripts/build_html.py
 
 `scripts/report.py` 使用同一入口。生成器校验冻结文件、全部响应、覆盖范围、汇总数值和停止状态，不启动 GPU。运行新测试时应创建新的实验目录并冻结配置；现有执行文件及输入不可覆盖。
 
-**实例保留**
+**实例保留（既有系列实验）**
 
 测试结束后已确认新旧 GPU 实例均为 **stopped**，没有 terminate。实例及 EBS 上的模型保留；Spot中断行为、实例关机行为均为stop，系统盘随实例删除为false。最近核对时间：2026-11-20T04:14:14.567758+00:00。
 

@@ -1,0 +1,7 @@
+[
+  "/opt/karpo/venv/bin/python",
+  "/opt/karpo/scripts/smallbatch3_proxy.py",
+  "--backends",
+  "http://127.0.0.1:18450",
+  "http://172.31.42.136:18450"
+]

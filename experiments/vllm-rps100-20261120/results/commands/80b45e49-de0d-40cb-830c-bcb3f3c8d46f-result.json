@@ -1,0 +1,36 @@
+{
+  "CommandId": "80b45e49-de0d-40cb-830c-bcb3f3c8d46f",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T14:58:09.043Z",
+  "ExecutionElapsedTime": "PT0.357S",
+  "ExecutionEndDateTime": "2026-11-20T14:58:09.043Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "{\"utc\": \"2026-11-20T14:58:09.366719+00:00\", \"hostname\": \"ip-172-31-85-230\", \"scheduled_shutdown_present\": false, \"timers\": \"NEXT                                LEFT LAST                          PASSED UNIT                           ACTIVATES\\nFri 2026-11-20 15:00:00 UTC     1min 50s Fri 2026-11-20 14:50:04 UTC 8min ago sysstat-collect.timer          sysstat-collect.service\\nFri 2026-11-20 15:00:03 UTC     1min 54s Thu 2026-11-19 12:08:17 UTC        - fwupd-refresh.timer            fwupd-refresh.service\\nFri 2026-11-20 15:01:11 UTC      3min 2s -                                  - systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service\\nFri 2026-11-20 15:05:27 UTC         7min Thu 2026-11-19 12:25:21 UTC        - apt-daily-upgrade.timer        apt-daily-upgrade.service\\nFri 2026-11-20 21:30:56 UTC           6h Fri 2026-11-20 04:06:26 UTC        - motd-news.timer                motd-news.service\\nFri 2026-11-20 22:47:25 UTC           7h Tue 2026-11-17 07:01:15 UTC        - man-db.timer                   man-db.service\\nFri 2026-11-20 23:28:53 UTC           8h Thu 2026-11-19 12:24:36 UTC        - apt-daily.timer                apt-daily.service\\nSat 2026-11-21 00:00:00 UTC           9h Fri 2026-11-20 03:07:43 UTC        - dpkg-db-backup.timer           dpkg-db-backup.service\\nSat 2026-11-21 00:00:00 UTC           9h Fri 2026-11-20 03:07:43 UTC        - logrotate.timer                logrotate.service\\nSat 2026-11-21 00:07:00 UTC           9h -                                  - sysstat-summary.timer          sysstat-summary.service\\nSat 2026-11-21 14:51:19 UTC          23h Fri 2026-11-20 14:51:19 UTC 6min ago update-notifier-download.timer update-notifier-download.service\\nSun 2026-11-22 03:10:03 UTC    1 day 12h Tue 2026-11-17 07:01:15 UTC        - e2scrub_all.timer              e2scrub_all.service\\nMon 2026-11-23 00:25:38 UTC       2 days Tue 2026-11-17 07:01:15 UTC        - fstrim.timer                   fstrim.service\\nSat 2026-11-28 18:53:37 UTC 1 week 1 day Tue 2026-11-17 07:01:15 UTC        - update-notifier-motd.timer     update-notifier-motd.service\\n-                                      - -                                  - apport-autoreport.timer        apport-autoreport.service\\n-                                      - -                                  - snapd.snap-repair.timer        snapd.snap-repair.service\\n-                                      - -                                  - ua-timer.timer                 ua-timer.service\\n\\n17 timers listed.\\n\", \"karpo_units\": \"  UNIT                             LOAD   ACTIVE SUB     DESCRIPTION\\n  karpo-rps-fleet1-node-v1.service loaded active running /bin/bash /opt/karpo/experiments/vllm-rps100-20261120/launch-fleet1-node.sh\\n\\nLegend: LOAD   \\u2192 Reflects whether the unit definition was properly loaded.\\n        ACTIVE \\u2192 The high-level unit activation state, i.e. generalization of SUB.\\n        SUB    \\u2192 The low-level unit activation state, values depend on unit type.\\n\\n1 loaded units listed.\\nTo show all installed unit files use 'systemctl list-unit-files'.\\n\", \"gpu\": \"index, name, memory.used [MiB], utilization.gpu [%]\\n0, NVIDIA RTX PRO 6000 Blackwell Server Edition, 76861 MiB, 0 %\\n\"}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "f41e06f3-51e0-4c39-af4e-416f4c3c9aa8",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 14:58:49 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "3867",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "f41e06f3-51e0-4c39-af4e-416f4c3c9aa8",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

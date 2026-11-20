@@ -1,0 +1,114 @@
+{
+  "target_rps": 100.0,
+  "offered_seconds": 20.0,
+  "scheduled_requests": 2000,
+  "attempts": 2000,
+  "valid": 2000,
+  "failures": 0,
+  "http_statuses": {
+    "200": 2000
+  },
+  "replica_counts": {
+    "3": 500,
+    "1": 500,
+    "2": 500,
+    "0": 500
+  },
+  "correct": 1898,
+  "elapsed_with_drain_s": 20.03450896000004,
+  "valid_rps_with_drain": 99.82775240426936,
+  "steady_valid_rps": 100.0,
+  "p50_ms": 44.45095400024002,
+  "p95_ms": 46.67542400011371,
+  "p99_ms": 47.5511730001017,
+  "http_p50_ms": 43.8892020001731,
+  "last_quarter_p50_ms": 44.4462260002183,
+  "max_send_lag_ms": 5.566832000113209,
+  "valid_within_500ms": 2000,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 4
+    },
+    {
+      "second": 2,
+      "pending": 4
+    },
+    {
+      "second": 3,
+      "pending": 4
+    },
+    {
+      "second": 4,
+      "pending": 4
+    },
+    {
+      "second": 5,
+      "pending": 4
+    },
+    {
+      "second": 6,
+      "pending": 4
+    },
+    {
+      "second": 7,
+      "pending": 4
+    },
+    {
+      "second": 8,
+      "pending": 4
+    },
+    {
+      "second": 9,
+      "pending": 4
+    },
+    {
+      "second": 10,
+      "pending": 4
+    },
+    {
+      "second": 11,
+      "pending": 4
+    },
+    {
+      "second": 12,
+      "pending": 4
+    },
+    {
+      "second": 13,
+      "pending": 4
+    },
+    {
+      "second": 14,
+      "pending": 4
+    },
+    {
+      "second": 15,
+      "pending": 4
+    },
+    {
+      "second": 16,
+      "pending": 4
+    },
+    {
+      "second": 17,
+      "pending": 4
+    },
+    {
+      "second": 18,
+      "pending": 4
+    },
+    {
+      "second": 19,
+      "pending": 4
+    },
+    {
+      "second": 20,
+      "pending": 4
+    }
+  ],
+  "backlog_slope_per_second": 0.0,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": true,
+  "passes_performance_acceptance": false
+}

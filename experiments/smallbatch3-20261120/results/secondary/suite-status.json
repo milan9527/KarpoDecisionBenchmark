@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "role": "secondary",
+  "started_utc": "2026-11-20T09:46:50.499888+00:00",
+  "ready_utc": "2026-11-20T10:01:54.984041+00:00",
+  "error": "Traceback (most recent call last):\n  File \"/opt/karpo/scripts/smallbatch3_suite.py\", line 130, in main\n    obj = s3.get_object(Bucket=args.bucket, Key=f\"results/{EXP.name}/primary/suite-status.json\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/venv/lib/python3.12/site-packages/botocore/client.py\", line 606, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/venv/lib/python3.12/site-packages/botocore/context.py\", line 123, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/venv/lib/python3.12/site-packages/botocore/client.py\", line 1094, in _make_api_call\n    raise error_class(parsed_response, operation_name)\nbotocore.errorfactory.AccessDenied: An error occurred (AccessDenied) when calling the GetObject operation: User: arn:aws:sts::632930644527:assumed-role/karpo-benchmark-20261119-115003/i-0de4f061c2a04fe4b is not authorized to perform: s3:GetObject on resource: \"arn:aws:s3:::karpo-benchmark-20261119-115003-632930644527/results/smallbatch3-20261120/primary/suite-status.json\" because no identity-based policy allows the s3:GetObject action\n",
+  "ended_utc": "2026-11-20T10:01:55.669110+00:00"
+}

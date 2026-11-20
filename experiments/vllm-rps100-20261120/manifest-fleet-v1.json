@@ -1,0 +1,30 @@
+{
+  "revision": "fleet-v1",
+  "model": "MachinePulseAI/karpo-decision-4B",
+  "model_revision": "f7f521cfc3219ca28518c6bba91960b8757dce06",
+  "code_revision": "6600011eb5cf46232d056ec0717dc726146d29de",
+  "arrival_rps": 100,
+  "p50_ms": 500,
+  "ec2_policy": "keep_running",
+  "files": {
+    "experiments/vllm-rps100-20261120/risk-requests.json": "a0d104990d5e54db3089b4e6c411d4087a2b7a84d31ad6e7ccb40dcb9b6fcc1b",
+    "experiments/vllm-rps100-20261120/sop-requests.json": "67860c1ff0150604e6ad93c3b189020bfab0211360e7d60509d28b621b8b134d",
+    "experiments/vllm-rps100-20261120/risk-feature-schema.json": "e2cb67e4973eda8e6e7a0d3bcdaba7285c01b8d8abb96a14b993671dd6bd7e78",
+    "experiments/vllm-rps100-20261120/encoding-reference.json": "ab4016e0897b745110764c34eab5686d8a8b8adafc3087abbd24275f25bfb0eb",
+    "experiments/vllm-rps100-20261120/PLAN.zh.md": "83459a15f801871de2d40cc8d0d442983a6d661dcc498501b4b2f7c8adaf4667",
+    "scripts/vllm_rps_server.py": "95d14399fb1220bab5e1762a995d98991238e5f5425437e6c252f57d0c011c06",
+    "scripts/vllm_rps_proxy.py": "9dcf6330d6fccc18405dacbc47d77ece6c9c7c71a4cf5996da3c4fedbbae7290",
+    "scripts/vllm_rps_benchmark.py": "6e2944aa5a6771603ec133e5ea916b68125a87c35883ee202b7e7fd711e938b9",
+    "scripts/vllm_rps_suite.py": "54ca0a25a67be4f6016c5d7a54aa2879dc71c89eee338ec7de69872f3d66db09",
+    "scripts/vllm_rps_prepare.py": "3dcf88e32df27212661567a4c536008daddbfec03222f545732ff44f92ccdac4",
+    "scripts/vllm_karpo_encoding.py": "56e14b5dde797f6be93cd57dd9176faca351d0e26d7af8e1445b761d2cadd2a7",
+    "scripts/vllm_single_environment.py": "aa7a40c330f960ed2a334b5ca68eddd287f153734a403be51e3a27e1a542c320",
+    "scripts/benchmark.py": "3eb29a865be73ea3a70e9fd16f1d2e72403ecf6edb900ada7d263be8ad4b7dc2",
+    "serving/vllm_karpo/karpo_vllm.py": "a1021cfe7e0a0c14f4ca4e3aabc18da4db88bc2209444f91f439283aafec0176",
+    "serving/vllm_karpo/karpo_vllm_model.py": "ef5de106f0c5464b50c374215c9e33e71b0be6e4a1274e87209a802dce7b5bd0",
+    "serving/vllm_karpo/karpo_vllm_worker.py": "15a082fc7dbb62f266ae7c451e203f63e01624279d404605d90eb0cb1222be7d",
+    "serving/vllm_karpo/pyproject.toml": "62ad45fff29c9928b3f9e8bc462e0295a2d63adb7a034443c87a318be1e4ae88",
+    "tests/test_vllm_rps.py": "3463691f967aa6fc073eeacf7dd4d3abf93ed78cac7499a6cae3c1835b1ceed1",
+    "scripts/vllm_rps_fleet.py": "712f394ad9726d94daf9ffb781161776f678326740c96572ccc38b8ccbdb6460"
+  }
+}

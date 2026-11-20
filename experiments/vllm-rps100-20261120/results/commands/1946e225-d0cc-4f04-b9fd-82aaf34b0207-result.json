@@ -1,0 +1,36 @@
+{
+  "CommandId": "1946e225-d0cc-4f04-b9fd-82aaf34b0207",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T13:46:31.301Z",
+  "ExecutionElapsedTime": "PT3.123S",
+  "ExecutionEndDateTime": "2026-11-20T13:46:34.301Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "download: s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-rps-h100-v1.tar.gz to ../../../../tmp/vllm-rps-h100-v1.tar.gz\n/tmp/vllm-rps-h100-v1.tar.gz: OK\n/tmp/vllm-rps-h100-v1.tar.gz: OK\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Warning: Permanently added '172.31.25.147' (ED25519) to the list of known hosts.\r\nRunning as unit: karpo-rps-h100-v1.service; invocation ID: f1400eb02cb44d1ebc0d2e935aadd84a\nRunning as unit: karpo-rps-h100-backup.service; invocation ID: 60a252d2bd284159a9f3d38f42cde528\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "8786cf38-7712-4f11-8340-337e9e272bf5",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:46:39 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1059",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "8786cf38-7712-4f11-8340-337e9e272bf5",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

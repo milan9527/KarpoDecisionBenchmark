@@ -1,0 +1,2202 @@
+[
+  {
+    "seconds": 0.08827894800003833,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2284
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.60034000000087,
+      "model_ms": 41.1304699999846,
+      "peak_allocated_gib": 7.049216270446777,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.10291700004927407
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-10-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08889670000007754,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2292
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.612993999989158,
+      "model_ms": 40.99187700001039,
+      "peak_allocated_gib": 7.049368858337402,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.11708199997428892
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-13-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.0879056460000811,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2267
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.175906999966173,
+      "model_ms": 41.17490500004806,
+      "peak_allocated_gib": 7.048891544342041,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.11615099992923206
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-17-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08891484599996602,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2289
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.608989000052134,
+      "model_ms": 41.09869100000196,
+      "peak_allocated_gib": 7.049311637878418,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.10717999998632877
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-21-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08892325399995116,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2274
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.581151000001228,
+      "model_ms": 41.18419700000686,
+      "peak_allocated_gib": 7.049025058746338,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.10607999990952521
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-25-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08904627200001869,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2294
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.551680999928976,
+      "model_ms": 41.222324000045774,
+      "peak_allocated_gib": 7.049407005310059,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12380500004383066
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-28-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08880617099998744,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2293
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.590724999933627,
+      "model_ms": 41.236336999986634,
+      "peak_allocated_gib": 7.0493879318237305,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.10384500001237029
+    },
+    "parity": [
+      {
+        "request_id": "risk-deduplicate-12-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08886087199994108,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2286
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.732535999982247,
+      "model_ms": 41.20807700007845,
+      "peak_allocated_gib": 7.049254417419434,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.11603300004026096
+    },
+    "parity": [
+      {
+        "request_id": "risk-deduplicate-16-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.0889267430000018,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2285
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.663083999934315,
+      "model_ms": 40.96607700000732,
+      "peak_allocated_gib": 7.0492353439331055,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12365300005967583
+    },
+    "parity": [
+      {
+        "request_id": "risk-deduplicate-20-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.0889156449999291,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2269
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.567320000068321,
+      "model_ms": 41.19426099998691,
+      "peak_allocated_gib": 7.048929691314697,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12479800000164687
+    },
+    "parity": [
+      {
+        "request_id": "risk-deduplicate-23-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08891156600009253,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2283
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.627380000078119,
+      "model_ms": 41.02495299991915,
+      "peak_allocated_gib": 7.049197196960449,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.11856899993745174
+    },
+    "parity": [
+      {
+        "request_id": "risk-deduplicate-27-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08890609599995969,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2287
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.547067000065908,
+      "model_ms": 41.20950799995171,
+      "peak_allocated_gib": 7.049273490905762,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12701599996489676
+    },
+    "parity": [
+      {
+        "request_id": "risk-throttle-11-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08889246900002945,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2277
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.657212999949479,
+      "model_ms": 41.08182700008456,
+      "peak_allocated_gib": 7.049082279205322,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12622300005205034
+    },
+    "parity": [
+      {
+        "request_id": "risk-throttle-15-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08893088199999966,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2268
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.569099000013011,
+      "model_ms": 41.200032000006104,
+      "peak_allocated_gib": 7.048910617828369,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.11089099996297591
+    },
+    "parity": [
+      {
+        "request_id": "risk-throttle-18-reversed",
+        "correct": false,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08892588999992768,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2287
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.549776000066231,
+      "model_ms": 41.12536499997077,
+      "peak_allocated_gib": 7.049273490905762,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12811899989628728
+    },
+    "parity": [
+      {
+        "request_id": "risk-throttle-22-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08792419999997492,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2284
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.640488000040023,
+      "model_ms": 40.886376999992535,
+      "peak_allocated_gib": 7.049216270446777,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12725099998078804
+    },
+    "parity": [
+      {
+        "request_id": "risk-throttle-26-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08890396700007841,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2274
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.561283000020012,
+      "model_ms": 41.20278400000643,
+      "peak_allocated_gib": 7.049025058746338,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12685800004419434
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-10-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.0879491450000387,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2283
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.604802999982894,
+      "model_ms": 40.89909300000727,
+      "peak_allocated_gib": 7.049197196960449,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.1224860000093031
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-13-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08891110699994442,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2278
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.6102859999782595,
+      "model_ms": 41.200527000000875,
+      "peak_allocated_gib": 7.04910135269165,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12024800003018754
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-17-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08790271599991684,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2277
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.181612999990648,
+      "model_ms": 41.011039000068195,
+      "peak_allocated_gib": 7.049082279205322,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.11990999996669416
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-21-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08789694999995845,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2288
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.1658910000469405,
+      "model_ms": 41.20066999996652,
+      "peak_allocated_gib": 7.04929256439209,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.11855499997182051
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-25-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08892829400008395,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2276
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.64062900002682,
+      "model_ms": 41.172926000058396,
+      "peak_allocated_gib": 7.049063205718994,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.10576599993328273
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-28-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08792042100003528,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2286
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.632804000015312,
+      "model_ms": 40.89872600002309,
+      "peak_allocated_gib": 7.049254417419434,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12271000002783694
+    },
+    "parity": [
+      {
+        "request_id": "risk-review-12-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08890427099993303,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2297
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.717193000009502,
+      "model_ms": 41.21217700003399,
+      "peak_allocated_gib": 7.049464225769043,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12497899990648875
+    },
+    "parity": [
+      {
+        "request_id": "risk-review-16-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08792190700000901,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2292
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.664754999997967,
+      "model_ms": 40.94929199993658,
+      "peak_allocated_gib": 7.049368858337402,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.10967900004743569
+    },
+    "parity": [
+      {
+        "request_id": "risk-review-20-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.0889138530000082,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2269
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.605309999964447,
+      "model_ms": 41.180341999961456,
+      "peak_allocated_gib": 7.048929691314697,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.11063500005548121
+    },
+    "parity": [
+      {
+        "request_id": "risk-review-23-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08792306699990604,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2280
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.166658000007374,
+      "model_ms": 41.09998399997039,
+      "peak_allocated_gib": 7.049139499664307,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.10440800008382212
+    },
+    "parity": [
+      {
+        "request_id": "risk-review-27-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.0879241009999987,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2284
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.605955999953949,
+      "model_ms": 40.82578600002762,
+      "peak_allocated_gib": 7.049216270446777,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.10542600000462699
+    },
+    "parity": [
+      {
+        "request_id": "risk-allow-11-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08791312400001061,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2280
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.180189000043356,
+      "model_ms": 41.24030399998446,
+      "peak_allocated_gib": 7.049139499664307,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12916000002860528
+    },
+    "parity": [
+      {
+        "request_id": "risk-allow-15-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08791405299996313,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2274
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.197958000053404,
+      "model_ms": 40.93201999990015,
+      "peak_allocated_gib": 7.049025058746338,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.12081399995622633
+    },
+    "parity": [
+      {
+        "request_id": "risk-allow-18-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08792073500001152,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2269
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.182109000088531,
+      "model_ms": 41.195469999934176,
+      "peak_allocated_gib": 7.048929691314697,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.1034269999991011
+    },
+    "parity": [
+      {
+        "request_id": "risk-allow-22-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 0.08791127200004212,
+    "count": 1,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 1,
+      "packs": 1,
+      "pack_tokens": [
+        2278
+      ],
+      "graph_replays": 1,
+      "encode_ms": 5.301349999967897,
+      "model_ms": 41.11183800000617,
+      "peak_allocated_gib": 7.04910135269165,
+      "peak_reserved_gib": 17.64453125,
+      "queue_ms": 0.11632700000063778
+    },
+    "parity": [
+      {
+        "request_id": "risk-allow-26-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0
+      }
+    ]
+  },
+  {
+    "seconds": 1.4947410660000742,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4576
+      ],
+      "graph_replays": 1,
+      "encode_ms": 10.385471000063262,
+      "model_ms": 1442.3920299999509,
+      "peak_allocated_gib": 7.1864848136901855,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.135816000010891
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-10-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 1.4659986528326677e-05
+      },
+      {
+        "request_id": "risk-deny-13-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 2.4169194050904785e-05
+      }
+    ]
+  },
+  {
+    "seconds": 0.13786663399991994,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4556
+      ],
+      "graph_replays": 1,
+      "encode_ms": 11.960603000034098,
+      "model_ms": 83.75212499993268,
+      "peak_allocated_gib": 7.139336585998535,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.14392699995369185
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-17-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 2.0209735417053842e-05
+      },
+      {
+        "request_id": "risk-deny-21-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00851506127509949
+      }
+    ]
+  },
+  {
+    "seconds": 0.1358791589999555,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4568
+      ],
+      "graph_replays": 1,
+      "encode_ms": 11.585425000021132,
+      "model_ms": 82.79255499996907,
+      "peak_allocated_gib": 7.139763355255127,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13125400005264964
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-25-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.002068926272684935
+      },
+      {
+        "request_id": "risk-deny-28-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 1.6670177359919772e-06
+      }
+    ]
+  },
+  {
+    "seconds": 0.13587344699999448,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4579
+      ],
+      "graph_replays": 1,
+      "encode_ms": 11.604674999944109,
+      "model_ms": 82.35060700008034,
+      "peak_allocated_gib": 7.1401543617248535,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.1384529999768347
+    },
+    "parity": [
+      {
+        "request_id": "risk-deduplicate-12-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.057982393331717286
+      },
+      {
+        "request_id": "risk-deduplicate-16-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.046193651786040346
+      }
+    ]
+  },
+  {
+    "seconds": 0.13490798100008305,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4554
+      ],
+      "graph_replays": 1,
+      "encode_ms": 10.876220000000103,
+      "model_ms": 82.45705600006659,
+      "peak_allocated_gib": 7.139266014099121,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13375000003179593
+    },
+    "parity": [
+      {
+        "request_id": "risk-deduplicate-20-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.004644357033917745
+      },
+      {
+        "request_id": "risk-deduplicate-23-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.003870861767955369
+      }
+    ]
+  },
+  {
+    "seconds": 0.13494262500000787,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4570
+      ],
+      "graph_replays": 1,
+      "encode_ms": 10.48624899999595,
+      "model_ms": 82.40189699995426,
+      "peak_allocated_gib": 7.139834880828857,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13558099999499973
+    },
+    "parity": [
+      {
+        "request_id": "risk-deduplicate-27-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.10316282187440595
+      },
+      {
+        "request_id": "risk-throttle-11-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005709425020532732
+      }
+    ]
+  },
+  {
+    "seconds": 0.13481886900001427,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4545
+      ],
+      "graph_replays": 1,
+      "encode_ms": 11.213755999960995,
+      "model_ms": 82.09939799996846,
+      "peak_allocated_gib": 7.138946533203125,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13466699999753473
+    },
+    "parity": [
+      {
+        "request_id": "risk-throttle-15-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.008259778885644414
+      },
+      {
+        "request_id": "risk-throttle-18-reversed",
+        "correct": false,
+        "same_choice": true,
+        "max_probability_delta": 0.026002414104954685
+      }
+    ]
+  },
+  {
+    "seconds": 0.1360092170000371,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4571
+      ],
+      "graph_replays": 1,
+      "encode_ms": 11.287801999969815,
+      "model_ms": 82.31113700003334,
+      "peak_allocated_gib": 7.1398701667785645,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13381299993397988
+    },
+    "parity": [
+      {
+        "request_id": "risk-throttle-22-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.035358709941705535
+      },
+      {
+        "request_id": "risk-throttle-26-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.009435930895842715
+      }
+    ]
+  },
+  {
+    "seconds": 0.1347911139999951,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4557
+      ],
+      "graph_replays": 1,
+      "encode_ms": 10.383653000076265,
+      "model_ms": 82.46121799993489,
+      "peak_allocated_gib": 7.139372825622559,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13237399991794518
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-10-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007857434475665781
+      },
+      {
+        "request_id": "risk-challenge-13-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.03340638783066979
+      }
+    ]
+  },
+  {
+    "seconds": 0.13587414200003423,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4555
+      ],
+      "graph_replays": 1,
+      "encode_ms": 11.418102999982693,
+      "model_ms": 82.34605799998462,
+      "peak_allocated_gib": 7.139301300048828,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13661299999512266
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-17-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006008485028872829
+      },
+      {
+        "request_id": "risk-challenge-21-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.01600641619687304
+      }
+    ]
+  },
+  {
+    "seconds": 0.13488433500003794,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4564
+      ],
+      "graph_replays": 1,
+      "encode_ms": 10.783328999991681,
+      "model_ms": 82.41094000004523,
+      "peak_allocated_gib": 7.139620780944824,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13386199998421944
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-25-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.012200309094857253
+      },
+      {
+        "request_id": "risk-challenge-28-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00547497443052547
+      }
+    ]
+  },
+  {
+    "seconds": 0.1348865319999959,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4583
+      ],
+      "graph_replays": 1,
+      "encode_ms": 10.395613000014237,
+      "model_ms": 82.62630299998364,
+      "peak_allocated_gib": 7.140296459197998,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13351699999475386
+    },
+    "parity": [
+      {
+        "request_id": "risk-review-12-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.010050992683150795
+      },
+      {
+        "request_id": "risk-review-16-original",
+        "correct": false,
+        "same_choice": false,
+        "max_probability_delta": 0.10878618468100182
+      }
+    ]
+  },
+  {
+    "seconds": 0.13489220400003887,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4561
+      ],
+      "graph_replays": 1,
+      "encode_ms": 10.509853000030489,
+      "model_ms": 82.29662999997345,
+      "peak_allocated_gib": 7.139514923095703,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13624799998979142
+    },
+    "parity": [
+      {
+        "request_id": "risk-review-20-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.008163212281728782
+      },
+      {
+        "request_id": "risk-review-23-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.009543796785497771
+      }
+    ]
+  },
+  {
+    "seconds": 0.1360022610000442,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4564
+      ],
+      "graph_replays": 1,
+      "encode_ms": 11.294447999944168,
+      "model_ms": 82.28820300007555,
+      "peak_allocated_gib": 7.139620780944824,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.1380659999767886
+    },
+    "parity": [
+      {
+        "request_id": "risk-review-27-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005883451270965012
+      },
+      {
+        "request_id": "risk-allow-11-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.009200428211560974
+      }
+    ]
+  },
+  {
+    "seconds": 0.13578079900003104,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4554
+      ],
+      "graph_replays": 1,
+      "encode_ms": 11.318696999978783,
+      "model_ms": 82.40692100002889,
+      "peak_allocated_gib": 7.139266014099121,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13885299995308742
+    },
+    "parity": [
+      {
+        "request_id": "risk-allow-15-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.012814510282015745
+      },
+      {
+        "request_id": "risk-allow-18-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.008400687822374242
+      }
+    ]
+  },
+  {
+    "seconds": 0.13590829500003565,
+    "count": 2,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 2,
+      "packs": 1,
+      "pack_tokens": [
+        4547
+      ],
+      "graph_replays": 1,
+      "encode_ms": 11.201948999996603,
+      "model_ms": 82.20727699995223,
+      "peak_allocated_gib": 7.139017105102539,
+      "peak_reserved_gib": 17.90625,
+      "queue_ms": 0.13956800000869407
+    },
+    "parity": [
+      {
+        "request_id": "risk-allow-22-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0009086241854713633
+      },
+      {
+        "request_id": "risk-allow-26-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.015670921057700182
+      }
+    ]
+  },
+  {
+    "seconds": 0.23263458700000683,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        9132
+      ],
+      "graph_replays": 1,
+      "encode_ms": 21.20133700009319,
+      "model_ms": 169.45819999989453,
+      "peak_allocated_gib": 7.304351806640625,
+      "peak_reserved_gib": 18.08203125,
+      "queue_ms": 0.1902899999777219
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-10-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 5.996423485729355e-06
+      },
+      {
+        "request_id": "risk-deny-13-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 3.735790070114042e-05
+      },
+      {
+        "request_id": "risk-deny-17-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 1.2563870831039381e-05
+      },
+      {
+        "request_id": "risk-deny-21-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005999716279804224
+      }
+    ]
+  },
+  {
+    "seconds": 0.23384974000009606,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        9147
+      ],
+      "graph_replays": 1,
+      "encode_ms": 23.16144099995654,
+      "model_ms": 167.9605279999805,
+      "peak_allocated_gib": 7.303793907165527,
+      "peak_reserved_gib": 18.08203125,
+      "queue_ms": 0.18802500005676848
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-25-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.002654220998466683
+      },
+      {
+        "request_id": "risk-deny-28-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 6.2563685588878926e-06
+      },
+      {
+        "request_id": "risk-deduplicate-12-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.03166053709855754
+      },
+      {
+        "request_id": "risk-deduplicate-16-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.04888083354345818
+      }
+    ]
+  },
+  {
+    "seconds": 0.2318596359999674,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        9124
+      ],
+      "graph_replays": 1,
+      "encode_ms": 21.741712999983065,
+      "model_ms": 167.72210700003143,
+      "peak_allocated_gib": 7.303420543670654,
+      "peak_reserved_gib": 18.08203125,
+      "queue_ms": 0.17926099997112033
+    },
+    "parity": [
+      {
+        "request_id": "risk-deduplicate-20-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006321364359869075
+      },
+      {
+        "request_id": "risk-deduplicate-23-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007073948926165974
+      },
+      {
+        "request_id": "risk-deduplicate-27-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.07079957133289161
+      },
+      {
+        "request_id": "risk-throttle-11-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006744367863080414
+      }
+    ]
+  },
+  {
+    "seconds": 0.23086241300006805,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        9116
+      ],
+      "graph_replays": 1,
+      "encode_ms": 20.76947000000473,
+      "model_ms": 168.00161200001185,
+      "peak_allocated_gib": 7.303290843963623,
+      "peak_reserved_gib": 18.08203125,
+      "queue_ms": 0.18244399996092397
+    },
+    "parity": [
+      {
+        "request_id": "risk-throttle-15-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.020872193288512975
+      },
+      {
+        "request_id": "risk-throttle-18-reversed",
+        "correct": false,
+        "same_choice": true,
+        "max_probability_delta": 0.020568033484701265
+      },
+      {
+        "request_id": "risk-throttle-22-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.010762725325663913
+      },
+      {
+        "request_id": "risk-throttle-26-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.012542526510479601
+      }
+    ]
+  },
+  {
+    "seconds": 0.23095438699999704,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        9112
+      ],
+      "graph_replays": 1,
+      "encode_ms": 21.203130999992936,
+      "model_ms": 167.72085399998105,
+      "peak_allocated_gib": 7.302218914031982,
+      "peak_reserved_gib": 18.08203125,
+      "queue_ms": 0.18393900006685726
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-10-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.013069267694685749
+      },
+      {
+        "request_id": "risk-challenge-13-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.018951834406616158
+      },
+      {
+        "request_id": "risk-challenge-17-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.021080347678866462
+      },
+      {
+        "request_id": "risk-challenge-21-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0027859224849140496
+      }
+    ]
+  },
+  {
+    "seconds": 0.2307921220000253,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        9147
+      ],
+      "graph_replays": 1,
+      "encode_ms": 20.95216400005029,
+      "model_ms": 167.36356199999136,
+      "peak_allocated_gib": 7.303793907165527,
+      "peak_reserved_gib": 18.08203125,
+      "queue_ms": 0.1885330000277463
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-25-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005373864027056308
+      },
+      {
+        "request_id": "risk-challenge-28-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.009118700062554885
+      },
+      {
+        "request_id": "risk-review-12-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.01338417012216142
+      },
+      {
+        "request_id": "risk-review-16-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.08726409676404695
+      }
+    ]
+  },
+  {
+    "seconds": 0.23082025700000486,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        9125
+      ],
+      "graph_replays": 1,
+      "encode_ms": 20.933454999976675,
+      "model_ms": 167.44325000001936,
+      "peak_allocated_gib": 7.303436756134033,
+      "peak_reserved_gib": 18.08203125,
+      "queue_ms": 0.18410500001664332
+    },
+    "parity": [
+      {
+        "request_id": "risk-review-20-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006084199727317663
+      },
+      {
+        "request_id": "risk-review-23-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0093061643916581
+      },
+      {
+        "request_id": "risk-review-27-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0025950592940922057
+      },
+      {
+        "request_id": "risk-allow-11-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0019008432716849377
+      }
+    ]
+  },
+  {
+    "seconds": 0.22986334199993053,
+    "count": 4,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 4,
+      "packs": 1,
+      "pack_tokens": [
+        9101
+      ],
+      "graph_replays": 1,
+      "encode_ms": 20.61436600001798,
+      "model_ms": 167.3221690000446,
+      "peak_allocated_gib": 7.301830291748047,
+      "peak_reserved_gib": 18.08203125,
+      "queue_ms": 0.18518199999562057
+    },
+    "parity": [
+      {
+        "request_id": "risk-allow-15-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0070667253659852
+      },
+      {
+        "request_id": "risk-allow-18-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.003646600256477797
+      },
+      {
+        "request_id": "risk-allow-22-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007083340922594328
+      },
+      {
+        "request_id": "risk-allow-26-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.010284963828565724
+      }
+    ]
+  },
+  {
+    "seconds": 0.42862053500005004,
+    "count": 8,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 8,
+      "packs": 1,
+      "pack_tokens": [
+        18279
+      ],
+      "graph_replays": 1,
+      "encode_ms": 44.87652399996023,
+      "model_ms": 340.781872999969,
+      "peak_allocated_gib": 7.629651069641113,
+      "peak_reserved_gib": 18.5234375,
+      "queue_ms": 0.3039570000282765
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-10-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 6.113944110374129e-06
+      },
+      {
+        "request_id": "risk-deny-13-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 3.714056162007484e-05
+      },
+      {
+        "request_id": "risk-deny-17-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 1.2776184802998358e-05
+      },
+      {
+        "request_id": "risk-deny-21-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00638014266098097
+      },
+      {
+        "request_id": "risk-deny-25-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.002629284384701558
+      },
+      {
+        "request_id": "risk-deny-28-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 6.314822814434962e-06
+      },
+      {
+        "request_id": "risk-deduplicate-12-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.031290968974794664
+      },
+      {
+        "request_id": "risk-deduplicate-16-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.049939197700046734
+      }
+    ]
+  },
+  {
+    "seconds": 0.4237878050000745,
+    "count": 8,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 8,
+      "packs": 1,
+      "pack_tokens": [
+        18240
+      ],
+      "graph_replays": 1,
+      "encode_ms": 41.635250000013,
+      "model_ms": 339.00616300002184,
+      "peak_allocated_gib": 7.6295599937438965,
+      "peak_reserved_gib": 18.5234375,
+      "queue_ms": 0.2692249998972329
+    },
+    "parity": [
+      {
+        "request_id": "risk-deduplicate-20-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00648640421999247
+      },
+      {
+        "request_id": "risk-deduplicate-23-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007021916439322484
+      },
+      {
+        "request_id": "risk-deduplicate-27-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.06970562223643462
+      },
+      {
+        "request_id": "risk-throttle-11-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00677396752105941
+      },
+      {
+        "request_id": "risk-throttle-15-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.02067703638536833
+      },
+      {
+        "request_id": "risk-throttle-18-reversed",
+        "correct": false,
+        "same_choice": true,
+        "max_probability_delta": 0.023422066953681486
+      },
+      {
+        "request_id": "risk-throttle-22-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.010654947896595546
+      },
+      {
+        "request_id": "risk-throttle-26-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.012414418997932053
+      }
+    ]
+  },
+  {
+    "seconds": 0.4237929930000064,
+    "count": 8,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 8,
+      "packs": 1,
+      "pack_tokens": [
+        18259
+      ],
+      "graph_replays": 1,
+      "encode_ms": 41.204381000056856,
+      "model_ms": 339.5955429999731,
+      "peak_allocated_gib": 7.629960536956787,
+      "peak_reserved_gib": 18.5234375,
+      "queue_ms": 0.2645789999178305
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-10-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.01291641995395465
+      },
+      {
+        "request_id": "risk-challenge-13-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.01730552110359143
+      },
+      {
+        "request_id": "risk-challenge-17-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.02119845791893915
+      },
+      {
+        "request_id": "risk-challenge-21-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.002203256642821949
+      },
+      {
+        "request_id": "risk-challenge-25-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00523257938520727
+      },
+      {
+        "request_id": "risk-challenge-28-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.009094528884852182
+      },
+      {
+        "request_id": "risk-review-12-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.013617237920617864
+      },
+      {
+        "request_id": "risk-review-16-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.08752137521358833
+      }
+    ]
+  },
+  {
+    "seconds": 0.4238103239999873,
+    "count": 8,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 8,
+      "packs": 1,
+      "pack_tokens": [
+        18226
+      ],
+      "graph_replays": 1,
+      "encode_ms": 41.51625099996181,
+      "model_ms": 339.2685750000055,
+      "peak_allocated_gib": 7.626319408416748,
+      "peak_reserved_gib": 18.5234375,
+      "queue_ms": 0.2667520000159129
+    },
+    "parity": [
+      {
+        "request_id": "risk-review-20-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00601912623416323
+      },
+      {
+        "request_id": "risk-review-23-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.009019252070242456
+      },
+      {
+        "request_id": "risk-review-27-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.004003073438989535
+      },
+      {
+        "request_id": "risk-allow-11-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0016536793049034548
+      },
+      {
+        "request_id": "risk-allow-15-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007050710031308253
+      },
+      {
+        "request_id": "risk-allow-18-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0036943843108624003
+      },
+      {
+        "request_id": "risk-allow-22-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007141562836312176
+      },
+      {
+        "request_id": "risk-allow-26-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.011143819443672598
+      }
+    ]
+  },
+  {
+    "seconds": 0.8005657620000193,
+    "count": 16,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 16,
+      "packs": 1,
+      "pack_tokens": [
+        36519
+      ],
+      "graph_replays": 1,
+      "encode_ms": 82.09297500002322,
+      "model_ms": 674.4788500000141,
+      "peak_allocated_gib": 8.277307033538818,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.4188239998939025
+    },
+    "parity": [
+      {
+        "request_id": "risk-deny-10-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 6.127164861547717e-06
+      },
+      {
+        "request_id": "risk-deny-13-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 3.6796682848394546e-05
+      },
+      {
+        "request_id": "risk-deny-17-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 1.247485561650663e-05
+      },
+      {
+        "request_id": "risk-deny-21-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006420981486107036
+      },
+      {
+        "request_id": "risk-deny-25-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.002405274050004458
+      },
+      {
+        "request_id": "risk-deny-28-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 6.220606360129999e-06
+      },
+      {
+        "request_id": "risk-deduplicate-12-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.031104040432933133
+      },
+      {
+        "request_id": "risk-deduplicate-16-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.04807054735518801
+      },
+      {
+        "request_id": "risk-deduplicate-20-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006357093429301797
+      },
+      {
+        "request_id": "risk-deduplicate-23-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00704182923708363
+      },
+      {
+        "request_id": "risk-deduplicate-27-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.07157475508689665
+      },
+      {
+        "request_id": "risk-throttle-11-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0067962873947255975
+      },
+      {
+        "request_id": "risk-throttle-15-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.02092282092666109
+      },
+      {
+        "request_id": "risk-throttle-18-reversed",
+        "correct": false,
+        "same_choice": true,
+        "max_probability_delta": 0.02262502703983954
+      },
+      {
+        "request_id": "risk-throttle-22-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.010702847688827954
+      },
+      {
+        "request_id": "risk-throttle-26-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.012316814122153463
+      }
+    ]
+  },
+  {
+    "seconds": 0.7996942390000186,
+    "count": 16,
+    "metrics": {
+      "gpu": 0,
+      "batch_size": 16,
+      "packs": 1,
+      "pack_tokens": [
+        36485
+      ],
+      "graph_replays": 1,
+      "encode_ms": 82.16931999993449,
+      "model_ms": 673.7954410000384,
+      "peak_allocated_gib": 8.276106834411621,
+      "peak_reserved_gib": 19.57421875,
+      "queue_ms": 0.407383000037953
+    },
+    "parity": [
+      {
+        "request_id": "risk-challenge-10-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.012923011185681288
+      },
+      {
+        "request_id": "risk-challenge-13-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.01652163044199212
+      },
+      {
+        "request_id": "risk-challenge-17-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.02097825052317026
+      },
+      {
+        "request_id": "risk-challenge-21-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.00224948842617978
+      },
+      {
+        "request_id": "risk-challenge-25-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.005394323965103864
+      },
+      {
+        "request_id": "risk-challenge-28-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.008956327865990321
+      },
+      {
+        "request_id": "risk-review-12-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.013411771931871597
+      },
+      {
+        "request_id": "risk-review-16-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.08760191339910084
+      },
+      {
+        "request_id": "risk-review-20-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.006398077053445805
+      },
+      {
+        "request_id": "risk-review-23-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0077268589201882065
+      },
+      {
+        "request_id": "risk-review-27-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.004080794290594381
+      },
+      {
+        "request_id": "risk-allow-11-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0017182382435259047
+      },
+      {
+        "request_id": "risk-allow-15-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007049221228106951
+      },
+      {
+        "request_id": "risk-allow-18-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.0036147492756968547
+      },
+      {
+        "request_id": "risk-allow-22-reversed",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.007031035776632666
+      },
+      {
+        "request_id": "risk-allow-26-original",
+        "correct": true,
+        "same_choice": true,
+        "max_probability_delta": 0.01103602786432567
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "region": "us-east-1",
+  "image_id": "ami-0961bdc9d1646251d",
+  "source_region": "us-east-2",
+  "source_image_id": "ami-00ab7faabf42ddbe2",
+  "utc": "2026-11-20T14:32:26.483082+00:00"
+}

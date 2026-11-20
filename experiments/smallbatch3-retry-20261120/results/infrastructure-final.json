@@ -1,0 +1,73 @@
+{
+  "observed_utc": "2026-11-20T10:44:36.155918+00:00",
+  "region": "us-east-2",
+  "instances": [
+    {
+      "instance_id": "i-048c3784bb87b6d86",
+      "instance_type": "g7e.8xlarge",
+      "market": "spot",
+      "state": "stopped",
+      "shutdown_behavior": "stop",
+      "terminated": false,
+      "volumes": [
+        {
+          "volume_id": "vol-02af28534c5b54eee",
+          "size_gib": 300,
+          "encrypted": true,
+          "delete_on_termination": false
+        }
+      ]
+    },
+    {
+      "instance_id": "i-05b24e3b4a7ee864d",
+      "instance_type": "g7e.12xlarge",
+      "market": "spot",
+      "state": "stopped",
+      "shutdown_behavior": "stop",
+      "terminated": false,
+      "volumes": [
+        {
+          "volume_id": "vol-062a0dd0007413835",
+          "size_gib": 300,
+          "encrypted": true,
+          "delete_on_termination": false
+        }
+      ]
+    },
+    {
+      "instance_id": "i-0de4f061c2a04fe4b",
+      "instance_type": "g7e.4xlarge",
+      "market": "spot",
+      "state": "stopped",
+      "shutdown_behavior": "stop",
+      "terminated": false,
+      "volumes": [
+        {
+          "volume_id": "vol-0e83aac1ae559b643",
+          "size_gib": 300,
+          "encrypted": true,
+          "delete_on_termination": false
+        }
+      ]
+    }
+  ],
+  "retained_environment_image": {
+    "image_id": "ami-00ab7faabf42ddbe2",
+    "state": "available",
+    "snapshot_ids": [
+      "snap-0b60ebe3f98361dbe"
+    ]
+  },
+  "postflight": {
+    "primary": {
+      "observed_utc": "2026-11-20T10:36:30.525093+00:00",
+      "gpu_compute_processes": "",
+      "model_weights_bytes": 9081227392
+    },
+    "secondary": {
+      "observed_utc": "2026-11-20T10:36:33.260161+00:00",
+      "gpu_compute_processes": "",
+      "model_weights_bytes": 9081227392
+    }
+  }
+}

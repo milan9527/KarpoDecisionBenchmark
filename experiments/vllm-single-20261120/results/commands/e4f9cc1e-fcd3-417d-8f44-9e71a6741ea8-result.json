@@ -1,0 +1,36 @@
+{
+  "CommandId": "e4f9cc1e-fcd3-417d-8f44-9e71a6741ea8",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T12:37:05.570Z",
+  "ExecutionElapsedTime": "PT55.669S",
+  "ExecutionEndDateTime": "2026-11-20T12:38:00.570Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "upload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/development-02/server.log to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/development-02/server.log\ndownload: s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-single-development-04.tar.gz to ../../../../tmp/karpo-vllm-development-04.tar.gz\n/tmp/karpo-vllm-development-04.tar.gz: OK\nProcessing /opt/karpo/serving/vllm_karpo\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'done'\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: karpo-vllm-benchmark-adapter\n  Building wheel for karpo-vllm-benchmark-adapter (pyproject.toml): started\n  Building wheel for karpo-vllm-benchmark-adapter (pyproject.toml): finished with status 'done'\n  Created wheel for karpo-vllm-benchmark-adapter: filename=karpo_vllm_benchmark_adapter-0.1.0-py3-none-any.whl size=4295 sha256=622338408e6804f1fa0c45da9282fe82d335120490ea60f0814ea52dcfec609d\n  Stored in directory: /tmp/pip-ephem-wheel-cache-5ci8ay6_/wheels/06/c6/20/5df885099dc888500ee636664f60c7372ac03976fac2fd9d8d\nSuccessfully built karpo-vllm-benchmark-adapter\nInstalling collected packages: karpo-vllm-benchmark-adapter\n  Attempting uninstall: karpo-vllm-benchmark-adapter\n    Found existing installation: karpo-vllm-benchmark-adapter 0.1.0\n    Uninstalling karpo-vllm-benchmark-adapter-0.1.0:\n      Successfully uninstalled karpo-vllm-benchmark-adapter-0.1.0\nSuccessfully installed karpo-vllm-benchmark-adapter-0.1.0\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-vllm-development-03.service; invocation ID: d32dfb23030f40218f5e5d47d5075c41\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "72528e3d-530f-4c05-b570-d8624265713c",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 12:38:54 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2443",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "72528e3d-530f-4c05-b570-d8624265713c",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

@@ -1,0 +1,4 @@
+results/bf16/risk/warmup {"attempts": 8, "valid": 8, "correct": 8, "valid_rps": 0.17467286932444856, "p95_ms": 45046.95022199999}
+results/bf16/risk/quality-serial {"attempts": 240, "valid": 240, "correct": 233, "valid_rps": 9.37085070371193, "p95_ms": 105.99816399999895}
+results/bf16/sop/warmup {"attempts": 8, "valid": 8, "correct": 8, "valid_rps": 0.5256525854338258, "p95_ms": 13479.074303000005}
+results/bf16/sop/quality-serial {"attempts": 104, "valid": 104, "correct": 98, "valid_rps": 4.885970994465224, "p95_ms": 204.89814399999773}

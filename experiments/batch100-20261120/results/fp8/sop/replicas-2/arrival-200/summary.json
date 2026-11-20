@@ -1,0 +1,83 @@
+{
+  "attempts": 2000,
+  "valid": 405,
+  "failures": 1595,
+  "correct": 382,
+  "accuracy_all_attempts": 0.191,
+  "valid_within_500ms": 2,
+  "correct_within_500ms": 2,
+  "elapsed_seconds": 26.438816896999924,
+  "valid_rps": 15.318385901222241,
+  "p50_ms": 13687.30737099986,
+  "p95_ms": 17281.28635999974,
+  "p99_ms": 18178.013225000086,
+  "max_ms": 18557.24763199987,
+  "all_attempts_p95_ms": 16340.553464000095,
+  "mean_ms": 11436.79514926165,
+  "tokens_min": 5696,
+  "tokens_max": 5758,
+  "response_batch_histogram": {
+    "1": 3,
+    "13": 26,
+    "8": 40,
+    "10": 20,
+    "5": 25,
+    "9": 36,
+    "6": 36,
+    "16": 176,
+    "7": 28,
+    "12": 12,
+    "3": 3
+  },
+  "http_statuses": {
+    "200": 405,
+    "None": 1595
+  },
+  "max_client_send_lag_ms": 15.393814999697497,
+  "max_gpu_allocated_gib": 9.221278190612793,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "open",
+  "parameters": {
+    "qps": 200,
+    "seconds": 10,
+    "cap": 256
+  },
+  "after_ramp": {
+    "attempts": 1500,
+    "valid": 121,
+    "failures": 1379,
+    "correct": 112,
+    "accuracy_all_attempts": 0.07466666666666667,
+    "valid_within_500ms": 0,
+    "correct_within_500ms": 0,
+    "elapsed_seconds": 23.94098284699976,
+    "valid_rps": 5.054094928904036,
+    "p50_ms": 16423.014285000136,
+    "p95_ms": 17845.185609000055,
+    "p99_ms": 18232.19026100014,
+    "max_ms": 18557.24763199987,
+    "all_attempts_p95_ms": 16358.311992999916,
+    "mean_ms": 16501.409295685877,
+    "tokens_min": 5696,
+    "tokens_max": 5758,
+    "response_batch_histogram": {
+      "8": 9,
+      "9": 15,
+      "7": 21,
+      "12": 12,
+      "16": 32,
+      "6": 18,
+      "10": 10,
+      "3": 3,
+      "1": 1
+    },
+    "http_statuses": {
+      "None": 1379,
+      "200": 121
+    },
+    "max_client_send_lag_ms": 12.501947999680851,
+    "max_gpu_allocated_gib": 9.217761516571045,
+    "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval."
+  },
+  "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+}

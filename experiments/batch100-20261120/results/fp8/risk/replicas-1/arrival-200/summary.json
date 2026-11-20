@@ -1,0 +1,65 @@
+{
+  "attempts": 2000,
+  "valid": 474,
+  "failures": 1526,
+  "correct": 458,
+  "accuracy_all_attempts": 0.229,
+  "valid_within_500ms": 12,
+  "correct_within_500ms": 12,
+  "elapsed_seconds": 21.723293727000055,
+  "valid_rps": 21.81989554424068,
+  "p50_ms": 9664.529356999992,
+  "p95_ms": 11747.987670000157,
+  "p99_ms": 11749.162661000128,
+  "max_ms": 11750.284578999981,
+  "all_attempts_p95_ms": 11745.544860999871,
+  "mean_ms": 8192.424629217288,
+  "tokens_min": 2265,
+  "tokens_max": 2298,
+  "response_batch_histogram": {
+    "1": 474
+  },
+  "http_statuses": {
+    "200": 474,
+    "None": 1526
+  },
+  "max_client_send_lag_ms": 1.3315989999682643,
+  "max_gpu_allocated_gib": 7.049483299255371,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "open",
+  "parameters": {
+    "qps": 200,
+    "seconds": 10,
+    "cap": 256
+  },
+  "after_ramp": {
+    "attempts": 1500,
+    "valid": 164,
+    "failures": 1336,
+    "correct": 158,
+    "accuracy_all_attempts": 0.10533333333333333,
+    "valid_within_500ms": 0,
+    "correct_within_500ms": 0,
+    "elapsed_seconds": 19.22555869000007,
+    "valid_rps": 8.530311271802079,
+    "p50_ms": 11745.671812999944,
+    "p95_ms": 11748.319976999937,
+    "p99_ms": 11749.387883000054,
+    "max_ms": 11749.425119999842,
+    "all_attempts_p95_ms": 11745.871635999947,
+    "mean_ms": 11741.453346189017,
+    "tokens_min": 2265,
+    "tokens_max": 2298,
+    "response_batch_histogram": {
+      "1": 164
+    },
+    "http_statuses": {
+      "None": 1336,
+      "200": 164
+    },
+    "max_client_send_lag_ms": 1.3315989999682643,
+    "max_gpu_allocated_gib": 7.049483299255371,
+    "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval."
+  },
+  "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+}

@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-20T10:08:46.398270+00:00",
+  "response": {
+    "StartingInstances": [
+      {
+        "InstanceId": "i-0de4f061c2a04fe4b",
+        "CurrentState": {
+          "Code": 0,
+          "Name": "pending"
+        },
+        "PreviousState": {
+          "Code": 80,
+          "Name": "stopped"
+        }
+      }
+    ],
+    "ResponseMetadata": {
+      "RequestId": "2c109b20-e242-4be6-b01c-acffe840005c",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "2c109b20-e242-4be6-b01c-acffe840005c",
+        "cache-control": "no-cache, no-store",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "content-type": "text/xml;charset=UTF-8",
+        "content-length": "411",
+        "date": "Fri, 20 Nov 2026 10:08:46 GMT",
+        "server": "AmazonEC2"
+      },
+      "RetryAttempts": 0
+    }
+  }
+}

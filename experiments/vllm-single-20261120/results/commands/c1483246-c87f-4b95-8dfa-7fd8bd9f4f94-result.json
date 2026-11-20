@@ -1,0 +1,36 @@
+{
+  "CommandId": "c1483246-c87f-4b95-8dfa-7fd8bd9f4f94",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T12:38:54.838Z",
+  "ExecutionElapsedTime": "PT0.668S",
+  "ExecutionEndDateTime": "2026-11-20T12:38:54.838Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "active\n(EngineCore pid=4010) INFO 11-20 12:38:17 [qwen_gdn_linear_attn.py:379] Using FlashInfer GDN prefill kernel (requested=auto, head_k_dim=128).\n(EngineCore pid=4010) INFO 11-20 12:38:17 [cuda.py:549] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'TRITON_ATTN', 'FLEX_ATTENTION'].\n(EngineCore pid=4010) INFO 11-20 12:38:17 [flash_attn.py:1131] Using FlashAttention version 2\n(EngineCore pid=4010) INFO 11-20 12:38:17 [base_loader.py:164] Quantizing 128 layers of types: linear_attn.in_proj_qkvz: 24 (from linear: fp8_per_channel_static); linear_attn.out_proj: 24 (from linear: fp8_per_channel_static); mlp.down_proj: 32 (from linear: fp8_per_channel_static); mlp.gate_up_proj: 32 (from linear: fp8_per_channel_static); self_attn.o_proj: 8 (from linear: fp8_per_channel_static); self_attn.qkv_proj: 8 (from linear: fp8_per_channel_static)\n(EngineCore pid=4010) INFO 11-20 12:38:17 [base_loader.py:95] Initializing model took 0.834749 seconds\n(EngineCore pid=4010) INFO 11-20 12:38:17 [weight_utils.py:1154] Filesystem type for checkpoints: EXT4. Checkpoint size: 8.46 GiB. Available RAM: 119.29 GiB.\n(EngineCore pid=4010) INFO 11-20 12:38:17 [weight_utils.py:1177] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.\n\rLoading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]\n\rLoading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.61it/s]\n\rLoading safetensors checkpoint shards: 100% Completed | 2/2 [00:01<00:00,  1.86it/s]\n\rLoading safetensors checkpoint shards: 100% Completed | 2/2 [00:01<00:00,  1.82it/s]\n\n(EngineCore pid=4010) INFO 11-20 12:38:19 [weight_utils.py:1154] Filesystem type for checkpoints: EXT4. Checkpoint size: 0.00 GiB. Available RAM: 119.23 GiB.\n\rLoading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]\n\rLoading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 70.35it/s]\n\n(EngineCore pid=4010) INFO 11-20 12:38:19 [default_loader.py:543] Loading weights took 1.13 seconds\n(EngineCore pid=4010) INFO 11-20 12:38:19 [base_loader.py:177] Online quantization as part of model loading took 0.10 seconds\n(EngineCore pid=4010) INFO 11-20 12:38:19 [model_runner.py:441] Model loading took 5.68 GiB memory and 2.732933 seconds\n(EngineCore pid=4010) WARNING 11-20 12:38:19 [torch_utils.py:289] OMP_NUM_THREADS=4 is set; leaving Torch threads at 4 for serving. Multi-threaded torch CPU ops during serving can degrade performance through spin-wait contention and cgroup CPU-quota throttling.\n(EngineCore pid=4010) INFO 11-20 12:38:19 [interface.py:1120] Setting attention block size to 576 tokens to ensure that attention page size is >= mamba page size.\n(EngineCore pid=4010) INFO 11-20 12:38:19 [interface.py:1144] Padding mamba page size by 9.92% to ensure that mamba page size and attention page size are exactly equal.\n(EngineCore pid=4010) INFO 11-20 12:38:19 [utils.py:419] Using LBNHC KV cache layout.\n(EngineCore pid=4010) INFO 11-20 12:38:20 [caching.py:368] reconstructed serializable fn from standalone compile artifacts. num_artifacts=12 num_submods=33\n(EngineCore pid=4010) INFO 11-20 12:38:20 [decorators.py:326] [backbone] Directly load AOT compilation from path /root/.cache/vllm/torch_compile_cache/torch_aot_compile/e3257b6dfab26e207d94da30a35d5b8b15f432df3aa18a9dcc459cf769abf9cd/rank_0_0/model\n(EngineCore pid=4010) INFO 11-20 12:38:20 [monitor.py:62] [backbone] torch.compile took 0.42 s in total\n(EngineCore pid=4010) INFO 11-20 12:38:38 [monitor.py:91] [backbone] Initial profiling/warmup run took 17.99 s\n(EngineCore pid=4010) INFO 11-20 12:38:39 [gpu_worker.py:795] Available KV cache memory: 69.4 GiB\n(EngineCore pid=4010) INFO 11-20 12:38:39 [kernel_warmup.py:294] JIT kernel warmup starting.\n(EngineCore pid=4010) INFO 11-20 12:38:39 [kernel_warmup.py:304] JIT kernel warmup finished in 0.00s.\n(EngineCore pid=4010) INFO 11-20 12:38:39 [qwen_triton_warmup.py:405] Warming up Qwen GDN Triton kernels for model_type=qwen3_5_text.\n(EngineCore pid=4010) INFO 11-20 12:38:39 [kernel_warmup.py:578] Skipping FlashInfer autotuning for ops ('trtllm_batch_decode_mla',)\n(EngineCore pid=4010) INFO 11-20 12:38:39 [kernel_warmup.py:591] Using FlashInfer managed autotune cache (root=flashinfer default). Pass --disable-flashinfer-autotune to skip autotuning.\n2026-11-20 12:38:39,424 - INFO - autotuner.py:1121 - flashinfer.jit: [Autotuner]: Autotuning process starts ...\n2026-11-20 12:38:39,516 - INFO - autotune_cache.py:582 - flashinfer.jit: [Autotuner]: Managed autotune cache attached for this process: ManagedAutotuneCache(env_dir='/root/.cache/flashinfer/autotune/v2/5a6d87db01052e51', hits=0, misses=0)\n(EngineCore pid=4010) INFO 11-20 12:38:39 [kernel_warmup.py:476] Running FlashInfer autotune with 8192 tokens and token buckets (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 768, 1024, 1280, 1536, 1792, 2048, 2560, 3072, 3584, 4096, 8192).\n2026-11-20 12:38:53,732 - INFO - autotuner.py:1146 - flashinfer.jit: [Autotuner]: Autotuning process ends\n\rCapturing CUDA graphs (PIECEWISE):   0%|          | 0/2 [00:00<?, ?it/s]\rCapturing CUDA graphs (PIECEWISE):  50%|\u2588\u2588\u2588\u2588\u2588     | 1/2 [00:00<00:00,  5.80it/s]\rCapturing CUDA graphs (PIECEWISE): 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 2/2 [00:00<00:00,  7.87it/s]\n7809 MiB, 0 %\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/development-03/server.log to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/development-03/server.log\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "b2afaf67-6771-426f-947b-9b44dcaf9541",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 12:39:09 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "6249",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "b2afaf67-6771-426f-947b-9b44dcaf9541",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

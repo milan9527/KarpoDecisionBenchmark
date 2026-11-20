@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-20T14:31:20.843663+00:00",
+  "user_instruction": "\u75284\u4e2artx",
+  "gpu_model": "RTX PRO 6000 Blackwell Server Edition 96GB",
+  "additional_gpus": 1,
+  "retained_instances": [
+    "i-0de4f061c2a04fe4b",
+    "i-05b24e3b4a7ee864d",
+    "i-091371593b3c4a5ff"
+  ],
+  "operating_compute_cap_usd": 20,
+  "cap_basis": "Prior assistant operating ceiling; no increase requested or inferred.",
+  "ec2_shutdown": false,
+  "spot_unavailable_reason": "G Spot quota 64 vCPU is fully used; pending increase not approved."
+}

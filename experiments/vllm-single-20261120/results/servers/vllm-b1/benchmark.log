@@ -1,0 +1,8 @@
+results/measurements/vllm-b1/risk/warmup {"attempts": 8, "valid": 8, "correct": 8, "valid_rps": 22.376326491019906, "p95_ms": 50.55799499996283}
+results/measurements/vllm-b1/risk/quality {"attempts": 240, "valid": 240, "correct": 233, "valid_rps": 27.26769499792549, "p95_ms": 3658.1896829998186}
+results/measurements/vllm-b1/risk/serial {"attempts": 60, "valid": 60, "correct": 58, "valid_rps": 22.65901327374949, "p95_ms": 44.51579800002037}
+results/measurements/vllm-b1/risk/sustained-100 {"attempts": 1738, "valid": 1738, "correct": 1680, "valid_rps": 27.30483198096049, "p95_ms": 3662.642085000016}
+results/measurements/vllm-b1/sop/warmup {"attempts": 8, "valid": 8, "correct": 8, "valid_rps": 8.790511288287867, "p95_ms": 115.31658099988817}
+results/measurements/vllm-b1/sop/quality {"attempts": 104, "valid": 104, "correct": 98, "valid_rps": 9.86314780750785, "p95_ms": 9990.201074999959}
+results/measurements/vllm-b1/sop/serial {"attempts": 60, "valid": 60, "correct": 57, "valid_rps": 8.968817507672753, "p95_ms": 111.88106200006587}
+results/measurements/vllm-b1/sop/sustained-100 {"attempts": 699, "valid": 699, "correct": 660, "valid_rps": 9.992680660910391, "p95_ms": 10003.704404000018}

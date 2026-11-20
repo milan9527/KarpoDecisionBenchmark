@@ -1,0 +1,36 @@
+{
+  "CommandId": "8105b835-119d-440f-9bb2-a30249d31d10",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 5,
+  "ExecutionStartDateTime": "2026-11-20T13:53:40.240Z",
+  "ExecutionElapsedTime": "PT0.006S",
+  "ExecutionEndDateTime": "2026-11-20T13:53:40.240Z",
+  "Status": "Failed",
+  "StatusDetails": "Failed",
+  "StandardOutputContent": "",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Failed to stop karpo-rps-dual-node-v1.service: Unit karpo-rps-dual-node-v1.service not loaded.\nfailed to run commands: exit status 5",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "2a4e8e0f-90ff-4ac5-9b60-72996a440c3e",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:54:09 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "713",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "2a4e8e0f-90ff-4ac5-9b60-72996a440c3e",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

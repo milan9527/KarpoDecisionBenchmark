@@ -1,0 +1,15 @@
+Processing ./opt/karpo/serving/vllm_karpo
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: karpo-vllm-benchmark-adapter
+  Building wheel for karpo-vllm-benchmark-adapter (pyproject.toml): started
+  Building wheel for karpo-vllm-benchmark-adapter (pyproject.toml): finished with status 'done'
+  Created wheel for karpo-vllm-benchmark-adapter: filename=karpo_vllm_benchmark_adapter-0.1.0-py3-none-any.whl size=4395 sha256=d27eb708090f09f6d467f5de987b6e96d24364edf834c9fa8a9951ac31643e89
+  Stored in directory: /tmp/pip-ephem-wheel-cache-a3d18al5/wheels/06/c6/20/5df885099dc888500ee636664f60c7372ac03976fac2fd9d8d
+Successfully built karpo-vllm-benchmark-adapter
+Installing collected packages: karpo-vllm-benchmark-adapter
+Successfully installed karpo-vllm-benchmark-adapter-0.1.0

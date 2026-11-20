@@ -1,0 +1,36 @@
+{
+  "CommandId": "5b9b415e-7411-42a0-bcec-ea86491a1dcd",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T12:34:06.510Z",
+  "ExecutionElapsedTime": "PT8.674S",
+  "ExecutionEndDateTime": "2026-11-20T12:34:14.510Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "download: s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-single-development-02.tar.gz to ../../../../tmp/karpo-vllm-development-02.tar.gz\n/tmp/karpo-vllm-development-02.tar.gz: OK\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/setup/install-exit-code.txt to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/setup/install-exit-code.txt\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/setup/disk-after.txt to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/setup/disk-after.txt\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/setup/pip-check.txt to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/setup/pip-check.txt\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/setup/native-freeze.txt to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/setup/native-freeze.txt\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/setup/vllm-freeze.txt to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/setup/vllm-freeze.txt\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/setup/install.log to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/setup/install.log\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/encoding/native.json to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/encoding/native.json\nupload: ../../../../opt/karpo/experiments/vllm-single-20261120/results/encoding/vllm.json to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-single-20261120/encoding/vllm.json\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-vllm-development-01.service; invocation ID: d7d5e9547cf0457ea083a2b7413c7f2a\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "202db897-6b6d-4ae0-9242-318c8a04729c",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 12:34:19 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2458",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "202db897-6b6d-4ae0-9242-318c8a04729c",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

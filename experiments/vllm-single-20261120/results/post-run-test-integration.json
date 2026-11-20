@@ -1,0 +1,8 @@
+{
+  "file": "tests/test_vllm_karpo.py",
+  "change": "Skip optional vLLM-dependent tests when the isolated adapter environment is unavailable; GPU assertions unchanged.",
+  "executed_source": "frozen/tests/test_vllm_karpo.py",
+  "executed_sha256": "7fe1b13b514099409bb21b39e8afb512138e546297726b99a11f8515470d1424",
+  "workspace_sha256": "4123e841203e34247c469e4dd4dfe78ba425452028172208a744971f478a6cb5",
+  "cpu_test_returncode": 0
+}

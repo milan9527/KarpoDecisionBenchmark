@@ -1,0 +1,690 @@
+{
+  "risk": {
+    "selected": {
+      "batch": 8,
+      "quality": {
+        "attempts": 240,
+        "valid": 240,
+        "failures": 0,
+        "correct": 233,
+        "accuracy_all_attempts": 0.9708333333333333,
+        "valid_within_500ms": 9,
+        "elapsed_seconds": 8.392799626999931,
+        "valid_rps": 28.59594064749402,
+        "p50_ms": 3330.468441999983,
+        "p95_ms": 3607.6221749999604,
+        "p99_ms": 3646.32452800015,
+        "mean_ms": 2811.290177716651,
+        "tokens_min": 2263,
+        "tokens_max": 2297,
+        "http_statuses": {
+          "200": 240
+        },
+        "max_client_send_lag_ms": 0,
+        "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+        "mode": "closed",
+        "parameters": {
+          "concurrency": 100,
+          "count": 240
+        }
+      },
+      "performance": {
+        "attempts": 1805,
+        "valid": 1805,
+        "failures": 0,
+        "correct": 1745,
+        "accuracy_all_attempts": 0.9667590027700831,
+        "valid_within_500ms": 9,
+        "elapsed_seconds": 63.381131420999964,
+        "valid_rps": 28.478507081398558,
+        "p50_ms": 3383.2319549999283,
+        "p95_ms": 3657.6638700000785,
+        "p99_ms": 3660.3231020001203,
+        "mean_ms": 3418.8680010592757,
+        "tokens_min": 2265,
+        "tokens_max": 2298,
+        "http_statuses": {
+          "200": 1805
+        },
+        "max_client_send_lag_ms": 0,
+        "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+        "inflight": {
+          "peak": 100,
+          "mean_10_to_60s": 99.99892856089977
+        },
+        "mode": "closed",
+        "parameters": {
+          "concurrency": 100,
+          "seconds": 60
+        },
+        "after_ramp": {
+          "attempts": 1424,
+          "valid": 1424,
+          "failures": 0,
+          "correct": 1376,
+          "accuracy_all_attempts": 0.9662921348314607,
+          "valid_within_500ms": 0,
+          "elapsed_seconds": 53.386856610999985,
+          "valid_rps": 26.673231772679323,
+          "p50_ms": 3387.952536000057,
+          "p95_ms": 3658.1935199999407,
+          "p99_ms": 3660.3231020001203,
+          "mean_ms": 3509.202131205756,
+          "tokens_min": 2265,
+          "tokens_max": 2298,
+          "http_statuses": {
+            "200": 1424
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "inflight": {
+            "peak": 100,
+            "mean_10_to_60s": 96.42416463623958
+          }
+        },
+        "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+      }
+    },
+    "all_configs": [
+      {
+        "batch": 1,
+        "quality": {
+          "attempts": 240,
+          "valid": 240,
+          "failures": 0,
+          "correct": 233,
+          "accuracy_all_attempts": 0.9708333333333333,
+          "valid_within_500ms": 12,
+          "elapsed_seconds": 8.801624046999905,
+          "valid_rps": 27.26769499792549,
+          "p50_ms": 3650.5756149999797,
+          "p95_ms": 3658.1896829998186,
+          "p99_ms": 3658.532183999796,
+          "mean_ms": 2910.325605920839,
+          "tokens_min": 2263,
+          "tokens_max": 2297,
+          "http_statuses": {
+            "200": 240
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "count": 240
+          }
+        },
+        "performance": {
+          "attempts": 1738,
+          "valid": 1738,
+          "failures": 0,
+          "correct": 1680,
+          "accuracy_all_attempts": 0.9666283084004603,
+          "valid_within_500ms": 11,
+          "elapsed_seconds": 63.651737582999885,
+          "valid_rps": 27.30483198096049,
+          "p50_ms": 3657.4148830000013,
+          "p95_ms": 3662.642085000016,
+          "p99_ms": 3664.081894999981,
+          "mean_ms": 3555.882973750288,
+          "tokens_min": 2265,
+          "tokens_max": 2298,
+          "http_statuses": {
+            "200": 1738
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "inflight": {
+            "peak": 100,
+            "mean_10_to_60s": 99.99887487296007
+          },
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "seconds": 60
+          },
+          "after_ramp": {
+            "attempts": 1367,
+            "valid": 1367,
+            "failures": 0,
+            "correct": 1321,
+            "accuracy_all_attempts": 0.9663496708119971,
+            "valid_within_500ms": 0,
+            "elapsed_seconds": 53.656746685999906,
+            "valid_rps": 25.47675892464567,
+            "p50_ms": 3657.722860999911,
+            "p95_ms": 3663.0457139999635,
+            "p99_ms": 3664.029186000107,
+            "mean_ms": 3657.8538012187273,
+            "tokens_min": 2265,
+            "tokens_max": 2298,
+            "http_statuses": {
+              "200": 1367
+            },
+            "max_client_send_lag_ms": 0,
+            "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+            "inflight": {
+              "peak": 100,
+              "mean_10_to_60s": 96.32203451196023
+            }
+          },
+          "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+        }
+      },
+      {
+        "batch": 4,
+        "quality": {
+          "attempts": 240,
+          "valid": 240,
+          "failures": 0,
+          "correct": 234,
+          "accuracy_all_attempts": 0.975,
+          "valid_within_500ms": 13,
+          "elapsed_seconds": 8.289133183999866,
+          "valid_rps": 28.95357025548353,
+          "p50_ms": 3421.6295349999655,
+          "p95_ms": 3433.0199119999634,
+          "p99_ms": 3464.969138000015,
+          "mean_ms": 2749.1539388041665,
+          "tokens_min": 2263,
+          "tokens_max": 2297,
+          "http_statuses": {
+            "200": 240
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "count": 240
+          }
+        },
+        "performance": {
+          "attempts": 1825,
+          "valid": 1825,
+          "failures": 0,
+          "correct": 1765,
+          "accuracy_all_attempts": 0.9671232876712329,
+          "valid_within_500ms": 9,
+          "elapsed_seconds": 63.42902174699998,
+          "valid_rps": 28.77231825014419,
+          "p50_ms": 3470.058201000029,
+          "p95_ms": 3488.2438399999955,
+          "p99_ms": 3495.0449500001923,
+          "mean_ms": 3380.9837862931554,
+          "tokens_min": 2265,
+          "tokens_max": 2298,
+          "http_statuses": {
+            "200": 1825
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "inflight": {
+            "peak": 100,
+            "mean_10_to_60s": 99.9988358250203
+          },
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "seconds": 60
+          },
+          "after_ramp": {
+            "attempts": 1440,
+            "valid": 1440,
+            "failures": 0,
+            "correct": 1392,
+            "accuracy_all_attempts": 0.9666666666666667,
+            "valid_within_500ms": 0,
+            "elapsed_seconds": 53.435068336000086,
+            "valid_rps": 26.94859471209562,
+            "p50_ms": 3472.4740520000523,
+            "p95_ms": 3488.429515000007,
+            "p99_ms": 3494.682993999959,
+            "mean_ms": 3473.604085058338,
+            "tokens_min": 2265,
+            "tokens_max": 2298,
+            "http_statuses": {
+              "200": 1440
+            },
+            "max_client_send_lag_ms": 0,
+            "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+            "inflight": {
+              "peak": 100,
+              "mean_10_to_60s": 96.54191555816026
+            }
+          },
+          "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+        }
+      },
+      {
+        "batch": 8,
+        "quality": {
+          "attempts": 240,
+          "valid": 240,
+          "failures": 0,
+          "correct": 233,
+          "accuracy_all_attempts": 0.9708333333333333,
+          "valid_within_500ms": 9,
+          "elapsed_seconds": 8.392799626999931,
+          "valid_rps": 28.59594064749402,
+          "p50_ms": 3330.468441999983,
+          "p95_ms": 3607.6221749999604,
+          "p99_ms": 3646.32452800015,
+          "mean_ms": 2811.290177716651,
+          "tokens_min": 2263,
+          "tokens_max": 2297,
+          "http_statuses": {
+            "200": 240
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "count": 240
+          }
+        },
+        "performance": {
+          "attempts": 1805,
+          "valid": 1805,
+          "failures": 0,
+          "correct": 1745,
+          "accuracy_all_attempts": 0.9667590027700831,
+          "valid_within_500ms": 9,
+          "elapsed_seconds": 63.381131420999964,
+          "valid_rps": 28.478507081398558,
+          "p50_ms": 3383.2319549999283,
+          "p95_ms": 3657.6638700000785,
+          "p99_ms": 3660.3231020001203,
+          "mean_ms": 3418.8680010592757,
+          "tokens_min": 2265,
+          "tokens_max": 2298,
+          "http_statuses": {
+            "200": 1805
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "inflight": {
+            "peak": 100,
+            "mean_10_to_60s": 99.99892856089977
+          },
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "seconds": 60
+          },
+          "after_ramp": {
+            "attempts": 1424,
+            "valid": 1424,
+            "failures": 0,
+            "correct": 1376,
+            "accuracy_all_attempts": 0.9662921348314607,
+            "valid_within_500ms": 0,
+            "elapsed_seconds": 53.386856610999985,
+            "valid_rps": 26.673231772679323,
+            "p50_ms": 3387.952536000057,
+            "p95_ms": 3658.1935199999407,
+            "p99_ms": 3660.3231020001203,
+            "mean_ms": 3509.202131205756,
+            "tokens_min": 2265,
+            "tokens_max": 2298,
+            "http_statuses": {
+              "200": 1424
+            },
+            "max_client_send_lag_ms": 0,
+            "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+            "inflight": {
+              "peak": 100,
+              "mean_10_to_60s": 96.42416463623958
+            }
+          },
+          "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+        }
+      }
+    ]
+  },
+  "sop": {
+    "selected": {
+      "batch": 8,
+      "quality": {
+        "attempts": 104,
+        "valid": 104,
+        "failures": 0,
+        "correct": 98,
+        "accuracy_all_attempts": 0.9423076923076923,
+        "valid_within_500ms": 1,
+        "elapsed_seconds": 10.234425355999974,
+        "valid_rps": 10.161782062246374,
+        "p50_ms": 5523.5505650000505,
+        "p95_ms": 9402.73541900001,
+        "p99_ms": 10126.376287000085,
+        "mean_ms": 5441.279251663456,
+        "tokens_min": 5696,
+        "tokens_max": 5758,
+        "http_statuses": {
+          "200": 104
+        },
+        "max_client_send_lag_ms": 0,
+        "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+        "mode": "closed",
+        "parameters": {
+          "concurrency": 100,
+          "count": 104
+        }
+      },
+      "performance": {
+        "attempts": 717,
+        "valid": 717,
+        "failures": 0,
+        "correct": 678,
+        "accuracy_all_attempts": 0.9456066945606695,
+        "valid_within_500ms": 1,
+        "elapsed_seconds": 68.98946513700002,
+        "valid_rps": 10.392891125857748,
+        "p50_ms": 9239.761957000155,
+        "p95_ms": 10000.291043000061,
+        "p99_ms": 10004.798042999937,
+        "mean_ms": 9000.961032631803,
+        "tokens_min": 5696,
+        "tokens_max": 5758,
+        "http_statuses": {
+          "200": 717
+        },
+        "max_client_send_lag_ms": 0,
+        "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+        "inflight": {
+          "peak": 100,
+          "mean_10_to_60s": 99.99843918724008
+        },
+        "mode": "closed",
+        "parameters": {
+          "concurrency": 100,
+          "seconds": 60
+        },
+        "after_ramp": {
+          "attempts": 520,
+          "valid": 520,
+          "failures": 0,
+          "correct": 490,
+          "accuracy_all_attempts": 0.9423076923076923,
+          "valid_within_500ms": 0,
+          "elapsed_seconds": 58.992188598999974,
+          "valid_rps": 8.814726362073214,
+          "p50_ms": 9243.960398999889,
+          "p95_ms": 10000.868084000103,
+          "p99_ms": 10004.558507999946,
+          "mean_ms": 9612.85393719616,
+          "tokens_min": 5696,
+          "tokens_max": 5758,
+          "http_statuses": {
+            "200": 520
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "inflight": {
+            "peak": 100,
+            "mean_10_to_60s": 90.86542942910005
+          }
+        },
+        "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+      }
+    },
+    "all_configs": [
+      {
+        "batch": 1,
+        "quality": {
+          "attempts": 104,
+          "valid": 104,
+          "failures": 0,
+          "correct": 98,
+          "accuracy_all_attempts": 0.9423076923076923,
+          "valid_within_500ms": 3,
+          "elapsed_seconds": 10.544301072000053,
+          "valid_rps": 9.86314780750785,
+          "p50_ms": 5209.844342999986,
+          "p95_ms": 9990.201074999959,
+          "p99_ms": 10227.594196999917,
+          "mean_ms": 5311.587342509606,
+          "tokens_min": 5696,
+          "tokens_max": 5758,
+          "http_statuses": {
+            "200": 104
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "count": 104
+          }
+        },
+        "performance": {
+          "attempts": 699,
+          "valid": 699,
+          "failures": 0,
+          "correct": 660,
+          "accuracy_all_attempts": 0.944206008583691,
+          "valid_within_500ms": 4,
+          "elapsed_seconds": 69.95119965499998,
+          "valid_rps": 9.992680660910391,
+          "p50_ms": 10000.453071000038,
+          "p95_ms": 10003.704404000018,
+          "p99_ms": 10005.000418999998,
+          "mean_ms": 9296.726043227467,
+          "tokens_min": 5696,
+          "tokens_max": 5758,
+          "http_statuses": {
+            "200": 699
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "inflight": {
+            "peak": 100,
+            "mean_10_to_60s": 99.99854188397998
+          },
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "seconds": 60
+          },
+          "after_ramp": {
+            "attempts": 500,
+            "valid": 500,
+            "failures": 0,
+            "correct": 470,
+            "accuracy_all_attempts": 0.94,
+            "valid_within_500ms": 0,
+            "elapsed_seconds": 59.95414410700005,
+            "valid_rps": 8.33970707859078,
+            "p50_ms": 10000.464759000124,
+            "p95_ms": 10003.31491199995,
+            "p99_ms": 10003.673703000004,
+            "mean_ms": 10000.520957051995,
+            "tokens_min": 5696,
+            "tokens_max": 5758,
+            "http_statuses": {
+              "200": 500
+            },
+            "max_client_send_lag_ms": 0,
+            "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+            "inflight": {
+              "peak": 100,
+              "mean_10_to_60s": 90.00478832617975
+            }
+          },
+          "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+        }
+      },
+      {
+        "batch": 4,
+        "quality": {
+          "attempts": 104,
+          "valid": 104,
+          "failures": 0,
+          "correct": 98,
+          "accuracy_all_attempts": 0.9423076923076923,
+          "valid_within_500ms": 1,
+          "elapsed_seconds": 10.259693969999944,
+          "valid_rps": 10.136754595614958,
+          "p50_ms": 5186.49711199987,
+          "p95_ms": 9810.680069,
+          "p99_ms": 10135.557685000094,
+          "mean_ms": 5272.892627182697,
+          "tokens_min": 5696,
+          "tokens_max": 5758,
+          "http_statuses": {
+            "200": 104
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "count": 104
+          }
+        },
+        "performance": {
+          "attempts": 721,
+          "valid": 721,
+          "failures": 0,
+          "correct": 682,
+          "accuracy_all_attempts": 0.9459084604715673,
+          "valid_within_500ms": 1,
+          "elapsed_seconds": 69.62207731600006,
+          "valid_rps": 10.35591047833192,
+          "p50_ms": 9648.4761050001,
+          "p95_ms": 9659.401275999926,
+          "p99_ms": 9660.500887000126,
+          "mean_ms": 9010.67733544799,
+          "tokens_min": 5696,
+          "tokens_max": 5758,
+          "http_statuses": {
+            "200": 721
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "inflight": {
+            "peak": 100,
+            "mean_10_to_60s": 99.99846290795999
+          },
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "seconds": 60
+          },
+          "after_ramp": {
+            "attempts": 520,
+            "valid": 520,
+            "failures": 0,
+            "correct": 490,
+            "accuracy_all_attempts": 0.9423076923076923,
+            "valid_within_500ms": 0,
+            "elapsed_seconds": 59.62508075000005,
+            "valid_rps": 8.721162193143018,
+            "p50_ms": 9650.980249999975,
+            "p95_ms": 9659.495989999868,
+            "p99_ms": 9660.408685999982,
+            "mean_ms": 9651.765155486539,
+            "tokens_min": 5696,
+            "tokens_max": 5758,
+            "http_statuses": {
+              "200": 520
+            },
+            "max_client_send_lag_ms": 0,
+            "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+            "inflight": {
+              "peak": 100,
+              "mean_10_to_60s": 90.41016629104011
+            }
+          },
+          "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+        }
+      },
+      {
+        "batch": 8,
+        "quality": {
+          "attempts": 104,
+          "valid": 104,
+          "failures": 0,
+          "correct": 98,
+          "accuracy_all_attempts": 0.9423076923076923,
+          "valid_within_500ms": 1,
+          "elapsed_seconds": 10.234425355999974,
+          "valid_rps": 10.161782062246374,
+          "p50_ms": 5523.5505650000505,
+          "p95_ms": 9402.73541900001,
+          "p99_ms": 10126.376287000085,
+          "mean_ms": 5441.279251663456,
+          "tokens_min": 5696,
+          "tokens_max": 5758,
+          "http_statuses": {
+            "200": 104
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "count": 104
+          }
+        },
+        "performance": {
+          "attempts": 717,
+          "valid": 717,
+          "failures": 0,
+          "correct": 678,
+          "accuracy_all_attempts": 0.9456066945606695,
+          "valid_within_500ms": 1,
+          "elapsed_seconds": 68.98946513700002,
+          "valid_rps": 10.392891125857748,
+          "p50_ms": 9239.761957000155,
+          "p95_ms": 10000.291043000061,
+          "p99_ms": 10004.798042999937,
+          "mean_ms": 9000.961032631803,
+          "tokens_min": 5696,
+          "tokens_max": 5758,
+          "http_statuses": {
+            "200": 717
+          },
+          "max_client_send_lag_ms": 0,
+          "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+          "inflight": {
+            "peak": 100,
+            "mean_10_to_60s": 99.99843918724008
+          },
+          "mode": "closed",
+          "parameters": {
+            "concurrency": 100,
+            "seconds": 60
+          },
+          "after_ramp": {
+            "attempts": 520,
+            "valid": 520,
+            "failures": 0,
+            "correct": 490,
+            "accuracy_all_attempts": 0.9423076923076923,
+            "valid_within_500ms": 0,
+            "elapsed_seconds": 58.992188598999974,
+            "valid_rps": 8.814726362073214,
+            "p50_ms": 9243.960398999889,
+            "p95_ms": 10000.868084000103,
+            "p99_ms": 10004.558507999946,
+            "mean_ms": 9612.85393719616,
+            "tokens_min": 5696,
+            "tokens_max": 5758,
+            "http_statuses": {
+              "200": 520
+            },
+            "max_client_send_lag_ms": 0,
+            "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+            "inflight": {
+              "peak": 100,
+              "mean_10_to_60s": 90.86542942910005
+            }
+          },
+          "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+        }
+      }
+    ]
+  }
+}

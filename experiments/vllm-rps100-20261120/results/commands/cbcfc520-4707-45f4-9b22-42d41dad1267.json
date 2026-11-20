@@ -1,0 +1,8 @@
+{
+  "id": "cbcfc520-4707-45f4-9b22-42d41dad1267",
+  "host": "single",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-0de4f061c2a04fe4b",
+  "script": "set -u\nsystemctl show karpo-rps-bootstrap-fleet1 karpo-rps-rtx4-tunnel-v1 --property=Id,ActiveState,SubState,Result\ncurl --max-time 10 -sS https://checkip.amazonaws.com\npython3 - <<'CHECK'\nfrom pathlib import Path\nbase=Path('/opt/karpo/experiments/vllm-rps100-20261120/results/setup')\nfor name in ('fleet1-control.log','rtx4-tunnel.log'):\n p=base/name\n if p.exists():print(name,'\\n'.join(p.read_text(errors='replace').splitlines()[-10:]))\nCHECK\n",
+  "utc": "2026-11-20T14:47:30.478533+00:00"
+}

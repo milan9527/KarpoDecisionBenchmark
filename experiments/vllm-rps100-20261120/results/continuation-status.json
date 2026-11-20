@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-20T14:59:22.768723+00:00",
+  "status": "four_rtx_test_complete",
+  "user_choice": "four identical RTX PRO 6000 Blackwell Server Edition 96GB GPUs",
+  "confirmed_scenarios": [
+    "risk"
+  ],
+  "unconfirmed_scenarios": [
+    "sop"
+  ],
+  "ec2_policy": "keep_running",
+  "additional_gpu_expansion": false,
+  "superseded_proposal": "5 H100 plus 3 RTX is cancelled; no 30 USD/hour approval inferred",
+  "current_result": "RTX4.zh.md",
+  "current_infrastructure": "results/infrastructure-current.json"
+}

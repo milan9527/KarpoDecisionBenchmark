@@ -1,0 +1,112 @@
+{
+  "target_rps": 100.0,
+  "offered_seconds": 20.0,
+  "scheduled_requests": 2000,
+  "attempts": 2000,
+  "valid": 549,
+  "failures": 1451,
+  "http_statuses": {
+    "200": 549,
+    "429": 1451
+  },
+  "replica_counts": {
+    "0": 549
+  },
+  "correct": 526,
+  "elapsed_with_drain_s": 22.56507858300006,
+  "valid_rps_with_drain": 24.329629430743587,
+  "steady_valid_rps": 24.266666666666666,
+  "p50_ms": 2608.5123270001986,
+  "p95_ms": 2629.997052000135,
+  "p99_ms": 2634.048385000142,
+  "http_p50_ms": 2607.256638999843,
+  "last_quarter_p50_ms": 2615.7020699999975,
+  "max_send_lag_ms": 6.423871000151848,
+  "valid_within_500ms": 13,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 64
+    },
+    {
+      "second": 2,
+      "pending": 64
+    },
+    {
+      "second": 3,
+      "pending": 64
+    },
+    {
+      "second": 4,
+      "pending": 60
+    },
+    {
+      "second": 5,
+      "pending": 62
+    },
+    {
+      "second": 6,
+      "pending": 63
+    },
+    {
+      "second": 7,
+      "pending": 64
+    },
+    {
+      "second": 8,
+      "pending": 64
+    },
+    {
+      "second": 9,
+      "pending": 64
+    },
+    {
+      "second": 10,
+      "pending": 64
+    },
+    {
+      "second": 11,
+      "pending": 64
+    },
+    {
+      "second": 12,
+      "pending": 64
+    },
+    {
+      "second": 13,
+      "pending": 64
+    },
+    {
+      "second": 14,
+      "pending": 64
+    },
+    {
+      "second": 15,
+      "pending": 60
+    },
+    {
+      "second": 16,
+      "pending": 62
+    },
+    {
+      "second": 17,
+      "pending": 63
+    },
+    {
+      "second": 18,
+      "pending": 64
+    },
+    {
+      "second": 19,
+      "pending": 64
+    },
+    {
+      "second": 20,
+      "pending": 64
+    }
+  ],
+  "backlog_slope_per_second": 0.0,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": false,
+  "passes_performance_acceptance": false
+}

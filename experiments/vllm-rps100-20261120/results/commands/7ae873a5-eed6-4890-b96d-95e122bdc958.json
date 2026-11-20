@@ -1,0 +1,8 @@
+{
+  "id": "7ae873a5-eed6-4890-b96d-95e122bdc958",
+  "host": "single",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-0de4f061c2a04fe4b",
+  "script": "set -Eeuo pipefail\n/opt/karpo/venv-vllm034/bin/python - <<'CHECK'\nimport httpx,json\nfor i,url in enumerate(['http://127.0.0.1:18500','http://172.31.40.12:18500','http://172.31.40.12:18501']):\n r=httpx.get(url+'/healthz',timeout=10,trust_env=False);r.raise_for_status();h=r.json()\n assert h['replica_id']==i\n assert h['settings']['quantization']=='fp8_per_channel'\n print(json.dumps({'url':url,'health':h}))\nCHECK\ntest ! -e /run/systemd/shutdown/scheduled\nnvidia-smi --query-gpu=index,name,memory.total,driver_version --format=csv\n",
+  "utc": "2026-11-20T14:31:39.006817+00:00"
+}

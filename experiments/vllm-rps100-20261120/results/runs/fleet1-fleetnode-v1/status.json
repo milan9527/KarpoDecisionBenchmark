@@ -1,0 +1,7 @@
+{
+  "status": "running",
+  "ec2_policy": "keep_running",
+  "stages": [],
+  "started_utc": "2026-11-20T14:49:47.393412+00:00",
+  "ready": true
+}

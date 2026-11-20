@@ -1,0 +1,8 @@
+{
+  "id": "544086a6-2b12-4f83-9662-e83318c203ac",
+  "host": "dual",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target_instance": "i-05b24e3b4a7ee864d",
+  "script": "set -Eeuo pipefail\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport datetime as dt,json,subprocess\nfrom pathlib import Path\nresult={\n 'utc':dt.datetime.now(dt.timezone.utc).isoformat(),\n 'hostname':subprocess.check_output(['hostname'],text=True).strip(),\n 'scheduled_shutdown_present':Path('/run/systemd/shutdown/scheduled').exists(),\n 'timers':subprocess.check_output(['systemctl','list-timers','--all','--no-pager'],text=True),\n 'karpo_units':subprocess.check_output(['systemctl','list-units','--all','--no-pager','karpo*'],text=True),\n 'gpu':subprocess.check_output(['nvidia-smi','--query-gpu=index,name,memory.used,utilization.gpu','--format=csv'],text=True),\n}\nassert not result['scheduled_shutdown_present']\nprint(json.dumps(result))\nPY\n",
+  "utc": "2026-11-20T14:09:41.490793+00:00"
+}

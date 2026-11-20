@@ -1,0 +1,1393 @@
+{
+  "settings": {
+    "model": "/opt/karpo/models/karpo-4b",
+    "runner": "pooling",
+    "convert": "none",
+    "dtype": "bfloat16",
+    "quantization": "mxfp4_hadamard32",
+    "quantization_config": {
+      "ignore": [
+        "*.in_proj_ba",
+        "*.in_proj_a",
+        "*.in_proj_b",
+        "visual.*",
+        "*.visual.*",
+        "score"
+      ]
+    },
+    "hf_overrides": {
+      "architectures": [
+        "KarpoForSequenceClassification"
+      ]
+    },
+    "skip_tokenizer_init": true,
+    "language_model_only": true,
+    "max_model_len": 8192,
+    "max_num_batched_tokens": 8192,
+    "max_num_seqs": 1,
+    "enable_prefix_caching": false,
+    "enable_chunked_prefill": false,
+    "gpu_memory_utilization": 0.8,
+    "disable_log_stats": false,
+    "enable_log_requests": false,
+    "tensor_parallel_size": 1,
+    "worker_extension_cls": "vllm_rps_humming_worker.HummingInspectionWorker",
+    "seed": 0,
+    "kernel_config": {
+      "linear_backend": "humming"
+    },
+    "compilation_config": {
+      "prefill_cudagraph_capture_token_sizes": [
+        2304,
+        5888
+      ]
+    }
+  },
+  "vllm": "0.34.0",
+  "torch": "2.14.0+cu130",
+  "full_attention_is_causal": false,
+  "head_dtype": "torch.float32",
+  "compilation": {
+    "mode": 3,
+    "debug_dump_path": null,
+    "cache_dir": "",
+    "compile_cache_save_format": "binary",
+    "backend": "inductor",
+    "custom_ops": [
+      "none"
+    ],
+    "ir_enable_torch_wrap": true,
+    "splitting_ops": [
+      "vllm::unified_attention_with_output",
+      "vllm::unified_mla_attention_with_output",
+      "vllm::mamba_mixer2",
+      "vllm::mamba_mixer",
+      "vllm::short_conv",
+      "vllm::zaya_cca",
+      "vllm::qwen4_exp_ple_short_conv",
+      "vllm::qwen4_exp_qsa_with_output",
+      "vllm::qwen4_exp_qsa_prepare_with_output",
+      "vllm::linear_attention",
+      "vllm::qwen_gdn_attention_core",
+      "vllm::qwen_gdn_attention_core_fused_norm_packed",
+      "vllm::gdn_attention_core_xpu",
+      "vllm::olmo_hybrid_gdn_full_forward",
+      "vllm::sparse_attn_indexer",
+      "vllm::rocm_aiter_sparse_attn_indexer",
+      "vllm::deepseek_v4_attention",
+      "vllm::hpc_rope_norm_forward",
+      "vllm::step5_csa_attention",
+      "vllm::unified_kv_cache_update",
+      "vllm::unified_mla_kv_cache_update"
+    ],
+    "compile_mm_encoder": false,
+    "cudagraph_mm_encoder": false,
+    "encoder_cudagraph_token_budgets": [],
+    "encoder_cudagraph_max_token_budget": 5120,
+    "encoder_cudagraph_max_vision_items_per_batch": 0,
+    "encoder_cudagraph_max_frames_per_batch": null,
+    "cudagraph_decoder_replay": true,
+    "decoder_replay_cudagraph_capture_sizes": [],
+    "decoder_replay_trim_threshold": 768,
+    "compile_sizes": [],
+    "compile_ranges_endpoints": [
+      8192
+    ],
+    "inductor_compile_config": {
+      "enable_auto_functionalized_v2": false,
+      "combo_kernels": true,
+      "benchmark_combo_kernel": true
+    },
+    "inductor_passes": {},
+    "cudagraph_mode": "PIECEWISE",
+    "use_breakable_cudagraph": false,
+    "cudagraph_num_of_warmups": 1,
+    "cudagraph_capture_sizes": [
+      1,
+      2304,
+      5888
+    ],
+    "prefill_cudagraph_capture_token_sizes": [
+      2304,
+      5888
+    ],
+    "max_prefill_cudagraph_capture_tokens": 5888,
+    "decode_cudagraph_capture_request_sizes": [
+      1
+    ],
+    "max_decode_cudagraph_capture_requests": 1,
+    "max_decode_cudagraph_capture_tokens": null,
+    "cudagraph_copy_inputs": false,
+    "cudagraph_specialize_lora": true,
+    "use_inductor_graph_partition": false,
+    "pass_config": {
+      "fuse_norm_quant": false,
+      "fuse_act_quant": false,
+      "fuse_attn_quant": false,
+      "eliminate_noops": true,
+      "fuse_allreduce_rms": false,
+      "enable_qk_norm_rope_fusion": false,
+      "fuse_rope_kvcache_cat_mla": false,
+      "fuse_act_padding": false,
+      "fuse_mla_dual_rms_norm": null,
+      "fuse_rope_kvcache": null,
+      "fuse_qk_norm_rope_kvcache": false,
+      "rope_kvcache_fusion_max_token_num": 256,
+      "fi_allreduce_fusion_max_size_mb": null
+    },
+    "max_cudagraph_capture_size": 5888,
+    "dynamic_shapes_config": {
+      "type": "backed",
+      "evaluate_guards": false,
+      "assume_32_bit_indexing": false
+    },
+    "local_cache_dir": null,
+    "fast_moe_cold_start": false,
+    "enabled_custom_ops": {},
+    "disabled_custom_ops": {},
+    "traced_files": "set()",
+    "compilation_time": 0.0,
+    "encoder_compilation_time": 0.0,
+    "static_forward_context": {},
+    "static_all_moe_layers": []
+  },
+  "attention": "AttentionConfig(backend=None, minimax_m3_msa_decode_backend='cutlass', backend_per_kind={}, flash_attn_version=None, flash_attn_max_num_splits_for_cuda_graph=32, tokenspeed_mla_min_split_kv=1, tq_max_kv_splits_for_cuda_graph=32, use_trtllm_attention=None, disable_flashinfer_q_quantization=False, mla_prefill_backend=None, use_prefill_query_quantization=False, trtllm_ragged_backend='trtllm-gen', indexer_kv_dtype='auto', indexer_decode_cp=False, indexer_sparse_logits=None, indexer_logits_dtype='auto', indexer_tp_shard_min_rows=None, sparse_mla_shard_q=True, sparse_mla_shard_q_min_tokens=1024, minimax_m3_indexer_cp=False, hisparse_config=None, use_non_causal=False, sparse_mla_force_mqa=False, sparse_mla_prefill_workspace_factor=5, flex_attn_block_m=None, flex_attn_block_n=None, flex_attn_q_block_size=None, flex_attn_kv_block_size=None)",
+  "quantization": "<vllm.model_executor.layers.quantization.online.base.OnlineQuantizationConfig object at 0x738760004110>",
+  "kernel_config": {
+    "ir_op_priority": {
+      "rms_norm": [
+        "native"
+      ],
+      "fused_add_rms_norm": [
+        "native"
+      ],
+      "gelu_and_mul_sparse": [
+        "triton",
+        "native"
+      ]
+    },
+    "enable_flashinfer_autotune": true,
+    "enable_rocm_segmented_attn_autotune": false,
+    "enable_rocm_aiter_gemm_warmup": false,
+    "enable_cutedsl_warmup": true,
+    "enable_jit_warmup": true,
+    "monokernel": false,
+    "moe_backend": "auto",
+    "sparse_indexer_topk_backend": "auto",
+    "linear_backend": "humming",
+    "linear_backend_per_quant": null,
+    "rdna_hybrid_w4a16_prefill_dequant": "disable"
+  },
+  "workers": [
+    {
+      "parameter_elements_by_dtype": {
+        "torch.bfloat16": 640592128,
+        "torch.float32": 653568,
+        "torch.int32": 473497600
+      },
+      "quant_methods": {
+        "UnquantizedEmbeddingMethod": 2,
+        "UnquantizedLinearMethod": 49,
+        "InputHadamardLinearMethod": 128
+      },
+      "attention": [
+        {
+          "module": "language_model.model.layers.3.self_attn.attn",
+          "type": "encoder_only"
+        },
+        {
+          "module": "language_model.model.layers.7.self_attn.attn",
+          "type": "encoder_only"
+        },
+        {
+          "module": "language_model.model.layers.11.self_attn.attn",
+          "type": "encoder_only"
+        },
+        {
+          "module": "language_model.model.layers.15.self_attn.attn",
+          "type": "encoder_only"
+        },
+        {
+          "module": "language_model.model.layers.19.self_attn.attn",
+          "type": "encoder_only"
+        },
+        {
+          "module": "language_model.model.layers.23.self_attn.attn",
+          "type": "encoder_only"
+        },
+        {
+          "module": "language_model.model.layers.27.self_attn.attn",
+          "type": "encoder_only"
+        },
+        {
+          "module": "language_model.model.layers.31.self_attn.attn",
+          "type": "encoder_only"
+        }
+      ],
+      "readout_dtype": "torch.float32",
+      "readout_shape": [
+        255,
+        2560
+      ],
+      "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+      "allocated_gib": 3.271575450897217,
+      "reserved_gib": 4.541015625
+    }
+  ],
+  "humming_kernels": [
+    [
+      {
+        "module": "language_model.model.layers.0.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.0.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.0.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.0.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.1.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.1.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.1.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.1.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.2.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.2.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.2.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.2.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.3.self_attn.qkv_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=10240, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.3.self_attn.o_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.3.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.3.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.4.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.4.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.4.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.4.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.5.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.5.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.5.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.5.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.6.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.6.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.6.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.6.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.7.self_attn.qkv_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=10240, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.7.self_attn.o_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.7.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.7.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.8.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.8.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.8.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.8.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.9.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.9.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.9.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.9.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.10.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.10.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.10.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.10.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.11.self_attn.qkv_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=10240, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.11.self_attn.o_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.11.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.11.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.12.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.12.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.12.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.12.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.13.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.13.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.13.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.13.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.14.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.14.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.14.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.14.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.15.self_attn.qkv_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=10240, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.15.self_attn.o_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.15.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.15.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.16.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.16.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.16.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.16.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.17.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.17.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.17.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.17.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.18.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.18.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.18.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.18.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.19.self_attn.qkv_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=10240, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.19.self_attn.o_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.19.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.19.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.20.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.20.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.20.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.20.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.21.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.21.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.21.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.21.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.22.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.22.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.22.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.22.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.23.self_attn.qkv_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=10240, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.23.self_attn.o_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.23.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.23.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.24.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.24.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.24.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.24.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.25.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.25.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.25.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.25.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.26.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.26.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.26.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.26.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.27.self_attn.qkv_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=10240, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.27.self_attn.o_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.27.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.27.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.28.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.28.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.28.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.28.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.29.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.29.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.29.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.29.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.30.linear_attn.in_proj_qkvz",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=12288, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.30.linear_attn.out_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.30.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.30.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.31.self_attn.qkv_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=10240, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.31.self_attn.o_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=4096, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.31.mlp.gate_up_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=18432, shape_k=2560, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      },
+      {
+        "module": "language_model.model.layers.31.mlp.down_proj",
+        "kernel": "HummingMxFp4LinearKernel",
+        "a_dtype": "float4e2m1",
+        "b_dtype": "float4e2m1",
+        "a_bits": 4,
+        "b_bits": 4,
+        "layer_config": "LayerConfig(sm_version=120, shape_n=2560, shape_k=9216, pad_shape_n=0, pad_shape_k=0, num_experts=0, b_dtype=float4e2m1, a_dtype=float4e2m1, c_dtype=bfloat16, bs_dtype=float8e8m0, as_dtype=float8e8m0, input_quant_mode=<InputQuantizationMode.DynamicGroup: 'dynamic_group'>, input_scale_group_size=32, weight_scale_group_size=32, weight_scale_group_size_n=0, weight_scale_type=<WeightScaleType.GROUP: 'group'>, weight_scale_2_type=<WeightScale2Type.NONE: 'none'>, use_int_weight_scale=False, use_fused_e8m0_scale=False, has_zero_point=False, is_fp_zero_point=False, has_bias=False, use_packed_k_layout=False)"
+      }
+    ]
+  ]
+}

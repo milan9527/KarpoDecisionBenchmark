@@ -1,0 +1,8 @@
+{
+  "id": "0a5be904-7f7c-42f7-a73e-700ac9a43c0a",
+  "host": "h100",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-091371593b3c4a5ff",
+  "script": "ssh -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts ubuntu@172.31.25.147 'sudo /bin/bash -s' <<'RPS_SSH_INNER'\nset -Eeuo pipefail\nmkdir -p /opt/karpo/experiments/vllm-rps100-20261120/results/setup\ncat > /opt/karpo/experiments/vllm-rps100-20261120/install-h100.sh <<'INSTALL'\nset -Eeuo pipefail\nOUT=/opt/karpo/experiments/vllm-rps100-20261120/results/setup\nfinish() {\n result=$?\n printf '%s\\n' \"$result\" > \"$OUT/h100-install-exit.txt\"\n}\ntrap finish EXIT\nexec >> \"$OUT/h100-install.log\" 2>&1\nif [ ! -e /opt/karpo/venv-vllm034/bin/python ]; then\n /opt/karpo/venv/bin/python -m venv /opt/karpo/venv-vllm034\nfi\n/opt/karpo/venv-vllm034/bin/python -m pip install --no-cache-dir --upgrade pip\n/opt/karpo/venv-vllm034/bin/python -m pip install --no-cache-dir 'vllm==0.34.0' 'transformers==5.21.0' 'flash-linear-attention==0.5.2' 'karpo-decision[qwen] @ git+https://github.com/machinepulse-ai/karpo-decision@6600011eb5cf46232d056ec0717dc726146d29de' boto3 httpx\n/opt/karpo/venv-vllm034/bin/python -m pip freeze > \"$OUT/h100-vllm-freeze.txt\"\n/opt/karpo/venv-vllm034/bin/python -m pip check > \"$OUT/h100-pip-check.txt\"\nINSTALL\nsystemd-run --unit=karpo-rps-install-h100 --property=RuntimeMaxSec=1800 /bin/bash /opt/karpo/experiments/vllm-rps100-20261120/install-h100.sh\n\nRPS_SSH_INNER",
+  "utc": "2026-11-20T13:45:53.765253+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "8bd614f3-7f6e-48ad-94c2-898373e4796e",
+  "host": "dual",
+  "instance": "i-05b24e3b4a7ee864d",
+  "script": "set -u\nsystemctl is-active karpo-rps-install-dual.service\ntail -12 /opt/karpo/experiments/vllm-rps100-20261120/results/setup/dual-install.log\ntest ! -e /opt/karpo/experiments/vllm-rps100-20261120/results/setup/dual-install-exit.txt || cat /opt/karpo/experiments/vllm-rps100-20261120/results/setup/dual-install-exit.txt\n",
+  "utc": "2026-11-20T13:24:23.710464+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "attempts": 240,
+  "valid": 240,
+  "failures": 0,
+  "correct": 233,
+  "accuracy_all_attempts": 0.9708333333333333,
+  "valid_within_500ms": 240,
+  "elapsed_seconds": 20.620418509999922,
+  "valid_rps": 11.638949029264921,
+  "p50_ms": 85.9550399999307,
+  "p95_ms": 85.99200399999063,
+  "p99_ms": 86.00383500004227,
+  "mean_ms": 85.87625628333579,
+  "tokens_min": 2263,
+  "tokens_max": 2297,
+  "http_statuses": {
+    "200": 240
+  },
+  "max_client_send_lag_ms": 0,
+  "latency_scope": "Same-host loopback: invocation to complete HTTP response, including encoding and queue; excludes production ingress and feature retrieval.",
+  "mode": "closed",
+  "parameters": {
+    "concurrency": 1,
+    "count": 240
+  }
+}

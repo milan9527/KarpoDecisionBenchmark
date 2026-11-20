@@ -1,0 +1,7 @@
+{
+  "id": "3affa0c8-f171-4286-9ed6-0e1478347a67",
+  "host": "single",
+  "instance": "i-0de4f061c2a04fe4b",
+  "script": "set -Eeuo pipefail\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport inspect\nimport json\nfrom pathlib import Path\nimport shutil\nfrom vllm.v1.engine.async_llm import AsyncLLM\nfrom vllm.config.profiler import ProfilerConfig\nout = {\n    \"start_profile\": inspect.getsource(AsyncLLM.start_profile),\n    \"stop_profile\": inspect.getsource(AsyncLLM.stop_profile),\n    \"profiler_config\": inspect.getsource(ProfilerConfig),\n    \"nsys\": shutil.which(\"nsys\"),\n}\np = Path(\"/opt/karpo/experiments/vllm-rps100-20261120/results/setup/profiler-api.json\")\np.write_text(json.dumps(out, indent=2) + \"\\n\")\nprint(json.dumps(out))\nPY\naws s3 cp /opt/karpo/experiments/vllm-rps100-20261120/results/setup/profiler-api.json s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-rps100-20261120/setup/profiler-api.json --region us-east-1 --no-progress\n",
+  "utc": "2026-11-20T13:25:03.224234+00:00"
+}

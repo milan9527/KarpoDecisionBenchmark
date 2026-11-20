@@ -1,0 +1,36 @@
+{
+  "CommandId": "f469b180-4f75-4552-9783-9ec265c1fc50",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 127,
+  "ExecutionStartDateTime": "2026-11-20T13:52:14.149Z",
+  "ExecutionElapsedTime": "PT0.294S",
+  "ExecutionEndDateTime": "2026-11-20T13:52:14.149Z",
+  "Status": "Failed",
+  "StatusDetails": "Failed",
+  "StandardOutputContent": "name, memory.used [MiB], utilization.gpu [%], power.draw [W]\nNVIDIA H100 80GB HBM3, 3403 MiB, 0 %, 115.84 W\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "/bin/bash: line 3: rg: command not found\nfailed to run commands: exit status 127",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "490a49de-f4a8-4537-a765-e4ba431011c0",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:52:25 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "773",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "490a49de-f4a8-4537-a765-e4ba431011c0",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

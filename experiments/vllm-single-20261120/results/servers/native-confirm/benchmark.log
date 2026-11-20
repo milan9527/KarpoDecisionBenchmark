@@ -1,0 +1,4 @@
+results/measurements/native-confirm/risk/warmup {"attempts": 8, "valid": 8, "correct": 8, "valid_rps": 6.374707415074129, "p95_ms": 659.9493200001234}
+results/measurements/native-confirm/risk/sustained-100 {"attempts": 1516, "valid": 1516, "correct": 1466, "valid_rps": 23.60062522532246, "p95_ms": 4267.145579000044}
+results/measurements/native-confirm/sop/warmup {"attempts": 8, "valid": 8, "correct": 8, "valid_rps": 6.487592784122679, "p95_ms": 163.99690299999747}
+results/measurements/native-confirm/sop/sustained-100 {"attempts": 599, "valid": 599, "correct": 566, "valid_rps": 8.327391032096397, "p95_ms": 12017.286179000166}

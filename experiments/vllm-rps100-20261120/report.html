@@ -1,0 +1,841 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Karpo 固定RPS优化</title><style>body{font:16px/1.7 system-ui;margin:32px auto;padding:0 24px;max-width:1500px;background:#f4f7fb;color:#173044}h1{font-size:clamp(24px,3vw,36px);line-height:1.3}h2{margin-top:36px;font-size:23px}.table-scroll{overflow-x:auto;background:white;border:1px solid #d3dfe7;border-radius:10px;margin:20px 0}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;border-bottom:1px solid #dce5eb;white-space:nowrap;text-align:left}th{background:#e7eff5}tbody tr:nth-child(even){background:#f8fafc}a{color:#1766a0}p,li{max-width:1100px}nav{font-size:14px}code{overflow-wrap:anywhere}@media(max-width:600px){body{padding:0 14px;margin:20px auto}}@media print{body{background:white}.table-scroll{overflow:visible}table{font-size:9px}th,td{padding:4px;white-space:normal}}</style></head><body><nav><a href="data.json">完整结构化结果</a> · <a href="RESULTS.zh.md">中文报告</a> · <a href="PLAN.zh.md">验收计划</a> · <a href="DECISION.zh.md">部署结论</a> · <a href="RTX4.zh.md">四RTX专项结果</a></nav><main><h1>固定100 RPS与端到端P50≤500ms优化</h1>
+<p>数据核对时间：2026-11-20T14:59:22.667293+00:00。以下2组通过合成质量检查及至少两次120秒性能测试：</p>
+<ul>
+<li>风控：mixed4-fp8-v1，4个GPU副本，100 RPS，正式测试P50为44.5ms／44.5ms，独立合成质量集正确率97.08%，正式压力样本正确率95.00%／95.00%。</li>
+<li>风控：rtx4-fp8-v1，4个GPU副本，100 RPS，正式测试P50为65.9ms／64.9ms，独立合成质量集正确率97.08%，正式压力样本正确率95.00%／95.00%。</li>
+</ul>
+<p>风险与SOP分别测试，完整200特征／200候选不变。每秒固定发送指定数量的请求，包含排队、编码、模型和本次HTTP链路。
+表中P50仅针对有效完整响应；任何拒绝、超时或无效响应均使该阶段不达标。20秒结果为探测，正式验收至少120秒。
+端到端时延保守包含客户端发起滞后；另保留实际发出至完整HTTP响应的时间。生产外部入口和特征查询尚未纳入本次部署。</p>
+<h2>实验状态</h2>
+<ul>
+<li>dual-fleetnode-v1：complete；源码版本fleet-v1。</li>
+<li>dual-fleetnode-v2：running；源码版本fleet-v1。</li>
+<li>dual-fp8-v1：complete；源码版本v1。</li>
+<li>dualhost-humming-v1：failed；源码版本humming-v1。</li>
+<li>fleet1-fleetnode-v1：running；源码版本fleet-v1。</li>
+<li>h100-fleetnode-v1：running；源码版本fleet-v1。</li>
+<li>h100-fp8-v1：complete；源码版本h100-v1。</li>
+<li>mixed4-fp8-v1：complete；源码版本fleet-v1。</li>
+<li>rtx4-fp8-v1：complete；源码版本fleet-v1。</li>
+<li>single-b12x-v1：failed；源码版本b12x-v1。</li>
+<li>single-blockfp8-v1：complete；源码版本blockfp8-v1。</li>
+<li>single-fleetnode-v1：running；源码版本fleet-v1。</li>
+<li>single-nvfp4-v1：failed；源码版本fp4-v1。</li>
+<li>single-nvmxfp4-v1：failed；源码版本mxfp4-v1。</li>
+</ul>
+<h2>固定100 RPS结果</h2>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>实验</th>
+<th>场景</th>
+<th style="text-align:right">GPU副本</th>
+<th style="text-align:right">最大序列数</th>
+<th style="text-align:right">持续秒数</th>
+<th style="text-align:right">有效响应/请求</th>
+<th style="text-align:right">稳态完成RPS</th>
+<th style="text-align:right">有效响应P50</th>
+<th style="text-align:right">P95</th>
+<th style="text-align:right">正确决策/有效响应</th>
+<th>性能验收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">604/2000</td>
+<td style="text-align:right">27.07</td>
+<td style="text-align:right">2359.5ms</td>
+<td style="text-align:right">2367.2ms</td>
+<td style="text-align:right">572/604</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">264/2000</td>
+<td style="text-align:right">10.07</td>
+<td style="text-align:right">6372.9ms</td>
+<td style="text-align:right">6393.5ms</td>
+<td style="text-align:right">251/264</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">1206/2000</td>
+<td style="text-align:right">54.00</td>
+<td style="text-align:right">2361.7ms</td>
+<td style="text-align:right">2368.4ms</td>
+<td style="text-align:right">1145/1206</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">527/2000</td>
+<td style="text-align:right">20.07</td>
+<td style="text-align:right">6362.6ms</td>
+<td style="text-align:right">6396.2ms</td>
+<td style="text-align:right">499/527</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">633/2000</td>
+<td style="text-align:right">28.53</td>
+<td style="text-align:right">2232.4ms</td>
+<td style="text-align:right">2243.0ms</td>
+<td style="text-align:right">606/633</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">267/2000</td>
+<td style="text-align:right">10.27</td>
+<td style="text-align:right">6258.1ms</td>
+<td style="text-align:right">6274.1ms</td>
+<td style="text-align:right">256/267</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">1264/2000</td>
+<td style="text-align:right">56.93</td>
+<td style="text-align:right">2234.7ms</td>
+<td style="text-align:right">2249.4ms</td>
+<td style="text-align:right">1204/1264</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">534/2000</td>
+<td style="text-align:right">20.53</td>
+<td style="text-align:right">6253.9ms</td>
+<td style="text-align:right">6277.7ms</td>
+<td style="text-align:right">508/534</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">637/2000</td>
+<td style="text-align:right">28.80</td>
+<td style="text-align:right">2197.9ms</td>
+<td style="text-align:right">2219.0ms</td>
+<td style="text-align:right">609/637</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">269/2000</td>
+<td style="text-align:right">10.40</td>
+<td style="text-align:right">6139.9ms</td>
+<td style="text-align:right">6164.9ms</td>
+<td style="text-align:right">255/269</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">1273/2000</td>
+<td style="text-align:right">57.60</td>
+<td style="text-align:right">2194.2ms</td>
+<td style="text-align:right">2230.5ms</td>
+<td style="text-align:right">1218/1273</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">538/2000</td>
+<td style="text-align:right">20.80</td>
+<td style="text-align:right">6130.2ms</td>
+<td style="text-align:right">6167.7ms</td>
+<td style="text-align:right">508/538</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">630/2000</td>
+<td style="text-align:right">28.27</td>
+<td style="text-align:right">2198.5ms</td>
+<td style="text-align:right">2237.8ms</td>
+<td style="text-align:right">597/630</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">264/2000</td>
+<td style="text-align:right">10.13</td>
+<td style="text-align:right">6087.0ms</td>
+<td style="text-align:right">6127.4ms</td>
+<td style="text-align:right">253/264</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">1258/2000</td>
+<td style="text-align:right">57.60</td>
+<td style="text-align:right">2196.1ms</td>
+<td style="text-align:right">2243.5ms</td>
+<td style="text-align:right">1192/1258</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">526/2000</td>
+<td style="text-align:right">20.80</td>
+<td style="text-align:right">6037.7ms</td>
+<td style="text-align:right">6129.4ms</td>
+<td style="text-align:right">499/526</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dualhost-humming-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">536/2000</td>
+<td style="text-align:right">23.67</td>
+<td style="text-align:right">2701.8ms</td>
+<td style="text-align:right">2710.5ms</td>
+<td style="text-align:right">496/536</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dualhost-humming-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">214/2000</td>
+<td style="text-align:right">7.53</td>
+<td style="text-align:right">8486.5ms</td>
+<td style="text-align:right">8493.5ms</td>
+<td style="text-align:right">198/214</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>dualhost-humming-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">485/2000</td>
+<td style="text-align:right">21.07</td>
+<td style="text-align:right">2998.9ms</td>
+<td style="text-align:right">3019.5ms</td>
+<td style="text-align:right">457/485</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>h100-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">781/2000</td>
+<td style="text-align:right">36.00</td>
+<td style="text-align:right">1775.1ms</td>
+<td style="text-align:right">1787.6ms</td>
+<td style="text-align:right">743/781</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>h100-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">370/2000</td>
+<td style="text-align:right">15.40</td>
+<td style="text-align:right">4160.4ms</td>
+<td style="text-align:right">4174.0ms</td>
+<td style="text-align:right">359/370</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>h100-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">933/2000</td>
+<td style="text-align:right">43.73</td>
+<td style="text-align:right">1448.4ms</td>
+<td style="text-align:right">1468.7ms</td>
+<td style="text-align:right">890/933</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>h100-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">393/2000</td>
+<td style="text-align:right">16.53</td>
+<td style="text-align:right">3845.2ms</td>
+<td style="text-align:right">3865.9ms</td>
+<td style="text-align:right">373/393</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>mixed4-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">120</td>
+<td style="text-align:right">12000/12000</td>
+<td style="text-align:right">100.00</td>
+<td style="text-align:right">44.5ms</td>
+<td style="text-align:right">46.4ms</td>
+<td style="text-align:right">11400/12000</td>
+<td>通过该阶段</td>
+</tr>
+<tr>
+<td>mixed4-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">120</td>
+<td style="text-align:right">12000/12000</td>
+<td style="text-align:right">100.00</td>
+<td style="text-align:right">44.5ms</td>
+<td style="text-align:right">46.2ms</td>
+<td style="text-align:right">11400/12000</td>
+<td>通过该阶段</td>
+</tr>
+<tr>
+<td>mixed4-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">2000/2000</td>
+<td style="text-align:right">100.00</td>
+<td style="text-align:right">44.5ms</td>
+<td style="text-align:right">46.7ms</td>
+<td style="text-align:right">1898/2000</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>mixed4-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">1196/2000</td>
+<td style="text-align:right">47.53</td>
+<td style="text-align:right">3972.6ms</td>
+<td style="text-align:right">6231.8ms</td>
+<td style="text-align:right">1124/1196</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>rtx4-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">120</td>
+<td style="text-align:right">12000/12000</td>
+<td style="text-align:right">99.99</td>
+<td style="text-align:right">65.9ms</td>
+<td style="text-align:right">94.3ms</td>
+<td style="text-align:right">11400/12000</td>
+<td>通过该阶段</td>
+</tr>
+<tr>
+<td>rtx4-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">120</td>
+<td style="text-align:right">12000/12000</td>
+<td style="text-align:right">99.99</td>
+<td style="text-align:right">64.9ms</td>
+<td style="text-align:right">93.2ms</td>
+<td style="text-align:right">11400/12000</td>
+<td>通过该阶段</td>
+</tr>
+<tr>
+<td>rtx4-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">2000/2000</td>
+<td style="text-align:right">100.07</td>
+<td style="text-align:right">66.3ms</td>
+<td style="text-align:right">94.7ms</td>
+<td style="text-align:right">1898/2000</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>rtx4-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">1072/2000</td>
+<td style="text-align:right">41.33</td>
+<td style="text-align:right">6127.0ms</td>
+<td style="text-align:right">6243.9ms</td>
+<td style="text-align:right">1014/1072</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>single-blockfp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">534/2000</td>
+<td style="text-align:right">23.53</td>
+<td style="text-align:right">2716.2ms</td>
+<td style="text-align:right">2726.1ms</td>
+<td style="text-align:right">508/534</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>single-blockfp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">236/2000</td>
+<td style="text-align:right">8.60</td>
+<td style="text-align:right">7386.2ms</td>
+<td style="text-align:right">7398.4ms</td>
+<td style="text-align:right">218/236</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>single-blockfp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">549/2000</td>
+<td style="text-align:right">24.27</td>
+<td style="text-align:right">2608.5ms</td>
+<td style="text-align:right">2630.0ms</td>
+<td style="text-align:right">526/549</td>
+<td>未通过</td>
+</tr>
+<tr>
+<td>single-blockfp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">225/2000</td>
+<td style="text-align:right">8.27</td>
+<td style="text-align:right">7770.6ms</td>
+<td style="text-align:right">7794.9ms</td>
+<td style="text-align:right">212/225</td>
+<td>未通过</td>
+</tr>
+</tbody>
+</table></div>
+<p>压力测试重复使用独立的tune样本集，合成质量测试使用quality样本集，二者正确率不应混作同一数据集指标。正式确认要求两者均超过90%，并且所有压力请求均正常返回。</p>
+<h2>合成质量</h2>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>实验</th>
+<th>场景</th>
+<th style="text-align:right">GPU副本</th>
+<th style="text-align:right">最大序列数</th>
+<th style="text-align:right">正确/总数</th>
+<th style="text-align:right">同原生决策</th>
+<th style="text-align:right">新增错误</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">234/240</td>
+<td style="text-align:right">239/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dual-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>dualhost-humming-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">226/240</td>
+<td style="text-align:right">225/240</td>
+<td style="text-align:right">11</td>
+</tr>
+<tr>
+<td>dualhost-humming-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">94/104</td>
+<td style="text-align:right">99/104</td>
+<td style="text-align:right">4</td>
+</tr>
+<tr>
+<td>dualhost-humming-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">221/240</td>
+<td style="text-align:right">222/240</td>
+<td style="text-align:right">15</td>
+</tr>
+<tr>
+<td>dualhost-humming-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">93/104</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">5</td>
+</tr>
+<tr>
+<td>h100-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>h100-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>h100-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>h100-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>mixed4-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>mixed4-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>rtx4-fp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>rtx4-fp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>single-blockfp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>single-blockfp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>single-blockfp8-v1</td>
+<td>风控</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">233/240</td>
+<td style="text-align:right">240/240</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>single-blockfp8-v1</td>
+<td>SOP</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">98/104</td>
+<td style="text-align:right">104/104</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table></div>
+<p>合成样例不能代表生产准确率。</p>
+<h2>资源与证据</h2>
+<ul>
+<li>
+<p>按用户要求保持EC2运行；本轮脚本不执行实例关机。</p>
+</li>
+<li>
+<p>各运行目录保存完整请求、质量差异、GPU监控、启动命令、软件环境及实际量化内核选择。</p>
+</li>
+<li>
+<p>FP8 profiler显示矩阵计算占GPU kernel时间约67%（风控）／59%（SOP）；诊断时间不用于性能验收。</p>
+</li>
+<li>
+<p>NVFP4的MoE预设未量化Karpo稠密层，启动校验拒绝；该失败不包含任何性能请求。</p>
+</li>
+<li>
+<p>MXFP4自动后端与SM120不兼容；显式B12X后端又遇到JIT张量维度错误。两项均在启动阶段失败，不能计为加速结果。</p>
+</li>
+<li>
+<p>Humming后端实际128个W4A4线性层已通过检查；该量化方案的质量和性能均单独呈现，未以位数下降代替性能证明。</p>
+</li>
+<li>
+<p>已重算125,424次请求，其中有效85,642次，失败39,782次。</p>
+</li>
+<li>
+<p>最新资源快照时间：2026-11-20T14:58:00.411873+00:00；4台EC2运行中，参考计算费用12.13美元/小时，另计EBS等费用。</p>
+</li>
+<li>
+<p><a href="results/infrastructure-current.json">资源快照</a> · <a href="DECISION.zh.md">部署结论</a></p>
+</li>
+<li>
+<p>用户选择的四张同型号RTX，其部署区域、费用及独立验收见<a href="RTX4.zh.md">四RTX专项结果</a>。</p>
+</li>
+</ul>
+</main></body></html>

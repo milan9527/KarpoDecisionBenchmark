@@ -1,0 +1,18 @@
+{
+  "observed_utc": "2026-11-20T08:10:41.323824+00:00",
+  "region": "us-east-2",
+  "instance_id": "i-05b24e3b4a7ee864d",
+  "start": [
+    {
+      "InstanceId": "i-05b24e3b4a7ee864d",
+      "CurrentState": {
+        "Code": 0,
+        "Name": "pending"
+      },
+      "PreviousState": {
+        "Code": 80,
+        "Name": "stopped"
+      }
+    }
+  ]
+}

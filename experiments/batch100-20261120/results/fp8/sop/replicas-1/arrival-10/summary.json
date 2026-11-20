@@ -1,0 +1,78 @@
+{
+  "attempts": 100,
+  "valid": 100,
+  "failures": 0,
+  "correct": 97,
+  "accuracy_all_attempts": 0.97,
+  "valid_within_500ms": 8,
+  "correct_within_500ms": 8,
+  "elapsed_seconds": 13.014748827999938,
+  "valid_rps": 7.683590465062218,
+  "p50_ms": 2187.4007619999247,
+  "p95_ms": 3931.1503839999205,
+  "p99_ms": 4323.173744999849,
+  "max_ms": 4422.4723099998755,
+  "all_attempts_p95_ms": 3931.1503839999205,
+  "mean_ms": 2165.0093752099315,
+  "tokens_min": 5696,
+  "tokens_max": 5758,
+  "response_batch_histogram": {
+    "1": 3,
+    "2": 4,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 18,
+    "8": 16,
+    "15": 15,
+    "9": 9,
+    "7": 7,
+    "16": 16
+  },
+  "http_statuses": {
+    "200": 100
+  },
+  "max_client_send_lag_ms": 1.1433969998506655,
+  "max_gpu_allocated_gib": 9.216951370239258,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "open",
+  "parameters": {
+    "qps": 10,
+    "seconds": 10,
+    "cap": 256
+  },
+  "after_ramp": {
+    "attempts": 75,
+    "valid": 75,
+    "failures": 0,
+    "correct": 72,
+    "accuracy_all_attempts": 0.96,
+    "valid_within_500ms": 0,
+    "correct_within_500ms": 0,
+    "elapsed_seconds": 10.515041668999856,
+    "valid_rps": 7.132639352358711,
+    "p50_ms": 2724.088997999843,
+    "p95_ms": 4163.179967000133,
+    "p99_ms": 4422.4723099998755,
+    "max_ms": 4422.4723099998755,
+    "all_attempts_p95_ms": 4163.179967000133,
+    "mean_ms": 2651.747148266601,
+    "tokens_min": 5696,
+    "tokens_max": 5758,
+    "response_batch_histogram": {
+      "8": 16,
+      "6": 12,
+      "15": 15,
+      "9": 9,
+      "7": 7,
+      "16": 16
+    },
+    "http_statuses": {
+      "200": 75
+    },
+    "max_client_send_lag_ms": 1.1420619998716575,
+    "max_gpu_allocated_gib": 9.216951370239258,
+    "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval."
+  },
+  "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+}

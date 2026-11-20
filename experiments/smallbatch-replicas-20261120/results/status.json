@@ -1,0 +1,7 @@
+{
+  "status": "capacity_blocked_before_model_execution",
+  "observed_utc": "2026-11-20T09:42:59.942537+00:00",
+  "model_calls": 0,
+  "continued_as": "experiments/smallbatch3-20261120",
+  "reason": "No on-demand GPU capacity; one additional 16-vCPU Spot GPU available within 64-vCPU quota."
+}

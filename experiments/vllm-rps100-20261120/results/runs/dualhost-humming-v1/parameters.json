@@ -1,0 +1,15 @@
+{
+  "name": "dualhost-humming-v1",
+  "revision": "humming-v1",
+  "gpus": 1,
+  "replicas": [
+    1
+  ],
+  "batches": [
+    1,
+    4
+  ],
+  "seconds": 20.0,
+  "skip_quality": false,
+  "only_target": false
+}

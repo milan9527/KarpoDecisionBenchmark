@@ -1,0 +1,8 @@
+{
+  "id": "6b2ff87c-6f82-415f-bff5-53e6ea8aacfb",
+  "host": "h100",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-091371593b3c4a5ff",
+  "script": "ssh -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts ubuntu@172.31.25.147 'sudo /bin/bash -s' <<'RPS_SSH_INNER'\nset -Eeuo pipefail\nmkdir -p /opt/karpo/experiments/vllm-rps100-20261120/results/setup\nsystemctl restart karpo-rps-h100-v1\nsystemctl is-active karpo-rps-h100-v1\n\nRPS_SSH_INNER",
+  "utc": "2026-11-20T13:49:25.179359+00:00"
+}

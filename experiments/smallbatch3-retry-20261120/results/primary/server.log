@@ -1,0 +1,21 @@
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 15106.29it/s]
+{"event": "capture", "rank": 0, "batch": 4, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 3, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 2, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 4, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 3, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 1, "tokens_each": 5888}
+{"event": "capture", "rank": 0, "batch": 2, "tokens_each": 2304}
+{"event": "capture", "rank": 0, "batch": 1, "tokens_each": 2304}
+Loading weights:   0%|          | 0/723 [00:00<?, ?it/s]Loading weights: 100%|██████████| 723/723 [00:00<00:00, 15335.94it/s]
+{"event": "capture", "rank": 1, "batch": 4, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 3, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 2, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 4, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 3, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 1, "tokens_each": 5888}
+{"event": "capture", "rank": 1, "batch": 2, "tokens_each": 2304}
+{"event": "capture", "rank": 1, "batch": 1, "tokens_each": 2304}
+{"event": "ready", "replicas": 2}
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

@@ -1,0 +1,17 @@
+{
+  "observed_utc": "2026-11-20T10:38:59.677667+00:00",
+  "instances": [
+    {
+      "instance_id": "i-05b24e3b4a7ee864d",
+      "console_timestamp": "2026-11-20 10:38:59+00:00",
+      "tail": ";32m  OK  \u001b[0m] Stopped \u001b[0;1;39msystemd-tmpfiles-setup-dev\u2026\u001b[0mic Device Nodes in /dev gracefully.\r\n[\u001b[0;32m  OK  \u001b[0m] Stopped \u001b[0;1;39mmultipathd.service\u001b[0m - Devic\u2026Mapper Multipath Device Controller.\r\n[\u001b[0;32m  OK  \u001b[0m] Stopped \u001b[0;1;39msystemd-remount-fs.service\u001b[0m\u2026mount Root and Kernel File Systems.\r\n[\u001b[0;32m  OK  \u001b[0m] Stopped \u001b[0;1;39msystemd-fsck-root.service\u001b[0m - File System Check on Root Device.\r\n[\u001b[0;32m  OK  \u001b[0m] Stopped \u001b[0;1;39mlvm2-monitor.service\u001b[0m - Mon\u2026using dmeventd or progress polling.\r\n[\u001b[0;32m  OK  \u001b[0m] Reached target \u001b[0;1;39mshutdown.target\u001b[0m - System Shutdown.\r\n[\u001b[0;32m  OK  \u001b[0m] Reached target \u001b[0;1;39mfinal.target\u001b[0m - Late Shutdown Services.\r\n[\u001b[0;32m  OK  \u001b[0m] Finished \u001b[0;1;39msystemd-poweroff.service\u001b[0m - System Power Off.\r\n[\u001b[0;32m  OK  \u001b[0m] Reached target \u001b[0;1;39mpoweroff.target\u001b[0m - System Power Off.\r\n[ 3256.741609] reboot: Power down\r\n",
+      "power_down_observed": true
+    },
+    {
+      "instance_id": "i-0de4f061c2a04fe4b",
+      "console_timestamp": "2026-11-20 10:38:59+00:00",
+      "tail": ";32m  OK  \u001b[0m] Stopped \u001b[0;1;39msystemd-tmpfiles-setup-dev\u2026\u001b[0mic Device Nodes in /dev gracefully.\r\n[\u001b[0;32m  OK  \u001b[0m] Stopped \u001b[0;1;39mmultipathd.service\u001b[0m - Devic\u2026Mapper Multipath Device Controller.\r\n[\u001b[0;32m  OK  \u001b[0m] Stopped \u001b[0;1;39msystemd-remount-fs.service\u001b[0m\u2026mount Root and Kernel File Systems.\r\n[\u001b[0;32m  OK  \u001b[0m] Stopped \u001b[0;1;39msystemd-fsck-root.service\u001b[0m - File System Check on Root Device.\r\n[\u001b[0;32m  OK  \u001b[0m] Stopped \u001b[0;1;39mlvm2-monitor.service\u001b[0m - Mon\u2026using dmeventd or progress polling.\r\n[\u001b[0;32m  OK  \u001b[0m] Reached target \u001b[0;1;39mshutdown.target\u001b[0m - System Shutdown.\r\n[\u001b[0;32m  OK  \u001b[0m] Reached target \u001b[0;1;39mfinal.target\u001b[0m - Late Shutdown Services.\r\n[\u001b[0;32m  OK  \u001b[0m] Finished \u001b[0;1;39msystemd-poweroff.service\u001b[0m - System Power Off.\r\n[\u001b[0;32m  OK  \u001b[0m] Reached target \u001b[0;1;39mpoweroff.target\u001b[0m - System Power Off.\r\n[ 1675.204570] reboot: Power down\r\n",
+      "power_down_observed": true
+    }
+  ]
+}

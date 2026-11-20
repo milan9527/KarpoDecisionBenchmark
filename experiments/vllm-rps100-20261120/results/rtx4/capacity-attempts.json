@@ -1,0 +1,83 @@
+[
+  {
+    "utc": "2026-11-20T14:31:23.600463+00:00",
+    "type": "g7e.4xlarge",
+    "zone": "us-east-2c",
+    "error": {
+      "Code": "InsufficientInstanceCapacity",
+      "Message": "We currently do not have sufficient g7e.4xlarge capacity in the Availability Zone you requested (us-east-2c). Our system will be working on provisioning additional capacity. You can currently get g7e.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2b."
+    }
+  },
+  {
+    "utc": "2026-11-20T14:31:27.570333+00:00",
+    "type": "g7e.4xlarge",
+    "zone": "us-east-2b",
+    "error": {
+      "Code": "InsufficientInstanceCapacity",
+      "Message": "We currently do not have sufficient g7e.4xlarge capacity in the Availability Zone you requested (us-east-2b). Our system will be working on provisioning additional capacity. You can currently get g7e.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2c."
+    }
+  },
+  {
+    "utc": "2026-11-20T14:31:30.848687+00:00",
+    "type": "g7e.4xlarge",
+    "zone": "us-east-2a",
+    "error": {
+      "Code": "InsufficientInstanceCapacity",
+      "Message": "We currently do not have sufficient g7e.4xlarge capacity in the Availability Zone you requested (us-east-2a). Our system will be working on provisioning additional capacity. You can currently get g7e.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2b, us-east-2c."
+    }
+  },
+  {
+    "utc": "2026-11-20T14:31:34.815053+00:00",
+    "type": "g7e.2xlarge",
+    "zone": "us-east-2c",
+    "error": {
+      "Code": "InsufficientInstanceCapacity",
+      "Message": "We currently do not have sufficient g7e.2xlarge capacity in the Availability Zone you requested (us-east-2c). Our system will be working on provisioning additional capacity. You can currently get g7e.2xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2b."
+    }
+  },
+  {
+    "utc": "2026-11-20T14:31:38.988173+00:00",
+    "type": "g7e.2xlarge",
+    "zone": "us-east-2b",
+    "error": {
+      "Code": "InsufficientInstanceCapacity",
+      "Message": "We currently do not have sufficient g7e.2xlarge capacity in the Availability Zone you requested (us-east-2b). Our system will be working on provisioning additional capacity. You can currently get g7e.2xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2c."
+    }
+  },
+  {
+    "utc": "2026-11-20T14:31:41.572117+00:00",
+    "type": "g7e.2xlarge",
+    "zone": "us-east-2a",
+    "error": {
+      "Code": "InsufficientInstanceCapacity",
+      "Message": "We currently do not have sufficient g7e.2xlarge capacity in the Availability Zone you requested (us-east-2a). Our system will be working on provisioning additional capacity. You can currently get g7e.2xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2b, us-east-2c."
+    }
+  },
+  {
+    "utc": "2026-11-20T14:31:44.824695+00:00",
+    "type": "g7e.8xlarge",
+    "zone": "us-east-2c",
+    "error": {
+      "Code": "InsufficientInstanceCapacity",
+      "Message": "We currently do not have sufficient g7e.8xlarge capacity in the Availability Zone you requested (us-east-2c). Our system will be working on provisioning additional capacity. You can currently get g7e.8xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2b."
+    }
+  },
+  {
+    "utc": "2026-11-20T14:31:48.521700+00:00",
+    "type": "g7e.8xlarge",
+    "zone": "us-east-2b",
+    "error": {
+      "Code": "InsufficientInstanceCapacity",
+      "Message": "We currently do not have sufficient g7e.8xlarge capacity in the Availability Zone you requested (us-east-2b). Our system will be working on provisioning additional capacity. You can currently get g7e.8xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2c."
+    }
+  },
+  {
+    "utc": "2026-11-20T14:31:50.924556+00:00",
+    "type": "g7e.8xlarge",
+    "zone": "us-east-2a",
+    "error": {
+      "Code": "InsufficientInstanceCapacity",
+      "Message": "We currently do not have sufficient g7e.8xlarge capacity in the Availability Zone you requested (us-east-2a). Our system will be working on provisioning additional capacity. You can currently get g7e.8xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2b, us-east-2c."
+    }
+  }
+]

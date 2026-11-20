@@ -1,0 +1,36 @@
+{
+  "CommandId": "e24eeb7d-8169-446c-9fc9-5198c1294f56",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T14:09:41.703Z",
+  "ExecutionElapsedTime": "PT0.427S",
+  "ExecutionEndDateTime": "2026-11-20T14:09:41.703Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "{\"utc\": \"2026-11-20T14:09:42.087172+00:00\", \"hostname\": \"ip-172-31-25-147\", \"scheduled_shutdown_present\": false, \"timers\": \"NEXT                                LEFT LAST                              PASSED UNIT                           ACTIVATES\\nFri 2026-11-20 14:10:00 UTC          17s Fri 2026-11-20 14:00:07 UTC     9min ago sysstat-collect.timer          sysstat-collect.service\\nFri 2026-11-20 14:33:35 UTC        23min Fri 2026-11-20 13:56:58 UTC    12min ago fwupd-refresh.timer            fwupd-refresh.service\\nFri 2026-11-20 20:18:23 UTC           6h Thu 2026-11-19 12:24:36 UTC            - apt-daily.timer                apt-daily.service\\nFri 2026-11-20 22:38:29 UTC           8h Tue 2026-11-17 07:01:15 UTC            - man-db.timer                   man-db.service\\nFri 2026-11-20 23:06:15 UTC           8h Fri 2026-11-20 04:06:26 UTC            - motd-news.timer                motd-news.service\\nSat 2026-11-21 00:00:00 UTC           9h Fri 2026-11-20 03:07:43 UTC            - dpkg-db-backup.timer           dpkg-db-backup.service\\nSat 2026-11-21 00:00:00 UTC           9h Fri 2026-11-20 03:07:43 UTC            - logrotate.timer                logrotate.service\\nSat 2026-11-21 00:07:00 UTC           9h -                                      - sysstat-summary.timer          sysstat-summary.service\\nSat 2026-11-21 06:41:41 UTC          16h Fri 2026-11-20 14:04:58 UTC 4min 43s ago apt-daily-upgrade.timer        apt-daily-upgrade.service\\nSat 2026-11-21 13:50:12 UTC          23h Fri 2026-11-20 13:50:12 UTC    19min ago update-notifier-download.timer update-notifier-download.service\\nSat 2026-11-21 14:00:07 UTC          23h Fri 2026-11-20 14:00:07 UTC     9min ago systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service\\nSun 2026-11-22 03:10:19 UTC    1 day 13h Tue 2026-11-17 07:01:15 UTC            - e2scrub_all.timer              e2scrub_all.service\\nMon 2026-11-23 00:10:53 UTC       2 days Tue 2026-11-17 07:01:15 UTC            - fstrim.timer                   fstrim.service\\nSun 2026-11-29 00:37:33 UTC 1 week 1 day Tue 2026-11-17 07:01:15 UTC            - update-notifier-motd.timer     update-notifier-motd.service\\n-                                      - -                                      - apport-autoreport.timer        apport-autoreport.service\\n-                                      - -                                      - snapd.snap-repair.timer        snapd.snap-repair.service\\n-                                      - -                                      - ua-timer.timer                 ua-timer.service\\n\\n17 timers listed.\\n\", \"karpo_units\": \"  UNIT                           LOAD   ACTIVE SUB     DESCRIPTION\\n  karpo-rps-h100-node-v1.service loaded active running /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/scripts/vllm_rps_fleet.py --mode node --name h100-fleetnode-v1 --replica-ids 3 --batch 4 --roleless\\n\\nLegend: LOAD   \\u2192 Reflects whether the unit definition was properly loaded.\\n        ACTIVE \\u2192 The high-level unit activation state, i.e. generalization of SUB.\\n        SUB    \\u2192 The low-level unit activation state, values depend on unit type.\\n\\n1 loaded units listed.\\nTo show all installed unit files use 'systemctl list-unit-files'.\\n\", \"gpu\": \"index, name, memory.used [MiB], utilization.gpu [%]\\n0, NVIDIA H100 80GB HBM3, 64281 MiB, 0 %\\n\"}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "fd506c40-6321-4d68-83d6-96a5fec8bbc3",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 14:10:39 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "3985",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "fd506c40-6321-4d68-83d6-96a5fec8bbc3",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

@@ -1,0 +1,9 @@
+test_integrates_overlap_without_using_p50 (test_vllm_karpo.InflightTests.test_integrates_overlap_without_using_p50) ... ok
+test_ragged_sequences_read_markers_and_keep_suffixes (test_vllm_karpo.MarkerPoolingTests.test_ragged_sequences_read_markers_and_keep_suffixes) ... skipped 'The optional vLLM adapter environment is not installed'
+test_rejects_invalid_marker_offsets (test_vllm_karpo.MarkerPoolingTests.test_rejects_invalid_marker_offsets) ... skipped 'The optional vLLM adapter environment is not installed'
+test_rejects_partial_bidirectional_input (test_vllm_karpo.MarkerPoolingTests.test_rejects_partial_bidirectional_input) ... skipped 'The optional vLLM adapter environment is not installed'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.091s
+
+OK (skipped=3)

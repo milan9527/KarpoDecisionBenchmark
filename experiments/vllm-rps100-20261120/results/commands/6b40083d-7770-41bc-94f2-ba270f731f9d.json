@@ -1,0 +1,8 @@
+{
+  "id": "6b40083d-7770-41bc-94f2-ba270f731f9d",
+  "host": "single",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-0de4f061c2a04fe4b",
+  "script": "set -Eeuo pipefail\ntest \"$(cat /opt/karpo/experiments/vllm-rps100-20261120/results/setup/b12x-install-exit.txt)\" = 0\naws s3 cp s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-rps-blockfp8-v1.tar.gz /tmp/vllm-rps-blockfp8-v1.tar.gz --region us-east-1 --no-progress\nprintf '%s  %s\\n' f7e4142c2f44d40f69dc039431fe5dd7011047d8fdbe4f917712353426dd061e /tmp/vllm-rps-blockfp8-v1.tar.gz | sha256sum -c -\ntar -xzf /tmp/vllm-rps-blockfp8-v1.tar.gz -C /opt/karpo\nPYTHONPATH=/opt/karpo/b12x-overlay /opt/karpo/venv-vllm034/bin/python -m pip freeze > /opt/karpo/experiments/vllm-rps100-20261120/results/setup/b12x-freeze.txt\naws s3 cp /opt/karpo/experiments/vllm-rps100-20261120/results/setup/b12x-freeze.txt s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-rps100-20261120/setup/b12x-freeze.txt --region us-east-1 --no-progress\nsystemd-run --unit=karpo-rps-single-blockfp8-v1 --property=RuntimeMaxSec=5400 --property=StandardOutput=append:/opt/karpo/experiments/vllm-rps100-20261120/results/setup/b12x-launch.log --property=StandardError=inherit --setenv=PYTHONPATH=/opt/karpo/b12x-overlay /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/scripts/vllm_rps_blockfp8_suite.py --name single-blockfp8-v1 --revision blockfp8-v1 --gpus 1 --replicas 1 --batches 1 4 --seconds 20\n",
+  "utc": "2026-11-20T13:47:31.273442+00:00"
+}

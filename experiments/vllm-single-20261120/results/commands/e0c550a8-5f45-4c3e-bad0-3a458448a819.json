@@ -1,0 +1,6 @@
+{
+  "id": "e0c550a8-5f45-4c3e-bad0-3a458448a819",
+  "instance": "i-0de4f061c2a04fe4b",
+  "script": "set -u\n/opt/karpo/venv-vllm034/bin/python - <<'PYREMOTE'\nfrom pathlib import Path\nfor base in ['/opt/karpo/venv-vllm034/bin','/opt/karpo/venv-vllm034/lib/python3.12/site-packages/nvidia','/usr/local']:\n p=Path(base)\n print(base,[str(x) for name in ['nvcc','ninja','cuda.h'] for x in p.rglob(name)][:35])\nPYREMOTE\n",
+  "utc": "2026-11-20T12:35:13.208249+00:00"
+}

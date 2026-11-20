@@ -1,0 +1,36 @@
+{
+  "CommandId": "075b5cbe-941a-45c0-be68-e264eb4531f2",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T13:38:05.132Z",
+  "ExecutionElapsedTime": "PT4.288S",
+  "ExecutionEndDateTime": "2026-11-20T13:38:09.132Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "Saved 15 files\nupload: ../../../../opt/karpo/experiments/vllm-rps100-20261120/results/setup/mxfp4-kernel-source.json to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-rps100-20261120/setup/mxfp4-kernel-source.json\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "9a74aaac-97f4-41b4-a642-1d3231518553",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:38:39 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "814",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "9a74aaac-97f4-41b4-a642-1d3231518553",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

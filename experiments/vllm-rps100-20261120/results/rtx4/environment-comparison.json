@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-20T14:51:01.568988+00:00",
+  "baseline": "single-fleetnode-v1",
+  "new_node": "fleet1-fleetnode-v1",
+  "matches": {
+    "torch": true,
+    "transformers": true,
+    "cuda": true,
+    "gpu": true,
+    "vllm": true,
+    "karpo_source": true,
+    "karpo_source_sha256": true,
+    "model_metadata_sha256": true,
+    "model_weights_bytes": true,
+    "adapter_sha256": true
+  },
+  "engine_matches": {
+    "settings": true,
+    "vllm": true,
+    "torch": true,
+    "full_attention_is_causal": true,
+    "head_dtype": true,
+    "workers": true,
+    "quantization_class": true
+  },
+  "quantization_repr_note": "Only the process-local object address differs; normalized for class comparison. Full worker inspection and settings match exactly."
+}

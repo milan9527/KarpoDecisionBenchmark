@@ -1,0 +1,981 @@
+{
+  "observed_utc": "2026-11-20T09:26:32.447816+00:00",
+  "source_instance": "i-05b24e3b4a7ee864d",
+  "image_id": "ami-00ab7faabf42ddbe2",
+  "region": "us-east-2",
+  "spot_vcpu_quota": 64,
+  "on_demand_vcpu_quota": 64,
+  "planned_replica_counts": [
+    1,
+    2,
+    4
+  ],
+  "existing_instance_ids": [
+    "i-05b24e3b4a7ee864d",
+    "i-048c3784bb87b6d86"
+  ],
+  "secondary_security_group_id": "sg-015c45dfc878c7919",
+  "launch_arguments": {
+    "ImageId": "ami-00ab7faabf42ddbe2",
+    "InstanceType": "g7e.12xlarge",
+    "MinCount": 1,
+    "MaxCount": 1,
+    "IamInstanceProfile": {
+      "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+    },
+    "NetworkInterfaces": [
+      {
+        "DeviceIndex": 0,
+        "SubnetId": "subnet-08cac12e7a232540b",
+        "AssociatePublicIpAddress": true,
+        "Groups": [
+          "sg-015c45dfc878c7919"
+        ],
+        "DeleteOnTermination": true
+      }
+    ],
+    "BlockDeviceMappings": [
+      {
+        "DeviceName": "/dev/sda1",
+        "Ebs": {
+          "VolumeSize": 300,
+          "VolumeType": "gp3",
+          "Iops": 6000,
+          "Throughput": 500,
+          "Encrypted": true,
+          "DeleteOnTermination": false
+        }
+      }
+    ],
+    "InstanceInitiatedShutdownBehavior": "stop",
+    "MetadataOptions": {
+      "HttpTokens": "required",
+      "HttpEndpoint": "enabled"
+    },
+    "TagSpecifications": [
+      {
+        "ResourceType": "instance",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "karpo-smallbatch-secondary-20261120"
+          },
+          {
+            "Key": "Project",
+            "Value": "KarpoDecisionBenchmark"
+          }
+        ]
+      },
+      {
+        "ResourceType": "volume",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "karpo-smallbatch-secondary-20261120"
+          },
+          {
+            "Key": "Project",
+            "Value": "KarpoDecisionBenchmark"
+          }
+        ]
+      }
+    ],
+    "ClientToken": "karpo-smallbatch-secondary-20261120"
+  },
+  "launch_failures": [
+    {
+      "utc": "2026-11-20T09:40:18.211996+00:00",
+      "error": "An error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 2): We currently do not have sufficient g7e.12xlarge capacity in the Availability Zone you requested (us-east-2c). Our system will be working on provisioning additional capacity. You can currently get g7e.12xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2b."
+    }
+  ],
+  "launch_attempts": [
+    {
+      "utc": "2026-11-20T09:40:52.849488+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.12xlarge",
+        "MinCount": 1,
+        "MaxCount": 1,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-08cac12e7a232540b",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-secondary-20261120"
+      },
+      "result": "InsufficientInstanceCapacity in us-east-2c"
+    },
+    {
+      "utc": "2026-11-20T09:40:52.849555+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.12xlarge",
+        "MinCount": 1,
+        "MaxCount": 1,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-02374aaaa190fa3ec",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-secondary-20261120-us-east-2a"
+      },
+      "result": "An error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 4): We currently do not have sufficient g7e.12xlarge capacity in the Availability Zone you requested (us-east-2a). Our system will be working on provisioning additional capacity. You can currently get g7e.12xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2b, us-east-2c."
+    },
+    {
+      "utc": "2026-11-20T09:41:07.279081+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.12xlarge",
+        "MinCount": 1,
+        "MaxCount": 1,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-0da11846dfbc952d4",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-secondary-20261120-us-east-2a"
+      },
+      "result": "An error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 4): We currently do not have sufficient g7e.12xlarge capacity in the Availability Zone you requested (us-east-2a). Our system will be working on provisioning additional capacity. You can currently get g7e.12xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2b, us-east-2c."
+    },
+    {
+      "utc": "2026-11-20T09:41:17.002984+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.12xlarge",
+        "MinCount": 1,
+        "MaxCount": 1,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-076c65a355de813cf",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-secondary-20261120-us-east-2b"
+      },
+      "result": "An error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 4): We currently do not have sufficient g7e.12xlarge capacity in the Availability Zone you requested (us-east-2b). Our system will be working on provisioning additional capacity. You can currently get g7e.12xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2c."
+    },
+    {
+      "utc": "2026-11-20T09:41:23.647357+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.12xlarge",
+        "MinCount": 1,
+        "MaxCount": 1,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-033c43d404bdf0f52",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-secondary-20261120-us-east-2b"
+      },
+      "result": "An error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 4): We currently do not have sufficient g7e.12xlarge capacity in the Availability Zone you requested (us-east-2b). Our system will be working on provisioning additional capacity. You can currently get g7e.12xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2c."
+    },
+    {
+      "utc": "2026-11-20T09:42:07.629080+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.8xlarge",
+        "MinCount": 2,
+        "MaxCount": 2,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-08cac12e7a232540b",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-two-single-gpu-us-east-2c"
+      },
+      "result": "An error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 1): We currently do not have sufficient g7e.8xlarge capacity in the Availability Zone you requested (us-east-2c). Our system will be working on provisioning additional capacity. You can currently get g7e.8xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2b."
+    },
+    {
+      "utc": "2026-11-20T09:42:09.613983+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.8xlarge",
+        "MinCount": 2,
+        "MaxCount": 2,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-0da11846dfbc952d4",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-two-single-gpu-us-east-2a"
+      },
+      "result": "An error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 1): We currently do not have sufficient g7e.8xlarge capacity in the Availability Zone you requested (us-east-2a). Our system will be working on provisioning additional capacity. You can currently get g7e.8xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2b, us-east-2c."
+    },
+    {
+      "utc": "2026-11-20T09:42:11.128647+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.8xlarge",
+        "MinCount": 2,
+        "MaxCount": 2,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-033c43d404bdf0f52",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-two-single-gpu-us-east-2b"
+      },
+      "result": "An error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 1): We currently do not have sufficient g7e.8xlarge capacity in the Availability Zone you requested (us-east-2b). Our system will be working on provisioning additional capacity. You can currently get g7e.8xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2c."
+    },
+    {
+      "utc": "2026-11-20T09:42:34.700937+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.4xlarge",
+        "MinCount": 2,
+        "MaxCount": 2,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-08cac12e7a232540b",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-g7e4-on-demand-us-east-2c"
+      },
+      "result": "An error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 1): We currently do not have sufficient g7e.4xlarge capacity in the Availability Zone you requested (us-east-2c). Our system will be working on provisioning additional capacity. You can currently get g7e.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2b."
+    },
+    {
+      "utc": "2026-11-20T09:42:36.845589+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.4xlarge",
+        "MinCount": 2,
+        "MaxCount": 2,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-0da11846dfbc952d4",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-g7e4-on-demand-us-east-2a"
+      },
+      "result": "An error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 1): We currently do not have sufficient g7e.4xlarge capacity in the Availability Zone you requested (us-east-2a). Our system will be working on provisioning additional capacity. You can currently get g7e.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2b, us-east-2c."
+    },
+    {
+      "utc": "2026-11-20T09:42:38.347899+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.4xlarge",
+        "MinCount": 2,
+        "MaxCount": 2,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-033c43d404bdf0f52",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-g7e4-on-demand-us-east-2b"
+      },
+      "result": "An error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 1): We currently do not have sufficient g7e.4xlarge capacity in the Availability Zone you requested (us-east-2b). Our system will be working on provisioning additional capacity. You can currently get g7e.4xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-2a, us-east-2c."
+    },
+    {
+      "utc": "2026-11-20T09:42:40.437384+00:00",
+      "arguments": {
+        "ImageId": "ami-00ab7faabf42ddbe2",
+        "InstanceType": "g7e.4xlarge",
+        "MinCount": 1,
+        "MaxCount": 1,
+        "IamInstanceProfile": {
+          "Arn": "arn:aws:iam::632930644527:instance-profile/karpo-benchmark-20261119-115003"
+        },
+        "NetworkInterfaces": [
+          {
+            "DeviceIndex": 0,
+            "SubnetId": "subnet-08cac12e7a232540b",
+            "AssociatePublicIpAddress": true,
+            "Groups": [
+              "sg-015c45dfc878c7919"
+            ],
+            "DeleteOnTermination": true
+          }
+        ],
+        "BlockDeviceMappings": [
+          {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3",
+              "Iops": 6000,
+              "Throughput": 500,
+              "Encrypted": true,
+              "DeleteOnTermination": false
+            }
+          }
+        ],
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "MetadataOptions": {
+          "HttpTokens": "required",
+          "HttpEndpoint": "enabled"
+        },
+        "TagSpecifications": [
+          {
+            "ResourceType": "instance",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          },
+          {
+            "ResourceType": "volume",
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "karpo-smallbatch-secondary-20261120"
+              },
+              {
+                "Key": "Project",
+                "Value": "KarpoDecisionBenchmark"
+              }
+            ]
+          }
+        ],
+        "ClientToken": "karpo-smallbatch-g7e4-spot-us-east-2c",
+        "InstanceMarketOptions": {
+          "MarketType": "spot",
+          "SpotOptions": {
+            "SpotInstanceType": "persistent",
+            "InstanceInterruptionBehavior": "stop"
+          }
+        }
+      },
+      "result": [
+        {
+          "id": "i-0de4f061c2a04fe4b",
+          "private_ip": "172.31.42.136",
+          "az": "us-east-2c",
+          "market": "spot"
+        }
+      ]
+    }
+  ],
+  "primary_started_utc": "2026-11-20T09:42:13.400987+00:00",
+  "primary_start_response": [
+    {
+      "InstanceId": "i-05b24e3b4a7ee864d",
+      "CurrentState": {
+        "Code": 0,
+        "Name": "pending"
+      },
+      "PreviousState": {
+        "Code": 80,
+        "Name": "stopped"
+      }
+    }
+  ],
+  "single_gpu_secondary_instances": [
+    {
+      "id": "i-0de4f061c2a04fe4b",
+      "private_ip": "172.31.42.136",
+      "az": "us-east-2c",
+      "market": "spot"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "CommandId": "6b40083d-7770-41bc-94f2-ba270f731f9d",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T13:47:31.435Z",
+  "ExecutionElapsedTime": "PT1.585S",
+  "ExecutionEndDateTime": "2026-11-20T13:47:32.435Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "download: s3://karpo-benchmark-20261119-115003-632930644527/inputs/vllm-rps-blockfp8-v1.tar.gz to ../../../../tmp/vllm-rps-blockfp8-v1.tar.gz\n/tmp/vllm-rps-blockfp8-v1.tar.gz: OK\nupload: ../../../../opt/karpo/experiments/vllm-rps100-20261120/results/setup/b12x-freeze.txt to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-rps100-20261120/setup/b12x-freeze.txt\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-rps-single-blockfp8-v1.service; invocation ID: 5dd8c2c7adba48cb84f8ff9805fac697\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "7dcd84b7-c170-4564-9cc5-f10cb4c0b49d",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:47:44 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1065",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "7dcd84b7-c170-4564-9cc5-f10cb4c0b49d",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

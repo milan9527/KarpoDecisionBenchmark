@@ -1,0 +1,63 @@
+{
+  "attempts": 100,
+  "valid": 100,
+  "failures": 0,
+  "correct": 96,
+  "accuracy_all_attempts": 0.96,
+  "valid_within_500ms": 100,
+  "correct_within_500ms": 96,
+  "elapsed_seconds": 10.000937846999932,
+  "valid_rps": 9.99906224094752,
+  "p50_ms": 48.69138399999429,
+  "p95_ms": 50.56960699994306,
+  "p99_ms": 50.81225200001427,
+  "max_ms": 50.858900999855905,
+  "all_attempts_p95_ms": 50.56960699994306,
+  "mean_ms": 48.90388436998592,
+  "tokens_min": 2265,
+  "tokens_max": 2298,
+  "response_batch_histogram": {
+    "1": 100
+  },
+  "http_statuses": {
+    "200": 100
+  },
+  "max_client_send_lag_ms": 2.0982649998586567,
+  "max_gpu_allocated_gib": 7.049483299255371,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "open",
+  "parameters": {
+    "qps": 10,
+    "seconds": 10,
+    "cap": 256
+  },
+  "after_ramp": {
+    "attempts": 75,
+    "valid": 75,
+    "failures": 0,
+    "correct": 71,
+    "accuracy_all_attempts": 0.9466666666666667,
+    "valid_within_500ms": 75,
+    "correct_within_500ms": 71,
+    "elapsed_seconds": 7.5012147299999015,
+    "valid_rps": 9.998380622281024,
+    "p50_ms": 48.32900799988238,
+    "p95_ms": 50.09725300010359,
+    "p99_ms": 50.51378500002102,
+    "max_ms": 50.51378500002102,
+    "all_attempts_p95_ms": 50.09725300010359,
+    "mean_ms": 48.43434750665134,
+    "tokens_min": 2265,
+    "tokens_max": 2298,
+    "response_batch_histogram": {
+      "1": 75
+    },
+    "http_statuses": {
+      "200": 75
+    },
+    "max_client_send_lag_ms": 2.0982649998586567,
+    "max_gpu_allocated_gib": 7.049483299255371,
+    "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval."
+  },
+  "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+}

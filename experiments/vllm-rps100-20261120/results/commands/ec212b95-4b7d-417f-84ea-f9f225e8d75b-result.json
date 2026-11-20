@@ -1,0 +1,36 @@
+{
+  "CommandId": "ec212b95-4b7d-417f-84ea-f9f225e8d75b",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-20T13:46:31.295Z",
+  "ExecutionElapsedTime": "PT0.743S",
+  "ExecutionEndDateTime": "2026-11-20T13:46:31.295Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "upload: ../../../../opt/karpo/experiments/vllm-rps100-20261120/results/setup/b12x-source.json to s3://karpo-benchmark-20261119-115003-632930644527/results/vllm-rps100-20261120/setup/b12x-source.json\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "d42a97fd-610b-4c35-b06e-b050954da549",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 13:46:39 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "782",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "d42a97fd-610b-4c35-b06e-b050954da549",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

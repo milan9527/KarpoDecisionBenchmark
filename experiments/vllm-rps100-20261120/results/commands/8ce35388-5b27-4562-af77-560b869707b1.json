@@ -1,0 +1,8 @@
+{
+  "id": "8ce35388-5b27-4562-af77-560b869707b1",
+  "host": "h100",
+  "instance": "i-0de4f061c2a04fe4b",
+  "target_instance": "i-091371593b3c4a5ff",
+  "script": "ssh -i /opt/karpo/.ssh/rps-h100 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/rps-known-hosts ubuntu@172.31.25.147 'sudo /bin/bash -s' <<'RPS_SSH_INNER'\nset -Eeuo pipefail\nnvidia-smi --query-gpu=name,memory.used,utilization.gpu,power.draw --format=csv\nps -eo pid,stat,etime,pcpu,pmem,rss,args | grep -E 'EngineCore|vllm_rps_h100|vllm_rps_server' | head -10\nfor p in $(pgrep -f 'EngineCore'); do cat /proc/$p/io || true; done\nls -lh /opt/karpo/models/karpo-4b\nfind /opt/karpo/models/karpo-4b -maxdepth 2 -name '*.safetensors' -printf '%p %s\\n'\ntail -12 /opt/karpo/experiments/vllm-rps100-20261120/results/runs/h100-fp8-v1/b1/server-0/server.log\n\nRPS_SSH_INNER",
+  "utc": "2026-11-20T13:52:29.039937+00:00"
+}

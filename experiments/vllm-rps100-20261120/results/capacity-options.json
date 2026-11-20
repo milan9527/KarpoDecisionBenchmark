@@ -1,0 +1,130 @@
+[
+  {
+    "region": "us-east-1",
+    "quotas_vcpus": {
+      "L-DB2E81BA": 768.0,
+      "L-417A185B": 768.0
+    },
+    "offerings": [
+      {
+        "InstanceType": "p6-b200.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1d"
+      },
+      {
+        "InstanceType": "p5.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1e"
+      },
+      {
+        "InstanceType": "p5.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1d"
+      },
+      {
+        "InstanceType": "g7e.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1b"
+      },
+      {
+        "InstanceType": "g7e.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1c"
+      },
+      {
+        "InstanceType": "p5.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1a"
+      },
+      {
+        "InstanceType": "p5.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1c"
+      },
+      {
+        "InstanceType": "p5.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1b"
+      },
+      {
+        "InstanceType": "p5.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1f"
+      },
+      {
+        "InstanceType": "g7e.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-1d"
+      }
+    ]
+  },
+  {
+    "region": "us-east-2",
+    "quotas_vcpus": {
+      "L-DB2E81BA": 64.0,
+      "L-417A185B": 384.0
+    },
+    "offerings": [
+      {
+        "InstanceType": "g7e.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2a"
+      },
+      {
+        "InstanceType": "p5e.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2c"
+      },
+      {
+        "InstanceType": "p5.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2a"
+      },
+      {
+        "InstanceType": "p6-b200.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2c"
+      },
+      {
+        "InstanceType": "p5e.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2b"
+      },
+      {
+        "InstanceType": "g7e.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2c"
+      },
+      {
+        "InstanceType": "g7e.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2b"
+      },
+      {
+        "InstanceType": "p6-b200.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2a"
+      },
+      {
+        "InstanceType": "p5.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2b"
+      },
+      {
+        "InstanceType": "p6-b200.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2b"
+      },
+      {
+        "InstanceType": "p5e.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2a"
+      },
+      {
+        "InstanceType": "p5.48xlarge",
+        "LocationType": "availability-zone",
+        "Location": "us-east-2c"
+      }
+    ]
+  }
+]

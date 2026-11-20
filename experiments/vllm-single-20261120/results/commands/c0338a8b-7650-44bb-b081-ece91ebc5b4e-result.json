@@ -1,0 +1,36 @@
+{
+  "CommandId": "c0338a8b-7650-44bb-b081-ece91ebc5b4e",
+  "InstanceId": "i-0de4f061c2a04fe4b",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 2,
+  "ExecutionStartDateTime": "2026-11-20T12:32:49.091Z",
+  "ExecutionElapsedTime": "PT0.002S",
+  "ExecutionEndDateTime": "2026-11-20T12:32:49.091Z",
+  "Status": "Failed",
+  "StatusDetails": "Failed",
+  "StandardOutputContent": "",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "/var/lib/amazon/ssm/i-0de4f061c2a04fe4b/document/orchestration/c0338a8b-7650-44bb-b081-ece91ebc5b4e/awsrunShellScript/0.awsrunShellScript/_script.sh: 1: set: Illegal option -o pipefail\nfailed to run commands: exit status 2",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "d7feead0-95c6-4330-8ba3-96772b6f1a7f",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Fri, 20 Nov 2026 12:32:58 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "803",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "d7feead0-95c6-4330-8ba3-96772b6f1a7f",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

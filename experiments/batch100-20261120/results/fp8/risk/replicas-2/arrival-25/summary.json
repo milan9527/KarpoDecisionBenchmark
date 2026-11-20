@@ -1,0 +1,63 @@
+{
+  "attempts": 250,
+  "valid": 250,
+  "failures": 0,
+  "correct": 242,
+  "accuracy_all_attempts": 0.968,
+  "valid_within_500ms": 250,
+  "correct_within_500ms": 242,
+  "elapsed_seconds": 10.008233926999992,
+  "valid_rps": 24.979432117943958,
+  "p50_ms": 87.67073299986805,
+  "p95_ms": 88.70770799990169,
+  "p99_ms": 89.70473299996229,
+  "max_ms": 89.71142199993665,
+  "all_attempts_p95_ms": 88.70770799990169,
+  "mean_ms": 74.18013314403834,
+  "tokens_min": 2265,
+  "tokens_max": 2298,
+  "response_batch_histogram": {
+    "1": 250
+  },
+  "http_statuses": {
+    "200": 250
+  },
+  "max_client_send_lag_ms": 1.0934440001619805,
+  "max_gpu_allocated_gib": 7.049483299255371,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "open",
+  "parameters": {
+    "qps": 25,
+    "seconds": 10,
+    "cap": 256
+  },
+  "after_ramp": {
+    "attempts": 187,
+    "valid": 187,
+    "failures": 0,
+    "correct": 181,
+    "accuracy_all_attempts": 0.9679144385026738,
+    "valid_within_500ms": 187,
+    "correct_within_500ms": 181,
+    "elapsed_seconds": 7.508862480000062,
+    "valid_rps": 24.903905284998437,
+    "p50_ms": 87.67174599984173,
+    "p95_ms": 88.70792999982768,
+    "p99_ms": 89.70473299996229,
+    "max_ms": 89.71142199993665,
+    "all_attempts_p95_ms": 88.70792999982768,
+    "mean_ms": 74.32243549201206,
+    "tokens_min": 2265,
+    "tokens_max": 2298,
+    "response_batch_histogram": {
+      "1": 187
+    },
+    "http_statuses": {
+      "200": 187
+    },
+    "max_client_send_lag_ms": 1.077941999938048,
+    "max_gpu_allocated_gib": 7.049483299255371,
+    "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval."
+  },
+  "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+}

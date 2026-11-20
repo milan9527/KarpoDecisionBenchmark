@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "observed_utc": "2026-11-20T13:06:40.524934+00:00",
+  "report_sha256": "1546dac623f1a464b14722ceec990226c0a415db0c113933885453754636c9f7",
+  "checks": [
+    "8 matrix rows match data",
+    "2 confirmation cards match data",
+    "local links",
+    "offline rendering",
+    "mobile viewport has no page overflow"
+  ]
+}

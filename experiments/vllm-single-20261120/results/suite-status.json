@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "started_utc": "2026-11-20T12:41:38.303532+00:00",
+  "stages": [
+    {
+      "name": "native-initial",
+      "backend": "native",
+      "batch": 1,
+      "started_utc": "2026-11-20T12:41:42.160563+00:00",
+      "status": "complete",
+      "ended_utc": "2026-11-20T12:45:47.774548+00:00"
+    },
+    {
+      "name": "vllm-b1",
+      "backend": "vllm",
+      "batch": 1,
+      "started_utc": "2026-11-20T12:45:48.410107+00:00",
+      "status": "complete",
+      "ended_utc": "2026-11-20T12:49:27.213950+00:00"
+    },
+    {
+      "name": "vllm-b4",
+      "backend": "vllm",
+      "batch": 4,
+      "started_utc": "2026-11-20T12:49:27.870191+00:00",
+      "status": "complete",
+      "ended_utc": "2026-11-20T12:53:35.598296+00:00"
+    },
+    {
+      "name": "vllm-b8",
+      "backend": "vllm",
+      "batch": 8,
+      "started_utc": "2026-11-20T12:53:36.260435+00:00",
+      "status": "complete",
+      "ended_utc": "2026-11-20T12:57:49.510792+00:00"
+    },
+    {
+      "name": "vllm-confirm",
+      "backend": "vllm",
+      "batch": 8,
+      "started_utc": "2026-11-20T12:57:50.184104+00:00",
+      "status": "complete",
+      "ended_utc": "2026-11-20T13:01:05.280686+00:00"
+    },
+    {
+      "name": "native-confirm",
+      "backend": "native",
+      "batch": 1,
+      "started_utc": "2026-11-20T13:01:05.979659+00:00",
+      "status": "complete",
+      "ended_utc": "2026-11-20T13:03:49.200214+00:00"
+    }
+  ],
+  "current": "native-confirm",
+  "ended_utc": "2026-11-20T13:03:50.403121+00:00"
+}

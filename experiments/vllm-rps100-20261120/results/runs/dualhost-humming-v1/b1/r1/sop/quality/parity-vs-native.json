@@ -1,0 +1,57 @@
+{
+  "same_choices": 99,
+  "observations": 104,
+  "new_errors": 4,
+  "differences": [
+    {
+      "request_id": "concise-en:synthetic-merchant-reject_late_refund-200-detailed-reversed",
+      "reference": {
+        "action": "sop_117"
+      },
+      "actual": {
+        "action": "sop_132"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "concise-en:boundary-hold-over-duplicate-original",
+      "reference": {
+        "action": "sop_064"
+      },
+      "actual": {
+        "action": "sop_161"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "concise-en:boundary-approval-not-in-customer-text-reversed",
+      "reference": {
+        "action": "sop_019"
+      },
+      "actual": {
+        "action": "sop_127"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "concise-en:boundary-confirmations-before-deadline-reversed",
+      "reference": {
+        "action": "sop_120"
+      },
+      "actual": {
+        "action": "sop_059"
+      },
+      "correct": false
+    },
+    {
+      "request_id": "concise-en:boundary-domain-injection-original",
+      "reference": {
+        "action": "sop_023"
+      },
+      "actual": {
+        "action": "sop_159"
+      },
+      "correct": false
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "InstanceId": "i-05d0c24c739f41ca5",
+    "InstanceType": "g7e.4xlarge",
+    "PrivateIpAddress": "172.31.85.230",
+    "PublicIpAddress": "100.59.41.29",
+    "Placement": {
+      "AvailabilityZoneId": "use1-az2",
+      "GroupName": "",
+      "Tenancy": "default",
+      "AvailabilityZone": "us-east-1b"
+    },
+    "name": "fleet1",
+    "purpose": "homogeneous-rtx4",
+    "region": "us-east-1",
+    "replica_id": 3,
+    "pricing_model": "spot",
+    "spot_price_reference_usd": 1.5954,
+    "maximum_spot_bid_usd": 3,
+    "projected_total_reference_usd": 12.126399999999999,
+    "automatic_shutdown": false,
+    "management": "restricted_ssh_via_single",
+    "iam_instance_role": null,
+    "control_source_address": "13.58.107.90",
+    "security_group_id": "sg-04423a46913e44f37",
+    "inference_access": "SSH local forward on control host 127.0.0.1:18503; no public inference port",
+    "utc": "2026-11-20T14:45:57.427453+00:00",
+    "ssh_address": "100.59.41.29"
+  }
+]

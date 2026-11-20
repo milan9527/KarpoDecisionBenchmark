@@ -1,0 +1,64 @@
+{
+  "attempts": 1038,
+  "valid": 1038,
+  "failures": 0,
+  "correct": 979,
+  "accuracy_all_attempts": 0.9431599229287091,
+  "valid_within_500ms": 3,
+  "correct_within_500ms": 3,
+  "elapsed_seconds": 66.37104111899998,
+  "valid_rps": 15.63935087501366,
+  "p50_ms": 6318.038891000015,
+  "p95_ms": 6567.484534999949,
+  "p99_ms": 6575.200500999927,
+  "max_ms": 6972.3543940003765,
+  "all_attempts_p95_ms": 6567.484534999949,
+  "mean_ms": 6081.629245793833,
+  "tokens_min": 5696,
+  "tokens_max": 5758,
+  "response_batch_histogram": {
+    "1": 4,
+    "2": 1034
+  },
+  "http_statuses": {
+    "200": 1038
+  },
+  "max_client_send_lag_ms": 0,
+  "max_gpu_allocated_gib": 6.096585750579834,
+  "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval.",
+  "mode": "closed",
+  "parameters": {
+    "concurrency": 100,
+    "seconds": 60
+  },
+  "after_ramp": {
+    "attempts": 786,
+    "valid": 786,
+    "failures": 0,
+    "correct": 739,
+    "accuracy_all_attempts": 0.9402035623409669,
+    "valid_within_500ms": 0,
+    "correct_within_500ms": 0,
+    "elapsed_seconds": 56.37428502500006,
+    "valid_rps": 13.942527158463047,
+    "p50_ms": 6318.803872999979,
+    "p95_ms": 6528.775396000128,
+    "p99_ms": 6549.901829999726,
+    "max_ms": 6571.925168000234,
+    "all_attempts_p95_ms": 6528.775396000128,
+    "mean_ms": 6362.748406595416,
+    "tokens_min": 5696,
+    "tokens_max": 5758,
+    "response_batch_histogram": {
+      "2": 784,
+      "1": 2
+    },
+    "http_statuses": {
+      "200": 786
+    },
+    "max_client_send_lag_ms": 0,
+    "max_gpu_allocated_gib": 6.096585750579834,
+    "latency_scope": "Same host: scheduled arrival (open/burst) or invocation (closed), to complete HTTP response; includes queue/encode/model, excludes production network and feature retrieval."
+  },
+  "after_ramp_scope": "Requests arriving after ramp; throughput denominator includes final drain."
+}
