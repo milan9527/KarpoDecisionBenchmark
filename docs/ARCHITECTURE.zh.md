@@ -2,6 +2,8 @@
 
 公网演示的 S3 + CloudFront OAC、内部 ALB、API 与自动 GPU 启停架构见[实时演示部署说明](DEMO.zh.md)。下图保留基准测试时的实际请求路径。
 
+两场景的部署要点、相对原生Karpo服务的优化，以及同卡、多卡和公网链路的实测收益见[部署方案、原生对照与优化收益](DEPLOYMENT-OPTIMIZATION.zh.md)。
+
 本图对应 2026-11-21 已完成的六卡实际模型测试：**五台 Spot EC2、六张 RTX PRO 6000 Blackwell Server Edition 96GB，每卡一个完整 Karpo 4B FP8 副本**。图中资源及进程的位置描述测试期间的部署，资源状态依据当日 04:25:48 UTC 快照。
 
 [查看 SVG 原图](assets/promo-rtx6-aws-architecture.svg) · [下载高清 PNG](assets/promo-rtx6-aws-architecture.png) · [六卡 HTML 报告](../experiments/promo-rtx6-20261121/report.html)
