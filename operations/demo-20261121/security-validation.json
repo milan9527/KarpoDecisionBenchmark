@@ -1,0 +1,79 @@
+{
+  "at": "2026-11-21T10:14:43.371114+00:00",
+  "passed": true,
+  "http": {
+    "cloudfront_frontend": 200,
+    "anonymous_api": 401,
+    "anonymous_s3": 403
+  },
+  "s3_public_access_block": {
+    "BlockPublicAcls": true,
+    "IgnorePublicAcls": true,
+    "BlockPublicPolicy": true,
+    "RestrictPublicBuckets": true
+  },
+  "s3_allow": {
+    "Sid": "CloudFrontOACReadSiteOnly",
+    "Effect": "Allow",
+    "Principal": {
+      "Service": "cloudfront.amazonaws.com"
+    },
+    "Action": "s3:GetObject",
+    "Resource": "arn:aws:s3:::karpo-demo-20261121-632930644527/site/*",
+    "Condition": {
+      "StringEquals": {
+        "AWS:SourceArn": "arn:aws:cloudfront::632930644527:distribution/E10QP8URDDOPBE"
+      }
+    }
+  },
+  "oac": {
+    "Name": "karpo-demo-20261121",
+    "Description": "Private demo frontend bucket",
+    "SigningProtocol": "sigv4",
+    "SigningBehavior": "always",
+    "OriginAccessControlOriginType": "s3"
+  },
+  "distribution_status": "Deployed",
+  "alb_scheme": "internal",
+  "alb_health": [
+    {
+      "Target": {
+        "Id": "i-04aa43d75617e765b",
+        "Port": 8000
+      },
+      "HealthCheckPort": "8000",
+      "TargetHealth": {
+        "State": "healthy"
+      },
+      "AdministrativeOverride": {
+        "State": "no_override",
+        "Reason": "AdministrativeOverride.NoOverride",
+        "Description": "No override is currently active on target"
+      }
+    }
+  ],
+  "alb_ingress": {
+    "IpProtocol": "tcp",
+    "FromPort": 80,
+    "ToPort": 80,
+    "UserIdGroupPairs": [
+      {
+        "UserId": "632930644527",
+        "GroupId": "sg-00ae30df7ee93cd95"
+      }
+    ],
+    "IpRanges": [],
+    "Ipv6Ranges": [],
+    "PrefixListIds": []
+  },
+  "watchdog_stop_resource_allowlist": [
+    "arn:aws:ec2:us-east-1:632930644527:instance/i-09e55f0a86313912d",
+    "arn:aws:ec2:us-east-1:632930644527:instance/i-0b7835341b1266d7a",
+    "arn:aws:ec2:us-east-2:632930644527:instance/i-02c1caf7d7ce17c76",
+    "arn:aws:ec2:us-east-2:632930644527:instance/i-05b24e3b4a7ee864d",
+    "arn:aws:ec2:us-east-2:632930644527:instance/i-05cfc7d4fa898ee33",
+    "arn:aws:ec2:us-east-2:632930644527:instance/i-0c777e3714538d624"
+  ],
+  "watchdog_schedule": "rate(1 minute)",
+  "watchdog_target": "arn:aws:lambda:us-east-2:632930644527:function:karpo-demo-20261121-watchdog"
+}

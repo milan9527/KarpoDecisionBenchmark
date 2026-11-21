@@ -1,0 +1,44 @@
+[
+  {
+    "id": "i-0c777e3714538d624",
+    "region": "us-east-2",
+    "type": "p5en.48xlarge",
+    "spot_request_type": "persistent",
+    "stop_protection": false
+  },
+  {
+    "id": "i-05b24e3b4a7ee864d",
+    "region": "us-east-2",
+    "type": "g7e.12xlarge",
+    "spot_request_type": "persistent",
+    "stop_protection": false
+  },
+  {
+    "id": "i-05cfc7d4fa898ee33",
+    "region": "us-east-2",
+    "type": "g7e.2xlarge",
+    "spot_request_type": "persistent",
+    "stop_protection": false
+  },
+  {
+    "id": "i-02c1caf7d7ce17c76",
+    "region": "us-east-2",
+    "type": "g7e.2xlarge",
+    "spot_request_type": "persistent",
+    "stop_protection": false
+  },
+  {
+    "id": "i-09e55f0a86313912d",
+    "region": "us-east-1",
+    "type": "g7e.2xlarge",
+    "spot_request_type": "persistent",
+    "stop_protection": false
+  },
+  {
+    "id": "i-0b7835341b1266d7a",
+    "region": "us-east-1",
+    "type": "g7e.2xlarge",
+    "spot_request_type": "persistent",
+    "stop_protection": false
+  }
+]

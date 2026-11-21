@@ -16,6 +16,30 @@
     "region.svg": {
       "archive_member": "Architecture-Group-Icons_07312026/Region_32.svg",
       "sha256": "848203d40c55e213c84c1b8a3e14c2fa92aaa793b31a5c17a5fd1737ef58b8ca"
+    },
+    "cloudfront.svg": {
+      "archive_member": "Architecture-Service-Icons_07312026/Arch_Networking-Content-Delivery/48/Arch_Amazon-CloudFront_48.svg",
+      "sha256": "bdea6b292bb1b482f96b788d955adc2d84ce987ad1c2b7d6c719ae31ca7dbb94"
+    },
+    "s3.svg": {
+      "archive_member": "Architecture-Service-Icons_07312026/Arch_Storage/48/Arch_Amazon-Simple-Storage-Service_48.svg",
+      "sha256": "bb0df5b7ca52da7323888ed588baefa1c68a23b5776f325bc8ec29825c185a31"
+    },
+    "alb.svg": {
+      "archive_member": "Architecture-Service-Icons_07312026/Arch_Networking-Content-Delivery/48/Arch_Elastic-Load-Balancing_48.svg",
+      "sha256": "8eca01663c238c8685ce5b397d2b0ef49c00ca963023ba7ee80866ed5a620b74"
+    },
+    "lambda.svg": {
+      "archive_member": "Architecture-Service-Icons_07312026/Arch_Compute/48/Arch_AWS-Lambda_48.svg",
+      "sha256": "4a376abd2d67f8916791458810f3640b12fcfa71079154e0aed0974b92e58cdb"
+    },
+    "eventbridge.svg": {
+      "archive_member": "Architecture-Service-Icons_07312026/Arch_Application-Integration/48/Arch_Amazon-EventBridge_48.svg",
+      "sha256": "78f7fead59316ad6ac38cc262582bec81fc6649d0f6fdd5327708c08bede65e9"
+    },
+    "dynamodb.svg": {
+      "archive_member": "Architecture-Service-Icons_07312026/Arch_Databases/48/Arch_Amazon-DynamoDB_48.svg",
+      "sha256": "c336f941abcb25012c6e36fd884123a868d0727cf916d6f2348b0fb0a053f2f0"
     }
   }
 }

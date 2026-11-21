@@ -1,0 +1,20 @@
+[
+  {
+    "region": "us-east-2",
+    "instances": [
+      "i-05b24e3b4a7ee864d",
+      "i-02c1caf7d7ce17c76",
+      "i-05cfc7d4fa898ee33",
+      "i-0c777e3714538d624"
+    ],
+    "command": "e2e26045-cd43-46d5-856d-157a9a3ed4e0"
+  },
+  {
+    "region": "us-east-1",
+    "instances": [
+      "i-09e55f0a86313912d",
+      "i-0b7835341b1266d7a"
+    ],
+    "command": "fb54c8d1-c7e4-4a88-87f1-45283e6a5a06"
+  }
+]

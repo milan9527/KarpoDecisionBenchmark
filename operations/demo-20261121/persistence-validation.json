@@ -1,0 +1,32 @@
+[
+  {
+    "instance": "i-05b24e3b4a7ee864d",
+    "region": "us-east-2",
+    "output": "enabled\nactive\n/dev/nvme0n1p1 ext4\n/dev/nvme0n1p1 ext4\nNAME    MODEL                            SERIAL                SIZE\nloop0                                                         28.4M\nloop1                                                           74M\nloop2                                                         32.5M\nnvme0n1 Amazon Elastic Block Store       vol062a0dd0007413835  300G\nnvme1n1 Amazon EC2 NVMe Instance Storage AWS12E7B886FFF1293C8  3.5T\n11f26a35ba3ea257f3d14f2cf6f59fa8b6636653b49eda65ff24a8c0af1c092d  /opt/karpo-demo/demo/backend/node.py\n"
+  },
+  {
+    "instance": "i-02c1caf7d7ce17c76",
+    "region": "us-east-2",
+    "output": "enabled\nactive\n/dev/nvme0n1p1 ext4\n/dev/nvme0n1p1 ext4\nNAME    MODEL                            SERIAL                SIZE\nloop0                                                         28.4M\nloop1                                                           74M\nloop2                                                         32.5M\nnvme0n1 Amazon Elastic Block Store       vol0d9b7e5bab3e77235  300G\nnvme1n1 Amazon EC2 NVMe Instance Storage AWS1CB80486560F3A5F1  1.7T\n11f26a35ba3ea257f3d14f2cf6f59fa8b6636653b49eda65ff24a8c0af1c092d  /opt/karpo-demo/demo/backend/node.py\n"
+  },
+  {
+    "instance": "i-05cfc7d4fa898ee33",
+    "region": "us-east-2",
+    "output": "enabled\nactive\n/dev/nvme0n1p1 ext4\n/dev/nvme0n1p1 ext4\nNAME    MODEL                            SERIAL                SIZE\nloop0                                                         28.4M\nloop1                                                           74M\nloop2                                                         32.5M\nnvme1n1 Amazon EC2 NVMe Instance Storage AWS22EAF8C57E99C5015  1.7T\nnvme0n1 Amazon Elastic Block Store       vol0263165f3e67041ac  300G\n11f26a35ba3ea257f3d14f2cf6f59fa8b6636653b49eda65ff24a8c0af1c092d  /opt/karpo-demo/demo/backend/node.py\n"
+  },
+  {
+    "instance": "i-0c777e3714538d624",
+    "region": "us-east-2",
+    "output": "enabled\nactive\n/dev/nvme0n1p1 ext4\n/dev/nvme0n1p1 ext4\nNAME    MODEL                            SERIAL                SIZE\nloop0                                                         28.4M\nloop1                                                           74M\nloop2                                                         32.5M\nnvme0n1 Amazon Elastic Block Store       vol026c177270d0f7fea  300G\nnvme3n1 Amazon EC2 NVMe Instance Storage AWS1A18EE04CE09E085C  3.5T\nnvme6n1 Amazon EC2 NVMe Instance Storage AWS1E231AD9D68514B8A  3.5T\nnvme5n1 Amazon EC2 NVMe Instance Storage AWS1916ABC0553F90CE1  3.5T\nnvme1n1 Amazon EC2 NVMe Instance Storage AWS182EBD3E0323C3058  3.5T\nnvme2n1 Amazon EC2 NVMe Instance Storage AWS1B703FF27CD5FB2F3  3.5T\nnvme8n1 Amazon EC2 NVMe Instance Storage AWS1DD56CBF4BCA4D17A  3.5T\nnvme7n1 Amazon EC2 NVMe Instance Storage AWS10B3DAA6DC556697D  3.5T\nnvme4n1 Amazon EC2 NVMe Instance Storage AWS15DEE8373F695169A  3.5T\n11f26a35ba3ea257f3d14f2cf6f59fa8b6636653b49eda65ff24a8c0af1c092d  /opt/karpo-demo/demo/backend/node.py\n"
+  },
+  {
+    "instance": "i-09e55f0a86313912d",
+    "region": "us-east-1",
+    "output": "enabled\nactive\n/dev/nvme0n1p1 ext4\n/dev/nvme0n1p1 ext4\nNAME    MODEL                            SERIAL                SIZE\nloop0                                                         28.4M\nloop1                                                           74M\nloop2                                                         32.5M\nnvme0n1 Amazon Elastic Block Store       vol04ee28c63c46abc2c  300G\nnvme1n1 Amazon EC2 NVMe Instance Storage AWS116EEBC0D35D2850A  1.7T\n11f26a35ba3ea257f3d14f2cf6f59fa8b6636653b49eda65ff24a8c0af1c092d  /opt/karpo-demo/demo/backend/node.py\n"
+  },
+  {
+    "instance": "i-0b7835341b1266d7a",
+    "region": "us-east-1",
+    "output": "enabled\nactive\n/dev/nvme0n1p1 ext4\n/dev/nvme0n1p1 ext4\nNAME    MODEL                            SERIAL                SIZE\nloop0                                                         28.4M\nloop1                                                           74M\nloop2                                                         32.5M\nloop3                                                           74M\nnvme0n1 Amazon Elastic Block Store       vol00388ea3f64d38104  300G\nnvme1n1 Amazon EC2 NVMe Instance Storage AWS2D9688F896547285B  1.7T\n11f26a35ba3ea257f3d14f2cf6f59fa8b6636653b49eda65ff24a8c0af1c092d  /opt/karpo-demo/demo/backend/node.py\n"
+  }
+]

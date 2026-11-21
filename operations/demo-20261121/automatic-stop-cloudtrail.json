@@ -1,0 +1,152 @@
+[
+  {
+    "event_id": "8eb839c5-2263-4025-b3f6-ce4c98ce85d5",
+    "at": "2026-11-21T10:27:00Z",
+    "region": "us-east-1",
+    "role": "arn:aws:iam::632930644527:role/karpo-demo-20261121-watchdog",
+    "request": {
+      "instancesSet": {
+        "items": [
+          {
+            "instanceId": "i-09e55f0a86313912d"
+          },
+          {
+            "instanceId": "i-0b7835341b1266d7a"
+          }
+        ]
+      },
+      "force": false,
+      "skipOsShutdown": false
+    },
+    "response": {
+      "requestId": "ee906940-dc20-42fc-ad3d-2209b44e9331",
+      "instancesSet": {
+        "items": [
+          {
+            "instanceId": "i-0b7835341b1266d7a",
+            "currentState": {
+              "code": 64,
+              "name": "stopping"
+            },
+            "previousState": {
+              "code": 16,
+              "name": "running"
+            }
+          },
+          {
+            "instanceId": "i-09e55f0a86313912d",
+            "currentState": {
+              "code": 64,
+              "name": "stopping"
+            },
+            "previousState": {
+              "code": 16,
+              "name": "running"
+            }
+          }
+        ]
+      }
+    },
+    "error": null
+  },
+  {
+    "event_id": "ddf2a9be-66d1-41c6-b26f-061e38822eef",
+    "at": "2026-11-21T10:27:01Z",
+    "region": "us-east-2",
+    "role": "arn:aws:iam::632930644527:role/karpo-demo-20261121-watchdog",
+    "request": {
+      "instancesSet": {
+        "items": [
+          {
+            "instanceId": "i-0c777e3714538d624"
+          }
+        ]
+      },
+      "force": false,
+      "skipOsShutdown": false
+    },
+    "response": {
+      "requestId": "75e9cbb6-55fc-4650-8966-b77f8a6bff85",
+      "instancesSet": {
+        "items": [
+          {
+            "instanceId": "i-0c777e3714538d624",
+            "currentState": {
+              "code": 64,
+              "name": "stopping"
+            },
+            "previousState": {
+              "code": 16,
+              "name": "running"
+            }
+          }
+        ]
+      }
+    },
+    "error": null
+  },
+  {
+    "event_id": "e10e5dd0-8117-4a71-ad9e-5919a11cfb4d",
+    "at": "2026-11-21T10:26:59Z",
+    "region": "us-east-2",
+    "role": "arn:aws:iam::632930644527:role/karpo-demo-20261121-watchdog",
+    "request": {
+      "instancesSet": {
+        "items": [
+          {
+            "instanceId": "i-05b24e3b4a7ee864d"
+          },
+          {
+            "instanceId": "i-05cfc7d4fa898ee33"
+          },
+          {
+            "instanceId": "i-02c1caf7d7ce17c76"
+          }
+        ]
+      },
+      "force": false,
+      "skipOsShutdown": false
+    },
+    "response": {
+      "requestId": "87934908-f31b-4c91-9e4f-d36c0cd57892",
+      "instancesSet": {
+        "items": [
+          {
+            "instanceId": "i-05b24e3b4a7ee864d",
+            "currentState": {
+              "code": 64,
+              "name": "stopping"
+            },
+            "previousState": {
+              "code": 16,
+              "name": "running"
+            }
+          },
+          {
+            "instanceId": "i-02c1caf7d7ce17c76",
+            "currentState": {
+              "code": 64,
+              "name": "stopping"
+            },
+            "previousState": {
+              "code": 16,
+              "name": "running"
+            }
+          },
+          {
+            "instanceId": "i-05cfc7d4fa898ee33",
+            "currentState": {
+              "code": 64,
+              "name": "stopping"
+            },
+            "previousState": {
+              "code": 16,
+              "name": "running"
+            }
+          }
+        ]
+      }
+    },
+    "error": null
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "FunctionArn": "arn:aws:lambda:us-east-2:632930644527:function:karpo-demo-20261121-watchdog",
+  "CodeSha256": "OVox17MAdaFQkWgeYlwktAocnbcrkdHbnOFQLjBXgIU=",
+  "LastModified": "2026-11-21T10:12:37.000+0000"
+}

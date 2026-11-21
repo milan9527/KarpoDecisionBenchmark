@@ -1,0 +1,5 @@
+{
+  "command": "b88e1d3a-3d7f-422d-9f41-6996ddbf7b59",
+  "instance": "i-05b24e3b4a7ee864d",
+  "script": "set -eu\nfor host in 172.31.42.209 172.31.37.239; do\n ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new ubuntu@$host 'sudo snap restart amazon-ssm-agent; sudo systemctl status snap.amazon-ssm-agent.amazon-ssm-agent --no-pager | head -12'\ndone\nssh -i /opt/karpo/.ssh/demo-bootstrap -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new ubuntu@172.31.14.72 'sudo snap restart amazon-ssm-agent; sudo systemctl status snap.amazon-ssm-agent.amazon-ssm-agent --no-pager | head -12'\n"
+}

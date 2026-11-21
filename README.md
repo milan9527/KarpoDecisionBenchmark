@@ -2,6 +2,8 @@
 
 Karpo 金融风控与 SOP 两个场景分别验证。以下保留各场景最近一次达标结果及实际部署架构。
 
+**实时演示：[打开前端](https://deq0avneozfys.cloudfront.net) · [使用说明与演示部署图](docs/DEMO.zh.md)**。S3 + CloudFront OAC 提供页面，内部 ALB + API 服务启动并检查 GPU；演示结束后 10 分钟自动发起 GPU 停机。访问码保存在本地 `.state/demo-access.json`，未提交 Git。
+
 共同验收目标：**持续每秒 100 个请求、端到端 P50 ≤ 500ms、正确率 ≥ 90%**。每个场景均完成两轮各 120 秒正式测试，合计 24,000 次请求，全部成功且均在 500ms 内。100 RPS 表示每秒到达 100 个请求。
 
 ## 风控：六张 RTX，2026-11-21 达标
@@ -48,4 +50,4 @@ Karpo 金融风控与 SOP 两个场景分别验证。以下保留各场景最近
 
 [HTML 报告](experiments/vllm-sop-h200-20261120/report.html) · [详细结果](experiments/vllm-sop-h200-20261120/RESULTS.zh.md) · [部署与复现说明](experiments/vllm-sop-h200-20261120/REPRODUCE.zh.md) · [SVG 原图](docs/assets/sop-h200-aws-architecture.svg) · [高清 PNG](docs/assets/sop-h200-aws-architecture.png)
 
-图示为测试期间的部署。根据 [2026-11-21 04:25 UTC 资源快照](experiments/promo-rtx6-20261121/operations/final-infrastructure.json)，五台风控 RTX 实例保留运行，SOP H200 实例已停止。六 RTX 与八 H200 均是已验证达标配置，尚未证明是各场景绝对最低配置。
+图示为基准测试期间的部署；这些 GPU 现由[实时演示服务](docs/DEMO.zh.md)按需启动并自动停止。[2026-11-21 自动停机验证](operations/demo-20261121/shutdown-validation.json)已确认六台 GPU EC2 全部停止，前端及 CPU API 继续在线。六 RTX 与八 H200 均是已验证达标配置，尚未证明是各场景绝对最低配置。

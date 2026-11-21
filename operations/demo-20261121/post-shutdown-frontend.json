@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-21T10:40:46.775319+00:00",
+  "url": "https://deq0avneozfys.cloudfront.net",
+  "passed": true,
+  "checks": {
+    "unauthenticated_api": 401,
+    "frontend": 200,
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+  },
+  "status": {
+    "now": 1795257646,
+    "idle_seconds": 600,
+    "groups": {
+      "risk": {
+        "phase": "stopped",
+        "stop_after": 0,
+        "error": "",
+        "ready_gpus": 0,
+        "checked_at": 1795256169,
+        "startup_deadline": 1795257962,
+        "gpu_count": 6,
+        "gpu": "RTX PRO 6000 Blackwell 96GB",
+        "title": "薅羊毛风控",
+        "session_active": false,
+        "hosts": []
+      },
+      "sop": {
+        "phase": "stopped",
+        "stop_after": 0,
+        "error": "",
+        "ready_gpus": 0,
+        "checked_at": 1795256169,
+        "startup_deadline": 1795257968,
+        "gpu_count": 8,
+        "gpu": "NVIDIA H200",
+        "title": "SOP 决策",
+        "session_active": false,
+        "hosts": []
+      }
+    }
+  },
+  "page_errors": [],
+  "start_buttons_enabled": true,
+  "infer_buttons_disabled": true,
+  "gpu_start_requests_sent": 0
+}

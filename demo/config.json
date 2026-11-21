@@ -1,0 +1,78 @@
+{
+  "name": "karpo-demo-20261121",
+  "region": "us-east-2",
+  "idle_seconds": 600,
+  "startup_seconds": 1800,
+  "groups": {
+    "risk": {
+      "title": "薅羊毛风控",
+      "gpu": "RTX PRO 6000 Blackwell 96GB",
+      "gpu_count": 6,
+      "hosts": [
+        {
+          "id": "i-05b24e3b4a7ee864d",
+          "name": "dual",
+          "region": "us-east-2",
+          "replicas": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "i-02c1caf7d7ce17c76",
+          "name": "peer2",
+          "region": "us-east-2",
+          "replicas": [
+            2
+          ]
+        },
+        {
+          "id": "i-05cfc7d4fa898ee33",
+          "name": "peer3",
+          "region": "us-east-2",
+          "replicas": [
+            3
+          ]
+        },
+        {
+          "id": "i-09e55f0a86313912d",
+          "name": "peer4",
+          "region": "us-east-1",
+          "replicas": [
+            4
+          ]
+        },
+        {
+          "id": "i-0b7835341b1266d7a",
+          "name": "peer5",
+          "region": "us-east-1",
+          "replicas": [
+            5
+          ]
+        }
+      ]
+    },
+    "sop": {
+      "title": "SOP 决策",
+      "gpu": "NVIDIA H200",
+      "gpu_count": 8,
+      "hosts": [
+        {
+          "id": "i-0c777e3714538d624",
+          "name": "h200",
+          "region": "us-east-2",
+          "replicas": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    }
+  }
+}

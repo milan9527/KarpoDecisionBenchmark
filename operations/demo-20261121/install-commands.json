@@ -1,0 +1,122 @@
+[
+  {
+    "name": "backend",
+    "group": "backend",
+    "region": "us-east-2",
+    "instance": "i-04aa43d75617e765b",
+    "command": "80d49563-c055-4a8e-8000-9e416b15774e",
+    "runtime_sha256": "d95a5305bf96bd402d7b1c9e1d7ad92d1f550dcfd0e32b97ff23f50a6889819b"
+  },
+  {
+    "name": "dual",
+    "group": "risk",
+    "region": "us-east-2",
+    "instance": "i-05b24e3b4a7ee864d",
+    "command": "eb1d6305-64d9-47ec-86b4-86c969465a0f",
+    "runtime_sha256": "d95a5305bf96bd402d7b1c9e1d7ad92d1f550dcfd0e32b97ff23f50a6889819b"
+  },
+  {
+    "name": "peer2",
+    "group": "risk",
+    "region": "us-east-2",
+    "instance": "i-02c1caf7d7ce17c76",
+    "command": "44a6e15e-8de7-454a-b0f4-bf6bef1fa0ae",
+    "runtime_sha256": "d95a5305bf96bd402d7b1c9e1d7ad92d1f550dcfd0e32b97ff23f50a6889819b"
+  },
+  {
+    "name": "peer3",
+    "group": "risk",
+    "region": "us-east-2",
+    "instance": "i-05cfc7d4fa898ee33",
+    "command": "e3ac4ae9-749f-4450-909e-a85313502e4b",
+    "runtime_sha256": "d95a5305bf96bd402d7b1c9e1d7ad92d1f550dcfd0e32b97ff23f50a6889819b"
+  },
+  {
+    "name": "peer4",
+    "group": "risk",
+    "region": "us-east-1",
+    "instance": "i-09e55f0a86313912d",
+    "command": "566c8a3d-34dd-456e-acbd-b1ac157e79f9",
+    "runtime_sha256": "d95a5305bf96bd402d7b1c9e1d7ad92d1f550dcfd0e32b97ff23f50a6889819b"
+  },
+  {
+    "name": "peer5",
+    "group": "risk",
+    "region": "us-east-1",
+    "instance": "i-0b7835341b1266d7a",
+    "command": "6a65b51b-d291-46f0-8c2a-c776622ae2b6",
+    "runtime_sha256": "d95a5305bf96bd402d7b1c9e1d7ad92d1f550dcfd0e32b97ff23f50a6889819b"
+  },
+  {
+    "name": "h200",
+    "group": "sop",
+    "region": "us-east-2",
+    "instance": "i-0c777e3714538d624",
+    "command": "8a041548-2577-4af1-bee4-eadb7fc679f7",
+    "runtime_sha256": "d95a5305bf96bd402d7b1c9e1d7ad92d1f550dcfd0e32b97ff23f50a6889819b"
+  },
+  {
+    "name": "backend",
+    "group": "backend",
+    "region": "us-east-2",
+    "instance": "i-04aa43d75617e765b",
+    "command": "8ec1c8f5-3c7a-4163-9cf6-2c5461453300",
+    "runtime_sha256": "0d6f47cb97b34dee1eb58b1c53d278f5473b5032405955026cac17f35142c9ec"
+  },
+  {
+    "name": "dual",
+    "group": "risk",
+    "region": "us-east-2",
+    "instance": "i-05b24e3b4a7ee864d",
+    "command": "cfd586fe-e68a-4ce5-be90-353894ee1283",
+    "runtime_sha256": "3d6402cad4e69e316bf8be3da8d3a981fcc805b036623ffd9a3e290799bbf9b3"
+  },
+  {
+    "name": "peer2",
+    "group": "risk",
+    "region": "us-east-2",
+    "instance": "i-02c1caf7d7ce17c76",
+    "command": "2cf9b401-daf4-40f5-8efa-5d827ceab079",
+    "runtime_sha256": "3d6402cad4e69e316bf8be3da8d3a981fcc805b036623ffd9a3e290799bbf9b3"
+  },
+  {
+    "name": "peer3",
+    "group": "risk",
+    "region": "us-east-2",
+    "instance": "i-05cfc7d4fa898ee33",
+    "command": "dbd4a3cd-83d3-48bc-b1ea-362ba88366ed",
+    "runtime_sha256": "3d6402cad4e69e316bf8be3da8d3a981fcc805b036623ffd9a3e290799bbf9b3"
+  },
+  {
+    "name": "peer4",
+    "group": "risk",
+    "region": "us-east-1",
+    "instance": "i-09e55f0a86313912d",
+    "command": "f33ee064-675f-407e-818c-e96a6cf1df20",
+    "runtime_sha256": "3d6402cad4e69e316bf8be3da8d3a981fcc805b036623ffd9a3e290799bbf9b3"
+  },
+  {
+    "name": "peer5",
+    "group": "risk",
+    "region": "us-east-1",
+    "instance": "i-0b7835341b1266d7a",
+    "command": "04a40667-d17b-4e2e-9ed9-2dbe71408a98",
+    "runtime_sha256": "3d6402cad4e69e316bf8be3da8d3a981fcc805b036623ffd9a3e290799bbf9b3"
+  },
+  {
+    "name": "h200",
+    "group": "sop",
+    "region": "us-east-2",
+    "instance": "i-0c777e3714538d624",
+    "command": "f6ad1c36-b34b-4a21-8cd0-4db56b9d5f09",
+    "runtime_sha256": "3d6402cad4e69e316bf8be3da8d3a981fcc805b036623ffd9a3e290799bbf9b3"
+  },
+  {
+    "name": "backend",
+    "group": "backend",
+    "region": "us-east-2",
+    "instance": "i-04aa43d75617e765b",
+    "command": "9522e75f-4cf4-4f74-ac29-65959486c48c",
+    "runtime_sha256": "3d6402cad4e69e316bf8be3da8d3a981fcc805b036623ffd9a3e290799bbf9b3"
+  }
+]

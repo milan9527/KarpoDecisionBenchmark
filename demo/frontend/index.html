@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102a35">
+  <title>Karpo · 实时决策演示</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-mark">K</span><span>KARPO<span class="brand-note">DECISION LAB</span></span></a>
+    <div class="top-actions"><span class="live-dot"></span><span>实时模型演示</span><button id="end-all" class="quiet" disabled>结束演示</button></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">FROM SIGNALS TO DECISIONS</p><h1>让每个决策，<br>都有据可循。</h1><p class="lead">从完整输入到模型回答，现场验证风控与 SOP 的每一步。</p></div>
+      <aside class="intro-note"><span class="note-number">10<span>分钟</span></span><p>结束或连续无操作 10 分钟后，<br>自动发起 GPU 停机。</p><span class="subtle">完成时间以实例状态为准；就绪后才可推理。</span></aside>
+    </section>
+    <nav class="tabs" aria-label="演示场景">
+      <button class="tab active" data-group="risk"><span>01</span> 薅羊毛风控 <small>200 个特征</small></button>
+      <button class="tab" data-group="sop"><span>02</span> SOP 决策 <small>200 个候选</small></button>
+    </nav>
+    <section class="readiness panel" aria-live="polite">
+      <div class="status-heading"><div><p class="eyebrow">GPU READINESS</p><h2 id="status-title">连接演示服务</h2><p id="status-description">验证访问码后查看 GPU 状态。</p></div><button id="start" class="primary" disabled>启动演示 <span>↗</span></button></div>
+      <div class="status-meta"><span id="hardware">6 × RTX PRO 6000 Blackwell</span><span id="count">0 / 6 副本就绪</span><span id="countdown">尚未启动</span></div>
+      <progress id="ready-progress" max="6" value="0" aria-label="GPU就绪进度"></progress>
+      <div id="hosts" class="hosts"></div>
+      <p id="status-error" class="error hidden"></p>
+    </section>
+    <div class="workspace">
+      <section class="panel input-panel">
+        <div class="section-heading"><div><p class="eyebrow">01 / INPUT</p><h2>准备一个问题</h2></div><span id="input-badge" class="badge">200 特征</span></div>
+        <div id="examples" class="example-list"></div>
+        <label for="state">输入事实与客户消息 <span>可编辑</span></label>
+        <textarea id="state" spellcheck="false" aria-describedby="input-note"></textarea>
+        <p id="input-note" class="subtle">保留全部特征和原始规则，仅修改输入状态。</p>
+        <details><summary>查看完整模型请求</summary><pre id="full-request"></pre></details>
+        <button id="infer" class="primary run" disabled>等待 GPU 就绪</button>
+        <p id="input-error" class="error hidden" role="alert"></p>
+      </section>
+      <section class="panel result-panel" aria-live="polite">
+        <div class="section-heading"><div><p class="eyebrow">02 / DECISION</p><h2>查看模型回答</h2></div><span id="response-source" class="badge neutral">等待请求</span></div>
+        <div id="empty" class="empty"><div class="empty-symbol">↗</div><h3>下一步，由模型判断。</h3><p>选择示例，确认 GPU 就绪后运行。<br>这里将展示实际动作、概率与响应时间。</p></div>
+        <div id="result" class="hidden">
+          <div class="decision"><span id="decision-label">最终动作</span><h3 id="decision"></h3><p id="decision-description"></p></div>
+          <div class="metrics"><div><span>浏览器往返</span><strong id="latency"></strong></div><div><span>输入 tokens</span><strong id="tokens"></strong></div><div><span>GPU 副本</span><strong id="replica"></strong></div></div>
+          <div id="calibration" class="calibration hidden"></div>
+          <h4>候选概率 <span id="probability-note"></span></h4>
+          <div id="probabilities"></div>
+          <details><summary>查看完整实际响应</summary><pre id="full-response"></pre></details>
+        </div>
+      </section>
+    </div>
+    <footer><span>Karpo 4B · vLLM · FP8 · 每卡独立副本</span><span>示例为合成数据；页面调用真实 GPU 模型，不执行金融操作。</span></footer>
+  </main>
+  <dialog id="login">
+    <form id="login-form">
+      <span class="brand-mark">K</span><p class="eyebrow">WELCOME TO DECISION LAB</p><h2>开始一次实时演示</h2>
+      <p>请输入演示访问码。GPU 仅在点击启动后准备就绪。</p>
+      <label for="code">演示访问码</label><input id="code" type="password" autocomplete="off" required>
+      <p id="login-error" class="error hidden" role="alert"></p><button class="primary" id="login-button" type="submit">进入演示 ↗</button>
+    </form>
+  </dialog>
+  <div id="toast" class="toast hidden" role="status"></div>
+</body>
+</html>

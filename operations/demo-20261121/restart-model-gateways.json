@@ -1,0 +1,38 @@
+[
+  {
+    "name": "dual",
+    "instance": "i-05b24e3b4a7ee864d",
+    "region": "us-east-2",
+    "command": "ceda2251-4068-49b1-87ec-54300d487aa0"
+  },
+  {
+    "name": "peer2",
+    "instance": "i-02c1caf7d7ce17c76",
+    "region": "us-east-2",
+    "command": "a8ad1413-f172-4e9a-8eb8-dba52c5d9888"
+  },
+  {
+    "name": "peer3",
+    "instance": "i-05cfc7d4fa898ee33",
+    "region": "us-east-2",
+    "command": "eefdcddc-fdf8-4a7c-9f3f-bb18c84ecfb3"
+  },
+  {
+    "name": "peer4",
+    "instance": "i-09e55f0a86313912d",
+    "region": "us-east-1",
+    "command": "98c25100-22de-40b3-8ca9-a770b5276b45"
+  },
+  {
+    "name": "peer5",
+    "instance": "i-0b7835341b1266d7a",
+    "region": "us-east-1",
+    "command": "715133ce-4c46-4f62-8f71-2273d0f912f4"
+  },
+  {
+    "name": "h200",
+    "instance": "i-0c777e3714538d624",
+    "region": "us-east-2",
+    "command": "caa77961-6987-4626-8425-951cb0111473"
+  }
+]

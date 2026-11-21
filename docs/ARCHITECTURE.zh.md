@@ -1,5 +1,7 @@
 # 六 RTX 风控验证：AWS 部署架构
 
+公网演示的 S3 + CloudFront OAC、内部 ALB、API 与自动 GPU 启停架构见[实时演示部署说明](DEMO.zh.md)。下图保留基准测试时的实际请求路径。
+
 本图对应 2026-11-21 已完成的六卡实际模型测试：**五台 Spot EC2、六张 RTX PRO 6000 Blackwell Server Edition 96GB，每卡一个完整 Karpo 4B FP8 副本**。图中资源及进程的位置描述测试期间的部署，资源状态依据当日 04:25:48 UTC 快照。
 
 [查看 SVG 原图](assets/promo-rtx6-aws-architecture.svg) · [下载高清 PNG](assets/promo-rtx6-aws-architecture.png) · [六卡 HTML 报告](../experiments/promo-rtx6-20261121/report.html)
