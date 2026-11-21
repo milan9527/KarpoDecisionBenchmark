@@ -1,0 +1,9 @@
+{
+  "id": "32364d77-0151-4740-bf57-cd5e6409c681",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T04:24:17.755925+00:00",
+  "script": "set -eu\nsystemctl is-active karpo-rtx6-controller karpo-rtx6-bootstrap-peer4 karpo-rtx6-bootstrap-peer5 || true\njournalctl -u karpo-rtx6-controller -n 3 --no-pager -o cat\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport json,pathlib\np=pathlib.Path('/opt/karpo/promo-rtx6-20261121/experiments/promo-rtx6-20261121/results')\nfor f in [p/'controller.json',*sorted(p.glob('nodes/*/status.json')),*sorted(p.glob('runs/*/status.json'))]:\n if not f.exists():continue\n s=json.loads(f.read_text())\n print(str(f.relative_to(p)),{k:v for k,v in s.items() if k not in ['stages']})\n for step in s.get('stages',[]):\n  r=step['result'];print(step['name'],{k:r[k] for k in ['attempts','correct','steady_valid_rps','p50_ms','failures'] if k in r})\nPY\n"
+}

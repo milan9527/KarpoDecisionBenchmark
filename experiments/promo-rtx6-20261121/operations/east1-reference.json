@@ -1,0 +1,191 @@
+{
+  "Reservations": [
+    {
+      "ReservationId": "r-0920043ebb5f45f6b",
+      "OwnerId": "632930644527",
+      "Groups": [],
+      "Instances": [
+        {
+          "Architecture": "x86_64",
+          "BlockDeviceMappings": [
+            {
+              "DeviceName": "/dev/sda1",
+              "Ebs": {
+                "AttachTime": "2026-11-20 14:45:58+00:00",
+                "DeleteOnTermination": false,
+                "Status": "attached",
+                "VolumeId": "vol-06ef434d35f57903c",
+                "EbsCardIndex": 0
+              }
+            }
+          ],
+          "ClientToken": "karpo-rtx4-east1-spot-v1-20261120-us-east-1b",
+          "EbsOptimized": false,
+          "EnaSupport": true,
+          "Hypervisor": "xen",
+          "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::632930644527:instance-profile/PVRE-SSMOnboardingInstanceProfile-48TFLeLrF2rS",
+            "Id": "AIPAZGXM3GIXSUZH3MIXQ"
+          },
+          "InstanceLifecycle": "spot",
+          "NetworkInterfaces": [
+            {
+              "Attachment": {
+                "AttachTime": "2026-11-20 14:45:57+00:00",
+                "AttachmentId": "eni-attach-0f58c3b0aacd234d6",
+                "DeleteOnTermination": true,
+                "DeviceIndex": 0,
+                "Status": "attached",
+                "NetworkCardIndex": 0
+              },
+              "Description": "",
+              "Groups": [
+                {
+                  "GroupId": "sg-04423a46913e44f37",
+                  "GroupName": "karpo-rtx4-control-only-20261120"
+                }
+              ],
+              "Ipv6Addresses": [],
+              "MacAddress": "12:ff:f1:b5:63:3f",
+              "NetworkInterfaceId": "eni-092a0d7ac46621188",
+              "OwnerId": "632930644527",
+              "PrivateDnsName": "ip-172-31-85-230.ec2.internal",
+              "PrivateIpAddress": "172.31.85.230",
+              "PrivateIpAddresses": [
+                {
+                  "Primary": true,
+                  "PrivateDnsName": "ip-172-31-85-230.ec2.internal",
+                  "PrivateIpAddress": "172.31.85.230"
+                }
+              ],
+              "SourceDestCheck": true,
+              "Status": "in-use",
+              "SubnetId": "subnet-023880de85fb9261b",
+              "VpcId": "vpc-0c036c30b82b3703f",
+              "InterfaceType": "interface",
+              "Operator": {
+                "Managed": false
+              }
+            }
+          ],
+          "RootDeviceName": "/dev/sda1",
+          "RootDeviceType": "ebs",
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-04423a46913e44f37",
+              "GroupName": "karpo-rtx4-control-only-20261120"
+            }
+          ],
+          "SourceDestCheck": true,
+          "SpotInstanceRequestId": "sir-ctciivig",
+          "StateReason": {
+            "Code": "Client.UserInitiatedShutdown",
+            "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+          },
+          "Tags": [
+            {
+              "Key": "Name",
+              "Value": "karpo-rtx4-fleet1-20261120"
+            },
+            {
+              "Key": "Patch Group",
+              "Value": "DEV"
+            },
+            {
+              "Key": "KeepRunning",
+              "Value": "User requested EC2 remain running"
+            },
+            {
+              "Key": "Project",
+              "Value": "KarpoDecisionBenchmark"
+            }
+          ],
+          "VirtualizationType": "hvm",
+          "CpuOptions": {
+            "CoreCount": 8,
+            "ThreadsPerCore": 2
+          },
+          "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+          },
+          "HibernationOptions": {
+            "Configured": false
+          },
+          "MetadataOptions": {
+            "State": "applied",
+            "HttpTokens": "required",
+            "HttpPutResponseHopLimit": 2,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+          },
+          "EnclaveOptions": {
+            "Enabled": false
+          },
+          "BootMode": "uefi-preferred",
+          "PlatformDetails": "Linux/UNIX",
+          "UsageOperation": "RunInstances",
+          "UsageOperationUpdateTime": "2026-11-20 14:45:57+00:00",
+          "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+          },
+          "MaintenanceOptions": {
+            "AutoRecovery": "default",
+            "RebootMigration": "default"
+          },
+          "CurrentInstanceBootMode": "uefi",
+          "NetworkPerformanceOptions": {
+            "BandwidthWeighting": "default"
+          },
+          "Operator": {
+            "Managed": false
+          },
+          "SecondaryInterfaces": [],
+          "InstanceId": "i-05d0c24c739f41ca5",
+          "ImageId": "ami-0961bdc9d1646251d",
+          "State": {
+            "Code": 80,
+            "Name": "stopped"
+          },
+          "PrivateDnsName": "ip-172-31-85-230.ec2.internal",
+          "PublicDnsName": "",
+          "StateTransitionReason": "User initiated (2026-11-20 16:06:20 GMT)",
+          "KeyName": "karpo-rtx4-control-20261120",
+          "AmiLaunchIndex": 0,
+          "ProductCodes": [],
+          "InstanceType": "g7e.4xlarge",
+          "LaunchTime": "2026-11-20 14:45:57+00:00",
+          "Placement": {
+            "AvailabilityZoneId": "use1-az2",
+            "GroupName": "",
+            "Tenancy": "default",
+            "AvailabilityZone": "us-east-1b"
+          },
+          "Monitoring": {
+            "State": "disabled"
+          },
+          "SubnetId": "subnet-023880de85fb9261b",
+          "VpcId": "vpc-0c036c30b82b3703f",
+          "PrivateIpAddress": "172.31.85.230"
+        }
+      ]
+    }
+  ],
+  "ResponseMetadata": {
+    "RequestId": "4e262335-285c-4007-996f-916f5ede3979",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "x-amzn-requestid": "4e262335-285c-4007-996f-916f5ede3979",
+      "cache-control": "no-cache, no-store",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "vary": "accept-encoding",
+      "content-type": "text/xml;charset=UTF-8",
+      "content-length": "5295",
+      "date": "Sat, 21 Nov 2026 04:12:03 GMT",
+      "server": "AmazonEC2"
+    },
+    "RetryAttempts": 0
+  }
+}

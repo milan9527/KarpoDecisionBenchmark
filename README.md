@@ -2,28 +2,30 @@
 
 Karpo 金融风控与 SOP 决策测试项目，两个场景分别验证。风控输入200个特征；SOP每次完整传入200个候选，由模型一次选择，程序不做业务域判断或候选过滤。
 
-**当前：固定batch 4，复核决策质量达标，100 RPS性能仍未达标（2026-11-21）**
+**当前：六RTX固定batch 4，风控实际模型验证通过（2026-11-21）**
 
-按照用户要求停止batch调整，后续固定 **batch=4、CUDA Graph powers**。仍使用俄亥俄 **us-east-2c** 的四张RTX PRO 6000 Blackwell 96GB：一台g7e.12xlarge双卡、两台g7e.2xlarge单卡。每卡独立Karpo 4B FP8副本，vLLM 0.34.0，保留原FP32输出头、原提示及完整200特征。
+沿用完整200特征、原提示、Karpo 4B FP8、vLLM 0.34.0与原FP32决策头，保持 **batch=4、CUDA Graph powers**，每卡一个完整模型副本。复核阈值继续使用上一轮冻结值，本轮只验证扩卡，不调整batch、提示或阈值。
 
-旧输入在当前环境重跑仍通过：质量233/240（97.08%），两轮100 RPS端到端P50为44.67／44.63ms，零失败。已完成的CUDA Graph及配置对照没有明显性能收益，剩余batch搜索已停止。
+六张GPU均为 **RTX PRO 6000 Blackwell Server Edition 96GB**：四张在俄亥俄us-east-2c，两张在北弗吉尼亚us-east-1d，共五台Spot EC2。俄亥俄Spot配额已满，三个可用区四种RTX规格的按需容量均不足，因此新增两卡改用北弗吉尼亚Spot；跨区域SSH传输完整计入端到端延迟。
 
-复核阈值校准后的实际HTTP质量测试为 **1063/1080（98.43%）**；同批请求的原始Karpo选择为843/1080（78.06%）。应复核识别从31/264提升至251/264，正常样本误干预0/336，作弊样本放行1/408。只在原选择allow且`p(review)/(p(review)+p(allow)) >= 0.1628260940455841`时升级为review，原始模型答案保留，最终决策单独返回。阈值仅用tune拟合并在新留出集推理前冻结，属于模型分数后处理，不是原模型准确率或微调结果。
-
-| 校准服务正式轮次 | 到达率 | 稳态有效吞吐 | 端到端P50 | 端到端P95 | 失败/全部 | 正确/全部 |
+| 六卡正式轮次 | 到达率 | 稳态有效吞吐 | 端到端P50 | 端到端P95 | 失败/全部 | 正确/全部 |
 |---|---:|---:|---:|---:|---:|---:|
-| 第1轮120秒 | 100 RPS | 76.71 RPS | 3,313.69 ms | 3,339.00 ms | 2,564/12,000 | 77.58% |
-| 第2轮120秒 | 100 RPS | 76.71 RPS | 3,312.35 ms | 3,340.13 ms | 2,557/12,000 | 77.65% |
+| 第1轮120秒 | 100 RPS | 100.00 RPS | 67.62 ms | 126.02 ms | 0/12,000 | 98.90% |
+| 第2轮120秒 | 100 RPS | 100.01 RPS | 68.11 ms | 125.63 ms | 0/12,000 | 98.90% |
 
-40 RPS低负载P50为62.96ms、零失败；100 RPS两轮仍然排队并限流，GPU利用率均值98.62%～99.13%。全部失败计入验收，**质量改善没有解决四卡吞吐瓶颈，整体未通过**。本轮逐条核验102,152次请求和30份实际GPU引擎配置。
+**两轮共24,000次请求全部成功且均在500ms内，满足持续100 RPS、端到端P50≤500ms的目标。** 四卡同输入、同阈值此前约76.71 RPS、P50约3.31秒；六卡结果表明扩容缓解了该负载下的排队。这里100 RPS是每秒到达100请求，不是持续100个请求同时在途。
 
-最终输入为3216～3315 tokens，无裁剪或答案缓存。端到端包含排队、编码及同可用区私网，不含生产入口和在线特征查询。新留出集540个案例各测两种候选顺序，与tune隔离实体及种子但共享45类合成模板，不能代替真实业务验收。
+合成质量集最终决策正确率为 **1063/1080（98.43%）**，同批原始Karpo选择为843/1080（78.06%）。应复核识别251/264，正常行为误干预0/336，作弊行为放行1/408。只有原选择allow且`p(review)/(p(review)+p(allow)) >= 0.1628260940455841`时升级为review；原始`answers`保留，校准后`decision`单独返回。因此98.43%属于包含模型分数后处理的最终决策效果。
 
-**资源：按用户要求保留三台EC2、四张RTX运行；其余五台项目实例保持停止。** [资源快照](experiments/promo-opt-20261121/operations/final-infrastructure.json) · [四副本与batch状态](experiments/promo-opt-20261121/results/final-service-state.json)。
+本轮逐字节复用上一轮1440条输入及真实编码，其中质量集540个案例各测两种候选顺序，共1080条；属于硬件扩容复测，不是新的独立质量留出集。正式压力循环360条tune请求。合成样本共享45种场景模板，不能替代生产数据验收。完整输入3216～3315 tokens，无裁剪或答案缓存；端到端含排队、编码和跨区域传输，不含生产外部入口及在线特征查询。
 
-[最新HTML](experiments/promo-opt-20261121/report.html) · [详细结果](experiments/promo-opt-20261121/RESULTS.zh.md) · [完整输入输出](experiments/promo-opt-20261121/results/decision-example.json) · [复现说明](experiments/promo-opt-20261121/REPRODUCE.zh.md) · [复核阈值说明](experiments/promo-opt-20261121/CALIBRATION.zh.md) · [停止batch调整的记录](experiments/promo-opt-20261121/AMENDMENT-STOP-BATCH.zh.md)
+共独立核验27,960次请求和6份实际GPU引擎配置，各卡正式阶段GPU利用率均值80.44%～91.87%。本轮未测五卡，不将六卡表述为绝对最低配置。
 
-此前新版原始模型结果保留在[上一轮四RTX报告](experiments/promo-risk-rtx4-20261121/RESULTS.zh.md)。200特征覆盖活动权益、退款套利、推荐奖励、支付归集及团伙关联等，由带时间戳的合成事件生成；[特征与数据说明](experiments/promo-risk-20261121/README.zh.md) · [可检索特征HTML](experiments/promo-risk-20261121/report.html)。
+**资源：按用户要求，五台EC2、六张RTX继续运行；其余五台项目实例保持停止。** 当前Spot计算参考价合计12.4120美元/小时，按720小时为8,936.64美元/月；同配置按需标价21.7386美元/小时，不代表当前有按需容量。费用不含EBS、公网IPv4、跨区域流量等。[资源快照](experiments/promo-rtx6-20261121/operations/final-infrastructure.json) · [价格快照](experiments/promo-rtx6-20261121/operations/pricing.json)。
+
+[六卡HTML](experiments/promo-rtx6-20261121/report.html) · [详细结果](experiments/promo-rtx6-20261121/RESULTS.zh.md) · [完整输入输出](experiments/promo-rtx6-20261121/results/decision-example.json) · [复现说明](experiments/promo-rtx6-20261121/REPRODUCE.zh.md) · [逐条核验](experiments/promo-rtx6-20261121/results/verification.json)
+
+此前[四卡优化报告](experiments/promo-opt-20261121/RESULTS.zh.md)保留旧输入环境对照、已完成的batch/Graph测试、停止batch搜索记录和复核阈值选择过程。200特征覆盖活动权益、退款套利、推荐奖励、支付归集及团伙关联等，来自带时间戳的合成事件；[特征与数据说明](experiments/promo-risk-20261121/README.zh.md) · [可检索特征HTML](experiments/promo-risk-20261121/report.html)。
 
 **历史：SOP全H200验证通过；旧版风控四RTX通过（2026-11-20）**
 

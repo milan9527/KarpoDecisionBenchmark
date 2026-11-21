@@ -1,0 +1,40 @@
+[
+  {
+    "replica_id": 4,
+    "replica_ids": [
+      4
+    ],
+    "region": "us-east-1",
+    "az": "us-east-1d",
+    "instance_id": "i-09e55f0a86313912d",
+    "instance_type": "g7e.2xlarge",
+    "private_ip": "172.31.46.199",
+    "market": "spot",
+    "spot_request_id": "sir-t4fg3p1g",
+    "gpu_count": 1,
+    "vcpus": 8,
+    "management": "SSH via dual; inference via encrypted cross-region tunnel",
+    "utc": "2026-11-21T04:12:37.875917+00:00",
+    "public_ip": "18.212.111.93",
+    "state": "running"
+  },
+  {
+    "replica_id": 5,
+    "replica_ids": [
+      5
+    ],
+    "region": "us-east-1",
+    "az": "us-east-1d",
+    "instance_id": "i-0b7835341b1266d7a",
+    "instance_type": "g7e.2xlarge",
+    "private_ip": "172.31.38.232",
+    "market": "spot",
+    "spot_request_id": "sir-wazgie5k",
+    "gpu_count": 1,
+    "vcpus": 8,
+    "management": "SSH via dual; inference via encrypted cross-region tunnel",
+    "utc": "2026-11-21T04:12:41.918492+00:00",
+    "public_ip": "34.227.87.14",
+    "state": "running"
+  }
+]

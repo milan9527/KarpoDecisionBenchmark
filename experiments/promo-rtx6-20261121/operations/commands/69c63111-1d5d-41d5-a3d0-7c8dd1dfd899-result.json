@@ -1,0 +1,36 @@
+{
+  "CommandId": "69c63111-1d5d-41d5-a3d0-7c8dd1dfd899",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T04:13:16.227Z",
+  "ExecutionElapsedTime": "PT0.028S",
+  "ExecutionEndDateTime": "2026-11-21T04:13:16.227Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-rtx6-bootstrap-peer5.service; invocation ID: 76a76e1ef7064c9095f4278ca46c5e9b\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "60d62c10-2ab3-4de8-a66b-7b16b76f1710",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 04:14:12 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "684",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "60d62c10-2ab3-4de8-a66b-7b16b76f1710",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

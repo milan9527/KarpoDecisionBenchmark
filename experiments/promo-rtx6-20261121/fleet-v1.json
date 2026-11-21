@@ -1,0 +1,101 @@
+{
+  "hosts": [
+    {
+      "name": "dual",
+      "instance_id": "i-05b24e3b4a7ee864d",
+      "region": "us-east-2",
+      "az": "us-east-2c",
+      "instance_type": "g7e.12xlarge",
+      "replica_ids": [
+        0,
+        1
+      ],
+      "ssh_address": null,
+      "new": false,
+      "cross_region": false,
+      "market": "spot",
+      "previous_unit": "karpo-opt-review-selected-dual"
+    },
+    {
+      "name": "peer2",
+      "instance_id": "i-02c1caf7d7ce17c76",
+      "instance_type": "g7e.2xlarge",
+      "region": "us-east-2",
+      "az": "us-east-2c",
+      "replica_ids": [
+        2
+      ],
+      "ssh_address": "172.31.42.209",
+      "new": false,
+      "cross_region": false,
+      "market": "spot",
+      "previous_unit": "karpo-opt-review-selected-peer2"
+    },
+    {
+      "name": "peer3",
+      "instance_id": "i-05cfc7d4fa898ee33",
+      "instance_type": "g7e.2xlarge",
+      "region": "us-east-2",
+      "az": "us-east-2c",
+      "replica_ids": [
+        3
+      ],
+      "ssh_address": "172.31.37.239",
+      "new": false,
+      "cross_region": false,
+      "market": "spot",
+      "previous_unit": "karpo-opt-review-selected-peer3"
+    },
+    {
+      "name": "peer4",
+      "instance_id": "i-09e55f0a86313912d",
+      "instance_type": "g7e.2xlarge",
+      "region": "us-east-1",
+      "az": "us-east-1d",
+      "replica_ids": [
+        4
+      ],
+      "ssh_address": "18.212.111.93",
+      "new": true,
+      "cross_region": true,
+      "market": "spot"
+    },
+    {
+      "name": "peer5",
+      "instance_id": "i-0b7835341b1266d7a",
+      "instance_type": "g7e.2xlarge",
+      "region": "us-east-1",
+      "az": "us-east-1d",
+      "replica_ids": [
+        5
+      ],
+      "ssh_address": "34.227.87.14",
+      "new": true,
+      "cross_region": true,
+      "market": "spot"
+    }
+  ],
+  "urls": [
+    "http://127.0.0.1:18500",
+    "http://127.0.0.1:18501",
+    "http://172.31.42.209:18500",
+    "http://172.31.37.239:18500",
+    "http://127.0.0.1:18504",
+    "http://127.0.0.1:18505"
+  ],
+  "expected_weights": {
+    "model-00001-of-00002.safetensors": {
+      "sha256": "8b8835b9f4be56469b84d448f60f796840ffb4bac1f5d85345a2ff8eedaeb353",
+      "bytes": 5366966256
+    },
+    "model-00002-of-00002.safetensors": {
+      "sha256": "f85fe11714a76a46d689523cfc7adaedda0eb2397f80ed368530c77e119b5110",
+      "bytes": 3711649856
+    },
+    "readout.safetensors": {
+      "sha256": "d3b61679c31a1f09e214adcd542d3de831b383bee176fe25e4d8e19c8cbcf677",
+      "bytes": 2611280
+    }
+  },
+  "network": "Four Ohio GPUs; two Virginia GPUs reached through loopback-bound SSH tunnels"
+}

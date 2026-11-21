@@ -1,0 +1,116 @@
+{
+  "target_rps": 100,
+  "offered_seconds": 20,
+  "scheduled_requests": 2000,
+  "attempts": 2000,
+  "valid": 2000,
+  "failures": 0,
+  "http_statuses": {
+    "200": 2000
+  },
+  "replica_counts": {
+    "1": 356,
+    "2": 341,
+    "3": 341,
+    "0": 363,
+    "4": 305,
+    "5": 294
+  },
+  "correct": 1980,
+  "elapsed_with_drain_s": 20.093462033999458,
+  "valid_rps_with_drain": 99.53486346035683,
+  "steady_valid_rps": 100.0,
+  "p50_ms": 74.73351499993441,
+  "p95_ms": 126.30827399971167,
+  "p99_ms": 131.67272600003344,
+  "http_p50_ms": 74.11748100003024,
+  "last_quarter_p50_ms": 74.10781999988103,
+  "max_send_lag_ms": 2.3793239997758064,
+  "valid_within_500ms": 2000,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 8
+    },
+    {
+      "second": 2,
+      "pending": 8
+    },
+    {
+      "second": 3,
+      "pending": 7
+    },
+    {
+      "second": 4,
+      "pending": 7
+    },
+    {
+      "second": 5,
+      "pending": 7
+    },
+    {
+      "second": 6,
+      "pending": 7
+    },
+    {
+      "second": 7,
+      "pending": 7
+    },
+    {
+      "second": 8,
+      "pending": 9
+    },
+    {
+      "second": 9,
+      "pending": 9
+    },
+    {
+      "second": 10,
+      "pending": 7
+    },
+    {
+      "second": 11,
+      "pending": 7
+    },
+    {
+      "second": 12,
+      "pending": 8
+    },
+    {
+      "second": 13,
+      "pending": 9
+    },
+    {
+      "second": 14,
+      "pending": 7
+    },
+    {
+      "second": 15,
+      "pending": 8
+    },
+    {
+      "second": 16,
+      "pending": 9
+    },
+    {
+      "second": 17,
+      "pending": 7
+    },
+    {
+      "second": 18,
+      "pending": 8
+    },
+    {
+      "second": 19,
+      "pending": 7
+    },
+    {
+      "second": 20,
+      "pending": 7
+    }
+  ],
+  "backlog_slope_per_second": -0.0014705882352941176,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": true,
+  "passes_performance_acceptance": false
+}

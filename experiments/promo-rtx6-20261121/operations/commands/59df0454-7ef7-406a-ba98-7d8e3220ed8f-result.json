@@ -1,0 +1,36 @@
+{
+  "CommandId": "59df0454-7ef7-406a-ba98-7d8e3220ed8f",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T04:14:50.464Z",
+  "ExecutionElapsedTime": "PT0.21S",
+  "ExecutionEndDateTime": "2026-11-21T04:14:50.464Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "/tmp/promo-rtx6-v1.tar.gz: OK\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-rtx6-controller.service; invocation ID: 1159f92120894d06b7daf27b29e2b378\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "29104e4b-a6e7-4709-8bc5-01d164a8c446",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 04:15:02 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "709",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "29104e4b-a6e7-4709-8bc5-01d164a8c446",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

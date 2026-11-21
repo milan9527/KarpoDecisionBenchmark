@@ -1,0 +1,12 @@
+{
+  "id": "59df0454-7ef7-406a-ba98-7d8e3220ed8f",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T04:14:50.289343+00:00",
+  "script": "set -euo pipefail\ncurl --fail --silent --show-error --location '<REDACTED_EXPIRING_DOWNLOAD_URL>' -o /tmp/promo-rtx6-v1.tar.gz\nprintf '%s  %s\\n' 8660159901af3f2bffcd84ab53ab63ecb70fef13a8e27ffeb32ec98cd8c814ab /tmp/promo-rtx6-v1.tar.gz | sha256sum -c -\nmkdir -p /opt/karpo/promo-rtx6-20261121\ntar -xzf /tmp/promo-rtx6-v1.tar.gz -C /opt/karpo/promo-rtx6-20261121\nln -sfn /opt/karpo/models /opt/karpo/promo-rtx6-20261121/models\ncat > /opt/karpo/promo-rtx6-20261121/experiments/promo-rtx6-20261121/bundle-v1.json <<'RTX6_BUNDLE'\n{\n  \"sha256\": \"8660159901af3f2bffcd84ab53ab63ecb70fef13a8e27ffeb32ec98cd8c814ab\",\n  \"bytes\": 431057,\n  \"remote_archive\": \"/tmp/promo-rtx6-v1.tar.gz\"\n}\nRTX6_BUNDLE\nsystemd-run --unit=karpo-rtx6-controller --property=Type=exec --property=RuntimeMaxSec=7200 --working-directory=/opt/karpo/promo-rtx6-20261121 /opt/karpo/venv-vllm034/bin/python -u scripts/promo_rtx6_controller.py\n",
+  "bucket": "karpo-benchmark-20261119-115003-632930644527",
+  "key": "runs/promo-rtx6-20261121/runtime-v1.tar.gz",
+  "sha256": "8660159901af3f2bffcd84ab53ab63ecb70fef13a8e27ffeb32ec98cd8c814ab"
+}

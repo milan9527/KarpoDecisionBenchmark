@@ -1,0 +1,36 @@
+{
+  "CommandId": "69f2371e-6aab-425e-be90-7dd18fb4aad1",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T04:15:58.092Z",
+  "ExecutionElapsedTime": "PT0.019S",
+  "ExecutionEndDateTime": "2026-11-21T04:15:58.092Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "active\nactive\nssh: connect to host 18.212.111.93 port 22: Connection refused\r\nWarning: Permanently added '18.212.111.93' (ED25519) to the list of known hosts.\r\nCopy current vLLM environment\nCopy exact current model; warm destination files\nssh: connect to host 34.227.87.14 port 22: Connection timed out\r\nWarning: Permanently added '34.227.87.14' (ED25519) to the list of known hosts.\r\nCopy current vLLM environment\nCopy exact current model; warm destination files\n  12011       00:47  4.5 rsync -a --ignore-times --whole-file -e ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts --rsync-path=sudo rsync /opt/karpo/models/karpo-4b/ ubuntu@34.227.87.14:/opt/karpo/models/karpo-4b/\n  12012       00:47 16.3 ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts -l ubuntu 34.227.87.14 sudo rsync --server -lWogDtprIe.iLsfxCIvu . /opt/karpo/models/karpo-4b/\n  12014       00:38  4.8 rsync -a --ignore-times --whole-file -e ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts --rsync-path=sudo rsync /opt/karpo/models/karpo-4b/ ubuntu@18.212.111.93:/opt/karpo/models/karpo-4b/\n  12015       00:38 17.8 ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts -l ubuntu 18.212.111.93 sudo rsync --server -lWogDtprIe.iLsfxCIvu . /opt/karpo/models/karpo-4b/\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "60e7766e-4dea-404c-87d8-afd402829cfd",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 04:16:11 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2292",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "60e7766e-4dea-404c-87d8-afd402829cfd",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

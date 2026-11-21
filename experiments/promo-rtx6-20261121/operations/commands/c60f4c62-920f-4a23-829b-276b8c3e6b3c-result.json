@@ -1,0 +1,36 @@
+{
+  "CommandId": "c60f4c62-920f-4a23-829b-276b8c3e6b3c",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T04:25:45.069Z",
+  "ExecutionElapsedTime": "PT0.619S",
+  "ExecutionEndDateTime": "2026-11-21T04:25:45.069Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "{\"batch_search\": \"inactive\", \"healthy_replicas\": 6, \"batch\": 4}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "67d38103-7d74-4f36-aaf5-fd2bf7675a74",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 04:25:53 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "655",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "67d38103-7d74-4f36-aaf5-fd2bf7675a74",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

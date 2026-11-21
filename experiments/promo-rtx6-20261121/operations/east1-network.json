@@ -1,0 +1,5 @@
+{
+  "group_id": "sg-06a1d4ec3b3a6918c",
+  "ssh_source": "3.14.73.171/32",
+  "inference_exposure": "loopback on peer; SSH tunnel only"
+}

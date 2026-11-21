@@ -1,0 +1,36 @@
+{
+  "CommandId": "42111601-0a3b-4d7d-bb17-731b2aef3816",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T04:25:26.396Z",
+  "ExecutionElapsedTime": "PT0.03S",
+  "ExecutionEndDateTime": "2026-11-21T04:25:26.396Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "inactive\ninactive\ninactive\n{\"stage\": \"repeat\", \"result\": {\"target_rps\": 100, \"offered_seconds\": 120, \"scheduled_requests\": 12000, \"attempts\": 12000, \"valid\": 12000, \"failures\": 0, \"http_statuses\": {\"200\": 12000}, \"replica_counts\": {\"0\": 2092, \"1\": 2075, \"2\": 2050, \"3\": 2047, \"5\": 1859, \"4\": 1877}, \"correct\": 11868, \"elapsed_with_drain_s\": 120.06928298799994, \"valid_rps_with_drain\": 99.94229749168498, \"steady_valid_rps\": 100.0111111111111, \"p50_ms\": 68.11009500052023, \"p95_ms\": 125.62612500005343, \"p99_ms\": 131.4927200000966, \"http_p50_ms\": 67.30873099968449, \"last_quarter_p50_ms\": 70.37126800059923, \"max_send_lag_ms\": 30.03910299958079, \"valid_within_500ms\": 12000, \"backlog_slope_per_second\": -1.5926102882624325e-05, \"latency_scope\": \"Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.\", \"passes_probe\": true, \"passes_performance_acceptance\": true}}\nkarpo-rtx6-controller.service: Deactivated successfully.\nkarpo-rtx6-controller.service: Consumed 1min 29.449s CPU time.\ncontroller.json {'status': 'complete', 'started_utc': '2026-11-21T04:14:50.815178+00:00', 'current': 'formal', 'ended_utc': '2026-11-21T04:24:50.708052+00:00'}\nnodes/dual/status.json {'status': 'ready', 'started_utc': '2026-11-21T04:16:53.464863+00:00', 'replica_ids': [0, 1], 'ready_utc': '2026-11-21T04:17:55.524325+00:00'}\nnodes/peer2/status.json {'status': 'ready', 'started_utc': '2026-11-21T04:16:53.550706+00:00', 'replica_ids': [2], 'ready_utc': '2026-11-21T04:17:51.593860+00:00'}\nnodes/peer3/status.json {'status': 'ready', 'started_utc': '2026-11-21T04:16:53.774015+00:00', 'replica_ids': [3], 'ready_utc': '2026-11-21T04:17:51.819563+00:00'}\nnodes/peer4/status.json {'status': 'ready', 'started_utc': '2026-11-21T04:16:56.716078+00:00', 'replica_ids': [4], 'ready_utc': '2026-11-21T04:19:20.810302+00:00'}\nnodes/peer5/status.json {'status': 'ready', 'started_utc': '2026-11-21T04:16:56.746826+00:00', 'replica_ids': [5], 'ready_utc': '2026-11-21T04:19:20.841676+00:00'}\nruns/rtx6-calibrated-v1/status.json {'status': 'complete', 'started_utc': '2026-11-21T04:19:40.585853+00:00', 'dataset': 'review-baseline', 'protocol': 'formal', 'graph': 'powers', 'gpu_count': 6, 'batch': 4, 'decision_policy': 'review-threshold-v1', 'current': 'repeat', 'quality_passed': True, 'performance_passed': True, 'pressure_quality_passed': True, 'accepted': True, 'ended_utc': '2026-11-21T04:24:50.375570+00:00'}\nwarmup {'attempts': 80, 'correct': 80, 'failures': 0}\nquality {'attempts': 1080, 'correct': 1063, 'failures': 0}\nlow-load {'attempts': 800, 'correct': 792, 'steady_valid_rps': 40.0, 'p50_ms': 63.88219299969933, 'failures': 0}\nprobe {'attempts': 2000, 'correct': 1980, 'steady_valid_rps': 100.0, 'p50_ms': 74.73351499993441, 'failures': 0}\nconfirm {'attempts': 12000, 'correct': 11868, 'steady_valid_rps': 100.0, 'p50_ms': 67.61623599959421, 'failures': 0}\nrepeat {'attempts': 12000, 'correct': 11868, 'steady_valid_rps': 100.0111111111111, 'p50_ms': 68.11009500052023, 'failures': 0}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "76827d3c-2021-42db-9ce9-b1c9bc0b28e6",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 04:25:44 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "3771",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "76827d3c-2021-42db-9ce9-b1c9bc0b28e6",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

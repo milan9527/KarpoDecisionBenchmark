@@ -1,0 +1,9 @@
+{
+  "id": "98636bec-138e-4d1c-96a4-271236bbdc59",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T04:18:59.893039+00:00",
+  "script": "set -eu\ncd /opt/karpo/promo-rtx6-20261121\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport concurrent.futures,json,sys\nsys.path.insert(0,'scripts')\nfrom promo_rtx6_controller import command\nfrom promo_rtx6_runtime import EXP\nfleet=json.loads((EXP/'fleet-v1.json').read_text())\ndef check(h):\n text=f\"systemctl show karpo-rtx6-model-{h['name']} --property=ActiveState,SubState,ExecMainStatus\\n\"\n text+=f\"cat {EXP}/results/nodes/{h['name']}/status.json\\n\"\n text+=f\"tail -n 3 {EXP}/results/nodes/{h['name']}/replica-*/server.log\\n\"\n try:return h['name'],command(h,text,30)\n except Exception as error:return h['name'],str(error)\nwith concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:\n for name,result in pool.map(check,fleet['hosts']):print(name,result)\nPY\n"
+}

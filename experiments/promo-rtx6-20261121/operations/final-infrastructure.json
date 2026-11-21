@@ -1,0 +1,116 @@
+{
+  "utc": "2026-11-21T04:25:48.373072+00:00",
+  "policy": "Read-only audit; all participating EC2 retained running",
+  "instances": [
+    {
+      "id": "i-05d0c24c739f41ca5",
+      "type": "g7e.4xlarge",
+      "az": "us-east-1b",
+      "state": "stopped",
+      "region": "us-east-1",
+      "spot_request": "sir-ctciivig",
+      "private_ip": "172.31.85.230",
+      "participates": false,
+      "test_gpu_count": 0
+    },
+    {
+      "id": "i-09e55f0a86313912d",
+      "type": "g7e.2xlarge",
+      "az": "us-east-1d",
+      "state": "running",
+      "region": "us-east-1",
+      "spot_request": "sir-t4fg3p1g",
+      "private_ip": "172.31.46.199",
+      "participates": true,
+      "test_gpu_count": 1
+    },
+    {
+      "id": "i-0b7835341b1266d7a",
+      "type": "g7e.2xlarge",
+      "az": "us-east-1d",
+      "state": "running",
+      "region": "us-east-1",
+      "spot_request": "sir-wazgie5k",
+      "private_ip": "172.31.38.232",
+      "participates": true,
+      "test_gpu_count": 1
+    },
+    {
+      "id": "i-02c1caf7d7ce17c76",
+      "type": "g7e.2xlarge",
+      "az": "us-east-2c",
+      "state": "running",
+      "region": "us-east-2",
+      "spot_request": "sir-m5zg19rh",
+      "private_ip": "172.31.42.209",
+      "participates": true,
+      "test_gpu_count": 1
+    },
+    {
+      "id": "i-048c3784bb87b6d86",
+      "type": "g7e.8xlarge",
+      "az": "us-east-2c",
+      "state": "stopped",
+      "region": "us-east-2",
+      "spot_request": "sir-5g1i2rjj",
+      "private_ip": "172.31.44.129",
+      "participates": false,
+      "test_gpu_count": 0
+    },
+    {
+      "id": "i-05b24e3b4a7ee864d",
+      "type": "g7e.12xlarge",
+      "az": "us-east-2c",
+      "state": "running",
+      "region": "us-east-2",
+      "spot_request": "sir-dfz8i1sj",
+      "private_ip": "172.31.40.12",
+      "participates": true,
+      "test_gpu_count": 2
+    },
+    {
+      "id": "i-05cfc7d4fa898ee33",
+      "type": "g7e.2xlarge",
+      "az": "us-east-2c",
+      "state": "running",
+      "region": "us-east-2",
+      "spot_request": "sir-rzfgiyik",
+      "private_ip": "172.31.37.239",
+      "participates": true,
+      "test_gpu_count": 1
+    },
+    {
+      "id": "i-091371593b3c4a5ff",
+      "type": "p5.4xlarge",
+      "az": "us-east-2b",
+      "state": "stopped",
+      "region": "us-east-2",
+      "spot_request": "sir-cbtr155h",
+      "private_ip": "172.31.25.147",
+      "participates": false,
+      "test_gpu_count": 0
+    },
+    {
+      "id": "i-0c777e3714538d624",
+      "type": "p5en.48xlarge",
+      "az": "us-east-2a",
+      "state": "stopped",
+      "region": "us-east-2",
+      "spot_request": "sir-ptbg1egj",
+      "private_ip": "172.31.14.72",
+      "participates": false,
+      "test_gpu_count": 0
+    },
+    {
+      "id": "i-0de4f061c2a04fe4b",
+      "type": "g7e.4xlarge",
+      "az": "us-east-2c",
+      "state": "stopped",
+      "region": "us-east-2",
+      "spot_request": "sir-khwi3vgh",
+      "private_ip": "172.31.42.136",
+      "participates": false,
+      "test_gpu_count": 0
+    }
+  ]
+}

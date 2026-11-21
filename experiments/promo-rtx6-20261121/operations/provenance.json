@@ -1,0 +1,16 @@
+{
+  "base_commit": "8b486e8705889c26db6804d0a5b75bee02317fb3",
+  "previous_archive": {
+    "utc": "2026-11-21T04:04:00.399368+00:00",
+    "bucket": "karpo-benchmark-20261119-115003-632930644527",
+    "key": "archives/promo-opt-20261121/complete-v1.tar.gz",
+    "bytes": 32854873,
+    "sha256": "5d24f3a6d587071c02c0d72df2b8c2d51f040e1c3c7ba1050d33ac2b7d5bd9f8",
+    "files": 688,
+    "download_hash_verified": true
+  },
+  "risk_requests_sha256": "0208acc46479a953e3dd9bf80625850187418e2ab3f7ba477bd3bc2df4fd0b92",
+  "expected_encoding_sha256": "6ff082089a2d6f37fa993208734b1025dbade45923c1f41e0db3fa4965dca512",
+  "calibration_sha256": "e97fac5f66b13ba91fc866169acfbc7205dac3eedd60b2361dd14a8a55697eea",
+  "quality_scope": "Reuse previous heldout requests for hardware scaling validation; not a new holdout"
+}

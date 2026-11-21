@@ -1,0 +1,36 @@
+{
+  "CommandId": "8423b51e-25b4-4fcb-b9e8-1ac050018a2f",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T04:17:05.844Z",
+  "ExecutionElapsedTime": "PT0.04S",
+  "ExecutionEndDateTime": "2026-11-21T04:17:05.844Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "active\ninactive\ninactive\nStarted karpo-rtx6-controller.service - /opt/karpo/venv-vllm034/bin/python -u scripts/promo_rtx6_controller.py.\nRunning as unit: karpo-rtx6-tunnel-peer4.service; invocation ID: 25e8e69f096a4afaa875612d283b187c\nRunning as unit: karpo-rtx6-tunnel-peer5.service; invocation ID: 83d08f637a4d47ab96f067b9f270534e\ncontroller.json {'status': 'running', 'started_utc': '2026-11-21T04:14:50.815178+00:00', 'current': 'models-starting'}\nnodes/dual/status.json {'status': 'starting', 'started_utc': '2026-11-21T04:16:53.464863+00:00', 'replica_ids': [0, 1]}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "39ee15ad-8603-495c-b7a3-19fd0edd4e93",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 04:17:08 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1161",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "39ee15ad-8603-495c-b7a3-19fd0edd4e93",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

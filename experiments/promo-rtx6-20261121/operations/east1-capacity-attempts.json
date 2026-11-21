@@ -1,0 +1,18 @@
+[
+  {
+    "replica_id": 4,
+    "zone": "us-east-1b",
+    "error": {
+      "Code": "InsufficientInstanceCapacity",
+      "Message": "There is no Spot capacity available that matches your request."
+    }
+  },
+  {
+    "replica_id": 5,
+    "zone": "us-east-1b",
+    "error": {
+      "Code": "InsufficientInstanceCapacity",
+      "Message": "There is no Spot capacity available that matches your request."
+    }
+  }
+]

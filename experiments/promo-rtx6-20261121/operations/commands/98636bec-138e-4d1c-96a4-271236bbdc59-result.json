@@ -1,0 +1,36 @@
+{
+  "CommandId": "98636bec-138e-4d1c-96a4-271236bbdc59",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T04:19:00.061Z",
+  "ExecutionElapsedTime": "PT0.484S",
+  "ExecutionEndDateTime": "2026-11-21T04:19:00.061Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "dual ExecMainStatus=0\nActiveState=active\nSubState=running\n{\n  \"status\": \"ready\",\n  \"started_utc\": \"2026-11-21T04:16:53.464863+00:00\",\n  \"replica_ids\": [\n    0,\n    1\n  ],\n  \"ready_utc\": \"2026-11-21T04:17:55.524325+00:00\"\n}\n==> /opt/karpo/promo-rtx6-20261121/experiments/promo-rtx6-20261121/results/nodes/dual/replica-0/server.log <==\n(EngineCore pid=12223) INFO 11-21 04:17:54 [kernel.py:517] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:18500 (Press CTRL+C to quit)\n\n==> /opt/karpo/promo-rtx6-20261121/experiments/promo-rtx6-20261121/results/nodes/dual/replica-1/server.log <==\n(EngineCore pid=12230) INFO 11-21 04:17:54 [kernel.py:517] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:18501 (Press CTRL+C to quit)\n\npeer2 ExecMainStatus=0\nActiveState=active\nSubState=running\n{\n  \"status\": \"ready\",\n  \"started_utc\": \"2026-11-21T04:16:53.550706+00:00\",\n  \"replica_ids\": [\n    2\n  ],\n  \"ready_utc\": \"2026-11-21T04:17:51.593860+00:00\"\n}\n(EngineCore pid=12494) INFO 11-21 04:17:51 [kernel.py:517] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:18500 (Press CTRL+C to quit)\n\npeer3 ExecMainStatus=0\nActiveState=active\nSubState=running\n{\n  \"status\": \"ready\",\n  \"started_utc\": \"2026-11-21T04:16:53.774015+00:00\",\n  \"replica_ids\": [\n    3\n  ],\n  \"ready_utc\": \"2026-11-21T04:17:51.819563+00:00\"\n}\n(EngineCore pid=12137) INFO 11-21 04:17:51 [kernel.py:517] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:18500 (Press CTRL+C to quit)\n\npeer4 ExecMainStatus=0\nActiveState=active\nSubState=running\n{\n  \"status\": \"starting\",\n  \"started_utc\": \"2026-11-21T04:16:56.716078+00:00\",\n  \"replica_ids\": [\n    4\n  ]\n}\n2026-11-21 04:18:41,698 - INFO - autotuner.py:1121 - flashinfer.jit: [Autotuner]: Autotuning process starts ...\n2026-11-21 04:18:59,066 - INFO - autotune_cache.py:582 - flashinfer.jit: [Autotuner]: Managed autotune cache attached for this process: ManagedAutotuneCache(env_dir='/root/.cache/flashinfer/autotune/v2/5a6d87db01052e51', hits=0, misses=0)\n(EngineCore pid=3465) INFO 11-21 04:18:59 [kernel_warmup.py:476] Running FlashInfer autotune with 32768 tokens and token buckets (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 768, 1024, 1280, 1536, 1792, 2048, 2560, 3072, 3584, 4096, 8192, 16384, 32768).\n\npeer5 ExecMainStatus=0\nActiveState=active\nSubState=running\n{\n  \"status\": \"starting\",\n  \"started_utc\": \"2026-11-21T04:16:56.746826+00:00\",\n  \"replica_ids\": [\n    5\n  ]\n}\n2026-11-21 04:18:41,833 - INFO - autotuner.py:1121 - flashinfer.jit: [Autotuner]: Autotuning process starts ...\n2026-11-21 04:18:59,078 - INFO - autotune_cache.py:582 - flashinfer.jit: [Autotuner]: Managed autotune cache attached for this process: ManagedAutotuneCache(env_dir='/root/.cache/flashinfer/autotune/v2/5a6d87db01052e51', hits=0, misses=0)\n(EngineCore pid=2936) INFO 11-21 04:18:59 [kernel_warmup.py:476] Running FlashInfer autotune with 32768 tokens and token buckets (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 768, 1024, 1280, 1536, 1792, 2048, 2560, 3072, 3584, 4096, 8192, 16384, 32768).\n\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "d576ef18-18bb-4d6d-a195-6d32ebae9a22",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 04:19:05 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "4503",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "d576ef18-18bb-4d6d-a195-6d32ebae9a22",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

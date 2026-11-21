@@ -1,0 +1,51 @@
+{
+  "backend": "vllm",
+  "max_num_seqs": 4,
+  "inflight": 0,
+  "maximum_inflight": 0,
+  "graph_policy": "powers",
+  "admission_limit": 64,
+  "replica_id": 5,
+  "settings": {
+    "model": "/opt/karpo/models/karpo-4b",
+    "runner": "pooling",
+    "convert": "none",
+    "dtype": "bfloat16",
+    "quantization": "fp8_per_channel",
+    "quantization_config": {
+      "ignore": [
+        "*.in_proj_ba",
+        "*.in_proj_a",
+        "*.in_proj_b",
+        "visual.*",
+        "*.visual.*",
+        "score"
+      ]
+    },
+    "hf_overrides": {
+      "architectures": [
+        "KarpoForSequenceClassification"
+      ]
+    },
+    "skip_tokenizer_init": true,
+    "language_model_only": true,
+    "max_model_len": 8192,
+    "max_num_batched_tokens": 32768,
+    "max_num_seqs": 4,
+    "enable_prefix_caching": false,
+    "enable_chunked_prefill": false,
+    "gpu_memory_utilization": 0.8,
+    "disable_log_stats": false,
+    "enable_log_requests": false,
+    "tensor_parallel_size": 1,
+    "worker_extension_cls": "karpo_vllm_worker.KarpoInspectionWorker",
+    "seed": 0,
+    "compilation_config": {
+      "prefill_cudagraph_capture_token_sizes": [
+        3328,
+        6656,
+        13312
+      ]
+    }
+  }
+}

@@ -20,7 +20,10 @@ def main():
     stopped = root / "operations/stop-20261120/infrastructure-stopped.json"
     promo = root / "experiments/promo-risk-rtx4-20261121/results/verification.json"
     optimized = root / "experiments/promo-opt-20261121/results/verification.json"
-    if optimized.exists() and any(
+    six = root / "experiments/promo-rtx6-20261121/results/verification.json"
+    if six.exists() and json.loads(six.read_text()).get("verified_requests"):
+        from promo_rtx6_report import main as render
+    elif optimized.exists() and any(
         row["name"] == "review-calibrated-confirmed"
         for row in json.loads(optimized.read_text()).get("runs", [])
     ):

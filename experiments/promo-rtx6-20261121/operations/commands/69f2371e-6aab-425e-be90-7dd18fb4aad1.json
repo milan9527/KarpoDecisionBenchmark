@@ -1,0 +1,9 @@
+{
+  "id": "69f2371e-6aab-425e-be90-7dd18fb4aad1",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T04:15:57.913300+00:00",
+  "script": "set -eu\nsystemctl is-active karpo-rtx6-bootstrap-peer4 karpo-rtx6-bootstrap-peer5 || true\ntail -n 4 /opt/karpo/rtx6-bootstrap/peer4.log\ntail -n 4 /opt/karpo/rtx6-bootstrap/peer5.log\nps -eo pid,etime,pcpu,args | awk '/[r]sync .*karpo/ {print}'\n"
+}

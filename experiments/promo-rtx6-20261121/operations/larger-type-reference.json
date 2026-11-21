@@ -1,0 +1,146 @@
+[
+  {
+    "InstanceType": "g7e.2xlarge",
+    "CurrentGeneration": true,
+    "FreeTierEligible": false,
+    "SupportedUsageClasses": [
+      "on-demand",
+      "spot"
+    ],
+    "SupportedRootDeviceTypes": [
+      "ebs"
+    ],
+    "SupportedVirtualizationTypes": [
+      "hvm"
+    ],
+    "BareMetal": false,
+    "Hypervisor": "nitro",
+    "ProcessorInfo": {
+      "SupportedArchitectures": [
+        "x86_64"
+      ],
+      "SustainedClockSpeedInGhz": 2.4,
+      "Manufacturer": "Intel"
+    },
+    "VCpuInfo": {
+      "DefaultVCpus": 8,
+      "DefaultCores": 4,
+      "DefaultThreadsPerCore": 2,
+      "ValidCores": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "ValidThreadsPerCore": [
+        1,
+        2
+      ]
+    },
+    "MemoryInfo": {
+      "SizeInMiB": 65536
+    },
+    "InstanceStorageSupported": true,
+    "InstanceStorageInfo": {
+      "TotalSizeInGB": 1900,
+      "Disks": [
+        {
+          "SizeInGB": 1900,
+          "Count": 1,
+          "Type": "ssd"
+        }
+      ],
+      "NvmeSupport": "required",
+      "EncryptionSupport": "required"
+    },
+    "EbsInfo": {
+      "EbsOptimizedSupport": "default",
+      "EncryptionSupport": "supported",
+      "EbsOptimizedInfo": {
+        "BaselineBandwidthInMbps": 2000,
+        "BaselineThroughputInMBps": 250.0,
+        "BaselineIops": 8000,
+        "MaximumBandwidthInMbps": 5000,
+        "MaximumThroughputInMBps": 625.0,
+        "MaximumIops": 20000
+      },
+      "NvmeSupport": "required",
+      "MaximumEbsAttachments": 32,
+      "AttachmentLimitType": "dedicated"
+    },
+    "NetworkInfo": {
+      "NetworkPerformance": "50 Gigabit",
+      "MaximumNetworkInterfaces": 4,
+      "MaximumNetworkCards": 1,
+      "DefaultNetworkCardIndex": 0,
+      "NetworkCards": [
+        {
+          "NetworkCardIndex": 0,
+          "NetworkPerformance": "50 Gigabit",
+          "MaximumNetworkInterfaces": 4,
+          "BaselineBandwidthInGbps": 50.0,
+          "PeakBandwidthInGbps": 50.0,
+          "DefaultEnaQueueCountPerInterface": 8
+        }
+      ],
+      "Ipv4AddressesPerInterface": 64,
+      "Ipv6AddressesPerInterface": 64,
+      "Ipv6Supported": true,
+      "EnaSupport": "required",
+      "EfaSupported": false,
+      "EncryptionInTransitSupported": true,
+      "EnaSrdSupported": false,
+      "FlexibleEnaQueuesSupport": "unsupported",
+      "ConnectionTrackingConfiguration": {
+        "DefaultTcpEstablishedTimeout": 350,
+        "DefaultUdpTimeout": 30,
+        "DefaultUdpStreamTimeout": 180
+      },
+      "SecondaryNetworkSupported": false,
+      "Ipv4AddressesPerSecondaryInterface": 0
+    },
+    "GpuInfo": {
+      "Gpus": [
+        {
+          "Name": "RTX PRO Server 6000",
+          "Manufacturer": "NVIDIA",
+          "Count": 1,
+          "LogicalGpuCount": 1,
+          "GpuPartitionSize": 1.0,
+          "Workloads": [
+            "ml-ai",
+            "graphics"
+          ],
+          "MemoryInfo": {
+            "SizeInMiB": 98304
+          }
+        }
+      ],
+      "TotalGpuMemoryInMiB": 98304
+    },
+    "PlacementGroupInfo": {
+      "SupportedStrategies": [
+        "cluster",
+        "partition",
+        "spread"
+      ]
+    },
+    "HibernationSupported": false,
+    "BurstablePerformanceSupported": false,
+    "DedicatedHostsSupported": false,
+    "AutoRecoverySupported": false,
+    "SupportedBootModes": [
+      "legacy-bios",
+      "uefi"
+    ],
+    "NitroEnclavesSupport": "supported",
+    "NitroTpmSupport": "supported",
+    "NitroTpmInfo": {
+      "SupportedVersions": [
+        "2.0"
+      ]
+    },
+    "PhcSupport": "unsupported",
+    "RebootMigrationSupport": "unsupported"
+  }
+]

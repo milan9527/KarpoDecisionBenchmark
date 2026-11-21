@@ -1,0 +1,516 @@
+{
+  "target_rps": 100,
+  "offered_seconds": 120,
+  "scheduled_requests": 12000,
+  "attempts": 12000,
+  "valid": 12000,
+  "failures": 0,
+  "http_statuses": {
+    "200": 12000
+  },
+  "replica_counts": {
+    "0": 2092,
+    "1": 2075,
+    "2": 2050,
+    "3": 2047,
+    "5": 1859,
+    "4": 1877
+  },
+  "correct": 11868,
+  "elapsed_with_drain_s": 120.06928298799994,
+  "valid_rps_with_drain": 99.94229749168498,
+  "steady_valid_rps": 100.0111111111111,
+  "p50_ms": 68.11009500052023,
+  "p95_ms": 125.62612500005343,
+  "p99_ms": 131.4927200000966,
+  "http_p50_ms": 67.30873099968449,
+  "last_quarter_p50_ms": 70.37126800059923,
+  "max_send_lag_ms": 30.03910299958079,
+  "valid_within_500ms": 12000,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 6
+    },
+    {
+      "second": 2,
+      "pending": 6
+    },
+    {
+      "second": 3,
+      "pending": 6
+    },
+    {
+      "second": 4,
+      "pending": 7
+    },
+    {
+      "second": 5,
+      "pending": 7
+    },
+    {
+      "second": 6,
+      "pending": 7
+    },
+    {
+      "second": 7,
+      "pending": 6
+    },
+    {
+      "second": 8,
+      "pending": 6
+    },
+    {
+      "second": 9,
+      "pending": 6
+    },
+    {
+      "second": 10,
+      "pending": 6
+    },
+    {
+      "second": 11,
+      "pending": 8
+    },
+    {
+      "second": 12,
+      "pending": 8
+    },
+    {
+      "second": 13,
+      "pending": 8
+    },
+    {
+      "second": 14,
+      "pending": 7
+    },
+    {
+      "second": 15,
+      "pending": 6
+    },
+    {
+      "second": 16,
+      "pending": 7
+    },
+    {
+      "second": 17,
+      "pending": 8
+    },
+    {
+      "second": 18,
+      "pending": 6
+    },
+    {
+      "second": 19,
+      "pending": 6
+    },
+    {
+      "second": 20,
+      "pending": 6
+    },
+    {
+      "second": 21,
+      "pending": 7
+    },
+    {
+      "second": 22,
+      "pending": 6
+    },
+    {
+      "second": 23,
+      "pending": 6
+    },
+    {
+      "second": 24,
+      "pending": 8
+    },
+    {
+      "second": 25,
+      "pending": 7
+    },
+    {
+      "second": 26,
+      "pending": 10
+    },
+    {
+      "second": 27,
+      "pending": 6
+    },
+    {
+      "second": 28,
+      "pending": 8
+    },
+    {
+      "second": 29,
+      "pending": 6
+    },
+    {
+      "second": 30,
+      "pending": 8
+    },
+    {
+      "second": 31,
+      "pending": 8
+    },
+    {
+      "second": 32,
+      "pending": 8
+    },
+    {
+      "second": 33,
+      "pending": 8
+    },
+    {
+      "second": 34,
+      "pending": 8
+    },
+    {
+      "second": 35,
+      "pending": 7
+    },
+    {
+      "second": 36,
+      "pending": 7
+    },
+    {
+      "second": 37,
+      "pending": 7
+    },
+    {
+      "second": 38,
+      "pending": 7
+    },
+    {
+      "second": 39,
+      "pending": 8
+    },
+    {
+      "second": 40,
+      "pending": 6
+    },
+    {
+      "second": 41,
+      "pending": 6
+    },
+    {
+      "second": 42,
+      "pending": 6
+    },
+    {
+      "second": 43,
+      "pending": 6
+    },
+    {
+      "second": 44,
+      "pending": 7
+    },
+    {
+      "second": 45,
+      "pending": 6
+    },
+    {
+      "second": 46,
+      "pending": 9
+    },
+    {
+      "second": 47,
+      "pending": 6
+    },
+    {
+      "second": 48,
+      "pending": 7
+    },
+    {
+      "second": 49,
+      "pending": 7
+    },
+    {
+      "second": 50,
+      "pending": 8
+    },
+    {
+      "second": 51,
+      "pending": 7
+    },
+    {
+      "second": 52,
+      "pending": 7
+    },
+    {
+      "second": 53,
+      "pending": 8
+    },
+    {
+      "second": 54,
+      "pending": 8
+    },
+    {
+      "second": 55,
+      "pending": 6
+    },
+    {
+      "second": 56,
+      "pending": 8
+    },
+    {
+      "second": 57,
+      "pending": 6
+    },
+    {
+      "second": 58,
+      "pending": 8
+    },
+    {
+      "second": 59,
+      "pending": 6
+    },
+    {
+      "second": 60,
+      "pending": 8
+    },
+    {
+      "second": 61,
+      "pending": 9
+    },
+    {
+      "second": 62,
+      "pending": 11
+    },
+    {
+      "second": 63,
+      "pending": 8
+    },
+    {
+      "second": 64,
+      "pending": 8
+    },
+    {
+      "second": 65,
+      "pending": 6
+    },
+    {
+      "second": 66,
+      "pending": 6
+    },
+    {
+      "second": 67,
+      "pending": 7
+    },
+    {
+      "second": 68,
+      "pending": 8
+    },
+    {
+      "second": 69,
+      "pending": 7
+    },
+    {
+      "second": 70,
+      "pending": 7
+    },
+    {
+      "second": 71,
+      "pending": 7
+    },
+    {
+      "second": 72,
+      "pending": 7
+    },
+    {
+      "second": 73,
+      "pending": 6
+    },
+    {
+      "second": 74,
+      "pending": 7
+    },
+    {
+      "second": 75,
+      "pending": 7
+    },
+    {
+      "second": 76,
+      "pending": 7
+    },
+    {
+      "second": 77,
+      "pending": 7
+    },
+    {
+      "second": 78,
+      "pending": 8
+    },
+    {
+      "second": 79,
+      "pending": 6
+    },
+    {
+      "second": 80,
+      "pending": 6
+    },
+    {
+      "second": 81,
+      "pending": 7
+    },
+    {
+      "second": 82,
+      "pending": 6
+    },
+    {
+      "second": 83,
+      "pending": 6
+    },
+    {
+      "second": 84,
+      "pending": 6
+    },
+    {
+      "second": 85,
+      "pending": 8
+    },
+    {
+      "second": 86,
+      "pending": 7
+    },
+    {
+      "second": 87,
+      "pending": 7
+    },
+    {
+      "second": 88,
+      "pending": 8
+    },
+    {
+      "second": 89,
+      "pending": 8
+    },
+    {
+      "second": 90,
+      "pending": 7
+    },
+    {
+      "second": 91,
+      "pending": 6
+    },
+    {
+      "second": 92,
+      "pending": 8
+    },
+    {
+      "second": 93,
+      "pending": 6
+    },
+    {
+      "second": 94,
+      "pending": 8
+    },
+    {
+      "second": 95,
+      "pending": 9
+    },
+    {
+      "second": 96,
+      "pending": 7
+    },
+    {
+      "second": 97,
+      "pending": 6
+    },
+    {
+      "second": 98,
+      "pending": 7
+    },
+    {
+      "second": 99,
+      "pending": 9
+    },
+    {
+      "second": 100,
+      "pending": 10
+    },
+    {
+      "second": 101,
+      "pending": 7
+    },
+    {
+      "second": 102,
+      "pending": 6
+    },
+    {
+      "second": 103,
+      "pending": 7
+    },
+    {
+      "second": 104,
+      "pending": 8
+    },
+    {
+      "second": 105,
+      "pending": 7
+    },
+    {
+      "second": 106,
+      "pending": 8
+    },
+    {
+      "second": 107,
+      "pending": 6
+    },
+    {
+      "second": 108,
+      "pending": 8
+    },
+    {
+      "second": 109,
+      "pending": 7
+    },
+    {
+      "second": 110,
+      "pending": 7
+    },
+    {
+      "second": 111,
+      "pending": 7
+    },
+    {
+      "second": 112,
+      "pending": 7
+    },
+    {
+      "second": 113,
+      "pending": 7
+    },
+    {
+      "second": 114,
+      "pending": 7
+    },
+    {
+      "second": 115,
+      "pending": 7
+    },
+    {
+      "second": 116,
+      "pending": 7
+    },
+    {
+      "second": 117,
+      "pending": 8
+    },
+    {
+      "second": 118,
+      "pending": 7
+    },
+    {
+      "second": 119,
+      "pending": 8
+    },
+    {
+      "second": 120,
+      "pending": 7
+    }
+  ],
+  "backlog_slope_per_second": -1.5926102882624325e-05,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": true,
+  "passes_performance_acceptance": true
+}
