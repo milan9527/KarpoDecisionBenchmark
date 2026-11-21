@@ -8,6 +8,16 @@ from routing import ReplicaPool
 
 
 class RoutingTests(unittest.IsolatedAsyncioTestCase):
+    async def test_equal_load_rotates_across_all_replicas_like_original_benchmark(self):
+        pool = ReplicaPool()
+        targets = [("host", i, i) for i in range(6)]
+        selected = []
+        for _ in range(12):
+            target = await pool.acquire("risk", targets)
+            selected.append(target[2])
+            await pool.release("risk", target)
+        self.assertEqual(selected, list(range(6)) * 2)
+
     async def test_overflow_waits_without_exceeding_model_admission(self):
         pool = ReplicaPool()
         targets = [("host", i, i) for i in range(6)]

@@ -1,0 +1,29 @@
+{
+  "sha256": {
+    "app.py": "c63d5740c93d507ab572a68b15d31db8867042285e923abc8495c880e94512ae",
+    "async_http.py": "d450282fc3f817f06fd846188e021e4ec8dd38b283b0798b63b6f4f8acbffa95",
+    "cloud_jobs.py": "a738522c928b19a82242bd94399ed26bf1f9390a28e7af7be72fc797a9ae7ae6",
+    "cloud_worker.py": "8e3cf8000623e397c11f038a53fc5143b9f87b59b8838dfaf5857480e8c741ce",
+    "cloud_metrics.py": "79c586497f3819e47afd6f869205adc2c6350c991203c4925cbf5917ff6ed371",
+    "history.py": "86238bce458fd62617cfafc5ded1a7be3655a114ad9f508297956cf72ad995e1",
+    "routing.py": "c65128af19765c29307066fcbaa0a0f468677ffb57ecb421d3fe7e9e4656a855"
+  },
+  "services": [
+    "active",
+    "active"
+  ],
+  "packages": {
+    "aiohttp": "3.14.5",
+    "httpx": "0.28.1",
+    "uvloop": "0.23.0",
+    "httptools": "0.9.0",
+    "sniffio": "1.3.1",
+    "fastapi": "0.165.0",
+    "uvicorn": "0.54.0"
+  },
+  "python": "3.12.16",
+  "architecture": "aarch64",
+  "instance": "i-04aa43d75617e765b",
+  "region": "us-east-2",
+  "checked_at": "2026-11-21T14:30:21.783548+00:00"
+}

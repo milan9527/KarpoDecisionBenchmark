@@ -35,7 +35,7 @@ async def main():
             for action in ("start", "activity", "end", "infer"):
                 assert (await anonymous.post(f"/api/{group}/{action}", data={})).status == 401
         checks["anonymous_protected_routes"] = "10/10 return 401"
-        for filename in ("index.html", "app.js", "benchmark.js", "rate-client.js", "rate-worker.js", "history.js", "history-worker.js", "style.css"):
+        for filename in ("index.html", "app.js", "benchmark.js", "rate-client.js", "rate-worker.js", "history.js", "history-worker.js", "cloud-client.js", "style.css"):
             response = await anonymous.get("/" + filename)
             content = await response.body()
             assert content == (ROOT / "demo/frontend" / filename).read_bytes(), filename
@@ -118,7 +118,7 @@ async def main():
     report = {"at": datetime.now(timezone.utc).isoformat(), "url": base, "passed": True,
               "checks": checks, "gpu_control_status": after, "page_errors": errors,
               "frontend_sha256": {name: hashlib.sha256((ROOT / "demo/frontend" / name).read_bytes()).hexdigest()
-                                  for name in ("index.html", "app.js", "benchmark.js", "rate-client.js", "rate-worker.js", "history.js", "history-worker.js", "style.css")}}
+                                  for name in ("index.html", "app.js", "benchmark.js", "rate-client.js", "rate-worker.js", "history.js", "history-worker.js", "cloud-client.js", "style.css")}}
     (OUT / "validation.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     print("Username/password browser and API validation passed. No authenticated GPU start requests sent.")
 

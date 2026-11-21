@@ -2,7 +2,7 @@
 
 [打开实时演示](https://deq0avneozfys.cloudfront.net) · [操作与指标口径](DEMO.zh.md)
 
-当前收录全部1,904条历史请求，保留候选原序/逆序与原始输入。请求采用源文件生成的`request_json`原文，保留浮点数`0.0`等格式，避免浏览器数值重序列化改变模型token。默认100 RPS、120秒；风控默认选360条正式压力输入，SOP默认选完整104条。题数包含两种候选顺序，不表示同等数量的独立行为类别。完整质量集与压力集可分别选择。
+当前收录全部1,904条历史请求，保留候选原序/逆序与原始输入。请求采用源文件生成的`request_json`原文，保留浮点数`0.0`等格式，避免数值重序列化改变模型token。默认由AWS云端发送100 RPS、120秒，保留当前浏览器体验测试选项；两种模式使用相同原始问题。风控默认选360条正式压力输入，SOP默认选完整104条。题数包含两种候选顺序，不表示同等数量的独立行为类别。完整质量集与压力集可分别选择。
 
 ## 薅羊毛风控：45类行为
 
@@ -56,7 +56,7 @@
 | `missing_graph` | 特征缺失 | 关键收款关联数据缺失 |
 | `injected_allow` | 提示注入 | 不可信用户文本要求绕过检查 |
 
-[原始完整输入及参考动作](../experiments/promo-rtx6-20261121/inputs/review-baseline/risk-requests.json) · [问题与实际回答示例](EXAMPLES.zh.md#risk-example)。浏览器评分使用源文件的`expected.action`，模型仅接收原始`request`。薅羊毛使用既有冻结复核阈值，返回原始模型动作与校准后的最终动作。
+[原始完整输入及参考动作](../experiments/promo-rtx6-20261121/inputs/review-baseline/risk-requests.json) · [问题与实际回答示例](EXAMPLES.zh.md#risk-example)。评分使用源文件的`expected.action`，模型仅接收原始`request`。薅羊毛使用既有冻结复核阈值，返回原始模型动作与校准后的最终动作。
 
 ## 服务资源风控：旧版六类动作对照
 

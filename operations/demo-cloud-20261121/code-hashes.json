@@ -1,0 +1,18 @@
+{
+  "demo/backend/app.py": "c63d5740c93d507ab572a68b15d31db8867042285e923abc8495c880e94512ae",
+  "demo/backend/async_http.py": "d450282fc3f817f06fd846188e021e4ec8dd38b283b0798b63b6f4f8acbffa95",
+  "demo/backend/cloud_jobs.py": "a738522c928b19a82242bd94399ed26bf1f9390a28e7af7be72fc797a9ae7ae6",
+  "demo/backend/cloud_worker.py": "8e3cf8000623e397c11f038a53fc5143b9f87b59b8838dfaf5857480e8c741ce",
+  "demo/backend/cloud_metrics.py": "79c586497f3819e47afd6f869205adc2c6350c991203c4925cbf5917ff6ed371",
+  "demo/backend/history.py": "86238bce458fd62617cfafc5ded1a7be3655a114ad9f508297956cf72ad995e1",
+  "demo/backend/routing.py": "c65128af19765c29307066fcbaa0a0f468677ffb57ecb421d3fe7e9e4656a855",
+  "demo/frontend/index.html": "03a7e08024ec4c99b5e7603372a90494f449939f59e80b31c92101e87792f153",
+  "demo/frontend/app.js": "dbef970c55fe775b4e6c61c15cb94094052070f6dc908dd0e0dca6d194a774eb",
+  "demo/frontend/benchmark.js": "ed7295d0075cbee6f4e0d3204a5d4fa9ca4eb3f158e66daa35020c29a8ca2183",
+  "demo/frontend/cloud-client.js": "91c45853afa41985d4769ca093a47d75f31038adf37a9af265c6e10bc37e80f0",
+  "demo/frontend/history.js": "16f5e896bd775461eb33afe13f6c9db81bdd2f709a33561112d347decfc82a29",
+  "demo/frontend/rate-client.js": "545ac9367240eb07ae7ba6616a2cb4feee50f7c9dc1db128a25ceca5faf7318f",
+  "demo/frontend/rate-worker.js": "85f75d35eb222705c5e6b8e6fd4ccb8444f84755ea326c4e1e224b856ad41651",
+  "demo/frontend/history-worker.js": "7ea0c769821e2f7c35c07a08fde1e0774e9d35f542ada3f062233018f907bf8a",
+  "demo/frontend/style.css": "8d34268a4ed4312d2a690eb57c1b77bc450c8ee0e9bdbae23b7a39274fd8f062"
+}

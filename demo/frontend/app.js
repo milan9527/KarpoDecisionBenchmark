@@ -231,6 +231,7 @@ async function loadDataset() {
     const dataset = datasetCache[id] || await api("datasets/"+id);
     datasetCache[id] = dataset;
     if (datasetSelections[scenario] !== id) return;
+    if(running&&benchmarkRunner?.execution==="cloud"&&benchmarkRunner.scenario===scenario)return;
     benchmarkQuestions[scenario] = dataset.questions.map(q => ({...q,selected:true}));
     if (group === scenario) { resetQuestionFilters(); error("bench-error"); }
   } catch(e) { error("bench-error",e.message); }
@@ -247,15 +248,16 @@ function renderBenchmarkControls() {
   $("bench-stop").disabled = !running || !benchmarkRunner || benchmarkRunner.finished || benchmarkRunner.stopRequested;
   $("bench-add").disabled = running || datasetLoading[group] || !authenticated || !current || (benchmarkQuestions[group] || []).filter(q => q.custom).length >= 20;
   $("bench-export").disabled = !benchmarkRunner?.finished;
-  for (const id of ["bench-rate","bench-seconds","bench-dataset","bench-category","bench-order","bench-search","bench-select-filter","bench-select-all","bench-clear"]) $(id).disabled = running || datasetLoading[group];
+  for (const id of ["bench-execution","bench-rate","bench-seconds","bench-dataset","bench-category","bench-order","bench-search","bench-select-filter","bench-select-all","bench-clear"]) $(id).disabled = running || datasetLoading[group];
   $("bench-questions").querySelectorAll("input,button").forEach(control => control.disabled = running);
   $("bench-prev").disabled = running || questionPage === 0;
   $("bench-next").disabled = running || (questionPage+1)*50 >= filteredQuestions().length;
 }
 function renderBenchmark() {
   const runner = benchmarkRunner, m = runner?.metrics();
+  const cloud=(runner?.execution||$("bench-execution").value)==="cloud";
   const number = value => value == null ? "—" : value.toFixed(1);
-  $("bench-phase").textContent = !runner ? "尚未测试" : runner.finished
+  $("bench-phase").textContent = !runner ? "尚未测试" : runner.state==="submission_failed" ? "测试未启动" : runner.execution==="cloud"&&runner.state==="archiving" ? "测试结束 · 正在保存历史" : runner.finished
     ? `${runner.stopRequested ? "已停止" : "已完成"} · ${runner.rate} RPS`
     : runner.stopRequested ? "等待在途请求完成" : "正在测试";
   $("bench-progress-label").textContent = m
@@ -268,7 +270,16 @@ function renderBenchmark() {
   $("bench-send-lag").textContent = number(m?.max_send_lag_ms);
   $("bench-http-p50").textContent = number(m?.http_p50_ms);
   $("bench-accuracy").textContent = m?.accuracy == null ? "—" : (m.accuracy*100).toFixed(2)+"%";
-  $("bench-evaluated").textContent = m?.evaluated ? `${m.correct} / ${m.evaluated} 有标签请求` : "自定义问题不自动评分";
+  $("bench-evaluated").textContent = m?.evaluated ? `${m.correct} / ${m.evaluated} · 失败计入分母` : "自定义问题不自动评分";
+  $("bench-response-accuracy").textContent = m?.response_accuracy==null?"—":(m.response_accuracy*100).toFixed(2)+"%";
+  $("bench-response-evaluated").textContent = m?.successful_evaluated?`${m.correct} / ${m.successful_evaluated} 成功有标签响应`:"仅成功的有标签响应";
+  $("bench-service-p50").textContent=number(m?.api_service_p50_ms);
+  $("bench-model-p50").textContent=number(m?.model_p50_ms);
+  $("bench-p50-label").textContent=cloud?"云端端到端 P50":"浏览器端到端 P50";
+  $("bench-peak-source").textContent=cloud?"云端请求":"浏览器请求";
+  $("bench-scope").textContent=cloud?"云端端到端：AWS压测进程 → 公网CloudFront → ALB → API → GPU → 完整响应。包含发送滞后与排队，不包含你的浏览器网络。"
+    :"浏览器端到端：从当前浏览器计划发送到完整响应，包含本地连接等待、上传、公网网络、服务排队及推理。刷新会中断本轮。";
+  if(runner?.connectionError)error("bench-error",runner.connectionError);
   $("bench-verdict").textContent = !runner?.finished ? "正式性能对照：100 RPS、120秒、零失败、P50≤500ms，并检查发送滞后和积压。"
     : runner.stopRequested ? "本轮已提前停止，未完成正式对照。"
     : runner.rate !== 100 || runner.seconds < 120 ? "本轮为短时或低速探测，不能替代100 RPS × 120秒正式对照。"
@@ -279,7 +290,9 @@ function renderBenchmark() {
   for (const metric of ["p50","p95","p99","mean","max"]) $("bench-"+metric).textContent = number(m?.[metric+"_ms"]);
   $("bench-peak").textContent = m ? String(m.peak_concurrency) : "—";
   const records = runner?.records || [];
-  $("bench-result-note").textContent = records.length > 100 ? `显示最近100条 / 共${records.length}条，导出包含全部` : `共${records.length}条`;
+  $("bench-result-note").textContent = runner?.execution==="cloud"
+    ? `共${m?.completed||0}条 · 完成后显示最近100条；历史与导出包含全部`
+    : records.length > 100 ? `显示最近100条 / 共${records.length}条，导出包含全部` : `共${records.length}条`;
   $("bench-results").replaceChildren();
   if (!records.length) {
     const row = document.createElement("tr"), cell = document.createElement("td");
@@ -335,6 +348,7 @@ for (const id of ["bench-rate","bench-seconds"]) $(id).addEventListener("input",
 $("bench-dataset").addEventListener("change", () => {
   datasetSelections[group] = $("bench-dataset").value; loadDataset();
 });
+$("bench-execution").addEventListener("change",renderBenchmark);
 for (const id of ["bench-category","bench-order","bench-search"]) $(id).addEventListener("input", () => {
   questionPage = 0; renderBenchmarkQuestions();
 });
@@ -361,6 +375,13 @@ $("bench-form").addEventListener("submit", async event => {
     const rate=Number($("bench-rate").value),seconds=Number($("bench-seconds").value);
     KarpoBenchmark.validateRateOptions({questions,rate,seconds});
     benchmarkRunner=null;renderBenchmark();
+    if($("bench-execution").value==="cloud"){
+      benchmarkRunner=new CloudClient({questions,scenario,rate,seconds,dataset_id:datasetSelections[group],onUpdate:scheduleBenchmarkRender});
+      benchmarkRuns[group]={runner:benchmarkRunner,started_at:new Date().toISOString(),dataset_id:datasetSelections[group]};
+      renderBenchmark();await benchmarkRunner.run();
+      toast("云端测试完成，完整结果已保存。");await HistoryUI.load(true);
+      return;
+    }
     historyId=await HistoryUI.begin({scenario,kind:"fixed-rps",dataset_id:datasetSelections[group],questions,
       settings:{rate,seconds,gpu:catalog[group].gpu||statusData.groups[group].gpu,gpu_count:statusData.groups[group].gpu_count},
       title:`${scenario==="risk"?"风控":"SOP"} · ${datasetSelections[group]} · ${rate} RPS × ${seconds}s`});
@@ -385,13 +406,16 @@ $("bench-form").addEventListener("submit", async event => {
   }
 });
 $("bench-stop").addEventListener("click", () => benchmarkRunner?.stop());
-$("bench-export").addEventListener("click", () => {
+$("bench-export").addEventListener("click", async () => {
   if (!benchmarkRunner?.finished) return;
-  const report = {scenario:group, started_at:benchmarkRuns[group].started_at, dataset_id:benchmarkRuns[group].dataset_id, ...benchmarkRunner.report()};
+  $("bench-export").disabled=true;
+  try {
+  const report = {scenario:group, started_at:benchmarkRuns[group].started_at, dataset_id:benchmarkRuns[group].dataset_id, ...await benchmarkRunner.report()};
   const url = URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:"application/json"}));
   const link = document.createElement("a");
   link.href = url; link.download = `karpo-${group}-${report.started_at.replace(/[:.]/g,"-")}.json`;
   link.click(); setTimeout(() => URL.revokeObjectURL(url),1000);
+  }catch(e){error("bench-error",e.message);}finally{renderBenchmarkControls();}
 });
 $("state").addEventListener("input", () => {
   try { $("full-request").textContent = JSON.stringify(editedRequest(),null,2); error("input-error"); }
@@ -404,7 +428,7 @@ $("login-form").addEventListener("submit", async event => {
     await api("auth",{username:$("username").value,password:$("password").value});
     $("password").value = ""; authenticated = true;
     catalog = await api("catalog"); $("login").close(); selectGroup(group); await refresh();
-    await HistoryUI.recover();
+    await HistoryUI.recover();await restoreCloud();
   } catch(e) { error("login-error",e.message); }
   finally { $("login-button").disabled = false; }
 });
@@ -469,7 +493,22 @@ window.addEventListener("pagehide", event => {
   }
 });
 HistoryUI.init();
+async function restoreCloud(){
+  if(running)return;
+  try{
+    const runner=await CloudClient.restore();if(!runner)return;
+    datasetSelections[runner.scenario]=runner.dataset_id;
+    benchmarkQuestions[runner.scenario]=runner.questions.map(q=>({...q,selected:true}));
+    selectGroup(runner.scenario);$("bench-execution").value="cloud";
+    $("bench-rate").value=runner.rate;$("bench-seconds").value=runner.seconds;
+    $("bench-planned").textContent=(runner.rate*runner.seconds).toLocaleString();
+    benchmarkRunner=runner;benchmarkRuns[group]={runner,started_at:runner.started_at,dataset_id:runner.dataset_id};
+    running=true;renderStatus();renderBenchmark();
+    runner.follow().then(()=>HistoryUI.load(true)).catch(e=>error("bench-error",e.message))
+      .finally(()=>{running=false;renderBenchmark();refresh();});
+  }catch(e){error("bench-error",e.message);}
+}
 (async () => {
-  try { catalog = await api("catalog"); authenticated = true; selectGroup(group); await refresh(); await HistoryUI.recover(); }
+  try { catalog = await api("catalog"); authenticated = true; selectGroup(group); await refresh(); await HistoryUI.recover();await restoreCloud(); }
   catch { if (!$("login").open) $("login").showModal(); }
 })();

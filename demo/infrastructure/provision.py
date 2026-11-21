@@ -166,7 +166,7 @@ set -eu
 dnf install -y python3.12 python3.12-pip
 mkdir -p /opt/karpo-demo
 python3.12 -m venv /opt/karpo-demo/venv
-/opt/karpo-demo/venv/bin/pip install 'boto3>=1.40,<2' 'fastapi>=0.115,<1' 'httpx>=0.28,<1' 'uvicorn>=0.34,<1'
+/opt/karpo-demo/venv/bin/pip install 'boto3>=1.40,<2' 'fastapi>=0.115,<1' 'httpx>=0.28,<1' 'uvicorn>=0.34,<1' 'uvloop>=0.21,<1' 'httptools>=0.6,<1' 'sniffio>=1.3,<2' 'aiohttp>=3.12,<4'
 systemctl enable --now amazon-ssm-agent
 """
         result = ec2.run_instances(ImageId=ami, InstanceType="t4g.small", MinCount=1, MaxCount=1,

@@ -108,6 +108,7 @@
       const windowEnd = Math.min(duration / 1000, this.seconds), steadyStart = this.seconds * .25;
       const steady = valid.filter(r => r.end_offset_s >= steadyStart && r.end_offset_s < windowEnd);
       const labeled = this.records.filter(r => this.questions[r.question_index].expected !== undefined);
+      const labeledGood = labeled.filter(r=>r.ok);
       const samples = [];
       if (this.finished) {
         for (let second = 1; second <= this.seconds; second++) {
@@ -133,6 +134,10 @@
         last_quarter_p50_ms:percentile(valid.filter(r => r.scheduled_offset_s >= this.seconds*.75),"elapsed_ms",.5),
         correct:labeled.filter(r => r.correct).length, evaluated:labeled.length,
         accuracy:labeled.length ? labeled.filter(r => r.correct).length/labeled.length : null,
+        successful_evaluated:labeledGood.length,
+        response_accuracy:labeledGood.length ? labeledGood.filter(r=>r.correct).length/labeledGood.length : null,
+        api_service_p50_ms:percentile(valid.map(r=>({value:r.response?.demo?.service_ms})).filter(r=>Number.isFinite(r.value)),"value",.5),
+        model_p50_ms:percentile(valid.map(r=>({value:r.response?.metrics?.engine_wait_and_model_ms})).filter(r=>Number.isFinite(r.value)),"value",.5),
         client_rejections:this.records.filter(r => !r.sent).length,
         backlog_samples:samples, backlog_slope_per_second:slope,
       });

@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-21T14:30:21.783548+00:00",
+  "frontend_matches": true,
+  "mobile_no_overflow": true,
+  "no_gpu_start": true,
+  "browser_errors": [],
+  "groups": {
+    "risk": {
+      "phase": "ending",
+      "ready_gpus": 6,
+      "session_active": false,
+      "stop_after": 1795271867
+    },
+    "sop": {
+      "phase": "stopped",
+      "ready_gpus": 0,
+      "session_active": false,
+      "stop_after": 0
+    }
+  }
+}

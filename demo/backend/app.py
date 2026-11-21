@@ -1,6 +1,7 @@
 """Authenticated demo API, durable readiness gating and GPU startup control."""
 import asyncio
 from contextlib import asynccontextmanager
+from functools import lru_cache
 import json
 import os
 from pathlib import Path
@@ -23,6 +24,8 @@ from routing import ReplicaPool
 from leases import SessionLeases
 from registry import Registry
 from history import History
+from cloud_jobs import Jobs, ACTIVE, select_questions
+from async_http import Client as AsyncHTTPClient
 
 ROOT = Path(os.environ.get("DEMO_ROOT", "/opt/karpo-demo"))
 CONFIG = json.loads((ROOT / "demo/config.json").read_text())
@@ -50,8 +53,10 @@ password_workers = asyncio.Semaphore(2)
 quitting = threading.Event()
 history = History(boto3.resource("dynamodb", region_name=REGION).Table(RESOURCES["history_table"]),
                   boto3.client("s3", region_name=REGION, config=SDK), RESOURCES["bucket"])
+jobs = Jobs(history.table, history.s3, history.bucket)
 
 
+@lru_cache(maxsize=16)
 def sdk(service, region=REGION):
     return boto3.client(service, region_name=region, config=SDK)
 
@@ -178,10 +183,8 @@ async def lifespan(app):
     worker.start()
     # Gateway Uvicorn closes idle connections after 5s. Retire pooled sockets
     # earlier, allowing time for cross-region transit before that deadline.
-    app.state.client = httpx.AsyncClient(verify=tls, timeout=40, trust_env=False,
-                                         limits=httpx.Limits(max_connections=100,
-                                             max_keepalive_connections=100, keepalive_expiry=2),
-                                         headers={"X-Node-Token": secret["node_token"]})
+    app.state.client = AsyncHTTPClient(ssl=tls, timeout=40, connections=100,
+                                      headers={"X-Node-Token": secret["node_token"]})
     yield
     quitting.set()
     await app.state.client.aclose()
@@ -207,7 +210,7 @@ async def protect(request, call_next):
             return JSONResponse({"detail": "来源不允许"}, status_code=403)
         if request.headers.get("content-type", "").split(";")[0] != "application/json":
             return JSONResponse({"detail": "需要JSON请求"}, status_code=415)
-        limit = 2000000 if request.url.path.startswith("/api/history") else 262144
+        limit = 2000000 if request.url.path.startswith(("/api/history", "/api/cloud")) else 262144
         if int(request.headers.get("content-length", "0")) > limit:
             return JSONResponse({"detail": "请求过大"}, status_code=413)
         body = await request.body()
@@ -338,6 +341,91 @@ def status(request: Request):
             session_active=value["sessions"].get(session, 0) > now,
             hosts=[{k: v for k, v in h.items() if k != "address"} for h in value["hosts"]])
     return {"now": now, "idle_seconds": 600, "max_concurrency": MAX_INFLIGHT, "groups": groups}
+
+
+@app.get("/api/cloud/active")
+def cloud_active(request: Request):
+    authenticated(request)
+    job = jobs.active()
+    beat = jobs.read("heartbeat")
+    return {"job": jobs.public(job) if job and job["state"] in ACTIVE else None,
+            "worker_ready": bool(beat and beat["at"] > time.time() - 30)}
+
+
+cloud_submission_lock = asyncio.Lock()
+
+
+@app.post("/api/cloud")
+async def cloud_start(request: Request):
+    # One API process owns submissions; serialize duplicate browser retries so
+    # they cannot acquire a second GPU lease for the same durable job.
+    async with cloud_submission_lock:
+        return await submit_cloud(request)
+
+
+async def submit_cloud(request: Request):
+    session = authenticated(request)
+    body = await request.json()
+    run = history_call(history.identifier, body.get("id"))
+    group = group_name(body.get("scenario"))
+    previous = await asyncio.to_thread(jobs.read, run)
+    if previous:
+        return jobs.public(previous)
+    questions = history_call(select_questions, registry, group, body)
+    await asyncio.to_thread(jobs.reserve, run)
+    job_session = uuid.uuid4().hex
+    settings = {"rate": body["rate"], "seconds": body["seconds"], "execution": "cloud",
+                "region": REGION, "route": "public-cloudfront",
+                "gpu": CONFIG["groups"][group]["gpu"], "gpu_count": CONFIG["groups"][group]["gpu_count"]}
+    try:
+        def protect_job(old):
+            activity(old, session, int(time.time()))
+            if old["phase"] != "ready" or old.get("checked_at", 0) < time.time() - 60:
+                raise Conflict("请先启动GPU，等待全部副本就绪")
+            return acquire(old, job_session, int(time.time()), old["generation"])
+        await leases.control(group, protect_job)
+        await asyncio.to_thread(history.create, {
+            "id": run, "scenario": group, "kind": "fixed-rps", "dataset_id": body["dataset_id"],
+            "title": f"云端{'风控' if group == 'risk' else 'SOP'} · {body['dataset_id']} · {body['rate']} RPS × {body['seconds']}s",
+            "settings": settings}, "cloud-worker", True)
+        job = await asyncio.to_thread(jobs.create, run, group, job_session, settings,
+            {"questions": questions, "dataset_id": body["dataset_id"]})
+        return jobs.public(job)
+    except Exception:
+        await leases.control(group, lambda old: release(old, job_session, int(time.time())))
+        await asyncio.to_thread(jobs.release, run)
+        raise
+
+
+@app.get("/api/cloud/{run}")
+def cloud_status(run: str, request: Request):
+    authenticated(request)
+    history_call(history.identifier, run)
+    job = jobs.read(run)
+    if not job:
+        raise HTTPException(404, "云端测试不存在")
+    return jobs.public(job)
+
+
+@app.get("/api/cloud/{run}/questions")
+def cloud_questions(run: str, request: Request):
+    authenticated(request)
+    history_call(history.identifier, run)
+    job = jobs.read(run)
+    if not job:
+        raise HTTPException(404, "云端测试不存在")
+    value = jobs.definition(job)
+    raw = __import__("gzip").compress(json.dumps(value, ensure_ascii=False).encode())
+    if "gzip" in request.headers.get("accept-encoding", ""):
+        return Response(raw, media_type="application/json", headers={"Content-Encoding": "gzip"})
+    return JSONResponse(value)
+
+
+@app.post("/api/cloud/{run}/stop")
+def cloud_stop(run: str, request: Request):
+    authenticated(request)
+    history_call(history.identifier, run)
+    return jobs.public(history_call(jobs.stop, run))
 
 
 @app.get("/api/datasets/{dataset}")

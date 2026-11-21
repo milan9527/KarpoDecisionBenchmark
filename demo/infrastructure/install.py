@@ -21,7 +21,7 @@ OUT = ROOT / "operations/demo-20261121"
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("mode", choices=["start-risk", "start-sop", "nodes", "backend", "watchdog", "status"])
+    parser.add_argument("mode", choices=["start-risk", "start-sop", "nodes", "backend", "worker", "watchdog", "status"])
     args = parser.parse_args()
     resources = json.loads((OUT / "resources.json").read_text())
     config = json.loads((ROOT / "demo/config.json").read_text())
@@ -64,8 +64,8 @@ def main():
     boto3.client("s3", region_name=config["region"]).upload_file(
         package["archive"], resources["bucket"], package["key"])
     targets = [(group, host) for group, settings in config["groups"].items() for host in settings["hosts"]]
-    if args.mode == "backend":
-        targets = [("backend", {"id": resources["backend_instance"], "region": config["region"], "name": "backend"})]
+    if args.mode in ("backend", "worker"):
+        targets = [(args.mode, {"id": resources["backend_instance"], "region": config["region"], "name": args.mode})]
     path = OUT / "install-commands.json"
     records = json.loads(path.read_text()) if path.exists() else []
     for group, host in targets:
@@ -75,7 +75,7 @@ def main():
         if not online or online[0]["PingStatus"] != "Online":
             print(host["name"], "SSM not online yet")
             continue
-        python = "/opt/karpo-demo/venv/bin/python" if group == "backend" else "/opt/karpo/venv-vllm034/bin/python"
+        python = "/opt/karpo-demo/venv/bin/python" if group in ("backend", "worker") else "/opt/karpo/venv-vllm034/bin/python"
         setup = f"""set -eu
 mkdir -p /opt/karpo-demo
 {python} - <<'PYCODE'
@@ -90,12 +90,13 @@ with tarfile.open(target) as archive:
 PYCODE
 """
         if group == "backend":
+            setup += "/opt/karpo-demo/venv/bin/pip install 'uvloop>=0.21,<1' 'httptools>=0.6,<1' 'sniffio>=1.3,<2' 'aiohttp>=3.12,<4'\n"
             unit = """[Unit]
 Description=Karpo demo API and GPU startup controller
 After=network-online.target
 [Service]
 WorkingDirectory=/opt/karpo-demo/demo/backend
-ExecStart=/opt/karpo-demo/venv/bin/uvicorn app:app --host 0.0.0.0 --port 8000 --no-access-log --timeout-keep-alive 210
+ExecStart=/opt/karpo-demo/venv/bin/uvicorn app:app --host 0.0.0.0 --port 8000 --loop uvloop --http httptools --no-access-log --timeout-keep-alive 210
 Environment=PYTHONUNBUFFERED=1
 Restart=always
 RestartSec=5
@@ -107,6 +108,26 @@ WantedBy=multi-user.target
             setup += f"printf %s {shlex.quote(unit)} > /etc/systemd/system/karpo-demo-api.service\n"
             setup += "systemctl daemon-reload\nsystemctl enable karpo-demo-api\nsystemctl restart karpo-demo-api\n"
             setup += "systemctl is-active karpo-demo-api\n"
+        elif group == "worker":
+            setup += "/opt/karpo-demo/venv/bin/pip install 'uvloop>=0.21,<1' 'httptools>=0.6,<1' 'sniffio>=1.3,<2' 'aiohttp>=3.12,<4'\n"
+            unit = """[Unit]
+Description=Karpo independent cloud fixed-RPS load generator
+After=network-online.target karpo-demo-api.service
+[Service]
+WorkingDirectory=/opt/karpo-demo/demo/backend
+ExecStart=/opt/karpo-demo/venv/bin/python /opt/karpo-demo/demo/backend/cloud_worker.py
+Environment=PYTHONUNBUFFERED=1
+Restart=always
+RestartSec=5
+TimeoutStopSec=180
+LimitNOFILE=4096
+[Install]
+WantedBy=multi-user.target
+"""
+            setup += f"printf %s {shlex.quote(json.dumps(resources))} > /opt/karpo-demo/resources.json\n"
+            setup += f"printf %s {shlex.quote(unit)} > /etc/systemd/system/karpo-demo-cloud-worker.service\n"
+            setup += "systemctl daemon-reload\nsystemctl enable karpo-demo-cloud-worker\nsystemctl restart karpo-demo-cloud-worker\n"
+            setup += "systemctl is-active karpo-demo-cloud-worker\n"
         else:
             node = {"group": group, "replicas": host["replicas"], "secret": resources["node_secret"]}
             unit = """[Unit]

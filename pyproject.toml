@@ -7,7 +7,7 @@ name = "karpo-decision-benchmark"
 version = "0.1.0"
 description = "Reproducible Karpo decision-model evaluation with 200-candidate routing inputs"
 requires-python = ">=3.12"
-dependencies = ["boto3>=1.40", "httpx>=0.28"]
+dependencies = ["boto3>=1.40", "httpx>=0.28", "aiohttp>=3.12,<4"]
 
 [tool.setuptools]
 packages = []

@@ -1,0 +1,16 @@
+{
+  "sha256": {
+    "app.py": "4bb18a92759a2dd29be84530f485097a3c091f32dfe168606767d34d4c64d3ff",
+    "cloud_jobs.py": "a738522c928b19a82242bd94399ed26bf1f9390a28e7af7be72fc797a9ae7ae6",
+    "cloud_worker.py": "65710ecbe1ebb6a29b8b62ad7c0bd28bd10d9ae536c0dce45d7e7b996754645e",
+    "cloud_metrics.py": "79c586497f3819e47afd6f869205adc2c6350c991203c4925cbf5917ff6ed371",
+    "history.py": "86238bce458fd62617cfafc5ded1a7be3655a114ad9f508297956cf72ad995e1"
+  },
+  "services": [
+    "active",
+    "active"
+  ],
+  "instance": "i-04aa43d75617e765b",
+  "region": "us-east-2",
+  "command": "58996668-20dc-442d-a38d-38654105106e"
+}

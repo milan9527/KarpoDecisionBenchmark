@@ -9,6 +9,7 @@
   <script src="benchmark.js" defer></script>
   <script src="rate-client.js" defer></script>
   <script src="history.js" defer></script>
+  <script src="cloud-client.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -58,7 +59,7 @@
     </div>
     <section class="panel benchmark-panel" aria-labelledby="benchmark-title">
       <div class="section-heading"><div><p class="eyebrow">03 / PERFORMANCE</p><h2 id="benchmark-title">固定 RPS · 多场景测试</h2></div><span id="bench-phase" class="badge neutral">尚未测试</span></div>
-      <p class="bench-description">沿用之前的固定到达率测试：每秒发送100个请求，持续120秒，共12,000次。按计划时间发送，持续测量完整响应时间。</p>
+      <p class="bench-description">正式测试默认由 AWS 内的后台进程每秒发送100个完整请求，持续120秒。浏览器负责控制与查看结果，刷新或断网不影响云端测试。</p>
       <div class="bench-layout">
         <div>
           <div class="question-heading"><h3>本轮问题</h3><button id="bench-add" class="quiet" disabled>加入当前编辑问题</button></div>
@@ -75,6 +76,9 @@
           <p class="subtle">历史输入、规则和候选顺序完整保留；每个问题集还可加入20道自定义问题。参考答案仅用于评分，不发给模型。</p>
         </div>
         <form id="bench-form">
+          <label for="bench-execution">测试执行位置</label>
+          <select id="bench-execution" class="dataset-select"><option value="cloud">AWS 云端正式压测（推荐）</option><option value="browser">当前浏览器 · 公网体验测试</option></select>
+          <p id="bench-scope" class="subtle">云端端到端：AWS压测进程 → 公网CloudFront → ALB → API → GPU → 完整响应。包含发送滞后与排队，不包含你的浏览器网络。</p>
           <div class="bench-controls">
             <div><label for="bench-rate">每秒请求数 · RPS</label><input id="bench-rate" type="number" min="1" max="100" step="1" value="100" required></div>
             <div><label for="bench-seconds">持续时长 · 秒</label><input id="bench-seconds" type="number" min="1" max="120" step="1" value="120" required></div>
@@ -90,19 +94,22 @@
       <div class="bench-metrics" aria-live="off">
         <div><span>稳态成功吞吐</span><strong id="bench-rps">—</strong><small>RPS · 后75%窗口</small></div>
         <div><span>成功率</span><strong id="bench-success">—</strong><small id="bench-errors">尚无请求</small></div>
-        <div><span>P50 延迟</span><strong id="bench-p50">—</strong><small>ms</small></div>
+        <div><span id="bench-p50-label">云端端到端 P50</span><strong id="bench-p50">—</strong><small>ms</small></div>
         <div><span>P95 延迟</span><strong id="bench-p95">—</strong><small>ms</small></div>
         <div><span>P99 延迟</span><strong id="bench-p99">—</strong><small>ms</small></div>
         <div><span>平均延迟</span><strong id="bench-mean">—</strong><small>ms</small></div>
         <div><span>最慢请求</span><strong id="bench-max">—</strong><small>ms</small></div>
-        <div><span>峰值在途</span><strong id="bench-peak">—</strong><small>浏览器请求</small></div>
+        <div><span>峰值在途</span><strong id="bench-peak">—</strong><small id="bench-peak-source">云端请求</small></div>
         <div><span>整体成功吞吐</span><strong id="bench-overall-rps">—</strong><small>RPS · 含收尾</small></div>
         <div><span>最大发送滞后</span><strong id="bench-send-lag">—</strong><small>ms</small></div>
-        <div><span>参考答案符合率</span><strong id="bench-accuracy">—</strong><small id="bench-evaluated">仅有标签的原始问题</small></div>
+        <div><span>全量有效正确率</span><strong id="bench-accuracy">—</strong><small id="bench-evaluated">包含失败的有标签请求</small></div>
         <div><span>HTTP往返 P50</span><strong id="bench-http-p50">—</strong><small>ms · 实际发出后</small></div>
+        <div><span>成功响应正确率</span><strong id="bench-response-accuracy">—</strong><small id="bench-response-evaluated">仅成功的有标签响应</small></div>
+        <div><span>API 服务 P50</span><strong id="bench-service-p50">—</strong><small>ms · 服务内部耗时</small></div>
+        <div><span>模型阶段 P50</span><strong id="bench-model-p50">—</strong><small>ms · 模型等待及计算</small></div>
       </div>
       <p id="bench-verdict" class="subtle">等待测试结果。</p>
-      <p class="subtle">端到端延迟从计划发送时刻到完整响应解析结束，包含发送滞后、网络和所有排队。分位数统计有效响应，失败始终计入成功率与评分；每条请求最多等待65秒，不自动重试。请保持浏览器正常运行，发送滞后过大会使本轮不达标。</p>
+      <p class="subtle">端到端延迟从所选执行位置的计划发送时刻到完整响应解析结束。云端与浏览器结果分别标注，不能互相代替。分位数统计有效响应，失败计入成功率和全量有效正确率；成功响应正确率另外统计。每条请求最多等待65秒，不自动重试。</p>
       <div class="question-heading"><h3>逐条结果 <span id="bench-result-note">包含问题、回答与耗时</span></h3><button id="bench-export" class="quiet" disabled>导出完整 JSON</button></div>
       <div class="table-scroll"><table class="bench-table">
         <thead><tr><th>序号</th><th>问题</th><th>结果 / 错误</th><th>端到端耗时</th><th>GPU 副本</th><th>详情</th></tr></thead>
@@ -116,11 +123,11 @@
       <p id="history-sync" class="subtle">登录后加载历史记录。</p><button id="history-retry" class="question-edit">重试同步本机待保存记录</button>
       <div class="history-filters">
         <select id="history-scenario" aria-label="历史场景"><option value="">全部场景</option><option value="risk">风控</option><option value="sop">SOP</option></select>
-        <select id="history-origin" aria-label="历史来源"><option value="">全部来源</option><option value="demo">前端新测试</option><option value="import">导入的历史实验</option></select>
+        <select id="history-origin" aria-label="历史来源"><option value="">全部来源</option><option value="cloud">AWS 云端测试</option><option value="demo">浏览器测试</option><option value="import">导入的历史实验</option></select>
         <input id="history-search" type="search" aria-label="搜索测试记录" placeholder="搜索实验、问题集、日期或编号">
       </div>
       <p id="history-count" class="subtle"></p><p id="history-error" class="error hidden" role="alert"></p>
-      <div class="table-scroll"><table class="bench-table history-table"><thead><tr><th>时间 · UTC</th><th>测试</th><th>场景</th><th>类型 / 状态</th><th>成功 / 完成</th><th>吞吐 RPS</th><th>P50 ms</th><th>符合率</th><th>原始性能判定</th><th>详情</th></tr></thead><tbody id="history-results"></tbody></table></div>
+      <div class="table-scroll"><table class="bench-table history-table"><thead><tr><th>时间 · UTC</th><th>测试</th><th>场景</th><th>类型 / 状态</th><th>成功 / 完成</th><th>吞吐 RPS</th><th>P50 ms</th><th>全量有效正确率</th><th>原始性能判定</th><th>详情</th></tr></thead><tbody id="history-results"></tbody></table></div>
       <div class="question-pagination"><button id="history-more" disabled>加载更多历史记录</button></div>
       <p class="subtle">固定 RPS、固定在途、质量验证和单次请求使用不同口径；吞吐优先显示稳态值，没有稳态值时显示整体值。导入记录保留原始指标和来源，不重新推定达标。日期精度以详情为准。</p>
       <div id="history-detail" class="hidden">

@@ -17,7 +17,7 @@ from playwright.async_api import async_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "operations/demo-rps-20261121"
-FRONTEND = ("index.html", "app.js", "benchmark.js", "rate-client.js", "rate-worker.js", "history.js", "history-worker.js", "style.css")
+FRONTEND = ("index.html", "app.js", "benchmark.js", "rate-client.js", "rate-worker.js", "history.js", "history-worker.js", "cloud-client.js", "style.css")
 TOKEN_SOURCES = {
     "promo-tune": "experiments/promo-rtx6-20261121/results/runs/rtx6-calibrated-v1/confirm/requests.jsonl",
     "promo-quality": "experiments/promo-rtx6-20261121/results/runs/rtx6-calibrated-v1/quality/requests.jsonl",
@@ -137,6 +137,7 @@ async def main():
             await expect(page.locator("#bench-seconds")).to_have_value("120")
             for group in args.groups:
                 await page.locator(f".tab[data-group={group}]").click()
+                await page.locator("#bench-execution").select_option("browser")
                 while await page.locator("#bench-run").is_disabled():
                     assert time.monotonic() < deadline, "Readiness timed out: " + group
                     await asyncio.sleep(5)

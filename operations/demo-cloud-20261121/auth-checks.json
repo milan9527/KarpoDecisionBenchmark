@@ -1,0 +1,7 @@
+{
+  "GET /api/cloud/active": 401,
+  "GET /api/cloud/cloud_auth_test_0001": 401,
+  "GET /api/cloud/cloud_auth_test_0001/questions": 401,
+  "POST /api/cloud": 401,
+  "POST /api/cloud/cloud_auth_test_0001/stop": 401
+}

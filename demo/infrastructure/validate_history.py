@@ -43,6 +43,7 @@ async def main():
         # Exercise the normal form handler, worker, outbox and cloud persistence.
         await page.evaluate("""() => {
           group="risk";
+          $("bench-execution").value="browser";
           benchmarkQuestions.risk=[{id:"storage-invalid",title:"存储验证：无效输入，非模型性能测试",
             request:{state:{},questions:{}},selected:true}];
           datasetSelections.risk="storage-validation";

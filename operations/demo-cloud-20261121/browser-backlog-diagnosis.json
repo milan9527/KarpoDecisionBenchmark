@@ -1,0 +1,23 @@
+{
+  "run_id": "1795267894836_32f22e4b7b8c4540a26a589c53f740a9",
+  "started_at": "2026-11-21T13:31:35.029881+00:00",
+  "target_rps": 100,
+  "seconds": 100,
+  "planned": 10000,
+  "sent_and_successful": 6062,
+  "browser_rejected_not_sent": 3938,
+  "server_failed": 0,
+  "correct": 5992,
+  "whole_run_correct_rate": 0.5992,
+  "correct_rate_on_successful_responses": 0.9884526558891455,
+  "browser_p50_ms": 8105,
+  "api_service_p50_ms": 139.5095460011362,
+  "engine_wait_model_p50_ms": 103.72644200003833,
+  "per_request_time_outside_api_p50_ms": 7943.661507998739,
+  "all_successful_token_hashes_match_original_baseline": true,
+  "http_failures": 0,
+  "original_protocol_seconds": 120,
+  "payload_median_bytes": 8300,
+  "minimum_payload_upload_mbps_at_100rps": 6.636746666666666,
+  "browser_timing_breakdown_available": false
+}

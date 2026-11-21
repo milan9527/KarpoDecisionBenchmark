@@ -40,7 +40,7 @@ class History:
             result["status"] = "interrupted"
         return result
 
-    def create(self, value, owner):
+    def create(self, value, owner, cloud=False):
         run = self.identifier(value["id"])
         if value.get("scenario") not in ("risk", "sop"):
             raise ValueError("未知测试场景")
@@ -55,8 +55,10 @@ class History:
                "dataset_id": str(value.get("dataset_id", "custom"))[:100],
                "started_at": now, "client_started_at": str(value.get("started_at", ""))[:64],
                "updated_epoch": int(time.time()), "status": "running",
-               "origin": "demo", "owner": owner, "settings": settings,
-               "metrics": {}, "measurement": "浏览器报告；端到端含排队，失败保留",
+               "origin": "cloud" if cloud else "demo", "owner": owner, "settings": settings,
+               "metrics": {}, "measurement": (
+                   "AWS us-east-2压测进程 → 公网CloudFront → ALB → API → GPU → 完整响应；包含发送滞后与所有排队，不包含用户浏览器网络。"
+                   if cloud else "浏览器报告；端到端含排队，失败保留"),
                "storage": "chunks"}
         try:
             self.table.put_item(Item={"pk": "runs", "sk": run, "document": packed(doc)},
@@ -65,7 +67,7 @@ class History:
             if error.response["Error"]["Code"] != "ConditionalCheckFailedException":
                 raise
             old = self.get(run)
-            if old.get("owner") != owner or old.get("origin") != "demo":
+            if old.get("owner") != owner or old.get("origin") != ("cloud" if cloud else "demo"):
                 raise ValueError("记录编号已存在")
             return old
         return doc
@@ -115,7 +117,7 @@ class History:
 
     def write_part(self, run, part, encoded, owner):
         doc = self.get(run)
-        if doc.get("origin") != "demo" or doc.get("owner") != owner:
+        if doc.get("origin") not in ("demo", "cloud") or doc.get("owner") != owner:
             raise ValueError("历史导入记录不可修改")
         if not re.fullmatch(r"[qr][0-9]{6}", part):
             raise ValueError("无效分片编号")
@@ -161,7 +163,7 @@ class History:
 
     def finish(self, run, value, owner):
         doc = self.get(run)
-        if doc.get("origin") != "demo" or doc.get("owner") != owner:
+        if doc.get("origin") not in ("demo", "cloud") or doc.get("owner") != owner:
             raise ValueError("历史导入记录不可修改")
         if value.get("status") not in ("completed", "stopped", "interrupted", "failed"):
             raise ValueError("无效测试状态")

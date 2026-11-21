@@ -1,0 +1,292 @@
+[
+  {
+    "service": "worker",
+    "leaves": [
+      [
+        "_worker (concurrent/futures/thread.py:90)",
+        74
+      ],
+      [
+        "EpollSelector.select (selectors.py:468)",
+        8
+      ],
+      [
+        "is_socket_readable (httpcore/_utils.py:37)",
+        7
+      ],
+      [
+        "_path_stat (<frozen importlib._bootstrap_external>:147)",
+        5
+      ],
+      [
+        "AsyncConnectionPool._assign_requests_to_connections (httpcore/_async/connection_pool.py:294)",
+        4
+      ],
+      [
+        "TransportSocket.getpeername (asyncio/trsock.py:77)",
+        4
+      ],
+      [
+        "TLSStream._flush_write_bio (anyio/streams/tls.py:183)",
+        4
+      ],
+      [
+        "SSLObject.write (ssl.py:880)",
+        4
+      ],
+      [
+        "AsyncHTTP11Connection.is_idle (httpcore/_async/http11.py:288)",
+        3
+      ],
+      [
+        "validate (h11/_util.py:87)",
+        3
+      ],
+      [
+        "JSONDecoder.raw_decode (json/decoder.py:354)",
+        3
+      ],
+      [
+        "JSONEncoder.iterencode (json/encoder.py:258)",
+        3
+      ],
+      [
+        "AsyncHTTP11Connection.is_idle (httpcore/_async/http11.py:289)",
+        3
+      ],
+      [
+        "_SelectorSocketTransport.write (asyncio/selector_events.py:1075)",
+        3
+      ],
+      [
+        "summarize (cloud_metrics.py:25)",
+        2
+      ],
+      [
+        "_path_join (<frozen importlib._bootstrap_external>:128)",
+        2
+      ],
+      [
+        "_find_spec (<frozen importlib._bootstrap>:1258)",
+        2
+      ],
+      [
+        "FileFinder.find_spec (<frozen importlib._bootstrap_external>:1632)",
+        2
+      ],
+      [
+        "dumps (json/__init__.py:234)",
+        2
+      ],
+      [
+        "SSLSocket.read (ssl.py:1116)",
+        2
+      ],
+      [
+        "deepvalues (http/cookiejar.py:1243)",
+        2
+      ],
+      [
+        "_splittype (urllib/parse.py:1105)",
+        1
+      ],
+      [
+        "Request._prepare (httpx/_models.py:442)",
+        1
+      ],
+      [
+        "AsyncHTTP11Connection.has_expired (httpcore/_async/http11.py:283)",
+        1
+      ],
+      [
+        "BaseTransport.get_extra_info (asyncio/transports.py:21)",
+        1
+      ],
+      [
+        "Request.__init__ (urllib/request.py:327)",
+        1
+      ],
+      [
+        "AsyncResponseStream.aclose (httpx/_transports/default.py:275)",
+        1
+      ],
+      [
+        "URL.__init__ (httpx/_urls.py:79)",
+        1
+      ],
+      [
+        "socket.family (socket.py:521)",
+        1
+      ],
+      [
+        "TLSStream._call_sslobject_method (anyio/streams/tls.py:204)",
+        1
+      ],
+      [
+        "summarize.<locals>.<genexpr> (cloud_metrics.py:35)",
+        1
+      ],
+      [
+        "Logger.isEnabledFor (logging/__init__.py:1794)",
+        1
+      ],
+      [
+        "Cookies._CookieCompatResponse.info (httpx/_models.py:1276)",
+        1
+      ],
+      [
+        "is_socket_readable (httpcore/_utils.py:31)",
+        1
+      ],
+      [
+        "AsyncClient.request (httpx/_client.py:1527)",
+        1
+      ]
+    ]
+  },
+  {
+    "service": "api",
+    "leaves": [
+      [
+        "Condition.wait (threading.py:355)",
+        14
+      ],
+      [
+        "_worker (concurrent/futures/thread.py:90)",
+        13
+      ],
+      [
+        "Condition.wait (threading.py:359)",
+        12
+      ],
+      [
+        "JSONEncoder.iterencode (json/encoder.py:258)",
+        10
+      ],
+      [
+        "JSONDecoder.raw_decode (json/decoder.py:354)",
+        10
+      ],
+      [
+        "TransportSocket.getpeername (asyncio/trsock.py:77)",
+        9
+      ],
+      [
+        "_SelectorSocketTransport.write (asyncio/selector_events.py:1075)",
+        7
+      ],
+      [
+        "_path_stat (<frozen importlib._bootstrap_external>:147)",
+        6
+      ],
+      [
+        "SSLObject.read (ssl.py:871)",
+        5
+      ],
+      [
+        "is_socket_readable (httpcore/_utils.py:37)",
+        4
+      ],
+      [
+        "_path_join (<frozen importlib._bootstrap_external>:128)",
+        4
+      ],
+      [
+        "ssl_wrap_socket (urllib3/util/ssl_.py:415)",
+        3
+      ],
+      [
+        "PathFinder._path_importer_cache (<frozen importlib._bootstrap_external>:1483)",
+        3
+      ],
+      [
+        "validate (h11/_util.py:87)",
+        3
+      ],
+      [
+        "SSLObject.write (ssl.py:880)",
+        3
+      ],
+      [
+        "ClientCreator._create_api_method (botocore/client.py:594)",
+        3
+      ],
+      [
+        "WeakSet.__init__.<locals>._remove (_weakrefset.py:42)",
+        2
+      ],
+      [
+        "is_socket_readable (httpcore/_utils.py:36)",
+        2
+      ],
+      [
+        "EpollSelector.select (selectors.py:468)",
+        2
+      ],
+      [
+        "BaseEventLoop.call_at (asyncio/base_events.py:782)",
+        2
+      ],
+      [
+        "_ModuleLock.__init__ (<frozen importlib._bootstrap>:254)",
+        2
+      ],
+      [
+        "_find_spec (<frozen importlib._bootstrap>:1258)",
+        2
+      ],
+      [
+        "AsyncHTTP11Connection.is_idle (httpcore/_async/http11.py:289)",
+        2
+      ],
+      [
+        "_GeneratorContextManagerBase.__init__ (contextlib.py:105)",
+        2
+      ],
+      [
+        "ReceiveBuffer.maybe_extract_lines (h11/_receivebuffer.py:134)",
+        2
+      ],
+      [
+        "wrap_app_handling_exceptions (starlette/_exception_handler.py:23)",
+        2
+      ],
+      [
+        "jsonable_encoder (fastapi/encoders.py:307)",
+        2
+      ],
+      [
+        "TypedAttributeProvider.extra (anyio/_core/_typedattr.py:83)",
+        2
+      ],
+      [
+        "_SocketProvider.extra_attributes (anyio/abc/_sockets.py:145)",
+        2
+      ],
+      [
+        "Registry.validate.<locals>.<genexpr> (registry.py:70)",
+        2
+      ],
+      [
+        "SSLSocket.read (ssl.py:1116)",
+        2
+      ],
+      [
+        "Connection.next_event (h11/_connection.py:485)",
+        2
+      ],
+      [
+        "TaskState.__init__ (anyio/_backends/_asyncio.py:758)",
+        2
+      ],
+      [
+        "AsyncHTTPConnection.is_idle (httpcore/_async/connection.py:195)",
+        2
+      ],
+      [
+        "Registry.validate.<locals>.<genexpr> (registry.py:69)",
+        2
+      ]
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "demo/backend/app.py": "4bb18a92759a2dd29be84530f485097a3c091f32dfe168606767d34d4c64d3ff",
+  "demo/backend/cloud_jobs.py": "a738522c928b19a82242bd94399ed26bf1f9390a28e7af7be72fc797a9ae7ae6",
+  "demo/backend/cloud_worker.py": "65710ecbe1ebb6a29b8b62ad7c0bd28bd10d9ae536c0dce45d7e7b996754645e",
+  "demo/backend/cloud_metrics.py": "79c586497f3819e47afd6f869205adc2c6350c991203c4925cbf5917ff6ed371",
+  "demo/backend/history.py": "86238bce458fd62617cfafc5ded1a7be3655a114ad9f508297956cf72ad995e1",
+  "demo/frontend/app.js": "5cfefdf887c40545ced1239bcb2dfa9784518b33f00b8124fd1444f2eab0762f",
+  "demo/frontend/cloud-client.js": "91c45853afa41985d4769ca093a47d75f31038adf37a9af265c6e10bc37e80f0",
+  "demo/frontend/benchmark.js": "ed7295d0075cbee6f4e0d3204a5d4fa9ca4eb3f158e66daa35020c29a8ca2183",
+  "demo/frontend/index.html": "03a7e08024ec4c99b5e7603372a90494f449939f59e80b31c92101e87792f153"
+}
