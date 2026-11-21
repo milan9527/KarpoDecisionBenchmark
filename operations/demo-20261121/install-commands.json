@@ -174,5 +174,13 @@
     "instance": "i-04aa43d75617e765b",
     "command": "45786478-7deb-4266-ae4d-a72b5bd886a7",
     "runtime_sha256": "4079a81fbe014314fb6d7a8e6779ddfb272a64a31c59937b31fe289e9e5a7238"
+  },
+  {
+    "name": "backend",
+    "group": "backend",
+    "region": "us-east-2",
+    "instance": "i-04aa43d75617e765b",
+    "command": "3b97e817-76ba-47c3-8fdf-1a866c2308a1",
+    "runtime_sha256": "13a1375f811fa17a63c5401fa1aaefd944e7173e52e819d3e3441fa22a199a76"
   }
 ]

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="benchmark.js" defer></script>
   <script src="rate-client.js" defer></script>
+  <script src="history.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -108,6 +109,28 @@
         <tbody id="bench-results"><tr><td colspan="6">完成测试后在此查看每条问题的实际回答。</td></tr></tbody>
       </table></div>
       <details id="bench-detail" class="hidden"><summary>该请求的完整输入和回答</summary><pre id="bench-detail-json"></pre></details>
+    </section>
+    <section class="panel benchmark-panel" aria-labelledby="history-title">
+      <div class="section-heading"><div><p class="eyebrow">04 / HISTORY</p><h2 id="history-title">历史测试记录</h2></div><button id="history-refresh" class="quiet">刷新记录</button></div>
+      <p class="bench-description">保留成功、失败、提前停止与中断的测试。登录后可跨浏览器查看已同步记录，无需启动 GPU。</p>
+      <p id="history-sync" class="subtle">登录后加载历史记录。</p><button id="history-retry" class="question-edit">重试同步本机待保存记录</button>
+      <div class="history-filters">
+        <select id="history-scenario" aria-label="历史场景"><option value="">全部场景</option><option value="risk">风控</option><option value="sop">SOP</option></select>
+        <select id="history-origin" aria-label="历史来源"><option value="">全部来源</option><option value="demo">前端新测试</option><option value="import">导入的历史实验</option></select>
+        <input id="history-search" type="search" aria-label="搜索测试记录" placeholder="搜索实验、问题集、日期或编号">
+      </div>
+      <p id="history-count" class="subtle"></p><p id="history-error" class="error hidden" role="alert"></p>
+      <div class="table-scroll"><table class="bench-table history-table"><thead><tr><th>时间 · UTC</th><th>测试</th><th>场景</th><th>类型 / 状态</th><th>成功 / 完成</th><th>吞吐 RPS</th><th>P50 ms</th><th>符合率</th><th>原始性能判定</th><th>详情</th></tr></thead><tbody id="history-results"></tbody></table></div>
+      <div class="question-pagination"><button id="history-more" disabled>加载更多历史记录</button></div>
+      <p class="subtle">固定 RPS、固定在途、质量验证和单次请求使用不同口径；吞吐优先显示稳态值，没有稳态值时显示整体值。导入记录保留原始指标和来源，不重新推定达标。日期精度以详情为准。</p>
+      <div id="history-detail" class="hidden">
+        <div class="question-heading"><h3 id="history-detail-title"></h3><button id="history-export" class="quiet">导出记录 JSON</button></div>
+        <div id="history-sources" class="history-sources"></div>
+        <details><summary>完整设置、指标与来源</summary><pre id="history-detail-json"></pre></details>
+        <div class="table-scroll"><table class="bench-table"><thead><tr><th>序号</th><th>问题</th><th>结果 / 错误</th><th>端到端 ms</th><th>详情</th></tr></thead><tbody id="history-records"></tbody></table></div>
+        <div class="question-pagination"><button id="history-record-prev">上一页</button><span id="history-record-page"></span><button id="history-record-next">下一页</button></div>
+        <details id="history-request"><summary>完整问题和实际回答</summary><pre id="history-request-json"></pre></details>
+      </div>
     </section>
     <footer><span>Karpo 4B · vLLM · FP8 · 每卡独立副本</span><span>示例为合成数据；页面调用真实 GPU 模型，不执行金融操作。</span></footer>
   </main>

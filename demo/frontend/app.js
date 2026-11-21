@@ -353,20 +353,36 @@ $("bench-form").addEventListener("submit", async event => {
   event.preventDefault(); if (running) return;
   error("bench-error");
   const scenario = group;
+  let historyId, runError;
   try {
     const questions = (benchmarkQuestions[group] || []).filter(q => q.selected).map(
       ({id,title,request,request_json,expected,source_sha256}) => ({id,title,request,request_json,expected,source_sha256}));
+    running = true; renderStatus();
+    const rate=Number($("bench-rate").value),seconds=Number($("bench-seconds").value);
+    KarpoBenchmark.validateRateOptions({questions,rate,seconds});
+    benchmarkRunner=null;renderBenchmark();
+    historyId=await HistoryUI.begin({scenario,kind:"fixed-rps",dataset_id:datasetSelections[group],questions,
+      settings:{rate,seconds,gpu:catalog[group].gpu||statusData.groups[group].gpu,gpu_count:statusData.groups[group].gpu_count},
+      title:`${scenario==="risk"?"风控":"SOP"} · ${datasetSelections[group]} · ${rate} RPS × ${seconds}s`});
     benchmarkRunner = new RateClient({
-      questions, scenario, rate:Number($("bench-rate").value), seconds:Number($("bench-seconds").value),
+      questions, scenario, rate, seconds,
       onUpdate:scheduleBenchmarkRender,
+      onRecords:(records,metrics)=>{HistoryUI.append(historyId,records,metrics).catch(()=>{});},
     });
     benchmarkRuns[group] = {runner:benchmarkRunner, started_at:new Date().toISOString(), dataset_id:datasetSelections[group]};
     $("bench-detail").classList.add("hidden"); $("bench-detail").open = false;
     running = true; lastInteraction = Date.now(); renderStatus(); renderBenchmark();
     await benchmarkRunner.run();
     toast(benchmarkRunner.stopRequested ? "已停止发送，在途请求全部完成。" : "固定 RPS 测试完成，可查看逐条结果或导出。");
-  } catch(e) { error("bench-error",e.message); }
-  finally { running = false; renderBenchmark(); await refresh(); }
+  } catch(e) { runError=e;error("bench-error",e.message); }
+  finally {
+    if(historyId) {
+      try {await HistoryUI.finish(historyId,runError?"failed":benchmarkRunner.stopRequested?"stopped":"completed",
+        benchmarkRunner.metrics(),runError?.message);}
+      catch(e){error("bench-error",e.message);}
+    }
+    running = false; renderBenchmark(); await refresh();
+  }
 });
 $("bench-stop").addEventListener("click", () => benchmarkRunner?.stop());
 $("bench-export").addEventListener("click", () => {
@@ -388,6 +404,7 @@ $("login-form").addEventListener("submit", async event => {
     await api("auth",{username:$("username").value,password:$("password").value});
     $("password").value = ""; authenticated = true;
     catalog = await api("catalog"); $("login").close(); selectGroup(group); await refresh();
+    await HistoryUI.recover();
   } catch(e) { error("login-error",e.message); }
   finally { $("login-button").disabled = false; }
 });
@@ -409,14 +426,30 @@ $("infer").addEventListener("click", async () => {
   error("input-error");
   let request;
   try { request = editedRequest(); } catch { error("input-error","请输入有效的JSON。"); return; }
-  const started = performance.now(); running = true; renderStatus();
+  running = true; renderStatus();
+  let historyId,record,elapsed=0,runError;
   try {
-    const response = await api(group+"/infer",request,{
+    const question={id:current.id,title:current.title,request,request_json:KarpoBenchmark.serializeQuestion({...current,request})};
+    historyId=await HistoryUI.begin({scenario:group,kind:"single",dataset_id:datasetSelections[group],questions:[question],
+      settings:{gpu:statusData.groups[group].gpu,gpu_count:statusData.groups[group].gpu_count},title:"单次决策 · "+current.title});
+    const started=performance.now();
+    let response;
+    try {
+    response = await api(group+"/infer",request,{
       body:KarpoBenchmark.serializeQuestion({...current,request})});
-    const elapsed = performance.now()-started;
+    } finally {elapsed=performance.now()-started;}
+    record={index:1,question_index:0,title:current.title,ok:true,elapsed_ms:elapsed,response};
     responses[group] = [response,elapsed,request]; showResult(response,elapsed,request);
-  } catch(e) { error("input-error",e.message); }
-  finally { running = false; await refresh(); }
+  } catch(e) {runError=e;record={index:1,question_index:0,title:current.title,ok:false,elapsed_ms:elapsed,status:e.status||0,error:e.message};error("input-error",e.message);}
+  finally {
+    if(historyId){
+      const metrics={completed:1,successful:runError?0:1,failed:runError?1:0,p50_ms:runError?null:elapsed,
+        duration_ms:elapsed,planned:1,success_rate:runError?0:1};
+      try{await HistoryUI.append(historyId,[record],metrics);await HistoryUI.finish(historyId,runError?"failed":"completed",metrics,runError?.message);}
+      catch(e){error("input-error",e.message);}
+    }
+    running = false; await refresh();
+  }
 });
 document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click",() => catalog && selectGroup(tab.dataset.group)));
 for (const event of ["pointerdown","keydown","input"]) document.addEventListener(event,() => lastInteraction=Date.now(),{passive:true});
@@ -435,7 +468,8 @@ window.addEventListener("pagehide", event => {
     navigator.sendBeacon("/api/"+key+"/end",new Blob(["{}"],{type:"application/json"}));
   }
 });
+HistoryUI.init();
 (async () => {
-  try { catalog = await api("catalog"); authenticated = true; selectGroup(group); await refresh(); }
+  try { catalog = await api("catalog"); authenticated = true; selectGroup(group); await refresh(); await HistoryUI.recover(); }
   catch { if (!$("login").open) $("login").showModal(); }
 })();

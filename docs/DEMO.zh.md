@@ -204,6 +204,7 @@ SOP首次启动后的400次100 RPS短测也有21次429，已保留；随后20 RP
 ```bash
 # 首次创建 AWS 控制资源；检查点保存在 resources.json，重复运行复用已有资源
 python demo/infrastructure/provision.py
+python demo/infrastructure/history_setup.py
 
 # VPC origin Deployed 后创建分发、OAC、bucket policy 并上传前端
 python demo/infrastructure/edge.py
@@ -218,6 +219,60 @@ python demo/infrastructure/install.py status
 安装 GPU 服务需要目标实例已启动且 SSM 在线。初次安装可分别用 `install.py start-risk`、`install.py start-sop` 先写入回收期限再启动；然后执行 `install.py nodes`，通过页面重新开启演示确认模型就绪。正常演示由页面按场景启动，无需再次安装。若模型节点尚未具备 SSM 权限，需要先给其关联演示节点实例配置文件并确认 SSM Agent 在线。
 
 更新前端后运行 `edge.py` 上传并使 CloudFront 缓存失效；更新后端后运行 `package.py` 和 `install.py backend`。新建 CloudFront 域名后须安装后端，使其读取正确的同源校验域名。节点代码更新需重新安装并在无演示请求时重启 `karpo-demo-node`。更新回收器代码运行 `install.py watchdog`；修改配置时还需由 `provision.py` 更新 Lambda 环境配置与 IAM 白名单。
+
+## 历史测试记录
+
+页面底部「历史测试记录」保存所有后续单次决策和固定 RPS 测试。可按风控/SOP、来源、实验名、问题集、日期或编号筛选；列表显示测试状态、成功/完成数量、吞吐、P50、参考答案符合率和原始性能判定。详情包含设置、P95/P99 等完整指标、分页逐条响应、完整输入及导出。无需启动 GPU，使用同一演示账号在另一浏览器登录即可查看已同步记录。
+
+初始导入包含当前仓库 **387 份基准摘要及29份浏览器导出，共539轮、524,647条可用响应**。一个摘要中包含多阶段时，按阶段分别列出；预热、质量、不同量化、batch、GPU副本数量、固定在途、固定RPS、失败及诊断记录均保留。422,571条来自原基准的 `requests.jsonl`，102,076条来自浏览器导出。导入清单及文件哈希见 [import.json](../operations/demo-history-20261121/import.json)。
+
+原始指标保存在 `raw_metrics`，列表只映射同义字段，不用当前硬件或当前阈值重新判定旧实验。固定RPS与固定在途明确区分；吞吐优先显示稳态值，没有稳态指标时显示原始整体吞吐。浮点序列化诊断的数值仍保留，但不作为原始输入性能验收。日期只有实验日期的记录标记 `experiment-date-only`，不补造时分秒。
+
+输入与原始响应按请求哈希关联；578个历史问题引用未找到完全匹配的原始输入（风控267、SOP311），详情明确标记缺失，仍保留实际响应、请求哈希及GitHub证据链接。此数量是各轮中的问题引用数，不是578类独立行为。部分显式batch摘要仅有汇总，无逐条响应；不据摘要生成响应。此前未保存到仓库、也未导出的浏览器测试无法追溯恢复。
+
+保存流程：
+
+1. 发出模型请求前，先在后端创建测试编号并保存完整问题快照。
+2. 测试期间，独立 Worker 将每批已返回的响应写入 IndexedDB；不在模型请求路径中同步写数据库。固定RPS调度仍在原独立 Worker 中运行。
+3. 测试结束或停止后，先收齐在途请求，再压缩上传到私有S3。DynamoDB保存列表、设置、指标、分片哈希与状态；完整上传且数量匹配后才写结束标记。
+4. 分片按编号与内容哈希幂等保存，重试不会重复追加；已结束记录和导入证据不能从页面覆盖。
+5. 断网时明确显示「尚未同步」，本机保留待上传内容；重新登录/刷新或点击「重试同步」恢复。Web Locks避免另一个标签页把正在运行的测试误标为中断。
+
+刷新/关闭页面会中断浏览器压测，已保存的结果继续保留。重新打开同一浏览器后补传本地记录，并将未完成测试标记为中断；还没返回或还没写入本地的结果无法恢复。其他浏览器只能看到已同步的部分。没有结束标记且超过15分钟的记录显示「已中断 / 待恢复」。清除浏览器存储会丢失尚未同步的内容；成功同步后不依赖本机存储。上传失败不会显示为完整保存，也不会自动重跑推理。
+
+```mermaid
+flowchart LR
+  Browser[前端测试] --> Scheduler[请求调度 Worker]
+  Scheduler --> API[ALB + API]
+  API --> GPU[模型副本]
+  Scheduler --> Outbox[历史 Worker + IndexedDB]
+  Outbox -->|测量结束后同步| History[鉴权历史 API]
+  History --> Index[DynamoDB 历史索引]
+  History --> Evidence[私有 S3 完整证据]
+  Browser -->|列表、详情、导出| History
+```
+
+历史接口统一要求现有登录Cookie，CloudFront的S3 OAC仅能读取 `site/*`，不能直接读取 `history/*`。CPU后端只增加独立历史表的Get/Put/Query与S3 `history/*` 的Get/Put权限。历史表开启PITR，不设置自动过期；GPU停机不会删除历史。当前为同一演示账号共享记录，不提供删除按钮。浏览器指标标注为客户端报告，历史存储本身不构成重新验证模型正确率。
+
+```bash
+# 首次增加历史存储和限定权限，不启动GPU
+python demo/infrastructure/history_setup.py
+python demo/infrastructure/package.py
+python demo/infrastructure/install.py backend
+python demo/infrastructure/edge.py
+
+# 清点 / 导入仓库现存历史，确定性编号，不覆盖已导入轮次
+python demo/infrastructure/import_history.py
+python demo/infrastructure/import_history.py --apply
+
+# 持久化、失败记录、断网/刷新恢复、标签页隔离及跨浏览器验证
+python -m unittest discover -s tests -p 'test_demo_history.py'
+python demo/infrastructure/validate_history.py
+```
+
+历史功能的浏览器验证记录以「存储验证」/`storage-validation`标识，使用实际返回422的无效请求，不启动GPU，不计入模型性能或正确率结论。本次历史功能未重新执行100 RPS的GPU性能验收；前述公网性能数值仍对应原测试代码版本。
+
+验证结果：37项Python检查与6项固定RPS检查通过；[真实浏览器验证](../operations/demo-history-20261121/validation.json)覆盖失败记录、断网补传、刷新恢复、标签页隔离、跨浏览器查看、导出和手机显示。[云端核对](../operations/demo-history-20261121/audit.json)确认539轮的13,872个数据分片数量与导入清单一致，并抽查原始内容哈希；[页面核对](../operations/demo-history-20261121/import-browser-check.json)确认全部539轮可筛选，SOP失败轮次及完整200候选/实际响应可查看。
 
 ### 登录账号
 

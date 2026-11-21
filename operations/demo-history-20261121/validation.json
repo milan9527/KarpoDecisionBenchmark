@@ -1,0 +1,33 @@
+{
+  "started_at": "2026-11-21T12:13:16.215895+00:00",
+  "url": "https://deq0avneozfys.cloudfront.net",
+  "scope": "History storage only; no GPU startup; invalid inference requests return HTTP422",
+  "runs": [
+    "1795263199082_451fcec0780b4ca38d7ac24c57572967",
+    "1795263201077_ae69aa6d61fb415186f5820cb6c0ae4a",
+    "1795263204330_dbabd8dfa8eb4faab41198edb98b0f5b",
+    "1795263206002_119200338013492bbd5653684c165a47"
+  ],
+  "checks": {
+    "deployed_files_match": true,
+    "all_failures_saved": true,
+    "refresh_recovery_and_tab_isolation": true,
+    "offline_outbox_recovery": true,
+    "early_stop_preserved": true,
+    "cross_browser_detail_export_mobile": true,
+    "no_gpu_start": true,
+    "no_javascript_errors": true,
+    "authentication_required": true
+  },
+  "gpu_status_observed": {
+    "risk": {
+      "before": "stopped",
+      "after": "stopped"
+    },
+    "sop": {
+      "before": "stopping",
+      "after": "stopping"
+    }
+  },
+  "passed": true
+}

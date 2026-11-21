@@ -17,7 +17,7 @@ from playwright.async_api import async_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "operations/demo-rps-20261121"
-FRONTEND = ("index.html", "app.js", "benchmark.js", "rate-client.js", "rate-worker.js", "style.css")
+FRONTEND = ("index.html", "app.js", "benchmark.js", "rate-client.js", "rate-worker.js", "history.js", "history-worker.js", "style.css")
 TOKEN_SOURCES = {
     "promo-tune": "experiments/promo-rtx6-20261121/results/runs/rtx6-calibrated-v1/confirm/requests.jsonl",
     "promo-quality": "experiments/promo-rtx6-20261121/results/runs/rtx6-calibrated-v1/quality/requests.jsonl",
@@ -191,6 +191,10 @@ async def main():
                     print(name, json.dumps({k: m[k] for k in (
                         "completed", "successful", "failed", "steady_valid_rps", "p50_ms", "p95_ms",
                         "max_send_lag_ms", "accuracy", "passes_performance_acceptance")}), flush=True)
+                    # Cloud history sync follows measurement and must finish
+                    # before a subsequent run. Its time is outside the report.
+                    await expect(page.locator("#history-sync")).to_contain_text("完整测试记录已保存", timeout=300000)
+                    await expect(page.locator("#bench-rate")).to_be_enabled(timeout=60000)
                     return report
 
                 primary = "promo-tune" if group == "risk" else "sop-full"
@@ -216,10 +220,10 @@ async def main():
                 detail = json.loads(await page.locator("#bench-detail-json").text_content())
                 assert "request" in detail and "response" in detail
                 await page.locator("#bench-detail summary").click()
-                await page.locator(".benchmark-panel").screenshot(path=str(OUT / (group + "-rps.png")))
+                await page.locator('[aria-labelledby="benchmark-title"]').screenshot(path=str(OUT / (group + "-rps.png")))
                 await page.set_viewport_size({"width": 390, "height": 844})
                 assert await page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
-                await page.locator(".benchmark-panel").screenshot(path=str(OUT / (group + "-mobile.png")))
+                await page.locator('[aria-labelledby="benchmark-title"]').screenshot(path=str(OUT / (group + "-mobile.png")))
                 await page.set_viewport_size({"width": 1600, "height": 1100})
                 if group == "risk":
                     for dataset, seconds in (("promo-quality", 11), ("resource-risk", 4)):

@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "imported_runs": 539,
+  "response_records": 524647,
+  "cloud_parts_checked": 13872,
+  "sample_content_checks": [
+    {
+      "id": "1795219200000_import_077f7653798a1b3ee6f69813",
+      "source": "experiments/promo-rtx6-20261121/results/runs/rtx6-calibrated-v1/confirm/summary.json",
+      "sha256_checks": true
+    },
+    {
+      "id": "1795132800000_import_aefcaef8ca893c87c2759f4f",
+      "source": "experiments/vllm-sop-h200-20261120/results/runs/h200-fp8-v2/confirmation/b4/r8/sop/confirm/summary.json",
+      "sha256_checks": true
+    },
+    {
+      "id": "1795261720666_import_894aa7fefcade547eab16096",
+      "source": "operations/demo-rps-20261121/sop-100rps-120s-r2.json.gz",
+      "sha256_checks": true
+    },
+    {
+      "id": "1795260309573_import_9c63faa38a2e22a8b6906fc7",
+      "source": "operations/demo-rps-20261121-float-diagnostic/risk-100rps-120s-r1.json.gz",
+      "sha256_checks": true
+    }
+  ],
+  "point_in_time_recovery": "ENABLED",
+  "frontend_new_runs": 16
+}

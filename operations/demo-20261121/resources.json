@@ -31,5 +31,6 @@
   "headers_policy": "23436701-a651-4426-ad4e-af4e593244cd",
   "distribution": "E10QP8URDDOPBE",
   "domain": "deq0avneozfys.cloudfront.net",
-  "distribution_arn": "arn:aws:cloudfront::632930644527:distribution/E10QP8URDDOPBE"
+  "distribution_arn": "arn:aws:cloudfront::632930644527:distribution/E10QP8URDDOPBE",
+  "history_table": "karpo-demo-20261121-history"
 }

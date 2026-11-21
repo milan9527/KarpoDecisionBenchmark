@@ -22,6 +22,7 @@ from auth import COOKIE_SECONDS, LoginLimiter, issue_session, read_session, veri
 from routing import ReplicaPool
 from leases import SessionLeases
 from registry import Registry
+from history import History
 
 ROOT = Path(os.environ.get("DEMO_ROOT", "/opt/karpo-demo"))
 CONFIG = json.loads((ROOT / "demo/config.json").read_text())
@@ -47,6 +48,8 @@ pending = {group: 0 for group in CONFIG["groups"]}
 login_limiter = LoginLimiter()
 password_workers = asyncio.Semaphore(2)
 quitting = threading.Event()
+history = History(boto3.resource("dynamodb", region_name=REGION).Table(RESOURCES["history_table"]),
+                  boto3.client("s3", region_name=REGION, config=SDK), RESOURCES["bucket"])
 
 
 def sdk(service, region=REGION):
@@ -204,10 +207,11 @@ async def protect(request, call_next):
             return JSONResponse({"detail": "来源不允许"}, status_code=403)
         if request.headers.get("content-type", "").split(";")[0] != "application/json":
             return JSONResponse({"detail": "需要JSON请求"}, status_code=415)
-        if int(request.headers.get("content-length", "0")) > 262144:
+        limit = 2000000 if request.url.path.startswith("/api/history") else 262144
+        if int(request.headers.get("content-length", "0")) > limit:
             return JSONResponse({"detail": "请求过大"}, status_code=413)
         body = await request.body()
-        if len(body) > 262144:
+        if len(body) > limit:
             return JSONResponse({"detail": "请求过大"}, status_code=413)
         try:
             if not isinstance(json.loads(body), dict):
@@ -259,6 +263,66 @@ async def login(request: Request):
 def get_catalog(request: Request):
     authenticated(request)
     return catalog
+
+
+def history_call(method, *args, **kwargs):
+    try:
+        return method(*args, **kwargs)
+    except KeyError:
+        raise HTTPException(404, "历史记录不存在") from None
+    except (ValueError, TypeError, OSError):
+        raise HTTPException(422, "历史记录格式无效、尚未完整上传或不允许覆盖") from None
+
+
+@app.get("/api/history")
+def history_list(request: Request, cursor: str = None):
+    authenticated(request)
+    return history_call(history.listing, cursor)
+
+
+@app.post("/api/history")
+async def history_create(request: Request):
+    authenticated(request)
+    return await asyncio.to_thread(history_call, history.create, await request.json(), secret["account"]["username"])
+
+
+@app.get("/api/history/{run}")
+def history_detail(run: str, request: Request):
+    authenticated(request)
+    doc = history_call(history.get, run)
+    doc.pop("owner", None)
+    return doc
+
+
+@app.get("/api/history/{run}/parts")
+def history_parts(run: str, request: Request, kind: str = None, cursor: str = None):
+    authenticated(request)
+    history_call(history.get, run)
+    return history_call(history.parts, run, kind, cursor)
+
+
+@app.get("/api/history/{run}/parts/{part}")
+def history_part(run: str, part: str, request: Request):
+    authenticated(request)
+    raw = history_call(history.read_part, run, part)
+    if "gzip" in request.headers.get("accept-encoding", ""):
+        return Response(raw, media_type="application/json", headers={"Content-Encoding": "gzip"})
+    return Response(__import__("gzip").decompress(raw), media_type="application/json")
+
+
+@app.post("/api/history/{run}/parts/{part}")
+async def history_put_part(run: str, part: str, request: Request):
+    authenticated(request)
+    body = await request.json()
+    return await asyncio.to_thread(history_call, history.write_part, run, part, body.get("gzip_base64"),
+                                   secret["account"]["username"])
+
+
+@app.post("/api/history/{run}/finish")
+async def history_finish(run: str, request: Request):
+    authenticated(request)
+    return await asyncio.to_thread(history_call, history.finish, run, await request.json(),
+                                   secret["account"]["username"])
 
 
 @app.get("/api/status")

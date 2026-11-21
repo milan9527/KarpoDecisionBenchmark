@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "imported_runs_displayed": 539,
+  "sop_failed_round_visible": true,
+  "complete_200_candidates_visible": true,
+  "original_response_visible": true,
+  "no_page_errors": true,
+  "static_sha256": {
+    "index.html": "0260063d9b410f91c2b6488ee7cb6f110a5208562c78ebee139d9fe528f9d7ef",
+    "app.js": "576eb51a7e282551693f6491a4642d32dc5680d3b5a69bb1dbc82319d98ad757",
+    "history.js": "16f5e896bd775461eb33afe13f6c9db81bdd2f709a33561112d347decfc82a29",
+    "history-worker.js": "7ea0c769821e2f7c35c07a08fde1e0774e9d35f542ada3f062233018f907bf8a",
+    "rate-client.js": "545ac9367240eb07ae7ba6616a2cb4feee50f7c9dc1db128a25ceca5faf7318f",
+    "rate-worker.js": "85f75d35eb222705c5e6b8e6fd4ccb8444f84755ea326c4e1e224b856ad41651",
+    "benchmark.js": "6b95e9472d9ab4f996bc0325da0bb626d3837393e9e194b64b866fb0bb4c9666",
+    "style.css": "8d34268a4ed4312d2a690eb57c1b77bc450c8ee0e9bdbae23b7a39274fd8f062"
+  }
+}

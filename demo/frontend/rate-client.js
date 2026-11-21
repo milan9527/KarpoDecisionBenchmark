@@ -5,6 +5,7 @@ class RateClient {
     this.questions = structuredClone(options.questions);
     this.rate = options.rate; this.seconds = options.seconds; this.scenario = options.scenario;
     this.onUpdate = options.onUpdate;
+    this.onRecords = options.onRecords;
     this.records = []; this.begun = false; this.finished = false; this.stopRequested = false;
     this.latest = {planned:this.rate*this.seconds, completed:0, started:0, sent:0, active:0,
       successful:0, failed:0, peak_concurrency:0, duration_ms:0, successful_rps:0};
@@ -21,6 +22,7 @@ class RateClient {
           this.finished = true; this.worker.terminate(); reject(new Error(event.data.message)); return;
         }
         const {records, metrics, finished} = event.data;
+        this.onRecords?.(records,metrics);
         this.records.push(...records); this.latest = metrics; this.finished = finished;
         this.stopRequested = metrics.stopped;
         this.onUpdate(this);
