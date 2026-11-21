@@ -1,0 +1,36 @@
+{
+  "CommandId": "9ef67c02-2fd8-4140-92f5-6c72a57c1e0d",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:34:17.015Z",
+  "ExecutionElapsedTime": "PT0.332S",
+  "ExecutionEndDateTime": "2026-11-21T03:34:17.015Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/original-b4-dense-peer2/replica-2\n(MainProcess pid=8157) INFO 11-21 03:31:38 [core_client.py:826] [shutdown] MPClient: engine manager stopped\n(MainProcess pid=8157) INFO 11-21 03:31:38 [core_client.py:827] [shutdown] MPClient: cleaning up background resources\n(MainProcess pid=8157) INFO 11-21 03:31:38 [core_client.py:829] [shutdown] MPClient: complete\nINFO:     Application shutdown complete.\nINFO:     Finished server process [8157]\n/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown\n  warnings.warn('resource_tracker: There appear to be %d '\n/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/original-b8-powers-peer2/replica-2\n(EngineCore pid=8620) INFO 11-21 03:33:13 [extensible_kv_cache.py:693] Memory after warmup: 84.49 GiB free, 0.09 GiB committed to the KV cache, 5.88 GiB kept for transient activations (5.88 GiB allocated at peak, 0.0 GiB of torch reservation growth); 1145 KV cache blocks (60.38 GiB) fit within the requested 75.98 GiB. Torch may reserve up to 33.29 GiB.\n(EngineCore pid=8620) INFO 11-21 03:33:13 [kv_cache_utils.py:1168] GPU KV cache size: 9,379,840 tokens, Maximum concurrency for 8,192 tokens per request: 1145.00x\n(EngineCore pid=8620) INFO 11-21 03:33:13 [extensible_kv_cache.py:536] Extended KV cache to 1145 blocks (60.42 GiB).\n(EngineCore pid=8620) INFO 11-21 03:33:13 [core.py:451] init engine (profile, create kv cache, warmup model) took 66.11 s (compilation: 28.25 s)\n(EngineCore pid=8620) INFO 11-21 03:33:13 [kernel.py:517] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:18500 (Press CTRL+C to quit)\nindex, utilization.gpu [%], memory.used [MiB]\n0, 0 %, 72507 MiB\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "d708a39f-daeb-4e8c-b3f1-f6ff164603eb",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:34:25 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2624",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "d708a39f-daeb-4e8c-b3f1-f6ff164603eb",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

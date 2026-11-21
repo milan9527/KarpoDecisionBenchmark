@@ -1,0 +1,36 @@
+{
+  "CommandId": "9939816f-9583-4968-be9b-71669353ecb8",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:27:36.019Z",
+  "ExecutionElapsedTime": "PT0.034S",
+  "ExecutionEndDateTime": "2026-11-21T03:27:36.019Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "inactive\nactive\nStarting karpo-opt-queue.service - /bin/bash /opt/karpo/promo-opt-queue-v1.sh...\nStarted karpo-opt-queue.service - /bin/bash /opt/karpo/promo-opt-queue-v1.sh.\ncontrollers/environment.json {\"phase\": \"environment\", \"status\": \"complete\", \"completed\": [\"old-control\"], \"started_utc\": \"2026-11-21T03:19:17.751750+00:00\", \"ended_utc\": \"2026-11-21T03:26:05.946951+00:00\"}\ncontrollers/performance.json {\"phase\": \"performance\", \"status\": \"running\", \"completed\": [], \"started_utc\": \"2026-11-21T03:26:11.163095+00:00\", \"current\": \"original-b4-powers\"}\nruns/old-control/status.json {\"status\": \"complete\", \"started_utc\": \"2026-11-21T03:21:13.746449+00:00\", \"dataset\": \"old\", \"protocol\": \"formal\", \"graph\": \"powers\", \"gpu_count\": 4, \"batch\": 4, \"current\": \"repeat\", \"quality_passed\": true, \"performance_passed\": true, \"pressure_quality_passed\": true, \"accepted\": true, \"ended_utc\": \"2026-11-21T03:26:04.583007+00:00\"}\nwarmup {'attempts': 80, 'valid': 80, 'accuracy': 0.925, 'failures': 0}\nquality {'attempts': 240, 'valid': 240, 'accuracy': 0.9708333333333333, 'failures': 0}\nlow-load {'attempts': 800, 'valid': 800, 'steady_valid_rps': 40.0, 'p50_ms': 45.965729000272404, 'failures': 0}\nprobe {'attempts': 2000, 'valid': 2000, 'steady_valid_rps': 100.0, 'p50_ms': 44.994400999712525, 'failures': 0}\nconfirm {'attempts': 12000, 'valid': 12000, 'steady_valid_rps': 100.0, 'p50_ms': 44.67414200053099, 'failures': 0}\nrepeat {'attempts': 12000, 'valid': 12000, 'steady_valid_rps': 100.0, 'p50_ms': 44.63402999999744, 'failures': 0}\nnodes/original-b4-powers-peer3/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:26:18.484274+00:00\", \"replica_ids\": [3], \"ready_utc\": \"2026-11-21T03:27:16.529531+00:00\"}\nnodes/original-b4-powers-peer2/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:26:18.491680+00:00\", \"replica_ids\": [2], \"ready_utc\": \"2026-11-21T03:27:16.535348+00:00\"}\nnodes/original-b4-powers-dual/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:26:18.781138+00:00\", \"replica_ids\": [0, 1], \"ready_utc\": \"2026-11-21T03:27:30.848512+00:00\"}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "5ce4d9a4-17d2-42c5-bf39-a4217e94c323",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:27:38 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2800",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "5ce4d9a4-17d2-42c5-bf39-a4217e94c323",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "status": "error",
+  "completed": [],
+  "started_utc": "2026-11-21T03:44:51.820619+00:00",
+  "manifest_sha256": "cff4757e01368c0af529300ac8746ade4905c04f257b2e1bdb85a2d49dc5cafb",
+  "error": "Traceback (most recent call last):\n  File \"/opt/karpo/promo-opt-20261121/scripts/promo_opt_review_controller.py\", line 27, in main\n    launch(\"review-screening\", \"review-union\", batch, graph)\n  File \"/opt/karpo/promo-opt-20261121/scripts/promo_opt_controller.py\", line 52, in launch\n    parallel({host: f\"systemctl stop {shlex.quote(unit)}\\n\" for host, unit in units.items()})\n  File \"/opt/karpo/promo-opt-20261121/scripts/promo_opt_controller.py\", line 34, in parallel\n    return [job.result() for job in jobs]\n            ^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/usr/lib/python3.12/concurrent/futures/thread.py\", line 58, in run\n    result = self.fn(*self.args, **self.kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/promo-opt-20261121/scripts/promo_opt_controller.py\", line 27, in command\n    raise RuntimeError(f\"{host}: {result.stdout}\\n{result.stderr}\")\nRuntimeError: peer3: \nFailed to stop karpo-opt-original-b16-powers-peer3.service: Unit karpo-opt-original-b16-powers-peer3.service not loaded.\n\n",
+  "ended_utc": "2026-11-21T03:44:52.047773+00:00"
+}

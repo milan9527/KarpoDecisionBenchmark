@@ -1,0 +1,7 @@
+{
+  "id": "ac104f3b-a74f-49e1-bd1c-3218923cc5fc",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "script": "phase-queue-v1.sh; temporary download URL omitted"
+}

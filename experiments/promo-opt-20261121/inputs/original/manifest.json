@@ -1,0 +1,7 @@
+{
+  "files": {
+    "expected-encoding.json": "45479267ec092da9039420025dc5abd9cb702d24c62fc9a034364490c7fe1c00",
+    "risk-requests.json": "f1ece9b80fcba994d018fc4f042400da9da68e8f5c76215a237ab28a8a54808f",
+    "sop-requests.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  }
+}

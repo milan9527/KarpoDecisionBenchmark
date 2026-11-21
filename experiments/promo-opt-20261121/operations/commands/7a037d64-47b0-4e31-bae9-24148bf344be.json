@@ -1,0 +1,9 @@
+{
+  "id": "7a037d64-47b0-4e31-bae9-24148bf344be",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T03:34:17.243741+00:00",
+  "script": "set -eu\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nfrom pathlib import Path\np=Path('/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results')\nfor f in sorted(p.glob('nodes/*/replica-*/server.log'),key=lambda f:f.stat().st_mtime)[-2:]:\n print(f.parent)\n print('\\n'.join(f.read_text(errors='replace').splitlines()[-7:]))\nPY\nnvidia-smi --query-gpu=index,utilization.gpu,memory.used --format=csv\n"
+}

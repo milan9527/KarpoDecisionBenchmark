@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "stages": [
+    {
+      "name": "warmup",
+      "result": {
+        "attempts": 16,
+        "valid": 16,
+        "correct": 16,
+        "accuracy": 1.0,
+        "failures": 0
+      }
+    },
+    {
+      "name": "tune",
+      "result": {
+        "attempts": 360,
+        "valid": 360,
+        "correct": 280,
+        "accuracy": 0.7777777777777778,
+        "failures": 0
+      }
+    }
+  ],
+  "started_utc": "2026-11-21T03:49:30.847829+00:00",
+  "dataset": "review-guard",
+  "protocol": "screen",
+  "graph": "powers",
+  "gpu_count": 4,
+  "batch": 4,
+  "current": "tune",
+  "ended_utc": "2026-11-21T03:49:41.279385+00:00"
+}

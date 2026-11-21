@@ -1,0 +1,36 @@
+{
+  "CommandId": "c83335bf-2fa7-4b54-92ef-7a744057017f",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T04:02:47.901Z",
+  "ExecutionElapsedTime": "PT0.025S",
+  "ExecutionEndDateTime": "2026-11-21T04:02:47.901Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "inactive\ninactive\nreview-confirmed complete repeat None\nwarmup {'attempts': 80, 'correct': 80, 'failures': 0}\nquality {'attempts': 1080, 'correct': 843, 'failures': 0}\nlow-load {'attempts': 800, 'correct': 650, 'steady_valid_rps': 40.0, 'p50_ms': 62.53535100040608, 'failures': 0}\nprobe {'attempts': 2000, 'correct': 1401, 'steady_valid_rps': 77.06666666666666, 'p50_ms': 2767.2131139997873, 'failures': 212}\nconfirm {'attempts': 12000, 'correct': 7415, 'steady_valid_rps': 76.75555555555556, 'p50_ms': 3297.7066379999087, 'failures': 2579}\nrepeat {'attempts': 12000, 'correct': 7419, 'steady_valid_rps': 76.62222222222222, 'p50_ms': 3312.4784430001455, 'failures': 2586}\nreview-calibrated-confirmed complete repeat None\nwarmup {'attempts': 80, 'correct': 80, 'failures': 0}\nquality {'attempts': 1080, 'correct': 1063, 'failures': 0}\nlow-load {'attempts': 800, 'correct': 792, 'steady_valid_rps': 40.0, 'p50_ms': 62.9623900003935, 'failures': 0}\nprobe {'attempts': 2000, 'correct': 1761, 'steady_valid_rps': 77.6, 'p50_ms': 2799.891151999873, 'failures': 217}\nconfirm {'attempts': 12000, 'correct': 9310, 'steady_valid_rps': 76.71111111111111, 'p50_ms': 3313.6931129993172, 'failures': 2564}\nrepeat {'attempts': 12000, 'correct': 9318, 'steady_valid_rps': 76.71111111111111, 'p50_ms': 3312.3538979998557, 'failures': 2557}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "715cb9a8-f400-48d8-b492-7fc2ea6373c8",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 04:03:11 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1921",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "715cb9a8-f400-48d8-b492-7fc2ea6373c8",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

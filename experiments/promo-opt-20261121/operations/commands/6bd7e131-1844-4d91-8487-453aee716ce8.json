@@ -1,0 +1,9 @@
+{
+  "id": "6bd7e131-1844-4d91-8487-453aee716ce8",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T03:45:21.104812+00:00",
+  "script": "set -euo pipefail\ncd /opt/karpo/promo-opt-20261121\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport pathlib,json\np=pathlib.Path('experiments/promo-opt-20261121/results')\nstate=json.loads((p/'controllers/review.json').read_text())\nassert state['status']=='error' and not state['completed']\nassert 'not loaded' in state['error']\n(p/'controllers/review.json').rename(p/'setup-failures/review-transition-attempt1.json')\nfleet=json.loads((p/'current-fleet.json').read_text())\nassert fleet['name']=='original-b16-powers'\nfleet['units']={}\nfleet['note']='All prior units already stopped by user-requested cancellation; no active fleet to stop again.'\n(p/'current-fleet.json').write_text(json.dumps(fleet,indent=2)+'\\n')\nPY\nsystemd-run --unit karpo-opt-review-r1 --property=Type=exec --property=RuntimeMaxSec=7200 --working-directory /opt/karpo/promo-opt-20261121 /opt/karpo/venv-vllm034/bin/python -u scripts/promo_opt_review_controller.py\n"
+}

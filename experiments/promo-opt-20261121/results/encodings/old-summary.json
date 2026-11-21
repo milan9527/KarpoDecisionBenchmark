@@ -1,0 +1,8 @@
+{
+  "requests": 360,
+  "min_tokens": 2263,
+  "max_tokens": 2298,
+  "encoding_sha256": "3e21d157e044421c2eec45a294803ae48f0c317dbb28816d1e00d8508a8bf942",
+  "all_complete": true,
+  "checkpoint": "/opt/karpo/models/karpo-4b"
+}

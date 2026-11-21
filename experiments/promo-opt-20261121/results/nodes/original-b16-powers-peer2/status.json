@@ -1,0 +1,9 @@
+{
+  "status": "error",
+  "started_utc": "2026-11-21T03:41:43.297844+00:00",
+  "replica_ids": [
+    2
+  ],
+  "error": "Traceback (most recent call last):\n  File \"/opt/karpo/promo-opt-20261121/scripts/promo_opt_runtime.py\", line 176, in node\n    info = health(url, models)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/promo-opt-20261121/scripts/promo_opt_runtime.py\", line 86, in health\n    raise RuntimeError(\"A model/proxy process exited; inspect its log\")\nRuntimeError: A model/proxy process exited; inspect its log\n",
+  "ended_utc": "2026-11-21T03:43:19.352790+00:00"
+}

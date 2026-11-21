@@ -1,0 +1,36 @@
+{
+  "CommandId": "fc264337-b19c-4246-bf31-fd7e811c0932",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:56:56.109Z",
+  "ExecutionElapsedTime": "PT0.035S",
+  "ExecutionEndDateTime": "2026-11-21T03:56:56.109Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "active\nactive\n{\"stage\": \"probe\", \"result\": {\"target_rps\": 100, \"offered_seconds\": 20, \"scheduled_requests\": 2000, \"attempts\": 2000, \"valid\": 1788, \"failures\": 212, \"http_statuses\": {\"200\": 1788, \"429\": 212}, \"replica_counts\": {\"1\": 448, \"2\": 447, \"3\": 447, \"0\": 446}, \"correct\": 1401, \"elapsed_with_drain_s\": 23.221229297999344, \"valid_rps_with_drain\": 76.9985075748788, \"steady_valid_rps\": 77.06666666666666, \"p50_ms\": 2767.2131139997873, \"p95_ms\": 3310.087917999226, \"p99_ms\": 3321.080721999351, \"http_p50_ms\": 2766.7880100007096, \"last_quarter_p50_ms\": 3293.413141998826, \"max_send_lag_ms\": 20.259673999134975, \"valid_within_500ms\": 111, \"backlog_slope_per_second\": 7.482352941176471, \"latency_scope\": \"Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.\", \"passes_probe\": false, \"passes_performance_acceptance\": false}}\n{\"stage\": \"confirm\", \"result\": {\"target_rps\": 100, \"offered_seconds\": 120, \"scheduled_requests\": 12000, \"attempts\": 12000, \"valid\": 9421, \"failures\": 2579, \"http_statuses\": {\"200\": 9421, \"429\": 2579}, \"replica_counts\": {\"2\": 2350, \"3\": 2358, \"0\": 2355, \"1\": 2358}, \"correct\": 7415, \"elapsed_with_drain_s\": 123.23214784799984, \"valid_rps_with_drain\": 76.44920716321761, \"steady_valid_rps\": 76.75555555555556, \"p50_ms\": 3297.7066379999087, \"p95_ms\": 3335.4662469992036, \"p99_ms\": 3343.390322999767, \"http_p50_ms\": 3296.507018999364, \"last_quarter_p50_ms\": 3289.3510399999286, \"max_send_lag_ms\": 46.31049999989045, \"valid_within_500ms\": 109, \"backlog_slope_per_second\": -0.039878961618092054, \"latency_scope\": \"Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.\", \"passes_probe\": false, \"passes_performance_acceptance\": false}}\ncontrollers/environment.json {\"phase\": \"environment\", \"status\": \"complete\", \"completed\": [\"old-control\"], \"started_utc\": \"2026-11-21T03:19:17.751750+00:00\", \"ended_utc\": \"2026-11-21T03:26:05.946951+00:00\"}\ncontrollers/performance.json {\"phase\": \"performance\", \"status\": \"cancelled_by_user\", \"completed\": [\"original-b4-powers\", \"original-b4-dense\", \"original-b8-powers\", \"original-b8-dense\"], \"started_utc\": \"2026-11-21T03:26:11.163095+00:00\", \"current\": \"original-b16-powers\", \"ended_utc\": \"2026-11-21T03:44:48.252475+00:00\", \"reason\": \"User: batch\\u4e0d\\u8981\\u8c03\\u4e86; stop batch tuning and continue review optimization at batch 4 / powers\"}\ncontrollers/review.json {\"status\": \"running\", \"completed\": [\"review-screen-baseline\", \"review-screen-split\", \"review-screen-prose\", \"review-screen-guard\", \"review-screen-flat\"], \"started_utc\": \"2026-11-21T03:45:21.639990+00:00\", \"manifest_sha256\": \"cff4757e01368c0af529300ac8746ade4905c04f257b2e1bdb85a2d49dc5cafb\", \"current\": \"review-screen-flat\"}\nruns/review-fresh-selected/status.json {\"status\": \"complete\", \"started_utc\": \"2026-11-21T03:50:31.369015+00:00\", \"dataset\": \"review-baseline\", \"protocol\": \"quality-only\", \"graph\": \"powers\", \"gpu_count\": 4, \"batch\": 4, \"current\": \"quality\", \"ended_utc\": \"2026-11-21T03:50:51.781597+00:00\"}\nwarmup {'attempts': 16, 'valid': 16, 'accuracy': 1.0, 'failures': 0}\nquality {'attempts': 1080, 'valid': 1080, 'accuracy': 0.7805555555555556, 'failures': 0}\nruns/review-confirmed/status.json {\"status\": \"running\", \"started_utc\": \"2026-11-21T03:52:04.839455+00:00\", \"dataset\": \"review-baseline\", \"protocol\": \"formal\", \"graph\": \"powers\", \"gpu_count\": 4, \"batch\": 4, \"current\": \"repeat\"}\nwarmup {'attempts': 80, 'valid': 80, 'accuracy': 1.0, 'failures': 0}\nquality {'attempts': 1080, 'valid': 1080, 'accuracy': 0.7805555555555556, 'failures': 0}\nlow-load {'attempts': 800, 'valid': 800, 'steady_valid_rps': 40.0, 'p50_ms': 62.53535100040608, 'failures': 0}\nprobe {'attempts': 2000, 'valid': 1788, 'steady_valid_rps': 77.06666666666666, 'p50_ms': 2767.2131139997873, 'failures': 212}\nconfirm {'attempts': 12000, 'valid': 9421, 'steady_valid_rps': 76.75555555555556, 'p50_ms': 3297.7066379999087, 'failures': 2579}\nnodes/review-selected-peer2/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:50:59.022711+00:00\", \"replica_ids\": [2], \"ready_utc\": \"2026-11-21T03:51:57.066514+00:00\"}\nnodes/review-selected-peer3/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:50:59.026678+00:00\", \"replica_ids\": [3], \"ready_utc\": \"2026-11-21T03:51:57.070917+00:00\"}\nnodes/review-selected-dual/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:50:58.927300+00:00\", \"replica_ids\": [0, 1], \"ready_utc\": \"2026-11-21T03:51:58.983626+00:00\"}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "2f3fa1ce-38e9-4bcd-b9eb-0acd1b1c433d",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:57:06 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "5572",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "2f3fa1ce-38e9-4bcd-b9eb-0acd1b1c433d",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

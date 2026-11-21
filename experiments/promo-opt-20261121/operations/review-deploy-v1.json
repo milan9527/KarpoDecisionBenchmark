@@ -1,0 +1,7 @@
+{
+  "bundle": ".state/promo-opt-review-deploy-v1.tar.gz",
+  "sha256": "c7a2f5cfc1260227024658def97a0dab07ed53ca3957f44c123ffd5303b2b5cf",
+  "bytes": 5730068,
+  "key": "runs/promo-opt-20261121/review-deploy-v1.tar.gz",
+  "bucket": "karpo-benchmark-20261119-115003-632930644527"
+}

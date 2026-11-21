@@ -1,0 +1,9 @@
+{
+  "id": "3db8a7d9-3d32-4697-ac54-7a70a216f1f3",
+  "host": "peer2",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-02c1caf7d7ce17c76",
+  "utc": "2026-11-21T03:21:18.489329+00:00",
+  "script": "ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts ubuntu@172.31.42.209 'sudo /bin/bash -s' <<'PROMO_PEER'\nset -eu\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nfrom pathlib import Path\np=Path('/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results')\nfor f in sorted(p.glob('nodes/*/replica-*/server.log')):\n print(f.parent)\n print('\\n'.join(f.read_text(errors='replace').splitlines()[-7:]))\nPY\nnvidia-smi --query-gpu=index,utilization.gpu,memory.used --format=csv\n\nPROMO_PEER"
+}

@@ -1,0 +1,74 @@
+{
+  "target_rps": 40,
+  "offered_seconds": 10,
+  "scheduled_requests": 400,
+  "attempts": 400,
+  "valid": 400,
+  "failures": 0,
+  "http_statuses": {
+    "200": 400
+  },
+  "replica_counts": {
+    "3": 100,
+    "0": 100,
+    "1": 100,
+    "2": 100
+  },
+  "correct": 325,
+  "elapsed_with_drain_s": 10.03857205300028,
+  "valid_rps_with_drain": 39.84630462262309,
+  "steady_valid_rps": 40.0,
+  "p50_ms": 64.3218089999209,
+  "p95_ms": 66.325352000149,
+  "p99_ms": 66.70694200010985,
+  "http_p50_ms": 63.72400899999775,
+  "last_quarter_p50_ms": 63.87213000016345,
+  "max_send_lag_ms": 2.1055330003036943,
+  "valid_within_500ms": 400,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 2
+    },
+    {
+      "second": 2,
+      "pending": 2
+    },
+    {
+      "second": 3,
+      "pending": 2
+    },
+    {
+      "second": 4,
+      "pending": 2
+    },
+    {
+      "second": 5,
+      "pending": 2
+    },
+    {
+      "second": 6,
+      "pending": 2
+    },
+    {
+      "second": 7,
+      "pending": 2
+    },
+    {
+      "second": 8,
+      "pending": 2
+    },
+    {
+      "second": 9,
+      "pending": 2
+    },
+    {
+      "second": 10,
+      "pending": 2
+    }
+  ],
+  "backlog_slope_per_second": 0.0,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": true,
+  "passes_performance_acceptance": false
+}

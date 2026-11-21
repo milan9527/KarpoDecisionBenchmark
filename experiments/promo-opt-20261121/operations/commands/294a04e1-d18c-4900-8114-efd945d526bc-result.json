@@ -1,0 +1,36 @@
+{
+  "CommandId": "294a04e1-d18c-4900-8114-efd945d526bc",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 1,
+  "ExecutionStartDateTime": "2026-11-21T03:18:52.822Z",
+  "ExecutionElapsedTime": "PT0.337S",
+  "ExecutionEndDateTime": "2026-11-21T03:18:52.822Z",
+  "Status": "Failed",
+  "StatusDetails": "Failed",
+  "StandardOutputContent": "",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Traceback (most recent call last):\n  File \"<stdin>\", line 3, in <module>\n  File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/botocore/context.py\", line 123, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/boto3/s3/inject.py\", line 223, in download_file\n    return transfer.download_file(\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/boto3/s3/transfer.py\", line 484, in download_file\n    future.result()\n  File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/s3transfer/futures.py\", line 111, in result\n    return self._coordinator.result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/s3transfer/futures.py\", line 287, in result\n    raise self._exception\n  File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/s3transfer/tasks.py\", line 272, in _main\n    self._submit(transfer_future=transfer_future, **kwargs)\n  File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/s3transfer/download.py\", line 379, in _submit\n    response = client.head_object(\n               ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/botocore/client.py\", line 606, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/botocore/context.py\", line 123, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/botocore/client.py\", line 1094, in _make_api_call\n    raise error_class(parsed_response, operation_name)\nbotocore.exceptions.ClientError: An error occurred (403) when calling the HeadObject operation: Forbidden\nfailed to run commands: exit status 1",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "e1b9fae1-8352-47e4-a50a-733f42c035a4",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:18:56 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2529",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "e1b9fae1-8352-47e4-a50a-733f42c035a4",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

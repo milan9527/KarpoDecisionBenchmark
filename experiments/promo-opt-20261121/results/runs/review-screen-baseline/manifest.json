@@ -1,0 +1,42 @@
+{
+  "files": {
+    "experiments/promo-opt-20261121/PLAN.zh.md": "72383677146bf22141ad419e2db501c50ab1032b267ce1edf350d47ed413d63f",
+    "experiments/promo-opt-20261121/inputs/old/expected-encoding.json": "3e21d157e044421c2eec45a294803ae48f0c317dbb28816d1e00d8508a8bf942",
+    "experiments/promo-opt-20261121/inputs/old/risk-requests.json": "a0d104990d5e54db3089b4e6c411d4087a2b7a84d31ad6e7ccb40dcb9b6fcc1b",
+    "experiments/promo-opt-20261121/inputs/old/sop-requests.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "experiments/promo-opt-20261121/inputs/old/manifest.json": "50ed275d519591535503dabd26113c25536e378cd430dac21f8829f912433c35",
+    "experiments/promo-opt-20261121/inputs/original/expected-encoding.json": "45479267ec092da9039420025dc5abd9cb702d24c62fc9a034364490c7fe1c00",
+    "experiments/promo-opt-20261121/inputs/original/risk-requests.json": "f1ece9b80fcba994d018fc4f042400da9da68e8f5c76215a237ab28a8a54808f",
+    "experiments/promo-opt-20261121/inputs/original/sop-requests.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "experiments/promo-opt-20261121/inputs/original/manifest.json": "fc927b09f4168db7f4032b9ae4824e766050429d9750170a8e7020f0831b2c02",
+    "scripts/promo_opt_prepare.py": "75e4a02cac0bbbc517107382149c21eedffca84e4d1a011715746e9a42d33499",
+    "scripts/promo_opt_controller.py": "da7db86bd229ebb19efa791203a8049e1e2a87ff61eb518c14951ebc20358b27",
+    "scripts/promo_opt_runtime.py": "e26bda1137dfdc985c95f9447e06a6d951f9ce12810084bbb73f4ef95dda0d02",
+    "scripts/promo_opt_server.py": "731cbe8f0272370084297f7f76e2bd6085122ed52076e3464d2aa1d6c9503d4a",
+    "scripts/promo_risk.py": "cfaa8c2a16a9d3081520daba21362fddf36e17d86bb924e3c0705b32e55d18bd",
+    "scripts/promo_risk_evaluate.py": "a201c08fd979cca3619b8d593207a296dcf5d2507a21f8330a5cc0cd982f5917",
+    "scripts/vllm_rps_benchmark.py": "6e2944aa5a6771603ec133e5ea916b68125a87c35883ee202b7e7fd711e938b9",
+    "scripts/vllm_rps_proxy.py": "9dcf6330d6fccc18405dacbc47d77ece6c9c7c71a4cf5996da3c4fedbbae7290",
+    "scripts/vllm_karpo_encoding.py": "56e14b5dde797f6be93cd57dd9176faca351d0e26d7af8e1445b761d2cadd2a7",
+    "scripts/vllm_single_environment.py": "aa7a40c330f960ed2a334b5ca68eddd287f153734a403be51e3a27e1a542c320",
+    "scripts/benchmark.py": "3eb29a865be73ea3a70e9fd16f1d2e72403ecf6edb900ada7d263be8ad4b7dc2",
+    "serving/vllm_karpo/karpo_vllm.py": "a1021cfe7e0a0c14f4ca4e3aabc18da4db88bc2209444f91f439283aafec0176",
+    "serving/vllm_karpo/karpo_vllm_model.py": "ef5de106f0c5464b50c374215c9e33e71b0be6e4a1274e87209a802dce7b5bd0",
+    "serving/vllm_karpo/karpo_vllm_worker.py": "15a082fc7dbb62f266ae7c451e203f63e01624279d404605d90eb0cb1222be7d",
+    "serving/vllm_karpo/pyproject.toml": "62ad45fff29c9928b3f9e8bc462e0295a2d63adb7a034443c87a318be1e4ae88"
+  },
+  "model": "MachinePulseAI/karpo-decision-4B",
+  "precision": "FP8 with original FP32 readout",
+  "gpu": "4 x RTX PRO 6000 Blackwell 96GB, us-east-2c",
+  "input_policy": "old/original bytes and real encoder outputs must equal prior experiments",
+  "acceptance": {
+    "rps": 100,
+    "p50_ms": 500,
+    "accuracy": 0.9,
+    "formal_seconds": [
+      120,
+      120
+    ]
+  },
+  "revision": "v1"
+}

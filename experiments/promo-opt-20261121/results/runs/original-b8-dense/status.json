@@ -1,0 +1,258 @@
+{
+  "status": "complete",
+  "stages": [
+    {
+      "name": "tune",
+      "result": {
+        "attempts": 360,
+        "valid": 360,
+        "correct": 283,
+        "accuracy": 0.7861111111111111,
+        "failures": 0
+      }
+    },
+    {
+      "name": "low-load",
+      "result": {
+        "target_rps": 40,
+        "offered_seconds": 10,
+        "scheduled_requests": 400,
+        "attempts": 400,
+        "valid": 400,
+        "failures": 0,
+        "http_statuses": {
+          "200": 400
+        },
+        "replica_counts": {
+          "0": 100,
+          "1": 100,
+          "2": 100,
+          "3": 100
+        },
+        "correct": 323,
+        "elapsed_with_drain_s": 10.038672551999298,
+        "valid_rps_with_drain": 39.845905713931884,
+        "steady_valid_rps": 40.0,
+        "p50_ms": 63.66771799912385,
+        "p95_ms": 65.48765099978482,
+        "p99_ms": 66.62525099909544,
+        "http_p50_ms": 62.94132899984106,
+        "last_quarter_p50_ms": 63.55806599913194,
+        "max_send_lag_ms": 2.077492998978414,
+        "valid_within_500ms": 400,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 2
+          },
+          {
+            "second": 2,
+            "pending": 2
+          },
+          {
+            "second": 3,
+            "pending": 2
+          },
+          {
+            "second": 4,
+            "pending": 2
+          },
+          {
+            "second": 5,
+            "pending": 2
+          },
+          {
+            "second": 6,
+            "pending": 2
+          },
+          {
+            "second": 7,
+            "pending": 2
+          },
+          {
+            "second": 8,
+            "pending": 2
+          },
+          {
+            "second": 9,
+            "pending": 2
+          },
+          {
+            "second": 10,
+            "pending": 2
+          }
+        ],
+        "backlog_slope_per_second": 0.0,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": true,
+        "passes_performance_acceptance": false
+      }
+    },
+    {
+      "name": "probe",
+      "result": {
+        "target_rps": 100,
+        "offered_seconds": 30,
+        "scheduled_requests": 3000,
+        "attempts": 3000,
+        "valid": 2554,
+        "failures": 446,
+        "http_statuses": {
+          "200": 2554,
+          "429": 446
+        },
+        "replica_counts": {
+          "0": 637,
+          "1": 641,
+          "2": 636,
+          "3": 640
+        },
+        "correct": 2012,
+        "elapsed_with_drain_s": 33.10371678699994,
+        "valid_rps_with_drain": 77.1514575367251,
+        "steady_valid_rps": 77.5111111111111,
+        "p50_ms": 3128.4995679998246,
+        "p95_ms": 3309.73741499929,
+        "p99_ms": 3323.6221279994425,
+        "http_p50_ms": 3127.6920279997285,
+        "last_quarter_p50_ms": 3275.969182999688,
+        "max_send_lag_ms": 30.009041998710018,
+        "valid_within_500ms": 102,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 34
+          },
+          {
+            "second": 2,
+            "pending": 55
+          },
+          {
+            "second": 3,
+            "pending": 91
+          },
+          {
+            "second": 4,
+            "pending": 95
+          },
+          {
+            "second": 5,
+            "pending": 131
+          },
+          {
+            "second": 6,
+            "pending": 159
+          },
+          {
+            "second": 7,
+            "pending": 171
+          },
+          {
+            "second": 8,
+            "pending": 207
+          },
+          {
+            "second": 9,
+            "pending": 211
+          },
+          {
+            "second": 10,
+            "pending": 247
+          },
+          {
+            "second": 11,
+            "pending": 240
+          },
+          {
+            "second": 12,
+            "pending": 250
+          },
+          {
+            "second": 13,
+            "pending": 250
+          },
+          {
+            "second": 14,
+            "pending": 244
+          },
+          {
+            "second": 15,
+            "pending": 256
+          },
+          {
+            "second": 16,
+            "pending": 238
+          },
+          {
+            "second": 17,
+            "pending": 255
+          },
+          {
+            "second": 18,
+            "pending": 248
+          },
+          {
+            "second": 19,
+            "pending": 249
+          },
+          {
+            "second": 20,
+            "pending": 249
+          },
+          {
+            "second": 21,
+            "pending": 243
+          },
+          {
+            "second": 22,
+            "pending": 256
+          },
+          {
+            "second": 23,
+            "pending": 245
+          },
+          {
+            "second": 24,
+            "pending": 254
+          },
+          {
+            "second": 25,
+            "pending": 246
+          },
+          {
+            "second": 26,
+            "pending": 247
+          },
+          {
+            "second": 27,
+            "pending": 256
+          },
+          {
+            "second": 28,
+            "pending": 240
+          },
+          {
+            "second": 29,
+            "pending": 256
+          },
+          {
+            "second": 30,
+            "pending": 249
+          }
+        ],
+        "backlog_slope_per_second": 0.9575098814229249,
+        "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+        "passes_probe": false,
+        "passes_performance_acceptance": false
+      }
+    }
+  ],
+  "started_utc": "2026-11-21T03:40:42.585167+00:00",
+  "dataset": "original",
+  "protocol": "scan",
+  "graph": "dense",
+  "gpu_count": 4,
+  "batch": 8,
+  "current": "probe",
+  "ended_utc": "2026-11-21T03:41:35.625336+00:00"
+}

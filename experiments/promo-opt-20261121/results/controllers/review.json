@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "completed": [
+    "review-screen-baseline",
+    "review-screen-split",
+    "review-screen-prose",
+    "review-screen-guard",
+    "review-screen-flat"
+  ],
+  "started_utc": "2026-11-21T03:45:21.639990+00:00",
+  "manifest_sha256": "cff4757e01368c0af529300ac8746ade4905c04f257b2e1bdb85a2d49dc5cafb",
+  "current": "review-screen-flat",
+  "selected": "baseline",
+  "ended_utc": "2026-11-21T03:57:20.810580+00:00"
+}

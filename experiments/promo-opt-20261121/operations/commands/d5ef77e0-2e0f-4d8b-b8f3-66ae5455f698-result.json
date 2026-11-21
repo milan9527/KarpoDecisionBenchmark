@@ -1,0 +1,36 @@
+{
+  "CommandId": "d5ef77e0-2e0f-4d8b-b8f3-66ae5455f698",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:47:22.392Z",
+  "ExecutionElapsedTime": "PT0.035S",
+  "ExecutionEndDateTime": "2026-11-21T03:47:22.392Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "active\nStarting karpo-opt-review-r1.service - /opt/karpo/venv-vllm034/bin/python -u scripts/promo_opt_review_controller.py...\nStarted karpo-opt-review-r1.service - /opt/karpo/venv-vllm034/bin/python -u scripts/promo_opt_review_controller.py.\ncontrollers/environment.json {\"phase\": \"environment\", \"status\": \"complete\", \"completed\": [\"old-control\"], \"started_utc\": \"2026-11-21T03:19:17.751750+00:00\", \"ended_utc\": \"2026-11-21T03:26:05.946951+00:00\"}\ncontrollers/performance.json {\"phase\": \"performance\", \"status\": \"cancelled_by_user\", \"completed\": [\"original-b4-powers\", \"original-b4-dense\", \"original-b8-powers\", \"original-b8-dense\"], \"started_utc\": \"2026-11-21T03:26:11.163095+00:00\", \"current\": \"original-b16-powers\", \"ended_utc\": \"2026-11-21T03:44:48.252475+00:00\", \"reason\": \"User: batch\\u4e0d\\u8981\\u8c03\\u4e86; stop batch tuning and continue review optimization at batch 4 / powers\"}\ncontrollers/review.json {\"status\": \"running\", \"completed\": [], \"started_utc\": \"2026-11-21T03:45:21.639990+00:00\", \"manifest_sha256\": \"cff4757e01368c0af529300ac8746ade4905c04f257b2e1bdb85a2d49dc5cafb\"}\nruns/original-b8-powers/status.json {\"status\": \"complete\", \"started_utc\": \"2026-11-21T03:37:49.400304+00:00\", \"dataset\": \"original\", \"protocol\": \"scan\", \"graph\": \"powers\", \"gpu_count\": 4, \"batch\": 8, \"current\": \"probe\", \"ended_utc\": \"2026-11-21T03:38:42.481673+00:00\"}\ntune {'attempts': 360, 'valid': 360, 'accuracy': 0.7861111111111111, 'failures': 0}\nlow-load {'attempts': 400, 'valid': 400, 'steady_valid_rps': 40.0, 'p50_ms': 64.59310999980516, 'failures': 0}\nprobe {'attempts': 3000, 'valid': 2538, 'steady_valid_rps': 77.15555555555555, 'p50_ms': 3088.923729999806, 'failures': 462}\nruns/original-b8-dense/status.json {\"status\": \"complete\", \"started_utc\": \"2026-11-21T03:40:42.585167+00:00\", \"dataset\": \"original\", \"protocol\": \"scan\", \"graph\": \"dense\", \"gpu_count\": 4, \"batch\": 8, \"current\": \"probe\", \"ended_utc\": \"2026-11-21T03:41:35.625336+00:00\"}\ntune {'attempts': 360, 'valid': 360, 'accuracy': 0.7861111111111111, 'failures': 0}\nlow-load {'attempts': 400, 'valid': 400, 'steady_valid_rps': 40.0, 'p50_ms': 63.66771799912385, 'failures': 0}\nprobe {'attempts': 3000, 'valid': 2554, 'steady_valid_rps': 77.5111111111111, 'p50_ms': 3128.4995679998246, 'failures': 446}\nnodes/original-b16-powers-peer3/status.json {\"status\": \"stopped\", \"started_utc\": \"2026-11-21T03:41:43.199761+00:00\", \"replica_ids\": [3], \"ready_utc\": \"2026-11-21T03:43:15.252966+00:00\", \"ended_utc\": \"2026-11-21T03:43:19.253350+00:00\"}\nnodes/original-b16-powers-peer2/status.json {\"status\": \"error\", \"started_utc\": \"2026-11-21T03:41:43.297844+00:00\", \"replica_ids\": [2], \"error\": \"Traceback (most recent call last):\\n  File \\\"/opt/karpo/promo-opt-20261121/scripts/promo_opt_runtime.py\\\", line 176, in node\\n    info = health(url, models)\\n           ^^^^^^^^^^^^^^^^^^^\\n  File \\\"/opt/karpo/promo-opt-20261121/scripts/promo_opt_runtime.py\\\", line 86, in health\\n    raise RuntimeError(\\\"A model/proxy process exited; inspect its log\\\")\\nRuntimeError: A model/proxy process exited; inspect its log\\n\", \"ended_utc\": \"2026-11-21T03:43:19.352790+00:00\"}\nnodes/review-screening-dual/status.json {\"status\": \"starting\", \"started_utc\": \"2026-11-21T03:45:27.465734+00:00\", \"replica_ids\": [0, 1]}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "9dabe112-4148-4d1b-ab0c-472372f72a32",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:47:31 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "4052",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "9dabe112-4148-4d1b-ab0c-472372f72a32",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

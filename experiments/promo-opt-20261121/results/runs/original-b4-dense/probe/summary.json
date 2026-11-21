@@ -1,0 +1,155 @@
+{
+  "target_rps": 100,
+  "offered_seconds": 30,
+  "scheduled_requests": 3000,
+  "attempts": 3000,
+  "valid": 2569,
+  "failures": 431,
+  "http_statuses": {
+    "200": 2569,
+    "429": 431
+  },
+  "replica_counts": {
+    "3": 645,
+    "0": 641,
+    "1": 643,
+    "2": 640
+  },
+  "correct": 2030,
+  "elapsed_with_drain_s": 33.284867789000145,
+  "valid_rps_with_drain": 77.18222034966271,
+  "steady_valid_rps": 77.33333333333333,
+  "p50_ms": 3198.3795490004923,
+  "p95_ms": 3310.0502510001206,
+  "p99_ms": 3321.7973520004307,
+  "http_p50_ms": 3196.669058000225,
+  "last_quarter_p50_ms": 3291.689993000091,
+  "max_send_lag_ms": 19.335914000293997,
+  "valid_within_500ms": 123,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 33
+    },
+    {
+      "second": 2,
+      "pending": 53
+    },
+    {
+      "second": 3,
+      "pending": 73
+    },
+    {
+      "second": 4,
+      "pending": 93
+    },
+    {
+      "second": 5,
+      "pending": 126
+    },
+    {
+      "second": 6,
+      "pending": 149
+    },
+    {
+      "second": 7,
+      "pending": 169
+    },
+    {
+      "second": 8,
+      "pending": 189
+    },
+    {
+      "second": 9,
+      "pending": 209
+    },
+    {
+      "second": 10,
+      "pending": 229
+    },
+    {
+      "second": 11,
+      "pending": 244
+    },
+    {
+      "second": 12,
+      "pending": 253
+    },
+    {
+      "second": 13,
+      "pending": 256
+    },
+    {
+      "second": 14,
+      "pending": 255
+    },
+    {
+      "second": 15,
+      "pending": 252
+    },
+    {
+      "second": 16,
+      "pending": 249
+    },
+    {
+      "second": 17,
+      "pending": 246
+    },
+    {
+      "second": 18,
+      "pending": 247
+    },
+    {
+      "second": 19,
+      "pending": 255
+    },
+    {
+      "second": 20,
+      "pending": 256
+    },
+    {
+      "second": 21,
+      "pending": 254
+    },
+    {
+      "second": 22,
+      "pending": 251
+    },
+    {
+      "second": 23,
+      "pending": 248
+    },
+    {
+      "second": 24,
+      "pending": 249
+    },
+    {
+      "second": 25,
+      "pending": 253
+    },
+    {
+      "second": 26,
+      "pending": 256
+    },
+    {
+      "second": 27,
+      "pending": 255
+    },
+    {
+      "second": 28,
+      "pending": 252
+    },
+    {
+      "second": 29,
+      "pending": 249
+    },
+    {
+      "second": 30,
+      "pending": 250
+    }
+  ],
+  "backlog_slope_per_second": 1.3379446640316206,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": false,
+  "passes_performance_acceptance": false
+}

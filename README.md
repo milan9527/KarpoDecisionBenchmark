@@ -2,24 +2,28 @@
 
 Karpo 金融风控与 SOP 决策测试项目，两个场景分别验证。风控输入200个特征；SOP每次完整传入200个候选，由模型一次选择，程序不做业务域判断或候选过滤。
 
-**当前：新版薅羊毛200特征，四RTX实际模型验证未达标（2026-11-21）**
+**当前：固定batch 4，复核决策质量达标，100 RPS性能仍未达标（2026-11-21）**
 
-已使用原Karpo 4B、vLLM 0.34.0、FP8实际验证完整200特征。四张RTX PRO 6000 Blackwell 96GB全部位于俄亥俄 **us-east-2c**：原双卡g7e.12xlarge加两台单卡g7e.2xlarge，共三台EC2，每卡一个模型副本、最大活跃序列数4。H100/H200没有参与。
+按照用户要求停止batch调整，后续固定 **batch=4、CUDA Graph powers**。仍使用俄亥俄 **us-east-2c** 的四张RTX PRO 6000 Blackwell 96GB：一台g7e.12xlarge双卡、两台g7e.2xlarge单卡。每卡独立Karpo 4B FP8副本，vLLM 0.34.0，保留原FP32输出头、原提示及完整200特征。
 
-质量集540个案例各测两种候选顺序，正确 **844/1,080（78.15%）**，未达到90%。正常行为误干预0/336，作弊行为放行158/408；主要错误是应复核的264条中231条被放行。tune与quality隔离实体和种子但共享45类合成行为模板，不能代替真实业务验收。
+旧输入在当前环境重跑仍通过：质量233/240（97.08%），两轮100 RPS端到端P50为44.67／44.63ms，零失败。已完成的CUDA Graph及配置对照没有明显性能收益，剩余batch搜索已停止。
 
-| 新版风控正式轮次 | 到达率 | 稳态有效吞吐 | 端到端P50 | 端到端P95 | 失败/全部 |
-|---|---:|---:|---:|---:|---:|
-| 第一轮120秒 | 100 RPS | 76.71 RPS | 3,312.55 ms | 3,340.66 ms | 2,635/12,000 |
-| 第二轮120秒 | 100 RPS | 76.53 RPS | 3,323.80 ms | 3,345.69 ms | 2,652/12,000 |
+复核阈值校准后的实际HTTP质量测试为 **1063/1080（98.43%）**；同批请求的原始Karpo选择为843/1080（78.06%）。应复核识别从31/264提升至251/264，正常样本误干预0/336，作弊样本放行1/408。只在原选择allow且`p(review)/(p(review)+p(allow)) >= 0.1628260940455841`时升级为review，原始模型答案保留，最终决策单独返回。阈值仅用tune拟合并在新留出集推理前冻结，属于模型分数后处理，不是原模型准确率或微调结果。
 
-共逐条核验27,960次请求，输入3,218～3,315 tokens，无裁剪或答案缓存。正式两轮共5,287次失败，其中5,286次队列满429和1次代理502；所有失败计入验收。端到端包含排队和同可用区私网，不含生产入口与在线特征查询。各卡GPU利用率均值98.58%～99.11%。本轮只测batch上限4，不能据此认定四张RTX其他配置也无法达标。
+| 校准服务正式轮次 | 到达率 | 稳态有效吞吐 | 端到端P50 | 端到端P95 | 失败/全部 | 正确/全部 |
+|---|---:|---:|---:|---:|---:|---:|
+| 第1轮120秒 | 100 RPS | 76.71 RPS | 3,313.69 ms | 3,339.00 ms | 2,564/12,000 | 77.58% |
+| 第2轮120秒 | 100 RPS | 76.71 RPS | 3,312.35 ms | 3,340.13 ms | 2,557/12,000 | 77.65% |
 
-**当前资源：按用户要求，测试完成后保留三台EC2、四张RTX运行。** 其余五台项目实例保持停止。当前三台Spot计算参考价合计8.0934美元/小时，另计EBS、网络等；[资源快照](experiments/promo-risk-rtx4-20261121/operations/final-infrastructure.json) · [价格快照](experiments/promo-risk-rtx4-20261121/operations/pricing.json)。
+40 RPS低负载P50为62.96ms、零失败；100 RPS两轮仍然排队并限流，GPU利用率均值98.62%～99.13%。全部失败计入验收，**质量改善没有解决四卡吞吐瓶颈，整体未通过**。本轮逐条核验102,152次请求和30份实际GPU引擎配置。
 
-[新版实际模型HTML](experiments/promo-risk-rtx4-20261121/report.html) · [详细结果](experiments/promo-risk-rtx4-20261121/RESULTS.zh.md) · [完整输入与实际模型输出](experiments/promo-risk-rtx4-20261121/results/decision-example.json) · [复现说明](experiments/promo-risk-rtx4-20261121/REPRODUCE.zh.md) · [特征与合成数据说明](experiments/promo-risk-20261121/README.zh.md) · [可检索200特征HTML](experiments/promo-risk-20261121/report.html)
+最终输入为3216～3315 tokens，无裁剪或答案缓存。端到端包含排队、编码及同可用区私网，不含生产入口和在线特征查询。新留出集540个案例各测两种候选顺序，与tune隔离实体及种子但共享45类合成模板，不能代替真实业务验收。
 
-新增活动权益、退款套利、推荐奖励、支付归集及团伙关联等特征，附正常用户与阈值边界对照，由带时间戳的合成事件生成。此前四RTX的正确率和延迟只对应旧合成策略，不能沿用为新版识别效果。数据集目录保留模型测试前的冻结快照，最新模型结果以上述实际验证报告为准。
+**资源：按用户要求保留三台EC2、四张RTX运行；其余五台项目实例保持停止。** [资源快照](experiments/promo-opt-20261121/operations/final-infrastructure.json) · [四副本与batch状态](experiments/promo-opt-20261121/results/final-service-state.json)。
+
+[最新HTML](experiments/promo-opt-20261121/report.html) · [详细结果](experiments/promo-opt-20261121/RESULTS.zh.md) · [完整输入输出](experiments/promo-opt-20261121/results/decision-example.json) · [复现说明](experiments/promo-opt-20261121/REPRODUCE.zh.md) · [复核阈值说明](experiments/promo-opt-20261121/CALIBRATION.zh.md) · [停止batch调整的记录](experiments/promo-opt-20261121/AMENDMENT-STOP-BATCH.zh.md)
+
+此前新版原始模型结果保留在[上一轮四RTX报告](experiments/promo-risk-rtx4-20261121/RESULTS.zh.md)。200特征覆盖活动权益、退款套利、推荐奖励、支付归集及团伙关联等，由带时间戳的合成事件生成；[特征与数据说明](experiments/promo-risk-20261121/README.zh.md) · [可检索特征HTML](experiments/promo-risk-20261121/report.html)。
 
 **历史：SOP全H200验证通过；旧版风控四RTX通过（2026-11-20）**
 

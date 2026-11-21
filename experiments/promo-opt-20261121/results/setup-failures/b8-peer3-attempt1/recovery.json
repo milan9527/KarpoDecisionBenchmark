@@ -1,0 +1,4 @@
+{
+  "utc": "2026-11-21T03:36:41.650843+00:00",
+  "reason": "Engine received SIGTERM during startup; no model measurements begun; retain failed attempt and retry identical settings under a new service unit"
+}

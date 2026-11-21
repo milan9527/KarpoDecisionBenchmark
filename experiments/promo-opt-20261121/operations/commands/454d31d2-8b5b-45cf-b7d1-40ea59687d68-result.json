@@ -1,0 +1,36 @@
+{
+  "CommandId": "454d31d2-8b5b-45cf-b7d1-40ea59687d68",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:20:34.060Z",
+  "ExecutionElapsedTime": "PT0.051S",
+  "ExecutionEndDateTime": "2026-11-21T03:20:34.060Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/old-b4-powers-dual/replica-0\n(EngineCore pid=5259) INFO 11-21 03:19:47 [monitor.py:40] [backbone] Starting torch.compile\n(EngineCore pid=5259) INFO 11-21 03:19:56 [backends.py:1110] [backbone] Using cache directory: /root/.cache/vllm/torch_compile_cache/f5c52abdbf/rank_0_0/backbone for vLLM's torch.compile\n(EngineCore pid=5259) INFO 11-21 03:19:56 [backends.py:1167] [backbone] Dynamo bytecode transform time: 8.78 s\n(EngineCore pid=5259) INFO 11-21 03:20:13 [backends.py:421] [backbone] Compiling a graph for compile range (1, 32768) takes 16.86 s\n(EngineCore pid=5259) INFO 11-21 03:20:19 [backends.py:952] collected artifacts: 33 entries, 12 artifacts, 28898274 bytes total\n(EngineCore pid=5259) INFO 11-21 03:20:19 [decorators.py:752] [backbone] saved AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/bb8a6bbacae934f37b50a208415d88e49ed5f4887a5afee79596042494f18add/rank_0_0/model\n(EngineCore pid=5259) INFO 11-21 03:20:19 [monitor.py:62] [backbone] torch.compile took 31.92 s in total\n/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/old-b4-powers-dual/replica-1\n(EngineCore pid=5252) INFO 11-21 03:19:47 [monitor.py:40] [backbone] Starting torch.compile\n(EngineCore pid=5252) INFO 11-21 03:19:56 [backends.py:1110] [backbone] Using cache directory: /root/.cache/vllm/torch_compile_cache/f5c52abdbf/rank_0_0/backbone for vLLM's torch.compile\n(EngineCore pid=5252) INFO 11-21 03:19:56 [backends.py:1167] [backbone] Dynamo bytecode transform time: 8.76 s\n(EngineCore pid=5252) INFO 11-21 03:20:13 [backends.py:421] [backbone] Compiling a graph for compile range (1, 32768) takes 16.86 s\n(EngineCore pid=5252) INFO 11-21 03:20:19 [backends.py:952] collected artifacts: 33 entries, 12 artifacts, 28898274 bytes total\n(EngineCore pid=5252) INFO 11-21 03:20:19 [decorators.py:752] [backbone] saved AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/bb8a6bbacae934f37b50a208415d88e49ed5f4887a5afee79596042494f18add/rank_0_0/model\n(EngineCore pid=5252) INFO 11-21 03:20:19 [monitor.py:62] [backbone] torch.compile took 31.87 s in total\nindex, utilization.gpu [%], memory.used [MiB]\n0, 0 %, 14089 MiB\n1, 0 %, 14089 MiB\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "4d6952eb-7932-46bc-9008-64dc16180519",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:20:38 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2881",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "4d6952eb-7932-46bc-9008-64dc16180519",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

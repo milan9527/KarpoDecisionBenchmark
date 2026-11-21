@@ -1,0 +1,36 @@
+{
+  "CommandId": "03c78007-5728-4bd8-b367-7c9e2de4cf10",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:23:52.993Z",
+  "ExecutionElapsedTime": "PT0.035S",
+  "ExecutionEndDateTime": "2026-11-21T03:23:52.993Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "active\ninactive\n  \"encoding_sha256\": \"3e21d157e044421c2eec45a294803ae48f0c317dbb28816d1e00d8508a8bf942\",\n  \"all_complete\": true,\n  \"checkpoint\": \"/opt/karpo/models/karpo-4b\"\n}\n{\"stage\": \"warmup\", \"result\": {\"attempts\": 80, \"valid\": 80, \"correct\": 74, \"accuracy\": 0.925, \"failures\": 0}}\n{\"stage\": \"quality\", \"result\": {\"attempts\": 240, \"valid\": 240, \"correct\": 233, \"accuracy\": 0.9708333333333333, \"failures\": 0}}\n{\"stage\": \"low-load\", \"result\": {\"target_rps\": 40, \"offered_seconds\": 20, \"scheduled_requests\": 800, \"attempts\": 800, \"valid\": 800, \"failures\": 0, \"http_statuses\": {\"200\": 800}, \"replica_counts\": {\"0\": 200, \"1\": 200, \"2\": 200, \"3\": 200}, \"correct\": 758, \"elapsed_with_drain_s\": 20.01974191799991, \"valid_rps_with_drain\": 39.960555099899345, \"steady_valid_rps\": 40.0, \"p50_ms\": 45.965729000272404, \"p95_ms\": 47.22308799955499, \"p99_ms\": 47.42899300026693, \"http_p50_ms\": 45.386378000330296, \"last_quarter_p50_ms\": 45.85373100007928, \"max_send_lag_ms\": 1.118479000069783, \"valid_within_500ms\": 800, \"backlog_slope_per_second\": 0.0, \"latency_scope\": \"Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.\", \"passes_probe\": true, \"passes_performance_acceptance\": false}}\n{\"stage\": \"probe\", \"result\": {\"target_rps\": 100, \"offered_seconds\": 20, \"scheduled_requests\": 2000, \"attempts\": 2000, \"valid\": 2000, \"failures\": 0, \"http_statuses\": {\"200\": 2000}, \"replica_counts\": {\"0\": 500, \"1\": 500, \"2\": 500, \"3\": 500}, \"correct\": 1898, \"elapsed_with_drain_s\": 20.034518733999903, \"valid_rps_with_drain\": 99.82770370250361, \"steady_valid_rps\": 100.0, \"p50_ms\": 44.994400999712525, \"p95_ms\": 47.02450600007069, \"p99_ms\": 48.333317000015086, \"http_p50_ms\": 44.44963600008123, \"last_quarter_p50_ms\": 44.78193300019484, \"max_send_lag_ms\": 17.88704799992047, \"valid_within_500ms\": 2000, \"backlog_slope_per_second\": 0.0, \"latency_scope\": \"Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.\", \"passes_probe\": true, \"passes_performance_acceptance\": false}}\ncontrollers/environment.json {\"phase\": \"environment\", \"status\": \"running\", \"completed\": [], \"started_utc\": \"2026-11-21T03:19:17.751750+00:00\"}\nruns/old-control/status.json {\"status\": \"running\", \"started_utc\": \"2026-11-21T03:21:13.746449+00:00\", \"dataset\": \"old\", \"protocol\": \"formal\", \"graph\": \"powers\", \"gpu_count\": 4, \"batch\": 4, \"current\": \"confirm\"}\nwarmup {'attempts': 80, 'valid': 80, 'accuracy': 0.925, 'failures': 0}\nquality {'attempts': 240, 'valid': 240, 'accuracy': 0.9708333333333333, 'failures': 0}\nlow-load {'attempts': 800, 'valid': 800, 'steady_valid_rps': 40.0, 'p50_ms': 45.965729000272404, 'failures': 0}\nprobe {'attempts': 2000, 'valid': 2000, 'steady_valid_rps': 100.0, 'p50_ms': 44.994400999712525, 'failures': 0}\nnodes/old-b4-powers-dual/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:19:24.990604+00:00\", \"replica_ids\": [0, 1], \"ready_utc\": \"2026-11-21T03:21:03.065012+00:00\"}\nnodes/old-b4-powers-peer2/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:19:24.689796+00:00\", \"replica_ids\": [2], \"ready_utc\": \"2026-11-21T03:20:44.738804+00:00\"}\nnodes/old-b4-powers-peer3/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:19:24.697641+00:00\", \"replica_ids\": [3], \"ready_utc\": \"2026-11-21T03:20:46.749138+00:00\"}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "22a30378-4a11-42d8-adcf-34823ace5dd2",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:24:00 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "4339",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "22a30378-4a11-42d8-adcf-34823ace5dd2",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

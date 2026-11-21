@@ -1,0 +1,18 @@
+{
+  "mode": "node",
+  "dataset": "old",
+  "graph": "powers",
+  "protocol": "formal",
+  "revision": "v1",
+  "checkpoint": "/opt/karpo/models/karpo-4b",
+  "name": "old-b4-powers-dual",
+  "batch": 4,
+  "replica_ids": [
+    0,
+    1
+  ],
+  "bind": "0.0.0.0",
+  "node_seconds": 21600,
+  "urls": null,
+  "no_upload": false
+}

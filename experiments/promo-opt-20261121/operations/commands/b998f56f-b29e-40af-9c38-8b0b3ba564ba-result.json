@@ -1,0 +1,36 @@
+{
+  "CommandId": "b998f56f-b29e-40af-9c38-8b0b3ba564ba",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T04:01:42.684Z",
+  "ExecutionElapsedTime": "PT0.026S",
+  "ExecutionEndDateTime": "2026-11-21T04:01:42.684Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "inactive\nactive\nreview-confirmed complete repeat None\nwarmup {'attempts': 80, 'correct': 80, 'failures': 0}\nquality {'attempts': 1080, 'correct': 843, 'failures': 0}\nlow-load {'attempts': 800, 'correct': 650, 'steady_valid_rps': 40.0, 'p50_ms': 62.53535100040608, 'failures': 0}\nprobe {'attempts': 2000, 'correct': 1401, 'steady_valid_rps': 77.06666666666666, 'p50_ms': 2767.2131139997873, 'failures': 212}\nconfirm {'attempts': 12000, 'correct': 7415, 'steady_valid_rps': 76.75555555555556, 'p50_ms': 3297.7066379999087, 'failures': 2579}\nrepeat {'attempts': 12000, 'correct': 7419, 'steady_valid_rps': 76.62222222222222, 'p50_ms': 3312.4784430001455, 'failures': 2586}\nreview-calibrated-confirmed running repeat None\nwarmup {'attempts': 80, 'correct': 80, 'failures': 0}\nquality {'attempts': 1080, 'correct': 1063, 'failures': 0}\nlow-load {'attempts': 800, 'correct': 792, 'steady_valid_rps': 40.0, 'p50_ms': 62.9623900003935, 'failures': 0}\nprobe {'attempts': 2000, 'correct': 1761, 'steady_valid_rps': 77.6, 'p50_ms': 2799.891151999873, 'failures': 217}\nconfirm {'attempts': 12000, 'correct': 9310, 'steady_valid_rps': 76.71111111111111, 'p50_ms': 3313.6931129993172, 'failures': 2564}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "f2a488fd-67c1-4eb3-96d4-65470ea6c729",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 04:01:53 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1786",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "f2a488fd-67c1-4eb3-96d4-65470ea6c729",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

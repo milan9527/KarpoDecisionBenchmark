@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "stages": [
+    {
+      "name": "warmup",
+      "result": {
+        "attempts": 16,
+        "valid": 16,
+        "correct": 16,
+        "accuracy": 1.0,
+        "failures": 0
+      }
+    },
+    {
+      "name": "quality",
+      "result": {
+        "attempts": 1080,
+        "valid": 1080,
+        "correct": 843,
+        "accuracy": 0.7805555555555556,
+        "failures": 0
+      }
+    }
+  ],
+  "started_utc": "2026-11-21T03:50:31.369015+00:00",
+  "dataset": "review-baseline",
+  "protocol": "quality-only",
+  "graph": "powers",
+  "gpu_count": 4,
+  "batch": 4,
+  "current": "quality",
+  "ended_utc": "2026-11-21T03:50:51.781597+00:00"
+}

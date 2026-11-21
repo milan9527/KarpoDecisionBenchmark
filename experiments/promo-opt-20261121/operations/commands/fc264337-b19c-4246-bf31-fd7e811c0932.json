@@ -1,0 +1,9 @@
+{
+  "id": "fc264337-b19c-4246-bf31-fd7e811c0932",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T03:56:55.921044+00:00",
+  "script": "set -eu\nsystemctl is-active karpo-opt-review-r1 karpo-opt-calibrated || true\njournalctl -u karpo-opt-review-r1 -u karpo-opt-calibrated -n 2 --no-pager -o cat\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport json,pathlib\np=pathlib.Path('/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results')\nfor f in sorted(p.glob('controllers/*.json'))+sorted(p.glob('runs/*/status.json'),key=lambda f:f.stat().st_mtime)[-2:]+sorted(p.glob('nodes/*/status.json'),key=lambda f:f.stat().st_mtime)[-3:]:\n x=json.loads(f.read_text());print(str(f.relative_to(p)),json.dumps({k:v for k,v in x.items() if k not in ['stages']}))\n for s in x.get('stages',[]):\n  r=s['result'];print(s['name'],{k:r[k] for k in ['attempts','valid','accuracy','steady_valid_rps','p50_ms','failures'] if k in r})\nPY\n"
+}

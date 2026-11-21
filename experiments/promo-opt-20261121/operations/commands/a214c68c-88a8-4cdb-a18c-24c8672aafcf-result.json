@@ -1,0 +1,36 @@
+{
+  "CommandId": "a214c68c-88a8-4cdb-a18c-24c8672aafcf",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:36:41.336Z",
+  "ExecutionElapsedTime": "PT2.467S",
+  "ExecutionEndDateTime": "2026-11-21T03:36:43.336Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "Restart=no\nTimeoutStartUSec=1min 30s\nTimeoutStopUSec=1min 30s\nRuntimeMaxUSec=6h\nActiveState=failed\n26\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-opt-b8-recovery1-peer3.service; invocation ID: 3a7d9ca332ff4f95bedffb671b4be87e\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "3a0dea4d-9b1a-40bf-835a-afb4b5f3c602",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:36:44 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "794",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "3a0dea4d-9b1a-40bf-835a-afb4b5f3c602",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

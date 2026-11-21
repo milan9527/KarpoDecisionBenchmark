@@ -1,0 +1,9 @@
+{
+  "id": "586760ad-cb96-495a-9afa-cf4ce42d5ce4",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T03:59:12.977862+00:00",
+  "script": "set -eu\nsystemctl is-active karpo-opt-review-r1 karpo-opt-calibrated || true\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport json,pathlib\np=pathlib.Path('/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results')\nfor name in ['review-confirmed','review-calibrated-confirmed']:\n f=p/'runs'/name/'status.json'\n if not f.exists():\n  print(name,'not started')\n  continue\n s=json.loads(f.read_text())\n print(name,s['status'],s.get('current'),s.get('error'))\n for row in s['stages']:\n  r=row['result']\n  print(row['name'],{k:r[k] for k in ['attempts','correct','steady_valid_rps','p50_ms','failures'] if k in r})\nPY\n"
+}

@@ -1,0 +1,22 @@
+{
+  "mode": "run",
+  "dataset": "review-baseline",
+  "graph": "powers",
+  "protocol": "formal",
+  "revision": "v1",
+  "checkpoint": "/opt/karpo/models/karpo-4b",
+  "name": "review-confirmed",
+  "batch": 4,
+  "replica_ids": [
+    0
+  ],
+  "bind": "127.0.0.1",
+  "node_seconds": 21600,
+  "urls": [
+    "http://127.0.0.1:18500",
+    "http://127.0.0.1:18501",
+    "http://172.31.42.209:18500",
+    "http://172.31.37.239:18500"
+  ],
+  "no_upload": false
+}

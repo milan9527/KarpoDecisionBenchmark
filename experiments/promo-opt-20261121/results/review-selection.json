@@ -1,0 +1,86 @@
+{
+  "selected": {
+    "variant": "baseline",
+    "tune": {
+      "attempts": 360,
+      "valid": 360,
+      "correct": 285,
+      "accuracy": 0.7916666666666666,
+      "failures": 0
+    },
+    "review_attempts": 88,
+    "review_correct": 14,
+    "mean_json_bytes": 8727.933333333332
+  },
+  "candidates": [
+    {
+      "variant": "baseline",
+      "tune": {
+        "attempts": 360,
+        "valid": 360,
+        "correct": 285,
+        "accuracy": 0.7916666666666666,
+        "failures": 0
+      },
+      "review_attempts": 88,
+      "review_correct": 14,
+      "mean_json_bytes": 8727.933333333332
+    },
+    {
+      "variant": "split",
+      "tune": {
+        "attempts": 360,
+        "valid": 360,
+        "correct": 249,
+        "accuracy": 0.6916666666666667,
+        "failures": 0
+      },
+      "review_attempts": 88,
+      "review_correct": 30,
+      "mean_json_bytes": 8562.933333333332
+    },
+    {
+      "variant": "prose",
+      "tune": {
+        "attempts": 360,
+        "valid": 360,
+        "correct": 243,
+        "accuracy": 0.675,
+        "failures": 0
+      },
+      "review_attempts": 88,
+      "review_correct": 26,
+      "mean_json_bytes": 9274.933333333332
+    },
+    {
+      "variant": "guard",
+      "tune": {
+        "attempts": 360,
+        "valid": 360,
+        "correct": 280,
+        "accuracy": 0.7777777777777778,
+        "failures": 0
+      },
+      "review_attempts": 88,
+      "review_correct": 49,
+      "mean_json_bytes": 10321.933333333332
+    },
+    {
+      "variant": "flat",
+      "tune": {
+        "attempts": 360,
+        "valid": 360,
+        "correct": 235,
+        "accuracy": 0.6527777777777778,
+        "failures": 0
+      },
+      "review_attempts": 88,
+      "review_correct": 22,
+      "mean_json_bytes": 10744.933333333332
+    }
+  ],
+  "batch": 4,
+  "graph": "powers",
+  "basis": "Tune-only selection; no fresh quality predictions have been evaluated",
+  "frozen_utc": "2026-11-21T03:50:08.703267+00:00"
+}

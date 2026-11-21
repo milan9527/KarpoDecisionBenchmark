@@ -1,0 +1,7 @@
+{
+  "id": "237b2732-7aa3-457d-af9d-d7f54e304b1f",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "script": "deploy-v1.sh via 15-minute presigned download; URL omitted from evidence"
+}

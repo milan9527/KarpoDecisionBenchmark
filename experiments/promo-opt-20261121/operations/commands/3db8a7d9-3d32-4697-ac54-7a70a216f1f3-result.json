@@ -1,0 +1,36 @@
+{
+  "CommandId": "3db8a7d9-3d32-4697-ac54-7a70a216f1f3",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:21:18.655Z",
+  "ExecutionElapsedTime": "PT0.336S",
+  "ExecutionEndDateTime": "2026-11-21T03:21:18.655Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/old-b4-powers-peer2/replica-2\n(EngineCore pid=6999) INFO 11-21 03:20:44 [extensible_kv_cache.py:536] Extended KV cache to 1248 blocks (65.81 GiB).\n(EngineCore pid=6999) INFO 11-21 03:20:44 [core.py:451] init engine (profile, create kv cache, warmup model) took 61.99 s (compilation: 26.20 s)\n(EngineCore pid=6999) INFO 11-21 03:20:44 [kernel.py:517] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:18500 (Press CTRL+C to quit)\n(EngineCore pid=6999) INFO 11-21 03:21:15 [core.py:532] Resolved pooling config: pooling_type=LAST(source=model_default), tok_pooling_type=ALL(source=model_default), use_activation=False(source=pooler_default), supported_tasks=('classify',)\n(MainProcess pid=6468) WARNING 11-21 03:21:15 [input_processor.py:396] Passing raw prompts to InputProcessor is deprecated and will be removed in the future. You should instead pass the outputs of Renderer.render_cmpl() or Renderer.render_chat().\nindex, utilization.gpu [%], memory.used [MiB]\n0, 76 %, 75603 MiB\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "cb72f4f4-ab3d-412b-be94-c5627b0b8a30",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:21:24 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1850",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "cb72f4f4-ab3d-412b-be94-c5627b0b8a30",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

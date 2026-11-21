@@ -1,0 +1,36 @@
+{
+  "CommandId": "7a037d64-47b0-4e31-bae9-24148bf344be",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:34:17.416Z",
+  "ExecutionElapsedTime": "PT0.052S",
+  "ExecutionEndDateTime": "2026-11-21T03:34:17.416Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/original-b8-powers-dual/replica-1\n(EngineCore pid=7412) INFO 11-21 03:33:31 [extensible_kv_cache.py:693] Memory after warmup: 84.49 GiB free, 0.09 GiB committed to the KV cache, 5.88 GiB kept for transient activations (5.88 GiB allocated at peak, 0.0 GiB of torch reservation growth); 1145 KV cache blocks (60.38 GiB) fit within the requested 75.98 GiB. Torch may reserve up to 33.29 GiB.\n(EngineCore pid=7412) INFO 11-21 03:33:31 [kv_cache_utils.py:1168] GPU KV cache size: 9,379,840 tokens, Maximum concurrency for 8,192 tokens per request: 1145.00x\n(EngineCore pid=7412) INFO 11-21 03:33:31 [extensible_kv_cache.py:536] Extended KV cache to 1145 blocks (60.42 GiB).\n(EngineCore pid=7412) INFO 11-21 03:33:31 [core.py:451] init engine (profile, create kv cache, warmup model) took 79.33 s (compilation: 33.86 s)\n(EngineCore pid=7412) INFO 11-21 03:33:31 [kernel.py:517] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:18501 (Press CTRL+C to quit)\n/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/original-b8-powers-dual/replica-0\n(EngineCore pid=7423) INFO 11-21 03:33:31 [extensible_kv_cache.py:693] Memory after warmup: 84.49 GiB free, 0.09 GiB committed to the KV cache, 5.88 GiB kept for transient activations (5.88 GiB allocated at peak, 0.0 GiB of torch reservation growth); 1145 KV cache blocks (60.38 GiB) fit within the requested 75.98 GiB. Torch may reserve up to 33.29 GiB.\n(EngineCore pid=7423) INFO 11-21 03:33:31 [kv_cache_utils.py:1168] GPU KV cache size: 9,379,840 tokens, Maximum concurrency for 8,192 tokens per request: 1145.00x\n(EngineCore pid=7423) INFO 11-21 03:33:31 [extensible_kv_cache.py:536] Extended KV cache to 1145 blocks (60.42 GiB).\n(EngineCore pid=7423) INFO 11-21 03:33:31 [core.py:451] init engine (profile, create kv cache, warmup model) took 78.71 s (compilation: 33.24 s)\n(EngineCore pid=7423) INFO 11-21 03:33:31 [kernel.py:517] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://0.0.0.0:18500 (Press CTRL+C to quit)\nindex, utilization.gpu [%], memory.used [MiB]\n0, 0 %, 72507 MiB\n1, 0 %, 72507 MiB\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "1006ea71-da4d-4848-bb29-24123d0b4f11",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:34:25 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "3137",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "1006ea71-da4d-4848-bb29-24123d0b4f11",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

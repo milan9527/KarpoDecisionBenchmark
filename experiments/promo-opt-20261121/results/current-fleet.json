@@ -1,0 +1,11 @@
+{
+  "name": "review-selected",
+  "dataset": "review-baseline",
+  "batch": 4,
+  "graph": "powers",
+  "units": {
+    "dual": "karpo-opt-review-selected-dual",
+    "peer2": "karpo-opt-review-selected-peer2",
+    "peer3": "karpo-opt-review-selected-peer3"
+  }
+}

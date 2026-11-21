@@ -1,0 +1,17 @@
+{
+  "mode": "node",
+  "dataset": "original",
+  "graph": "dense",
+  "protocol": "formal",
+  "revision": "v1",
+  "checkpoint": "/opt/karpo/models/karpo-4b",
+  "name": "original-b4-dense-peer3",
+  "batch": 4,
+  "replica_ids": [
+    3
+  ],
+  "bind": "0.0.0.0",
+  "node_seconds": 21600,
+  "urls": null,
+  "no_upload": false
+}

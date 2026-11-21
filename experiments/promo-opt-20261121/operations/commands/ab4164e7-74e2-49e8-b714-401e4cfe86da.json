@@ -1,0 +1,9 @@
+{
+  "id": "ab4164e7-74e2-49e8-b714-401e4cfe86da",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T04:03:15.430688+00:00",
+  "script": "set -euo pipefail\ncd /opt/karpo/promo-opt-20261121\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport datetime as dt,json,pathlib,subprocess,sys,urllib.request\nsys.path.insert(0,'scripts')\nfrom promo_opt_runtime import synchronize\np=pathlib.Path('experiments/promo-opt-20261121/results')\nassert json.loads((p/'runs/review-calibrated-confirmed/status.json').read_text())['status']=='complete'\nqueue=subprocess.run(['systemctl','is-active','karpo-opt-queue'],capture_output=True,text=True)\nassert queue.stdout.strip() not in ('active','activating')\nurls=['http://127.0.0.1:18500','http://127.0.0.1:18501',\n      'http://172.31.42.209:18500','http://172.31.37.239:18500']\nbackends=[]\nfor url in urls:\n with urllib.request.urlopen(url+'/healthz',timeout=10) as r:\n  backend=json.load(r)\n assert backend['max_num_seqs']==4 and backend['graph_policy']=='powers'\n backends.append(backend)\nresult={'utc':dt.datetime.now(dt.timezone.utc).isoformat(),\n        'batch_search_unit':queue.stdout.strip(),'backends':backends,\n        'note':'Read-only service checks; no EC2 lifecycle action'}\n(p/'final-service-state.json').write_text(json.dumps(result,indent=2)+'\\n')\nsynchronize()\nprint(json.dumps({'batch_search':queue.stdout.strip(),'healthy_replicas':len(backends),'batch':4}))\nPY\n"
+}

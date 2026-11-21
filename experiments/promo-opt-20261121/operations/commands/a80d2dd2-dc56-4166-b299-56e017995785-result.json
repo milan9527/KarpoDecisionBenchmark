@@ -1,0 +1,36 @@
+{
+  "CommandId": "a80d2dd2-dc56-4166-b299-56e017995785",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:21:19.019Z",
+  "ExecutionElapsedTime": "PT0.035S",
+  "ExecutionEndDateTime": "2026-11-21T03:21:19.019Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "active\ninactive\n  \"requests\": 360,\n  \"min_tokens\": 2263,\n  \"max_tokens\": 2298,\n  \"encoding_sha256\": \"3e21d157e044421c2eec45a294803ae48f0c317dbb28816d1e00d8508a8bf942\",\n  \"all_complete\": true,\n  \"checkpoint\": \"/opt/karpo/models/karpo-4b\"\n}\n{\"stage\": \"warmup\", \"result\": {\"attempts\": 80, \"valid\": 80, \"correct\": 74, \"accuracy\": 0.925, \"failures\": 0}}\ncontrollers/environment.json {\"phase\": \"environment\", \"status\": \"running\", \"completed\": [], \"started_utc\": \"2026-11-21T03:19:17.751750+00:00\"}\nruns/old-control/status.json {\"status\": \"running\", \"started_utc\": \"2026-11-21T03:21:13.746449+00:00\", \"dataset\": \"old\", \"protocol\": \"formal\", \"graph\": \"powers\", \"gpu_count\": 4, \"batch\": 4, \"current\": \"quality\"}\nwarmup {'attempts': 80, 'valid': 80, 'accuracy': 0.925, 'failures': 0}\nnodes/old-b4-powers-dual/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:19:24.990604+00:00\", \"replica_ids\": [0, 1], \"ready_utc\": \"2026-11-21T03:21:03.065012+00:00\"}\nnodes/old-b4-powers-peer2/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:19:24.689796+00:00\", \"replica_ids\": [2], \"ready_utc\": \"2026-11-21T03:20:44.738804+00:00\"}\nnodes/old-b4-powers-peer3/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:19:24.697641+00:00\", \"replica_ids\": [3], \"ready_utc\": \"2026-11-21T03:20:46.749138+00:00\"}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "5b1a8649-9d50-4658-8177-74569b8db67f",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:21:24 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2024",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "5b1a8649-9d50-4658-8177-74569b8db67f",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

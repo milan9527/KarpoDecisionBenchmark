@@ -1,0 +1,114 @@
+{
+  "target_rps": 40,
+  "offered_seconds": 20,
+  "scheduled_requests": 800,
+  "attempts": 800,
+  "valid": 800,
+  "failures": 0,
+  "http_statuses": {
+    "200": 800
+  },
+  "replica_counts": {
+    "0": 200,
+    "1": 200,
+    "2": 200,
+    "3": 200
+  },
+  "correct": 792,
+  "elapsed_with_drain_s": 20.03895062399988,
+  "valid_rps_with_drain": 39.92225017221564,
+  "steady_valid_rps": 40.0,
+  "p50_ms": 62.9623900003935,
+  "p95_ms": 64.31790500028,
+  "p99_ms": 65.17101900044509,
+  "http_p50_ms": 61.988049000319734,
+  "last_quarter_p50_ms": 62.9503330001171,
+  "max_send_lag_ms": 2.1259220002320944,
+  "valid_within_500ms": 800,
+  "backlog_samples": [
+    {
+      "second": 1,
+      "pending": 2
+    },
+    {
+      "second": 2,
+      "pending": 2
+    },
+    {
+      "second": 3,
+      "pending": 2
+    },
+    {
+      "second": 4,
+      "pending": 2
+    },
+    {
+      "second": 5,
+      "pending": 2
+    },
+    {
+      "second": 6,
+      "pending": 2
+    },
+    {
+      "second": 7,
+      "pending": 2
+    },
+    {
+      "second": 8,
+      "pending": 2
+    },
+    {
+      "second": 9,
+      "pending": 2
+    },
+    {
+      "second": 10,
+      "pending": 2
+    },
+    {
+      "second": 11,
+      "pending": 2
+    },
+    {
+      "second": 12,
+      "pending": 2
+    },
+    {
+      "second": 13,
+      "pending": 2
+    },
+    {
+      "second": 14,
+      "pending": 2
+    },
+    {
+      "second": 15,
+      "pending": 2
+    },
+    {
+      "second": 16,
+      "pending": 2
+    },
+    {
+      "second": 17,
+      "pending": 2
+    },
+    {
+      "second": 18,
+      "pending": 2
+    },
+    {
+      "second": 19,
+      "pending": 2
+    },
+    {
+      "second": 20,
+      "pending": 2
+    }
+  ],
+  "backlog_slope_per_second": 0.0,
+  "latency_scope": "Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.",
+  "passes_probe": true,
+  "passes_performance_acceptance": false
+}

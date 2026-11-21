@@ -1,0 +1,22 @@
+[
+  "/opt/karpo/venv-vllm034/bin/python",
+  "/opt/karpo/promo-opt-20261121/scripts/promo_opt_server.py",
+  "--checkpoint",
+  "/opt/karpo/models/karpo-4b",
+  "--experiment",
+  "/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/inputs/original",
+  "--output",
+  "/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/original-b8-powers-dual/replica-0",
+  "--max-seqs",
+  "8",
+  "--replica-id",
+  "0",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "18500",
+  "--admission-limit",
+  "64",
+  "--graph",
+  "powers"
+]

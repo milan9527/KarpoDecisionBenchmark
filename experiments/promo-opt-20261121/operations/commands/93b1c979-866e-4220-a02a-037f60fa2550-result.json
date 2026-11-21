@@ -1,0 +1,36 @@
+{
+  "CommandId": "93b1c979-866e-4220-a02a-037f60fa2550",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:35:31.883Z",
+  "ExecutionElapsedTime": "PT0.361S",
+  "ExecutionEndDateTime": "2026-11-21T03:35:31.883Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/original-b4-dense-peer3/replica-3\n(MainProcess pid=7511) INFO 11-21 03:31:38 [core_client.py:826] [shutdown] MPClient: engine manager stopped\n(MainProcess pid=7511) INFO 11-21 03:31:38 [core_client.py:827] [shutdown] MPClient: cleaning up background resources\n(MainProcess pid=7511) INFO 11-21 03:31:38 [core_client.py:829] [shutdown] MPClient: complete\nINFO:     Application shutdown complete.\nINFO:     Finished server process [7511]\n/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown\n  warnings.warn('resource_tracker: There appear to be %d '\n/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/original-b8-powers-peer3/replica-3\n(MainProcess pid=8288) ERROR 11-21 03:33:26 [async_llm.py:957] Traceback (most recent call last):\n(MainProcess pid=8288) ERROR 11-21 03:33:26 [async_llm.py:957]   File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/vllm/v1/engine/async_llm.py\", line 894, in output_handler\n(MainProcess pid=8288) ERROR 11-21 03:33:26 [async_llm.py:957]     outputs = await engine_core.get_output_async()\n(MainProcess pid=8288) ERROR 11-21 03:33:26 [async_llm.py:957]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n(MainProcess pid=8288) ERROR 11-21 03:33:26 [async_llm.py:957]   File \"/opt/karpo/venv-vllm034/lib/python3.12/site-packages/vllm/v1/engine/core_client.py\", line 1310, in get_output_async\n(MainProcess pid=8288) ERROR 11-21 03:33:26 [async_llm.py:957]     raise self._format_exception(outputs) from None\n(MainProcess pid=8288) ERROR 11-21 03:33:26 [async_llm.py:957] vllm.v1.engine.exceptions.EngineDeadError: EngineCore encountered an issue. See stack trace (above) for the root cause.\nindex, utilization.gpu [%], memory.used [MiB]\n0, 0 %, 0 MiB\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "90e07157-2881-4521-b716-5beb87b6c50d",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:35:38 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2499",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "90e07157-2881-4521-b716-5beb87b6c50d",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

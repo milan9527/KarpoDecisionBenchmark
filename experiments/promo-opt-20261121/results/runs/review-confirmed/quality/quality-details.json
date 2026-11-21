@@ -1,0 +1,2034 @@
+{
+  "scope": "one synthetic quality pass; harness valid=true must include fresh encoding checks; not a sustained 100 RPS benchmark",
+  "attempts": 1080,
+  "responses_received": 1080,
+  "missing_responses": 0,
+  "valid": 1080,
+  "failures": 0,
+  "correct": 843,
+  "accuracy_all_attempts": 0.7805555555555556,
+  "accuracy_valid_responses": 0.7805555555555556,
+  "benign_interventions": 0,
+  "benign_attempts": 336,
+  "benign_intervention_rate_all_attempts": 0.0,
+  "abuse_allowed": 158,
+  "abuse_attempts": 408,
+  "abuse_allow_rate_all_attempts": 0.3872549019607843,
+  "rate_note": "Failed/missing requests remain failures, not assumed safe or allowed; consult group failures alongside rates.",
+  "order_pairs": 540,
+  "valid_order_pairs": 540,
+  "order_disagreements": 35,
+  "valid_latency_p50_ms": 61.48651199964661,
+  "valid_latency_p95_ms": 62.16698900061601,
+  "groups": {
+    "action": {
+      "allow": {
+        "attempts": 432,
+        "valid": 432,
+        "correct": 432,
+        "failures": 0
+      },
+      "deduplicate": {
+        "attempts": 48,
+        "valid": 48,
+        "correct": 48,
+        "failures": 0
+      },
+      "challenge": {
+        "attempts": 48,
+        "valid": 48,
+        "correct": 48,
+        "failures": 0
+      },
+      "throttle": {
+        "attempts": 120,
+        "valid": 120,
+        "correct": 120,
+        "failures": 0
+      },
+      "deny": {
+        "attempts": 168,
+        "valid": 168,
+        "correct": 164,
+        "failures": 0
+      },
+      "review": {
+        "attempts": 264,
+        "valid": 264,
+        "correct": 31,
+        "failures": 0
+      }
+    },
+    "behavior": {
+      "normal": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "new_customer": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "family_shared": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "office_nat": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "travel_proxy": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "legitimate_refund": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "sale_peak": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "safe_retry": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "account_farm": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "claim_bot": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "identity_reuse": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "ineligible_claim": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "coupon_stacking": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "refund_arbitrage": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 0,
+        "failures": 0
+      },
+      "referral_farm": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 0,
+        "failures": 0
+      },
+      "legit_referral": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "allowed_stacking": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "reward_pooling": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 9,
+        "failures": 0
+      },
+      "legit_shared_payee": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "synchronized_ring": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 0,
+        "failures": 0
+      },
+      "circular_funds": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 0,
+        "failures": 0
+      },
+      "proxy_rotation": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 1,
+        "failures": 0
+      },
+      "history_shift": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 0,
+        "failures": 0
+      },
+      "job_exhaustion": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "legit_batch_jobs": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "reformed_customer": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "legit_multi_device": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "expensive_retry": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "signature_tamper": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "revoked_session": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "device_auth": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "rate_below": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "rate_at": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "job_below": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "job_at": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "refund_below": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "refund_at": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 0,
+        "failures": 0
+      },
+      "pool_below": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "pool_at": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 9,
+        "failures": 0
+      },
+      "signature_and_repeat": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "flood_and_repeat": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "missing_entitlement": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 12,
+        "failures": 0
+      },
+      "missing_optional": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 24,
+        "failures": 0
+      },
+      "missing_graph": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 0,
+        "failures": 0
+      },
+      "injected_allow": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 20,
+        "failures": 0
+      }
+    },
+    "category": {
+      "benign": {
+        "attempts": 336,
+        "valid": 336,
+        "correct": 336,
+        "failures": 0
+      },
+      "abuse": {
+        "attempts": 408,
+        "valid": 408,
+        "correct": 250,
+        "failures": 0
+      },
+      "boundary": {
+        "attempts": 192,
+        "valid": 192,
+        "correct": 153,
+        "failures": 0
+      },
+      "precedence": {
+        "attempts": 48,
+        "valid": 48,
+        "correct": 48,
+        "failures": 0
+      },
+      "missing": {
+        "attempts": 72,
+        "valid": 72,
+        "correct": 36,
+        "failures": 0
+      },
+      "injection": {
+        "attempts": 24,
+        "valid": 24,
+        "correct": 20,
+        "failures": 0
+      }
+    }
+  },
+  "errors": [
+    {
+      "id": "review-holdout-v1-refund_arbitrage-000-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-000-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-001-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-001-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-002-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-002-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-003-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-003-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-004-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-004-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-005-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-005-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-006-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-006-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-007-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-007-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-008-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-008-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-009-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-009-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-010-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-010-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-011-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_arbitrage-011-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-000-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-000-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-001-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-001-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-002-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-002-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-003-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-003-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-004-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-004-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-005-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-005-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-006-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-006-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-007-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-007-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-008-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-008-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-009-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-009-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-010-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-010-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-011-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-referral_farm-011-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-000-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-001-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-002-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-003-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-003-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-004-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-004-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-005-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-006-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-006-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-007-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-008-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-009-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-010-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-reward_pooling-011-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-000-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-000-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-001-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-001-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-002-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-002-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-003-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-003-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-004-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-004-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-005-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-005-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-006-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-006-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-007-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-007-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-008-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-008-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-009-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-009-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-010-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-010-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-011-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-synchronized_ring-011-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-000-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-000-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-001-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-001-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-002-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-002-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-003-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-003-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-004-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-004-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-005-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-005-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-006-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-006-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-007-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-007-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-008-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-008-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-009-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-009-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-010-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-010-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-011-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-circular_funds-011-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-000-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-000-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-001-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-002-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-002-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-003-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-003-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-004-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-004-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-005-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-005-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-006-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-006-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-007-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-007-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-008-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-008-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-009-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-009-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-010-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-010-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-011-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-proxy_rotation-011-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-000-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-000-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-001-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-001-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-002-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-002-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-003-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-003-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-004-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-004-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-005-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-005-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-006-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-006-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-007-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-007-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-008-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-008-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-009-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-009-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-010-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-010-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-011-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-history_shift-011-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-000-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-000-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-001-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-001-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-002-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-002-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-003-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-003-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-004-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-004-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-005-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-005-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-006-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-006-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-007-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-007-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-008-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-008-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-009-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-009-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-010-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-010-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-011-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-refund_at-011-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-000-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-000-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-001-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-002-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-003-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-004-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-004-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-005-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-006-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-007-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-008-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-009-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-009-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-010-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-pool_at-011-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-000-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-001-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-002-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-003-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-004-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-005-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-006-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-007-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-008-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-009-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-010-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_entitlement-011-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-000-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-000-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-001-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-001-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-002-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-002-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-003-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-003-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-004-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-004-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-005-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-005-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-006-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-006-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-007-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-007-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-008-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-008-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-009-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-009-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-010-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-010-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-011-original",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-missing_graph-011-reversed",
+      "expected": "review",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-injected_allow-004-original",
+      "expected": "deny",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-injected_allow-006-original",
+      "expected": "deny",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-injected_allow-008-original",
+      "expected": "deny",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    },
+    {
+      "id": "review-holdout-v1-injected_allow-011-original",
+      "expected": "deny",
+      "choice": "allow",
+      "valid": true,
+      "correct": false
+    }
+  ]
+}

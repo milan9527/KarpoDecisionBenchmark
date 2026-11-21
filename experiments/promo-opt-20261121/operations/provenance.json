@@ -1,0 +1,21 @@
+{
+  "previous_archive": {
+    "utc": "2026-11-21T03:05:02.646713+00:00",
+    "bucket": "karpo-benchmark-20261119-115003-632930644527",
+    "key": "archives/promo-risk-20261121/complete-v1.tar.gz",
+    "bytes": 11449637,
+    "sha256": "663342214ee570e3f2ac3a31b0f05a735865d0e54c16ad9e4848926e46157c1c",
+    "files": 257,
+    "download_hash_verified": true
+  },
+  "previous_commit": "0f7f2ad9ac45a6f82d8f2813fdff10603da1fe4c",
+  "same_checkpoint_paths_and_hosts": true,
+  "previous_weight_proofs": {
+    "experiments/promo-risk-rtx4-20261121/results/setup/weights-ip-172-31-37-239.json": "1d78c371ff8a9e7fb410f0e6ad5721e952b094473ab66fc276641fb855b698f2",
+    "experiments/promo-risk-rtx4-20261121/results/setup/weights-ip-172-31-40-12.json": "97ade75aa4ec764971aaa276a88d05d55982af3d1b5c34bd586e3ed18e77ccdf",
+    "experiments/promo-risk-rtx4-20261121/results/setup/weights-ip-172-31-42-209.json": "24d4313ee9465e42e72602e4e2664766bf50306f4157a1b369f5fa0e1165df74"
+  },
+  "original_dataset": "experiments/promo-risk-20261121",
+  "previous_original_results": "experiments/promo-risk-rtx4-20261121",
+  "old_input_results": "experiments/vllm-rps100-20261120"
+}

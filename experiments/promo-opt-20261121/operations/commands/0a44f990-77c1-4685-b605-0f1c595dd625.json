@@ -1,0 +1,9 @@
+{
+  "id": "0a44f990-77c1-4685-b605-0f1c595dd625",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T03:15:17.272433+00:00",
+  "script": "set -u\nsystemctl show karpo-promo-dual-v1 -p ActiveState -p SubState\nnvidia-smi --query-gpu=index,name,memory.used,utilization.gpu --format=csv,noheader\nfor peer in 172.31.42.209 172.31.37.239; do\n ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts ubuntu@$peer 'nvidia-smi --query-gpu=name,memory.used,utilization.gpu --format=csv,noheader; sudo systemctl list-units \"karpo-promo*\" --no-pager'\ndone\n"
+}

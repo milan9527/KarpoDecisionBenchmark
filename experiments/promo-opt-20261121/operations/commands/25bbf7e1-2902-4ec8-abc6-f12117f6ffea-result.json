@@ -1,0 +1,36 @@
+{
+  "CommandId": "25bbf7e1-2902-4ec8-abc6-f12117f6ffea",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:47:35.166Z",
+  "ExecutionElapsedTime": "PT0.053S",
+  "ExecutionEndDateTime": "2026-11-21T03:47:35.166Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/review-screening-dual/replica-1\n(EngineCore pid=9348) INFO 11-21 03:47:31 [kernel_warmup.py:304] JIT kernel warmup finished in 0.00s.\n(EngineCore pid=9348) INFO 11-21 03:47:31 [qwen_triton_warmup.py:405] Warming up Qwen GDN Triton kernels for model_type=qwen3_5_text.\n(EngineCore pid=9348) INFO 11-21 03:47:33 [kernel_warmup.py:578] Skipping FlashInfer autotuning for ops ('trtllm_batch_decode_mla',)\n(EngineCore pid=9348) INFO 11-21 03:47:33 [kernel_warmup.py:591] Using FlashInfer managed autotune cache (root=flashinfer default). Pass --disable-flashinfer-autotune to skip autotuning.\n2026-11-21 03:47:33,452 - INFO - autotuner.py:1121 - flashinfer.jit: [Autotuner]: Autotuning process starts ...\n2026-11-21 03:47:33,560 - INFO - autotune_cache.py:582 - flashinfer.jit: [Autotuner]: Managed autotune cache attached for this process: ManagedAutotuneCache(env_dir='/root/.cache/flashinfer/autotune/v2/5a6d87db01052e51', hits=0, misses=0)\n(EngineCore pid=9348) INFO 11-21 03:47:33 [kernel_warmup.py:476] Running FlashInfer autotune with 32768 tokens and token buckets (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 768, 1024, 1280, 1536, 1792, 2048, 2560, 3072, 3584, 4096, 8192, 16384, 32768).\n/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results/nodes/review-screening-dual/replica-0\n(EngineCore pid=9341) INFO 11-21 03:47:32 [kernel_warmup.py:304] JIT kernel warmup finished in 0.00s.\n(EngineCore pid=9341) INFO 11-21 03:47:32 [qwen_triton_warmup.py:405] Warming up Qwen GDN Triton kernels for model_type=qwen3_5_text.\n(EngineCore pid=9341) INFO 11-21 03:47:33 [kernel_warmup.py:578] Skipping FlashInfer autotuning for ops ('trtllm_batch_decode_mla',)\n(EngineCore pid=9341) INFO 11-21 03:47:33 [kernel_warmup.py:591] Using FlashInfer managed autotune cache (root=flashinfer default). Pass --disable-flashinfer-autotune to skip autotuning.\n2026-11-21 03:47:33,481 - INFO - autotuner.py:1121 - flashinfer.jit: [Autotuner]: Autotuning process starts ...\n2026-11-21 03:47:33,588 - INFO - autotune_cache.py:582 - flashinfer.jit: [Autotuner]: Managed autotune cache attached for this process: ManagedAutotuneCache(env_dir='/root/.cache/flashinfer/autotune/v2/5a6d87db01052e51', hits=0, misses=0)\n(EngineCore pid=9341) INFO 11-21 03:47:33 [kernel_warmup.py:476] Running FlashInfer autotune with 32768 tokens and token buckets (1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 768, 1024, 1280, 1536, 1792, 2048, 2560, 3072, 3584, 4096, 8192, 16384, 32768).\nindex, utilization.gpu [%], memory.used [MiB]\n0, 0 %, 11373 MiB\n1, 0 %, 11373 MiB\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "1285c500-751a-41d0-bea5-d323d3483f41",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:47:48 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "3209",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "1285c500-751a-41d0-bea5-d323d3483f41",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

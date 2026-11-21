@@ -1,0 +1,36 @@
+{
+  "CommandId": "197a8095-34f8-4788-a393-bf0dc2a123fc",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:30:05.848Z",
+  "ExecutionElapsedTime": "PT0.034S",
+  "ExecutionEndDateTime": "2026-11-21T03:30:05.848Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "inactive\nactive\n{\"stage\": \"tune\", \"result\": {\"attempts\": 360, \"valid\": 360, \"correct\": 285, \"accuracy\": 0.7916666666666666, \"failures\": 0}}\n{\"stage\": \"low-load\", \"result\": {\"target_rps\": 40, \"offered_seconds\": 10, \"scheduled_requests\": 400, \"attempts\": 400, \"valid\": 400, \"failures\": 0, \"http_statuses\": {\"200\": 400}, \"replica_counts\": {\"2\": 100, \"3\": 100, \"0\": 100, \"1\": 100}, \"correct\": 325, \"elapsed_with_drain_s\": 10.039151358999788, \"valid_rps_with_drain\": 39.844005304433665, \"steady_valid_rps\": 40.0, \"p50_ms\": 64.53342099985093, \"p95_ms\": 65.65293899984681, \"p99_ms\": 66.27422499968816, \"http_p50_ms\": 63.51925899980415, \"last_quarter_p50_ms\": 64.2709929998091, \"max_send_lag_ms\": 2.089802999762469, \"valid_within_500ms\": 400, \"backlog_slope_per_second\": 0.0, \"latency_scope\": \"Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.\", \"passes_probe\": true, \"passes_performance_acceptance\": false}}\n{\"stage\": \"probe\", \"result\": {\"target_rps\": 100, \"offered_seconds\": 30, \"scheduled_requests\": 3000, \"attempts\": 3000, \"valid\": 2568, \"failures\": 432, \"http_statuses\": {\"200\": 2568, \"429\": 432}, \"replica_counts\": {\"2\": 642, \"3\": 642, \"0\": 640, \"1\": 644}, \"correct\": 2031, \"elapsed_with_drain_s\": 33.30148743599966, \"valid_rps_with_drain\": 77.11367262304127, \"steady_valid_rps\": 77.42222222222222, \"p50_ms\": 3261.746914000014, \"p95_ms\": 3312.2088109998913, \"p99_ms\": 3321.268368999881, \"http_p50_ms\": 3261.049940000248, \"last_quarter_p50_ms\": 3302.058764999856, \"max_send_lag_ms\": 21.944369999800983, \"valid_within_500ms\": 107, \"backlog_slope_per_second\": 1.2954545454545454, \"latency_scope\": \"Scheduled arrival to complete HTTP body, conservatively including client send lateness. HTTP-only latency is also retained. Queue, encode, inference and measured network are included.\", \"passes_probe\": false, \"passes_performance_acceptance\": false}}\ncontrollers/environment.json {\"phase\": \"environment\", \"status\": \"complete\", \"completed\": [\"old-control\"], \"started_utc\": \"2026-11-21T03:19:17.751750+00:00\", \"ended_utc\": \"2026-11-21T03:26:05.946951+00:00\"}\ncontrollers/performance.json {\"phase\": \"performance\", \"status\": \"running\", \"completed\": [\"original-b4-powers\"], \"started_utc\": \"2026-11-21T03:26:11.163095+00:00\", \"current\": \"original-b4-dense\"}\nruns/old-control/status.json {\"status\": \"complete\", \"started_utc\": \"2026-11-21T03:21:13.746449+00:00\", \"dataset\": \"old\", \"protocol\": \"formal\", \"graph\": \"powers\", \"gpu_count\": 4, \"batch\": 4, \"current\": \"repeat\", \"quality_passed\": true, \"performance_passed\": true, \"pressure_quality_passed\": true, \"accepted\": true, \"ended_utc\": \"2026-11-21T03:26:04.583007+00:00\"}\nwarmup {'attempts': 80, 'valid': 80, 'accuracy': 0.925, 'failures': 0}\nquality {'attempts': 240, 'valid': 240, 'accuracy': 0.9708333333333333, 'failures': 0}\nlow-load {'attempts': 800, 'valid': 800, 'steady_valid_rps': 40.0, 'p50_ms': 45.965729000272404, 'failures': 0}\nprobe {'attempts': 2000, 'valid': 2000, 'steady_valid_rps': 100.0, 'p50_ms': 44.994400999712525, 'failures': 0}\nconfirm {'attempts': 12000, 'valid': 12000, 'steady_valid_rps': 100.0, 'p50_ms': 44.67414200053099, 'failures': 0}\nrepeat {'attempts': 12000, 'valid': 12000, 'steady_valid_rps': 100.0, 'p50_ms': 44.63402999999744, 'failures': 0}\nruns/original-b4-powers/status.json {\"status\": \"complete\", \"started_utc\": \"2026-11-21T03:27:50.315205+00:00\", \"dataset\": \"original\", \"protocol\": \"scan\", \"graph\": \"powers\", \"gpu_count\": 4, \"batch\": 4, \"current\": \"probe\", \"ended_utc\": \"2026-11-21T03:28:43.938443+00:00\"}\ntune {'attempts': 360, 'valid': 360, 'accuracy': 0.7916666666666666, 'failures': 0}\nlow-load {'attempts': 400, 'valid': 400, 'steady_valid_rps': 40.0, 'p50_ms': 64.53342099985093, 'failures': 0}\nprobe {'attempts': 3000, 'valid': 2568, 'steady_valid_rps': 77.42222222222222, 'p50_ms': 3261.746914000014, 'failures': 432}\nnodes/original-b4-powers-peer2/status.json {\"status\": \"ready\", \"started_utc\": \"2026-11-21T03:26:18.491680+00:00\", \"replica_ids\": [2], \"ready_utc\": \"2026-11-21T03:27:16.535348+00:00\"}\nnodes/original-b4-powers-dual/status.json {\"status\": \"stopped\", \"started_utc\": \"2026-11-21T03:26:18.781138+00:00\", \"replica_ids\": [0, 1], \"ready_utc\": \"2026-11-21T03:27:30.848512+00:00\", \"ended_utc\": \"2026-11-21T03:28:46.851493+00:00\"}\nnodes/original-b4-dense-dual/status.json {\"status\": \"starting\", \"started_utc\": \"2026-11-21T03:28:52.562162+00:00\", \"replica_ids\": [0, 1]}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "41acc146-0566-4200-aac4-673f6805c1a6",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:30:12 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "5401",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "41acc146-0566-4200-aac4-673f6805c1a6",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "CommandId": "237b2732-7aa3-457d-af9d-d7f54e304b1f",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T03:19:16.169Z",
+  "ExecutionElapsedTime": "PT1.417S",
+  "ExecutionEndDateTime": "2026-11-21T03:19:17.169Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-opt-environment.service; invocation ID: 93d1d834fd7e4d7abc30b1b01a07b5a9\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "e1541083-75b4-4e88-b131-619eca6bd821",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 03:19:30 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "679",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "e1541083-75b4-4e88-b131-619eca6bd821",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

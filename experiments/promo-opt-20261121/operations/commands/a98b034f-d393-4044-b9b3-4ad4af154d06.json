@@ -1,0 +1,9 @@
+{
+  "id": "a98b034f-d393-4044-b9b3-4ad4af154d06",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T03:19:30.521678+00:00",
+  "script": "set -eu\nsystemctl is-active karpo-opt-environment karpo-opt-performance || true\njournalctl -u karpo-opt-environment -u karpo-opt-performance -n 8 --no-pager -o cat\n/opt/karpo/venv-vllm034/bin/python - <<'PY'\nimport json,pathlib\np=pathlib.Path('/opt/karpo/promo-opt-20261121/experiments/promo-opt-20261121/results')\nfor f in sorted(p.glob('controllers/*.json'))+sorted(p.glob('runs/*/status.json'))+sorted(p.glob('nodes/*/status.json')):\n x=json.loads(f.read_text());print(str(f.relative_to(p)),json.dumps({k:v for k,v in x.items() if k not in ['stages']}))\n for s in x.get('stages',[]):\n  r=s['result'];print(s['name'],{k:r[k] for k in ['attempts','valid','accuracy','steady_valid_rps','p50_ms','failures'] if k in r})\nPY\n"
+}

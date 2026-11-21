@@ -1,0 +1,15 @@
+{
+  "files": {
+    "scripts/promo_opt_calibration.py": "767eb84b73051fb16dbb593ab07807dac7d372d4754324f677507727ea4c2c38",
+    "scripts/promo_opt_calibrated_benchmark.py": "57aacdd9b6127b8fbdce7837989992d3afa08a07018a1bffe824094a2f7076ad",
+    "scripts/promo_opt_calibrated_proxy.py": "f9c066975f1cf97a8ee647e06ecec4799c41f73e1bd44bb04d92b7fd25493bbd",
+    "scripts/promo_opt_calibrated_runtime.py": "bc957a2094947c690825fd8e9ae76718a8fc7d01c9faf0609bf3751fc8624a8a",
+    "experiments/promo-opt-20261121/review-calibration-v1.json": "e97fac5f66b13ba91fc866169acfbc7205dac3eedd60b2361dd14a8a55697eea",
+    "tests/test_promo_opt_calibration.py": "61a3bd3bbd7badf05b4033354f9afb65d11ba772c2d5295023fad716b82342e6"
+  },
+  "batch": 4,
+  "graph": "powers",
+  "input": "review-baseline; original 200 features and original prompt",
+  "decision": "Raw Karpo answers retained; separate review-threshold-v1 decision",
+  "threshold_selection": "Frozen tune-only calibration before fresh quality model calls"
+}

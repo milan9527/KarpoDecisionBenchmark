@@ -1,0 +1,27 @@
+{
+  "utc": "2026-11-21T03:44:48.252475+00:00",
+  "reason": "User: batch不要调了; stop batch tuning and continue review optimization at batch 4 / powers",
+  "previous_controller_state": {
+    "phase": "performance",
+    "status": "running",
+    "completed": [
+      "original-b4-powers",
+      "original-b4-dense",
+      "original-b8-powers",
+      "original-b8-dense"
+    ],
+    "started_utc": "2026-11-21T03:26:11.163095+00:00",
+    "current": "original-b16-powers"
+  },
+  "stopped_fleet": {
+    "name": "original-b16-powers",
+    "dataset": "original",
+    "batch": 16,
+    "graph": "powers",
+    "units": {
+      "dual": "karpo-opt-original-b16-powers-dual",
+      "peer2": "karpo-opt-original-b16-powers-peer2",
+      "peer3": "karpo-opt-original-b16-powers-peer3"
+    }
+  }
+}
