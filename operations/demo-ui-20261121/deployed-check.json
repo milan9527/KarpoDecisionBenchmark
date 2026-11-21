@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-11-21T14:45:04.577312+00:00",
+  "url": "https://deq0avneozfys.cloudfront.net",
+  "frontend_matches": true,
+  "cloud_only": true,
+  "single_backend_label": true,
+  "risk_sop_datasets_load": true,
+  "history_loads": true,
+  "mobile_no_overflow": true,
+  "browser_errors": [],
+  "gpu_or_test_mutations": [],
+  "cache_invalidation_status": "Completed"
+}

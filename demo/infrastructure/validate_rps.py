@@ -1,7 +1,8 @@
-"""Exercise the deployed fixed-RPS browser, original datasets, and real GPUs.
+"""Legacy browser fixed-RPS validation, retained with its historical evidence.
 
 Each accepted workload runs twice at 100 RPS for 120 seconds. Reports include
 every attempt; full exports are gzip compressed. Only this test's leases end.
+The current cloud-only UI is validated by validate_cloud.py.
 """
 import asyncio
 import argparse
@@ -74,6 +75,8 @@ async def main():
     parser.add_argument("--groups", nargs="+", choices=("risk", "sop"), default=["risk", "sop"])
     parser.add_argument("--resume", action="store_true", help="Append to existing evidence; retain previous runs")
     args = parser.parse_args()
+    if '<option value="browser">' not in (ROOT / "demo/frontend/index.html").read_text():
+        parser.error("浏览器压测入口已移除；当前多场景测试请使用 validate_cloud.py。")
     OUT.mkdir(parents=True, exist_ok=True)
     resources = json.loads((ROOT / "operations/demo-20261121/resources.json").read_text())
     base = "https://" + resources["domain"]

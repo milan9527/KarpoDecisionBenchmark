@@ -1,0 +1,12 @@
+{
+  "scope": "Isolated browser UI replay using an archived model response; no live GPU inference or performance claim",
+  "single_backend_timing_and_history": true,
+  "missing_timing_no_browser_fallback": true,
+  "failure_latency_unavailable": true,
+  "cloud_submission_only": true,
+  "browser_load_client_not_loaded": true,
+  "scenario_switch": true,
+  "mobile_no_overflow": true,
+  "page_errors": [],
+  "real_gpu_start_requests": 0
+}

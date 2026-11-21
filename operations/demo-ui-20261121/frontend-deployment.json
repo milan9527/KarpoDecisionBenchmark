@@ -1,0 +1,9 @@
+{
+  "distribution": "E10QP8URDDOPBE",
+  "invalidation": "I7Z38LNGYGAW3D7QG5L4S1V0U1",
+  "frontend_sha256": {
+    "app.js": "0d69c93d412476b80bd5d9b32ece89b9e560f5c21259d7b7209e25268623029e",
+    "history.js": "1c724348c39d1d75a9b13b567299066e3808c4aba9506042ae5fd84e92f1ec10",
+    "index.html": "3ddcf4734f2c6450259a9a157d5f4d51e664cbf9df6e41391fe61fdf14e42634"
+  }
+}

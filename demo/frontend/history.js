@@ -77,7 +77,7 @@ const HistoryUI = (() => {
       const outcome=m.passes_performance_acceptance===true?"性能通过":m.passes_performance_acceptance===false?"性能未通过 / 非正式对照":"未统一判定";
       const values=[r.started_at?.replace("T"," ").slice(0,19)||"时间未记录",r.title,
         r.scenario==="risk"?"风控":r.scenario==="sop"?"SOP":"综合",
-        `${kinds[r.kind]||r.kind} · ${statuses[r.status]||r.status}`,
+        `${kinds[r.kind]||r.kind}${r.kind==="single"?(r.settings?.latency_scope==="api-service"?" · 后端计时":" · 浏览器计时"):""} · ${statuses[r.status]||r.status}`,
         `${m.successful??"—"} / ${m.completed??"—"}`,
         number(m.steady_valid_rps??m.successful_rps),number(m.p50_ms),
         m.accuracy==null?"—":(m.accuracy*100).toFixed(2)+"%",outcome];

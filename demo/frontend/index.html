@@ -7,7 +7,6 @@
   <title>Karpo · 实时决策演示</title>
   <link rel="stylesheet" href="style.css">
   <script src="benchmark.js" defer></script>
-  <script src="rate-client.js" defer></script>
   <script src="history.js" defer></script>
   <script src="cloud-client.js" defer></script>
   <script src="app.js" defer></script>
@@ -49,7 +48,8 @@
         <div id="empty" class="empty"><div class="empty-symbol">↗</div><h3>下一步，由模型判断。</h3><p>选择示例，确认 GPU 就绪后运行。<br>这里将展示实际动作、概率与响应时间。</p></div>
         <div id="result" class="hidden">
           <div class="decision"><span id="decision-label">最终动作</span><h3 id="decision"></h3><p id="decision-description"></p></div>
-          <div class="metrics"><div><span>浏览器往返</span><strong id="latency"></strong></div><div><span>输入 tokens</span><strong id="tokens"></strong></div><div><span>GPU 副本</span><strong id="replica"></strong></div></div>
+          <div class="metrics"><div><span>后端服务端到端延迟</span><strong id="latency"></strong></div><div><span>输入 tokens</span><strong id="tokens"></strong></div><div><span>GPU 副本</span><strong id="replica"></strong></div></div>
+          <p id="single-latency-scope" class="subtle">计时：API 推理处理开始 → GPU → 最终决策就绪，包含服务端排队、GPU 往返、推理及复核。</p>
           <div id="calibration" class="calibration hidden"></div>
           <h4>候选概率 <span id="probability-note"></span></h4>
           <div id="probabilities"></div>
@@ -59,7 +59,7 @@
     </div>
     <section class="panel benchmark-panel" aria-labelledby="benchmark-title">
       <div class="section-heading"><div><p class="eyebrow">03 / PERFORMANCE</p><h2 id="benchmark-title">固定 RPS · 多场景测试</h2></div><span id="bench-phase" class="badge neutral">尚未测试</span></div>
-      <p class="bench-description">正式测试默认由 AWS 内的后台进程每秒发送100个完整请求，持续120秒。浏览器负责控制与查看结果，刷新或断网不影响云端测试。</p>
+      <p class="bench-description">多场景测试统一在 AWS 云端执行，默认每秒发送100个完整请求，持续120秒。浏览器负责控制与查看结果，刷新或断网不影响云端测试。</p>
       <div class="bench-layout">
         <div>
           <div class="question-heading"><h3>本轮问题</h3><button id="bench-add" class="quiet" disabled>加入当前编辑问题</button></div>
@@ -76,8 +76,7 @@
           <p class="subtle">历史输入、规则和候选顺序完整保留；每个问题集还可加入20道自定义问题。参考答案仅用于评分，不发给模型。</p>
         </div>
         <form id="bench-form">
-          <label for="bench-execution">测试执行位置</label>
-          <select id="bench-execution" class="dataset-select"><option value="cloud">AWS 云端正式压测（推荐）</option><option value="browser">当前浏览器 · 公网体验测试</option></select>
+          <p id="bench-execution" class="badge neutral">AWS 云端执行</p>
           <p id="bench-scope" class="subtle">云端端到端：AWS压测进程 → 公网CloudFront → ALB → API → GPU → 完整响应。包含发送滞后与排队，不包含你的浏览器网络。</p>
           <div class="bench-controls">
             <div><label for="bench-rate">每秒请求数 · RPS</label><input id="bench-rate" type="number" min="1" max="100" step="1" value="100" required></div>
@@ -109,7 +108,7 @@
         <div><span>模型阶段 P50</span><strong id="bench-model-p50">—</strong><small>ms · 模型等待及计算</small></div>
       </div>
       <p id="bench-verdict" class="subtle">等待测试结果。</p>
-      <p class="subtle">端到端延迟从所选执行位置的计划发送时刻到完整响应解析结束。云端与浏览器结果分别标注，不能互相代替。分位数统计有效响应，失败计入成功率和全量有效正确率；成功响应正确率另外统计。每条请求最多等待65秒，不自动重试。</p>
+      <p class="subtle">端到端延迟从 AWS 压测进程的计划发送时刻到完整响应解析结束，包含发送滞后、网络、服务端排队与推理。分位数统计有效响应，失败计入成功率和全量有效正确率；成功响应正确率另外统计。每条请求最多等待65秒，不自动重试。</p>
       <div class="question-heading"><h3>逐条结果 <span id="bench-result-note">包含问题、回答与耗时</span></h3><button id="bench-export" class="quiet" disabled>导出完整 JSON</button></div>
       <div class="table-scroll"><table class="bench-table">
         <thead><tr><th>序号</th><th>问题</th><th>结果 / 错误</th><th>端到端耗时</th><th>GPU 副本</th><th>详情</th></tr></thead>
@@ -123,7 +122,7 @@
       <p id="history-sync" class="subtle">登录后加载历史记录。</p><button id="history-retry" class="question-edit">重试同步本机待保存记录</button>
       <div class="history-filters">
         <select id="history-scenario" aria-label="历史场景"><option value="">全部场景</option><option value="risk">风控</option><option value="sop">SOP</option></select>
-        <select id="history-origin" aria-label="历史来源"><option value="">全部来源</option><option value="cloud">AWS 云端测试</option><option value="demo">浏览器测试</option><option value="import">导入的历史实验</option></select>
+        <select id="history-origin" aria-label="历史来源"><option value="">全部来源</option><option value="cloud">AWS 云端测试</option><option value="demo">单次决策 / 旧浏览器测试</option><option value="import">导入的历史实验</option></select>
         <input id="history-search" type="search" aria-label="搜索测试记录" placeholder="搜索实验、问题集、日期或编号">
       </div>
       <p id="history-count" class="subtle"></p><p id="history-error" class="error hidden" role="alert"></p>

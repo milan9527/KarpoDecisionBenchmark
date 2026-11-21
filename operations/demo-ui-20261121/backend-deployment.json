@@ -1,0 +1,9 @@
+{
+  "at": "20261121T144439Z",
+  "instance": "i-04aa43d75617e765b",
+  "region": "us-east-2",
+  "command": "27295134-a8e1-420e-8c09-325401c6e758",
+  "history_sha256": "3185e1f2482054e499faf8b93d93ecab96196c2c71149087c1df458c8e8c6e16",
+  "status": "Success",
+  "output": "{\"history_sha256\": \"3185e1f2482054e499faf8b93d93ecab96196c2c71149087c1df458c8e8c6e16\", \"backup\": \"/opt/karpo-demo/deploy-backups/20261121T144439Z\"}\nactive\nactive\n"
+}

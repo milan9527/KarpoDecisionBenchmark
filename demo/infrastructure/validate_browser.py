@@ -100,10 +100,11 @@ async def main(stopped_only=False):
                     assert len(request["questions"]["action"]["criteria"]) == 200
                 record = {"scenario": group, "example": catalog[group]["examples"][index]["title"],
                           "request": request, "response": result, "http_status": response.status,
-                          "browser_latency_label": await page.locator("#latency").text_content(),
+                          "backend_latency_label": await page.locator("#latency").text_content(),
                           "expected_action": action, "passed": True}
+                assert record["backend_latency_label"] == f'{result["demo"]["service_ms"]:.2f} ms'
                 report["cases"].append(record)
-                print(group, record["example"], actual, record["browser_latency_label"], flush=True)
+                print(group, record["example"], actual, record["backend_latency_label"], flush=True)
                 if index == 0:
                     await page.screenshot(path=str(OUT / f"frontend-{group}.png"), full_page=True)
             invalid = json.loads(json.dumps(catalog[group]["examples"][0]["request"]))

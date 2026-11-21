@@ -58,7 +58,11 @@ class History:
                "origin": "cloud" if cloud else "demo", "owner": owner, "settings": settings,
                "metrics": {}, "measurement": (
                    "AWS us-east-2压测进程 → 公网CloudFront → ALB → API → GPU → 完整响应；包含发送滞后与所有排队，不包含用户浏览器网络。"
-                   if cloud else "浏览器报告；端到端含排队，失败保留"),
+                   if cloud else (
+                       "后端服务端到端（demo.service_ms）：API推理处理开始 → 服务端排队 → GPU往返与推理 → 复核及结果就绪；"
+                       "不含浏览器网络、CloudFront/ALB入口传输、鉴权与输入校验、最终响应序列化及下载。"
+                       if value["kind"] == "single" and settings.get("latency_scope") == "api-service"
+                       else "浏览器报告；端到端含排队，失败保留")),
                "storage": "chunks"}
         try:
             self.table.put_item(Item={"pk": "runs", "sk": run, "document": packed(doc)},

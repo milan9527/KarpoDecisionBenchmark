@@ -65,7 +65,8 @@ async def main():
                 response = await context.request.get(base + "/" + name)
                 assert await response.body() == (ROOT / "demo/frontend" / name).read_bytes(), name
             await page.goto(base, wait_until="networkidle")
-            await expect(page.locator("#bench-execution")).to_have_value("cloud")
+            await expect(page.locator("#bench-execution")).to_have_text("AWS 云端执行")
+            assert await page.locator("select#bench-execution").count() == 0
             while await page.locator("#bench-run").is_disabled():
                 status = await (await context.request.get(base + "/api/status")).json()
                 state = status["groups"]["risk"]
