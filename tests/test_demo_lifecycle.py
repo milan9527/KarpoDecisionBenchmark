@@ -5,7 +5,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "demo/backend"))
-from state import Conflict, acquire, activity, begin_request, claim_stop, fresh, release
+from state import Capacity, Conflict, Store, acquire, activity, begin_request, claim_stop, fresh, release
 from watchdog import stop_group
 
 
@@ -68,6 +68,39 @@ class LifecycleTests(unittest.TestCase):
         value["requests"] = {"r1": 1700}
         self.assertIsNone(claim_stop(value, 1601))
         self.assertEqual(claim_stop(value, 1700)["phase"], "stopping")
+
+    def test_one_hundred_requests_are_allowed_and_the_next_is_rejected(self):
+        value = self.ready()
+        for i in range(100):
+            value = begin_request(value, "alice", 1200, str(i))
+        self.assertEqual(len(value["requests"]), 100)
+        with self.assertRaises(Capacity):
+            begin_request(value, "alice", 1200, "overflow")
+        value["requests"].pop("0")
+        self.assertEqual(len(begin_request(value, "alice", 1200, "replacement")["requests"]), 100)
+
+    def test_expired_requests_do_not_consume_concurrency_slots(self):
+        value = self.ready()
+        value["requests"] = {str(i): 1200 for i in range(100)}
+        value = begin_request(value, "alice", 1200, "new")
+        self.assertEqual(value["requests"], {"new": 1350})
+
+    def test_concurrent_local_writers_preserve_all_request_leases(self):
+        from concurrent.futures import ThreadPoolExecutor
+        import time
+        class Table:
+            value = self.ready()
+            def get_item(self, **kwargs):
+                result = copy.deepcopy(self.value)
+                time.sleep(.001)
+                return {"Item": result}
+            def put_item(self, Item, **kwargs):
+                self.value = copy.deepcopy(Item)
+        store = Store(Table())
+        with ThreadPoolExecutor(max_workers=20) as pool:
+            list(pool.map(lambda i: store.update("risk", lambda old: begin_request(old, "alice", 1200, str(i))), range(100)))
+        self.assertEqual(len(store.get("risk")["requests"]), 100)
+        self.assertEqual(store.get("risk")["revision"], 100)
 
     def test_startup_has_a_bounded_cleanup_deadline(self):
         value = acquire(fresh("sop"), "alice", 1000, "g1")

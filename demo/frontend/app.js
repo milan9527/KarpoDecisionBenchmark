@@ -3,6 +3,8 @@ const labels = {allow:"放行",review:"复核",deny:"拒绝",deduplicate:"去重
 let group = "risk", catalog, current, statusData, authenticated = false, running = false;
 let lastInteraction = Date.now(), lastHeartbeat = 0, serverOffset = 0;
 const responses = {};
+const benchmarkQuestions = {}, benchmarkRuns = {};
+let benchmarkRunner = null, benchmarkRenderTimer;
 
 function error(id, message = "") {
   $(id).textContent = message;
@@ -13,19 +15,21 @@ function toast(message) {
   $("toast").classList.remove("hidden");
   setTimeout(() => $("toast").classList.add("hidden"), 4500);
 }
-async function api(path, body) {
+async function api(path, body, options = {}) {
   const response = await fetch("/api/" + path, {
     method: body === undefined ? "GET" : "POST", credentials: "same-origin",
     headers: body === undefined ? {} : {"Content-Type":"application/json"},
-    body: body === undefined ? undefined : JSON.stringify(body), cache:"no-store"
+    body: body === undefined ? undefined : JSON.stringify(body), cache:"no-store", ...options
   });
   let value;
-  try { value = await response.json(); } catch { throw new Error("服务正在准备，请稍后重试。"); }
+  try { value = await response.json(); } catch {
+    throw Object.assign(new Error("服务正在准备，请稍后重试。"), {status:response.status});
+  }
   if (response.status === 401 && path !== "auth") {
     authenticated = false;
     if (!$("login").open) $("login").showModal();
   }
-  if (!response.ok) throw new Error(typeof value.detail === "string" ? value.detail : "请求未完成，请检查输入后重试。");
+  if (!response.ok) throw Object.assign(new Error(typeof value.detail === "string" ? value.detail : "请求未完成，请检查输入后重试。"), {status:response.status});
   return value;
 }
 function stateFromRequest(request) {
@@ -43,6 +47,7 @@ function editedRequest() {
   return request;
 }
 function chooseExample(example) {
+  if (running) return;
   current = example;
   $("state").value = JSON.stringify(stateFromRequest(example.request), null, 2);
   $("full-request").textContent = JSON.stringify(example.request, null, 2);
@@ -67,6 +72,11 @@ function selectGroup(next) {
     $("examples").append(button);
   }
   chooseExample(catalog[group].examples[0]);
+  if (!benchmarkQuestions[group]) {
+    benchmarkQuestions[group] = catalog[group].examples.map(q => ({...structuredClone(q), selected:true}));
+  }
+  benchmarkRunner = benchmarkRuns[group]?.runner || null;
+  renderBenchmarkQuestions(); renderBenchmark();
   if (responses[group]) showResult(...responses[group]);
   else { $("result").classList.add("hidden"); $("empty").classList.remove("hidden"); $("response-source").textContent = "等待请求"; }
   renderStatus();
@@ -94,7 +104,10 @@ function renderStatus() {
   $("start").textContent = state.phase === "starting" && state.session_active ? "正在启动…" : "启动演示 ↗";
   $("infer").disabled = running || state.phase !== "ready" || !state.session_active;
   $("infer").textContent = running ? "GPU 正在推理…" : state.phase === "ready" && state.session_active ? "运行实时决策 ↗" : "等待 GPU 就绪";
-  $("end-all").disabled = !authenticated || !Object.values(statusData.groups).some(s => s.session_active);
+  $("end-all").disabled = running || !authenticated || !Object.values(statusData.groups).some(s => s.session_active);
+  $("state").disabled = running;
+  document.querySelectorAll(".tab, #examples button").forEach(button => button.disabled = running);
+  renderBenchmarkControls();
   error("status-error", state.error || "");
   $("hosts").replaceChildren();
   for (const host of state.hosts) {
@@ -156,6 +169,140 @@ function showResult(response, elapsed, request) {
   }
   $("full-response").textContent = JSON.stringify(response,null,2);
 }
+
+function renderBenchmarkQuestions() {
+  $("bench-questions").replaceChildren();
+  for (const question of benchmarkQuestions[group] || []) {
+    const row = document.createElement("div"), label = document.createElement("label");
+    row.className = "question-row";
+    const checkbox = document.createElement("input"), text = document.createElement("span");
+    checkbox.type = "checkbox"; checkbox.checked = question.selected;
+    checkbox.addEventListener("change", () => { question.selected = checkbox.checked; renderBenchmarkControls(); });
+    text.textContent = question.title; label.append(checkbox,text); row.append(label);
+    const edit = document.createElement("button");
+    edit.type = "button"; edit.className = "question-edit"; edit.textContent = "编辑";
+    edit.addEventListener("click", () => { chooseExample(question); $("state").focus(); });
+    row.append(edit);
+    if (question.custom) {
+      const remove = document.createElement("button");
+      remove.type = "button"; remove.className = "question-edit"; remove.textContent = "移除";
+      remove.setAttribute("aria-label", "移除" + question.title);
+      remove.addEventListener("click", () => {
+        benchmarkQuestions[group] = benchmarkQuestions[group].filter(q => q !== question);
+        renderBenchmarkQuestions(); renderBenchmarkControls();
+      });
+      row.append(remove);
+    }
+    $("bench-questions").append(row);
+  }
+}
+function renderBenchmarkControls() {
+  const state = statusData?.groups[group];
+  const ready = authenticated && state?.phase === "ready" && state.session_active;
+  $("bench-run").disabled = running || !ready || !(benchmarkQuestions[group] || []).some(q => q.selected);
+  $("bench-run").textContent = running && benchmarkRunner && !benchmarkRunner.finished ? "测试进行中…" : "开始并发测试 ↗";
+  $("bench-stop").disabled = !running || !benchmarkRunner || benchmarkRunner.finished || benchmarkRunner.stopRequested;
+  $("bench-add").disabled = running || !authenticated || !current || (benchmarkQuestions[group]?.length || 0) >= 20;
+  $("bench-export").disabled = !benchmarkRunner?.finished;
+  for (const id of ["bench-concurrency","bench-total"]) $(id).disabled = running;
+  $("bench-questions").querySelectorAll("input,button").forEach(control => control.disabled = running);
+}
+function renderBenchmark() {
+  const runner = benchmarkRunner, m = runner?.metrics();
+  const number = value => value == null ? "—" : value.toFixed(1);
+  $("bench-phase").textContent = !runner ? "尚未测试" : runner.finished
+    ? `${runner.stopRequested ? "已停止" : "已完成"} · ${runner.concurrency} 并发`
+    : runner.stopRequested ? "等待在途请求完成" : "正在测试";
+  $("bench-progress-label").textContent = m
+    ? `完成 ${m.completed} / ${m.planned} · 在途 ${m.active}` + (runner.finished && m.unsent ? ` · 未发送 ${m.unsent}` : "")
+    : "完成 0 / 0 · 在途 0";
+  $("bench-elapsed").textContent = `用时 ${((m?.duration_ms || 0) / 1000).toFixed(1)} s`;
+  $("bench-progress").max = m?.planned || 1; $("bench-progress").value = m?.completed || 0;
+  $("bench-rps").textContent = number(m?.successful_rps);
+  $("bench-success").textContent = m?.success_rate == null ? "—" : (m.success_rate * 100).toFixed(1) + "%";
+  $("bench-errors").textContent = m ? `${m.successful} 成功 / ${m.failed} 失败` : "尚无请求";
+  for (const metric of ["p50","p95","p99","mean","max"]) $("bench-"+metric).textContent = number(m?.[metric+"_ms"]);
+  $("bench-peak").textContent = m ? String(m.peak_concurrency) : "—";
+  const records = runner?.records || [];
+  $("bench-result-note").textContent = records.length > 100 ? `显示最近100条 / 共${records.length}条，导出包含全部` : `共${records.length}条`;
+  $("bench-results").replaceChildren();
+  if (!records.length) {
+    const row = document.createElement("tr"), cell = document.createElement("td");
+    cell.colSpan = 6; cell.textContent = runner ? "正在等待完整响应…" : "完成测试后在此查看每条问题的实际回答。";
+    row.append(cell); $("bench-results").append(row);
+  }
+  for (const record of records.slice(-100).reverse()) {
+    const row = document.createElement("tr"), result = record.response;
+    const choice = result?.decision?.action || result?.answers?.action?.choice;
+    const values = [record.index, record.title,
+      record.ok ? (labels[choice] || choice || "成功") : `${record.status || "网络错误"} · ${record.error}`,
+      number(record.elapsed_ms) + " ms", record.ok ? "#" + result.demo.replica : "—"];
+    for (const value of values) {
+      const cell = document.createElement("td"); cell.textContent = value; row.append(cell);
+    }
+    row.className = record.ok ? "request-success" : "request-failure";
+    const cell = document.createElement("td"), button = document.createElement("button");
+    button.className = "question-edit"; button.textContent = "输入 / 回答";
+    button.addEventListener("click", () => {
+      $("bench-detail-json").textContent = JSON.stringify({
+        request:runner.questions[record.question_index].request, ...record,
+      },null,2);
+      $("bench-detail").classList.remove("hidden"); $("bench-detail").open = true;
+      $("bench-detail").scrollIntoView({behavior:"smooth",block:"nearest"});
+    });
+    cell.append(button); row.append(cell); $("bench-results").append(row);
+  }
+  renderBenchmarkControls();
+}
+function scheduleBenchmarkRender() {
+  if (benchmarkRunner?.finished) {
+    clearTimeout(benchmarkRenderTimer); benchmarkRenderTimer = null; renderBenchmark();
+  } else if (!benchmarkRenderTimer) {
+    benchmarkRenderTimer = setTimeout(() => { benchmarkRenderTimer = null; renderBenchmark(); }, 100);
+  }
+}
+$("bench-add").addEventListener("click", () => {
+  try {
+    if ((benchmarkQuestions[group]?.length || 0) >= 20) throw new Error("最多保留20道问题，请先移除部分自定义问题。");
+    const request = editedRequest(), index = benchmarkQuestions[group].filter(q => q.custom).length + 1;
+    benchmarkQuestions[group].push({id:"custom-"+Date.now(), title:current.title + `（编辑${index}）`,
+      request, selected:true, custom:true});
+    renderBenchmarkQuestions(); renderBenchmarkControls(); error("bench-error");
+    toast("当前输入已作为独立问题加入测试。");
+  } catch(e) { error("bench-error",e.message); }
+});
+$("bench-concurrency").addEventListener("change", () => {
+  $("bench-total").min = $("bench-concurrency").value;
+  if (Number($("bench-total").value) < Number($("bench-concurrency").value)) $("bench-total").value = $("bench-concurrency").value;
+});
+$("bench-form").addEventListener("submit", async event => {
+  event.preventDefault(); if (running) return;
+  error("bench-error");
+  const scenario = group;
+  try {
+    const questions = (benchmarkQuestions[group] || []).filter(q => q.selected).map(({id,title,request}) => ({id,title,request}));
+    benchmarkRunner = new KarpoBenchmark.Runner({
+      questions, concurrency:Number($("bench-concurrency").value), total:Number($("bench-total").value),
+      send:request => api(scenario+"/infer", request, {signal:AbortSignal.timeout(65000)}),
+      onUpdate:scheduleBenchmarkRender,
+    });
+    benchmarkRuns[group] = {runner:benchmarkRunner, started_at:new Date().toISOString()};
+    $("bench-detail").classList.add("hidden"); $("bench-detail").open = false;
+    running = true; lastInteraction = Date.now(); renderStatus(); renderBenchmark();
+    await benchmarkRunner.run();
+    toast(benchmarkRunner.stopRequested ? "已停止发送，在途请求全部完成。" : "并发测试完成，可查看逐条结果或导出。");
+  } catch(e) { error("bench-error",e.message); }
+  finally { running = false; renderBenchmark(); await refresh(); }
+});
+$("bench-stop").addEventListener("click", () => benchmarkRunner?.stop());
+$("bench-export").addEventListener("click", () => {
+  if (!benchmarkRunner?.finished) return;
+  const report = {scenario:group, started_at:benchmarkRuns[group].started_at, ...benchmarkRunner.report()};
+  const url = URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:"application/json"}));
+  const link = document.createElement("a");
+  link.href = url; link.download = `karpo-${group}-${report.started_at.replace(/[:.]/g,"-")}.json`;
+  link.click(); setTimeout(() => URL.revokeObjectURL(url),1000);
+});
 $("state").addEventListener("input", () => {
   try { $("full-request").textContent = JSON.stringify(editedRequest(),null,2); error("input-error"); }
   catch { error("input-error","JSON格式尚未完整，请检查后再运行。"); }
@@ -199,6 +346,7 @@ $("infer").addEventListener("click", async () => {
 document.querySelectorAll(".tab").forEach(tab => tab.addEventListener("click",() => catalog && selectGroup(tab.dataset.group)));
 for (const event of ["pointerdown","keydown","input"]) document.addEventListener(event,() => lastInteraction=Date.now(),{passive:true});
 setInterval(refresh,5000); setInterval(countdown,1000);
+setInterval(() => { if (benchmarkRunner?.begun && !benchmarkRunner.finished) scheduleBenchmarkRender(); },1000);
 setInterval(async () => {
   if (!authenticated || document.visibilityState !== "visible" || !statusData ||
       lastInteraction <= lastHeartbeat || !statusData.groups[group].session_active ||

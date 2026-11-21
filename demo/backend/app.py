@@ -18,8 +18,9 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 import httpx
 
-from state import Conflict, Store, acquire, activity, release, begin_request
+from state import MAX_INFLIGHT, Capacity, Conflict, Store, acquire, activity, release, begin_request
 from auth import COOKIE_SECONDS, LoginLimiter, issue_session, read_session, verify_credentials, viewer_ip
+from routing import ReplicaPool
 
 ROOT = Path(os.environ.get("DEMO_ROOT", "/opt/karpo-demo"))
 CONFIG = json.loads((ROOT / "demo/config.json").read_text())
@@ -34,7 +35,8 @@ certificate.write_text(secret["node_cert"])
 tls = ssl.create_default_context(cafile=str(certificate))
 tls.check_hostname = False  # Trust only the private demo certificate; node addresses change at restart.
 catalog = json.loads((ROOT / "demo/catalog.json").read_text())
-busy = {}
+replicas = ReplicaPool()
+pending = {group: 0 for group in CONFIG["groups"]}
 login_limiter = LoginLimiter()
 password_workers = asyncio.Semaphore(2)
 quitting = threading.Event()
@@ -179,6 +181,11 @@ async def conflict(request, error):
     return JSONResponse({"detail": str(error)}, status_code=409)
 
 
+@app.exception_handler(Capacity)
+async def capacity(request, error):
+    return JSONResponse({"detail": str(error)}, status_code=429, headers={"Retry-After": "1"})
+
+
 @app.middleware("http")
 async def protect(request, call_next):
     if request.method == "POST":
@@ -255,7 +262,7 @@ def status(request: Request):
         groups[group].update(gpu_count=spec["gpu_count"], gpu=spec["gpu"], title=spec["title"],
             session_active=value["sessions"].get(session, 0) > now,
             hosts=[{k: v for k, v in h.items() if k != "address"} for h in value["hosts"]])
-    return {"now": now, "idle_seconds": 600, "groups": groups}
+    return {"now": now, "idle_seconds": 600, "max_concurrency": MAX_INFLIGHT, "groups": groups}
 
 
 @app.post("/api/{group}/start")
@@ -314,12 +321,17 @@ async def infer(group: str, request: Request):
     group_name(group)
     payload = await request.json()
     validate_input(group, payload)
+    if pending[group] >= MAX_INFLIGHT:
+        raise Capacity("当前场景已达到100个在途请求，请稍后重试。")
+    pending[group] += 1
     request_id = uuid.uuid4().hex
-    value = await asyncio.to_thread(store.update, group, lambda old: begin_request(
-        old, session, int(time.time()), request_id))
     begin = time.perf_counter()
     selected = None
+    registered = False
     try:
+        value = await asyncio.to_thread(store.update, group, lambda old: begin_request(
+            old, session, int(time.time()), request_id))
+        registered = True
         if value.get("checked_at", 0) < time.time() - 60:
             raise HTTPException(503, "GPU健康状态已过期，正在重新确认")
         targets = []
@@ -328,9 +340,7 @@ async def infer(group: str, request: Request):
             if host["ready"] != len(spec["replicas"]):
                 raise HTTPException(503, "GPU尚未全部就绪")
             targets.extend((host["address"], local, replica) for local, replica in enumerate(spec["replicas"]))
-        selected = min(targets, key=lambda t: busy.get((group, t[2]), 0))
-        key = (group, selected[2])
-        busy[key] = busy.get(key, 0) + 1
+        selected = await replicas.acquire(group, targets)
         response = await app.state.client.post(
             f"https://{selected[0]}:19443/replicas/{selected[1]}/infer", json=payload)
         if response.status_code != 200:
@@ -350,10 +360,16 @@ async def infer(group: str, request: Request):
         return result
     except httpx.HTTPError:
         raise HTTPException(502, "模型请求失败，请查看GPU就绪状态后重试") from None
+    except TimeoutError:
+        raise HTTPException(503, "GPU排队超时，请降低并发后重试") from None
     finally:
         if selected:
-            busy[(group, selected[2])] -= 1
+            await replicas.release(group, selected)
         def done(old):
             old["requests"].pop(request_id, None)
             return old
-        await asyncio.to_thread(store.update, group, done)
+        try:
+            if registered:
+                await asyncio.to_thread(store.update, group, done)
+        finally:
+            pending[group] -= 1

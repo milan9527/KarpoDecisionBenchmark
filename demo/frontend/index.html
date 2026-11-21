@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#102a35">
   <title>Karpo · 实时决策演示</title>
   <link rel="stylesheet" href="style.css">
+  <script src="benchmark.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -53,6 +54,47 @@
         </div>
       </section>
     </div>
+    <section class="panel benchmark-panel" aria-labelledby="benchmark-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / PERFORMANCE</p><h2 id="benchmark-title">多问题并发测试</h2></div><span id="bench-phase" class="badge neutral">尚未测试</span></div>
+      <p class="bench-description">选取多道问题，按设定并发循环发送。请求完成后补充下一条，直到达到总请求数。</p>
+      <div class="bench-layout">
+        <div>
+          <div class="question-heading"><h3>本轮问题</h3><button id="bench-add" class="quiet" disabled>加入当前编辑问题</button></div>
+          <div id="bench-questions" class="question-list"></div>
+          <p class="subtle">可多选示例，也可修改上方输入后加入；每个场景最多保留20道问题。</p>
+        </div>
+        <form id="bench-form">
+          <div class="bench-controls">
+            <div><label for="bench-concurrency">并发请求数</label><select id="bench-concurrency">
+              <option>1</option><option>2</option><option selected>4</option><option>8</option><option>16</option><option>32</option><option>64</option><option>100</option>
+            </select></div>
+            <div><label for="bench-total">总请求数</label><input id="bench-total" type="number" min="1" max="1000" step="1" value="30" required></div>
+          </div>
+          <p class="subtle">并发是同时在途的请求数，实际每秒完成量见 RPS。总请求数须不少于并发数。</p>
+          <div class="bench-actions"><button id="bench-run" class="primary" disabled>开始并发测试 ↗</button><button id="bench-stop" class="quiet" type="button" disabled>停止发送</button></div>
+          <p id="bench-error" class="error hidden" role="alert"></p>
+        </form>
+      </div>
+      <div class="bench-progress"><span id="bench-progress-label">完成 0 / 0 · 在途 0</span><span id="bench-elapsed">用时 0.0 s</span></div>
+      <progress id="bench-progress" value="0" max="1" aria-label="并发测试完成进度"></progress>
+      <div class="bench-metrics" aria-live="off">
+        <div><span>成功吞吐量</span><strong id="bench-rps">—</strong><small>RPS</small></div>
+        <div><span>成功率</span><strong id="bench-success">—</strong><small id="bench-errors">尚无请求</small></div>
+        <div><span>P50 延迟</span><strong id="bench-p50">—</strong><small>ms</small></div>
+        <div><span>P95 延迟</span><strong id="bench-p95">—</strong><small>ms</small></div>
+        <div><span>P99 延迟</span><strong id="bench-p99">—</strong><small>ms</small></div>
+        <div><span>平均延迟</span><strong id="bench-mean">—</strong><small>ms</small></div>
+        <div><span>最慢请求</span><strong id="bench-max">—</strong><small>ms</small></div>
+        <div><span>峰值在途</span><strong id="bench-peak">—</strong><small>浏览器请求</small></div>
+      </div>
+      <p class="subtle">延迟从浏览器发起请求到完整响应解析结束，包含网络、排队及服务处理；分位数统计成功请求。RPS = 成功数 ÷ 本轮总耗时。成功率指请求成功，不代表模型准确率。</p>
+      <div class="question-heading"><h3>逐条结果 <span id="bench-result-note">包含问题、回答与耗时</span></h3><button id="bench-export" class="quiet" disabled>导出完整 JSON</button></div>
+      <div class="table-scroll"><table class="bench-table">
+        <thead><tr><th>序号</th><th>问题</th><th>结果 / 错误</th><th>端到端耗时</th><th>GPU 副本</th><th>详情</th></tr></thead>
+        <tbody id="bench-results"><tr><td colspan="6">完成测试后在此查看每条问题的实际回答。</td></tr></tbody>
+      </table></div>
+      <details id="bench-detail" class="hidden"><summary>该请求的完整输入和回答</summary><pre id="bench-detail-json"></pre></details>
+    </section>
     <footer><span>Karpo 4B · vLLM · FP8 · 每卡独立副本</span><span>示例为合成数据；页面调用真实 GPU 模型，不执行金融操作。</span></footer>
   </main>
   <dialog id="login">

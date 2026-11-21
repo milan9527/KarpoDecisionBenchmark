@@ -1,13 +1,20 @@
 """Durable demo leases shared by the API and an independent stop watchdog."""
 import copy
+from collections import defaultdict
+import threading
 import time
 from decimal import Decimal
 
 IDLE_SECONDS = 600
 STARTUP_SECONDS = 1800
+MAX_INFLIGHT = 100
 
 
 class Conflict(Exception):
+    pass
+
+
+class Capacity(Conflict):
     pass
 
 
@@ -66,8 +73,8 @@ def begin_request(value, session, now, request_id):
     if item["phase"] != "ready":
         raise Conflict("模型尚未就绪，请等待所有GPU副本健康检查完成。")
     item["requests"] = {k: v for k, v in item["requests"].items() if v > now}
-    if len(item["requests"]) >= 4:
-        raise Conflict("演示请求正在处理，请稍后重试。")
+    if len(item["requests"]) >= MAX_INFLIGHT:
+        raise Capacity("当前场景已达到100个在途请求，请稍后重试。")
     item["requests"][request_id] = now + 150
     return item
 
@@ -98,11 +105,18 @@ def plain(value):
 class Store:
     def __init__(self, table):
         self.table = table
+        # Serialize this process's writes, while CAS still coordinates with Lambda.
+        # Concurrent requests must not exhaust retries fighting each other's leases.
+        self.locks = defaultdict(threading.Lock)
 
     def get(self, group):
         return plain(self.table.get_item(Key={"group": group}, ConsistentRead=True).get("Item", fresh(group)))
 
     def update(self, group, transform):
+        with self.locks[group]:
+            return self._update(group, transform)
+
+    def _update(self, group, transform):
         from botocore.exceptions import ClientError
         for _ in range(12):
             old = self.get(group)

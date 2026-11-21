@@ -126,5 +126,21 @@
     "instance": "i-04aa43d75617e765b",
     "command": "a1e5790f-d4ac-401e-a721-21fad17c3665",
     "runtime_sha256": "5aed374ca81f88a42fe6898d388bc674270bd152818cda023cceaa1eecc19a2d"
+  },
+  {
+    "name": "backend",
+    "group": "backend",
+    "region": "us-east-2",
+    "instance": "i-04aa43d75617e765b",
+    "command": "6e327b91-fccc-42d1-9419-f8767a61acf5",
+    "runtime_sha256": "e14c19910f773236a72b7efcb9e87583323feebd613e34e4ab82a1f0da51d445"
+  },
+  {
+    "name": "backend",
+    "group": "backend",
+    "region": "us-east-2",
+    "instance": "i-04aa43d75617e765b",
+    "command": "cba8170d-121d-4a70-8196-48c32950e0eb",
+    "runtime_sha256": "1f11d4ee573b5353ed33d3583d8626ed8f7a4b1bd8c109b8dc79e29703d41377"
   }
 ]

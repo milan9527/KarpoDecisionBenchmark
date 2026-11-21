@@ -1,0 +1,318 @@
+{
+  "url": "https://deq0avneozfys.cloudfront.net",
+  "started_at": "2026-11-21T11:01:44.548976+00:00",
+  "scope": "Public browser functional validation; finite closed-loop runs, not a 100 RPS SLA benchmark",
+  "runs": [
+    {
+      "name": "risk-c1",
+      "file": "risk-c1.json",
+      "metrics": {
+        "completed": 3,
+        "successful": 3,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 416.5,
+        "successful_rps": 7.202881152460985,
+        "completed_rps": 7.202881152460985,
+        "p50_ms": 139.60000002384186,
+        "p95_ms": 166.39999997615814,
+        "p99_ms": 166.39999997615814,
+        "mean_ms": 138.76666669050852,
+        "min_ms": 110.30000007152557,
+        "max_ms": 166.39999997615814,
+        "planned": 3,
+        "started": 3,
+        "active": 0,
+        "peak_concurrency": 1,
+        "configured_concurrency": 1,
+        "unsent": 0,
+        "stopped": false
+      }
+    },
+    {
+      "name": "risk-c4-custom",
+      "file": "risk-c4-custom.json",
+      "metrics": {
+        "completed": 12,
+        "successful": 12,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 481.89999997615814,
+        "successful_rps": 24.90143183356235,
+        "completed_rps": 24.90143183356235,
+        "p50_ms": 134,
+        "p95_ms": 207.5,
+        "p99_ms": 207.5,
+        "mean_ms": 144.52499999602637,
+        "min_ms": 115.69999992847443,
+        "max_ms": 207.5,
+        "planned": 12,
+        "started": 12,
+        "active": 0,
+        "peak_concurrency": 4,
+        "configured_concurrency": 4,
+        "unsent": 0,
+        "stopped": false
+      }
+    },
+    {
+      "name": "risk-c100",
+      "file": "risk-c100.json",
+      "metrics": {
+        "completed": 300,
+        "successful": 300,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 7988.5,
+        "successful_rps": 37.553983851786946,
+        "completed_rps": 37.553983851786946,
+        "p50_ms": 2531.7000000476837,
+        "p95_ms": 2837.3000000715256,
+        "p99_ms": 2866.8000000715256,
+        "mean_ms": 2461.427666666508,
+        "min_ms": 490,
+        "max_ms": 2903.2000000476837,
+        "planned": 300,
+        "started": 300,
+        "active": 0,
+        "peak_concurrency": 100,
+        "configured_concurrency": 100,
+        "unsent": 0,
+        "stopped": false
+      }
+    },
+    {
+      "name": "risk-stopped",
+      "file": "risk-stopped.json",
+      "metrics": {
+        "completed": 4,
+        "successful": 4,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 155.20000004768372,
+        "successful_rps": 25.77319586837009,
+        "completed_rps": 25.77319586837009,
+        "p50_ms": 132.89999997615814,
+        "p95_ms": 154.70000004768372,
+        "p99_ms": 154.70000004768372,
+        "mean_ms": 138.27500000596046,
+        "min_ms": 120.5,
+        "max_ms": 154.70000004768372,
+        "planned": 1000,
+        "started": 4,
+        "active": 0,
+        "peak_concurrency": 4,
+        "configured_concurrency": 4,
+        "unsent": 996,
+        "stopped": true
+      }
+    },
+    {
+      "name": "sop-c1",
+      "file": "sop-c1.json",
+      "metrics": {
+        "completed": 3,
+        "successful": 3,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 426.2000000476837,
+        "successful_rps": 7.038948849517496,
+        "completed_rps": 7.038948849517496,
+        "p50_ms": 126,
+        "p95_ms": 179.5,
+        "p99_ms": 179.5,
+        "mean_ms": 142.0333333412806,
+        "min_ms": 120.60000002384186,
+        "max_ms": 179.5,
+        "planned": 3,
+        "started": 3,
+        "active": 0,
+        "peak_concurrency": 1,
+        "configured_concurrency": 1,
+        "unsent": 0,
+        "stopped": false
+      }
+    },
+    {
+      "name": "sop-c4-custom",
+      "file": "sop-c4-custom.json",
+      "metrics": {
+        "completed": 12,
+        "successful": 12,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 461.6999999284744,
+        "successful_rps": 25.990903187912096,
+        "completed_rps": 25.990903187912096,
+        "p50_ms": 135.60000002384186,
+        "p95_ms": 187.60000002384186,
+        "p99_ms": 187.60000002384186,
+        "mean_ms": 140.99999997019768,
+        "min_ms": 116,
+        "max_ms": 187.60000002384186,
+        "planned": 12,
+        "started": 12,
+        "active": 0,
+        "peak_concurrency": 4,
+        "configured_concurrency": 4,
+        "unsent": 0,
+        "stopped": false
+      }
+    },
+    {
+      "name": "sop-c100",
+      "file": "sop-c100.json",
+      "metrics": {
+        "completed": 300,
+        "successful": 300,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 6940.200000047684,
+        "successful_rps": 43.226419987599606,
+        "completed_rps": 43.226419987599606,
+        "p50_ms": 2234.899999976158,
+        "p95_ms": 2366,
+        "p99_ms": 2427.6999999284744,
+        "mean_ms": 2142.7709999978542,
+        "min_ms": 654.8999999761581,
+        "max_ms": 2476.7999999523163,
+        "planned": 300,
+        "started": 300,
+        "active": 0,
+        "peak_concurrency": 100,
+        "configured_concurrency": 100,
+        "unsent": 0,
+        "stopped": false
+      }
+    },
+    {
+      "name": "sop-invalid-input",
+      "file": "sop-invalid-input.json",
+      "metrics": {
+        "completed": 2,
+        "successful": 0,
+        "failed": 2,
+        "success_rate": 0,
+        "duration_ms": 24.200000047683716,
+        "successful_rps": 0,
+        "completed_rps": 82.64462793633045,
+        "p50_ms": null,
+        "p95_ms": null,
+        "p99_ms": null,
+        "mean_ms": null,
+        "min_ms": null,
+        "max_ms": null,
+        "planned": 2,
+        "started": 2,
+        "active": 0,
+        "peak_concurrency": 2,
+        "configured_concurrency": 2,
+        "unsent": 0,
+        "stopped": false
+      }
+    }
+  ],
+  "checks": {
+    "deployed_frontend_matches": true,
+    "no_browser_errors": true,
+    "mobile_no_overflow": true,
+    "original_inputs_preserved": true,
+    "custom_questions": true,
+    "stop_drains_inflight": true,
+    "invalid_requests_counted": true,
+    "exported_metrics_independently_recomputed": true,
+    "risk_c100_expected_actions": 300,
+    "sop_c100_expected_actions": 300
+  },
+  "after_end": {
+    "now": 1795258995,
+    "idle_seconds": 600,
+    "max_concurrency": 100,
+    "groups": {
+      "risk": {
+        "phase": "ready",
+        "stop_after": 1795259179,
+        "error": "",
+        "ready_gpus": 6,
+        "checked_at": 1795258990,
+        "startup_deadline": 1795260278,
+        "gpu_count": 6,
+        "gpu": "RTX PRO 6000 Blackwell 96GB",
+        "title": "薅羊毛风控",
+        "session_active": false,
+        "hosts": [
+          {
+            "gpus": 2,
+            "id": "i-05b24e3b4a7ee864d",
+            "message": "模型已就绪",
+            "name": "dual",
+            "ready": 2,
+            "region": "us-east-2",
+            "state": "running"
+          },
+          {
+            "gpus": 1,
+            "id": "i-02c1caf7d7ce17c76",
+            "message": "模型已就绪",
+            "name": "peer2",
+            "ready": 1,
+            "region": "us-east-2",
+            "state": "running"
+          },
+          {
+            "gpus": 1,
+            "id": "i-05cfc7d4fa898ee33",
+            "message": "模型已就绪",
+            "name": "peer3",
+            "ready": 1,
+            "region": "us-east-2",
+            "state": "running"
+          },
+          {
+            "gpus": 1,
+            "id": "i-09e55f0a86313912d",
+            "message": "模型已就绪",
+            "name": "peer4",
+            "ready": 1,
+            "region": "us-east-1",
+            "state": "running"
+          },
+          {
+            "gpus": 1,
+            "id": "i-0b7835341b1266d7a",
+            "message": "模型已就绪",
+            "name": "peer5",
+            "ready": 1,
+            "region": "us-east-1",
+            "state": "running"
+          }
+        ]
+      },
+      "sop": {
+        "phase": "ending",
+        "stop_after": 1795259595,
+        "error": "",
+        "ready_gpus": 8,
+        "checked_at": 1795258990,
+        "startup_deadline": 1795260590,
+        "gpu_count": 8,
+        "gpu": "NVIDIA H200",
+        "title": "SOP 决策",
+        "session_active": false,
+        "hosts": [
+          {
+            "gpus": 8,
+            "id": "i-0c777e3714538d624",
+            "message": "模型已就绪",
+            "name": "h200",
+            "ready": 8,
+            "region": "us-east-2",
+            "state": "running"
+          }
+        ]
+      }
+    }
+  },
+  "finished_at": "2026-11-21T11:03:15.220326+00:00",
+  "page_errors": []
+}

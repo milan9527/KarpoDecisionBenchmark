@@ -43,7 +43,7 @@ parts.append('<rect x="290" y="310" width="1260" height="245" rx="16" fill="#edf
 text(650, 342, "AWS us-east-2 · 演示控制服务与主要 GPU", 18, "#31627f", 650)
 parts.append('<rect x="1100" y="580" width="450" height="177" rx="16" fill="#f8f1e8" stroke="#c99855" stroke-width="2"/>')
 text(1120, 610, "AWS us-east-1 · 复用已有两张 RTX", 18, "#90602e", 650)
-box(50, 160, 205, 125, "演示浏览器", ["用户名 + 密码登录", "原始输入 / 实际回答"])
+box(50, 160, 205, 150, "演示浏览器", ["用户名 + 密码登录", "多问题 / 1–100并发", "完整回答 / 性能指标"])
 box(340, 150, 315, 135, "Amazon CloudFront", ["HTTPS 同域入口", "静态页面与 /api/* 分流"], "cloudfront")
 box(850, 145, 365, 145, "Amazon S3", ["私有 Bucket · Block Public Access", "仅 CloudFront OAC 可读 site/*"], "s3")
 box(340, 375, 270, 145, "Internal ALB", ["CloudFront VPC origin", "仅私有源安全组可访问"], "alb")
