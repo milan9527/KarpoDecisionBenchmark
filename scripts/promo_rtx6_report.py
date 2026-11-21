@@ -7,6 +7,7 @@ import re
 from urllib.parse import urlsplit
 
 from project_report import md_table, table
+from report_examples import EXAMPLE_CSS, example_html, example_markdown, examples
 
 ROOT = Path(__file__).resolve().parents[1]
 EXP = ROOT / "experiments/promo-rtx6-20261121"
@@ -34,6 +35,7 @@ def stage(run, name):
 
 
 def main():
+    selected_examples = examples()
     proof = read(EXP / "results/verification.json")
     final, old = proof["runs"][0], proof["four_gpu_comparison"]
     infra = read(EXP / "operations/final-infrastructure.json")
@@ -117,6 +119,7 @@ def main():
     links = "[完整输入输出](results/decision-example.json) · [逐条核验](results/verification.json) · " \
             "[复现说明](REPRODUCE.zh.md) · [资源与价格](operations/pricing.json) · [冻结计划](PLAN.zh.md)"
     markdown = "# " + title + "\n\n" + "\n\n".join(conclusions) + "\n\n"
+    markdown += example_markdown(selected_examples["risk"], "../../") + "\n\n"
     for heading, body, headers, rows in sections:
         markdown += "## " + heading + "\n\n" + body + "\n\n"
         if heading == "部署与延迟范围":
@@ -138,8 +141,10 @@ figure.architecture{margin:20px 0 0}
 .architecture figcaption{font-size:14px;color:#526174;margin-top:10px}
 @media print{body{max-width:none;background:white;padding:0}figure.architecture{break-inside:avoid}}
 </style>""")
+    page = page.replace("</style>", EXAMPLE_CSS + "</style>")
     page += "".join(f"<p>{esc(p)}</p>" for p in conclusions)
-    page += '<p><a href="RESULTS.zh.md">详细文档</a> · <a href="data.json">汇总JSON</a> · <a href="results/decision-example.json">完整输入输出</a> · <a href="REPRODUCE.zh.md">复现说明</a></p>'
+    page += '<p><a href="RESULTS.zh.md">详细文档</a> · <a href="#risk-example">问题与回答示例</a> · <a href="data.json">汇总JSON</a> · <a href="results/decision-example.json">完整输入输出</a> · <a href="REPRODUCE.zh.md">复现说明</a></p>'
+    page += example_html(selected_examples["risk"], "../../")
     for heading, body, headers, rows in sections:
         page += f"<section><h2>{esc(heading)}</h2><p>{esc(body)}</p>"
         if heading == "部署与延迟范围":
@@ -169,7 +174,9 @@ figure.architecture{margin:20px 0 0}
         "\n\n" + md_table(fh, fr) + "\n\n" + network +
         "\n\n" + architecture_markdown() + "\n\n" + resources +
         f"\n\n[完整六卡报告]({prefix}RESULTS.zh.md) · [HTML]({prefix}report.html)\n\n"
-        "SOP本轮未重测；历史八H200结果见[原报告](experiments/vllm-sop-h200-20261120/report.html)。\n")
+        + example_markdown(selected_examples["risk"]) + "\n\n"
+        + example_markdown(selected_examples["sop"]) + "\n\n"
+        "SOP本轮未重测；八H200达标结果及示例见[报告](experiments/vllm-sop-h200-20261120/report.html)。\n")
     def root_link(match):
         attribute, target = match.groups()
         if not urlsplit(target).scheme and not target.startswith(("/", "#")):
@@ -177,7 +184,11 @@ figure.architecture{margin:20px 0 0}
         return f'{attribute}="{target}"'
 
     root_page = re.sub(r'(href|src)="([^"]+)"', root_link, page).replace("</body>",
+        example_html(selected_examples["sop"]) +
         '<p>SOP本轮未重测；<a href="experiments/vllm-sop-h200-20261120/report.html">历史八H200报告</a></p></body>')
+    root_page = root_page.replace(
+        '<a href="#risk-example">问题与回答示例</a>',
+        '<a href="#risk-example">风控问题与回答</a> · <a href="#sop-example">SOP问题与回答</a>')
     (ROOT / "report.html").write_text(root_page)
     print(conclusions[0])
 

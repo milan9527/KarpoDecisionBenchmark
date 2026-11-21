@@ -4,6 +4,8 @@
 
 [查看 SVG 原图](assets/promo-rtx6-aws-architecture.svg) · [下载高清 PNG](assets/promo-rtx6-aws-architecture.png) · [六卡 HTML 报告](../experiments/promo-rtx6-20261121/report.html)
 
+请求如何转化为决策，见[问题、输入与实际回答示例](EXAMPLES.zh.md#risk-example)，其中保留完整200特征、原始模型输出和复核校准结果。
+
 ![AWS 六 RTX 部署架构：俄亥俄四卡，北弗吉尼亚两卡，代理与压测客户端部署在双卡 EC2 A](assets/promo-rtx6-aws-architecture.svg)
 
 ## 实例与副本

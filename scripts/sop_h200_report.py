@@ -1,4 +1,5 @@
 """Recompute H200 SOP measurements and publish a self-contained local report."""
+import argparse
 import csv
 import datetime as dt
 import hashlib
@@ -10,6 +11,7 @@ import re
 import statistics
 
 from benchmark import validate
+from report_examples import EXAMPLE_CSS, example_html, example_markdown, examples
 from vllm_rps_benchmark import summarize
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -219,6 +221,17 @@ def main():
             "runs": runs, "stages": stages, "workers": workers}
     write(EXP / "results/verification.json", verification)
     write(EXP / "data.json", data)
+    render(data)
+
+
+def render(data):
+    """Render an existing verified snapshot without rewriting measurement evidence."""
+    verification = data["verification"]
+    verdict = verification["confirmed"]
+    verified, valid_total = verification["verified_attempts"], verification["valid"]
+    instance, pricing, lifecycle = (data[k] for k in ("instance", "pricing", "lifecycle"))
+    stages, runs = data["stages"], data["runs"]
+    sop_example = examples()["sop"]
     lines = [
         "# H200 SOP验证结果", "",
         f"结论：**{'通过两轮正式验收' if verdict else '尚未通过两轮正式验收'}**。核对时间：{verification['utc']}。",
@@ -256,7 +269,7 @@ def main():
             "batch=1与4的八卡探测P50非常接近，按冻结规则选择较低者，不据此宣称batch=4有稳定速度优势。",
         ]
     lines += [
-        "", "## 性能", "",
+        "", "<!-- SOP_EXAMPLE -->", "", "## 性能", "",
         "| 运行 | 阶段 | 最大序列数 | GPU副本 | 目标RPS | 秒数 | 有效/全部 | 稳态RPS | P50 ms | P95 ms | 正确/全部 | 门槛 |",
         "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|",
     ]
@@ -338,7 +351,8 @@ def main():
             "`ccf3c30`时的测试封存；修改前的文档与生成器另存于"
             "`operations/stop-20261120/previous/`，路径相对于仓库根目录。逐条测试结果及冻结运行源码未改动。",
         ]
-    markdown = "\n".join(lines) + "\n"
+    markdown = ("\n".join(lines) + "\n").replace(
+        "<!-- SOP_EXAMPLE -->", example_markdown(sop_example, "../../"))
     (EXP / "RESULTS.zh.md").write_text(markdown)
     rendered, table_rows = [], []
 
@@ -357,8 +371,11 @@ def main():
                 table_rows.append([x.strip() for x in line.strip("|").split("|")])
             continue
         flush_table()
-        if line.startswith("# "):
+        if line == "<!-- SOP_EXAMPLE -->":
+            rendered.append(example_html(sop_example, "../../"))
+        elif line.startswith("# "):
             rendered.append(f"<h1>{html.escape(line[2:])}</h1>")
+            rendered.append('<p><a href="#sop-example">问题与回答示例</a></p>')
         elif line.startswith("## "):
             rendered.append(f"<h2>{html.escape(line[3:])}</h2>")
         elif line:
@@ -374,9 +391,17 @@ a{color:#145dad}</style><body>""" + "".join(rendered) + (
         '<p><a href="data.json">完整数据</a> · <a href="RESULTS.zh.md">Markdown报告</a> · '
         '<a href="results/verification.json">核验记录</a> · '
         '<a href="REPRODUCE.zh.md">复现说明</a></p></body></html>')
+    html_report = html_report.replace("</style>", EXAMPLE_CSS + "</style>")
     (EXP / "report.html").write_text(html_report)
     print(json.dumps(verification))
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--render-only", action="store_true",
+                        help="Render existing verified data without recomputing or rewriting evidence.")
+    args = parser.parse_args()
+    if args.render_only:
+        render(load(EXP / "data.json"))
+    else:
+        main()

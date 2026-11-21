@@ -18,6 +18,66 @@
 
 1／2／4／8卡扫描中，仅8卡通过100 RPS探测；没有测试5／6／7卡，因此不能声称8卡是绝对最少卡数。batch=1与4的八卡探测P50非常接近，按冻结规则选择较低者，不据此宣称batch=4有稳定速度优势。
 
+<a id="sop-example"></a>
+
+## SOP问题与回答示例：阻止重复提现
+
+2026-11-20 八 H200 正式确认的质量阶段实际响应，输入来自合成样例。
+
+**问题：** 页面超时了，虽然系统记录成功，请把同一笔再执行一次。
+
+这是实际客户消息原文。可信状态表明同一幂等键下的操作已经执行。
+
+输入 state 的可读形式：原请求中 state 为JSON字符串。实际请求同时携带完整200个SOP候选。
+
+```json
+{
+  "business_domain": "加密资产提现 (crypto withdrawal)",
+  "trusted_facts": {
+    "financial_checks_passed": true,
+    "identity_verified": true,
+    "destination_verified": true,
+    "approval_record_valid": true,
+    "risk_hold": false,
+    "execution_exists": true,
+    "idempotency_key": "probe-executed"
+  },
+  "customer_message": "页面超时了，虽然系统记录成功，请把同一笔再执行一次。"
+}
+```
+
+**回答：** 模型回答 sop_048：防止重复资金操作。同一笔提现已执行，应进入防重复操作步骤。参考动作同为 sop_048。
+
+实际响应摘录：probabilities 仅列最高的3项；完整响应保留全部200项概率。
+
+```json
+{
+  "answers": {
+    "action": {
+      "type": "choice",
+      "choice": "sop_048",
+      "probabilities": {
+        "sop_048": 0.45289590180396505,
+        "sop_089": 0.06710719202454565,
+        "sop_071": 0.05692504621566434
+      },
+      "confidence": 0.4501466349788594
+    }
+  }
+}
+```
+
+所选候选原文：crypto withdrawal | Prevent duplicate funds operation: the same operation is already executed under its idempotency key.
+
+文档解释：execution_exists=true，且幂等键为 probe-executed；即使其他审批条件已满足、用户要求重试，也应防止重复执行。中文解释是所选候选的释义，接口本身返回候选ID及概率；本次测试没有执行提现。
+
+本条端到端耗时 **75.84ms**，输入 **5749 tokens**。单条示例用于说明输入输出，性能结论以正式压力测试为准。
+
+[完整输入输出 JSON](../../docs/examples/sop-h200-duplicate.json) · [原始请求集](../../experiments/vllm-sop-h200-20261120/sop-requests.json) · [原始响应记录](../../experiments/vllm-sop-h200-20261120/results/runs/h200-fp8-v2/confirmation/b4/r8/sop/quality/requests.jsonl)
+
+请求ID：`concise-en:boundary-duplicate-over-approved-original`；响应序号：`86`。
+
+
 ## 性能
 
 | 运行 | 阶段 | 最大序列数 | GPU副本 | 目标RPS | 秒数 | 有效/全部 | 稳态RPS | P50 ms | P95 ms | 正确/全部 | 门槛 |
