@@ -2,7 +2,7 @@
 
 Karpo 金融风控与 SOP 两个场景分别验证。以下保留各场景最近一次达标结果及实际部署架构。
 
-**实时演示：[打开前端](https://deq0avneozfys.cloudfront.net) · [使用说明与演示部署图](docs/DEMO.zh.md)**。S3 + CloudFront OAC 提供页面，内部 ALB + API 服务启动并检查 GPU；演示结束后 10 分钟自动发起 GPU 停机。使用用户名和密码登录，当前账号凭据保存在本地 `.state/demo-login.json`，未提交 Git。登录本身不会启动 GPU。
+**实时演示：[打开前端](https://deq0avneozfys.cloudfront.net) · [使用说明与演示部署图](docs/DEMO.zh.md)**。S3 + CloudFront OAC 提供页面，内部 ALB + API 服务启动并检查 GPU；演示结束后 10 分钟自动发起 GPU 停机。
 
 多场景测试统一由 **AWS 云端按固定速率发送请求，默认100 RPS × 120 秒 = 12,000 次请求**，浏览器仅启动任务和查看结果；断网、刷新或本地上传慢不影响云端发送。可选择全部历史问题集：薅羊毛压力集360题、质量集1080题、资源滥用风控360题、SOP完整104题；支持筛选、编辑、正确率与端到端指标、逐条输入输出和完整导出。[完整场景清单](docs/DEMO-SCENARIOS.zh.md) · [固定RPS测试说明](docs/DEMO.zh.md#固定-rps-多场景测试)。云端端到端包含公网 CloudFront、排队及完整响应，但不包含用户本地浏览器网络。上方单次问题显示后端API推理处理开始至最终决策就绪的服务端延迟；旧浏览器测试仅保留历史记录及原计时标注。
 
@@ -63,3 +63,139 @@ Karpo 金融风控与 SOP 两个场景分别验证。以下保留各场景最近
 [HTML 报告](experiments/vllm-sop-h200-20261120/report.html) · [详细结果](experiments/vllm-sop-h200-20261120/RESULTS.zh.md) · [部署与复现说明](experiments/vllm-sop-h200-20261120/REPRODUCE.zh.md) · [SVG 原图](docs/assets/sop-h200-aws-architecture.svg) · [高清 PNG](docs/assets/sop-h200-aws-architecture.png)
 
 图示为基准测试期间的部署；这些 GPU 现由[实时演示服务](docs/DEMO.zh.md)按需启动并自动停止。[2026-11-21 自动停机验证](operations/demo-20261121/shutdown-validation.json)已确认六台 GPU EC2 全部停止，前端及 CPU API 继续在线。六 RTX 与八 H200 均是已验证达标配置，尚未证明是各场景绝对最低配置。
+
+## 本地部署与运行
+
+以下步骤在自己的 Linux GPU 主机运行模型 API，无需 AWS 资源。使用 Python 3.12、支持 CUDA 13.0 的 NVIDIA 驱动及 CUDA Toolkit；已验证硬件为 RTX PRO 6000 Blackwell 96GB 和 H200。单卡可用于功能和低负载验证，100 RPS 的达标配置见上文；其他显存容量尚未验证。模型权重需单独下载。
+
+### 1. 安装环境与下载模型
+
+```bash
+git clone https://github.com/milan9527/KarpoDecisionBenchmark.git
+cd KarpoDecisionBenchmark
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install --extra-index-url https://download.pytorch.org/whl/cu130 \
+  'torch==2.14.0' 'torchvision==0.29.0' \
+  'vllm==0.34.0' 'transformers==5.21.0' 'flash-linear-attention==0.5.2' \
+  'karpo-decision[qwen] @ git+https://github.com/machinepulse-ai/karpo-decision@6600011eb5cf46232d056ec0717dc726146d29de' \
+  . ./serving/vllm_karpo
+python -m pip check
+nvidia-smi
+
+python - <<'PY'
+from huggingface_hub import snapshot_download
+snapshot_download(
+    repo_id="MachinePulseAI/karpo-decision-4B",
+    revision="f7f521cfc3219ca28518c6bba91960b8757dce06",
+    local_dir="models/karpo-4b",
+)
+PY
+```
+
+Karpo 源码和模型版本均固定为实测版本。[完整实测依赖](experiments/vllm-sop-h200-20261120/results/setup/h200-vllm-freeze.txt)可供核对。以下命令均在仓库根目录执行；新终端先运行 `source .venv/bin/activate`。
+
+### 2. 启动单卡模型服务
+
+按场景选择一条命令。两条命令默认使用 GPU 0 和端口 19500，只有一张卡时先按 `Ctrl+C` 结束前一个服务，再切换场景。首次启动会加载模型、编译并捕获 CUDA Graph，等待健康检查成功后再发送请求。
+
+**风控：完整200特征、FP8、最大batch=4、CUDA Graph powers。**
+
+```bash
+CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=4 TORCHINDUCTOR_COMPILE_THREADS=2 \
+python scripts/promo_opt_server.py \
+  --checkpoint models/karpo-4b \
+  --experiment experiments/promo-rtx6-20261121/inputs/review-baseline \
+  --output .state/local-risk/gpu-0 \
+  --max-seqs 4 --graph powers --replica-id 0 --admission-limit 16 \
+  --host 127.0.0.1 --port 19500
+```
+
+风控需在另一个终端启动复核校准代理，才能得到 README 中验收使用的最终 `decision`。代理读取仓库中冻结的阈值 `0.1628260940455841`，同时保留原始模型 `answers`。
+
+```bash
+source .venv/bin/activate
+python scripts/promo_opt_calibrated_proxy.py \
+  --urls http://127.0.0.1:19500 --port 18770
+```
+
+**SOP：完整200候选、FP8、最大batch=4、CUDA Graph。**
+
+```bash
+CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=4 TORCHINDUCTOR_COMPILE_THREADS=2 \
+python scripts/vllm_rps_server.py \
+  --checkpoint models/karpo-4b \
+  --experiment experiments/vllm-sop-h200-20261120 \
+  --output .state/local-sop/gpu-0 \
+  --max-seqs 4 --replica-id 0 --admission-limit 16 \
+  --host 127.0.0.1 --port 19500
+```
+
+服务仅监听本机，接口为 `GET /healthz` 和 `POST /v1/systemone`。这是 Karpo 决策接口，返回候选选择及概率；适配器支持单问题、纯文本、最长8192 tokens。`max-seqs=4` 限制每卡活跃序列数，不要求凑齐4条才处理。
+
+### 3. 发送完整问题并查看回答
+
+在另一个终端提取仓库中的完整请求，保留200特征/200候选及原有浮点格式；只发送 `request`，不发送参考答案。
+
+```bash
+source .venv/bin/activate
+python - <<'PY'
+import json
+from pathlib import Path
+out = Path(".state/local-requests")
+out.mkdir(parents=True, exist_ok=True)
+for scenario, source in {
+    "risk": "experiments/promo-rtx6-20261121/results/decision-example.json",
+    "sop": "docs/examples/sop-h200-duplicate.json",
+}.items():
+    request = json.loads(Path(source).read_text())["request"]
+    (out / f"{scenario}.json").write_text(json.dumps(request, ensure_ascii=False))
+PY
+
+# 风控服务和校准代理启动后
+curl --fail-with-body http://127.0.0.1:18770/healthz
+curl --fail-with-body http://127.0.0.1:18770/v1/systemone \
+  -H 'Content-Type: application/json' \
+  --data-binary @.state/local-requests/risk.json
+
+# 切换至 SOP 服务后
+curl --fail-with-body http://127.0.0.1:19500/healthz
+curl --fail-with-body http://127.0.0.1:19500/v1/systemone \
+  -H 'Content-Type: application/json' \
+  --data-binary @.state/local-requests/sop.json
+```
+
+风控示例检查 `decision.action`，参考为 `review`；SOP 示例检查 `answers.action.choice`，参考为 `sop_048`。完整历史回答见[输入输出示例](docs/EXAMPLES.zh.md)，本地运行返回实际模型结果。
+
+### 4. 本地压测与多卡扩展
+
+SOP 服务就绪并完成一次请求后，可用原固定到达率客户端做单卡低负载测试：
+
+```bash
+python scripts/vllm_rps_benchmark.py \
+  --url http://127.0.0.1:19500 --scenario sop --mode rate \
+  --rps 8 --seconds 20 --output .state/local-sop-rate-01
+```
+
+结果保存到新目录下的 `summary.json` 和 `requests.jsonl`，包括成功/失败、正确数、有效RPS、端到端P50/P95/P99及逐条响应。端到端从计划发送时刻计至完整HTTP响应，包含发送滞后、排队、编码和推理。重复测试须更换 `--output`，已有结果不会覆盖。**8 RPS是主动设置的低负载点，不是单卡性能上限。** 此脚本的 `--scenario risk` 使用旧资源滥用输入，不用于新版薅羊毛正确率验收；新版完整复现见[六RTX复现说明](experiments/promo-rtx6-20261121/REPRODUCE.zh.md)。
+
+多卡时，每张卡独立启动一个上述模型进程，分别设置 `CUDA_VISIBLE_DEVICES`、`--replica-id`、`--port` 和 `--output`。例如第二张卡使用 GPU 1、副本1、端口19501及独立输出目录；每个副本仍保持最大batch=4。风控代理的 `--urls` 列出全部副本；SOP 用以下代理汇总，压测客户端改连代理端口：
+
+```bash
+python scripts/vllm_rps_proxy.py \
+  --urls http://127.0.0.1:19500 http://127.0.0.1:19501 \
+  --host 127.0.0.1 --port 18780
+```
+
+代理按在途请求数分配负载。扩展到六RTX或八H200时列出全部副本，先确认代理 `/healthz` 中所有副本就绪，再以 `--rps 100 --seconds 120` 做正式测试并另建目录重复一轮。新机器的CPU、驱动及网络会影响结果，需要在实际部署环境重新验收。结束后在各服务终端按 `Ctrl+C` 停止进程；本地运行没有 AWS 演示的自动停机机制。
+
+### 本地查看HTML报告
+
+```bash
+python -m http.server 8080 --bind 127.0.0.1
+```
+
+浏览器打开 `http://127.0.0.1:8080/experiments/promo-rtx6-20261121/report.html` 或 `http://127.0.0.1:8080/experiments/vllm-sop-h200-20261120/report.html`，无需GPU即可查看已有结果。
+
+`demo/frontend/` 的完整交互演示依赖 AWS API、DynamoDB、S3及GPU租约管理，单独用静态服务器打开不能执行登录、实时推理或历史测试；上述本地模型 API 不提供演示页面的 `/api/*` 接口。完整演示部署见[演示部署与维护](docs/DEMO.zh.md#部署与维护)。
