@@ -1,0 +1,218 @@
+{
+  "scope": "Reanalysis of archived benchmark records; no new GPU tests. Per-replica rates in a multi-GPU pool are not isolated single-GPU capacity limits.",
+  "method": {
+    "window_seconds": [
+      30,
+      120
+    ],
+    "rate": "valid completions with 30 <= end_offset_s < 120, divided by 90 seconds",
+    "p50": "nearest-rank median of latency_ms for those same completions",
+    "replica": "response.metrics.proxy_replica"
+  },
+  "runs": [
+    {
+      "experiment": "promo-rtx6-20261121",
+      "phase": "confirm",
+      "source": "experiments/promo-rtx6-20261121/results/runs/rtx6-calibrated-v1/confirm/requests.jsonl",
+      "source_sha256": "c0e1fdb5d6a13a419162d65f6c32e46df7b21d9563ea2df8cf8f786c12c11cec",
+      "valid_completions": 9000,
+      "replicas": [
+        {
+          "replica": 0,
+          "completed": 1554,
+          "rps": 17.266666666666666,
+          "p50_ms": 65.00751299972762
+        },
+        {
+          "replica": 1,
+          "completed": 1548,
+          "rps": 17.2,
+          "p50_ms": 63.71202799891762
+        },
+        {
+          "replica": 2,
+          "completed": 1533,
+          "rps": 17.033333333333335,
+          "p50_ms": 64.03409499944246
+        },
+        {
+          "replica": 3,
+          "completed": 1531,
+          "rps": 17.011111111111113,
+          "p50_ms": 63.24950999896828
+        },
+        {
+          "replica": 4,
+          "completed": 1422,
+          "rps": 15.8,
+          "p50_ms": 89.99929600031464
+        },
+        {
+          "replica": 5,
+          "completed": 1412,
+          "rps": 15.688888888888888,
+          "p50_ms": 84.976701999949
+        }
+      ]
+    },
+    {
+      "experiment": "promo-rtx6-20261121",
+      "phase": "repeat",
+      "source": "experiments/promo-rtx6-20261121/results/runs/rtx6-calibrated-v1/repeat/requests.jsonl",
+      "source_sha256": "be60b2774595a80b3e293bfff1e5554256ed33ddd53e9132d6b9c8236ea43915",
+      "valid_completions": 9001,
+      "replicas": [
+        {
+          "replica": 0,
+          "completed": 1576,
+          "rps": 17.511111111111113,
+          "p50_ms": 67.04214100045647
+        },
+        {
+          "replica": 1,
+          "completed": 1561,
+          "rps": 17.344444444444445,
+          "p50_ms": 65.42004800030554
+        },
+        {
+          "replica": 2,
+          "completed": 1538,
+          "rps": 17.08888888888889,
+          "p50_ms": 63.886998999805655
+        },
+        {
+          "replica": 3,
+          "completed": 1535,
+          "rps": 17.055555555555557,
+          "p50_ms": 63.46018600015668
+        },
+        {
+          "replica": 4,
+          "completed": 1391,
+          "rps": 15.455555555555556,
+          "p50_ms": 90.57944099913584
+        },
+        {
+          "replica": 5,
+          "completed": 1400,
+          "rps": 15.555555555555555,
+          "p50_ms": 87.85935299965786
+        }
+      ]
+    },
+    {
+      "experiment": "vllm-sop-h200-20261120",
+      "phase": "confirmation/b4/r8/sop/confirm",
+      "source": "experiments/vllm-sop-h200-20261120/results/runs/h200-fp8-v2/confirmation/b4/r8/sop/confirm/requests.jsonl",
+      "source_sha256": "d62fe5151c982d9a390f71f432305c59f4f31d2f19eae515d8047bd0cfde58fa",
+      "valid_completions": 9000,
+      "replicas": [
+        {
+          "replica": 0,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 77.92924000000312
+        },
+        {
+          "replica": 1,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 77.55783099992186
+        },
+        {
+          "replica": 2,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 76.78671899998335
+        },
+        {
+          "replica": 3,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 76.61029999997027
+        },
+        {
+          "replica": 4,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 75.7950519998758
+        },
+        {
+          "replica": 5,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 75.20025099995564
+        },
+        {
+          "replica": 6,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 76.13577899996926
+        },
+        {
+          "replica": 7,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 82.50863099999606
+        }
+      ]
+    },
+    {
+      "experiment": "vllm-sop-h200-20261120",
+      "phase": "confirmation/b4/r8/sop/repeat",
+      "source": "experiments/vllm-sop-h200-20261120/results/runs/h200-fp8-v2/confirmation/b4/r8/sop/repeat/requests.jsonl",
+      "source_sha256": "5659e80f506deb5883f95e901372b11676f3adb74c0db061db3098e2a14d0fd1",
+      "valid_completions": 9000,
+      "replicas": [
+        {
+          "replica": 0,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 77.71730000013122
+        },
+        {
+          "replica": 1,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 77.02865999999631
+        },
+        {
+          "replica": 2,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 76.43185899996752
+        },
+        {
+          "replica": 3,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 75.8456160001515
+        },
+        {
+          "replica": 4,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 75.91988200010746
+        },
+        {
+          "replica": 5,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 75.55634400000599
+        },
+        {
+          "replica": 6,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 75.83283899998605
+        },
+        {
+          "replica": 7,
+          "completed": 1125,
+          "rps": 12.5,
+          "p50_ms": 75.3661680003006
+        }
+      ]
+    }
+  ]
+}
