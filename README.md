@@ -8,6 +8,12 @@ Karpo 金融风控与 SOP 决策测试项目，两个场景分别验证。风控
 
 六张GPU均为 **RTX PRO 6000 Blackwell Server Edition 96GB**：四张在俄亥俄us-east-2c，两张在北弗吉尼亚us-east-1d，共五台Spot EC2。俄亥俄Spot配额已满，三个可用区四种RTX规格的按需容量均不足，因此新增两卡改用北弗吉尼亚Spot；跨区域SSH传输完整计入端到端延迟。
 
+[AWS 部署架构说明](docs/ARCHITECTURE.zh.md) · [SVG 原图](docs/assets/promo-rtx6-aws-architecture.svg) · [高清 PNG](docs/assets/promo-rtx6-aws-architecture.png)
+
+![六RTX AWS实测部署架构：五台EC2、六个vLLM副本，代理与压测客户端同双卡主机部署](docs/assets/promo-rtx6-aws-architecture.svg)
+
+图示为测试期间部署。每个请求由一个副本完成，代理选择在途请求最少的副本，并在返回前执行复核阈值校准。入口代理随压测结束退出；EC2及模型进程状态范围详见[部署说明](docs/ARCHITECTURE.zh.md)。
+
 | 六卡正式轮次 | 到达率 | 稳态有效吞吐 | 端到端P50 | 端到端P95 | 失败/全部 | 正确/全部 |
 |---|---:|---:|---:|---:|---:|---:|
 | 第1轮120秒 | 100 RPS | 100.00 RPS | 67.62 ms | 126.02 ms | 0/12,000 | 98.90% |

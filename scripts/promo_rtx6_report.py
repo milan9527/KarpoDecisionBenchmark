@@ -2,11 +2,27 @@
 import html
 import json
 from pathlib import Path
+import posixpath
+import re
+from urllib.parse import urlsplit
 
 from project_report import md_table, table
 
 ROOT = Path(__file__).resolve().parents[1]
 EXP = ROOT / "experiments/promo-rtx6-20261121"
+ARCHITECTURE = "docs/assets/promo-rtx6-aws-architecture"
+
+
+def architecture_markdown(prefix=""):
+    return (
+        f"[AWS部署说明]({prefix}docs/ARCHITECTURE.zh.md) · "
+        f"[SVG原图]({prefix}{ARCHITECTURE}.svg) · "
+        f"[高清PNG]({prefix}{ARCHITECTURE}.png)\n\n"
+        f"![六RTX AWS实测部署架构：五台EC2，俄亥俄四卡、北弗吉尼亚两卡]"
+        f"({prefix}{ARCHITECTURE}.svg)\n\n"
+        "代理与压测客户端位于双卡EC2 A，每张GPU运行一个完整模型副本。"
+        "图示为测试期间部署；入口代理随压测结束退出，EC2保留状态以资源快照为准。"
+    )
 
 
 def read(path):
@@ -103,6 +119,8 @@ def main():
     markdown = "# " + title + "\n\n" + "\n\n".join(conclusions) + "\n\n"
     for heading, body, headers, rows in sections:
         markdown += "## " + heading + "\n\n" + body + "\n\n"
+        if heading == "部署与延迟范围":
+            markdown += architecture_markdown("../../") + "\n\n"
         if headers:
             markdown += md_table(headers, rows) + "\n\n"
     markdown += f"共逐条核验{proof['verified_requests']:,}次请求和6份实际GPU引擎配置。\n\n{links}\n"
@@ -114,10 +132,30 @@ def main():
 section{{background:white;padding:24px;margin:24px 0;border-radius:12px}}table{{width:100%;border-collapse:collapse}}
 td,th{{padding:10px;text-align:left;border-bottom:1px solid #dce5e7;white-space:nowrap}}.table{{overflow:auto}}
 a{{color:#096b64}}@media(max-width:700px){{body{{padding:12px}}section{{padding:12px}}}}</style></head><body><h1>{esc(title)}</h1>"""
+    page = page.replace("</style>", """
+figure.architecture{margin:20px 0 0}
+.architecture img{display:block;width:100%;height:auto;border:1px solid #dce5e7;border-radius:8px}
+.architecture figcaption{font-size:14px;color:#526174;margin-top:10px}
+@media print{body{max-width:none;background:white;padding:0}figure.architecture{break-inside:avoid}}
+</style>""")
     page += "".join(f"<p>{esc(p)}</p>" for p in conclusions)
     page += '<p><a href="RESULTS.zh.md">详细文档</a> · <a href="data.json">汇总JSON</a> · <a href="results/decision-example.json">完整输入输出</a> · <a href="REPRODUCE.zh.md">复现说明</a></p>'
     for heading, body, headers, rows in sections:
         page += f"<section><h2>{esc(heading)}</h2><p>{esc(body)}</p>"
+        if heading == "部署与延迟范围":
+            page += (
+                '<figure class="architecture">'
+                f'<a href="../../{ARCHITECTURE}.svg" title="打开完整SVG架构图">'
+                f'<img src="../../{ARCHITECTURE}.svg" width="1680" height="1340" '
+                'alt="AWS六RTX实测部署：俄亥俄双卡EC2 A运行压测与代理，'
+                '同区两台单卡EC2，跨区域SSH连接北弗吉尼亚两台单卡EC2"></a>'
+                '<figcaption>代理与压测客户端位于双卡EC2 A；每张GPU运行一个完整模型副本。'
+                '图示为测试期间部署，入口代理随压测结束退出。'
+                '<br><a href="../../docs/ARCHITECTURE.zh.md">部署说明</a> · '
+                f'<a href="../../{ARCHITECTURE}.svg">查看SVG原图</a> · '
+                f'<a href="../../{ARCHITECTURE}.png" download>下载高清PNG</a>'
+                '</figcaption></figure>'
+            )
         if headers:
             page += table(headers, rows)
         page += "</section>"
@@ -128,10 +166,17 @@ a{{color:#096b64}}@media(max-width:700px){{body{{padding:12px}}section{{padding:
     for path in (EXP / "data.json", ROOT / "data.json"):
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n")
     (ROOT / "RESULTS.zh.md").write_text("# " + title + "\n\n" + "\n\n".join(conclusions) +
-        "\n\n" + md_table(fh, fr) + "\n\n" + network + "\n\n" + resources +
+        "\n\n" + md_table(fh, fr) + "\n\n" + network +
+        "\n\n" + architecture_markdown() + "\n\n" + resources +
         f"\n\n[完整六卡报告]({prefix}RESULTS.zh.md) · [HTML]({prefix}report.html)\n\n"
         "SOP本轮未重测；历史八H200结果见[原报告](experiments/vllm-sop-h200-20261120/report.html)。\n")
-    root_page = page.replace('href="', f'href="{prefix}').replace("</body>",
+    def root_link(match):
+        attribute, target = match.groups()
+        if not urlsplit(target).scheme and not target.startswith(("/", "#")):
+            target = posixpath.normpath(prefix + target)
+        return f'{attribute}="{target}"'
+
+    root_page = re.sub(r'(href|src)="([^"]+)"', root_link, page).replace("</body>",
         '<p>SOP本轮未重测；<a href="experiments/vllm-sop-h200-20261120/report.html">历史八H200报告</a></p></body>')
     (ROOT / "report.html").write_text(root_page)
     print(conclusions[0])

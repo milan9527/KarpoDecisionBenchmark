@@ -1,0 +1,21 @@
+{
+  "publisher": "Amazon Web Services",
+  "page": "https://aws.amazon.com/architecture/icons/",
+  "package_url": "https://d1.awsstatic.com/onedam/marketing-channels/website/public/shared/architecture-icon-release/Icon-package_07312026.5846e92413caa21490223536cc97f1269e44fa92.zip",
+  "package_sha256": "d2d166c453526471749d520e0db022c459abef759d2946cf2dd1d1c992dc6526",
+  "retrieved_date": "2026-11-21",
+  "files": {
+    "ec2.svg": {
+      "archive_member": "Architecture-Service-Icons_07312026/Arch_Compute/48/Arch_Amazon-EC2_48.svg",
+      "sha256": "099dff32b3f795f3fa8ed97f0466708502a7fd6500136679899a0cec5a5a2473"
+    },
+    "aws-cloud.svg": {
+      "archive_member": "Architecture-Group-Icons_07312026/AWS-Cloud-logo_32.svg",
+      "sha256": "63d73df1aac59dab323df732f82e196e359fb7b6370c0ca8e51e7b897cd350be"
+    },
+    "region.svg": {
+      "archive_member": "Architecture-Group-Icons_07312026/Region_32.svg",
+      "sha256": "848203d40c55e213c84c1b8a3e14c2fa92aaa793b31a5c17a5fd1737ef58b8ca"
+    }
+  }
+}

@@ -10,6 +10,12 @@
 
 实际部署为us-east-2c四张RTX加us-east-1d两张RTX PRO 6000 Blackwell Server Edition 96GB，共五台Spot EC2。俄亥俄Spot配额已满、四种RTX实例规格在三个可用区的按需容量均不足，因此新增两卡使用北弗吉尼亚Spot。两张远端卡经仅绑定loopback的SSH隧道访问。端到端从预定到达至完整HTTP响应，包含排队、编码、代理及跨区域SSH传输，不含生产外部入口与在线特征查询。四卡对照位于同可用区，六卡结果包含新增网络路径的影响。
 
+[AWS部署说明](../../docs/ARCHITECTURE.zh.md) · [SVG原图](../../docs/assets/promo-rtx6-aws-architecture.svg) · [高清PNG](../../docs/assets/promo-rtx6-aws-architecture.png)
+
+![六RTX AWS实测部署架构：五台EC2，俄亥俄四卡、北弗吉尼亚两卡](../../docs/assets/promo-rtx6-aws-architecture.svg)
+
+代理与压测客户端位于双卡EC2 A，每张GPU运行一个完整模型副本。图示为测试期间部署；入口代理随压测结束退出，EC2保留状态以资源快照为准。
+
 ## 两轮正式100 RPS验证
 
 持续每秒固定到达100请求，不是100个请求同时在途。正式验收为两轮各120秒：稳定有效吞吐≥99 RPS、端到端P50≤500ms、零失败，并检查尾段P50、发送滞后及积压趋势。质量和正式压力正确率均按全部尝试计算且须≥90%，失败不算正确。压力阶段循环360条tune请求，质量阶段单独统计1080条quality请求。延迟分位数仅统计有效响应，任何失败仍单独计入验收。

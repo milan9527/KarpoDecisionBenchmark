@@ -15,6 +15,12 @@
 
 实际部署为us-east-2c四张RTX加us-east-1d两张RTX PRO 6000 Blackwell Server Edition 96GB，共五台Spot EC2。俄亥俄Spot配额已满、四种RTX实例规格在三个可用区的按需容量均不足，因此新增两卡使用北弗吉尼亚Spot。两张远端卡经仅绑定loopback的SSH隧道访问。端到端从预定到达至完整HTTP响应，包含排队、编码、代理及跨区域SSH传输，不含生产外部入口与在线特征查询。四卡对照位于同可用区，六卡结果包含新增网络路径的影响。
 
+[AWS部署说明](docs/ARCHITECTURE.zh.md) · [SVG原图](docs/assets/promo-rtx6-aws-architecture.svg) · [高清PNG](docs/assets/promo-rtx6-aws-architecture.png)
+
+![六RTX AWS实测部署架构：五台EC2，俄亥俄四卡、北弗吉尼亚两卡](docs/assets/promo-rtx6-aws-architecture.svg)
+
+代理与压测客户端位于双卡EC2 A，每张GPU运行一个完整模型副本。图示为测试期间部署；入口代理随压测结束退出，EC2保留状态以资源快照为准。
+
 核对时间2026-11-21T04:25:48.373072+00:00：五台参与EC2保持运行、共六张RTX，其余五台项目EC2保持停止。
 
 [完整六卡报告](experiments/promo-rtx6-20261121/RESULTS.zh.md) · [HTML](experiments/promo-rtx6-20261121/report.html)

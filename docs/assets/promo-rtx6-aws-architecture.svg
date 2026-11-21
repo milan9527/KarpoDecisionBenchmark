@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1680" height="1340" viewBox="0 0 1680 1340" role="img" aria-labelledby="title desc">
+<title id="title">Karpo 风控六 RTX：AWS 实测部署架构</title>
+<desc id="desc">五台 Spot EC2，六张 RTX PRO 6000 Blackwell 96GB。俄亥俄 us-east-2c 四卡，北弗吉尼亚 us-east-1d 两卡。双卡 EC2 A 同时运行压测客户端、最少在途请求代理和复核校准。每张卡一个 Karpo 4B FP8 vLLM 副本，最大 batch 4，跨区域使用 SSH 隧道。</desc>
+<defs>
+<symbol id="aws-ec2" viewBox="0 0 64 64">
+<ns0:g xmlns:ns0="http://www.w3.org/2000/svg" id="ec2-Icon-Architecture/48/Arch_Amazon-EC2_48" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <ns0:g id="ec2-Icon-Architecture-BG/48/Compute" fill="#ED7100">
+            <ns0:rect id="ec2-Rectangle" x="0" y="0" width="64" height="64" />
+        </ns0:g>
+        <ns0:path d="M22,41 L41,41 L41,23 L22,23 L22,41 Z M43,23 L46,23 L46,25 L43,25 L43,27 L46,27 L46,29 L43,29 L43,31 L46,31 L46,33 L43,33 L43,36 L46,36 L46,38 L43,38 L43,40 L46,40 L46,42 L42.863,42 C42.608,42.587 42.023,43 41.344,43 L41,43 L41,46 L39,46 L39,43 L37,43 L37,46 L35,46 L35,43 L33,43 L33,46 L31,46 L31,43 L29,43 L29,46 L27,46 L27,43 L24,43 L24,46 L22,46 L22,43 L21.656,43 C20.977,43 20.392,42.587 20.137,42 L18,42 L18,40 L20,40 L20,38 L18,38 L18,36 L20,36 L20,33 L18,33 L18,31 L20,31 L20,29 L18,29 L18,27 L20,27 L20,25 L18,25 L18,23 L20,23 L20,22.656 C20,21.743 20.743,21 21.656,21 L22,21 L22,18 L24,18 L24,21 L27,21 L27,18 L29,18 L29,21 L31,21 L31,18 L33,18 L33,21 L35,21 L35,18 L37,18 L37,21 L39,21 L39,18 L41,18 L41,21 L41.344,21 C42.257,21 43,21.743 43,22.656 L43,23 Z M32,52 L12,52 L12,32 L16,32 L16,30 L11.843,30 C10.826,30 10,30.827 10,31.843 L10,52.157 C10,53.173 10.826,54 11.843,54 L32.157,54 C33.174,54 34,53.173 34,52.157 L34,48 L32,48 L32,52 Z M54,11.843 L54,32.157 C54,33.173 53.174,34 52.157,34 L48,34 L48,32 L52,32 L52,12 L32,12 L32,16 L30,16 L30,11.843 C30,10.827 30.826,10 31.843,10 L52.157,10 C53.174,10 54,10.827 54,11.843 L54,11.843 Z" id="ec2-Amazon-EC2_Icon_48_Squid" fill="#FFFFFF" />
+    </ns0:g>
+
+</symbol>
+<symbol id="aws-aws-cloud" viewBox="0 0 40 40">
+<ns0:g xmlns:ns0="http://www.w3.org/2000/svg" id="aws-cloud-Icon-Architecture-Group/32/AWS-Cloud-logo_32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <ns0:rect id="aws-cloud-Rectangle" fill="#242F3E" x="0" y="0" width="40" height="40" />
+        <ns0:path d="M32.6982,23.9008 C33.0592,24.3698 32.2982,26.2998 31.9572,27.1638 C31.8532,27.4258 32.0752,27.5288 32.3072,27.3318 C33.8202,26.0478 34.2122,23.3568 33.9012,22.9688 C33.5942,22.5828 30.9502,22.2518 29.3382,23.4008 C29.0892,23.5778 29.1322,23.8218 29.4072,23.7898 C30.3152,23.6778 32.3382,23.4328 32.6982,23.9008 L32.6982,23.9008 Z M31.8562,25.9098 C32.3742,25.5318 31.9302,24.9688 31.4022,25.1898 C27.8892,26.6538 24.0752,27.3628 20.6022,27.3628 C15.4592,27.3628 10.4752,25.9738 6.4462,23.6678 C6.0942,23.4658 5.8332,23.8228 6.1272,24.0818 C9.8602,27.3978 14.7962,29.3908 20.2742,29.3908 C24.1842,29.3908 28.7252,28.1828 31.8562,25.9098 L31.8562,25.9098 Z M29.7122,20.6948 C29.2142,20.6948 28.7272,20.6418 28.2532,20.5338 C27.7772,20.4248 27.4132,20.3018 27.1602,20.1608 C27.0052,20.0768 26.9082,19.9888 26.8692,19.9028 C26.8312,19.8148 26.8112,19.7288 26.8112,19.6428 L26.8112,19.1738 C26.8112,18.9798 26.8842,18.8808 27.0272,18.8808 C27.0822,18.8808 27.1402,18.8938 27.2002,18.9138 C27.2612,18.9368 27.3412,18.9688 27.4412,19.0118 C27.7612,19.1528 28.1082,19.2598 28.4852,19.3358 C28.8612,19.4108 29.2362,19.4488 29.6112,19.4488 C30.2082,19.4488 30.6692,19.3468 30.9952,19.1408 C31.3222,18.9368 31.4842,18.6458 31.4842,18.2678 C31.4842,18.0078 31.3992,17.7928 31.2272,17.6188 C31.0562,17.4448 30.7382,17.2858 30.2752,17.1338 L28.9002,16.7128 C28.2032,16.4968 27.6982,16.1838 27.3832,15.7748 C27.0682,15.3628 26.9112,14.9158 26.9112,14.4278 C26.9112,14.0408 26.9962,13.6988 27.1692,13.4008 C27.3392,13.1038 27.5642,12.8508 27.8452,12.6398 C28.1302,12.4298 28.4592,12.2718 28.8342,12.1618 C29.2082,12.0548 29.6062,11.9998 30.0262,11.9998 C30.2362,11.9998 30.4492,12.0138 30.6662,12.0408 C30.8812,12.0668 31.0852,12.1028 31.2782,12.1458 C31.4712,12.1908 31.6512,12.2388 31.8162,12.2918 C31.9822,12.3468 32.1142,12.4008 32.2152,12.4538 C32.3462,12.5288 32.4392,12.6048 32.4962,12.6808 C32.5512,12.7558 32.5792,12.8578 32.5792,12.9888 L32.5792,13.4248 C32.5792,13.6198 32.5072,13.7158 32.3622,13.7158 C32.2852,13.7158 32.1652,13.6798 31.9982,13.6038 C31.4582,13.3648 30.8482,13.2478 30.1772,13.2478 C29.6352,13.2478 29.2142,13.3338 28.9162,13.5058 C28.6172,13.6798 28.4682,13.9548 28.4682,14.3328 C28.4682,14.5908 28.5622,14.8098 28.7512,14.9878 C28.9392,15.1658 29.2862,15.3358 29.7952,15.4988 L31.1372,15.9208 C31.8222,16.1348 32.3112,16.4328 32.6032,16.8088 C32.8972,17.1878 33.0442,17.6188 33.0442,18.1038 C33.0442,18.5048 32.9612,18.8638 32.7942,19.1818 C32.6282,19.5008 32.3992,19.7718 32.1052,19.9988 C31.8132,20.2258 31.4632,20.3978 31.0542,20.5168 C30.6442,20.6368 30.1972,20.6948 29.7122,20.6948 L29.7122,20.6948 Z M17.5472,20.4508 C17.3812,20.4508 17.2602,20.4238 17.1822,20.3638 C17.1042,20.3028 17.0382,20.1828 16.9832,19.9988 L14.7612,12.8418 C14.7082,12.6578 14.6792,12.5348 14.6792,12.4708 C14.6792,12.3198 14.7572,12.2438 14.9122,12.2438 L15.8392,12.2438 C16.0162,12.2438 16.1402,12.2738 16.2132,12.3338 C16.2842,12.3918 16.3472,12.5118 16.4022,12.6978 L17.9932,18.8178 L19.4702,12.6978 C19.5142,12.5118 19.5742,12.3918 19.6512,12.3338 C19.7282,12.2738 19.8552,12.2438 20.0312,12.2438 L20.7962,12.2438 C20.9712,12.2438 21.0982,12.2738 21.1762,12.3338 C21.2532,12.3918 21.3142,12.5118 21.3582,12.6978 L22.8512,18.8988 L24.4912,12.6978 C24.5462,12.5118 24.6092,12.3918 24.6812,12.3338 C24.7542,12.2738 24.8772,12.2438 25.0542,12.2438 L25.9322,12.2438 C26.0882,12.2438 26.1652,12.3198 26.1652,12.4708 C26.1652,12.5118 26.1582,12.5618 26.1492,12.6148 C26.1362,12.6708 26.1162,12.7458 26.0812,12.8418 L23.7952,19.9988 C23.7402,20.1828 23.6732,20.3028 23.5952,20.3638 C23.5182,20.4238 23.3962,20.4508 23.2312,20.4508 L22.4182,20.4508 C22.2422,20.4508 22.1152,20.4208 22.0382,20.3568 C21.9612,20.2918 21.9002,20.1658 21.8562,19.9838 L20.3802,14.0238 L18.9232,19.9838 C18.8792,20.1658 18.8172,20.2918 18.7402,20.3568 C18.6622,20.4208 18.5362,20.4508 18.3592,20.4508 L17.5472,20.4508 Z M9.9392,19.4488 C10.2502,19.4488 10.5752,19.3918 10.9182,19.2788 C11.2602,19.1648 11.5582,18.9688 11.8122,18.6868 C11.9682,18.5148 12.0742,18.3178 12.1362,18.0958 C12.1962,17.8758 12.2252,17.6088 12.2252,17.2948 L12.2252,16.9068 C11.9512,16.8418 11.6612,16.7908 11.3562,16.7528 C11.0522,16.7158 10.7572,16.6958 10.4692,16.6958 C9.8402,16.6958 9.3692,16.8198 9.0612,17.0688 C8.7522,17.3168 8.5962,17.6718 8.5962,18.1388 C8.5962,18.5698 8.7132,18.8948 8.9452,19.1168 C9.1772,19.3388 9.5092,19.4488 9.9392,19.4488 L9.9392,19.4488 Z M13.7852,18.0408 C13.7852,18.3858 13.8202,18.6598 13.8922,18.8658 C13.9652,19.0718 14.0672,19.2938 14.1992,19.5298 C14.2432,19.6058 14.2652,19.6758 14.2652,19.7388 C14.2652,19.8378 14.2042,19.9298 14.0832,20.0148 L13.4862,20.4048 C13.3982,20.4578 13.3152,20.4858 13.2382,20.4858 C13.1372,20.4858 13.0442,20.4428 12.9562,20.3568 C12.8222,20.2258 12.7102,20.0838 12.6172,19.9268 C12.5212,19.7708 12.4252,19.5878 12.3262,19.3828 C11.5852,20.2358 10.6582,20.6628 9.5422,20.6628 C8.7462,20.6628 8.1162,20.4428 7.6512,19.9988 C7.1882,19.5568 6.9562,18.9628 6.9562,18.2188 C6.9562,17.4318 7.2432,16.7958 7.8192,16.3158 C8.3922,15.8358 9.1672,15.5948 10.1382,15.5948 C10.4592,15.5948 10.7932,15.6198 11.1412,15.6678 C11.4882,15.7158 11.8512,15.7848 12.2252,15.8708 L12.2252,15.1918 C12.2252,14.4898 12.0782,13.9958 11.7792,13.7088 C11.4812,13.4228 10.9682,13.2808 10.2392,13.2808 C9.9062,13.2808 9.5662,13.3198 9.2182,13.4008 C8.8712,13.4818 8.5302,13.5868 8.1992,13.7158 C8.0442,13.7808 7.9332,13.8218 7.8682,13.8378 C7.8022,13.8538 7.7522,13.8618 7.7192,13.8618 C7.5872,13.8618 7.5192,13.7658 7.5192,13.5698 L7.5192,13.1178 C7.5192,12.9658 7.5432,12.8578 7.5872,12.7948 C7.6312,12.7288 7.7192,12.6638 7.8522,12.5998 C8.1832,12.4368 8.5812,12.2968 9.0442,12.1788 C9.5092,12.0598 10.0002,11.9998 10.5202,11.9998 C11.6462,11.9998 12.4722,12.2528 12.9972,12.7528 C13.5212,13.2548 13.7852,14.0128 13.7852,15.0278 L13.7852,18.0408 Z" id="aws-cloud-Fill-1" fill="#FFFFFF" />
+    </ns0:g>
+
+</symbol>
+<symbol id="aws-region" viewBox="0 0 40 40">
+<ns0:g xmlns:ns0="http://www.w3.org/2000/svg" id="region-Icon-Architecture-Group/32/Region_32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <ns0:rect id="region-Rectangle" fill="#00A4A6" x="0" y="0" width="40" height="40" />
+        <ns0:path d="M14,20.026 L14,11.026 L29.293,11.026 L25.146,15.172 C24.951,15.368 24.951,15.684 25.146,15.88 L29.293,20.026 L14,20.026 Z M26.207,15.526 L30.854,10.88 C30.996,10.736 31.039,10.522 30.962,10.335 C30.885,10.148 30.702,10.026 30.5,10.026 L14,10.026 L14,8.97 C14.596,8.76 15.026,8.198 15.026,7.531 C15.026,6.687 14.34,6 13.495,6 C12.65,6 11.963,6.687 11.963,7.531 C11.963,8.201 12.398,8.766 13,8.973 L13,33.026 L10,33.026 L10,34.026 L17,34.026 L17,33.026 L14,33.026 L14,21.026 L30.5,21.026 C30.702,21.026 30.885,20.904 30.962,20.717 C31.039,20.53 30.996,20.316 30.854,20.172 L26.207,15.526 Z" id="region-Fill-1" fill="#FFFFFF" />
+    </ns0:g>
+
+</symbol>
+<marker id="arrow-blue" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#2764a5"/></marker>
+<marker id="arrow-orange" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#cb660c"/></marker>
+</defs><g font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif">
+<rect x="0" y="0" width="1680" height="1340" rx="0" fill="#f5f7fa" stroke="#f5f7fa" stroke-width="1.5"/>
+<text x="40" y="61" font-size="34" fill="#172638" font-weight="700">Karpo 风控 · AWS 六 RTX 部署架构</text>
+<text x="40" y="96" font-size="20" fill="#526174" font-weight="400">2026-11-21 实测拓扑  |  完整 200 特征  |  每卡一个独立模型副本</text>
+<rect x="40" y="119" width="385" height="76" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="56" y="150" font-size="22" fill="#172638" font-weight="700">5 台 Spot EC2</text>
+<text x="56" y="179" font-size="16" fill="#526174" font-weight="400">1 台双卡 + 4 台单卡</text>
+<rect x="445" y="119" width="385" height="76" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="461" y="150" font-size="22" fill="#172638" font-weight="700">6 张同型号 GPU</text>
+<text x="461" y="179" font-size="16" fill="#526174" font-weight="400">RTX PRO 6000 Blackwell · 96GB</text>
+<rect x="850" y="119" width="385" height="76" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="866" y="150" font-size="22" fill="#172638" font-weight="700">持续 100 请求 / 秒</text>
+<text x="866" y="179" font-size="16" fill="#526174" font-weight="400">两轮各 120 秒 · 零失败</text>
+<rect x="1255" y="119" width="385" height="76" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="1271" y="150" font-size="22" fill="#172638" font-weight="700">P50 67.62 / 68.11 ms</text>
+<text x="1271" y="179" font-size="16" fill="#526174" font-weight="400">含排队、编码、推理及跨区域传输</text>
+<text x="40" y="235" font-size="21" fill="#172638" font-weight="700">请求处理顺序</text>
+<rect x="40" y="254" width="294" height="90" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="55" y="287" font-size="20" fill="#172638" font-weight="700">01  原始请求</text>
+<text x="55" y="319" font-size="16" fill="#526174" font-weight="400">完整 200 特征与原提示</text>
+<path d="M334 299 H361" fill="none" stroke="#2764a5" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<rect x="366" y="254" width="294" height="90" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="381" y="287" font-size="20" fill="#172638" font-weight="700">02  代理分发</text>
+<text x="381" y="319" font-size="16" fill="#526174" font-weight="400">选择在途请求最少的副本</text>
+<path d="M660 299 H687" fill="none" stroke="#2764a5" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<rect x="692" y="254" width="294" height="90" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="707" y="287" font-size="20" fill="#172638" font-weight="700">03  单卡 vLLM 推理</text>
+<text x="707" y="319" font-size="16" fill="#526174" font-weight="400">Karpo 4B FP8 + FP32 决策头</text>
+<path d="M986 299 H1013" fill="none" stroke="#2764a5" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<rect x="1018" y="254" width="294" height="90" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="1033" y="287" font-size="20" fill="#172638" font-weight="700">04  复核阈值校准</text>
+<text x="1033" y="319" font-size="16" fill="#526174" font-weight="400">代理按模型概率升级部分放行</text>
+<path d="M1312 299 H1339" fill="none" stroke="#2764a5" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<rect x="1344" y="254" width="294" height="90" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="1359" y="287" font-size="20" fill="#172638" font-weight="700">05  返回决策</text>
+<text x="1359" y="319" font-size="16" fill="#526174" font-weight="400">保留 answers，另返回 decision</text>
+<rect x="32" y="388" width="1616" height="797" rx="4" fill="#ffffff" stroke="#647184" stroke-width="1.5"/>
+<use xlink:href="#aws-aws-cloud" x="48" y="404" width="40" height="40"/>
+<text x="102" y="432" font-size="24" fill="#172638" font-weight="700">AWS Cloud</text>
+<text x="1120" y="432" font-size="18" fill="#526174" font-weight="400">测试期间的部署 · 资源快照 04:25 UTC</text>
+<rect x="56" y="465" width="974" height="661" rx="2" fill="#f5fbfb" stroke="#00a4a6" stroke-width="1.5"/>
+<rect x="1070" y="465" width="550" height="661" rx="2" fill="#f5fbfb" stroke="#00a4a6" stroke-width="1.5"/>
+<use xlink:href="#aws-region" x="70" y="478" width="36" height="36"/>
+<text x="118" y="504" font-size="23" fill="#172638" font-weight="700">俄亥俄 us-east-2  /  可用区 us-east-2c</text>
+<use xlink:href="#aws-region" x="1084" y="478" width="36" height="36"/>
+<text x="1132" y="504" font-size="22" fill="#172638" font-weight="700">北弗吉尼亚 us-east-1 / us-east-1d</text>
+<rect x="82" y="535" width="922" height="307" rx="8" fill="#fffaf5" stroke="#ed7100" stroke-width="1.5"/>
+<use xlink:href="#aws-ec2" x="100" y="550" width="44" height="44"/>
+<text x="160" y="575" font-size="23" fill="#172638" font-weight="700">EC2 A · g7e.12xlarge · 2 GPU</text>
+<text x="650" y="575" font-size="18" fill="#6a573e" font-weight="400">压测、代理与两个副本同机部署</text>
+<rect x="104" y="625" width="205" height="82" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="119" y="655" font-size="21" fill="#172638" font-weight="700">压测客户端</text>
+<text x="119" y="686" font-size="17" fill="#526174" font-weight="400">完整 JSON · 100 RPS</text>
+<rect x="352" y="625" width="254" height="82" rx="12" fill="#eff5ff" stroke="#2764a5" stroke-width="1.5"/>
+<text x="368" y="655" font-size="21" fill="#172638" font-weight="700">路由 + 复核校准</text>
+<text x="368" y="686" font-size="18" fill="#526174" font-weight="400">127.0.0.1:18770</text>
+<path d="M309 666 H348" fill="none" stroke="#2764a5" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<rect x="677" y="621" width="303" height="82" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="693" y="652" font-size="21" fill="#172638" font-weight="700">GPU 0 · vLLM 副本 0</text>
+<text x="693" y="682" font-size="17" fill="#526174" font-weight="400">完整 Karpo 4B FP8 · :18500</text>
+<rect x="677" y="728" width="303" height="82" rx="12" fill="#ffffff" stroke="#d6dee8" stroke-width="1.5"/>
+<text x="693" y="759" font-size="21" fill="#172638" font-weight="700">GPU 1 · vLLM 副本 1</text>
+<text x="693" y="789" font-size="17" fill="#526174" font-weight="400">完整 Karpo 4B FP8 · :18501</text>
+<path d="M606 666 H673" fill="none" stroke="#2764a5" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M640 666 V769 H673" fill="none" stroke="#2764a5" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<text x="105" y="757" font-size="18" fill="#526174" font-weight="400">请求由一个副本完成，沿原路返回。</text>
+<text x="105" y="787" font-size="18" fill="#526174" font-weight="400">复核阈值：0.162826（原始 allow）</text>
+<text x="105" y="817" font-size="18" fill="#526174" font-weight="400">保留 answers，另返回 decision。</text>
+<rect x="82" y="915" width="445" height="181" rx="8" fill="#fffaf5" stroke="#ed7100" stroke-width="1.5"/>
+<use xlink:href="#aws-ec2" x="99" y="931" width="42" height="42"/>
+<text x="155" y="959" font-size="21" fill="#172638" font-weight="700">EC2 B · g7e.2xlarge · 1 GPU</text>
+<text x="100" y="998" font-size="20" fill="#172638" font-weight="600">GPU 2 · vLLM 副本 2 · Karpo 4B FP8</text>
+<text x="100" y="1032" font-size="17" fill="#526174" font-weight="400">私网 HTTP · 172.31.42.209:18500</text>
+<text x="100" y="1065" font-size="17" fill="#526174" font-weight="400">部署节点：peer2  |  最大 batch = 4</text>
+<rect x="559" y="915" width="445" height="181" rx="8" fill="#fffaf5" stroke="#ed7100" stroke-width="1.5"/>
+<use xlink:href="#aws-ec2" x="576" y="931" width="42" height="42"/>
+<text x="632" y="959" font-size="21" fill="#172638" font-weight="700">EC2 C · g7e.2xlarge · 1 GPU</text>
+<text x="577" y="998" font-size="20" fill="#172638" font-weight="600">GPU 3 · vLLM 副本 3 · Karpo 4B FP8</text>
+<text x="577" y="1032" font-size="17" fill="#526174" font-weight="400">私网 HTTP · 172.31.37.239:18500</text>
+<text x="577" y="1065" font-size="17" fill="#526174" font-weight="400">部署节点：peer3  |  最大 batch = 4</text>
+<path d="M479 707 V873 H304 V911" fill="none" stroke="#2764a5" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M479 873 H782 V911" fill="none" stroke="#2764a5" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<text x="101" y="897" font-size="17" fill="#2764a5" font-weight="400">同可用区私网 HTTP</text>
+<text x="582" y="897" font-size="17" fill="#2764a5" font-weight="400">同可用区私网 HTTP</text>
+<rect x="1096" y="629" width="498" height="181" rx="8" fill="#fffaf5" stroke="#ed7100" stroke-width="1.5"/>
+<use xlink:href="#aws-ec2" x="1113" y="645" width="42" height="42"/>
+<text x="1169" y="673" font-size="21" fill="#172638" font-weight="700">EC2 D · g7e.2xlarge · 1 GPU</text>
+<text x="1114" y="712" font-size="20" fill="#172638" font-weight="600">GPU 4 · vLLM 副本 4 · Karpo 4B FP8</text>
+<text x="1114" y="746" font-size="17" fill="#526174" font-weight="400">SSH 18504 → 远端 127.0.0.1:18500</text>
+<text x="1114" y="779" font-size="17" fill="#526174" font-weight="400">部署节点：peer4  |  最大 batch = 4</text>
+<rect x="1096" y="915" width="498" height="181" rx="8" fill="#fffaf5" stroke="#ed7100" stroke-width="1.5"/>
+<use xlink:href="#aws-ec2" x="1113" y="931" width="42" height="42"/>
+<text x="1169" y="959" font-size="21" fill="#172638" font-weight="700">EC2 E · g7e.2xlarge · 1 GPU</text>
+<text x="1114" y="998" font-size="20" fill="#172638" font-weight="600">GPU 5 · vLLM 副本 5 · Karpo 4B FP8</text>
+<text x="1114" y="1032" font-size="17" fill="#526174" font-weight="400">SSH 18505 → 远端 127.0.0.1:18500</text>
+<text x="1114" y="1065" font-size="17" fill="#526174" font-weight="400">部署节点：peer5  |  最大 batch = 4</text>
+<path d="M479 625 V604 H1050 V706 H1092" fill="none" stroke="#cb660c" stroke-width="2.4" stroke-linejoin="round" stroke-dasharray="8 5" marker-end="url(#arrow-orange)"/>
+<path d="M1050 706 V992 H1092" fill="none" stroke="#cb660c" stroke-width="2.4" stroke-linejoin="round" stroke-dasharray="8 5" marker-end="url(#arrow-orange)"/>
+<text x="1099" y="550" font-size="21" fill="#b85b08" font-weight="700">跨区域 SSH 隧道 · TCP 22</text>
+<text x="1099" y="581" font-size="18" fill="#6a573e" font-weight="400">仅允许 EC2 A 公网 IP /32 访问</text>
+<text x="1099" y="850" font-size="18" fill="#526174" font-weight="400">两张远端卡各使用一条 SSH 隧道。</text>
+<text x="1099" y="881" font-size="18" fill="#526174" font-weight="400">俄亥俄配额及容量不足，新增卡部署于此。</text>
+<path d="M58 1155 H103" fill="none" stroke="#2764a5" stroke-width="2.4" stroke-linejoin="round"/>
+<text x="114" y="1162" font-size="17" fill="#526174" font-weight="400">本机 / 私网 HTTP</text>
+<path d="M348 1155 H393" fill="none" stroke="#cb660c" stroke-width="2.4" stroke-linejoin="round" stroke-dasharray="8 5"/>
+<text x="404" y="1162" font-size="17" fill="#526174" font-weight="400">跨区域 SSH</text>
+<text x="704" y="1162" font-size="18" fill="#526174" font-weight="400">所有模型副本：vLLM 0.34.0 · FP8 · 最大 batch 4 · CUDA Graph powers</text>
+<text x="40" y="1225" font-size="20" fill="#263549" font-weight="400">计时范围：预定到达到完整 HTTP 响应，包含排队及跨区域通信；生产入口和在线特征查询未纳入。</text>
+<text x="40" y="1262" font-size="19" fill="#526174" font-weight="400">生命周期：入口代理随压测结束退出；测试结束时 5 台 EC2 保留运行，模型与隧道进程设有 6 小时上限。</text>
+<text x="40" y="1308" font-size="16" fill="#667386" font-weight="400">AWS 官方架构图标 · 2026-07-31 图标包  |  依据：promo-rtx6-20261121 已核验部署及请求记录</text>
+</g></svg>
