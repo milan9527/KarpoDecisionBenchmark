@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-21T11:53:47.760970+00:00",
+  "deployed_frontend_sha256": {
+    "index.html": "0543e22521a54fb24e81ccf59025ebffdd41920f5559426d27b6bbd8f5c75de5",
+    "style.css": "8d4529705d28a096942e5199c543f3c1d1602d653af3da6392efc26665435bb9",
+    "app.js": "a8b474269fbf585f1f2d9c4534bd3c3753083f6daf136348ee98458a003e3c67",
+    "benchmark.js": "6b95e9472d9ab4f996bc0325da0bb626d3837393e9e194b64b866fb0bb4c9666",
+    "rate-worker.js": "85f75d35eb222705c5e6b8e6fd4ccb8444f84755ea326c4e1e224b856ad41651",
+    "rate-client.js": "5a77dcf900ac564a64639f2713ee5396b85b1bcf032f84383c9666ba4869bce5"
+  },
+  "default_rps": 100,
+  "default_seconds": 120,
+  "no_browser_errors": true,
+  "mobile_no_overflow": true,
+  "gpu_start_requests": 0,
+  "change_since_formal_run": "Only added warmup guidance and corrected progress aria-label; inference and scheduling code unchanged."
+}

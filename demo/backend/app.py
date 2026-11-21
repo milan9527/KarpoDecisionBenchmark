@@ -2,7 +2,6 @@
 import asyncio
 from contextlib import asynccontextmanager
 import json
-import math
 import os
 from pathlib import Path
 import secrets
@@ -15,12 +14,14 @@ import boto3
 from botocore.config import Config
 from botocore.exceptions import ClientError
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 import httpx
 
-from state import MAX_INFLIGHT, Capacity, Conflict, Store, acquire, activity, release, begin_request
+from state import MAX_INFLIGHT, Capacity, Conflict, Store, acquire, activity, release
 from auth import COOKIE_SECONDS, LoginLimiter, issue_session, read_session, verify_credentials, viewer_ip
 from routing import ReplicaPool
+from leases import SessionLeases
+from registry import Registry
 
 ROOT = Path(os.environ.get("DEMO_ROOT", "/opt/karpo-demo"))
 CONFIG = json.loads((ROOT / "demo/config.json").read_text())
@@ -35,6 +36,12 @@ certificate.write_text(secret["node_cert"])
 tls = ssl.create_default_context(cafile=str(certificate))
 tls.check_hostname = False  # Trust only the private demo certificate; node addresses change at restart.
 catalog = json.loads((ROOT / "demo/catalog.json").read_text())
+registry = Registry(ROOT)
+for scenario in CONFIG["groups"]:
+    catalog[scenario]["datasets"] = registry.metadata(scenario)
+    for example in catalog[scenario]["examples"]:
+        example["request_json"] = json.dumps(example["request"], ensure_ascii=False, separators=(",", ":"))
+leases = SessionLeases(store, CONFIG["groups"])
 replicas = ReplicaPool()
 pending = {group: 0 for group in CONFIG["groups"]}
 login_limiter = LoginLimiter()
@@ -166,7 +173,11 @@ def control_loop():
 async def lifespan(app):
     worker = threading.Thread(target=control_loop, daemon=True)
     worker.start()
-    app.state.client = httpx.AsyncClient(verify=tls, timeout=120, trust_env=False,
+    # Gateway Uvicorn closes idle connections after 5s. Retire pooled sockets
+    # earlier, allowing time for cross-region transit before that deadline.
+    app.state.client = httpx.AsyncClient(verify=tls, timeout=40, trust_env=False,
+                                         limits=httpx.Limits(max_connections=100,
+                                             max_keepalive_connections=100, keepalive_expiry=2),
                                          headers={"X-Node-Token": secret["node_token"]})
     yield
     quitting.set()
@@ -265,54 +276,46 @@ def status(request: Request):
     return {"now": now, "idle_seconds": 600, "max_concurrency": MAX_INFLIGHT, "groups": groups}
 
 
+@app.get("/api/datasets/{dataset}")
+def dataset_questions(dataset: str, request: Request):
+    authenticated(request)
+    if dataset not in registry.datasets:
+        raise HTTPException(404, "未知问题集")
+    if "gzip" in request.headers.get("accept-encoding", ""):
+        return Response(registry.encoded[dataset], media_type="application/json",
+                        headers={"Content-Encoding": "gzip", "Vary": "Accept-Encoding"})
+    return JSONResponse(registry.datasets[dataset])
+
+
 @app.post("/api/{group}/start")
-def start(group: str, request: Request):
+async def start(group: str, request: Request):
     session = authenticated(request)
     group_name(group)
-    value = store.update(group, lambda old: acquire(old, session, int(time.time()), uuid.uuid4().hex))
+    value = await leases.control(group, lambda old: acquire(old, session, int(time.time()), uuid.uuid4().hex))
     return {"phase": value["phase"]}
 
 
 @app.post("/api/{group}/activity")
-def heartbeat(group: str, request: Request):
+async def heartbeat(group: str, request: Request):
     session = authenticated(request)
     group_name(group)
-    value = store.update(group, lambda old: activity(old, session, int(time.time())))
+    value = await leases.control(group, lambda old: activity(old, session, int(time.time())))
     return {"stop_after": value["stop_after"]}
 
 
 @app.post("/api/{group}/end")
-def end(group: str, request: Request):
+async def end(group: str, request: Request):
     session = authenticated(request)
     group_name(group)
-    value = store.update(group, lambda old: release(old, session, int(time.time())))
+    value = await leases.control(group, lambda old: release(old, session, int(time.time())))
     return {"stop_after": value["stop_after"], "phase": value["phase"]}
 
 
 def validate_input(group, payload):
-    if not isinstance(payload, dict) or set(payload) != {"state", "questions"}:
-        raise HTTPException(422, "请求必须包含state与questions")
-    baseline = catalog[group]["examples"][0]["request"]
-    if payload["questions"] != baseline["questions"]:
-        raise HTTPException(422, "演示保留原始候选与规则，请仅编辑state中的事实或客户消息")
-    if group == "risk":
-        try:
-            actual = payload["state"]["trusted_features"]
-            expected = baseline["state"]["trusted_features"]
-            assert isinstance(actual, dict) and all(isinstance(v, dict) for v in actual.values())
-            assert set(actual) == set(expected)
-            assert all(set(actual[k]) == set(expected[k]) for k in expected)
-            assert all(v is None or isinstance(v, (bool, int)) or isinstance(v, float) and math.isfinite(v)
-                       for values in actual.values() for v in values.values())
-        except (KeyError, TypeError, AssertionError):
-            raise HTTPException(422, "请保留完整200个特征及其分组结构") from None
-    else:
-        try:
-            state = json.loads(payload["state"])
-            assert isinstance(state, dict) and isinstance(state["trusted_facts"], dict)
-            assert isinstance(state["customer_message"], str)
-        except (TypeError, KeyError, ValueError, AssertionError):
-            raise HTTPException(422, "SOP state应为包含可信事实和客户消息的JSON字符串") from None
+    try:
+        return registry.validate(group, payload)
+    except ValueError as error:
+        raise HTTPException(422, str(error)) from None
 
 
 @app.post("/api/{group}/infer")
@@ -320,18 +323,15 @@ async def infer(group: str, request: Request):
     session = authenticated(request)
     group_name(group)
     payload = await request.json()
-    validate_input(group, payload)
+    policy = validate_input(group, payload)
     if pending[group] >= MAX_INFLIGHT:
         raise Capacity("当前场景已达到100个在途请求，请稍后重试。")
     pending[group] += 1
     request_id = uuid.uuid4().hex
     begin = time.perf_counter()
     selected = None
-    registered = False
     try:
-        value = await asyncio.to_thread(store.update, group, lambda old: begin_request(
-            old, session, int(time.time()), request_id))
-        registered = True
+        value = await leases.enter(group, session)
         if value.get("checked_at", 0) < time.time() - 60:
             raise HTTPException(503, "GPU健康状态已过期，正在重新确认")
         targets = []
@@ -346,7 +346,7 @@ async def infer(group: str, request: Request):
         if response.status_code != 200:
             raise HTTPException(502, "模型服务暂不可用，请稍后重试")
         result = response.json()
-        if group == "risk":
+        if group == "risk" and policy["calibrate"]:
             answer = result["answers"]["action"]
             probs = answer["probabilities"]
             score = probs["review"] / (probs["review"] + probs["allow"]) if probs["review"] + probs["allow"] else 0
@@ -358,18 +358,14 @@ async def infer(group: str, request: Request):
         result["demo"] = {"request_id": request_id, "scenario": group, "replica": selected[2],
                           "service_ms": (time.perf_counter() - begin) * 1000, "live_model": True}
         return result
-    except httpx.HTTPError:
+    except httpx.HTTPError as error:
+        print(json.dumps({"event": "upstream_error", "request_id": request_id,
+                          "scenario": group, "replica": selected[2] if selected else None,
+                          "error_type": type(error).__name__}), flush=True)
         raise HTTPException(502, "模型请求失败，请查看GPU就绪状态后重试") from None
     except TimeoutError:
         raise HTTPException(503, "GPU排队超时，请降低并发后重试") from None
     finally:
         if selected:
             await replicas.release(group, selected)
-        def done(old):
-            old["requests"].pop(request_id, None)
-            return old
-        try:
-            if registered:
-                await asyncio.to_thread(store.update, group, done)
-        finally:
-            pending[group] -= 1
+        pending[group] -= 1

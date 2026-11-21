@@ -7,6 +7,7 @@
   <title>Karpo · 实时决策演示</title>
   <link rel="stylesheet" href="style.css">
   <script src="benchmark.js" defer></script>
+  <script src="rate-client.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -55,30 +56,38 @@
       </section>
     </div>
     <section class="panel benchmark-panel" aria-labelledby="benchmark-title">
-      <div class="section-heading"><div><p class="eyebrow">03 / PERFORMANCE</p><h2 id="benchmark-title">多问题并发测试</h2></div><span id="bench-phase" class="badge neutral">尚未测试</span></div>
-      <p class="bench-description">选取多道问题，按设定并发循环发送。请求完成后补充下一条，直到达到总请求数。</p>
+      <div class="section-heading"><div><p class="eyebrow">03 / PERFORMANCE</p><h2 id="benchmark-title">固定 RPS · 多场景测试</h2></div><span id="bench-phase" class="badge neutral">尚未测试</span></div>
+      <p class="bench-description">沿用之前的固定到达率测试：每秒发送100个请求，持续120秒，共12,000次。按计划时间发送，持续测量完整响应时间。</p>
       <div class="bench-layout">
         <div>
           <div class="question-heading"><h3>本轮问题</h3><button id="bench-add" class="quiet" disabled>加入当前编辑问题</button></div>
+          <label for="bench-dataset">历史问题集</label><select id="bench-dataset" class="dataset-select"></select>
+          <div class="question-filters">
+            <select id="bench-category" aria-label="筛选业务场景"><option value="">全部场景</option></select>
+            <select id="bench-order" aria-label="筛选候选顺序"><option value="">两种候选顺序</option><option value="original">原顺序</option><option value="reversed">逆序</option></select>
+            <input id="bench-search" type="search" placeholder="搜索问题、场景或编号" aria-label="搜索历史问题">
+          </div>
+          <div class="question-tools"><button id="bench-select-filter" type="button">仅选筛选结果</button><button id="bench-select-all" type="button">全选问题集</button><button id="bench-clear" type="button">清空选择</button></div>
+          <p id="bench-selection-count" class="subtle">正在加载历史问题…</p>
           <div id="bench-questions" class="question-list"></div>
-          <p class="subtle">可多选示例，也可修改上方输入后加入；每个场景最多保留20道问题。</p>
+          <div class="question-pagination"><button id="bench-prev" type="button">上一页</button><span id="bench-page">1 / 1</span><button id="bench-next" type="button">下一页</button></div>
+          <p class="subtle">历史输入、规则和候选顺序完整保留；每个问题集还可加入20道自定义问题。参考答案仅用于评分，不发给模型。</p>
         </div>
         <form id="bench-form">
           <div class="bench-controls">
-            <div><label for="bench-concurrency">并发请求数</label><select id="bench-concurrency">
-              <option>1</option><option>2</option><option selected>4</option><option>8</option><option>16</option><option>32</option><option>64</option><option>100</option>
-            </select></div>
-            <div><label for="bench-total">总请求数</label><input id="bench-total" type="number" min="1" max="1000" step="1" value="30" required></div>
+            <div><label for="bench-rate">每秒请求数 · RPS</label><input id="bench-rate" type="number" min="1" max="100" step="1" value="100" required></div>
+            <div><label for="bench-seconds">持续时长 · 秒</label><input id="bench-seconds" type="number" min="1" max="120" step="1" value="120" required></div>
           </div>
-          <p class="subtle">并发是同时在途的请求数，实际每秒完成量见 RPS。总请求数须不少于并发数。</p>
-          <div class="bench-actions"><button id="bench-run" class="primary" disabled>开始并发测试 ↗</button><button id="bench-stop" class="quiet" type="button" disabled>停止发送</button></div>
+          <p class="subtle">计划 <strong id="bench-planned">12,000</strong> 次请求。正式对照采用100 RPS × 120秒，连续验证两轮；较短时长仅作探测。</p>
+          <p class="subtle">首次启动后，可先用20 RPS运行20秒预热；正式验收仍需查看完整100 RPS测试的吞吐、延迟和失败数。</p>
+          <div class="bench-actions"><button id="bench-run" class="primary" disabled>开始固定 RPS 测试 ↗</button><button id="bench-stop" class="quiet" type="button" disabled>停止发送</button></div>
           <p id="bench-error" class="error hidden" role="alert"></p>
         </form>
       </div>
       <div class="bench-progress"><span id="bench-progress-label">完成 0 / 0 · 在途 0</span><span id="bench-elapsed">用时 0.0 s</span></div>
-      <progress id="bench-progress" value="0" max="1" aria-label="并发测试完成进度"></progress>
+      <progress id="bench-progress" value="0" max="1" aria-label="固定RPS测试完成进度"></progress>
       <div class="bench-metrics" aria-live="off">
-        <div><span>成功吞吐量</span><strong id="bench-rps">—</strong><small>RPS</small></div>
+        <div><span>稳态成功吞吐</span><strong id="bench-rps">—</strong><small>RPS · 后75%窗口</small></div>
         <div><span>成功率</span><strong id="bench-success">—</strong><small id="bench-errors">尚无请求</small></div>
         <div><span>P50 延迟</span><strong id="bench-p50">—</strong><small>ms</small></div>
         <div><span>P95 延迟</span><strong id="bench-p95">—</strong><small>ms</small></div>
@@ -86,8 +95,13 @@
         <div><span>平均延迟</span><strong id="bench-mean">—</strong><small>ms</small></div>
         <div><span>最慢请求</span><strong id="bench-max">—</strong><small>ms</small></div>
         <div><span>峰值在途</span><strong id="bench-peak">—</strong><small>浏览器请求</small></div>
+        <div><span>整体成功吞吐</span><strong id="bench-overall-rps">—</strong><small>RPS · 含收尾</small></div>
+        <div><span>最大发送滞后</span><strong id="bench-send-lag">—</strong><small>ms</small></div>
+        <div><span>参考答案符合率</span><strong id="bench-accuracy">—</strong><small id="bench-evaluated">仅有标签的原始问题</small></div>
+        <div><span>HTTP往返 P50</span><strong id="bench-http-p50">—</strong><small>ms · 实际发出后</small></div>
       </div>
-      <p class="subtle">延迟从浏览器发起请求到完整响应解析结束，包含网络、排队及服务处理；分位数统计成功请求。RPS = 成功数 ÷ 本轮总耗时。成功率指请求成功，不代表模型准确率。</p>
+      <p id="bench-verdict" class="subtle">等待测试结果。</p>
+      <p class="subtle">端到端延迟从计划发送时刻到完整响应解析结束，包含发送滞后、网络和所有排队。分位数统计有效响应，失败始终计入成功率与评分；每条请求最多等待65秒，不自动重试。请保持浏览器正常运行，发送滞后过大会使本轮不达标。</p>
       <div class="question-heading"><h3>逐条结果 <span id="bench-result-note">包含问题、回答与耗时</span></h3><button id="bench-export" class="quiet" disabled>导出完整 JSON</button></div>
       <div class="table-scroll"><table class="bench-table">
         <thead><tr><th>序号</th><th>问题</th><th>结果 / 错误</th><th>端到端耗时</th><th>GPU 副本</th><th>详情</th></tr></thead>

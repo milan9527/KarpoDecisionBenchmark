@@ -1,0 +1,50 @@
+{
+  "observed_at": "2026-11-21T11:41:45.307034+00:00",
+  "url": "https://deq0avneozfys.cloudfront.net",
+  "client": {
+    "region": "us-east-1",
+    "instance_type": "m8g.2xlarge",
+    "browser": "Chromium dedicated Web Worker"
+  },
+  "backend_command": "19245e75-719e-4ab6-a20b-7248717c418b",
+  "backend_status": "Success",
+  "backend_unit": "ExecStart={ path=/opt/karpo-demo/venv/bin/uvicorn ; argv[]=/opt/karpo-demo/venv/bin/uvicorn app:app --host 0.0.0.0 --port 8000 --no-access-log --timeout-keep-alive 210 ; ignore_errors=no ; start_time=[Sat 2026-11-21 11:39:11 UTC] ; stop_time=[n/a] ; pid=30226 ; code=(null) ; status=0/0 }\nActiveState=active\n",
+  "runtime": {
+    "archive": "/home/ec2-user/ai/KarpoDecisionBenchmark/.state/demo-runtime-8489376a7ea427b9.tar.gz",
+    "key": "runtime/demo-runtime-8489376a7ea427b9.tar.gz",
+    "files": {
+      "demo/backend/state.py": "681cdf06ac74148f5618933f4b7b955b964ff7abd4c202ba0221771e828b328c",
+      "demo/backend/watchdog.py": "ffb74fc6784c8965c8b125c66328df1d8523889e5bcea52ca5410a7694743a58",
+      "demo/backend/app.py": "fc04af5d2cc4aa7178c9546a5dd076bda850a465ebb5b0cc8625062694b9e48c",
+      "demo/backend/node.py": "11f26a35ba3ea257f3d14f2cf6f59fa8b6636653b49eda65ff24a8c0af1c092d",
+      "demo/backend/auth.py": "ca92fe2335618dcbe3e2eaeee7fe94e16ddedbfee40ad8a44c40deaf6f16cd6d",
+      "demo/backend/routing.py": "b841f3f7cfe4e78ca62085fefaf1bb5e052986eac0c149fe317a31a9c6f6ada4",
+      "demo/backend/leases.py": "af9cd3c0addd6be604b737214e776c6ecd8090d06df2ecc8ce4906478fa4bafe",
+      "demo/backend/registry.py": "7fa0ba904f3a2213ca459347bc9897550e944738eb30ddce0e8509bf1ec313ba",
+      "demo/backend/requirements.txt": "3d025d7b73dce85d2a33b8e31a9f2df4d8d6cab6d056b39939d71d0644cea110",
+      "demo/config.json": "20e20faeef5418261aa48764d2b872345e5cf4f6f8ccf902a6837fb91efc17cf",
+      "demo/catalog.json": "206b10e18a093c76577023ae5a046ae130121606c8aa7cc33753dcac4766f428",
+      "demo/datasets.json": "058af7ce2811228651a9bffb9d50845f6e17a733a57d68c5c1f263da4f51dda3",
+      "scripts/promo_opt_server.py": "731cbe8f0272370084297f7f76e2bd6085122ed52076e3464d2aa1d6c9503d4a",
+      "scripts/vllm_rps_server.py": "95d14399fb1220bab5e1762a995d98991238e5f5425437e6c252f57d0c011c06",
+      "scripts/vllm_karpo_encoding.py": "56e14b5dde797f6be93cd57dd9176faca351d0e26d7af8e1445b761d2cadd2a7",
+      "serving/vllm_karpo/karpo_vllm.py": "a1021cfe7e0a0c14f4ca4e3aabc18da4db88bc2209444f91f439283aafec0176",
+      "serving/vllm_karpo/karpo_vllm_model.py": "ef5de106f0c5464b50c374215c9e33e71b0be6e4a1274e87209a802dce7b5bd0",
+      "serving/vllm_karpo/karpo_vllm_worker.py": "15a082fc7dbb62f266ae7c451e203f63e01624279d404605d90eb0cb1222be7d",
+      "experiments/promo-rtx6-20261121/inputs/review-baseline/risk-requests.json": "0208acc46479a953e3dd9bf80625850187418e2ab3f7ba477bd3bc2df4fd0b92",
+      "experiments/promo-rtx6-20261121/inputs/review-baseline/sop-requests.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "experiments/vllm-sop-h200-20261120/risk-requests.json": "a0d104990d5e54db3089b4e6c411d4087a2b7a84d31ad6e7ccb40dcb9b6fcc1b",
+      "experiments/vllm-sop-h200-20261120/sop-requests.json": "67860c1ff0150604e6ad93c3b189020bfab0211360e7d60509d28b621b8b134d"
+    },
+    "sha256": "4079a81fbe014314fb6d7a8e6779ddfb272a64a31c59937b31fe289e9e5a7238"
+  },
+  "frontend_sha256": {
+    "index.html": "382741127170d7f5c4a4e30caa20d98879b793eeeea3fe05bd633cc6a8d20d52",
+    "style.css": "8d4529705d28a096942e5199c543f3c1d1602d653af3da6392efc26665435bb9",
+    "app.js": "a8b474269fbf585f1f2d9c4534bd3c3753083f6daf136348ee98458a003e3c67",
+    "benchmark.js": "6b95e9472d9ab4f996bc0325da0bb626d3837393e9e194b64b866fb0bb4c9666",
+    "rate-worker.js": "85f75d35eb222705c5e6b8e6fd4ccb8444f84755ea326c4e1e224b856ad41651",
+    "rate-client.js": "5a77dcf900ac564a64639f2713ee5396b85b1bcf032f84383c9666ba4869bce5"
+  },
+  "gpu_model_configuration_changed": false
+}

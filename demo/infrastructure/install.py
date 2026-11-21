@@ -95,7 +95,7 @@ Description=Karpo demo API and GPU startup controller
 After=network-online.target
 [Service]
 WorkingDirectory=/opt/karpo-demo/demo/backend
-ExecStart=/opt/karpo-demo/venv/bin/uvicorn app:app --host 0.0.0.0 --port 8000 --no-access-log
+ExecStart=/opt/karpo-demo/venv/bin/uvicorn app:app --host 0.0.0.0 --port 8000 --no-access-log --timeout-keep-alive 210
 Environment=PYTHONUNBUFFERED=1
 Restart=always
 RestartSec=5

@@ -142,5 +142,37 @@
     "instance": "i-04aa43d75617e765b",
     "command": "cba8170d-121d-4a70-8196-48c32950e0eb",
     "runtime_sha256": "1f11d4ee573b5353ed33d3583d8626ed8f7a4b1bd8c109b8dc79e29703d41377"
+  },
+  {
+    "name": "backend",
+    "group": "backend",
+    "region": "us-east-2",
+    "instance": "i-04aa43d75617e765b",
+    "command": "88937eca-d90e-4b77-9bb1-8afa6414f4e5",
+    "runtime_sha256": "4aa06ca724ccefd76577ee9cec0d874a3be9619067082e5108a5c03ebed72134"
+  },
+  {
+    "name": "backend",
+    "group": "backend",
+    "region": "us-east-2",
+    "instance": "i-04aa43d75617e765b",
+    "command": "21dd4d57-d51d-4734-8bcd-212a5c1f3310",
+    "runtime_sha256": "426e57c52e22f43348ab89cf4072682cece4671d26b8f606ef44b642cfdf9004"
+  },
+  {
+    "name": "backend",
+    "group": "backend",
+    "region": "us-east-2",
+    "instance": "i-04aa43d75617e765b",
+    "command": "98961e14-d67b-4c3a-8ea6-a1fd843186ce",
+    "runtime_sha256": "4079a81fbe014314fb6d7a8e6779ddfb272a64a31c59937b31fe289e9e5a7238"
+  },
+  {
+    "name": "backend",
+    "group": "backend",
+    "region": "us-east-2",
+    "instance": "i-04aa43d75617e765b",
+    "command": "45786478-7deb-4266-ae4d-a72b5bd886a7",
+    "runtime_sha256": "4079a81fbe014314fb6d7a8e6779ddfb272a64a31c59937b31fe289e9e5a7238"
   }
 ]

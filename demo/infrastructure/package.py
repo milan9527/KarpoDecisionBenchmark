@@ -3,11 +3,13 @@ import hashlib
 import json
 from pathlib import Path
 import tarfile
+from datasets import build
 
 ROOT = Path(__file__).resolve().parents[2]
 
 
 def main():
+    build()
     risk_dir = ROOT / "experiments/promo-rtx6-20261121/inputs/review-baseline"
     sop_dir = ROOT / "experiments/vllm-sop-h200-20261120"
     risk = json.loads((risk_dir / "risk-requests.json").read_text())
@@ -33,7 +35,7 @@ def main():
     catalog = {"risk": {"examples": risk_examples}, "sop": {"examples": sop_examples}}
     (ROOT / "demo/catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n")
     paths = list((ROOT / "demo/backend").glob("*.py")) + [
-        ROOT / "demo/backend/requirements.txt", ROOT / "demo/config.json", ROOT / "demo/catalog.json",
+        ROOT / "demo/backend/requirements.txt", ROOT / "demo/config.json", ROOT / "demo/catalog.json", ROOT / "demo/datasets.json",
         ROOT / "scripts/promo_opt_server.py", ROOT / "scripts/vllm_rps_server.py",
         ROOT / "scripts/vllm_karpo_encoding.py",
     ]

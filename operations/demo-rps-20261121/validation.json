@@ -1,0 +1,3184 @@
+{
+  "url": "https://deq0avneozfys.cloudfront.net",
+  "started_at": "2026-11-21T11:39:18.246101+00:00",
+  "scope": "Public CloudFront browser fixed-arrival 100 RPS, original requests, real GPUs",
+  "client": {
+    "region": "us-east-1",
+    "instance_type": "m8g.2xlarge",
+    "browser": "Chromium / dedicated Web Worker"
+  },
+  "runs": [
+    {
+      "name": "risk-warmup",
+      "file": "risk-warmup.json.gz",
+      "sha256": "db786812be92a0d96366a1f750877f7de90ce9f80f06ea660b9039b449eb4fb9",
+      "dataset_id": "promo-tune",
+      "metrics": {
+        "completed": 400,
+        "successful": 400,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 4112.5,
+        "successful_rps": 97.26443768996961,
+        "completed_rps": 97.26443768996961,
+        "p50_ms": 121.70000004768372,
+        "p95_ms": 181.60000002384186,
+        "p99_ms": 221.20000004768372,
+        "mean_ms": 124.26750000208617,
+        "min_ms": 84.89999997615814,
+        "max_ms": 242.70000004768372,
+        "target_rps": 100,
+        "offered_seconds": 4,
+        "planned": 400,
+        "started": 400,
+        "sent": 400,
+        "active": 0,
+        "peak_concurrency": 23,
+        "unsent": 0,
+        "stopped": false,
+        "steady_valid_rps": 100,
+        "http_p50_ms": 122,
+        "max_send_lag_ms": 0.2999999523162842,
+        "last_quarter_p50_ms": 118,
+        "correct": 396,
+        "evaluated": 400,
+        "accuracy": 0.99,
+        "client_rejections": 0,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 13
+          },
+          {
+            "second": 2,
+            "pending": 12
+          },
+          {
+            "second": 3,
+            "pending": 12
+          },
+          {
+            "second": 4,
+            "pending": 12
+          }
+        ],
+        "backlog_slope_per_second": -0.3,
+        "passes_performance_acceptance": false
+      }
+    },
+    {
+      "name": "risk-100rps-120s-r1",
+      "file": "risk-100rps-120s-r1.json.gz",
+      "sha256": "c12c16ae244923d09d2679e0dc96f42681fb81f5e131df4ff566f1a5cde82b75",
+      "dataset_id": "promo-tune",
+      "metrics": {
+        "completed": 12000,
+        "successful": 12000,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 120342.39999997616,
+        "successful_rps": 99.7154785013626,
+        "completed_rps": 99.7154785013626,
+        "p50_ms": 389.2999999523163,
+        "p95_ms": 445.89999997615814,
+        "p99_ms": 508.2999999523163,
+        "mean_ms": 357.3322750001947,
+        "min_ms": 83.10000002384186,
+        "max_ms": 618.8999999761581,
+        "target_rps": 100,
+        "offered_seconds": 120,
+        "planned": 12000,
+        "started": 12000,
+        "sent": 12000,
+        "active": 0,
+        "peak_concurrency": 59,
+        "unsent": 0,
+        "stopped": false,
+        "steady_valid_rps": 100.13333333333334,
+        "http_p50_ms": 389.6999999284744,
+        "max_send_lag_ms": 11.799999952316284,
+        "last_quarter_p50_ms": 401.7000000476837,
+        "correct": 11839,
+        "evaluated": 12000,
+        "accuracy": 0.9865833333333334,
+        "client_rejections": 0,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 12
+          },
+          {
+            "second": 2,
+            "pending": 11
+          },
+          {
+            "second": 3,
+            "pending": 13
+          },
+          {
+            "second": 4,
+            "pending": 11
+          },
+          {
+            "second": 5,
+            "pending": 12
+          },
+          {
+            "second": 6,
+            "pending": 11
+          },
+          {
+            "second": 7,
+            "pending": 11
+          },
+          {
+            "second": 8,
+            "pending": 12
+          },
+          {
+            "second": 9,
+            "pending": 10
+          },
+          {
+            "second": 10,
+            "pending": 12
+          },
+          {
+            "second": 11,
+            "pending": 27
+          },
+          {
+            "second": 12,
+            "pending": 37
+          },
+          {
+            "second": 13,
+            "pending": 41
+          },
+          {
+            "second": 14,
+            "pending": 43
+          },
+          {
+            "second": 15,
+            "pending": 42
+          },
+          {
+            "second": 16,
+            "pending": 39
+          },
+          {
+            "second": 17,
+            "pending": 36
+          },
+          {
+            "second": 18,
+            "pending": 40
+          },
+          {
+            "second": 19,
+            "pending": 33
+          },
+          {
+            "second": 20,
+            "pending": 31
+          },
+          {
+            "second": 21,
+            "pending": 38
+          },
+          {
+            "second": 22,
+            "pending": 37
+          },
+          {
+            "second": 23,
+            "pending": 40
+          },
+          {
+            "second": 24,
+            "pending": 33
+          },
+          {
+            "second": 25,
+            "pending": 34
+          },
+          {
+            "second": 26,
+            "pending": 40
+          },
+          {
+            "second": 27,
+            "pending": 38
+          },
+          {
+            "second": 28,
+            "pending": 35
+          },
+          {
+            "second": 29,
+            "pending": 42
+          },
+          {
+            "second": 30,
+            "pending": 57
+          },
+          {
+            "second": 31,
+            "pending": 41
+          },
+          {
+            "second": 32,
+            "pending": 39
+          },
+          {
+            "second": 33,
+            "pending": 39
+          },
+          {
+            "second": 34,
+            "pending": 36
+          },
+          {
+            "second": 35,
+            "pending": 36
+          },
+          {
+            "second": 36,
+            "pending": 38
+          },
+          {
+            "second": 37,
+            "pending": 39
+          },
+          {
+            "second": 38,
+            "pending": 53
+          },
+          {
+            "second": 39,
+            "pending": 35
+          },
+          {
+            "second": 40,
+            "pending": 39
+          },
+          {
+            "second": 41,
+            "pending": 39
+          },
+          {
+            "second": 42,
+            "pending": 44
+          },
+          {
+            "second": 43,
+            "pending": 37
+          },
+          {
+            "second": 44,
+            "pending": 37
+          },
+          {
+            "second": 45,
+            "pending": 39
+          },
+          {
+            "second": 46,
+            "pending": 39
+          },
+          {
+            "second": 47,
+            "pending": 43
+          },
+          {
+            "second": 48,
+            "pending": 37
+          },
+          {
+            "second": 49,
+            "pending": 40
+          },
+          {
+            "second": 50,
+            "pending": 33
+          },
+          {
+            "second": 51,
+            "pending": 44
+          },
+          {
+            "second": 52,
+            "pending": 42
+          },
+          {
+            "second": 53,
+            "pending": 42
+          },
+          {
+            "second": 54,
+            "pending": 45
+          },
+          {
+            "second": 55,
+            "pending": 45
+          },
+          {
+            "second": 56,
+            "pending": 35
+          },
+          {
+            "second": 57,
+            "pending": 37
+          },
+          {
+            "second": 58,
+            "pending": 36
+          },
+          {
+            "second": 59,
+            "pending": 40
+          },
+          {
+            "second": 60,
+            "pending": 42
+          },
+          {
+            "second": 61,
+            "pending": 50
+          },
+          {
+            "second": 62,
+            "pending": 34
+          },
+          {
+            "second": 63,
+            "pending": 38
+          },
+          {
+            "second": 64,
+            "pending": 37
+          },
+          {
+            "second": 65,
+            "pending": 39
+          },
+          {
+            "second": 66,
+            "pending": 38
+          },
+          {
+            "second": 67,
+            "pending": 43
+          },
+          {
+            "second": 68,
+            "pending": 32
+          },
+          {
+            "second": 69,
+            "pending": 33
+          },
+          {
+            "second": 70,
+            "pending": 33
+          },
+          {
+            "second": 71,
+            "pending": 40
+          },
+          {
+            "second": 72,
+            "pending": 39
+          },
+          {
+            "second": 73,
+            "pending": 42
+          },
+          {
+            "second": 74,
+            "pending": 41
+          },
+          {
+            "second": 75,
+            "pending": 34
+          },
+          {
+            "second": 76,
+            "pending": 32
+          },
+          {
+            "second": 77,
+            "pending": 35
+          },
+          {
+            "second": 78,
+            "pending": 34
+          },
+          {
+            "second": 79,
+            "pending": 33
+          },
+          {
+            "second": 80,
+            "pending": 39
+          },
+          {
+            "second": 81,
+            "pending": 41
+          },
+          {
+            "second": 82,
+            "pending": 40
+          },
+          {
+            "second": 83,
+            "pending": 38
+          },
+          {
+            "second": 84,
+            "pending": 40
+          },
+          {
+            "second": 85,
+            "pending": 40
+          },
+          {
+            "second": 86,
+            "pending": 41
+          },
+          {
+            "second": 87,
+            "pending": 41
+          },
+          {
+            "second": 88,
+            "pending": 42
+          },
+          {
+            "second": 89,
+            "pending": 40
+          },
+          {
+            "second": 90,
+            "pending": 39
+          },
+          {
+            "second": 91,
+            "pending": 39
+          },
+          {
+            "second": 92,
+            "pending": 36
+          },
+          {
+            "second": 93,
+            "pending": 48
+          },
+          {
+            "second": 94,
+            "pending": 42
+          },
+          {
+            "second": 95,
+            "pending": 42
+          },
+          {
+            "second": 96,
+            "pending": 41
+          },
+          {
+            "second": 97,
+            "pending": 42
+          },
+          {
+            "second": 98,
+            "pending": 42
+          },
+          {
+            "second": 99,
+            "pending": 35
+          },
+          {
+            "second": 100,
+            "pending": 38
+          },
+          {
+            "second": 101,
+            "pending": 35
+          },
+          {
+            "second": 102,
+            "pending": 39
+          },
+          {
+            "second": 103,
+            "pending": 38
+          },
+          {
+            "second": 104,
+            "pending": 38
+          },
+          {
+            "second": 105,
+            "pending": 39
+          },
+          {
+            "second": 106,
+            "pending": 39
+          },
+          {
+            "second": 107,
+            "pending": 36
+          },
+          {
+            "second": 108,
+            "pending": 38
+          },
+          {
+            "second": 109,
+            "pending": 34
+          },
+          {
+            "second": 110,
+            "pending": 38
+          },
+          {
+            "second": 111,
+            "pending": 36
+          },
+          {
+            "second": 112,
+            "pending": 37
+          },
+          {
+            "second": 113,
+            "pending": 34
+          },
+          {
+            "second": 114,
+            "pending": 36
+          },
+          {
+            "second": 115,
+            "pending": 35
+          },
+          {
+            "second": 116,
+            "pending": 30
+          },
+          {
+            "second": 117,
+            "pending": 34
+          },
+          {
+            "second": 118,
+            "pending": 36
+          },
+          {
+            "second": 119,
+            "pending": 37
+          },
+          {
+            "second": 120,
+            "pending": 44
+          }
+        ],
+        "backlog_slope_per_second": -0.042888995062908115,
+        "passes_performance_acceptance": true
+      }
+    },
+    {
+      "name": "risk-100rps-120s-r2",
+      "file": "risk-100rps-120s-r2.json.gz",
+      "sha256": "6601dd48eaa5c964fd452ea0344d6571cfea03af3d4acd02894371a81febb31b",
+      "dataset_id": "promo-tune",
+      "metrics": {
+        "completed": 12000,
+        "successful": 12000,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 120368.19999992847,
+        "successful_rps": 99.69410525377243,
+        "completed_rps": 99.69410525377243,
+        "p50_ms": 364.2999999523163,
+        "p95_ms": 439.7999999523163,
+        "p99_ms": 498.5,
+        "mean_ms": 324.97349997633694,
+        "min_ms": 83.19999992847443,
+        "max_ms": 595.6000000238419,
+        "target_rps": 100,
+        "offered_seconds": 120,
+        "planned": 12000,
+        "started": 12000,
+        "sent": 12000,
+        "active": 0,
+        "peak_concurrency": 60,
+        "unsent": 0,
+        "stopped": false,
+        "steady_valid_rps": 99.94444444444444,
+        "http_p50_ms": 364.7999999523163,
+        "max_send_lag_ms": 14.399999976158142,
+        "last_quarter_p50_ms": 401.89999997615814,
+        "correct": 11842,
+        "evaluated": 12000,
+        "accuracy": 0.9868333333333333,
+        "client_rejections": 0,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 25
+          },
+          {
+            "second": 2,
+            "pending": 12
+          },
+          {
+            "second": 3,
+            "pending": 11
+          },
+          {
+            "second": 4,
+            "pending": 13
+          },
+          {
+            "second": 5,
+            "pending": 12
+          },
+          {
+            "second": 6,
+            "pending": 13
+          },
+          {
+            "second": 7,
+            "pending": 13
+          },
+          {
+            "second": 8,
+            "pending": 12
+          },
+          {
+            "second": 9,
+            "pending": 11
+          },
+          {
+            "second": 10,
+            "pending": 12
+          },
+          {
+            "second": 11,
+            "pending": 20
+          },
+          {
+            "second": 12,
+            "pending": 17
+          },
+          {
+            "second": 13,
+            "pending": 12
+          },
+          {
+            "second": 14,
+            "pending": 11
+          },
+          {
+            "second": 15,
+            "pending": 16
+          },
+          {
+            "second": 16,
+            "pending": 12
+          },
+          {
+            "second": 17,
+            "pending": 13
+          },
+          {
+            "second": 18,
+            "pending": 12
+          },
+          {
+            "second": 19,
+            "pending": 11
+          },
+          {
+            "second": 20,
+            "pending": 15
+          },
+          {
+            "second": 21,
+            "pending": 12
+          },
+          {
+            "second": 22,
+            "pending": 12
+          },
+          {
+            "second": 23,
+            "pending": 11
+          },
+          {
+            "second": 24,
+            "pending": 11
+          },
+          {
+            "second": 25,
+            "pending": 23
+          },
+          {
+            "second": 26,
+            "pending": 11
+          },
+          {
+            "second": 27,
+            "pending": 37
+          },
+          {
+            "second": 28,
+            "pending": 34
+          },
+          {
+            "second": 29,
+            "pending": 34
+          },
+          {
+            "second": 30,
+            "pending": 38
+          },
+          {
+            "second": 31,
+            "pending": 37
+          },
+          {
+            "second": 32,
+            "pending": 38
+          },
+          {
+            "second": 33,
+            "pending": 42
+          },
+          {
+            "second": 34,
+            "pending": 35
+          },
+          {
+            "second": 35,
+            "pending": 39
+          },
+          {
+            "second": 36,
+            "pending": 41
+          },
+          {
+            "second": 37,
+            "pending": 41
+          },
+          {
+            "second": 38,
+            "pending": 41
+          },
+          {
+            "second": 39,
+            "pending": 36
+          },
+          {
+            "second": 40,
+            "pending": 36
+          },
+          {
+            "second": 41,
+            "pending": 42
+          },
+          {
+            "second": 42,
+            "pending": 40
+          },
+          {
+            "second": 43,
+            "pending": 37
+          },
+          {
+            "second": 44,
+            "pending": 52
+          },
+          {
+            "second": 45,
+            "pending": 38
+          },
+          {
+            "second": 46,
+            "pending": 38
+          },
+          {
+            "second": 47,
+            "pending": 35
+          },
+          {
+            "second": 48,
+            "pending": 35
+          },
+          {
+            "second": 49,
+            "pending": 45
+          },
+          {
+            "second": 50,
+            "pending": 38
+          },
+          {
+            "second": 51,
+            "pending": 43
+          },
+          {
+            "second": 52,
+            "pending": 36
+          },
+          {
+            "second": 53,
+            "pending": 40
+          },
+          {
+            "second": 54,
+            "pending": 38
+          },
+          {
+            "second": 55,
+            "pending": 37
+          },
+          {
+            "second": 56,
+            "pending": 40
+          },
+          {
+            "second": 57,
+            "pending": 33
+          },
+          {
+            "second": 58,
+            "pending": 39
+          },
+          {
+            "second": 59,
+            "pending": 44
+          },
+          {
+            "second": 60,
+            "pending": 35
+          },
+          {
+            "second": 61,
+            "pending": 36
+          },
+          {
+            "second": 62,
+            "pending": 40
+          },
+          {
+            "second": 63,
+            "pending": 44
+          },
+          {
+            "second": 64,
+            "pending": 42
+          },
+          {
+            "second": 65,
+            "pending": 36
+          },
+          {
+            "second": 66,
+            "pending": 49
+          },
+          {
+            "second": 67,
+            "pending": 39
+          },
+          {
+            "second": 68,
+            "pending": 35
+          },
+          {
+            "second": 69,
+            "pending": 35
+          },
+          {
+            "second": 70,
+            "pending": 36
+          },
+          {
+            "second": 71,
+            "pending": 39
+          },
+          {
+            "second": 72,
+            "pending": 28
+          },
+          {
+            "second": 73,
+            "pending": 30
+          },
+          {
+            "second": 74,
+            "pending": 33
+          },
+          {
+            "second": 75,
+            "pending": 39
+          },
+          {
+            "second": 76,
+            "pending": 39
+          },
+          {
+            "second": 77,
+            "pending": 31
+          },
+          {
+            "second": 78,
+            "pending": 38
+          },
+          {
+            "second": 79,
+            "pending": 40
+          },
+          {
+            "second": 80,
+            "pending": 43
+          },
+          {
+            "second": 81,
+            "pending": 37
+          },
+          {
+            "second": 82,
+            "pending": 41
+          },
+          {
+            "second": 83,
+            "pending": 39
+          },
+          {
+            "second": 84,
+            "pending": 38
+          },
+          {
+            "second": 85,
+            "pending": 41
+          },
+          {
+            "second": 86,
+            "pending": 36
+          },
+          {
+            "second": 87,
+            "pending": 34
+          },
+          {
+            "second": 88,
+            "pending": 36
+          },
+          {
+            "second": 89,
+            "pending": 36
+          },
+          {
+            "second": 90,
+            "pending": 42
+          },
+          {
+            "second": 91,
+            "pending": 40
+          },
+          {
+            "second": 92,
+            "pending": 34
+          },
+          {
+            "second": 93,
+            "pending": 35
+          },
+          {
+            "second": 94,
+            "pending": 36
+          },
+          {
+            "second": 95,
+            "pending": 34
+          },
+          {
+            "second": 96,
+            "pending": 36
+          },
+          {
+            "second": 97,
+            "pending": 38
+          },
+          {
+            "second": 98,
+            "pending": 50
+          },
+          {
+            "second": 99,
+            "pending": 35
+          },
+          {
+            "second": 100,
+            "pending": 37
+          },
+          {
+            "second": 101,
+            "pending": 41
+          },
+          {
+            "second": 102,
+            "pending": 44
+          },
+          {
+            "second": 103,
+            "pending": 41
+          },
+          {
+            "second": 104,
+            "pending": 37
+          },
+          {
+            "second": 105,
+            "pending": 42
+          },
+          {
+            "second": 106,
+            "pending": 42
+          },
+          {
+            "second": 107,
+            "pending": 39
+          },
+          {
+            "second": 108,
+            "pending": 37
+          },
+          {
+            "second": 109,
+            "pending": 41
+          },
+          {
+            "second": 110,
+            "pending": 41
+          },
+          {
+            "second": 111,
+            "pending": 41
+          },
+          {
+            "second": 112,
+            "pending": 38
+          },
+          {
+            "second": 113,
+            "pending": 36
+          },
+          {
+            "second": 114,
+            "pending": 37
+          },
+          {
+            "second": 115,
+            "pending": 31
+          },
+          {
+            "second": 116,
+            "pending": 43
+          },
+          {
+            "second": 117,
+            "pending": 43
+          },
+          {
+            "second": 118,
+            "pending": 34
+          },
+          {
+            "second": 119,
+            "pending": 39
+          },
+          {
+            "second": 120,
+            "pending": 42
+          }
+        ],
+        "backlog_slope_per_second": -0.0034718904284121695,
+        "passes_performance_acceptance": true
+      }
+    },
+    {
+      "name": "promo-quality-coverage",
+      "file": "promo-quality-coverage.json.gz",
+      "sha256": "1958cfe7aa1c8265ed12b308170db8ce3c93216bd02f19043fcdaab7776afe96",
+      "dataset_id": "promo-quality",
+      "metrics": {
+        "completed": 1100,
+        "successful": 1100,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 11112.899999976158,
+        "successful_rps": 98.98406356597827,
+        "completed_rps": 98.98406356597827,
+        "p50_ms": 120.70000004768372,
+        "p95_ms": 213.60000002384186,
+        "p99_ms": 251,
+        "mean_ms": 127.40318184278227,
+        "min_ms": 86.89999997615814,
+        "max_ms": 374.60000002384186,
+        "target_rps": 100,
+        "offered_seconds": 11,
+        "planned": 1100,
+        "started": 1100,
+        "sent": 1100,
+        "active": 0,
+        "peak_concurrency": 28,
+        "unsent": 0,
+        "stopped": false,
+        "steady_valid_rps": 99.87878787878788,
+        "http_p50_ms": 121.10000002384186,
+        "max_send_lag_ms": 0.5,
+        "last_quarter_p50_ms": 117,
+        "correct": 1083,
+        "evaluated": 1100,
+        "accuracy": 0.9845454545454545,
+        "client_rejections": 0,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 23
+          },
+          {
+            "second": 2,
+            "pending": 12
+          },
+          {
+            "second": 3,
+            "pending": 11
+          },
+          {
+            "second": 4,
+            "pending": 11
+          },
+          {
+            "second": 5,
+            "pending": 12
+          },
+          {
+            "second": 6,
+            "pending": 17
+          },
+          {
+            "second": 7,
+            "pending": 12
+          },
+          {
+            "second": 8,
+            "pending": 13
+          },
+          {
+            "second": 9,
+            "pending": 11
+          },
+          {
+            "second": 10,
+            "pending": 11
+          },
+          {
+            "second": 11,
+            "pending": 11
+          }
+        ],
+        "backlog_slope_per_second": -0.1,
+        "passes_performance_acceptance": false
+      }
+    },
+    {
+      "name": "resource-risk-coverage",
+      "file": "resource-risk-coverage.json.gz",
+      "sha256": "0c5d5175ca3edd1465038f2cfb972b58adab42feeec08589aac1d0a350b2c2d0",
+      "dataset_id": "resource-risk",
+      "metrics": {
+        "completed": 400,
+        "successful": 400,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 4091.3000000715256,
+        "successful_rps": 97.76843545890232,
+        "completed_rps": 97.76843545890232,
+        "p50_ms": 92.39999997615814,
+        "p95_ms": 117.89999997615814,
+        "p99_ms": 123.5,
+        "mean_ms": 94.65700002223254,
+        "min_ms": 76.20000004768372,
+        "max_ms": 135.80000007152557,
+        "target_rps": 100,
+        "offered_seconds": 4,
+        "planned": 400,
+        "started": 400,
+        "sent": 400,
+        "active": 0,
+        "peak_concurrency": 14,
+        "unsent": 0,
+        "stopped": false,
+        "steady_valid_rps": 99.66666666666667,
+        "http_p50_ms": 92.70000004768372,
+        "max_send_lag_ms": 0.30000007152557373,
+        "last_quarter_p50_ms": 91.30000007152557,
+        "correct": 387,
+        "evaluated": 400,
+        "accuracy": 0.9675,
+        "client_rejections": 0,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 9
+          },
+          {
+            "second": 2,
+            "pending": 11
+          },
+          {
+            "second": 3,
+            "pending": 9
+          },
+          {
+            "second": 4,
+            "pending": 9
+          }
+        ],
+        "backlog_slope_per_second": -0.2,
+        "passes_performance_acceptance": false
+      }
+    },
+    {
+      "name": "risk-stopped",
+      "file": "risk-stopped.json.gz",
+      "sha256": "b72d8ec47472b6929b612da7f2a620e02b9b1419d5abdcced84e1670b9bd99ec",
+      "dataset_id": "resource-risk",
+      "metrics": {
+        "completed": 19,
+        "successful": 19,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 330.7999999523163,
+        "successful_rps": 57.436517541532005,
+        "completed_rps": 57.436517541532005,
+        "p50_ms": 80.79999995231628,
+        "p95_ms": 160.79999995231628,
+        "p99_ms": 160.79999995231628,
+        "mean_ms": 87.5894736365268,
+        "min_ms": 75.69999992847443,
+        "max_ms": 160.79999995231628,
+        "target_rps": 100,
+        "offered_seconds": 120,
+        "planned": 12000,
+        "started": 19,
+        "sent": 19,
+        "active": 0,
+        "peak_concurrency": 10,
+        "unsent": 11981,
+        "stopped": true,
+        "steady_valid_rps": null,
+        "http_p50_ms": 80.60000002384186,
+        "max_send_lag_ms": 0.19999992847442627,
+        "last_quarter_p50_ms": null,
+        "correct": 19,
+        "evaluated": 19,
+        "accuracy": 1,
+        "client_rejections": 0,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 0
+          },
+          {
+            "second": 2,
+            "pending": 0
+          },
+          {
+            "second": 3,
+            "pending": 0
+          },
+          {
+            "second": 4,
+            "pending": 0
+          },
+          {
+            "second": 5,
+            "pending": 0
+          },
+          {
+            "second": 6,
+            "pending": 0
+          },
+          {
+            "second": 7,
+            "pending": 0
+          },
+          {
+            "second": 8,
+            "pending": 0
+          },
+          {
+            "second": 9,
+            "pending": 0
+          },
+          {
+            "second": 10,
+            "pending": 0
+          },
+          {
+            "second": 11,
+            "pending": 0
+          },
+          {
+            "second": 12,
+            "pending": 0
+          },
+          {
+            "second": 13,
+            "pending": 0
+          },
+          {
+            "second": 14,
+            "pending": 0
+          },
+          {
+            "second": 15,
+            "pending": 0
+          },
+          {
+            "second": 16,
+            "pending": 0
+          },
+          {
+            "second": 17,
+            "pending": 0
+          },
+          {
+            "second": 18,
+            "pending": 0
+          },
+          {
+            "second": 19,
+            "pending": 0
+          },
+          {
+            "second": 20,
+            "pending": 0
+          },
+          {
+            "second": 21,
+            "pending": 0
+          },
+          {
+            "second": 22,
+            "pending": 0
+          },
+          {
+            "second": 23,
+            "pending": 0
+          },
+          {
+            "second": 24,
+            "pending": 0
+          },
+          {
+            "second": 25,
+            "pending": 0
+          },
+          {
+            "second": 26,
+            "pending": 0
+          },
+          {
+            "second": 27,
+            "pending": 0
+          },
+          {
+            "second": 28,
+            "pending": 0
+          },
+          {
+            "second": 29,
+            "pending": 0
+          },
+          {
+            "second": 30,
+            "pending": 0
+          },
+          {
+            "second": 31,
+            "pending": 0
+          },
+          {
+            "second": 32,
+            "pending": 0
+          },
+          {
+            "second": 33,
+            "pending": 0
+          },
+          {
+            "second": 34,
+            "pending": 0
+          },
+          {
+            "second": 35,
+            "pending": 0
+          },
+          {
+            "second": 36,
+            "pending": 0
+          },
+          {
+            "second": 37,
+            "pending": 0
+          },
+          {
+            "second": 38,
+            "pending": 0
+          },
+          {
+            "second": 39,
+            "pending": 0
+          },
+          {
+            "second": 40,
+            "pending": 0
+          },
+          {
+            "second": 41,
+            "pending": 0
+          },
+          {
+            "second": 42,
+            "pending": 0
+          },
+          {
+            "second": 43,
+            "pending": 0
+          },
+          {
+            "second": 44,
+            "pending": 0
+          },
+          {
+            "second": 45,
+            "pending": 0
+          },
+          {
+            "second": 46,
+            "pending": 0
+          },
+          {
+            "second": 47,
+            "pending": 0
+          },
+          {
+            "second": 48,
+            "pending": 0
+          },
+          {
+            "second": 49,
+            "pending": 0
+          },
+          {
+            "second": 50,
+            "pending": 0
+          },
+          {
+            "second": 51,
+            "pending": 0
+          },
+          {
+            "second": 52,
+            "pending": 0
+          },
+          {
+            "second": 53,
+            "pending": 0
+          },
+          {
+            "second": 54,
+            "pending": 0
+          },
+          {
+            "second": 55,
+            "pending": 0
+          },
+          {
+            "second": 56,
+            "pending": 0
+          },
+          {
+            "second": 57,
+            "pending": 0
+          },
+          {
+            "second": 58,
+            "pending": 0
+          },
+          {
+            "second": 59,
+            "pending": 0
+          },
+          {
+            "second": 60,
+            "pending": 0
+          },
+          {
+            "second": 61,
+            "pending": 0
+          },
+          {
+            "second": 62,
+            "pending": 0
+          },
+          {
+            "second": 63,
+            "pending": 0
+          },
+          {
+            "second": 64,
+            "pending": 0
+          },
+          {
+            "second": 65,
+            "pending": 0
+          },
+          {
+            "second": 66,
+            "pending": 0
+          },
+          {
+            "second": 67,
+            "pending": 0
+          },
+          {
+            "second": 68,
+            "pending": 0
+          },
+          {
+            "second": 69,
+            "pending": 0
+          },
+          {
+            "second": 70,
+            "pending": 0
+          },
+          {
+            "second": 71,
+            "pending": 0
+          },
+          {
+            "second": 72,
+            "pending": 0
+          },
+          {
+            "second": 73,
+            "pending": 0
+          },
+          {
+            "second": 74,
+            "pending": 0
+          },
+          {
+            "second": 75,
+            "pending": 0
+          },
+          {
+            "second": 76,
+            "pending": 0
+          },
+          {
+            "second": 77,
+            "pending": 0
+          },
+          {
+            "second": 78,
+            "pending": 0
+          },
+          {
+            "second": 79,
+            "pending": 0
+          },
+          {
+            "second": 80,
+            "pending": 0
+          },
+          {
+            "second": 81,
+            "pending": 0
+          },
+          {
+            "second": 82,
+            "pending": 0
+          },
+          {
+            "second": 83,
+            "pending": 0
+          },
+          {
+            "second": 84,
+            "pending": 0
+          },
+          {
+            "second": 85,
+            "pending": 0
+          },
+          {
+            "second": 86,
+            "pending": 0
+          },
+          {
+            "second": 87,
+            "pending": 0
+          },
+          {
+            "second": 88,
+            "pending": 0
+          },
+          {
+            "second": 89,
+            "pending": 0
+          },
+          {
+            "second": 90,
+            "pending": 0
+          },
+          {
+            "second": 91,
+            "pending": 0
+          },
+          {
+            "second": 92,
+            "pending": 0
+          },
+          {
+            "second": 93,
+            "pending": 0
+          },
+          {
+            "second": 94,
+            "pending": 0
+          },
+          {
+            "second": 95,
+            "pending": 0
+          },
+          {
+            "second": 96,
+            "pending": 0
+          },
+          {
+            "second": 97,
+            "pending": 0
+          },
+          {
+            "second": 98,
+            "pending": 0
+          },
+          {
+            "second": 99,
+            "pending": 0
+          },
+          {
+            "second": 100,
+            "pending": 0
+          },
+          {
+            "second": 101,
+            "pending": 0
+          },
+          {
+            "second": 102,
+            "pending": 0
+          },
+          {
+            "second": 103,
+            "pending": 0
+          },
+          {
+            "second": 104,
+            "pending": 0
+          },
+          {
+            "second": 105,
+            "pending": 0
+          },
+          {
+            "second": 106,
+            "pending": 0
+          },
+          {
+            "second": 107,
+            "pending": 0
+          },
+          {
+            "second": 108,
+            "pending": 0
+          },
+          {
+            "second": 109,
+            "pending": 0
+          },
+          {
+            "second": 110,
+            "pending": 0
+          },
+          {
+            "second": 111,
+            "pending": 0
+          },
+          {
+            "second": 112,
+            "pending": 0
+          },
+          {
+            "second": 113,
+            "pending": 0
+          },
+          {
+            "second": 114,
+            "pending": 0
+          },
+          {
+            "second": 115,
+            "pending": 0
+          },
+          {
+            "second": 116,
+            "pending": 0
+          },
+          {
+            "second": 117,
+            "pending": 0
+          },
+          {
+            "second": 118,
+            "pending": 0
+          },
+          {
+            "second": 119,
+            "pending": 0
+          },
+          {
+            "second": 120,
+            "pending": 0
+          }
+        ],
+        "backlog_slope_per_second": 0,
+        "passes_performance_acceptance": false
+      }
+    },
+    {
+      "name": "sop-cold-probe",
+      "file": "sop-cold-probe.json.gz",
+      "sha256": "638aee83a1ac39256d4ca8eabbe305ecb274b5e41e2a80b41f27e0f48c792219",
+      "dataset_id": "sop-full",
+      "metrics": {
+        "completed": 400,
+        "successful": 379,
+        "failed": 21,
+        "success_rate": 0.9475,
+        "duration_ms": 5217.5,
+        "successful_rps": 72.64015333013896,
+        "completed_rps": 76.66506947771921,
+        "p50_ms": 718.3000000715256,
+        "p95_ms": 2125,
+        "p99_ms": 3015.2000000476837,
+        "mean_ms": 886.0881266961941,
+        "min_ms": 98,
+        "max_ms": 3562.8000000715256,
+        "target_rps": 100,
+        "offered_seconds": 4,
+        "planned": 400,
+        "started": 400,
+        "sent": 400,
+        "active": 0,
+        "peak_concurrency": 121,
+        "unsent": 0,
+        "stopped": false,
+        "steady_valid_rps": 65.66666666666667,
+        "http_p50_ms": 718.5,
+        "max_send_lag_ms": 0.30000007152557373,
+        "last_quarter_p50_ms": 1084.6000000238419,
+        "correct": 361,
+        "evaluated": 400,
+        "accuracy": 0.9025,
+        "client_rejections": 0,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 27
+          },
+          {
+            "second": 2,
+            "pending": 77
+          },
+          {
+            "second": 3,
+            "pending": 99
+          },
+          {
+            "second": 4,
+            "pending": 117
+          }
+        ],
+        "backlog_slope_per_second": 29.2,
+        "passes_performance_acceptance": false
+      },
+      "note": "First 100 RPS probe after H200 cold start; retained including 21 admission failures. Subsequent warmup runs at 20 RPS before formal measurements."
+    },
+    {
+      "name": "sop-warmup",
+      "file": "sop-warmup.json.gz",
+      "sha256": "e526c348bf4c0df06a259e85858bb3d4e3e2dd3030f89e3223d25c1bf43e0fe8",
+      "dataset_id": "sop-full",
+      "metrics": {
+        "completed": 400,
+        "successful": 400,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 20051.5,
+        "successful_rps": 19.948632271899857,
+        "completed_rps": 19.948632271899857,
+        "p50_ms": 101,
+        "p95_ms": 116.60000002384186,
+        "p99_ms": 144.39999997615814,
+        "mean_ms": 105.02649997651577,
+        "min_ms": 95.79999995231628,
+        "max_ms": 580.1999999284744,
+        "target_rps": 20,
+        "offered_seconds": 20,
+        "planned": 400,
+        "started": 400,
+        "sent": 400,
+        "active": 0,
+        "peak_concurrency": 4,
+        "unsent": 0,
+        "stopped": false,
+        "steady_valid_rps": 20,
+        "http_p50_ms": 101.20000004768372,
+        "max_send_lag_ms": 0.6999999284744263,
+        "last_quarter_p50_ms": 101.60000002384186,
+        "correct": 380,
+        "evaluated": 400,
+        "accuracy": 0.95,
+        "client_rejections": 0,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 3
+          },
+          {
+            "second": 2,
+            "pending": 2
+          },
+          {
+            "second": 3,
+            "pending": 2
+          },
+          {
+            "second": 4,
+            "pending": 4
+          },
+          {
+            "second": 5,
+            "pending": 3
+          },
+          {
+            "second": 6,
+            "pending": 1
+          },
+          {
+            "second": 7,
+            "pending": 2
+          },
+          {
+            "second": 8,
+            "pending": 3
+          },
+          {
+            "second": 9,
+            "pending": 2
+          },
+          {
+            "second": 10,
+            "pending": 3
+          },
+          {
+            "second": 11,
+            "pending": 2
+          },
+          {
+            "second": 12,
+            "pending": 2
+          },
+          {
+            "second": 13,
+            "pending": 2
+          },
+          {
+            "second": 14,
+            "pending": 3
+          },
+          {
+            "second": 15,
+            "pending": 2
+          },
+          {
+            "second": 16,
+            "pending": 2
+          },
+          {
+            "second": 17,
+            "pending": 3
+          },
+          {
+            "second": 18,
+            "pending": 2
+          },
+          {
+            "second": 19,
+            "pending": 3
+          },
+          {
+            "second": 20,
+            "pending": 2
+          }
+        ],
+        "backlog_slope_per_second": 0.013235294117647059,
+        "passes_performance_acceptance": false
+      }
+    },
+    {
+      "name": "sop-100rps-120s-r1",
+      "file": "sop-100rps-120s-r1.json.gz",
+      "sha256": "5ee66cf70f724a443f35a646850f77233d5ef09e06af6a9d820afb30ed2881f7",
+      "dataset_id": "sop-full",
+      "metrics": {
+        "completed": 12000,
+        "successful": 12000,
+        "failed": 0,
+        "success_rate": 1,
+        "duration_ms": 120108.79999995232,
+        "successful_rps": 99.90941546335293,
+        "completed_rps": 99.90941546335293,
+        "p50_ms": 107,
+        "p95_ms": 208.89999997615814,
+        "p99_ms": 351.6999999284744,
+        "mean_ms": 125.93434164286653,
+        "min_ms": 95.69999992847443,
+        "max_ms": 869.6000000238419,
+        "target_rps": 100,
+        "offered_seconds": 120,
+        "planned": 12000,
+        "started": 12000,
+        "sent": 12000,
+        "active": 0,
+        "peak_concurrency": 47,
+        "unsent": 0,
+        "stopped": false,
+        "steady_valid_rps": 100.03333333333333,
+        "http_p50_ms": 107.29999995231628,
+        "max_send_lag_ms": 23.299999952316284,
+        "last_quarter_p50_ms": 106.60000002384186,
+        "correct": 11310,
+        "evaluated": 12000,
+        "accuracy": 0.9425,
+        "client_rejections": 0,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 12
+          },
+          {
+            "second": 2,
+            "pending": 11
+          },
+          {
+            "second": 3,
+            "pending": 15
+          },
+          {
+            "second": 4,
+            "pending": 12
+          },
+          {
+            "second": 5,
+            "pending": 27
+          },
+          {
+            "second": 6,
+            "pending": 12
+          },
+          {
+            "second": 7,
+            "pending": 11
+          },
+          {
+            "second": 8,
+            "pending": 11
+          },
+          {
+            "second": 9,
+            "pending": 11
+          },
+          {
+            "second": 10,
+            "pending": 11
+          },
+          {
+            "second": 11,
+            "pending": 32
+          },
+          {
+            "second": 12,
+            "pending": 15
+          },
+          {
+            "second": 13,
+            "pending": 11
+          },
+          {
+            "second": 14,
+            "pending": 12
+          },
+          {
+            "second": 15,
+            "pending": 14
+          },
+          {
+            "second": 16,
+            "pending": 11
+          },
+          {
+            "second": 17,
+            "pending": 11
+          },
+          {
+            "second": 18,
+            "pending": 12
+          },
+          {
+            "second": 19,
+            "pending": 11
+          },
+          {
+            "second": 20,
+            "pending": 25
+          },
+          {
+            "second": 21,
+            "pending": 12
+          },
+          {
+            "second": 22,
+            "pending": 12
+          },
+          {
+            "second": 23,
+            "pending": 12
+          },
+          {
+            "second": 24,
+            "pending": 11
+          },
+          {
+            "second": 25,
+            "pending": 11
+          },
+          {
+            "second": 26,
+            "pending": 22
+          },
+          {
+            "second": 27,
+            "pending": 23
+          },
+          {
+            "second": 28,
+            "pending": 17
+          },
+          {
+            "second": 29,
+            "pending": 11
+          },
+          {
+            "second": 30,
+            "pending": 13
+          },
+          {
+            "second": 31,
+            "pending": 11
+          },
+          {
+            "second": 32,
+            "pending": 11
+          },
+          {
+            "second": 33,
+            "pending": 11
+          },
+          {
+            "second": 34,
+            "pending": 11
+          },
+          {
+            "second": 35,
+            "pending": 11
+          },
+          {
+            "second": 36,
+            "pending": 24
+          },
+          {
+            "second": 37,
+            "pending": 11
+          },
+          {
+            "second": 38,
+            "pending": 11
+          },
+          {
+            "second": 39,
+            "pending": 11
+          },
+          {
+            "second": 40,
+            "pending": 12
+          },
+          {
+            "second": 41,
+            "pending": 12
+          },
+          {
+            "second": 42,
+            "pending": 12
+          },
+          {
+            "second": 43,
+            "pending": 24
+          },
+          {
+            "second": 44,
+            "pending": 13
+          },
+          {
+            "second": 45,
+            "pending": 11
+          },
+          {
+            "second": 46,
+            "pending": 11
+          },
+          {
+            "second": 47,
+            "pending": 11
+          },
+          {
+            "second": 48,
+            "pending": 11
+          },
+          {
+            "second": 49,
+            "pending": 12
+          },
+          {
+            "second": 50,
+            "pending": 11
+          },
+          {
+            "second": 51,
+            "pending": 13
+          },
+          {
+            "second": 52,
+            "pending": 19
+          },
+          {
+            "second": 53,
+            "pending": 13
+          },
+          {
+            "second": 54,
+            "pending": 12
+          },
+          {
+            "second": 55,
+            "pending": 11
+          },
+          {
+            "second": 56,
+            "pending": 13
+          },
+          {
+            "second": 57,
+            "pending": 12
+          },
+          {
+            "second": 58,
+            "pending": 12
+          },
+          {
+            "second": 59,
+            "pending": 22
+          },
+          {
+            "second": 60,
+            "pending": 11
+          },
+          {
+            "second": 61,
+            "pending": 12
+          },
+          {
+            "second": 62,
+            "pending": 14
+          },
+          {
+            "second": 63,
+            "pending": 11
+          },
+          {
+            "second": 64,
+            "pending": 11
+          },
+          {
+            "second": 65,
+            "pending": 12
+          },
+          {
+            "second": 66,
+            "pending": 12
+          },
+          {
+            "second": 67,
+            "pending": 12
+          },
+          {
+            "second": 68,
+            "pending": 13
+          },
+          {
+            "second": 69,
+            "pending": 12
+          },
+          {
+            "second": 70,
+            "pending": 13
+          },
+          {
+            "second": 71,
+            "pending": 23
+          },
+          {
+            "second": 72,
+            "pending": 13
+          },
+          {
+            "second": 73,
+            "pending": 12
+          },
+          {
+            "second": 74,
+            "pending": 11
+          },
+          {
+            "second": 75,
+            "pending": 16
+          },
+          {
+            "second": 76,
+            "pending": 11
+          },
+          {
+            "second": 77,
+            "pending": 12
+          },
+          {
+            "second": 78,
+            "pending": 14
+          },
+          {
+            "second": 79,
+            "pending": 11
+          },
+          {
+            "second": 80,
+            "pending": 12
+          },
+          {
+            "second": 81,
+            "pending": 12
+          },
+          {
+            "second": 82,
+            "pending": 11
+          },
+          {
+            "second": 83,
+            "pending": 18
+          },
+          {
+            "second": 84,
+            "pending": 14
+          },
+          {
+            "second": 85,
+            "pending": 11
+          },
+          {
+            "second": 86,
+            "pending": 27
+          },
+          {
+            "second": 87,
+            "pending": 34
+          },
+          {
+            "second": 88,
+            "pending": 14
+          },
+          {
+            "second": 89,
+            "pending": 11
+          },
+          {
+            "second": 90,
+            "pending": 11
+          },
+          {
+            "second": 91,
+            "pending": 11
+          },
+          {
+            "second": 92,
+            "pending": 12
+          },
+          {
+            "second": 93,
+            "pending": 12
+          },
+          {
+            "second": 94,
+            "pending": 11
+          },
+          {
+            "second": 95,
+            "pending": 11
+          },
+          {
+            "second": 96,
+            "pending": 12
+          },
+          {
+            "second": 97,
+            "pending": 11
+          },
+          {
+            "second": 98,
+            "pending": 11
+          },
+          {
+            "second": 99,
+            "pending": 12
+          },
+          {
+            "second": 100,
+            "pending": 13
+          },
+          {
+            "second": 101,
+            "pending": 12
+          },
+          {
+            "second": 102,
+            "pending": 11
+          },
+          {
+            "second": 103,
+            "pending": 11
+          },
+          {
+            "second": 104,
+            "pending": 12
+          },
+          {
+            "second": 105,
+            "pending": 11
+          },
+          {
+            "second": 106,
+            "pending": 14
+          },
+          {
+            "second": 107,
+            "pending": 12
+          },
+          {
+            "second": 108,
+            "pending": 11
+          },
+          {
+            "second": 109,
+            "pending": 12
+          },
+          {
+            "second": 110,
+            "pending": 11
+          },
+          {
+            "second": 111,
+            "pending": 12
+          },
+          {
+            "second": 112,
+            "pending": 12
+          },
+          {
+            "second": 113,
+            "pending": 11
+          },
+          {
+            "second": 114,
+            "pending": 18
+          },
+          {
+            "second": 115,
+            "pending": 12
+          },
+          {
+            "second": 116,
+            "pending": 14
+          },
+          {
+            "second": 117,
+            "pending": 11
+          },
+          {
+            "second": 118,
+            "pending": 11
+          },
+          {
+            "second": 119,
+            "pending": 10
+          },
+          {
+            "second": 120,
+            "pending": 9
+          }
+        ],
+        "backlog_slope_per_second": -0.009555661729574774,
+        "passes_performance_acceptance": true
+      }
+    },
+    {
+      "name": "sop-100rps-120s-r2",
+      "file": "sop-100rps-120s-r2.json.gz",
+      "sha256": "05bf361fe062c4338123ba79da9c4357143cfde703e78cf39c987ad12ad4e96a",
+      "dataset_id": "sop-full",
+      "metrics": {
+        "completed": 12000,
+        "successful": 9398,
+        "failed": 2602,
+        "success_rate": 0.7831666666666667,
+        "duration_ms": 120934.70000004768,
+        "successful_rps": 77.71135993223032,
+        "completed_rps": 99.22710355253925,
+        "p50_ms": 928,
+        "p95_ms": 3318.899999976158,
+        "p99_ms": 4928.5,
+        "mean_ms": 1193.8782081298052,
+        "min_ms": 96.79999995231628,
+        "max_ms": 10428.899999976158,
+        "target_rps": 100,
+        "offered_seconds": 120,
+        "planned": 12000,
+        "started": 12000,
+        "sent": 12000,
+        "active": 0,
+        "peak_concurrency": 157,
+        "unsent": 0,
+        "stopped": false,
+        "steady_valid_rps": 72.73333333333333,
+        "http_p50_ms": 927.8999999761581,
+        "max_send_lag_ms": 19.399999976158142,
+        "last_quarter_p50_ms": 1256.1000000238419,
+        "correct": 8866,
+        "evaluated": 12000,
+        "accuracy": 0.7388333333333333,
+        "client_rejections": 0,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 12
+          },
+          {
+            "second": 2,
+            "pending": 12
+          },
+          {
+            "second": 3,
+            "pending": 11
+          },
+          {
+            "second": 4,
+            "pending": 11
+          },
+          {
+            "second": 5,
+            "pending": 11
+          },
+          {
+            "second": 6,
+            "pending": 12
+          },
+          {
+            "second": 7,
+            "pending": 13
+          },
+          {
+            "second": 8,
+            "pending": 11
+          },
+          {
+            "second": 9,
+            "pending": 12
+          },
+          {
+            "second": 10,
+            "pending": 12
+          },
+          {
+            "second": 11,
+            "pending": 11
+          },
+          {
+            "second": 12,
+            "pending": 11
+          },
+          {
+            "second": 13,
+            "pending": 13
+          },
+          {
+            "second": 14,
+            "pending": 11
+          },
+          {
+            "second": 15,
+            "pending": 11
+          },
+          {
+            "second": 16,
+            "pending": 11
+          },
+          {
+            "second": 17,
+            "pending": 12
+          },
+          {
+            "second": 18,
+            "pending": 10
+          },
+          {
+            "second": 19,
+            "pending": 12
+          },
+          {
+            "second": 20,
+            "pending": 58
+          },
+          {
+            "second": 21,
+            "pending": 47
+          },
+          {
+            "second": 22,
+            "pending": 110
+          },
+          {
+            "second": 23,
+            "pending": 110
+          },
+          {
+            "second": 24,
+            "pending": 111
+          },
+          {
+            "second": 25,
+            "pending": 115
+          },
+          {
+            "second": 26,
+            "pending": 111
+          },
+          {
+            "second": 27,
+            "pending": 109
+          },
+          {
+            "second": 28,
+            "pending": 110
+          },
+          {
+            "second": 29,
+            "pending": 104
+          },
+          {
+            "second": 30,
+            "pending": 119
+          },
+          {
+            "second": 31,
+            "pending": 107
+          },
+          {
+            "second": 32,
+            "pending": 110
+          },
+          {
+            "second": 33,
+            "pending": 117
+          },
+          {
+            "second": 34,
+            "pending": 108
+          },
+          {
+            "second": 35,
+            "pending": 124
+          },
+          {
+            "second": 36,
+            "pending": 138
+          },
+          {
+            "second": 37,
+            "pending": 112
+          },
+          {
+            "second": 38,
+            "pending": 119
+          },
+          {
+            "second": 39,
+            "pending": 121
+          },
+          {
+            "second": 40,
+            "pending": 107
+          },
+          {
+            "second": 41,
+            "pending": 108
+          },
+          {
+            "second": 42,
+            "pending": 110
+          },
+          {
+            "second": 43,
+            "pending": 110
+          },
+          {
+            "second": 44,
+            "pending": 130
+          },
+          {
+            "second": 45,
+            "pending": 145
+          },
+          {
+            "second": 46,
+            "pending": 108
+          },
+          {
+            "second": 47,
+            "pending": 112
+          },
+          {
+            "second": 48,
+            "pending": 116
+          },
+          {
+            "second": 49,
+            "pending": 107
+          },
+          {
+            "second": 50,
+            "pending": 108
+          },
+          {
+            "second": 51,
+            "pending": 109
+          },
+          {
+            "second": 52,
+            "pending": 113
+          },
+          {
+            "second": 53,
+            "pending": 107
+          },
+          {
+            "second": 54,
+            "pending": 111
+          },
+          {
+            "second": 55,
+            "pending": 123
+          },
+          {
+            "second": 56,
+            "pending": 109
+          },
+          {
+            "second": 57,
+            "pending": 115
+          },
+          {
+            "second": 58,
+            "pending": 120
+          },
+          {
+            "second": 59,
+            "pending": 108
+          },
+          {
+            "second": 60,
+            "pending": 114
+          },
+          {
+            "second": 61,
+            "pending": 112
+          },
+          {
+            "second": 62,
+            "pending": 110
+          },
+          {
+            "second": 63,
+            "pending": 112
+          },
+          {
+            "second": 64,
+            "pending": 127
+          },
+          {
+            "second": 65,
+            "pending": 113
+          },
+          {
+            "second": 66,
+            "pending": 110
+          },
+          {
+            "second": 67,
+            "pending": 119
+          },
+          {
+            "second": 68,
+            "pending": 109
+          },
+          {
+            "second": 69,
+            "pending": 103
+          },
+          {
+            "second": 70,
+            "pending": 118
+          },
+          {
+            "second": 71,
+            "pending": 107
+          },
+          {
+            "second": 72,
+            "pending": 108
+          },
+          {
+            "second": 73,
+            "pending": 116
+          },
+          {
+            "second": 74,
+            "pending": 121
+          },
+          {
+            "second": 75,
+            "pending": 111
+          },
+          {
+            "second": 76,
+            "pending": 126
+          },
+          {
+            "second": 77,
+            "pending": 119
+          },
+          {
+            "second": 78,
+            "pending": 111
+          },
+          {
+            "second": 79,
+            "pending": 107
+          },
+          {
+            "second": 80,
+            "pending": 115
+          },
+          {
+            "second": 81,
+            "pending": 112
+          },
+          {
+            "second": 82,
+            "pending": 109
+          },
+          {
+            "second": 83,
+            "pending": 113
+          },
+          {
+            "second": 84,
+            "pending": 116
+          },
+          {
+            "second": 85,
+            "pending": 111
+          },
+          {
+            "second": 86,
+            "pending": 108
+          },
+          {
+            "second": 87,
+            "pending": 111
+          },
+          {
+            "second": 88,
+            "pending": 113
+          },
+          {
+            "second": 89,
+            "pending": 120
+          },
+          {
+            "second": 90,
+            "pending": 108
+          },
+          {
+            "second": 91,
+            "pending": 118
+          },
+          {
+            "second": 92,
+            "pending": 127
+          },
+          {
+            "second": 93,
+            "pending": 133
+          },
+          {
+            "second": 94,
+            "pending": 119
+          },
+          {
+            "second": 95,
+            "pending": 134
+          },
+          {
+            "second": 96,
+            "pending": 157
+          },
+          {
+            "second": 97,
+            "pending": 110
+          },
+          {
+            "second": 98,
+            "pending": 107
+          },
+          {
+            "second": 99,
+            "pending": 118
+          },
+          {
+            "second": 100,
+            "pending": 110
+          },
+          {
+            "second": 101,
+            "pending": 109
+          },
+          {
+            "second": 102,
+            "pending": 107
+          },
+          {
+            "second": 103,
+            "pending": 126
+          },
+          {
+            "second": 104,
+            "pending": 109
+          },
+          {
+            "second": 105,
+            "pending": 118
+          },
+          {
+            "second": 106,
+            "pending": 124
+          },
+          {
+            "second": 107,
+            "pending": 145
+          },
+          {
+            "second": 108,
+            "pending": 110
+          },
+          {
+            "second": 109,
+            "pending": 131
+          },
+          {
+            "second": 110,
+            "pending": 123
+          },
+          {
+            "second": 111,
+            "pending": 108
+          },
+          {
+            "second": 112,
+            "pending": 117
+          },
+          {
+            "second": 113,
+            "pending": 119
+          },
+          {
+            "second": 114,
+            "pending": 108
+          },
+          {
+            "second": 115,
+            "pending": 122
+          },
+          {
+            "second": 116,
+            "pending": 121
+          },
+          {
+            "second": 117,
+            "pending": 110
+          },
+          {
+            "second": 118,
+            "pending": 114
+          },
+          {
+            "second": 119,
+            "pending": 116
+          },
+          {
+            "second": 120,
+            "pending": 108
+          }
+        ],
+        "backlog_slope_per_second": 0.040452301321866536,
+        "passes_performance_acceptance": false
+      }
+    },
+    {
+      "name": "sop-invalid-input",
+      "file": "sop-invalid-input.json.gz",
+      "sha256": "8f426afd1da2bc28a22cec0116fc384bd89ee7c095674938f035e22dc62577b9",
+      "dataset_id": "sop-full",
+      "metrics": {
+        "completed": 2,
+        "successful": 0,
+        "failed": 2,
+        "success_rate": 0,
+        "duration_ms": 999.6999999284744,
+        "successful_rps": 0,
+        "completed_rps": 2.000600180197153,
+        "p50_ms": null,
+        "p95_ms": null,
+        "p99_ms": null,
+        "mean_ms": null,
+        "min_ms": null,
+        "max_ms": null,
+        "target_rps": 2,
+        "offered_seconds": 1,
+        "planned": 2,
+        "started": 2,
+        "sent": 2,
+        "active": 0,
+        "peak_concurrency": 1,
+        "unsent": 0,
+        "stopped": false,
+        "steady_valid_rps": 0,
+        "http_p50_ms": null,
+        "max_send_lag_ms": 0.19999992847442627,
+        "last_quarter_p50_ms": null,
+        "correct": 0,
+        "evaluated": 0,
+        "accuracy": null,
+        "client_rejections": 0,
+        "backlog_samples": [
+          {
+            "second": 1,
+            "pending": 0
+          }
+        ],
+        "backlog_slope_per_second": null,
+        "passes_performance_acceptance": false
+      }
+    }
+  ],
+  "checks": {
+    "original_datasets": {
+      "promo-tune": 360,
+      "promo-quality": 1080,
+      "resource-risk": 360,
+      "sop-full": 104
+    },
+    "deployed_frontend_matches": true,
+    "defaults_100rps_120s": true,
+    "mobile_no_overflow": true,
+    "complete_original_inputs_preserved": true,
+    "model_token_hashes_match_original_benchmarks": true,
+    "filter_and_select": true,
+    "expected_labels_outside_model_request": true,
+    "stop_drains_inflight": true,
+    "invalid_requests_counted": true,
+    "exported_metrics_independently_recomputed": true
+  },
+  "frontend_sha256": {
+    "index.html": "382741127170d7f5c4a4e30caa20d98879b793eeeea3fe05bd633cc6a8d20d52",
+    "app.js": "a8b474269fbf585f1f2d9c4534bd3c3753083f6daf136348ee98458a003e3c67",
+    "benchmark.js": "6b95e9472d9ab4f996bc0325da0bb626d3837393e9e194b64b866fb0bb4c9666",
+    "rate-client.js": "5a77dcf900ac564a64639f2713ee5396b85b1bcf032f84383c9666ba4869bce5",
+    "rate-worker.js": "85f75d35eb222705c5e6b8e6fd4ccb8444f84755ea326c4e1e224b856ad41651",
+    "style.css": "8d4529705d28a096942e5199c543f3c1d1602d653af3da6392efc26665435bb9"
+  },
+  "after_end": {
+    "now": 1795261849,
+    "idle_seconds": 600,
+    "max_concurrency": 100,
+    "groups": {
+      "risk": {
+        "phase": "ending",
+        "stop_after": 1795262045,
+        "error": "",
+        "ready_gpus": 6,
+        "checked_at": 1795261441,
+        "startup_deadline": 1795262960,
+        "gpu_count": 6,
+        "gpu": "RTX PRO 6000 Blackwell 96GB",
+        "title": "薅羊毛风控",
+        "session_active": false,
+        "hosts": [
+          {
+            "gpus": 2,
+            "id": "i-05b24e3b4a7ee864d",
+            "message": "模型已就绪",
+            "name": "dual",
+            "ready": 2,
+            "region": "us-east-2",
+            "state": "running"
+          },
+          {
+            "gpus": 1,
+            "id": "i-02c1caf7d7ce17c76",
+            "message": "模型已就绪",
+            "name": "peer2",
+            "ready": 1,
+            "region": "us-east-2",
+            "state": "running"
+          },
+          {
+            "gpus": 1,
+            "id": "i-05cfc7d4fa898ee33",
+            "message": "模型已就绪",
+            "name": "peer3",
+            "ready": 1,
+            "region": "us-east-2",
+            "state": "running"
+          },
+          {
+            "gpus": 1,
+            "id": "i-09e55f0a86313912d",
+            "message": "模型已就绪",
+            "name": "peer4",
+            "ready": 1,
+            "region": "us-east-1",
+            "state": "running"
+          },
+          {
+            "gpus": 1,
+            "id": "i-0b7835341b1266d7a",
+            "message": "模型已就绪",
+            "name": "peer5",
+            "ready": 1,
+            "region": "us-east-1",
+            "state": "running"
+          }
+        ]
+      },
+      "sop": {
+        "phase": "ending",
+        "stop_after": 1795262449,
+        "error": "",
+        "ready_gpus": 8,
+        "checked_at": 1795261845,
+        "startup_deadline": 1795263367,
+        "gpu_count": 8,
+        "gpu": "NVIDIA H200",
+        "title": "SOP 决策",
+        "session_active": false,
+        "hosts": [
+          {
+            "gpus": 8,
+            "id": "i-0c777e3714538d624",
+            "message": "模型已就绪",
+            "name": "h200",
+            "ready": 8,
+            "region": "us-east-2",
+            "state": "running"
+          }
+        ]
+      }
+    }
+  },
+  "finished_at": "2026-11-21T11:50:49.311713+00:00",
+  "page_errors": [],
+  "functional_validation_passed": true,
+  "performance_acceptance_by_scenario": {
+    "risk": true,
+    "sop": false
+  },
+  "executed_source_cases": {
+    "promo-tune": 360,
+    "promo-quality": 1080,
+    "resource-risk": 360,
+    "sop-full": 104
+  },
+  "formal_successful_model_token_hashes_checked": 45398,
+  "tests": {
+    "python_passed": 32,
+    "fixed_rps_and_wire_serialization_passed": 6
+  }
+}

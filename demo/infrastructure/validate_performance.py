@@ -1,4 +1,6 @@
-"""Validate the live multi-question UI and exported metrics using real GPUs.
+"""Historical closed-loop UI validation (commit 47ff421).
+
+The current fixed-RPS UI is validated by validate_rps.py.
 
 Starts/renews the two demo sessions, then releases this browser's leases even on
 failure. The independent watchdog retains the normal ten-minute shutdown rule.
