@@ -1,0 +1,36 @@
+{
+  "CommandId": "9273d2a8-1ff5-4968-8cad-fd6ca0b6b985",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:55:33.123Z",
+  "ExecutionElapsedTime": "PT0.288S",
+  "ExecutionEndDateTime": "2026-11-21T02:55:33.123Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-promo-parallel-prefetch-v1.service; invocation ID: 8ddf93072f224e9d85f81496bbf87b8e\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "d1c76a1e-414b-4d91-90d0-a21f7e21f844",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:56:30 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "690",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "d1c76a1e-414b-4d91-90d0-a21f7e21f844",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

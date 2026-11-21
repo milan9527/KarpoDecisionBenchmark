@@ -1,0 +1,9 @@
+{
+  "id": "a1cc2561-665b-4ceb-9dcf-aeea4251dca5",
+  "host": "peer2",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-02c1caf7d7ce17c76",
+  "utc": "2026-11-21T02:53:17.491762+00:00",
+  "script": "ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts ubuntu@172.31.42.209 'sudo /bin/bash -s' <<'PROMO_PEER'\nset -Eeuo pipefail\ncat > /opt/karpo/promo-hash-model.py <<'PROMO_HASH'\nimport datetime, hashlib, json, pathlib, socket\nresult = {'host': socket.gethostname(), 'started_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'weights': {}}\nfor path in sorted(pathlib.Path('/opt/karpo/models/karpo-4b').glob('*.safetensors')):\n digest = hashlib.sha256()\n with path.open('rb') as stream:\n  for chunk in iter(lambda: stream.read(16*1024*1024), b''): digest.update(chunk)\n result['weights'][path.name] = {'sha256': digest.hexdigest(), 'bytes': path.stat().st_size}\nresult['ended_utc'] = datetime.datetime.now(datetime.timezone.utc).isoformat()\npathlib.Path('/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/setup/weights-' + socket.gethostname() + '.json').write_text(json.dumps(result, indent=2) + '\\n')\nPROMO_HASH\nsystemd-run --unit=karpo-promo-weight-proof-v1 --property=RuntimeMaxSec=900 /usr/bin/python3 /opt/karpo/promo-hash-model.py\n\nPROMO_PEER"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "2e072869-17d0-4de2-b94a-a0dfe8958c38",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T03:03:19.944055+00:00",
+  "script": "set -Eeuo pipefail\nPROMO_ROOT=/opt/karpo/promo-validation-v1\nPROMO_PY=/opt/karpo/venv-vllm034/bin/python\n\"$PROMO_PY\" - <<'PROMO_COMPLETE'\nimport json,pathlib\npath=pathlib.Path('/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/runs/rtx4-fp8-v1/status.json')\nassert json.loads(path.read_text())['status']=='complete'\nPROMO_COMPLETE\nsystemctl stop karpo-promo-backup-v1\nPROMO_SSH=(-i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts)\nfor peer in 172.31.42.209 172.31.37.239; do\n rsync -a -e \"ssh ${PROMO_SSH[*]}\" --rsync-path='sudo rsync' ubuntu@$peer:/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/ \"$PROMO_ROOT/experiments/promo-risk-rtx4-20261121/results/\"\ndone\n\"$PROMO_PY\" \"$PROMO_ROOT/scripts/promo_rtx4_suite.py\" sync\nsystemctl is-active karpo-promo-dual-v1\nfor replica in 2 3; do\n if [ \"$replica\" = 2 ]; then peer=172.31.42.209; else peer=172.31.37.239; fi\n ssh \"${PROMO_SSH[@]}\" ubuntu@$peer \"sudo systemctl is-active karpo-promo-peer$replica-v1\"\ndone\n"
+}

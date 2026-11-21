@@ -1,0 +1,36 @@
+{
+  "CommandId": "6183498a-6d7a-4396-9a25-37675dc3627d",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:50:10.796Z",
+  "ExecutionElapsedTime": "PT0.484S",
+  "ExecutionEndDateTime": "2026-11-21T02:50:10.796Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "    752       05:56  0.0  0.0 networkd-dispat /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers\n    824       05:56  0.0  0.0 unattended-upgr /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal\n   3460       00:21  1.6  0.0 python          /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/promo-validation-v1/scripts/promo_rtx4_suite.py node --name peer2-v1 --replica-ids 2 --bind 0.0.0.0\n   3479       00:15 94.8  2.0 python          /opt/karpo/venv-vllm034/bin/python /opt/karpo/promo-validation-v1/scripts/vllm_rps_server.py --checkpoint /opt/karpo/models/karpo-4b --experiment /opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121 --output /opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/nodes/peer2-v1/replica-2 --max-seqs 4 --replica-id 2 --host 0.0.0.0 --port 18500 --admission-limit 64\n   3626       00:01  124  1.0 python          /opt/karpo/venv-vllm034/bin/python -m vllm.model_executor.models.registry\nW1121 02:49:28.852000 3383 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead\nW1121 02:49:28.853000 3383 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead\nW1121 02:49:28.853000 3383 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead\nFlashInfer kernels are disabled: flashinfer-cubin is not installed and nvcc (CUDA_HOME, CUDA_PATH, PATH or /usr/local/cuda) or ninja (PATH) is missing. Set CUDA_HOME to a CUDA toolkit and put ninja on PATH, or run `vllm download-kernels`.\n...\n----------------------------------------------------------------------\nRan 3 tests in 22.826s\n\nOK\n  UNIT                         LOAD   ACTIVE SUB     DESCRIPTION\n  karpo-promo-peer2-v1.service loaded active running /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/promo-validation-v1/scripts/promo_rtx4_suite.py node --name peer2-v1 --replica-ids 2 --bind 0.0.0.0\n\nLegend: LOAD   → Reflects whether the unit definition was properly loaded.\n        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.\n        SUB    → The low-level unit activation state, values depend on unit type.\n\n1 loaded units listed.\nTo show all installed unit files use 'systemctl list-unit-files'.\n    752       05:57  0.0  0.0 networkd-dispat /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers\n    836       05:56  0.0  0.0 unattended-upgr /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal\n   3478       00:21  1.6  0.0 python          /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/promo-validation-v1/scripts/promo_rtx4_suite.py node --name peer3-v1 --replica-ids 3 --bind 0.0.0.0\n   3497       00:16 91.3  2.0 python          /opt/karpo/venv-vllm034/bin/python /opt/karpo/promo-validation-v1/scripts/vllm_rps_server.py --checkpoint /opt/karpo/models/karpo-4b --experiment /opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121 --output /opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/nodes/peer3-v1/replica-3 --max-seqs 4 --replica-id 3 --host 0.0.0.0 --port 18500 --admission-limit 64\n   3644       00:01  119  1.0 python          /opt/karpo/venv-vllm034/bin/python -m vllm.model_executor.models.registry\nW1121 02:49:28.866000 3399 torch/_opaque_base.py:6] torch._opaque_base is deprecated, use torch._custom_class_base instead\nW1121 02:49:28.866000 3399 torch/_library/opaque_object.py:288] register_opaque_type is deprecated, use register_custom_class instead\nW1121 02:49:28.867000 3399 torch/_library/opaque_object.py:211] typ='value' is deprecated, use typ='constant' instead\nFlashInfer kernels are disabled: flashinfer-cubin is not installed and nvcc (CUDA_HOME, CUDA_PATH, PATH or /usr/local/cuda) or ninja (PATH) is missing. Set CUDA_HOME to a CUDA toolkit and put ninja on PATH, or run `vllm download-kernels`.\n...\n----------------------------------------------------------------------\nRan 3 tests in 22.789s\n\nOK\n  UNIT                         LOAD   ACTIVE SUB     DESCRIPTION\n  karpo-promo-peer3-v1.service loaded active running /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/promo-validation-v1/scripts/promo_rtx4_suite.py node --name peer3-v1 --replica-ids 3 --bind 0.0.0.0\n\nLegend: LOAD   → Reflects whether the unit definition was properly loaded.\n        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.\n        SUB    → The low-level unit activation state, values depend on unit type.\n\n1 loaded units listed.\nTo show all installed unit files use 'systemctl list-unit-files'.\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "0a8403b0-a4e0-44fc-8529-78c8a7320254",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:50:14 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "5302",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "0a8403b0-a4e0-44fc-8529-78c8a7320254",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

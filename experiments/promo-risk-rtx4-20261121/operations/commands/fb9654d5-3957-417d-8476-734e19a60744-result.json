@@ -1,0 +1,36 @@
+{
+  "CommandId": "fb9654d5-3957-417d-8476-734e19a60744",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:48:26.160Z",
+  "ExecutionElapsedTime": "PT0.598S",
+  "ExecutionEndDateTime": "2026-11-21T02:48:26.160Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "Result=exit-code\nId=karpo-promo-bootstrap-peer2-v1.service\nActiveState=failed\nSubState=failed\n\nResult=exit-code\nId=karpo-promo-bootstrap-peer3-v1.service\nActiveState=failed\nSubState=failed\n\nResult=success\nId=karpo-promo-backup-v1.service\nActiveState=active\nSubState=running\n   3855       00:21  0.0 bash            /bin/bash /opt/karpo/promo-peer2-bootstrap.sh\n   3884       00:21  0.0 bash            /bin/bash /opt/karpo/promo-peer3-bootstrap.sh\n   3888       00:21  4.2 rsync           rsync -a --exclude=__pycache__ -e ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts --rsync-path=sudo rsync /opt/karpo/venv-vllm034/ ubuntu@172.31.42.209:/opt/karpo/venv-vllm034/\n   3889       00:21  8.8 ssh             ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts -l ubuntu 172.31.42.209 sudo rsync --server -logDtpre.iLsfxCIvu . /opt/karpo/venv-vllm034/\n   3890       00:20  4.5 rsync           rsync -a --exclude=__pycache__ -e ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts --rsync-path=sudo rsync /opt/karpo/venv-vllm034/ ubuntu@172.31.37.239:/opt/karpo/venv-vllm034/\n   3891       00:20  8.7 ssh             ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts -l ubuntu 172.31.37.239 sudo rsync --server -logDtpre.iLsfxCIvu . /opt/karpo/venv-vllm034/\n1.5G\t/opt/karpo/venv-vllm034\nNVIDIA RTX PRO 6000 Blackwell Server Edition, 0 MiB\n  UNIT LOAD ACTIVE SUB DESCRIPTION\n\n0 loaded units listed. Pass --all to see loaded but inactive units, too.\nTo show all installed unit files use 'systemctl list-unit-files'.\n1.5G\t/opt/karpo/venv-vllm034\nNVIDIA RTX PRO 6000 Blackwell Server Edition, 0 MiB\n  UNIT LOAD ACTIVE SUB DESCRIPTION\n\n0 loaded units listed. Pass --all to see loaded but inactive units, too.\nTo show all installed unit files use 'systemctl list-unit-files'.\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "1c4cea47-ea72-4ae8-ae94-491bc88bb6ff",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:48:27 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "2836",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "1c4cea47-ea72-4ae8-ae94-491bc88bb6ff",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

@@ -1,0 +1,5 @@
+ssh: connect to host 172.31.42.209 port 22: Connection timed out
+ssh: connect to host 172.31.42.209 port 22: Connection refused
+Warning: Permanently added '172.31.42.209' (ED25519) to the list of known hosts.
+/tmp/promo-risk-rtx4-v1.tar.gz: OK
+Running as unit: karpo-promo-peer2-v1.service; invocation ID: 27a9eafdd60a48eabb183fa2303e0ab1

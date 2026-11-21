@@ -1,0 +1,272 @@
+[
+  {
+    "id": "normal",
+    "description": "正常老客",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "new_customer",
+    "description": "正常新客",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "family_shared",
+    "description": "家庭共用设备和支付工具",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "office_nat",
+    "description": "公司120个账号共用出口IP",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "travel_proxy",
+    "description": "正常出差使用代理",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "legitimate_refund",
+    "description": "正常售后退款",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "sale_peak",
+    "description": "活动高峰正常集中访问",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "safe_retry",
+    "description": "超时后重试已完成操作",
+    "authored_expected_action": "deduplicate",
+    "category": "benign"
+  },
+  {
+    "id": "account_farm",
+    "description": "新设备集中注册新账号",
+    "authored_expected_action": "challenge",
+    "category": "abuse"
+  },
+  {
+    "id": "claim_bot",
+    "description": "自动化批量尝试领券",
+    "authored_expected_action": "throttle",
+    "category": "abuse"
+  },
+  {
+    "id": "identity_reuse",
+    "description": "同身份重复领取超出权益",
+    "authored_expected_action": "deny",
+    "category": "abuse"
+  },
+  {
+    "id": "ineligible_claim",
+    "description": "不符合活动资格仍领取",
+    "authored_expected_action": "deny",
+    "category": "abuse"
+  },
+  {
+    "id": "coupon_stacking",
+    "description": "利用接口叠加不允许叠加的优惠",
+    "authored_expected_action": "deny",
+    "category": "abuse"
+  },
+  {
+    "id": "refund_arbitrage",
+    "description": "高补贴下单后退款再领券",
+    "authored_expected_action": "review",
+    "category": "abuse"
+  },
+  {
+    "id": "referral_farm",
+    "description": "推荐奖励账号农场",
+    "authored_expected_action": "review",
+    "category": "abuse"
+  },
+  {
+    "id": "legit_referral",
+    "description": "真实推荐购买且支付工具独立",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "allowed_stacking",
+    "description": "活动明确允许的优惠叠加",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "reward_pooling",
+    "description": "多个账号的活动收益归集",
+    "authored_expected_action": "review",
+    "category": "abuse"
+  },
+  {
+    "id": "legit_shared_payee",
+    "description": "共享收款方但无活动奖励归集",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "synchronized_ring",
+    "description": "多个新账号同步领取",
+    "authored_expected_action": "review",
+    "category": "abuse"
+  },
+  {
+    "id": "circular_funds",
+    "description": "多笔资金转出后回流",
+    "authored_expected_action": "review",
+    "category": "abuse"
+  },
+  {
+    "id": "proxy_rotation",
+    "description": "低频切换IP跨活动高补贴套利",
+    "authored_expected_action": "review",
+    "category": "abuse"
+  },
+  {
+    "id": "history_shift",
+    "description": "成熟账号资源和补贴消耗突增",
+    "authored_expected_action": "review",
+    "category": "abuse"
+  },
+  {
+    "id": "job_exhaustion",
+    "description": "用满账户任务配额继续请求",
+    "authored_expected_action": "throttle",
+    "category": "abuse"
+  },
+  {
+    "id": "legit_batch_jobs",
+    "description": "16任务配额内正常运行10个任务",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "reformed_customer",
+    "description": "历史有事件但当前行为正常",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "legit_multi_device",
+    "description": "正常使用多设备和多支付工具",
+    "authored_expected_action": "allow",
+    "category": "benign"
+  },
+  {
+    "id": "expensive_retry",
+    "description": "重复调用高成本失败接口",
+    "authored_expected_action": "throttle",
+    "category": "abuse"
+  },
+  {
+    "id": "signature_tamper",
+    "description": "无效签名请求",
+    "authored_expected_action": "deny",
+    "category": "abuse"
+  },
+  {
+    "id": "revoked_session",
+    "description": "会话已撤销",
+    "authored_expected_action": "deny",
+    "category": "abuse"
+  },
+  {
+    "id": "device_auth",
+    "description": "设备验证失败并多次登录失败",
+    "authored_expected_action": "challenge",
+    "category": "abuse"
+  },
+  {
+    "id": "rate_below",
+    "description": "请求速率阈值下方119次",
+    "authored_expected_action": "allow",
+    "category": "boundary"
+  },
+  {
+    "id": "rate_at",
+    "description": "请求速率恰好120次",
+    "authored_expected_action": "throttle",
+    "category": "boundary"
+  },
+  {
+    "id": "job_below",
+    "description": "活跃任务恰好7个",
+    "authored_expected_action": "allow",
+    "category": "boundary"
+  },
+  {
+    "id": "job_at",
+    "description": "活跃任务恰好8个",
+    "authored_expected_action": "throttle",
+    "category": "boundary"
+  },
+  {
+    "id": "refund_below",
+    "description": "退款比例59%",
+    "authored_expected_action": "allow",
+    "category": "boundary"
+  },
+  {
+    "id": "refund_at",
+    "description": "退款比例60%",
+    "authored_expected_action": "review",
+    "category": "boundary"
+  },
+  {
+    "id": "pool_below",
+    "description": "7个关联账号归集奖励",
+    "authored_expected_action": "allow",
+    "category": "boundary"
+  },
+  {
+    "id": "pool_at",
+    "description": "8个关联账号归集奖励",
+    "authored_expected_action": "review",
+    "category": "boundary"
+  },
+  {
+    "id": "signature_and_repeat",
+    "description": "无效签名与重复操作冲突",
+    "authored_expected_action": "deny",
+    "category": "precedence"
+  },
+  {
+    "id": "flood_and_repeat",
+    "description": "请求洪泛与重复操作冲突",
+    "authored_expected_action": "deduplicate",
+    "category": "precedence"
+  },
+  {
+    "id": "missing_entitlement",
+    "description": "关键权益信息缺失",
+    "authored_expected_action": "review",
+    "category": "missing"
+  },
+  {
+    "id": "missing_optional",
+    "description": "非关键遥测缺失",
+    "authored_expected_action": "allow",
+    "category": "missing"
+  },
+  {
+    "id": "missing_graph",
+    "description": "关键收款关联数据缺失",
+    "authored_expected_action": "review",
+    "category": "missing"
+  },
+  {
+    "id": "injected_allow",
+    "description": "不可信用户文本要求绕过检查",
+    "authored_expected_action": "deny",
+    "category": "injection"
+  }
+]

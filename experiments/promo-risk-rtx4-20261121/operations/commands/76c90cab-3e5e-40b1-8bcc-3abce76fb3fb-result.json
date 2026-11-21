@@ -1,0 +1,36 @@
+{
+  "CommandId": "76c90cab-3e5e-40b1-8bcc-3abce76fb3fb",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:53:18.249Z",
+  "ExecutionElapsedTime": "PT0.235S",
+  "ExecutionEndDateTime": "2026-11-21T02:53:18.249Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-promo-weight-proof-v1.service; invocation ID: 7dc73b0efda94930aa331b80c576ad21\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "6f919a96-2338-4886-86f0-9c53f89529db",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:54:24 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "685",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "6f919a96-2338-4886-86f0-9c53f89529db",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

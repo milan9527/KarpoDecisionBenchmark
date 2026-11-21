@@ -1,0 +1,387 @@
+{
+  "status": "illustrative_business_policy_not_production_calibrated",
+  "priority": [
+    "deny",
+    "deduplicate",
+    "throttle",
+    "challenge",
+    "review",
+    "allow"
+  ],
+  "rules": [
+    {
+      "id": "invalid_signature",
+      "action": "deny",
+      "all": [
+        {
+          "feature": "resource.signature_valid",
+          "op": "eq",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "revoked_session",
+      "action": "deny",
+      "all": [
+        {
+          "feature": "account.session_revoked",
+          "op": "eq",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "ineligible_claim",
+      "action": "deny",
+      "all": [
+        {
+          "feature": "promotion.current_is_claim",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "feature": "promotion.eligible",
+          "op": "eq",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "identity_limit",
+      "action": "deny",
+      "all": [
+        {
+          "feature": "promotion.current_is_claim",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "feature": "promotion.identity_claims_remaining",
+          "op": "le",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "forbidden_stacking",
+      "action": "deny",
+      "all": [
+        {
+          "feature": "promotion.current_is_claim",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "feature": "promotion.requested_stack_count",
+          "op": "gt",
+          "value": 1
+        },
+        {
+          "feature": "promotion.stacking_allowed",
+          "op": "eq",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "executed_operation",
+      "action": "deduplicate",
+      "all": [
+        {
+          "feature": "resource.operation_already_executed",
+          "op": "eq",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "request_flood",
+      "action": "throttle",
+      "all": [
+        {
+          "feature": "behavior.requests_1m",
+          "op": "ge",
+          "value": 120
+        }
+      ]
+    },
+    {
+      "id": "job_quota",
+      "action": "throttle",
+      "all": [
+        {
+          "feature": "resource.job_slots_remaining",
+          "op": "le",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "claim_bot",
+      "action": "throttle",
+      "all": [
+        {
+          "feature": "promotion.claim_attempts_5m",
+          "op": "ge",
+          "value": 20
+        },
+        {
+          "feature": "device.automation_detected",
+          "op": "eq",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "expensive_retry",
+      "action": "throttle",
+      "all": [
+        {
+          "feature": "resource.expensive_requests_5m",
+          "op": "ge",
+          "value": 10
+        },
+        {
+          "feature": "resource.expensive_error_ratio_5m",
+          "op": "ge",
+          "value": 0.5
+        },
+        {
+          "feature": "behavior.retries_5m",
+          "op": "ge",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "account_farm",
+      "action": "challenge",
+      "all": [
+        {
+          "feature": "account.age_days",
+          "op": "le",
+          "value": 3
+        },
+        {
+          "feature": "device.accounts_24h",
+          "op": "ge",
+          "value": 8
+        },
+        {
+          "feature": "device.new_account_ratio_7d",
+          "op": "ge",
+          "value": 0.75
+        }
+      ]
+    },
+    {
+      "id": "device_auth",
+      "action": "challenge",
+      "all": [
+        {
+          "feature": "device.attestation_valid",
+          "op": "eq",
+          "value": false
+        },
+        {
+          "feature": "account.failed_logins_24h",
+          "op": "ge",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "refund_arbitrage",
+      "action": "review",
+      "all": [
+        {
+          "feature": "orders.refunds_30d",
+          "op": "ge",
+          "value": 3
+        },
+        {
+          "feature": "orders.refund_ratio_30d",
+          "op": "ge",
+          "value": 0.6
+        },
+        {
+          "feature": "promotion.claims_after_refund_30d",
+          "op": "ge",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "id": "referral_farm",
+      "action": "review",
+      "all": [
+        {
+          "feature": "promotion.referrals_30d",
+          "op": "ge",
+          "value": 8
+        },
+        {
+          "feature": "graph.same_payment_accounts",
+          "op": "ge",
+          "value": 6
+        },
+        {
+          "feature": "promotion.referral_purchase_ratio",
+          "op": "le",
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "reward_pooling",
+      "action": "review",
+      "all": [
+        {
+          "feature": "graph.same_payee_accounts",
+          "op": "ge",
+          "value": 8
+        },
+        {
+          "feature": "payment.reward_inflow_ratio_30d",
+          "op": "ge",
+          "value": 0.8
+        }
+      ]
+    },
+    {
+      "id": "synchronized_cluster",
+      "action": "review",
+      "all": [
+        {
+          "feature": "graph.component_size",
+          "op": "ge",
+          "value": 10
+        },
+        {
+          "feature": "graph.synchronized_claim_ratio",
+          "op": "ge",
+          "value": 0.8
+        },
+        {
+          "feature": "graph.new_account_ratio_7d",
+          "op": "ge",
+          "value": 0.7
+        }
+      ]
+    },
+    {
+      "id": "circular_funds",
+      "action": "review",
+      "all": [
+        {
+          "feature": "payment.returned_transfer_ratio_30d",
+          "op": "ge",
+          "value": 0.7
+        },
+        {
+          "feature": "payment.outbound_count_30d",
+          "op": "ge",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": "proxy_rotation",
+      "action": "review",
+      "all": [
+        {
+          "feature": "network.is_proxy",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "feature": "network.account_ips_24h",
+          "op": "ge",
+          "value": 8
+        },
+        {
+          "feature": "promotion.campaigns_24h",
+          "op": "ge",
+          "value": 5
+        },
+        {
+          "feature": "orders.discount_ratio_30d",
+          "op": "ge",
+          "value": 0.8
+        }
+      ]
+    },
+    {
+      "id": "history_shift",
+      "action": "review",
+      "all": [
+        {
+          "feature": "history.request_growth_ratio",
+          "op": "ge",
+          "value": 10
+        },
+        {
+          "feature": "history.requests_previous_7d",
+          "op": "ge",
+          "value": 70
+        },
+        {
+          "feature": "history.subsidy_growth_ratio",
+          "op": "ge",
+          "value": 5
+        },
+        {
+          "feature": "history.subsidy_previous_7d_cents",
+          "op": "ge",
+          "value": 100
+        }
+      ]
+    }
+  ],
+  "required_features": [
+    "account.age_days",
+    "account.failed_logins_24h",
+    "account.session_revoked",
+    "behavior.requests_1m",
+    "behavior.retries_5m",
+    "device.accounts_24h",
+    "device.attestation_valid",
+    "device.automation_detected",
+    "device.new_account_ratio_7d",
+    "graph.component_size",
+    "graph.new_account_ratio_7d",
+    "graph.same_payee_accounts",
+    "graph.same_payment_accounts",
+    "graph.synchronized_claim_ratio",
+    "history.request_growth_ratio",
+    "history.requests_previous_7d",
+    "history.subsidy_growth_ratio",
+    "history.subsidy_previous_7d_cents",
+    "network.account_ips_24h",
+    "network.is_proxy",
+    "orders.discount_ratio_30d",
+    "orders.refund_ratio_30d",
+    "orders.refunds_30d",
+    "payment.outbound_count_30d",
+    "payment.returned_transfer_ratio_30d",
+    "payment.reward_inflow_ratio_30d",
+    "promotion.campaigns_24h",
+    "promotion.claim_attempts_5m",
+    "promotion.claims_after_refund_30d",
+    "promotion.current_is_claim",
+    "promotion.eligible",
+    "promotion.identity_claims_remaining",
+    "promotion.referral_purchase_ratio",
+    "promotion.referrals_30d",
+    "promotion.requested_stack_count",
+    "promotion.stacking_allowed",
+    "resource.expensive_error_ratio_5m",
+    "resource.expensive_requests_5m",
+    "resource.job_slots_remaining",
+    "resource.operation_already_executed",
+    "resource.signature_valid"
+  ],
+  "missing_action": "review",
+  "missing_priority": "same priority as review"
+}

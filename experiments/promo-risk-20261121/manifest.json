@@ -1,0 +1,31 @@
+{
+  "dataset": "promo-risk-20261121",
+  "schema_version": 2,
+  "model_test_status": "not_run",
+  "files": {
+    "README.zh.md": "443ec2fd335088b4fdee0eb83466ae671a1f41425fdc40212b717380a8d51b50",
+    "examples/identity_reuse.expected.json": "aa8db3b12570d9732ca9aeb4b0ad12c8cf5489cf58a1e10cd5fb85e02d012e43",
+    "examples/identity_reuse.request.json": "f8270ace967e62ecf66d143ae32ae3c2291d579148b6f285a9eadfa17218371e",
+    "examples/normal.expected.json": "8a55e1bf8fac4c8c8845815025ec8cc8b4a066b6d4582918c516ce756a872530",
+    "examples/normal.request.json": "ecdbb9dec66e1a4e9942138431165757f4db003c99c6a6e3d46ea5add55bff08",
+    "examples/office_nat.expected.json": "2132bb9eed00da2055502fb76af0bb799d4777a039a2eefddb29725eafb0948a",
+    "examples/office_nat.request.json": "2c03e375489663d85656c97768f151459e54f835adfece4ed222407d548fe447",
+    "examples/refund_arbitrage.expected.json": "da607c0e4c8e45e970a14de41a63926bc00812b062747a2bfa7bc18875c26aab",
+    "examples/refund_arbitrage.request.json": "66e663dcb3bd40e5231149c1838a212bb6b1d330167e35fdf2461819e02cf37d",
+    "examples/reward_pooling.expected.json": "a55175f65b8057719df5bc897f26d79ddac012cc079b832c79a74fd707f6dd22",
+    "examples/reward_pooling.request.json": "13c94ed9904dc7149ce64afbb5f301eff12a67294dd4c28016a62dc184fe9245",
+    "policy.json": "67f3578d678b95eb0b3a6f6e045bff7f806f03378aadbaf1e4d11a50e128a461",
+    "report.html": "4dff27c19f889032adb3435f163c21816c9eba6376fec2f2a07b8030507e337a",
+    "risk-feature-schema.json": "d2e4ebd23bd0c0b1d78919b96790f58ae96d68622c5ecb7884bbd84a6cef538a",
+    "risk-requests.json": "f1ece9b80fcba994d018fc4f042400da9da68e8f5c76215a237ab28a8a54808f",
+    "scenarios.json": "d0abd38c208384542a7992b45f7b697734c65afe3bd69c004cf2804015e450b7",
+    "source-events.jsonl": "2091bd4bbabe152954e4eccea60b16cb1d78329a08e1cfa72dd371d1205ef905",
+    "validation.json": "d2f7401d3517e8b44455c34444d1b70f9abcd58f8a22f98ef40620b732609074"
+  },
+  "sources": {
+    "scripts/promo_risk.py": "cfaa8c2a16a9d3081520daba21362fddf36e17d86bb924e3c0705b32e55d18bd",
+    "scripts/promo_risk_prepare.py": "8201da86dbbe1bd634ad41fd254a92cf7595602bd4d75e2e3e5ccf15c9adca71",
+    "scripts/promo_risk_evaluate.py": "a201c08fd979cca3619b8d593207a296dcf5d2507a21f8330a5cc0cd982f5917",
+    "tests/test_promo_risk.py": "3a45e7889f9e5e3ac34183ffa377c3e9e456d019975044ddf6633bda807a16ce"
+  }
+}

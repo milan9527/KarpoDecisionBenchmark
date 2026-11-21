@@ -1,0 +1,9 @@
+{
+  "id": "77b12522-dfdc-4ce5-8f53-38f4046d504a",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T02:50:27.888177+00:00",
+  "script": "set -Eeuo pipefail\ncat > /opt/karpo/promo-start-after-ready.py <<'PROMO_WAIT_READY'\nimport datetime, os, time\nimport httpx\nurls = ['http://127.0.0.1:18500', 'http://127.0.0.1:18501', 'http://172.31.42.209:18500', 'http://172.31.37.239:18500']\nwith httpx.Client(timeout=3, trust_env=False) as client:\n for attempt in range(180):\n  try:\n   for replica, url in enumerate(urls):\n    r = client.get(url + '/healthz')\n    r.raise_for_status()\n    assert r.json()['replica_id'] == replica\n   break\n  except (httpx.HTTPError, AssertionError):\n   time.sleep(5)\n else:\n  raise RuntimeError('Four replicas did not become ready within 15 minutes')\nprint('All four replicas ready:', datetime.datetime.now(datetime.timezone.utc).isoformat(), flush=True)\npython = '/opt/karpo/venv-vllm034/bin/python'\nos.execv(python, [python, '-u', '/opt/karpo/promo-validation-v1/scripts/promo_rtx4_suite.py', 'run', '--name', 'rtx4-fp8-v1', '--no-upload', '--urls', *urls])\nPROMO_WAIT_READY\nsystemd-run --unit=karpo-promo-run-v1 --property=RuntimeMaxSec=3600 --property=StandardOutput=append:/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/setup/run-v1.log --property=StandardError=inherit /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/promo-start-after-ready.py\n"
+}

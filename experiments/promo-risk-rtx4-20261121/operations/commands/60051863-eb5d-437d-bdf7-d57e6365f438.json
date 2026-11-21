@@ -1,0 +1,9 @@
+{
+  "id": "60051863-eb5d-437d-bdf7-d57e6365f438",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T02:44:49.969955+00:00",
+  "script": "set -Eeuo pipefail\ncat > /opt/karpo/promo-backup-v1.sh <<'PROMO_BACKUP'\nset -u\nPROMO_SSH=(-i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts)\nwhile true; do\n rsync -a -e \"ssh ${PROMO_SSH[*]}\" --rsync-path='sudo rsync' ubuntu@172.31.42.209:/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/ /opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/ || true\n rsync -a -e \"ssh ${PROMO_SSH[*]}\" --rsync-path='sudo rsync' ubuntu@172.31.37.239:/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/ /opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/ || true\n /opt/karpo/venv-vllm034/bin/python /opt/karpo/promo-validation-v1/scripts/promo_rtx4_suite.py sync || true\n sleep 30\ndone\n\nPROMO_BACKUP\nsystemd-run --unit=karpo-promo-backup-v1 --property=RuntimeMaxSec=10800 --property=StandardOutput=append:/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/setup/backup.log --property=StandardError=inherit /bin/bash /opt/karpo/promo-backup-v1.sh\n"
+}

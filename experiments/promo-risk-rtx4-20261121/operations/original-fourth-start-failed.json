@@ -1,0 +1,6 @@
+{
+  "utc": "2026-11-21T02:29:28.149061+00:00",
+  "region": "us-east-1",
+  "instance": "i-05d0c24c739f41ca5",
+  "error": "InsufficientInstanceCapacity: no available Spot capacity on StartInstances; no fourth instance started"
+}

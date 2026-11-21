@@ -1,0 +1,11 @@
+{
+  "request_id": "quality-identity_reuse-000-original",
+  "expected": {
+    "action": "deny"
+  },
+  "reference_rule_ids": [
+    "identity_limit"
+  ],
+  "model_response": null,
+  "note": "Business reference label, not a measured Karpo response."
+}

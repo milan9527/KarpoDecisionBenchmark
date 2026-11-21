@@ -1,0 +1,9 @@
+{
+  "id": "6183498a-6d7a-4396-9a25-37675dc3627d",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T02:50:10.603848+00:00",
+  "script": "set -u\nfor peer in 172.31.42.209 172.31.37.239; do\n ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=5 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts ubuntu@$peer 'ps -eo pid,etime,pcpu,pmem,comm,args | grep -E \"[p]ython|[v]llm\" | head -10; sudo tail -10 /opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/setup/*adapter-tests.log; sudo systemctl list-units \"karpo-promo*\" --all --no-pager'\ndone\n"
+}

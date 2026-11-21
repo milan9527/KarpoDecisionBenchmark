@@ -1,0 +1,36 @@
+{
+  "CommandId": "fb9b272d-db38-4e12-8cec-709ed8c5f162",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:52:53.741Z",
+  "ExecutionElapsedTime": "PT0.625S",
+  "ExecutionEndDateTime": "2026-11-21T02:52:53.741Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "3411 MiB, 0 %\n    PID     ELAPSED %CPU %MEM STAT COMMAND\n   4131       00:00 20.0  0.0 Ss   systemd\n   3479       02:59  9.4  2.3 Ssl  python\n   3700       02:36  6.6  4.6 Dl   VLLM::EngineCor\n    755       08:39  0.3  0.0 Ssl  nv-hostengine\n    436       09:24  0.2  0.0 S    nv_open_q\n      1       09:43  0.2  0.0 Ss   systemd\n   3460       03:04  0.2  0.0 Ss   python\n(EngineCore pid=3700) INFO 11-21 02:50:29 [base_loader.py:164] Quantizing 128 layers of types: linear_attn.in_proj_qkvz: 24 (from linear: fp8_per_channel_static); linear_attn.out_proj: 24 (from linear: fp8_per_channel_static); mlp.down_proj: 32 (from linear: fp8_per_channel_static); mlp.gate_up_proj: 32 (from linear: fp8_per_channel_static); self_attn.o_proj: 8 (from linear: fp8_per_channel_static); self_attn.qkv_proj: 8 (from linear: fp8_per_channel_static)\n(EngineCore pid=3700) INFO 11-21 02:50:29 [base_loader.py:95] Initializing model took 4.291656 seconds\n(EngineCore pid=3700) INFO 11-21 02:50:29 [weight_utils.py:1154] Filesystem type for checkpoints: EXT4. Checkpoint size: 8.46 GiB. Available RAM: 57.37 GiB.\n(EngineCore pid=3700) INFO 11-21 02:50:29 [weight_utils.py:1177] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.\n\rLoading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]\n3411 MiB, 0 %\n    PID     ELAPSED %CPU %MEM STAT COMMAND\n   4149       00:00 21.4  0.0 Ss   systemd\n   3497       02:59  9.2  2.3 Ssl  python\n   3718       02:36  6.6  4.8 Dl   VLLM::EngineCor\n    437       09:24  0.5  0.0 S    nv_open_q\n    756       08:40  0.3  0.0 Ssl  nv-hostengine\n      1       09:44  0.2  0.0 Ss   systemd\n   3478       03:04  0.2  0.0 Ss   python\n(EngineCore pid=3718) INFO 11-21 02:50:29 [base_loader.py:164] Quantizing 128 layers of types: linear_attn.in_proj_qkvz: 24 (from linear: fp8_per_channel_static); linear_attn.out_proj: 24 (from linear: fp8_per_channel_static); mlp.down_proj: 32 (from linear: fp8_per_channel_static); mlp.gate_up_proj: 32 (from linear: fp8_per_channel_static); self_attn.o_proj: 8 (from linear: fp8_per_channel_static); self_attn.qkv_proj: 8 (from linear: fp8_per_channel_static)\n(EngineCore pid=3718) INFO 11-21 02:50:29 [base_loader.py:95] Initializing model took 4.377571 seconds\n(EngineCore pid=3718) INFO 11-21 02:50:29 [weight_utils.py:1154] Filesystem type for checkpoints: EXT4. Checkpoint size: 8.46 GiB. Available RAM: 57.41 GiB.\n(EngineCore pid=3718) INFO 11-21 02:50:29 [weight_utils.py:1177] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.\n\rLoading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "25b57c80-474a-4fa2-8d8d-bd7b2c9212aa",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:52:59 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "3466",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "25b57c80-474a-4fa2-8d8d-bd7b2c9212aa",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

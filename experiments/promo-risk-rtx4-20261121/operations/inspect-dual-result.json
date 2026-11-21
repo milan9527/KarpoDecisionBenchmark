@@ -1,0 +1,36 @@
+{
+  "CommandId": "b024bbb2-bdee-4149-a362-76817ae85080",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:29:29.029Z",
+  "ExecutionElapsedTime": "PT0.117S",
+  "ExecutionEndDateTime": "2026-11-21T02:29:29.029Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "index, name, memory.total [MiB], memory.used [MiB]\n0, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 0 MiB\n1, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 0 MiB\n{'vllm': '0.34.0', 'torch': '2.14.0', 'transformers': '5.21.0', 'karpo-decision': '0.1.0'}\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "d935a0bf-7d12-414e-92d8-f5b2bc78e59e",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:29:47 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "860",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "d935a0bf-7d12-414e-92d8-f5b2bc78e59e",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

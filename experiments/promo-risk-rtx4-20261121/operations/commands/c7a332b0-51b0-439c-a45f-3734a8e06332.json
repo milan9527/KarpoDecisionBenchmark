@@ -1,0 +1,9 @@
+{
+  "id": "c7a332b0-51b0-439c-a45f-3734a8e06332",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T02:54:32.249829+00:00",
+  "script": "set -u\nfor peer in 172.31.42.209 172.31.37.239; do\n ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=5 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts ubuntu@$peer 'sudo systemctl show karpo-promo-weight-proof-v1 -p ActiveState -p MainPID; for pid in $(pgrep -f \"[p]romo-hash-model.py\"); do sudo cat /proc/$pid/io; done; vmstat 1 2'\ndone\n"
+}

@@ -1,0 +1,2 @@
+set -Eeuo pipefail
+systemd-run --unit=karpo-promo-run-v1 --property=RuntimeMaxSec=3600 --property=StandardOutput=append:/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/setup/run-v1.log --property=StandardError=inherit /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/promo-validation-v1/scripts/promo_rtx4_suite.py run --name rtx4-fp8-v1 --no-upload --urls http://127.0.0.1:18500 http://127.0.0.1:18501 http://172.31.42.209:18500 http://172.31.37.239:18500

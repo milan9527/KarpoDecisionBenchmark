@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-21T02:26:15.622604+00:00",
+  "user_instruction": "用实际模型验证，还是用之前4个rtx gpu ec2，尽量在一个region",
+  "scope": "Karpo 4B FP8 vLLM, 4 RTX PRO 6000 Blackwell, prefer us-east-2; no H100/H200 starts",
+  "quality_dataset": "experiments/promo-risk-20261121",
+  "target_rps": 100,
+  "target_p50_ms": 500
+}

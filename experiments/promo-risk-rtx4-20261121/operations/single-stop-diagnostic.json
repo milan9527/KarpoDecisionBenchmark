@@ -1,0 +1,38 @@
+{
+  "utc": "2026-11-21T02:38:41.906688+00:00",
+  "state": "stopping",
+  "elapsed_seconds": 224.609358,
+  "console_timestamp": "2026-11-21 02:38:42+00:00",
+  "powerdown_lines": [
+    "[  520.256475] reboot: Power down"
+  ],
+  "force_stop_response": {
+    "StoppingInstances": [
+      {
+        "InstanceId": "i-0de4f061c2a04fe4b",
+        "CurrentState": {
+          "Code": 64,
+          "Name": "stopping"
+        },
+        "PreviousState": {
+          "Code": 64,
+          "Name": "stopping"
+        }
+      }
+    ],
+    "ResponseMetadata": {
+      "RequestId": "027159b9-a3d1-4c0e-87e7-a4c2222f43dc",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "027159b9-a3d1-4c0e-87e7-a4c2222f43dc",
+        "cache-control": "no-cache, no-store",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "content-type": "text/xml;charset=UTF-8",
+        "content-length": "412",
+        "date": "Sat, 21 Nov 2026 02:38:42 GMT",
+        "server": "AmazonEC2"
+      },
+      "RetryAttempts": 0
+    }
+  }
+}

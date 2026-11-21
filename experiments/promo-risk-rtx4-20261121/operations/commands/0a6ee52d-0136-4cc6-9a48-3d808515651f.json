@@ -1,0 +1,9 @@
+{
+  "id": "0a6ee52d-0136-4cc6-9a48-3d808515651f",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T02:54:31.860881+00:00",
+  "script": "set -u\nfor peer in 172.31.42.209 172.31.37.239; do\n ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=5 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts ubuntu@$peer 'nvidia-smi --query-gpu=memory.used,utilization.gpu --format=csv,noheader; ps -eo pid,etime,pcpu,pmem,stat,comm --sort=-pcpu | head -8; sudo tail -5 /opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/nodes/peer*/replica-*/server.log'\ndone\n"
+}

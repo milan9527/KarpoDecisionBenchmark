@@ -1,0 +1,9 @@
+{
+  "id": "bb1292a9-39af-4038-9795-edf429a9e6a7",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T02:47:56.588092+00:00",
+  "script": "set -u\njournalctl -u karpo-promo-bootstrap-peer2-v1 -u karpo-promo-bootstrap-peer3-v1 -n 35 --no-pager\nfor peer in 172.31.42.209 172.31.37.239; do\n ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=5 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts ubuntu@$peer 'sudo ls -la /opt/karpo; sudo systemctl list-unit-files --no-legend \"karpo*.timer\"; echo list_rc=$?; df -h /; command -v rsync'\ndone\n"
+}

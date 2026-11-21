@@ -1,0 +1,19 @@
+{
+  "host": "ip-172-31-40-12",
+  "started_utc": "2026-11-21T02:53:18.638092+00:00",
+  "weights": {
+    "model-00001-of-00002.safetensors": {
+      "sha256": "8b8835b9f4be56469b84d448f60f796840ffb4bac1f5d85345a2ff8eedaeb353",
+      "bytes": 5366966256
+    },
+    "model-00002-of-00002.safetensors": {
+      "sha256": "f85fe11714a76a46d689523cfc7adaedda0eb2397f80ed368530c77e119b5110",
+      "bytes": 3711649856
+    },
+    "readout.safetensors": {
+      "sha256": "d3b61679c31a1f09e214adcd542d3de831b383bee176fe25e4d8e19c8cbcf677",
+      "bytes": 2611280
+    }
+  },
+  "ended_utc": "2026-11-21T02:53:27.400586+00:00"
+}

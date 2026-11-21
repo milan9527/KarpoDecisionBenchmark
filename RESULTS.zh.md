@@ -1,64 +1,45 @@
 # Karpo风控与SOP：当前验收结果
 
-**风控四RTX、SOP八H200均通过各自的100 RPS验收；本项目EC2已全部停止。**
+**新版薅羊毛风控未通过验收：质量正确率78.15%，100 RPS性能未通过。**
 
-截至2026-11-20T16:17:06.581936+00:00，本项目全部6台EC2已stopped。本次停止5台运行实例，另1台原本已停止；实例、模型所在EBS及测试备份保留。实例计算计费已停止，保留的EBS和快照等仍可能计费。
+## 本轮配置与质量
 
-## 两场景正式结果
+原Karpo 4B、vLLM 0.34.0、FP8，四张RTX PRO 6000 Blackwell 96GB全部位于俄亥俄us-east-2c。一台g7e.12xlarge提供两卡，两台g7e.2xlarge各提供一卡；每卡独立模型副本，最大活跃序列数4。H100与H200均未参与本轮。
 
-100 RPS表示每秒固定到达100个请求，不是持续100个请求在途。两场景分别验收，每场景两轮各120秒、共24,000个请求；时延从预定到达到完整HTTP响应，包含调度滞后、代理、排队、编码和推理。风控测量包含跨区域SSH转发，SOP压测客户端与模型同机；均未覆盖生产外部入口和特征查询。
+完整200特征、45类合成行为。quality集540个案例各测两种候选顺序，共1,080请求，正确844，失败0。正常行为被干预0/336；作弊行为被放行158/408。tune和quality隔离实体与种子，但共享场景模板；本结果不能代表生产准确率。
 
-| 场景 | 120秒确认 | 稳态RPS | P50 ms | P95 ms | 有效/全部 | 压力正确率 | 失败 |
-|---|---|---|---|---|---|---|---|
-| 风控 · 四RTX | 第一轮 | 99.99 | 65.86 | 94.27 | 12,000/12,000 | 95.00% | 0 |
-| 风控 · 四RTX | 第二轮 | 99.99 | 64.92 | 93.22 | 12,000/12,000 | 95.00% | 0 |
-| SOP · 八H200 | 第一轮 | 100.00 | 76.58 | 82.63 | 12,000/12,000 | 94.25% | 0 |
-| SOP · 八H200 | 第二轮 | 100.00 | 76.24 | 78.62 | 12,000/12,000 | 94.25% | 0 |
+## 100 RPS实测
 
-## 质量与输入
+100 RPS指每秒固定到达100个请求。两轮各120秒，完整保留输入和候选；端到端从预定到达到完整HTTP响应，包含调度滞后、代理、排队、编码、推理和实例间私网。客户端位于双卡主机，生产入口与在线特征查询未纳入；失败全部计入验收。
 
-风控输入为原始200特征，SOP每次保留完整200候选。Karpo 4B、vLLM 0.34.0、FP8按通道量化，每卡独立完整模型，最大活跃序列数4，保留双向全注意力与FP32输出头。SOP的104条质量选择与原RTX结果全部一致；所有正确率均来自合成样例，不能代替真实业务数据验收。
+| 正式轮次 | 到达RPS | 稳态有效RPS | P50 ms | P95 ms | 正确/全部 | 失败 |
+|---|---|---|---|---|---|---|
+| confirm | 100 | 76.71 | 3312.55 | 3340.66 | 7376/12000 | 2635 |
+| repeat | 100 | 76.53 | 3323.80 | 3345.69 | 7357/12000 | 2652 |
 
-| 场景 | 合成质量 | 正确率 | 样本边界 |
-|---|---|---|---|
-| 风控 | 233/240 | 97.08% | 独立quality集；压力循环tune集 |
-| SOP | 98/104 | 94.23% | 质量和压力复用相同104条样例 |
+## 当前资源与费用
 
-## SOP卡数与GPU利用率
+资源核对时间：2026-11-21T03:03:20.839152+00:00。本项目8台EC2中3台运行，其余5台停止。本轮四RTX实例保留，运行实例继续产生费用。
 
-SOP在1／2／4／8卡与最大batch 1／4之间完成对照。四卡H200在100 RPS到达下的稳态有效吞吐为68 RPS，只有八卡通过本轮100 RPS验收；5／6／7卡未测。batch 1与4的八卡探测P50接近，按冻结规则选中4。利用率每2秒采样，正式阶段取后75%的到达窗口；nvidia-smi利用率不是峰值FLOPS利用率。
+本轮三台RTX实例Spot参考价合计8.0934美元/小时（720小时约5,827.25美元）；按需15.0123美元/小时（约10,808.87美元/月）。报价时间2026-11-21T03:03:20.839152+00:00，不含EBS、快照、网络、IPv4及其他保留资源；Spot价格会变化。
 
-| H200正式轮次 | 八卡平均利用率 | 各卡均值范围 |
-|---|---|---|
-| 第一轮 | 73.68% | 70.2–76.1% |
-| 第二轮 | 68.28% | 57.4–77.6% |
-
-## 运行时参考费用
-
-费用按720小时/月估算，仅列各方案运行时的EC2计算费用，不含额外保留的测试实例、EBS、网络和IPv4。Spot价格会变化。八卡H200整机计费，即使只启用部分GPU也不会降低该实例费用；当前实例均已停止。
-
-| 方案 | Spot美元/小时 | Spot美元/月 | 按需美元/小时 | 按需美元/月 |
+| 实例 | 型号 | 可用区 | 状态 | 本轮GPU |
 |---|---|---|---|---|
-| 风控 · 四RTX | 7.9148 | 5,698.66 | 16.2824 | 11,723.33 |
-| SOP · 八H200 | 32.2512 | 23,220.86 | 63.2960 | 45,573.12 |
+| i-05d0c24c739f41ca5 | g7e.4xlarge | us-east-1b | stopped | 0 |
+| i-02c1caf7d7ce17c76 | g7e.2xlarge | us-east-2c | running | 1 |
+| i-048c3784bb87b6d86 | g7e.8xlarge | us-east-2c | stopped | 0 |
+| i-05b24e3b4a7ee864d | g7e.12xlarge | us-east-2c | running | 2 |
+| i-05cfc7d4fa898ee33 | g7e.2xlarge | us-east-2c | running | 1 |
+| i-091371593b3c4a5ff | p5.4xlarge | us-east-2b | stopped | 0 |
+| i-0c777e3714538d624 | p5en.48xlarge | us-east-2a | stopped | 0 |
+| i-0de4f061c2a04fe4b | g7e.4xlarge | us-east-2c | stopped | 0 |
 
-风控价格复核：2026-11-20T16:07:21.744969+00:00；H200价格复核：2026-11-20T16:00:56.480274+00:00。
+## 历史结果边界
 
-## 已停止的EC2
-
-| 区域 / 可用区 | 实例 | 型号 | 当前状态 |
-|---|---|---|---|
-| us-east-1b | i-05d0c24c739f41ca5 | g7e.4xlarge | stopped |
-| us-east-2a | i-0c777e3714538d624 | p5en.48xlarge | stopped |
-| us-east-2b | i-091371593b3c4a5ff | p5.4xlarge | stopped |
-| us-east-2c | i-048c3784bb87b6d86 | g7e.8xlarge | stopped |
-| us-east-2c | i-05b24e3b4a7ee864d | g7e.12xlarge | stopped |
-| us-east-2c | i-0de4f061c2a04fe4b | g7e.4xlarge | stopped |
+旧版风控四RTX曾通过验收：合成质量97.08%，两轮100 RPS的P50为65.86/64.92ms。旧输入及策略与新版不同，该结论不能沿用为新版薅羊毛识别效果。SOP最近一次为八H200，质量94.23%，两轮100 RPS的P50为76.58/76.24ms；本轮未重测SOP。两项历史结果及当时停机记录保留在原实验目录。
 
 ## 报告与证据
 
-[四RTX风控结果](experiments/vllm-rps100-20261120/RTX4.zh.md) · [风控优化依据](experiments/vllm-rps100-20261120/OPTIMIZATION.zh.md) · [H200 SOP详细HTML](experiments/vllm-sop-h200-20261120/report.html) · [H200 SOP文字报告](experiments/vllm-sop-h200-20261120/RESULTS.zh.md) · [SOP复现说明](experiments/vllm-sop-h200-20261120/REPRODUCE.zh.md) · [EC2停止记录](operations/stop-20261120/infrastructure-stopped.json) · [原系列模型报告与完整决策示例](experiments/family-20261120/report.html)
+[新版风控详细HTML](experiments/promo-risk-rtx4-20261121/report.html) · [新版风控文字报告](experiments/promo-risk-rtx4-20261121/RESULTS.zh.md) · [完整输入与模型实际输出](experiments/promo-risk-rtx4-20261121/results/decision-example.json) · [逐条核验记录](experiments/promo-risk-rtx4-20261121/results/verification.json) · [200特征与行为场景](experiments/promo-risk-20261121/report.html) · [旧版四RTX风控结果](experiments/vllm-rps100-20261120/RTX4.zh.md) · [SOP八H200结果](experiments/vllm-sop-h200-20261120/report.html) · [当前资源快照](experiments/promo-risk-rtx4-20261121/operations/final-infrastructure.json) · [本轮价格快照](experiments/promo-risk-rtx4-20261121/operations/pricing.json)
 
-历史实验目录中的实例状态和方案结论是当时的记录。当前资源状态以上述停机记录为准；原始测试请求及冻结源码保持不变。修改前的文档另存于`operations/stop-20261120/previous/`。
-
-重新生成当前总报告：`python scripts/report.py`。
+重新生成：`python scripts/report.py`。

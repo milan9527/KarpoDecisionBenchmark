@@ -1,0 +1,20 @@
+[
+  "/opt/karpo/venv-vllm034/bin/python",
+  "/opt/karpo/promo-validation-v1/scripts/vllm_rps_server.py",
+  "--checkpoint",
+  "/opt/karpo/models/karpo-4b",
+  "--experiment",
+  "/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121",
+  "--output",
+  "/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/nodes/dual-v1/replica-0",
+  "--max-seqs",
+  "4",
+  "--replica-id",
+  "0",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "18500",
+  "--admission-limit",
+  "64"
+]

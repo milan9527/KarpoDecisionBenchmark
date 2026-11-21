@@ -1,0 +1,9 @@
+{
+  "id": "ece97da8-3746-4757-8cbe-078130b6f330",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T02:37:36.143004+00:00",
+  "script": "set -Eeuo pipefail\ncat /opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/nodes/dual-v1/status.json\nnvidia-smi --query-gpu=index,name,memory.used,utilization.gpu --format=csv\n/opt/karpo/venv-vllm034/bin/python /opt/karpo/promo-validation-v1/scripts/promo_rtx4_suite.py sync\n"
+}

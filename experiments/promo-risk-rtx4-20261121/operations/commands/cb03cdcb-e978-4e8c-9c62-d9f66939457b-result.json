@@ -1,0 +1,36 @@
+{
+  "CommandId": "cb03cdcb-e978-4e8c-9c62-d9f66939457b",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 1,
+  "ExecutionStartDateTime": "2026-11-21T02:38:43.407Z",
+  "ExecutionElapsedTime": "PT0.015S",
+  "ExecutionEndDateTime": "2026-11-21T02:38:43.407Z",
+  "Status": "Failed",
+  "StatusDetails": "Failed",
+  "StandardOutputContent": "",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "  File \"<stdin>\", line 18\n    print(behavior,item['expected'],body['answers']['action']['choice'],correct,round(elapsed,2),flush=True)\nIndentationError: unexpected indent\nfailed to run commands: exit status 1",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "2895e188-f696-4a8b-8092-4576f3686525",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:39:34 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "793",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "2895e188-f696-4a8b-8092-4576f3686525",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

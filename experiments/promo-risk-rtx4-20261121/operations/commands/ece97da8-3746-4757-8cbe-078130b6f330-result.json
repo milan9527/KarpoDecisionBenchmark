@@ -1,0 +1,36 @@
+{
+  "CommandId": "ece97da8-3746-4757-8cbe-078130b6f330",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:37:36.323Z",
+  "ExecutionElapsedTime": "PT1.17S",
+  "ExecutionEndDateTime": "2026-11-21T02:37:37.323Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "{\n  \"status\": \"ready\",\n  \"started_utc\": \"2026-11-21T02:34:28.796984+00:00\",\n  \"replica_ids\": [\n    0,\n    1\n  ],\n  \"ready_utc\": \"2026-11-21T02:36:58.894237+00:00\"\n}\nindex, name, memory.used [MiB], utilization.gpu [%]\n0, NVIDIA RTX PRO 6000 Blackwell Server Edition, 75551 MiB, 0 %\n1, NVIDIA RTX PRO 6000 Blackwell Server Edition, 75551 MiB, 0 %\n14\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "a8fb6554-6c52-434f-bb23-46e09057b18a",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:38:16 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "956",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "a8fb6554-6c52-434f-bb23-46e09057b18a",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

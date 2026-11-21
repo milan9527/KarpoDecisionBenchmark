@@ -1,0 +1,36 @@
+{
+  "CommandId": "bb1292a9-39af-4038-9795-edf429a9e6a7",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:47:56.765Z",
+  "ExecutionElapsedTime": "PT0.735S",
+  "ExecutionEndDateTime": "2026-11-21T02:47:56.765Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "Nov 21 02:43:56 ip-172-31-40-12 systemd[1]: Started karpo-promo-bootstrap-peer2-v1.service - /bin/bash /opt/karpo/promo-peer2-bootstrap.sh.\nNov 21 02:43:56 ip-172-31-40-12 systemd[1]: Started karpo-promo-bootstrap-peer3-v1.service - /bin/bash /opt/karpo/promo-peer3-bootstrap.sh.\nNov 21 02:44:16 ip-172-31-40-12 systemd[1]: karpo-promo-bootstrap-peer2-v1.service: Main process exited, code=exited, status=1/FAILURE\nNov 21 02:44:16 ip-172-31-40-12 systemd[1]: karpo-promo-bootstrap-peer2-v1.service: Failed with result 'exit-code'.\nNov 21 02:44:16 ip-172-31-40-12 systemd[1]: karpo-promo-bootstrap-peer3-v1.service: Main process exited, code=exited, status=1/FAILURE\nNov 21 02:44:16 ip-172-31-40-12 systemd[1]: karpo-promo-bootstrap-peer3-v1.service: Failed with result 'exit-code'.\ntotal 64\ndrwxr-xr-x 10 root root 4096 Nov 20 03:08 .\ndrwxr-xr-x  9 root root 4096 Nov 19 11:57 ..\n-rw-r--r--  1 root root 3642 Nov 19 11:58 README.md\n-rw-r--r--  1 root root   25 Nov 19 12:05 bootstrap-ready\n-rw-r--r--  1 root root  723 Nov 19 12:03 download-http.py\ndrwxr-xr-x  7 root root 4096 Nov 20 08:12 experiments\n-rwx------  1 root root  535 Nov 20 03:14 family-launch.sh\ndrwxr-xr-x  2 root root 4096 Nov 19 11:58 fixtures\n-rw-r--r--  1 root root  312 Nov 19 11:58 launch-suite.sh\ndrwxr-xr-x  7 root root 4096 Nov 20 03:08 models\n-rw-r--r--  1 root root  286 Nov 19 11:58 pyproject.toml\ndrwxr-xr-x  5 root root 4096 Nov 19 12:41 results\ndrwxr-xr-x  3 root root 4096 Nov 20 08:12 scripts\ndrwxr-xr-x  3 root root 4096 Nov 19 11:58 sources\ndrwxr-xr-x  2 root root 4096 Nov 19 11:58 tests\ndrwxr-xr-x  6 root root 4096 Nov 19 11:58 venv\nlist_rc=1\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/root       290G  206G   84G  72% /\n/usr/bin/rsync\ntotal 64\ndrwxr-xr-x 10 root root 4096 Nov 20 03:08 .\ndrwxr-xr-x  9 root root 4096 Nov 19 11:57 ..\n-rw-r--r--  1 root root 3642 Nov 19 11:58 README.md\n-rw-r--r--  1 root root   25 Nov 19 12:05 bootstrap-ready\n-rw-r--r--  1 root root  723 Nov 19 12:03 download-http.py\ndrwxr-xr-x  7 root root 4096 Nov 20 08:12 experiments\n-rwx------  1 root root  535 Nov 20 03:14 family-launch.sh\ndrwxr-xr-x  2 root root 4096 Nov 19 11:58 fixtures\n-rw-r--r--  1 root root  312 Nov 19 11:58 launch-suite.sh\ndrwxr-xr-x  7 root root 4096 Nov 20 03:08 models\n-rw-r--r--  1 root root  286 Nov 19 11:58 pyproject.toml\ndrwxr-xr-x  5 root root 4096 Nov 19 12:41 results\ndrwxr-xr-x  3 root root 4096 Nov 20 08:12 scripts\ndrwxr-xr-x  3 root root 4096 Nov 19 11:58 sources\ndrwxr-xr-x  2 root root 4096 Nov 19 11:58 tests\ndrwxr-xr-x  6 root root 4096 Nov 19 11:58 venv\nlist_rc=1\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/root       290G  206G   84G  72% /\n/usr/bin/rsync\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "fb1525b0-638a-4313-a9ff-0b33ee9d814f",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:47:59 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "3320",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "fb1525b0-638a-4313-a9ff-0b33ee9d814f",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

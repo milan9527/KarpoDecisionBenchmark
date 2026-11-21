@@ -1,0 +1,34 @@
+{
+  "Return": true,
+  "SecurityGroupRules": [
+    {
+      "SecurityGroupRuleId": "sgr-0c34510fbe543477c",
+      "GroupId": "sg-077c0629417a7de69",
+      "GroupOwnerId": "632930644527",
+      "IsEgress": false,
+      "IpProtocol": "tcp",
+      "FromPort": 18500,
+      "ToPort": 18515,
+      "ReferencedGroupInfo": {
+        "GroupId": "sg-0b1141d41de58ca31",
+        "UserId": "632930644527"
+      },
+      "Description": "Promo risk benchmark from existing dual RTX controller",
+      "SecurityGroupRuleArn": "arn:aws:ec2:us-east-2:632930644527:security-group-rule/sgr-0c34510fbe543477c"
+    }
+  ],
+  "ResponseMetadata": {
+    "RequestId": "dc7e2f6a-c0aa-437e-b730-f99b67c09d99",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "x-amzn-requestid": "dc7e2f6a-c0aa-437e-b730-f99b67c09d99",
+      "cache-control": "no-cache, no-store",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "content-type": "text/xml;charset=UTF-8",
+      "content-length": "864",
+      "date": "Sat, 21 Nov 2026 02:34:56 GMT",
+      "server": "AmazonEC2"
+    },
+    "RetryAttempts": 0
+  }
+}

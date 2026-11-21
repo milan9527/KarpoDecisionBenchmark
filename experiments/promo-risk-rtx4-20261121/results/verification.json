@@ -1,0 +1,136 @@
+{
+  "run": "rtx4-fp8-v1",
+  "dataset": "promo-risk-20261121",
+  "model": "Karpo 4B FP8 / vLLM 0.34.0",
+  "gpu": "4 RTX PRO 6000 Blackwell Server Edition 96GB",
+  "quality_passed": false,
+  "performance_passed": false,
+  "pressure_quality_passed": false,
+  "accepted": false,
+  "verified_requests": 27960,
+  "encoding": {
+    "requests": 1440,
+    "min_tokens": 3218,
+    "max_tokens": 3315,
+    "encoding_sha256": "45479267ec092da9039420025dc5abd9cb702d24c62fc9a034364490c7fe1c00",
+    "all_complete": true,
+    "checkpoint": "/opt/karpo/models/karpo-4b"
+  },
+  "readout_sha256": "e1682b846b9a86eb3daf7faf93caf7368fb46a882e99f6ef5bd54c2c8a517a3f",
+  "engine_proofs": [
+    "results/nodes/dual-v1/replica-0/engine-config.json",
+    "results/nodes/dual-v1/replica-1/engine-config.json",
+    "results/nodes/peer2-v1/replica-2/engine-config.json",
+    "results/nodes/peer3-v1/replica-3/engine-config.json"
+  ],
+  "model_weights": {
+    "model-00001-of-00002.safetensors": {
+      "sha256": "8b8835b9f4be56469b84d448f60f796840ffb4bac1f5d85345a2ff8eedaeb353",
+      "bytes": 5366966256
+    },
+    "model-00002-of-00002.safetensors": {
+      "sha256": "f85fe11714a76a46d689523cfc7adaedda0eb2397f80ed368530c77e119b5110",
+      "bytes": 3711649856
+    },
+    "readout.safetensors": {
+      "sha256": "d3b61679c31a1f09e214adcd542d3de831b383bee176fe25e4d8e19c8cbcf677",
+      "bytes": 2611280
+    }
+  },
+  "infrastructure": {
+    "utc": "2026-11-21T03:03:20.839152+00:00",
+    "policy": "Read-only snapshot; instances retained",
+    "instances": [
+      {
+        "id": "i-05d0c24c739f41ca5",
+        "type": "g7e.4xlarge",
+        "az": "us-east-1b",
+        "state": "stopped",
+        "region": "us-east-1",
+        "spot_request": "sir-ctciivig",
+        "private_ip": "172.31.85.230",
+        "participates": false,
+        "test_gpu_count": 0
+      },
+      {
+        "id": "i-02c1caf7d7ce17c76",
+        "type": "g7e.2xlarge",
+        "az": "us-east-2c",
+        "state": "running",
+        "region": "us-east-2",
+        "spot_request": "sir-m5zg19rh",
+        "private_ip": "172.31.42.209",
+        "participates": true,
+        "test_gpu_count": 1
+      },
+      {
+        "id": "i-048c3784bb87b6d86",
+        "type": "g7e.8xlarge",
+        "az": "us-east-2c",
+        "state": "stopped",
+        "region": "us-east-2",
+        "spot_request": "sir-5g1i2rjj",
+        "private_ip": "172.31.44.129",
+        "participates": false,
+        "test_gpu_count": 0
+      },
+      {
+        "id": "i-05b24e3b4a7ee864d",
+        "type": "g7e.12xlarge",
+        "az": "us-east-2c",
+        "state": "running",
+        "region": "us-east-2",
+        "spot_request": "sir-dfz8i1sj",
+        "private_ip": "172.31.40.12",
+        "participates": true,
+        "test_gpu_count": 2
+      },
+      {
+        "id": "i-05cfc7d4fa898ee33",
+        "type": "g7e.2xlarge",
+        "az": "us-east-2c",
+        "state": "running",
+        "region": "us-east-2",
+        "spot_request": "sir-rzfgiyik",
+        "private_ip": "172.31.37.239",
+        "participates": true,
+        "test_gpu_count": 1
+      },
+      {
+        "id": "i-091371593b3c4a5ff",
+        "type": "p5.4xlarge",
+        "az": "us-east-2b",
+        "state": "stopped",
+        "region": "us-east-2",
+        "spot_request": "sir-cbtr155h",
+        "private_ip": "172.31.25.147",
+        "participates": false,
+        "test_gpu_count": 0
+      },
+      {
+        "id": "i-0c777e3714538d624",
+        "type": "p5en.48xlarge",
+        "az": "us-east-2a",
+        "state": "stopped",
+        "region": "us-east-2",
+        "spot_request": "sir-ptbg1egj",
+        "private_ip": "172.31.14.72",
+        "participates": false,
+        "test_gpu_count": 0
+      },
+      {
+        "id": "i-0de4f061c2a04fe4b",
+        "type": "g7e.4xlarge",
+        "az": "us-east-2c",
+        "state": "stopped",
+        "region": "us-east-2",
+        "spot_request": "sir-khwi3vgh",
+        "private_ip": "172.31.42.136",
+        "participates": false,
+        "test_gpu_count": 0
+      }
+    ]
+  },
+  "scope": "Scenario-driven synthetic data; original full input. Actual measured HTTP path includes queue and routing; production feature lookup and entry network excluded.",
+  "verified_utc": "2026-11-21T03:03:27.240680+00:00"
+}

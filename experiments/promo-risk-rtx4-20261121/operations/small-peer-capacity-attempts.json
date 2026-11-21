@@ -1,0 +1,18 @@
+[
+  {
+    "replica_id": 2,
+    "zone": "us-east-2c",
+    "error": {
+      "Code": "MaxSpotInstanceCountExceeded",
+      "Message": "Max spot instance count exceeded"
+    }
+  },
+  {
+    "replica_id": 2,
+    "zone": "us-east-2c",
+    "error": {
+      "Code": "MaxSpotInstanceCountExceeded",
+      "Message": "Max spot instance count exceeded"
+    }
+  }
+]

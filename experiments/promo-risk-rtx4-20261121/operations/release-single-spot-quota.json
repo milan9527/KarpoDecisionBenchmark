@@ -1,0 +1,33 @@
+{
+  "utc": "2026-11-21T02:34:57.297330+00:00",
+  "reason": "Move controller to existing dual GPU instance and free 16 Spot vCPU for two 8-vCPU single-GPU peers; preserve original EC2 and EBS",
+  "response": {
+    "StoppingInstances": [
+      {
+        "InstanceId": "i-0de4f061c2a04fe4b",
+        "CurrentState": {
+          "Code": 64,
+          "Name": "stopping"
+        },
+        "PreviousState": {
+          "Code": 16,
+          "Name": "running"
+        }
+      }
+    ],
+    "ResponseMetadata": {
+      "RequestId": "77d66144-05c5-4a19-9993-f1a44c6e1187",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "77d66144-05c5-4a19-9993-f1a44c6e1187",
+        "cache-control": "no-cache, no-store",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "content-type": "text/xml;charset=UTF-8",
+        "content-length": "411",
+        "date": "Sat, 21 Nov 2026 02:34:57 GMT",
+        "server": "AmazonEC2"
+      },
+      "RetryAttempts": 0
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "id": "b024bbb2-bdee-4149-a362-76817ae85080",
+  "instance": "i-05b24e3b4a7ee864d",
+  "region": "us-east-2",
+  "script": "set -Eeuo pipefail\nnvidia-smi --query-gpu=index,name,memory.total,memory.used --format=csv\n/opt/karpo/venv-vllm034/bin/python -c 'import importlib.metadata as m; print({k:m.version(k) for k in [\"vllm\",\"torch\",\"transformers\",\"karpo-decision\"]})'\ntest -f /opt/karpo/models/karpo-4b/readout.safetensors\ntest ! -e /run/systemd/shutdown/scheduled\n"
+}

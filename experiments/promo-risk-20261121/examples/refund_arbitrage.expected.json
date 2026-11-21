@@ -1,0 +1,11 @@
+{
+  "request_id": "quality-refund_arbitrage-000-original",
+  "expected": {
+    "action": "review"
+  },
+  "reference_rule_ids": [
+    "refund_arbitrage"
+  ],
+  "model_response": null,
+  "note": "Business reference label, not a measured Karpo response."
+}

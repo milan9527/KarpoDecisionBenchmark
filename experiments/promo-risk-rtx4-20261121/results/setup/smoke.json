@@ -1,0 +1,170 @@
+[
+  {
+    "request_id": "tune-normal-000-original",
+    "expected": {
+      "action": "allow"
+    },
+    "correct": true,
+    "response": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "allow",
+          "probabilities": {
+            "deny": 0.004297113091072554,
+            "deduplicate": 0.0011656598775774925,
+            "throttle": 0.0010153219443022944,
+            "challenge": 0.0019233444674290952,
+            "review": 0.04091072497912278,
+            "allow": 0.9506878356404957
+          },
+          "confidence": 0.9408254027685949
+        }
+      },
+      "usage": {
+        "input_tokens": 3246,
+        "output_tokens": 0,
+        "sequences": 1
+      },
+      "metrics": {
+        "backend": "vllm",
+        "replica_id": 0,
+        "gpu": 0,
+        "max_num_seqs": 4,
+        "encode_queue_ms": 0.15671700009534106,
+        "encode_ms": 8.49916899994696,
+        "engine_wait_and_model_ms": 97.880780999958,
+        "tokens_sha256": "a38b46ab4fe95eab0658c9394077bf8049380dddf02c1d45df95915821d43b76",
+        "marker": 3236
+      }
+    },
+    "latency_ms": 144.6139109999649,
+    "scope": "single-replica smoke on tune cases, not the four-GPU acceptance run"
+  },
+  {
+    "request_id": "tune-identity_reuse-000-original",
+    "expected": {
+      "action": "deny"
+    },
+    "correct": true,
+    "response": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "deny",
+          "probabilities": {
+            "deny": 0.8733750161591309,
+            "deduplicate": 0.0011051348633119291,
+            "throttle": 0.001505960507845875,
+            "challenge": 0.0015723185231922084,
+            "review": 0.03332762487298799,
+            "allow": 0.08911394507353107
+          },
+          "confidence": 0.8480500193909571
+        }
+      },
+      "usage": {
+        "input_tokens": 3243,
+        "output_tokens": 0,
+        "sequences": 1
+      },
+      "metrics": {
+        "backend": "vllm",
+        "replica_id": 0,
+        "gpu": 0,
+        "max_num_seqs": 4,
+        "encode_queue_ms": 0.13576900005318748,
+        "encode_ms": 6.279984000002514,
+        "engine_wait_and_model_ms": 58.31694200003312,
+        "tokens_sha256": "1eb2a83789b705652161dcb4ca6bcbd0ac96caf936215a61a73da580776b0e87",
+        "marker": 3233
+      }
+    },
+    "latency_ms": 81.46762599994872,
+    "scope": "single-replica smoke on tune cases, not the four-GPU acceptance run"
+  },
+  {
+    "request_id": "tune-refund_arbitrage-000-original",
+    "expected": {
+      "action": "review"
+    },
+    "correct": false,
+    "response": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "allow",
+          "probabilities": {
+            "deny": 0.012225822506238363,
+            "deduplicate": 0.002806369225268274,
+            "throttle": 0.0024615514931760124,
+            "challenge": 0.003911882328346401,
+            "review": 0.3595097673607919,
+            "allow": 0.6190846070861791
+          },
+          "confidence": 0.5429015285034149
+        }
+      },
+      "usage": {
+        "input_tokens": 3256,
+        "output_tokens": 0,
+        "sequences": 1
+      },
+      "metrics": {
+        "backend": "vllm",
+        "replica_id": 0,
+        "gpu": 0,
+        "max_num_seqs": 4,
+        "encode_queue_ms": 0.1083440000684277,
+        "encode_ms": 5.967097999928228,
+        "engine_wait_and_model_ms": 57.52892400005294,
+        "tokens_sha256": "dbc226fabe1717b1704dd13791e172cf7c4650bc988d0807de62a2b7bd94698b",
+        "marker": 3246
+      }
+    },
+    "latency_ms": 80.25050899993857,
+    "scope": "single-replica smoke on tune cases, not the four-GPU acceptance run"
+  },
+  {
+    "request_id": "tune-reward_pooling-000-original",
+    "expected": {
+      "action": "review"
+    },
+    "correct": false,
+    "response": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "allow",
+          "probabilities": {
+            "deny": 0.015242551155301208,
+            "deduplicate": 0.0033374237175230886,
+            "throttle": 0.003512381041646002,
+            "challenge": 0.0048902685728896035,
+            "review": 0.35306238437601356,
+            "allow": 0.6199549911366266
+          },
+          "confidence": 0.5439459893639519
+        }
+      },
+      "usage": {
+        "input_tokens": 3256,
+        "output_tokens": 0,
+        "sequences": 1
+      },
+      "metrics": {
+        "backend": "vllm",
+        "replica_id": 0,
+        "gpu": 0,
+        "max_num_seqs": 4,
+        "encode_queue_ms": 0.10843500001556095,
+        "encode_ms": 5.8361949999152785,
+        "engine_wait_and_model_ms": 57.44080900001336,
+        "tokens_sha256": "907332b6f0066585ccd5bc11e817f947c245a698d6de632dbc63ff9bd6ea7dcc",
+        "marker": 3246
+      }
+    },
+    "latency_ms": 79.98274999999921,
+    "scope": "single-replica smoke on tune cases, not the four-GPU acceptance run"
+  }
+]

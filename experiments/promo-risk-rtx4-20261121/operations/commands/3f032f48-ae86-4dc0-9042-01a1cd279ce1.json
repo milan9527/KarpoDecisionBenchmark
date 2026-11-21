@@ -1,0 +1,9 @@
+{
+  "id": "3f032f48-ae86-4dc0-9042-01a1cd279ce1",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T02:40:02.311984+00:00",
+  "script": "set -Eeuo pipefail\n/opt/karpo/venv-vllm034/bin/python - <<'SMOKE'\nimport json,time,sys\nfrom pathlib import Path\nimport httpx\nroot=Path('/opt/karpo/promo-validation-v1');sys.path.insert(0,str(root/'scripts'))\nfrom benchmark import validate\nexp=root/'experiments/promo-risk-rtx4-20261121'\nitems=json.loads((exp/'risk-requests.json').read_text())\nenc={r['request_id']:r for r in json.loads((exp/'encoding-reference.json').read_text())}\nresult=[]\nfor behavior in ['normal','identity_reuse','refund_arbitrage','reward_pooling']:\n item=next(i for i in items if i['group']=='tune' and i['order']=='original' and i['behavior']==behavior)\n start=time.perf_counter();r=httpx.post('http://127.0.0.1:18500/v1/systemone',json=item['request'],timeout=120,trust_env=False);elapsed=(time.perf_counter()-start)*1000\n r.raise_for_status();body=r.json();correct=validate(body,item)\n assert body['metrics']['tokens_sha256']==enc[item['id']]['tokens_sha256']\n assert body['metrics']['marker']==enc[item['id']]['marker']\n result.append({'request_id':item['id'],'expected':item['expected'],'correct':correct,'response':body,'latency_ms':elapsed,'scope':'single-replica smoke on tune cases, not the four-GPU acceptance run'})\n print(behavior,item['expected'],body['answers']['action']['choice'],correct,round(elapsed,2),flush=True)\n(exp/'results/setup/smoke.json').write_text(json.dumps(result,indent=2))\nSMOKE\n/opt/karpo/venv-vllm034/bin/python /opt/karpo/promo-validation-v1/scripts/promo_rtx4_suite.py sync\n"
+}

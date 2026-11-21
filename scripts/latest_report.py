@@ -18,7 +18,10 @@ def main():
     root = Path(__file__).resolve().parents[1]
     h200 = root / "experiments/vllm-sop-h200-20261120/results/verification.json"
     stopped = root / "operations/stop-20261120/infrastructure-stopped.json"
-    if h200.exists() and stopped.exists() and json.loads(h200.read_text()).get("confirmed"):
+    promo = root / "experiments/promo-risk-rtx4-20261121/results/verification.json"
+    if promo.exists() and json.loads(promo.read_text()).get("verified_requests"):
+        from promo_project_report import main as render
+    elif h200.exists() and stopped.exists() and json.loads(h200.read_text()).get("confirmed"):
         from project_report import main as render
     elif family_complete():
         from family_report import main as render

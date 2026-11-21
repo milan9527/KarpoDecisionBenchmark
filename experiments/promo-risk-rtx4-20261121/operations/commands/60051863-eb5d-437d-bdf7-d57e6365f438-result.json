@@ -1,0 +1,36 @@
+{
+  "CommandId": "60051863-eb5d-437d-bdf7-d57e6365f438",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:44:50.134Z",
+  "ExecutionElapsedTime": "PT0.024S",
+  "ExecutionEndDateTime": "2026-11-21T02:44:50.134Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-promo-backup-v1.service; invocation ID: dd4c6f53374348c4aaeec2aecf6c88dc\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "79c56d36-a355-4279-804d-2d4009770205",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:45:58 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "679",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "79c56d36-a355-4279-804d-2d4009770205",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

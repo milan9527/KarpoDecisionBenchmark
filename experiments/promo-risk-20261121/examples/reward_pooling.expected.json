@@ -1,0 +1,11 @@
+{
+  "request_id": "quality-reward_pooling-000-original",
+  "expected": {
+    "action": "review"
+  },
+  "reference_rule_ids": [
+    "reward_pooling"
+  ],
+  "model_response": null,
+  "note": "Business reference label, not a measured Karpo response."
+}

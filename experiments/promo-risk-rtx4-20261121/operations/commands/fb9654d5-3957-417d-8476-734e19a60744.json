@@ -1,0 +1,9 @@
+{
+  "id": "fb9654d5-3957-417d-8476-734e19a60744",
+  "host": "dual",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-05b24e3b4a7ee864d",
+  "utc": "2026-11-21T02:48:25.991366+00:00",
+  "script": "set -u\nsystemctl show karpo-promo-bootstrap-peer2-v1 karpo-promo-bootstrap-peer3-v1 karpo-promo-backup-v1 -p Id -p ActiveState -p SubState -p Result\nps -eo pid,etime,pcpu,comm,args | grep -E '[r]sync|[p]romo-peer.*bootstrap' | head -12\nfor peer in 172.31.42.209 172.31.37.239; do\n ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=5 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts ubuntu@$peer 'sudo du -sh /opt/karpo/venv-vllm034; nvidia-smi --query-gpu=name,memory.used --format=csv,noheader; sudo systemctl list-units \"karpo-promo*\" --no-pager'\ndone\n"
+}

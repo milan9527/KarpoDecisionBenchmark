@@ -1,0 +1,9 @@
+{
+  "id": "9273d2a8-1ff5-4968-8cad-fd6ca0b6b985",
+  "host": "peer2",
+  "region": "us-east-2",
+  "instance": "i-05b24e3b4a7ee864d",
+  "target": "i-02c1caf7d7ce17c76",
+  "utc": "2026-11-21T02:55:32.922976+00:00",
+  "script": "ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts ubuntu@172.31.42.209 'sudo /bin/bash -s' <<'PROMO_PEER'\nset -Eeuo pipefail\ncat > /opt/karpo/promo-prefetch.py <<'PROMO_PREFETCH'\nimport concurrent.futures, datetime, json, os, pathlib, socket\nstarted = datetime.datetime.now(datetime.timezone.utc).isoformat()\nparts = [(path, start, min(64*1024*1024, path.stat().st_size-start)) for path in pathlib.Path('/opt/karpo/models/karpo-4b').glob('*.safetensors') for start in range(0, path.stat().st_size, 64*1024*1024)]\ndef read(part):\n path, start, count = part\n with path.open('rb', buffering=0) as stream:\n  stream.seek(start)\n  while count:\n   chunk = stream.read(min(count, 4*1024*1024))\n   if not chunk: raise RuntimeError('Unexpected EOF')\n   count -= len(chunk)\nwith concurrent.futures.ThreadPoolExecutor(max_workers=16) as pool:\n list(pool.map(read, parts))\nresult = {'started_utc': started, 'ended_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'parts': len(parts), 'workers': 16, 'scope': 'Read-only OS cache prefetch before pressure'}\npathlib.Path('/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/setup/prefetch-' + socket.gethostname() + '.json').write_text(json.dumps(result, indent=2) + '\\n')\nPROMO_PREFETCH\nsystemd-run --unit=karpo-promo-parallel-prefetch-v1 --property=RuntimeMaxSec=600 /usr/bin/python3 /opt/karpo/promo-prefetch.py\n\nPROMO_PEER"
+}

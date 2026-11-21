@@ -1,0 +1,30 @@
+[
+  {
+    "replica_id": 2,
+    "region": "us-east-2",
+    "az": "us-east-2c",
+    "instance_id": "i-02c1caf7d7ce17c76",
+    "instance_type": "g7e.2xlarge",
+    "private_ip": "172.31.42.209",
+    "spot_request_id": "sir-m5zg19rh",
+    "market": "spot",
+    "gpu_count": 1,
+    "vcpus": 8,
+    "management": "private_ssh_via_dual",
+    "utc": "2026-11-21T02:42:55.219593+00:00"
+  },
+  {
+    "replica_id": 3,
+    "region": "us-east-2",
+    "az": "us-east-2c",
+    "instance_id": "i-05cfc7d4fa898ee33",
+    "instance_type": "g7e.2xlarge",
+    "private_ip": "172.31.37.239",
+    "spot_request_id": "sir-rzfgiyik",
+    "market": "spot",
+    "gpu_count": 1,
+    "vcpus": 8,
+    "management": "private_ssh_via_dual",
+    "utc": "2026-11-21T02:42:56.325231+00:00"
+  }
+]

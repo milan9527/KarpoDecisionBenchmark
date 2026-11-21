@@ -1,0 +1,36 @@
+{
+  "CommandId": "1c1fbc70-4a6d-419a-9282-00dcd060cf3e",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:33:34.450Z",
+  "ExecutionElapsedTime": "PT51.648S",
+  "ExecutionEndDateTime": "2026-11-21T02:34:25.450Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "download: s3://karpo-benchmark-20261119-115003-632930644527/inputs/promo-risk-rtx4-v1.tar.gz to ../../../../tmp/promo-risk-rtx4-v1.tar.gz\n/tmp/promo-risk-rtx4-v1.tar.gz: OK\n{\n  \"requests\": 1440,\n  \"min_tokens\": 3218,\n  \"max_tokens\": 3315,\n  \"encoding_sha256\": \"45479267ec092da9039420025dc5abd9cb702d24c62fc9a034364490c7fe1c00\",\n  \"all_complete\": true,\n  \"checkpoint\": \"/opt/karpo/models/karpo-4b\"\n}\n\n6\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP9gli9ZI/+N2izjSP8Og14KslYh2aX4bnYDtQhqtUCI root@ip-172-31-40-12\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "Running as unit: karpo-promo-dual-v1.service; invocation ID: f812bbe3c4dc4a08bd59a39290023a29\n",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "d47c0cc7-dc7b-4d76-bba3-846ffac2fa2f",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:34:37 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1211",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "d47c0cc7-dc7b-4d76-bba3-846ffac2fa2f",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

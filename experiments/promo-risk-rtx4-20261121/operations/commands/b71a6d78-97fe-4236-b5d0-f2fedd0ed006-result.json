@@ -1,0 +1,36 @@
+{
+  "CommandId": "b71a6d78-97fe-4236-b5d0-f2fedd0ed006",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:50:03.400Z",
+  "ExecutionElapsedTime": "PT0.775S",
+  "ExecutionEndDateTime": "2026-11-21T02:50:03.400Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "Result=success\nId=karpo-promo-bootstrap-peer2-v1b.service\nActiveState=inactive\nSubState=dead\n\nResult=success\nId=karpo-promo-bootstrap-peer3-v1b.service\nActiveState=inactive\nSubState=dead\n\nResult=success\nId=karpo-promo-backup-v1.service\nActiveState=active\nSubState=running\n   4005       00:00  0.0 rsync           rsync -a -e ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts --rsync-path=sudo rsync ubuntu@172.31.42.209:/opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/ /opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/\n   4006       00:00 50.0 ssh             ssh -i /opt/karpo/.ssh/promo-rtx21 -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/opt/karpo/.ssh/promo-known-hosts -l ubuntu 172.31.42.209 sudo rsync --server --sender -logDtpre.iLsfxCIvu . /opt/karpo/promo-validation-v1/experiments/promo-risk-rtx4-20261121/results/\n9.0G\t/opt/karpo/venv-vllm034\nNVIDIA RTX PRO 6000 Blackwell Server Edition, 3 MiB\n  UNIT                         LOAD   ACTIVE SUB     DESCRIPTION\n  karpo-promo-peer2-v1.service loaded active running /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/promo-validation-v1/scripts/promo_rtx4_suite.py node --name peer2-v1 --replica-ids 2 --bind 0.0.0.0\n\nLegend: LOAD   → Reflects whether the unit definition was properly loaded.\n        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.\n        SUB    → The low-level unit activation state, values depend on unit type.\n\n1 loaded units listed. Pass --all to see loaded but inactive units, too.\nTo show all installed unit files use 'systemctl list-unit-files'.\n9.0G\t/opt/karpo/venv-vllm034\nNVIDIA RTX PRO 6000 Blackwell Server Edition, 3 MiB\n  UNIT                         LOAD   ACTIVE SUB     DESCRIPTION\n  karpo-promo-peer3-v1.service loaded active running /opt/karpo/venv-vllm034/bin/python -u /opt/karpo/promo-validation-v1/scripts/promo_rtx4_suite.py node --name peer3-v1 --replica-ids 3 --bind 0.0.0.0\n\nLegend: LOAD   → Reflects whether the unit definition was properly loaded.\n        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.\n        SUB    → The low-level unit activation state, values depend on unit type.\n\n1 loaded units listed. Pass --all to see loaded but inactive units, too.\nTo show all installed unit files use 'systemctl list-unit-files'.\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "a4c12b2d-2559-4a8a-a005-d7ba0cd603dd",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:50:10 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "3137",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "a4c12b2d-2559-4a8a-a005-d7ba0cd603dd",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}

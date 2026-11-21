@@ -1,0 +1,36 @@
+{
+  "CommandId": "c7a332b0-51b0-439c-a45f-3734a8e06332",
+  "InstanceId": "i-05b24e3b4a7ee864d",
+  "Comment": "",
+  "DocumentName": "AWS-RunShellScript",
+  "DocumentVersion": "$DEFAULT",
+  "PluginName": "aws:runShellScript",
+  "ResponseCode": 0,
+  "ExecutionStartDateTime": "2026-11-21T02:54:32.451Z",
+  "ExecutionElapsedTime": "PT2.594S",
+  "ExecutionEndDateTime": "2026-11-21T02:54:34.451Z",
+  "Status": "Success",
+  "StatusDetails": "Success",
+  "StandardOutputContent": "MainPID=4316\nActiveState=active\nrchar: 1930170187\nwchar: 60\nsyscr: 263\nsyscw: 2\nread_bytes: 342102016\nwrite_bytes: 0\ncancelled_write_bytes: 0\nprocs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------\n r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu\n 0  2      0 48075536 162488 12634736    0    0  3955 58284 2661    4  1  0 89  9  0  0\n 0  2      0 48066368 162488 12644684    0    0  9600     0 1865 2884  0  0 75 25  0  0\nMainPID=4333\nActiveState=active\nrchar: 2316046154\nwchar: 60\nsyscr: 286\nsyscw: 2\nread_bytes: 416169984\nwrite_bytes: 0\ncancelled_write_bytes: 0\nprocs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------\n r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu\n 0  2      0 47675064 163296 13014000    0    0  4502 58192 2557    4  1  1 89  9  0  0\n 0  2      0 47667788 163296 13021460    0    0  7168     0 1862 2879  0  0 75 25  0  0\n",
+  "StandardOutputUrl": "",
+  "StandardErrorContent": "",
+  "StandardErrorUrl": "",
+  "CloudWatchOutputConfig": {
+    "CloudWatchLogGroupName": "",
+    "CloudWatchOutputEnabled": false
+  },
+  "ResponseMetadata": {
+    "RequestId": "470d7474-ccc3-4960-9b86-7a478897f9bc",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "server": "Server",
+      "date": "Sat, 21 Nov 2026 02:55:11 GMT",
+      "content-type": "application/x-amz-json-1.1",
+      "content-length": "1580",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "470d7474-ccc3-4960-9b86-7a478897f9bc",
+      "cache-control": "no-store"
+    },
+    "RetryAttempts": 0
+  }
+}
