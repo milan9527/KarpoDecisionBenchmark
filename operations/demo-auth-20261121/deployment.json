@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-21T10:49:53.601980+00:00",
+  "backend_instance": "i-04aa43d75617e765b",
+  "target_health": [
+    "healthy"
+  ],
+  "username": "demo",
+  "password_storage": "PBKDF2-HMAC-SHA256, 600000 iterations; no plaintext in backend secret",
+  "local_credential_file_mode": "0600",
+  "legacy_access_code_removed": true,
+  "gpu_instances": [
+    {
+      "region": "us-east-1",
+      "id": "i-09e55f0a86313912d",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-1",
+      "id": "i-0b7835341b1266d7a",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-0c777e3714538d624",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-05b24e3b4a7ee864d",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-05cfc7d4fa898ee33",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-02c1caf7d7ce17c76",
+      "state": "stopped"
+    }
+  ]
+}

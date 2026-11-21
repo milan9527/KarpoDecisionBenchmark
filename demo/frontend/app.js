@@ -164,7 +164,8 @@ $("login").addEventListener("cancel", e => e.preventDefault());
 $("login-form").addEventListener("submit", async event => {
   event.preventDefault(); $("login-button").disabled = true; error("login-error");
   try {
-    await api("auth",{code:$("code").value}); $("code").value = ""; authenticated = true;
+    await api("auth",{username:$("username").value,password:$("password").value});
+    $("password").value = ""; authenticated = true;
     catalog = await api("catalog"); $("login").close(); selectGroup(group); await refresh();
   } catch(e) { error("login-error",e.message); }
   finally { $("login-button").disabled = false; }

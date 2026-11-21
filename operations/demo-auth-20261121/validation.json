@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-21T10:49:46.980947+00:00",
+  "url": "https://deq0avneozfys.cloudfront.net",
+  "passed": true,
+  "checks": {
+    "anonymous_protected_routes": "10/10 return 401",
+    "deployed_frontend_matches_local": true,
+    "mobile_no_horizontal_overflow": true,
+    "wrong_password_stays_on_login": true,
+    "cookie_secure_httponly_samesite_strict": true,
+    "valid_username_password_login": true,
+    "reload_preserves_authenticated_session": true,
+    "login_does_not_acquire_gpu_session": true,
+    "browser_gpu_start_requests": 0,
+    "missing_cookie_requires_login_again": true,
+    "tampered_cookie": 401,
+    "unknown_account_legacy_code_invalid_types_oversize": "all 401 with same error",
+    "rate_limit_with_spoofed_forwarded_for": [
+      401,
+      401,
+      429
+    ]
+  },
+  "gpu_control_status": {
+    "now": 1795258185,
+    "idle_seconds": 600,
+    "groups": {
+      "risk": {
+        "phase": "stopped",
+        "stop_after": 0,
+        "error": "",
+        "ready_gpus": 0,
+        "checked_at": 1795256169,
+        "startup_deadline": 1795257962,
+        "gpu_count": 6,
+        "gpu": "RTX PRO 6000 Blackwell 96GB",
+        "title": "薅羊毛风控",
+        "session_active": false,
+        "hosts": []
+      },
+      "sop": {
+        "phase": "stopped",
+        "stop_after": 0,
+        "error": "",
+        "ready_gpus": 0,
+        "checked_at": 1795256169,
+        "startup_deadline": 1795257968,
+        "gpu_count": 8,
+        "gpu": "NVIDIA H200",
+        "title": "SOP 决策",
+        "session_active": false,
+        "hosts": []
+      }
+    }
+  },
+  "page_errors": [],
+  "frontend_sha256": {
+    "index.html": "e1df33ed52dcf3174850621681e40dfea2575760f29065766500223506860424",
+    "app.js": "864082685d3eaa04e60062431f95a9819f2666af5c4df467252189aba43a2db6",
+    "style.css": "76fcf568cfa02746c41e2ba1e9b47cd4b9cc76f8a178b8ab6a8166f0516d8d43"
+  }
+}

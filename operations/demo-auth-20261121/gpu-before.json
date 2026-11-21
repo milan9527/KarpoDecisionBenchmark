@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-21T10:49:15.659637+00:00",
+  "instances": [
+    {
+      "region": "us-east-1",
+      "id": "i-09e55f0a86313912d",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-1",
+      "id": "i-0b7835341b1266d7a",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-0c777e3714538d624",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-05b24e3b4a7ee864d",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-05cfc7d4fa898ee33",
+      "state": "stopped"
+    },
+    {
+      "region": "us-east-2",
+      "id": "i-02c1caf7d7ce17c76",
+      "state": "stopped"
+    }
+  ]
+}

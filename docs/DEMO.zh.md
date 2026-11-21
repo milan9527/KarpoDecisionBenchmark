@@ -6,7 +6,7 @@
 
 ## 使用方法
 
-1. 打开上述 HTTPS 地址，输入演示访问码。当前工作区访问码保存在 `.state/demo-access.json`，文件权限为 `0600`，未提交 Git；服务端由 Secrets Manager 保管。
+1. 打开上述 HTTPS 地址，输入用户名和密码。当前演示用户名为 `demo`，密码保存在工作区 `.state/demo-login.json`，文件权限为 `0600`，未提交 Git；服务端 Secrets Manager 仅保存用户名及加盐密码哈希。登录本身不会启动 GPU。
 2. 选择「薅羊毛风控」或「SOP 决策」，点击「启动演示」。风控会启动已有的五台 EC2、六张 RTX；SOP 会启动已有的一台 EC2、八张 H200。可以只演示其中一个场景。
 3. 等待页面显示 **6/6 或 8/8 副本就绪**。检查包括 EC2 运行状态、SSM 启动服务、模型加载与 CUDA Graph 准备。EC2 处于 running 不代表模型已经可调用；冷启动通常需要数分钟，Spot 容量不足时页面会显示错误。
 4. 选择示例，可修改可信事实和客户消息，点击「运行实时决策」。风控保留完整 200 特征，SOP 保留完整 200 候选。页面可展开完整请求和实际响应。
@@ -87,6 +87,10 @@ GPU 实例白名单与副本编号见 [demo/config.json](../demo/config.json)。
 - 九项生命周期检查通过，覆盖 600 秒截止时间、多会话、重复结束、启动与停止竞争、在途请求和迟到的启动。
 - 六台 GPU 的服务均已设为开机启动，模型和 Python 环境均位于持久化 EBS 根卷；已核对实际安装的节点代码哈希，见[重启持久化检查](../operations/demo-20261121/persistence-validation.json)。
 
+2026-11-21 10:49 UTC，用户名密码登录已部署并完成独立验证：9 项认证单元测试通过；实际公网浏览器确认正确账号可登录、刷新保持会话、错误密码停留在登录页，篡改 Cookie 返回 401。10 个受保护的 API 路径在未登录时均返回 401；未知账号、原访问码请求及无效凭据均被拒绝，伪造 `X-Forwarded-For` 不能绕过登录限流。桌面及 390 像素手机页面无脚本异常或横向溢出。
+
+本次登录验证未申请 GPU 租约，六台 GPU EC2 在变更前后均为 `stopped`，ALB 后端健康。[认证验证记录](../operations/demo-auth-20261121/validation.json) · [部署与 GPU 状态](../operations/demo-auth-20261121/deployment.json) · [桌面登录页](../operations/demo-auth-20261121/login-desktop.png) · [手机登录页](../operations/demo-auth-20261121/login-mobile.png)。
+
 ### 实际自动停机
 
 本轮通过页面结束演示，随后仅观察 AWS 状态，未手动调用停机、缩短倒计时或强制关机。六台 GPU EC2 最终全部停止，CPU API 继续运行。
@@ -128,11 +132,30 @@ python demo/infrastructure/install.py status
 
 更新前端后运行 `edge.py` 上传并使 CloudFront 缓存失效；更新后端后运行 `package.py` 和 `install.py backend`。新建 CloudFront 域名后须安装后端，使其读取正确的同源校验域名。节点代码更新需重新安装并在无演示请求时重启 `karpo-demo-node`。更新回收器代码运行 `install.py watchdog`；修改配置时还需由 `provision.py` 更新 Lambda 环境配置与 IAM 白名单。
 
-服务端访问码、Cookie 密钥和节点令牌不写入前端或 Git。修改后端 Secrets Manager 值后重启 `karpo-demo-api` 使配置生效；如需使已有登录失效，同时更换 Cookie 密钥。GPU 节点证书和令牌更换时需同步后端信任并重启节点服务。
+### 登录账号
+
+当前提供一个由管理员配置的演示账号，不开放自助注册。密码使用 PBKDF2-HMAC-SHA256、随机 16 字节盐和 600,000 次迭代校验；明文密码只写入本地 `0600` 凭据文件。前端与 Git 均不包含密码、Cookie 密钥或节点令牌。原访问码登录已取消，迁移时已轮换 Cookie 密钥使旧登录失效。
+
+登录成功后使用签名 Cookie，设置 `Secure`、`HttpOnly`、`SameSite=Strict`，8 小时后过期。刷新页面保持登录；登录会话与 10 分钟 GPU 租约独立，仍须点击「启动演示」才申请 GPU。用户名不存在与密码错误均返回相同提示。当前单进程 API 限制每个客户端 IP 每分钟 8 次登录尝试，并设全局每分钟 60 次上限；超过限制返回 429。
+
+```bash
+# 生成新的随机密码；写入 Secrets Manager 及本地 .state/demo-login.json，不输出密码
+python demo/infrastructure/account.py --username demo
+
+# 或交互输入自定义密码（至少 12 字符，不通过命令行参数传递）
+python demo/infrastructure/account.py --username demo --prompt-password
+
+# 更新/重启后端使新账号及 Cookie 密钥生效；原登录全部失效
+python demo/infrastructure/package.py
+python demo/infrastructure/install.py backend
+```
+
+每次重置会保留 GPU 节点证书和令牌，同时轮换 Cookie 密钥。账号变更不启动 GPU，已有 GPU 租约仍由原回收期限管理。GPU 节点证书和令牌更换时需同步后端信任并重启节点服务。
 
 ```bash
 # 核心生命周期校验
 python -m unittest discover -s tests -p 'test_demo_lifecycle.py' -v
+python -m unittest discover -s tests -p 'test_demo_auth.py' -v
 node --check demo/frontend/app.js
 
 # 公网访问与 AWS 配置检查，只读
@@ -146,6 +169,10 @@ python demo/infrastructure/verify_shutdown.py
 
 # 停机后验证页面可登录、启动按钮可用；不会启动 GPU
 python demo/infrastructure/validate_browser.py --stopped
+
+# 登录、错误凭据、Cookie、限流及手机页面验证；GPU 必须已停止，不启动 GPU
+# 会触发登录限流，重复执行前等待一分钟
+python demo/infrastructure/validate_auth.py
 
 # 重建部署图；PNG 为可选依赖 cairosvg
 python scripts/demo_architecture.py --png

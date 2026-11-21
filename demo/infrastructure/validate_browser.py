@@ -1,6 +1,6 @@
 """Run actual public frontend inference, then arm the normal ten-minute shutdown.
 
-Requires playwright + Chromium. Uses the untracked local access code; never
+Requires playwright + Chromium. Uses the untracked local username/password; never
 records credentials, cookies or headers. This is a functional demo validation,
 not a load/quality benchmark.
 """
@@ -19,7 +19,7 @@ OUT = ROOT / "operations/demo-20261121"
 
 async def main(stopped_only=False):
     resources = json.loads((OUT / "resources.json").read_text())
-    access = json.loads((ROOT / ".state/demo-access.json").read_text())["access_code"]
+    credentials = json.loads((ROOT / ".state/demo-login.json").read_text())
     base = "https://" + resources["domain"]
     expected = {"risk": ["review", "allow", "deny"], "sop": ["sop_048", "sop_017", "sop_157"]}
     report = {"url": base, "started_at": datetime.now(timezone.utc).isoformat(),
@@ -37,7 +37,8 @@ async def main(stopped_only=False):
         assert response.status == 200
         report["checks"]["frontend"] = response.status
         report["checks"]["csp"] = response.headers.get("content-security-policy")
-        await page.locator("#code").fill(access)
+        await page.locator("#username").fill(credentials["username"])
+        await page.locator("#password").fill(credentials["password"])
         await page.locator("#login-button").click()
         await page.locator("#login").wait_for(state="hidden")
         catalog_response = await context.request.get(base + "/api/catalog")

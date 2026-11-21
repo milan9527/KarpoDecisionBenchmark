@@ -23,7 +23,7 @@
       <button class="tab" data-group="sop"><span>02</span> SOP 决策 <small>200 个候选</small></button>
     </nav>
     <section class="readiness panel" aria-live="polite">
-      <div class="status-heading"><div><p class="eyebrow">GPU READINESS</p><h2 id="status-title">连接演示服务</h2><p id="status-description">验证访问码后查看 GPU 状态。</p></div><button id="start" class="primary" disabled>启动演示 <span>↗</span></button></div>
+      <div class="status-heading"><div><p class="eyebrow">GPU READINESS</p><h2 id="status-title">连接演示服务</h2><p id="status-description">登录后查看 GPU 状态。</p></div><button id="start" class="primary" disabled>启动演示 <span>↗</span></button></div>
       <div class="status-meta"><span id="hardware">6 × RTX PRO 6000 Blackwell</span><span id="count">0 / 6 副本就绪</span><span id="countdown">尚未启动</span></div>
       <progress id="ready-progress" max="6" value="0" aria-label="GPU就绪进度"></progress>
       <div id="hosts" class="hosts"></div>
@@ -58,8 +58,9 @@
   <dialog id="login">
     <form id="login-form">
       <span class="brand-mark">K</span><p class="eyebrow">WELCOME TO DECISION LAB</p><h2>开始一次实时演示</h2>
-      <p>请输入演示访问码。GPU 仅在点击启动后准备就绪。</p>
-      <label for="code">演示访问码</label><input id="code" type="password" autocomplete="off" required>
+      <p>使用用户名和密码登录，选择场景后即可启动演示。</p>
+      <label for="username">用户名</label><input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="64" required autofocus>
+      <label for="password">密码</label><input id="password" name="password" type="password" autocomplete="current-password" maxlength="1024" required>
       <p id="login-error" class="error hidden" role="alert"></p><button class="primary" id="login-button" type="submit">进入演示 ↗</button>
     </form>
   </dialog>

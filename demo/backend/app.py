@@ -1,9 +1,6 @@
 """Authenticated demo API, durable readiness gating and GPU startup control."""
 import asyncio
-import base64
 from contextlib import asynccontextmanager
-import hashlib
-import hmac
 import json
 import math
 import os
@@ -22,6 +19,7 @@ from fastapi.responses import JSONResponse
 import httpx
 
 from state import Conflict, Store, acquire, activity, release, begin_request
+from auth import COOKIE_SECONDS, LoginLimiter, issue_session, read_session, verify_credentials, viewer_ip
 
 ROOT = Path(os.environ.get("DEMO_ROOT", "/opt/karpo-demo"))
 CONFIG = json.loads((ROOT / "demo/config.json").read_text())
@@ -37,7 +35,8 @@ tls = ssl.create_default_context(cafile=str(certificate))
 tls.check_hostname = False  # Trust only the private demo certificate; node addresses change at restart.
 catalog = json.loads((ROOT / "demo/catalog.json").read_text())
 busy = {}
-login_attempts = {}
+login_limiter = LoginLimiter()
+password_workers = asyncio.Semaphore(2)
 quitting = threading.Event()
 
 
@@ -203,22 +202,11 @@ async def protect(request, call_next):
     return response
 
 
-def token(session):
-    body = base64.urlsafe_b64encode(json.dumps({"session": session, "exp": int(time.time()) + 28800}).encode()).decode()
-    signature = hmac.new(secret["cookie_key"].encode(), body.encode(), hashlib.sha256).hexdigest()
-    return body + "." + signature
-
-
 def authenticated(request):
     try:
-        body, signature = request.cookies["karpo_demo"].split(".")
-        expected = hmac.new(secret["cookie_key"].encode(), body.encode(), hashlib.sha256).hexdigest()
-        assert hmac.compare_digest(expected, signature)
-        value = json.loads(base64.urlsafe_b64decode(body))
-        assert value["exp"] > time.time()
-        return value["session"]
-    except (KeyError, ValueError, AssertionError):
-        raise HTTPException(401, "请输入演示访问码") from None
+        return read_session(request.cookies.get("karpo_demo"), secret["cookie_key"], secret["account"]["username"])
+    except ValueError:
+        raise HTTPException(401, "请先使用用户名和密码登录") from None
 
 
 def group_name(group):
@@ -234,18 +222,18 @@ def health():
 
 @app.post("/api/auth")
 async def login(request: Request):
-    ip = request.headers.get("x-forwarded-for", request.client.host).split(",")[0]
-    now = time.time()
-    attempts = [t for t in login_attempts.get(ip, []) if t > now - 60]
-    if len(attempts) >= 8:
-        raise HTTPException(429, "尝试过于频繁，请一分钟后重试")
-    login_attempts[ip] = attempts + [now]
+    ip = viewer_ip(request.headers.get("x-forwarded-for", ""), request.client.host)
+    if not login_limiter.allow(ip):
+        raise HTTPException(429, "尝试过于频繁，请一分钟后重试", headers={"Retry-After": "60"})
     body = await request.json()
-    if not hmac.compare_digest(str(body.get("code", "")), secret["access_code"]):
-        raise HTTPException(401, "访问码不正确")
+    async with password_workers:
+        valid = await asyncio.to_thread(verify_credentials, body.get("username"), body.get("password"), secret["account"])
+    if not valid:
+        raise HTTPException(401, "用户名或密码不正确")
     session = uuid.uuid4().hex
     response = JSONResponse({"authenticated": True})
-    response.set_cookie("karpo_demo", token(session), httponly=True, secure=True, samesite="strict", max_age=28800)
+    response.set_cookie("karpo_demo", issue_session(session, secret["cookie_key"], secret["account"]["username"]),
+                        httponly=True, secure=True, samesite="strict", max_age=COOKIE_SECONDS)
     return response
 
 

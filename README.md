@@ -2,7 +2,7 @@
 
 Karpo 金融风控与 SOP 两个场景分别验证。以下保留各场景最近一次达标结果及实际部署架构。
 
-**实时演示：[打开前端](https://deq0avneozfys.cloudfront.net) · [使用说明与演示部署图](docs/DEMO.zh.md)**。S3 + CloudFront OAC 提供页面，内部 ALB + API 服务启动并检查 GPU；演示结束后 10 分钟自动发起 GPU 停机。访问码保存在本地 `.state/demo-access.json`，未提交 Git。
+**实时演示：[打开前端](https://deq0avneozfys.cloudfront.net) · [使用说明与演示部署图](docs/DEMO.zh.md)**。S3 + CloudFront OAC 提供页面，内部 ALB + API 服务启动并检查 GPU；演示结束后 10 分钟自动发起 GPU 停机。使用用户名和密码登录，当前账号凭据保存在本地 `.state/demo-login.json`，未提交 Git。登录本身不会启动 GPU。
 
 共同验收目标：**持续每秒 100 个请求、端到端 P50 ≤ 500ms、正确率 ≥ 90%**。每个场景均完成两轮各 120 秒正式测试，合计 24,000 次请求，全部成功且均在 500ms 内。100 RPS 表示每秒到达 100 个请求。
 

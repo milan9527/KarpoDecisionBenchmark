@@ -9,6 +9,7 @@ import zipfile
 
 import boto3
 from botocore.exceptions import ClientError
+from account import new_account, save_credentials
 
 ROOT = Path(__file__).resolve().parents[2]
 CONFIG = json.loads((ROOT / "demo/config.json").read_text())
@@ -97,12 +98,11 @@ def main():
     else:
         node = json.loads(sm.get_secret_value(SecretId=state["node_secret"])["SecretString"])
     if "backend_secret" not in state:
-        backend = {"access_code": secrets.token_urlsafe(18), "cookie_key": secrets.token_urlsafe(48),
+        credentials, account = new_account()
+        backend = {"account": account, "cookie_key": secrets.token_urlsafe(48),
                    "node_token": node["token"], "node_cert": node["cert"]}
         state["backend_secret"] = sm.create_secret(Name=NAME + "-backend", SecretString=json.dumps(backend), Tags=TAGS)["ARN"]
-        access = ROOT / ".state/demo-access.json"
-        access.write_text(json.dumps({"access_code": backend["access_code"]}, indent=2) + "\n")
-        access.chmod(0o600)
+        save_credentials(credentials)
         save(state)
     ddb = boto3.client("dynamodb", region_name=REGION)
     state["table"] = NAME
